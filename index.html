@@ -133,6 +133,40 @@
 
   .breakdown-note { color: var(--muted); font-size: 0.78rem; margin-top: 10px; }
   footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 24px; }
+
+  /* AI相場検索 */
+  .ai-search-row { display: flex; gap: 10px; flex-wrap: wrap; }
+  .ai-search-row input[type="text"] {
+    flex: 1; min-width: 220px;
+    padding: 10px 12px; font-size: 1rem;
+    border: 1px solid var(--border); border-radius: 8px;
+    background: var(--bg); color: var(--text);
+  }
+  .ai-search-row input[type="text"]:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+  button.primary {
+    background: var(--accent); color: #fff; border-color: var(--accent);
+    font-weight: 600; padding: 10px 18px;
+  }
+  button.primary:hover { opacity: 0.9; color: #fff; }
+  button:disabled { opacity: 0.5; cursor: not-allowed; }
+  #aiStatus { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
+  #aiStatus.error { color: var(--loss); }
+  .spinner {
+    display: inline-block; width: 14px; height: 14px; vertical-align: -2px;
+    border: 2px solid var(--border); border-top-color: var(--accent);
+    border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 6px;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  #aiResult { display: none; margin-top: 14px; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--accent-soft); }
+  .price-chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
+  .price-chip {
+    border: 1px solid var(--border); border-radius: 10px; background: var(--card);
+    padding: 8px 14px; cursor: pointer; text-align: center;
+  }
+  .price-chip .chip-label { display: block; font-size: 0.7rem; color: var(--muted); }
+  .price-chip .chip-value { font-size: 1.05rem; font-weight: 700; }
+  .price-chip:hover, .price-chip.selected { border-color: var(--accent); outline: 1px solid var(--accent); }
+  .api-key-note { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
 </style>
 </head>
 <body>
@@ -162,6 +196,31 @@
         <input type="number" id="otherCost" min="0" step="1" placeholder="0" inputmode="numeric">
       </div>
     </div>
+  </div>
+
+  <div class="card">
+    <h2>🔍 AI相場検索 <span class="hint">(商品名・容量・型番からClaudeが直近相場とサイズを推定)</span></h2>
+    <div class="ai-search-row">
+      <input type="text" id="aiQuery" placeholder="例: Nintendo Switch 有機ELモデル ホワイト / iPhone 13 128GB">
+      <button type="button" class="primary" id="aiSearchBtn">相場を調べる</button>
+    </div>
+    <div id="aiStatus"></div>
+    <div id="aiResult">
+      <div id="aiSummary" style="font-size:0.9rem"></div>
+      <div class="price-chips" id="aiChips"></div>
+      <div class="hint" id="aiSizeNote"></div>
+    </div>
+    <details style="margin-top:12px">
+      <summary style="cursor:pointer;font-size:0.85rem;font-weight:600">🔑 Claude APIキーの設定(初回のみ)</summary>
+      <div style="margin-top:10px">
+        <input type="password" id="apiKey" placeholder="sk-ant-api03-..." style="width:100%;padding:10px 12px;font-size:0.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text)">
+        <p class="api-key-note">
+          <a href="https://platform.claude.com/" target="_blank" rel="noopener">Claude Platform</a>で発行したAPIキーを入力してください。
+          キーはこの端末のブラウザにのみ保存され、Anthropic APIへ直接送信されます(第三者のサーバーは経由しません)。共有PCでは使用後に削除を推奨します。
+          <button type="button" id="clearKeyBtn" style="padding:2px 10px;font-size:0.75rem;margin-left:6px">キーを削除</button>
+        </p>
+      </div>
+    </details>
   </div>
 
   <div class="card">
@@ -406,6 +465,180 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 });
 
 [costEl, priceEl, sizeEl, otherCostEl].forEach((el) => el.addEventListener("input", calc));
+
+// ---- AI相場検索 (Claude API + Web検索) ----
+const API_KEY_STORAGE = "sedori-anthropic-key";
+const aiQueryEl = document.getElementById("aiQuery");
+const aiSearchBtn = document.getElementById("aiSearchBtn");
+const aiStatusEl = document.getElementById("aiStatus");
+const aiResultEl = document.getElementById("aiResult");
+const apiKeyEl = document.getElementById("apiKey");
+
+apiKeyEl.value = localStorage.getItem(API_KEY_STORAGE) || "";
+apiKeyEl.addEventListener("input", () => localStorage.setItem(API_KEY_STORAGE, apiKeyEl.value.trim()));
+document.getElementById("clearKeyBtn").addEventListener("click", () => {
+  localStorage.removeItem(API_KEY_STORAGE);
+  apiKeyEl.value = "";
+  setAiStatus("APIキーを削除しました。");
+});
+
+function setAiStatus(msg, { error = false, loading = false } = {}) {
+  aiStatusEl.className = error ? "error" : "";
+  aiStatusEl.innerHTML = (loading ? '<span class="spinner"></span>' : "") + msg;
+}
+
+function buildResearchPrompt(query) {
+  return [
+    "あなたは日本のせどり(物販)リサーチアシスタントです。次の商品の直近の中古販売相場をWeb検索で調べてください。",
+    "メルカリの売り切れ(SOLD)価格、ヤフオクの落札相場、リコレ・じゃんぱら等の買取/販売価格サイトを優先的に参考にし、日本円で見積もってください。",
+    "",
+    `商品: ${query}`,
+    "",
+    "調査が終わったら、回答の最後に必ず次の形式のJSONオブジェクトを1つだけ出力してください(コードブロック記号は不要):",
+    '{"price_median": 中央値の円整数, "price_low": 相場下限の円整数, "price_high": 相場上限の円整数, "size_category": "small|compact|s60|s80|s100|s120|s160", "size_reason": "サイズ推定の根拠を短く", "summary": "相場の要約を2文以内で", "confidence": "high|medium|low"}',
+    "",
+    "size_category は商品の一般的な梱包サイズから推定してください: small=厚さ3cm以内・A4まで(本・小物), compact=厚さ7cm程度の小箱, s60/s80/s100/s120/s160=梱包時の3辺合計cm。",
+    "相場が特定できない場合は price_median を null にし、summary に理由を書いてください。",
+  ].join("\n");
+}
+
+async function callClaude(apiKey, messages) {
+  const res = await fetch("https://api.anthropic.com/v1/messages", {
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json",
+      "x-api-key": apiKey,
+      "anthropic-version": "2023-06-01",
+      "anthropic-dangerous-direct-browser-access": "true",
+    },
+    body: JSON.stringify({
+      model: "claude-opus-4-8",
+      max_tokens: 8000,
+      thinking: { type: "adaptive" },
+      tools: [{
+        type: "web_search_20260209",
+        name: "web_search",
+        max_uses: 6,
+        user_location: { type: "approximate", country: "JP", timezone: "Asia/Tokyo" },
+      }],
+      messages,
+    }),
+  });
+  if (!res.ok) {
+    let detail = "";
+    try { detail = (await res.json()).error?.message || ""; } catch {}
+    if (res.status === 401) throw new Error("APIキーが無効です。設定を確認してください。");
+    if (res.status === 429) throw new Error("レート制限に達しました。少し待ってから再試行してください。");
+    throw new Error(`APIエラー (${res.status}) ${detail}`);
+  }
+  return res.json();
+}
+
+function extractResultJson(text) {
+  // フラットなJSONを想定し、price_median を含む最後の {...} を拾う
+  const matches = text.match(/\{[^{}]*\}/g) || [];
+  for (let i = matches.length - 1; i >= 0; i--) {
+    if (matches[i].includes("price_median")) {
+      try { return JSON.parse(matches[i]); } catch {}
+    }
+  }
+  return null;
+}
+
+function renderAiResult(data, query) {
+  const summaryEl = document.getElementById("aiSummary");
+  const chipsEl = document.getElementById("aiChips");
+  const sizeNoteEl = document.getElementById("aiSizeNote");
+  aiResultEl.style.display = "block";
+  chipsEl.innerHTML = "";
+
+  const confLabel = { high: "信頼度: 高", medium: "信頼度: 中", low: "信頼度: 低" }[data.confidence] || "";
+  summaryEl.textContent = `「${query}」 ${data.summary || ""} ${confLabel ? "(" + confLabel + ")" : ""}`;
+
+  if (data.price_median == null) {
+    sizeNoteEl.textContent = "";
+    return;
+  }
+
+  const chips = [
+    { label: "相場下限", value: data.price_low },
+    { label: "中央値(推奨)", value: data.price_median },
+    { label: "相場上限", value: data.price_high },
+  ].filter((c) => Number.isFinite(c.value));
+
+  chips.forEach((c) => {
+    const btn = document.createElement("button");
+    btn.type = "button";
+    btn.className = "price-chip" + (c.value === data.price_median ? " selected" : "");
+    btn.innerHTML = `<span class="chip-label">${c.label}</span><span class="chip-value">${yen(c.value)}</span>`;
+    btn.addEventListener("click", () => {
+      priceEl.value = c.value;
+      chipsEl.querySelectorAll(".price-chip").forEach((el) => el.classList.remove("selected"));
+      btn.classList.add("selected");
+      calc();
+    });
+    chipsEl.appendChild(btn);
+  });
+
+  // 中央値とサイズを自動反映
+  priceEl.value = data.price_median;
+  const validSize = SIZES.some((s) => s.key === data.size_category);
+  if (validSize) {
+    sizeEl.value = data.size_category;
+    const sizeLabel = SIZES.find((s) => s.key === data.size_category).label.split("(")[0];
+    sizeNoteEl.textContent = `販売予定価格に中央値、サイズに「${sizeLabel}」を反映しました。${data.size_reason ? "(" + data.size_reason + ")" : ""}`;
+  } else {
+    sizeNoteEl.textContent = "販売予定価格に中央値を反映しました。サイズは手動で選択してください。";
+  }
+  calc();
+}
+
+async function runAiSearch() {
+  const query = aiQueryEl.value.trim();
+  const apiKey = (localStorage.getItem(API_KEY_STORAGE) || "").trim();
+  if (!query) { setAiStatus("商品名を入力してください。", { error: true }); return; }
+  if (!apiKey) {
+    setAiStatus("先に下の「APIキーの設定」からClaude APIキーを入力してください。", { error: true });
+    return;
+  }
+
+  aiSearchBtn.disabled = true;
+  aiResultEl.style.display = "none";
+  setAiStatus("Claudeが相場を検索中です…(30秒〜1分ほどかかることがあります)", { loading: true });
+
+  try {
+    const messages = [{ role: "user", content: buildResearchPrompt(query) }];
+    let response = await callClaude(apiKey, messages);
+
+    // サーバーツールの反復上限で一時停止した場合は続きを要求(最大3回)
+    for (let i = 0; i < 3 && response.stop_reason === "pause_turn"; i++) {
+      messages.push({ role: "assistant", content: response.content });
+      setAiStatus("検索を継続中です…", { loading: true });
+      response = await callClaude(apiKey, messages);
+    }
+
+    if (response.stop_reason === "refusal") {
+      throw new Error("この商品の調査リクエストは処理できませんでした。商品名を変えてお試しください。");
+    }
+
+    const text = (response.content || [])
+      .filter((b) => b.type === "text")
+      .map((b) => b.text)
+      .join("\n");
+    const data = extractResultJson(text);
+    if (!data) throw new Error("相場データを解析できませんでした。もう一度お試しください。");
+
+    setAiStatus("");
+    renderAiResult(data, query);
+  } catch (e) {
+    setAiStatus(e.message || "検索に失敗しました。", { error: true });
+  } finally {
+    aiSearchBtn.disabled = false;
+  }
+}
+
+aiSearchBtn.addEventListener("click", runAiSearch);
+aiQueryEl.addEventListener("keydown", (e) => { if (e.key === "Enter") runAiSearch(); });
 
 renderSettings();
 calc();
