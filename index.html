@@ -1,0 +1,414 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>せどり利益計算機</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --card: #ffffff;
+    --text: #1a1d21;
+    --muted: #6b7280;
+    --border: #e2e5ea;
+    --accent: #2563eb;
+    --accent-soft: #eff4ff;
+    --profit: #047857;
+    --profit-bg: #ecfdf5;
+    --loss: #b91c1c;
+    --loss-bg: #fef2f2;
+    --best: #fffbeb;
+    --best-border: #f59e0b;
+  }
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #111418;
+      --card: #1b1f26;
+      --text: #e8eaed;
+      --muted: #9aa2ad;
+      --border: #30363f;
+      --accent: #5b8def;
+      --accent-soft: #1d2738;
+      --profit: #34d399;
+      --profit-bg: #0c2b21;
+      --loss: #f87171;
+      --loss-bg: #331416;
+      --best: #2b2413;
+      --best-border: #d97706;
+    }
+  }
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body {
+    font-family: "Hiragino Sans", "Yu Gothic UI", "Meiryo", system-ui, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    line-height: 1.6;
+    padding: 16px;
+  }
+  .container { max-width: 860px; margin: 0 auto; }
+  header { text-align: center; margin: 8px 0 20px; }
+  header h1 { font-size: 1.5rem; }
+  header p { color: var(--muted); font-size: 0.85rem; }
+
+  .card {
+    background: var(--card);
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    padding: 20px;
+    margin-bottom: 16px;
+  }
+  .card h2 { font-size: 1.05rem; margin-bottom: 14px; }
+
+  .inputs { display: grid; grid-template-columns: repeat(auto-fit, minmax(220px, 1fr)); gap: 14px; }
+  label { display: block; font-size: 0.85rem; font-weight: 600; margin-bottom: 4px; }
+  .hint { font-weight: 400; color: var(--muted); font-size: 0.75rem; }
+  input[type="number"], select {
+    width: 100%;
+    padding: 10px 12px;
+    font-size: 1rem;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--bg);
+    color: var(--text);
+  }
+  input:focus, select:focus { outline: 2px solid var(--accent); outline-offset: -1px; }
+
+  table { width: 100%; border-collapse: collapse; font-size: 0.9rem; }
+  th, td { padding: 10px 8px; text-align: right; border-bottom: 1px solid var(--border); white-space: nowrap; }
+  th:first-child, td:first-child { text-align: left; }
+  th { color: var(--muted); font-size: 0.78rem; font-weight: 600; }
+  .table-wrap { overflow-x: auto; }
+
+  .profit { color: var(--profit); font-weight: 700; }
+  .loss { color: var(--loss); font-weight: 700; }
+  tr.best-row { background: var(--best); }
+  tr.best-row td:first-child::after {
+    content: " ★最有利";
+    color: var(--best-border);
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+
+  .badge {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 999px;
+    font-size: 0.72rem;
+    font-weight: 700;
+  }
+  .badge.profit { background: var(--profit-bg); }
+  .badge.loss { background: var(--loss-bg); }
+
+  details.settings summary {
+    cursor: pointer;
+    font-weight: 600;
+    font-size: 0.95rem;
+    padding: 4px 0;
+  }
+  .settings-grid { margin-top: 14px; display: grid; gap: 16px; }
+  .platform-setting {
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 14px;
+  }
+  .platform-setting h3 { font-size: 0.95rem; margin-bottom: 10px; display: flex; align-items: center; gap: 8px; }
+  .fee-row { display: flex; gap: 12px; flex-wrap: wrap; margin-bottom: 10px; }
+  .fee-row > div { flex: 1; min-width: 130px; }
+  .ship-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(150px, 1fr)); gap: 8px; }
+  .ship-grid label { font-size: 0.75rem; }
+  .ship-grid input { padding: 6px 8px; font-size: 0.9rem; }
+
+  .btn-row { display: flex; gap: 10px; margin-top: 14px; flex-wrap: wrap; }
+  button {
+    padding: 8px 16px;
+    border: 1px solid var(--border);
+    border-radius: 8px;
+    background: var(--card);
+    color: var(--text);
+    font-size: 0.85rem;
+    cursor: pointer;
+  }
+  button:hover { border-color: var(--accent); color: var(--accent); }
+  .toggle-platform { display: flex; align-items: center; gap: 6px; font-size: 0.78rem; font-weight: 400; color: var(--muted); margin-left: auto; }
+
+  .breakdown-note { color: var(--muted); font-size: 0.78rem; margin-top: 10px; }
+  footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 24px; }
+</style>
+</head>
+<body>
+<div class="container">
+  <header>
+    <h1>📦 せどり利益計算機</h1>
+    <p>仕入れ値・販売予定価格・サイズを入れるだけで、プラットフォーム別の利益を一括比較</p>
+  </header>
+
+  <div class="card">
+    <h2>入力</h2>
+    <div class="inputs">
+      <div>
+        <label for="cost">仕入れ値(円)</label>
+        <input type="number" id="cost" min="0" step="1" placeholder="例: 1500" inputmode="numeric">
+      </div>
+      <div>
+        <label for="price">販売予定価格(円)</label>
+        <input type="number" id="price" min="0" step="1" placeholder="例: 3980" inputmode="numeric">
+      </div>
+      <div>
+        <label for="size">サイズカテゴリー <span class="hint">(送料の推定に使用)</span></label>
+        <select id="size"></select>
+      </div>
+      <div>
+        <label for="otherCost">その他経費(円) <span class="hint">(梱包材・交通費など/任意)</span></label>
+        <input type="number" id="otherCost" min="0" step="1" placeholder="0" inputmode="numeric">
+      </div>
+    </div>
+  </div>
+
+  <div class="card">
+    <h2>プラットフォーム別 損益比較</h2>
+    <div class="table-wrap">
+      <table id="resultTable">
+        <thead>
+          <tr>
+            <th>プラットフォーム</th>
+            <th>販売手数料</th>
+            <th>送料(推定)</th>
+            <th>利益</th>
+            <th>利益率</th>
+            <th>損益分岐価格</th>
+          </tr>
+        </thead>
+        <tbody id="resultBody">
+          <tr><td colspan="6" style="text-align:center;color:var(--muted)">仕入れ値と販売予定価格を入力してください</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p class="breakdown-note">
+      利益 = 販売価格 − 仕入れ値 − 販売手数料(販売価格 × 手数料率 + 固定手数料) − 送料 − その他経費。
+      損益分岐価格は「この価格以上で売れば黒字」になる最低販売価格です。送料は設定画面で自由に変更できます。
+    </p>
+  </div>
+
+  <div class="card">
+    <details class="settings" id="settingsDetails">
+      <summary>⚙️ 手数料・送料の設定(プラットフォームごとに変更可能)</summary>
+      <div class="settings-grid" id="settingsGrid"></div>
+      <div class="btn-row">
+        <button type="button" id="resetBtn">初期値に戻す</button>
+      </div>
+    </details>
+  </div>
+
+  <footer>設定内容はこの端末のブラウザに自動保存されます。手数料・送料の初期値は目安です。最新の各社料金を必ずご確認ください。</footer>
+</div>
+
+<script>
+"use strict";
+
+const STORAGE_KEY = "sedori-calc-settings-v1";
+
+// サイズカテゴリー(送料推定用)
+const SIZES = [
+  { key: "small",  label: "小型(厚さ3cm以内・A4まで)〈本・小物・カード類〉" },
+  { key: "compact", label: "コンパクト(厚さ7cm程度の小箱)〈化粧品・小型ガジェット〉" },
+  { key: "s60",  label: "60サイズ(3辺合計60cm以内)〈小型家電・おもちゃ〉" },
+  { key: "s80",  label: "80サイズ(3辺合計80cm以内)〈靴・小型調理家電〉" },
+  { key: "s100", label: "100サイズ(3辺合計100cm以内)〈スニーカー箱数個分・炊飯器〉" },
+  { key: "s120", label: "120サイズ(3辺合計120cm以内)〈掃除機・プリンター〉" },
+  { key: "s160", label: "160サイズ(3辺合計160cm以内)〈大型家電・大きめの箱物〉" },
+];
+
+// プラットフォーム初期設定(手数料率%・固定手数料円・サイズ別送料円)
+const DEFAULT_PLATFORMS = [
+  {
+    key: "mercari", name: "メルカリ", enabled: true,
+    feePercent: 10, feeFixed: 0,
+    shipping: { small: 210, compact: 520, s60: 750, s80: 850, s100: 1050, s120: 1200, s160: 1700 },
+  },
+  {
+    key: "rakuma", name: "楽天ラクマ", enabled: true,
+    feePercent: 10, feeFixed: 0,
+    shipping: { small: 180, compact: 530, s60: 800, s80: 900, s100: 1150, s120: 1300, s160: 1800 },
+  },
+  {
+    key: "yahooAuction", name: "ヤフオク!", enabled: true,
+    feePercent: 10, feeFixed: 0,
+    shipping: { small: 210, compact: 450, s60: 750, s80: 850, s100: 1050, s120: 1200, s160: 1700 },
+  },
+  {
+    key: "yahooFleama", name: "Yahoo!フリマ", enabled: true,
+    feePercent: 5, feeFixed: 0,
+    shipping: { small: 210, compact: 450, s60: 750, s80: 850, s100: 1050, s120: 1200, s160: 1700 },
+  },
+  {
+    key: "amazon", name: "Amazon(自己発送)", enabled: true,
+    feePercent: 15, feeFixed: 0,
+    shipping: { small: 250, compact: 550, s60: 900, s80: 1100, s100: 1300, s120: 1500, s160: 2000 },
+  },
+];
+
+function loadSettings() {
+  try {
+    const raw = localStorage.getItem(STORAGE_KEY);
+    if (!raw) return structuredClone(DEFAULT_PLATFORMS);
+    const saved = JSON.parse(raw);
+    // 保存データに新しいプラットフォーム/サイズが無い場合は初期値で補完
+    return DEFAULT_PLATFORMS.map((def) => {
+      const s = saved.find((p) => p.key === def.key) || {};
+      return {
+        ...def,
+        enabled: typeof s.enabled === "boolean" ? s.enabled : def.enabled,
+        feePercent: Number.isFinite(s.feePercent) ? s.feePercent : def.feePercent,
+        feeFixed: Number.isFinite(s.feeFixed) ? s.feeFixed : def.feeFixed,
+        shipping: { ...def.shipping, ...(s.shipping || {}) },
+      };
+    });
+  } catch {
+    return structuredClone(DEFAULT_PLATFORMS);
+  }
+}
+
+let platforms = loadSettings();
+
+function saveSettings() {
+  localStorage.setItem(STORAGE_KEY, JSON.stringify(platforms));
+}
+
+const yen = (n) => "¥" + Math.round(n).toLocaleString("ja-JP");
+
+// ---- 入力欄 ----
+const costEl = document.getElementById("cost");
+const priceEl = document.getElementById("price");
+const sizeEl = document.getElementById("size");
+const otherCostEl = document.getElementById("otherCost");
+
+SIZES.forEach((s) => {
+  const opt = document.createElement("option");
+  opt.value = s.key;
+  opt.textContent = s.label;
+  sizeEl.appendChild(opt);
+});
+
+// ---- 計算・結果表示 ----
+function calc() {
+  const cost = Number(costEl.value) || 0;
+  const price = Number(priceEl.value) || 0;
+  const other = Number(otherCostEl.value) || 0;
+  const sizeKey = sizeEl.value;
+  const body = document.getElementById("resultBody");
+  body.innerHTML = "";
+
+  if (price <= 0 && cost <= 0) {
+    body.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted)">仕入れ値と販売予定価格を入力してください</td></tr>';
+    return;
+  }
+
+  const rows = platforms
+    .filter((p) => p.enabled)
+    .map((p) => {
+      const fee = price * (p.feePercent / 100) + p.feeFixed;
+      const ship = p.shipping[sizeKey] ?? 0;
+      const profit = price - cost - fee - ship - other;
+      const margin = price > 0 ? (profit / price) * 100 : 0;
+      // 損益分岐: price*(1-r) = cost + fixed + ship + other
+      const r = p.feePercent / 100;
+      const breakEven = r < 1 ? (cost + p.feeFixed + ship + other) / (1 - r) : Infinity;
+      return { p, fee, ship, profit, margin, breakEven };
+    });
+
+  if (rows.length === 0) {
+    body.innerHTML = '<tr><td colspan="6" style="text-align:center;color:var(--muted)">設定で比較するプラットフォームを有効にしてください</td></tr>';
+    return;
+  }
+
+  const bestProfit = Math.max(...rows.map((r) => r.profit));
+
+  rows.forEach(({ p, fee, ship, profit, margin, breakEven }) => {
+    const tr = document.createElement("tr");
+    if (profit === bestProfit && price > 0) tr.classList.add("best-row");
+    const cls = profit >= 0 ? "profit" : "loss";
+    const sign = profit >= 0 ? "+" : "−";
+    tr.innerHTML = `
+      <td>${p.name}</td>
+      <td>${yen(fee)} <span class="hint">(${p.feePercent}%${p.feeFixed ? "+" + yen(p.feeFixed) : ""})</span></td>
+      <td>${yen(ship)}</td>
+      <td class="${cls}">${sign}${yen(Math.abs(profit))} <span class="badge ${cls}">${profit >= 0 ? "利益" : "損失"}</span></td>
+      <td class="${cls}">${price > 0 ? margin.toFixed(1) + "%" : "—"}</td>
+      <td>${Number.isFinite(breakEven) ? yen(Math.ceil(breakEven)) : "—"}</td>
+    `;
+    body.appendChild(tr);
+  });
+}
+
+// ---- 設定画面 ----
+function renderSettings() {
+  const grid = document.getElementById("settingsGrid");
+  grid.innerHTML = "";
+  platforms.forEach((p, i) => {
+    const div = document.createElement("div");
+    div.className = "platform-setting";
+
+    const shipInputs = SIZES.map((s) => `
+      <div>
+        <label>${s.label.split("(")[0]}
+          <input type="number" min="0" step="1" data-idx="${i}" data-ship="${s.key}" value="${p.shipping[s.key]}">
+        </label>
+      </div>
+    `).join("");
+
+    div.innerHTML = `
+      <h3>${p.name}
+        <span class="toggle-platform">
+          <input type="checkbox" id="en-${p.key}" data-idx="${i}" data-field="enabled" ${p.enabled ? "checked" : ""}>
+          <label for="en-${p.key}" style="margin:0;font-weight:400">比較に含める</label>
+        </span>
+      </h3>
+      <div class="fee-row">
+        <div>
+          <label>販売手数料率(%)
+            <input type="number" min="0" max="100" step="0.1" data-idx="${i}" data-field="feePercent" value="${p.feePercent}">
+          </label>
+        </div>
+        <div>
+          <label>固定手数料(円)
+            <input type="number" min="0" step="1" data-idx="${i}" data-field="feeFixed" value="${p.feeFixed}">
+          </label>
+        </div>
+      </div>
+      <label style="margin-bottom:6px">サイズ別送料(円)</label>
+      <div class="ship-grid">${shipInputs}</div>
+    `;
+    grid.appendChild(div);
+  });
+}
+
+document.getElementById("settingsGrid").addEventListener("input", (e) => {
+  const t = e.target;
+  const idx = Number(t.dataset.idx);
+  if (!Number.isInteger(idx) || !platforms[idx]) return;
+  if (t.dataset.field === "enabled") {
+    platforms[idx].enabled = t.checked;
+  } else if (t.dataset.field === "feePercent" || t.dataset.field === "feeFixed") {
+    platforms[idx][t.dataset.field] = Number(t.value) || 0;
+  } else if (t.dataset.ship) {
+    platforms[idx].shipping[t.dataset.ship] = Number(t.value) || 0;
+  }
+  saveSettings();
+  calc();
+});
+
+document.getElementById("resetBtn").addEventListener("click", () => {
+  if (!confirm("手数料・送料をすべて初期値に戻しますか?")) return;
+  platforms = structuredClone(DEFAULT_PLATFORMS);
+  saveSettings();
+  renderSettings();
+  calc();
+});
+
+[costEl, priceEl, sizeEl, otherCostEl].forEach((el) => el.addEventListener("input", calc));
+
+renderSettings();
+calc();
+</script>
+</body>
+</html>
