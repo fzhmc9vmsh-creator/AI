@@ -134,7 +134,7 @@
   .breakdown-note { color: var(--muted); font-size: 0.78rem; margin-top: 10px; }
   footer { text-align: center; color: var(--muted); font-size: 0.75rem; margin-top: 24px; }
 
-  /* AI相場検索 */
+  /* サイズ自動判定 & 相場リンク */
   .ai-search-row { display: flex; gap: 10px; flex-wrap: wrap; }
   .ai-search-row input[type="text"] {
     flex: 1; min-width: 220px;
@@ -148,25 +148,15 @@
     font-weight: 600; padding: 10px 18px;
   }
   button.primary:hover { opacity: 0.9; color: #fff; }
-  button:disabled { opacity: 0.5; cursor: not-allowed; }
-  #aiStatus { font-size: 0.85rem; color: var(--muted); margin-top: 10px; }
-  #aiStatus.error { color: var(--loss); }
-  .spinner {
-    display: inline-block; width: 14px; height: 14px; vertical-align: -2px;
-    border: 2px solid var(--border); border-top-color: var(--accent);
-    border-radius: 50%; animation: spin 0.8s linear infinite; margin-right: 6px;
-  }
-  @keyframes spin { to { transform: rotate(360deg); } }
-  #aiResult { display: none; margin-top: 14px; padding: 14px; border: 1px solid var(--border); border-radius: 10px; background: var(--accent-soft); }
+  #sizeResult { font-size: 0.85rem; color: var(--muted); margin-top: 10px; min-height: 1.2em; }
   .price-chips { display: flex; gap: 8px; flex-wrap: wrap; margin: 10px 0; }
   .price-chip {
+    display: inline-block;
     border: 1px solid var(--border); border-radius: 10px; background: var(--card);
-    padding: 8px 14px; cursor: pointer; text-align: center;
+    padding: 8px 14px; text-align: center; text-decoration: none;
+    color: var(--text); font-size: 0.85rem; font-weight: 600;
   }
-  .price-chip .chip-label { display: block; font-size: 0.7rem; color: var(--muted); }
-  .price-chip .chip-value { font-size: 1.05rem; font-weight: 700; }
-  .price-chip:hover, .price-chip.selected { border-color: var(--accent); outline: 1px solid var(--accent); }
-  .api-key-note { font-size: 0.75rem; color: var(--muted); margin-top: 6px; }
+  .price-chip:hover { border-color: var(--accent); color: var(--accent); }
 </style>
 </head>
 <body>
@@ -199,28 +189,14 @@
   </div>
 
   <div class="card">
-    <h2>🔍 AI相場検索 <span class="hint">(商品名・容量・型番からClaudeが直近相場とサイズを推定)</span></h2>
+    <h2>📦 サイズ自動判定 & 相場リンク <span class="hint">(商品名からサイズを推定し、各サイトの相場ページを開けます)</span></h2>
     <div class="ai-search-row">
-      <input type="text" id="aiQuery" placeholder="例: Nintendo Switch 有機ELモデル ホワイト / iPhone 13 128GB">
-      <button type="button" class="primary" id="aiSearchBtn">相場を調べる</button>
+      <input type="text" id="productName" placeholder="例: Nintendo Switch 有機EL / スニーカー / 炊飯器">
+      <button type="button" class="primary" id="sizeJudgeBtn">判定する</button>
     </div>
-    <div id="aiStatus"></div>
-    <div id="aiResult">
-      <div id="aiSummary" style="font-size:0.9rem"></div>
-      <div class="price-chips" id="aiChips"></div>
-      <div class="hint" id="aiSizeNote"></div>
-    </div>
-    <details style="margin-top:12px">
-      <summary style="cursor:pointer;font-size:0.85rem;font-weight:600">🔑 Claude APIキーの設定(初回のみ)</summary>
-      <div style="margin-top:10px">
-        <input type="password" id="apiKey" placeholder="sk-ant-api03-..." style="width:100%;padding:10px 12px;font-size:0.9rem;border:1px solid var(--border);border-radius:8px;background:var(--bg);color:var(--text)">
-        <p class="api-key-note">
-          <a href="https://platform.claude.com/" target="_blank" rel="noopener">Claude Platform</a>で発行したAPIキーを入力してください。
-          キーはこの端末のブラウザにのみ保存され、Anthropic APIへ直接送信されます(第三者のサーバーは経由しません)。共有PCでは使用後に削除を推奨します。
-          <button type="button" id="clearKeyBtn" style="padding:2px 10px;font-size:0.75rem;margin-left:6px">キーを削除</button>
-        </p>
-      </div>
-    </details>
+    <div id="sizeResult"></div>
+    <div class="price-chips" id="priceLinks"></div>
+    <p class="hint" id="priceLinksNote" style="display:none">リンク先で実際の売れた価格を確認し、上の「販売予定価格」に入力してください(無料)</p>
   </div>
 
   <div class="card">
@@ -466,179 +442,236 @@ document.getElementById("resetBtn").addEventListener("click", () => {
 
 [costEl, priceEl, sizeEl, otherCostEl].forEach((el) => el.addEventListener("input", calc));
 
-// ---- AI相場検索 (Claude API + Web検索) ----
-const API_KEY_STORAGE = "sedori-anthropic-key";
-const aiQueryEl = document.getElementById("aiQuery");
-const aiSearchBtn = document.getElementById("aiSearchBtn");
-const aiStatusEl = document.getElementById("aiStatus");
-const aiResultEl = document.getElementById("aiResult");
-const apiKeyEl = document.getElementById("apiKey");
+// ---- サイズ自動判定 & 相場リンク (完全オフライン・無料) ----
 
-apiKeyEl.value = localStorage.getItem(API_KEY_STORAGE) || "";
-apiKeyEl.addEventListener("input", () => localStorage.setItem(API_KEY_STORAGE, apiKeyEl.value.trim()));
-document.getElementById("clearKeyBtn").addEventListener("click", () => {
-  localStorage.removeItem(API_KEY_STORAGE);
-  apiKeyEl.value = "";
-  setAiStatus("APIキーを削除しました。");
-});
+// サイズ判定辞書: k = マッチさせるキーワード群, size = SIZES のキー, label = 商品カテゴリー名
+// ※ 実際の梱包サイズは商品の個体差があるため、あくまで目安です。
+const SIZE_DICT = [
+  // ---- small: 厚さ3cm以内・A4まで(本・カード・薄物) ----
+  { k: ["本", "書籍", "単行本"], size: "small", label: "本" },
+  { k: ["漫画", "マンガ", "コミック"], size: "small", label: "漫画" },
+  { k: ["文庫", "文庫本"], size: "small", label: "文庫本" },
+  { k: ["雑誌"], size: "small", label: "雑誌" },
+  { k: ["cd", "シーディー"], size: "small", label: "CD" },
+  { k: ["dvd", "ディーブイディー"], size: "small", label: "DVD" },
+  { k: ["blu-ray", "ブルーレイ", "bd"], size: "small", label: "Blu-ray" },
+  { k: ["ゲームソフト"], size: "small", label: "ゲームソフト" },
+  { k: ["switchソフト", "スイッチソフト"], size: "small", label: "Switchソフト" },
+  { k: ["ps5ソフト", "ps4ソフト"], size: "small", label: "PS5/PS4ソフト" },
+  { k: ["トレカ", "トレーディングカード"], size: "small", label: "トレカ" },
+  { k: ["ポケモンカード", "ポケカ"], size: "small", label: "ポケモンカード" },
+  { k: ["遊戯王"], size: "small", label: "遊戯王カード" },
+  { k: ["ワンピースカード"], size: "small", label: "ワンピースカード" },
+  { k: ["スマホケース", "iphoneケース"], size: "small", label: "スマホケース" },
+  { k: ["充電ケーブル", "usbケーブル"], size: "small", label: "充電ケーブル" },
+  { k: ["sdカード", "microsdカード", "マイクロsd"], size: "small", label: "SDカード" },
+  { k: ["usbメモリ"], size: "small", label: "USBメモリ" },
+  { k: ["ステッカー", "シール"], size: "small", label: "ステッカー" },
+  { k: ["ハンカチ"], size: "small", label: "ハンカチ" },
+  { k: ["ピアス"], size: "small", label: "ピアス" },
+  { k: ["ネックレス"], size: "small", label: "ネックレス" },
+  { k: ["指輪", "リング"], size: "small", label: "指輪" },
+  { k: ["切手"], size: "small", label: "切手" },
+  { k: ["缶バッジ", "缶バッチ"], size: "small", label: "缶バッジ" },
+  { k: ["キーホルダー"], size: "small", label: "キーホルダー" },
+  { k: ["絵葉書", "ポストカード"], size: "small", label: "ポストカード" },
 
-function setAiStatus(msg, { error = false, loading = false } = {}) {
-  aiStatusEl.className = error ? "error" : "";
-  aiStatusEl.innerHTML = (loading ? '<span class="spinner"></span>' : "") + msg;
+  // ---- compact: 厚さ7cm程度の小箱 ----
+  { k: ["化粧品", "コスメ"], size: "compact", label: "化粧品" },
+  { k: ["香水"], size: "compact", label: "香水" },
+  { k: ["マウス"], size: "compact", label: "マウス" },
+  { k: ["イヤホン"], size: "compact", label: "イヤホン" },
+  { k: ["airpods", "エアポッズ"], size: "compact", label: "AirPods" },
+  { k: ["ワイヤレスイヤホン"], size: "compact", label: "ワイヤレスイヤホン" },
+  { k: ["スマートウォッチ"], size: "compact", label: "スマートウォッチ" },
+  { k: ["apple watch", "アップルウォッチ"], size: "compact", label: "Apple Watch" },
+  { k: ["スマホ", "スマートフォン"], size: "compact", label: "スマホ" },
+  { k: ["iphone", "アイフォン"], size: "compact", label: "iPhone" },
+  { k: ["android", "アンドロイド"], size: "compact", label: "Androidスマホ" },
+  { k: ["モバイルバッテリー"], size: "compact", label: "モバイルバッテリー" },
+  { k: ["充電器", "acアダプター"], size: "compact", label: "充電器" },
+  { k: ["フィギュア", "ねんどろいど", "figma"], size: "compact", label: "フィギュア" },
+  { k: ["ぬいぐるみ", "ヌイグルミ"], size: "compact", label: "ぬいぐるみ" },
+  { k: ["財布"], size: "compact", label: "財布" },
+  { k: ["ポーチ"], size: "compact", label: "ポーチ" },
+  { k: ["ベルト"], size: "compact", label: "ベルト" },
+  { k: ["サングラス"], size: "compact", label: "サングラス" },
+  { k: ["メガネ", "眼鏡"], size: "compact", label: "メガネ" },
+  { k: ["腕時計", "ウォッチ"], size: "compact", label: "腕時計" },
+  { k: ["電卓"], size: "compact", label: "電卓" },
+  { k: ["ライター"], size: "compact", label: "ライター" },
+  { k: ["折りたたみ傘"], size: "compact", label: "折りたたみ傘" },
+
+  // ---- s60: 3辺合計60cm以内(小型家電・雑貨) ----
+  { k: ["switch本体", "スイッチ本体", "nintendo switch"], size: "s60", label: "Switch本体" },
+  { k: ["ps vita", "プレイステーションヴィータ"], size: "s60", label: "PS Vita" },
+  { k: ["ヘッドホン", "ヘッドフォン"], size: "s60", label: "ヘッドホン" },
+  { k: ["スピーカー"], size: "s60", label: "スピーカー" },
+  { k: ["カメラ", "デジカメ"], size: "s60", label: "カメラ" },
+  { k: ["gopro", "ゴープロ"], size: "s60", label: "GoPro" },
+  { k: ["レンズ", "カメラレンズ"], size: "s60", label: "カメラレンズ" },
+  { k: ["ドライヤー"], size: "s60", label: "ドライヤー" },
+  { k: ["ヘアアイロン"], size: "s60", label: "ヘアアイロン" },
+  { k: ["電気シェーバー", "シェーバー"], size: "s60", label: "電気シェーバー" },
+  { k: ["電動歯ブラシ"], size: "s60", label: "電動歯ブラシ" },
+  { k: ["おもちゃ"], size: "s60", label: "おもちゃ" },
+  { k: ["プラモデル", "ガンプラ"], size: "s60", label: "プラモデル" },
+  { k: ["レゴ", "lego"], size: "s60", label: "レゴ" },
+  { k: ["トミカ"], size: "s60", label: "トミカ" },
+  { k: ["帽子", "キャップ"], size: "s60", label: "帽子" },
+  { k: ["マフラー"], size: "s60", label: "マフラー" },
+  { k: ["手袋", "グローブ"], size: "s60", label: "手袋" },
+  { k: ["水筒"], size: "s60", label: "水筒" },
+  { k: ["タンブラー"], size: "s60", label: "タンブラー" },
+  { k: ["弁当箱"], size: "s60", label: "弁当箱" },
+  { k: ["キーボード"], size: "s60", label: "PCキーボード" },
+
+  // ---- s80: 3辺合計80cm以内(靴・衣類・小型調理家電) ----
+  { k: ["スニーカー"], size: "s80", label: "スニーカー" },
+  { k: ["靴"], size: "s80", label: "靴" },
+  { k: ["ブーツ"], size: "s80", label: "ブーツ" },
+  { k: ["パンプス"], size: "s80", label: "パンプス" },
+  { k: ["サンダル"], size: "s80", label: "サンダル" },
+  { k: ["リュック", "バックパック"], size: "s80", label: "リュック" },
+  { k: ["バッグ", "かばん"], size: "s80", label: "バッグ" },
+  { k: ["トートバッグ"], size: "s80", label: "トートバッグ" },
+  { k: ["ps5本体", "プレイステーション5", "ps5"], size: "s80", label: "PS5本体" },
+  { k: ["xbox"], size: "s80", label: "Xbox" },
+  { k: ["ゲーミングキーボード"], size: "s80", label: "ゲーミングキーボード" },
+  { k: ["電気ケトル"], size: "s80", label: "電気ケトル" },
+  { k: ["トースター"], size: "s80", label: "トースター" },
+  { k: ["ミキサー"], size: "s80", label: "ミキサー" },
+  { k: ["コーヒーメーカー"], size: "s80", label: "コーヒーメーカー" },
+  { k: ["洋服", "服"], size: "s80", label: "洋服" },
+  { k: ["パーカー"], size: "s80", label: "パーカー" },
+  { k: ["ジャケット"], size: "s80", label: "ジャケット" },
+  { k: ["ジーンズ", "デニム"], size: "s80", label: "ジーンズ" },
+  { k: ["ラジコン"], size: "s80", label: "ラジコン" },
+  { k: ["ドローン"], size: "s80", label: "ドローン" },
+
+  // ---- s100: 3辺合計100cm以内(小型生活家電・アウター) ----
+  { k: ["炊飯器"], size: "s100", label: "炊飯器" },
+  { k: ["小型電子レンジ"], size: "s100", label: "小型電子レンジ" },
+  { k: ["小型空気清浄機"], size: "s100", label: "小型空気清浄機" },
+  { k: ["加湿器"], size: "s100", label: "加湿器" },
+  { k: ["扇風機"], size: "s100", label: "扇風機" },
+  { k: ["ホットプレート"], size: "s100", label: "ホットプレート" },
+  { k: ["ノートpc", "ノートパソコン"], size: "s100", label: "ノートPC" },
+  { k: ["モニター"], size: "s100", label: "モニター" },
+  { k: ["プロジェクター"], size: "s100", label: "プロジェクター" },
+  { k: ["コート"], size: "s100", label: "コート" },
+  { k: ["ダウンジャケット"], size: "s100", label: "ダウンジャケット" },
+  { k: ["ヘルメット"], size: "s100", label: "ヘルメット" },
+  { k: ["スケートボード", "スケボー"], size: "s100", label: "スケートボード" },
+
+  // ---- s120: 3辺合計120cm以内(大型家電・PC・旅行用品) ----
+  { k: ["掃除機"], size: "s120", label: "掃除機" },
+  { k: ["プリンター", "プリンタ"], size: "s120", label: "プリンター" },
+  { k: ["電子レンジ"], size: "s120", label: "電子レンジ" },
+  { k: ["オーブンレンジ"], size: "s120", label: "オーブンレンジ" },
+  { k: ["空気清浄機"], size: "s120", label: "空気清浄機" },
+  { k: ["サーキュレーター"], size: "s120", label: "サーキュレーター" },
+  { k: ["デスクトップpc", "デスクトップパソコン"], size: "s120", label: "デスクトップPC" },
+  { k: ["キャリーケース", "スーツケース"], size: "s120", label: "キャリーケース" },
+  { k: ["チャイルドシート"], size: "s120", label: "チャイルドシート" },
+  { k: ["27インチモニター", "32インチモニター", "大型モニター"], size: "s120", label: "大型モニター" },
+
+  // ---- s160: 3辺合計160cm以内(大型家電・アウトドア・楽器) ----
+  { k: ["テレビ", "tv"], size: "s160", label: "テレビ" },
+  { k: ["衣装ケース"], size: "s160", label: "衣装ケース" },
+  { k: ["ベビーカー"], size: "s160", label: "ベビーカー" },
+  { k: ["自転車"], size: "s160", label: "自転車" },
+  { k: ["ゴルフバッグ", "ゴルフクラブ"], size: "s160", label: "ゴルフバッグ" },
+  { k: ["スノーボード"], size: "s160", label: "スノーボード" },
+  { k: ["サーフボード"], size: "s160", label: "サーフボード" },
+  { k: ["電子キーボード"], size: "s160", label: "電子キーボード(楽器)" },
+  { k: ["ギター"], size: "s160", label: "ギター" },
+  { k: ["ベース", "エレキベース"], size: "s160", label: "ベース" },
+  { k: ["こたつ"], size: "s160", label: "こたつ" },
+];
+
+const productNameEl = document.getElementById("productName");
+const sizeJudgeBtn = document.getElementById("sizeJudgeBtn");
+const sizeResultEl = document.getElementById("sizeResult");
+const priceLinksEl = document.getElementById("priceLinks");
+const priceLinksNoteEl = document.getElementById("priceLinksNote");
+
+// 全角英数字→半角、小文字化(カタカナ/ひらがなはそのまま)
+function normalizeText(s) {
+  return String(s || "")
+    .replace(/[Ａ-Ｚａ-ｚ０-９]/g, (c) => String.fromCharCode(c.charCodeAt(0) - 0xfee0))
+    .toLowerCase()
+    .trim();
 }
 
-function buildResearchPrompt(query) {
-  return [
-    "あなたは日本のせどり(物販)リサーチアシスタントです。次の商品の直近の中古販売相場をWeb検索で調べてください。",
-    "メルカリの売り切れ(SOLD)価格、ヤフオクの落札相場、リコレ・じゃんぱら等の買取/販売価格サイトを優先的に参考にし、日本円で見積もってください。",
-    "",
-    `商品: ${query}`,
-    "",
-    "調査が終わったら、回答の最後に必ず次の形式のJSONオブジェクトを1つだけ出力してください(コードブロック記号は不要):",
-    '{"price_median": 中央値の円整数, "price_low": 相場下限の円整数, "price_high": 相場上限の円整数, "size_category": "small|compact|s60|s80|s100|s120|s160", "size_reason": "サイズ推定の根拠を短く", "summary": "相場の要約を2文以内で", "confidence": "high|medium|low"}',
-    "",
-    "size_category は商品の一般的な梱包サイズから推定してください: small=厚さ3cm以内・A4まで(本・小物), compact=厚さ7cm程度の小箱, s60/s80/s100/s120/s160=梱包時の3辺合計cm。",
-    "相場が特定できない場合は price_median を null にし、summary に理由を書いてください。",
-  ].join("\n");
-}
-
-async function callClaude(apiKey, messages) {
-  const res = await fetch("https://api.anthropic.com/v1/messages", {
-    method: "POST",
-    headers: {
-      "Content-Type": "application/json",
-      "x-api-key": apiKey,
-      "anthropic-version": "2023-06-01",
-      "anthropic-dangerous-direct-browser-access": "true",
-    },
-    body: JSON.stringify({
-      model: "claude-opus-4-8",
-      max_tokens: 8000,
-      thinking: { type: "adaptive" },
-      tools: [{
-        type: "web_search_20260209",
-        name: "web_search",
-        max_uses: 6,
-        user_location: { type: "approximate", country: "JP", timezone: "Asia/Tokyo" },
-      }],
-      messages,
-    }),
-  });
-  if (!res.ok) {
-    let detail = "";
-    try { detail = (await res.json()).error?.message || ""; } catch {}
-    if (res.status === 401) throw new Error("APIキーが無効です。設定を確認してください。");
-    if (res.status === 429) throw new Error("レート制限に達しました。少し待ってから再試行してください。");
-    throw new Error(`APIエラー (${res.status}) ${detail}`);
-  }
-  return res.json();
-}
-
-function extractResultJson(text) {
-  // フラットなJSONを想定し、price_median を含む最後の {...} を拾う
-  const matches = text.match(/\{[^{}]*\}/g) || [];
-  for (let i = matches.length - 1; i >= 0; i--) {
-    if (matches[i].includes("price_median")) {
-      try { return JSON.parse(matches[i]); } catch {}
+// 商品名からサイズ辞書を検索し、最長一致したキーワードのエントリを返す
+function judgeSize(input) {
+  const norm = normalizeText(input);
+  if (!norm) return null;
+  let best = null;
+  for (const entry of SIZE_DICT) {
+    for (const kw of entry.k) {
+      const kwNorm = normalizeText(kw);
+      if (kwNorm && norm.includes(kwNorm)) {
+        if (!best || kwNorm.length > best.kwNorm.length) {
+          best = { entry, kw, kwNorm };
+        }
+      }
     }
   }
-  return null;
+  return best;
 }
 
-function renderAiResult(data, query) {
-  const summaryEl = document.getElementById("aiSummary");
-  const chipsEl = document.getElementById("aiChips");
-  const sizeNoteEl = document.getElementById("aiSizeNote");
-  aiResultEl.style.display = "block";
-  chipsEl.innerHTML = "";
+function updatePriceLinks(name) {
+  priceLinksEl.innerHTML = "";
+  if (!name) {
+    priceLinksNoteEl.style.display = "none";
+    return;
+  }
+  const kw = encodeURIComponent(name);
+  const links = [
+    { label: "メルカリ(売り切れ)", url: `https://jp.mercari.com/search?keyword=${kw}&status=sold_out` },
+    { label: "ヤフオク落札相場", url: `https://auctions.yahoo.co.jp/closedsearch/closedsearch?p=${kw}` },
+    { label: "Yahoo!フリマ", url: `https://paypayfleamarket.yahoo.co.jp/search/${kw}` },
+    { label: "Amazon", url: `https://www.amazon.co.jp/s?k=${kw}` },
+  ];
+  links.forEach((l) => {
+    const a = document.createElement("a");
+    a.className = "price-chip";
+    a.href = l.url;
+    a.target = "_blank";
+    a.rel = "noopener";
+    a.textContent = l.label;
+    priceLinksEl.appendChild(a);
+  });
+  priceLinksNoteEl.style.display = "block";
+}
 
-  const confLabel = { high: "信頼度: 高", medium: "信頼度: 中", low: "信頼度: 低" }[data.confidence] || "";
-  summaryEl.textContent = `「${query}」 ${data.summary || ""} ${confLabel ? "(" + confLabel + ")" : ""}`;
+function judgeAndRender() {
+  const name = productNameEl.value.trim();
 
-  if (data.price_median == null) {
-    sizeNoteEl.textContent = "";
+  if (!name) {
+    sizeResultEl.textContent = "";
+    updatePriceLinks(name);
     return;
   }
 
-  const chips = [
-    { label: "相場下限", value: data.price_low },
-    { label: "中央値(推奨)", value: data.price_median },
-    { label: "相場上限", value: data.price_high },
-  ].filter((c) => Number.isFinite(c.value));
-
-  chips.forEach((c) => {
-    const btn = document.createElement("button");
-    btn.type = "button";
-    btn.className = "price-chip" + (c.value === data.price_median ? " selected" : "");
-    btn.innerHTML = `<span class="chip-label">${c.label}</span><span class="chip-value">${yen(c.value)}</span>`;
-    btn.addEventListener("click", () => {
-      priceEl.value = c.value;
-      chipsEl.querySelectorAll(".price-chip").forEach((el) => el.classList.remove("selected"));
-      btn.classList.add("selected");
-      calc();
-    });
-    chipsEl.appendChild(btn);
-  });
-
-  // 中央値とサイズを自動反映
-  priceEl.value = data.price_median;
-  const validSize = SIZES.some((s) => s.key === data.size_category);
-  if (validSize) {
-    sizeEl.value = data.size_category;
-    const sizeLabel = SIZES.find((s) => s.key === data.size_category).label.split("(")[0];
-    sizeNoteEl.textContent = `販売予定価格に中央値、サイズに「${sizeLabel}」を反映しました。${data.size_reason ? "(" + data.size_reason + ")" : ""}`;
+  const match = judgeSize(name);
+  if (match) {
+    sizeEl.value = match.entry.size;
+    const sizeLabel = (SIZES.find((s) => s.key === match.entry.size) || {}).label || match.entry.size;
+    sizeResultEl.textContent = `『${match.kw}』に一致 → ${sizeLabel.split("(")[0]} を選択しました`;
+    calc();
   } else {
-    sizeNoteEl.textContent = "販売予定価格に中央値を反映しました。サイズは手動で選択してください。";
+    sizeResultEl.textContent = "辞書に一致なし。サイズは手動で選択してください";
   }
-  calc();
+
+  updatePriceLinks(name);
 }
 
-async function runAiSearch() {
-  const query = aiQueryEl.value.trim();
-  const apiKey = (localStorage.getItem(API_KEY_STORAGE) || "").trim();
-  if (!query) { setAiStatus("商品名を入力してください。", { error: true }); return; }
-  if (!apiKey) {
-    setAiStatus("先に下の「APIキーの設定」からClaude APIキーを入力してください。", { error: true });
-    return;
-  }
-
-  aiSearchBtn.disabled = true;
-  aiResultEl.style.display = "none";
-  setAiStatus("Claudeが相場を検索中です…(30秒〜1分ほどかかることがあります)", { loading: true });
-
-  try {
-    const messages = [{ role: "user", content: buildResearchPrompt(query) }];
-    let response = await callClaude(apiKey, messages);
-
-    // サーバーツールの反復上限で一時停止した場合は続きを要求(最大3回)
-    for (let i = 0; i < 3 && response.stop_reason === "pause_turn"; i++) {
-      messages.push({ role: "assistant", content: response.content });
-      setAiStatus("検索を継続中です…", { loading: true });
-      response = await callClaude(apiKey, messages);
-    }
-
-    if (response.stop_reason === "refusal") {
-      throw new Error("この商品の調査リクエストは処理できませんでした。商品名を変えてお試しください。");
-    }
-
-    const text = (response.content || [])
-      .filter((b) => b.type === "text")
-      .map((b) => b.text)
-      .join("\n");
-    const data = extractResultJson(text);
-    if (!data) throw new Error("相場データを解析できませんでした。もう一度お試しください。");
-
-    setAiStatus("");
-    renderAiResult(data, query);
-  } catch (e) {
-    setAiStatus(e.message || "検索に失敗しました。", { error: true });
-  } finally {
-    aiSearchBtn.disabled = false;
-  }
-}
-
-aiSearchBtn.addEventListener("click", runAiSearch);
-aiQueryEl.addEventListener("keydown", (e) => { if (e.key === "Enter") runAiSearch(); });
+sizeJudgeBtn.addEventListener("click", judgeAndRender);
+productNameEl.addEventListener("input", judgeAndRender);
+productNameEl.addEventListener("keydown", (e) => { if (e.key === "Enter") judgeAndRender(); });
 
 renderSettings();
 calc();
