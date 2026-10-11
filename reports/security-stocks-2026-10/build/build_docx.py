@@ -329,7 +329,7 @@ def lname(e) -> str:
 
 
 def el(tag: str, **attrs) -> etree._Element:
-    e = OxmlElement(tag)
+    e = OxmlElement(tag if ":" in tag else "w:" + tag)
     for k, v in attrs.items():
         e.set(qn("w:" + k), str(v))
     return e

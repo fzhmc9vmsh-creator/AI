@@ -69,14 +69,14 @@ Thomas Seifert(CFO)。出典: Yahoo Finance 要約 https://finance.yahoo.com/mar
 | 年換算売上 50億ドル | 長期目標 | 2028年末まで(「2028年末より前に5Bのランレートに到達」) | Morgan Stanley のメモは「ランレート(run-rate、直近の売上を年に引き直した値)」、別の要約は「ARR(年間経常収益)」と呼ぶ。**用語が割れており未確定** | TheStreet https://www.thestreet.com/investing/stocks/morgan-stanley-raises-cloudflare-stock-price-target-after-investors-day (Tier 3)、Quartr 要約 https://quartr.com/events/cloudflare-inc-net-investor-day-2026_3s9oMBao (Tier 3) |
 | 長期の営業利益率 | 30%超(従来は20%超から引き上げ) | 長期(期限の記載なし) | 調整後(non-GAAP)営業利益率と読めるが**未確認** | Morgan Stanley メモの要約(TheStreet)(Tier 3) |
 | フリーキャッシュフロー率 | 30〜35%超(従来は約25%) | 長期 | 同上 | 同上 |
-| 粗利率 | 70〜77% | 長期 | 従来の「75〜77%」から下限を引き下げた形(Q4 2025 の説明会で 75〜77% と報じられている)。粗利率の下限の引き下げが意味するものは §E | Quartr 要約、Yahoo Q4 要約(Tier 3) |
+| 粗利率 | 70〜77% | 長期 | 従来の「75〜77%」から下限を引き下げた形(Q4 2025 の説明会で 75〜77% と報じられている)。下限の引き下げが意味するものは §D | Quartr 要約、Yahoo Q4 要約(Tier 3) |
 | 2027年の枠組み | 「Rule of 50+」: 売上成長率30%超と営業利益率約20%を同時に達成 | 2027年 | Morgan Stanley メモのみ。**単独出典** | TheStreet(Tier 3) |
 | 2028年の損益 | GAAP黒字化を見込む | 2028年 | 1件の要約のみ。**単独出典、未確認** | Quartr 要約(Tier 3) |
 | 設備投資(ネットワークcapex) | 2026年は売上の14〜15%(2026年2月の期初見通しは12〜15%、2025年第4四半期の実績は13%、2026年第2四半期の実績は7%) | 2026年通期 | 長期の売上比目標は**見つからず**。範囲の下限が12%から14%に上がった点に注意【要照合】 | 検索要約(Investor Day・Q2 の要約、Q4 2025 要約)(Tier 3) |
 
 - 「年換算30億ドル」は、2026年のガイダンス中央値(第3四半期 736.5百万ドル、通期 2,867百万ドル)から見て2026年内に超える水準である
   (独自計算)。「50億ドル」までに必要な伸びは、仮に第4四半期の暗黙値 約795百万ドルを起点にすると、2028年第4四半期に四半期売上が約12.5億ドルとなる必要があり、
-  8四半期で約1.57倍(年率約25%の四半期売上成長)に相当する(独自計算、起点がガイダンス由来のため暫定)。
+  8四半期で約1.57倍(四半期売上の年率換算で約26%の成長)に相当する(独自計算、起点がガイダンス由来のため暫定)。
   会社の「先行している」発言(Simply Wall St、Tier 3 単独)と整合するかは、実績で確認する必要がある。
 - 2022〜2025年の過去の長期目標(例: 過去に掲げた年間売上目標)と達成状況は**欠損**。
 
@@ -149,7 +149,7 @@ Thomas Seifert(CFO)。出典: Yahoo Finance 要約 https://finance.yahoo.com/mar
 | Morgan Stanley | オーバーウェイト。Investor Day 後に目標を大幅に変更(額は未取得)。別の掲載では 322→370ドル(日付は「Aug. 07」、年は不明【要照合】) | 2028年までに50億ドルのランレート、営業利益率30%超、2027年のRule of 50+、エージェント関連のトラフィックが11か月で1,700%増 | TheStreet(上記)(Tier 3)、MarketScreener https://www.marketscreener.com/quote/stock/CLOUDFLARE-INC-65956823/consensus/ (Tier 3) |
 | BTIG | 決算前に 269→314ドル。後日(日付不明)382→413ドル | 論拠は未取得 | Stocktwits / Blockonomi の要約(Tier 3〜4) |
 | TD Cowen | 買い、決算前に 250→300ドル | 論拠は未取得 | 同上 |
-| Stifel | Investor Day で買いを維持・確認(見出しのみ) | 本文は未取得 | Yahoo Finance 見出し https://finance.yahoo.com/markets/stocks/articles/cloudflares-investor-day-wins-stifel-194229964.html |
+| Stifel | Investor Day で買い格付け(見出しのみ。新規か維持かは未確認) | 本文は未取得 | Yahoo Finance 見出し https://finance.yahoo.com/markets/stocks/articles/cloudflares-investor-day-wins-stifel-194229964.html |
 
 - 強気派の共通の論拠(間接的に確認): Simply Wall St によれば、多くのアナリストが**長期の財務目標が明確になったこと**を理由に目標株価を上げた。
   見出しに現れる語は「エージェント型インターネットが売上成長36%を牽引」「大企業向けの勢い」。
@@ -170,7 +170,7 @@ Thomas Seifert(CFO)。出典: Yahoo Finance 要約 https://finance.yahoo.com/mar
   また「顧客もAIで再編され、エンジニアが減ると、座席/トラフィックに基づく課金が縮む」という指摘(2026-05 の報道コメント)。
   Prince は「AIの仕事量はインフラ市場を広げる」と反論した。
 - インサイダーの売り(集計サイト): 12か月で6.85億ドル、買いなし(Tier 4、単独。§G)。
-- 3件以上の弱気論点は揃ったが、**証券会社の弱気論拠の文面(Guggenheim・Bernstein)は欠損**。
+- 論拠の文面が取れた弱気論点は、Tier 4 の3件(Seeking Alpha 投稿者の売上倍率論、GuruFocus の割高判定、二次ブログの構造論)にとどまる。**証券会社(Guggenheim・Bernstein)の弱気の論拠は欠損**。
 
 ### B-3. 空売りレポート・著名な弱気論者
 
@@ -335,7 +335,7 @@ Thomas Seifert(CFO)。出典: Yahoo Finance 要約 https://finance.yahoo.com/mar
 ## 8. 既知の制約
 
 1. WebSearch は再開分18回で終了。検索結果は要約文であり、決算説明会の録・DEF 14A・10-Q の本文は直接読めていない。引用は要約が引いた原文の転記。
-2. 単独出典の事項には「単独」と印を付けた(Rule of 50+、GAAP黒字化 2028年、Pace ahead、Guggenheim の売り、Bernstein の目標、インサイダー売却額の集計、etc.)。
+2. 単独出典の事項には「単独」と印を付けた(Rule of 50+、2028年のGAAP黒字化、「先行している」発言、Guggenheim の売り、Bernstein の目標、インサイダー売却額の集計など)。
 3. 2026-10-09 終値は欠損。TradingView の直接取得はできない(この環境の制約)。
 4. 証券会社の論拠の文面は Goldman・Oppenheimer・BTIG・TD Cowen・Guggenheim・Bernstein で欠損。表の「論拠は未取得」は、論拠が存在しないという意味ではない。
 
@@ -348,6 +348,6 @@ Thomas Seifert(CFO)。出典: Yahoo Finance 要約 https://finance.yahoo.com/mar
 5. 買収の一覧(2024〜2026)、転換社債の発行・償還(10-Q の債務の注記)。
 6. Guggenheim・Bernstein の弱気論拠、空売りレポート、Q2 説明会の質問者名。
 7. Workers / R2 / Email Security の価格表、Free/Pro/Business/Enterprise の現行価格、改定履歴。求人動向(営業・導入支援)。
-8. 2026-12-05 障害・2026-02-20 障害の会社の事後報告原文。
+8. 2025-12-05 障害・2026-02-20 障害の会社の事後報告原文。
 9. 10-Q の法的手続きの注記、定款変更(クラスC新設)の可否、役員の異動、フォーム4の売り手別集計。
 10. 競合の開示: Akamai・Fastly・Zscaler の決算で Cloudflare に言及した箇所。CDN・WAF・AI推論の市場規模と価格の決まり方。
