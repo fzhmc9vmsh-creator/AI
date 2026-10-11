@@ -14,6 +14,10 @@
 """
 from __future__ import annotations
 
+import sys
+
+sys.dont_write_bytecode = True          # __pycache__ を作らない
+
 import argparse
 import copy
 import datetime as dt
@@ -1235,6 +1239,8 @@ def render_png(pdf: Path, outdir: Path, dpi: int = 60, first: int = 1, last: int
 # --------------------------------------------------------------------------- main
 def build(manifest_path: Path, out_path: Path | None, preview: bool, prefill: bool, keep: bool,
           preview_dir: Path | None, dpi: int, strict: bool = False) -> Path:
+    if not manifest_path.exists():
+        raise BuildError(f"manifest が見つかりません: {manifest_path}")
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if "title" not in manifest:
         raise BuildError("manifest.json に title がありません")
@@ -1245,9 +1251,10 @@ def build(manifest_path: Path, out_path: Path | None, preview: bool, prefill: bo
     out_path.parent.mkdir(parents=True, exist_ok=True)
 
     ref = HERE / "reference.docx"
-    if not ref.exists():
+    maker = HERE / "make_reference.py"
+    if not ref.exists() or (maker.exists() and maker.stat().st_mtime > ref.stat().st_mtime):
         sys.path.insert(0, str(HERE))
-        from make_reference import make_reference
+        from make_reference import make_reference      # スタイル定義が更新されていれば作り直す
         make_reference(ref)
 
     warnings: list[str] = []

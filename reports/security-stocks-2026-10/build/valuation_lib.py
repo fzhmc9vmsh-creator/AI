@@ -141,6 +141,30 @@ def business_eps(adj_eps: float, sbc: float, diluted_shares: float, tax: float =
     return adj_eps - sbc * (1 - tax) / diluted_shares
 
 
+def business_eps_fixed_shares(adj_eps_t: float, shares_t: float, sbc_t: float, shares_now: float,
+                              tax: float = 0.22) -> float:
+    """SBC の二重計上を避けた事業実態EPS(00_standard.md §3-1)。
+
+    (調整後EPS_t × コンセンサス前提の株数_t − SBC_t×(1−t)) ÷ 現在の希薄化後株数。
+    """
+    return (adj_eps_t * shares_t - sbc_t * (1 - tax)) / shares_now
+
+
+def steady_state_target(eps_exit: float, exit_fy_end: dt.date, peg_exit: float, g_exit: float,
+                        r: float = COST_OF_CAPITAL, at: dt.date = TARGET_DATE) -> dict:
+    """定常状態経由の目標株価(00_standard.md §3-2)。
+
+    出口PER = max(1/r, 出口PEG × min(g_exit, 50%)×100)。FY+5 期末の価値を at まで資本コストで割り引く。
+    """
+    if not (1.0 <= peg_exit <= 2.0):
+        raise ValueError("出口PEG は 1.0〜2.0 の範囲で置く")
+    per_exit = max(1.0 / r, peg_exit * min(g_exit, G_CAP) * 100.0)
+    years = (exit_fy_end - at).days / 365.25
+    value_exit = eps_exit * per_exit
+    return {"per_exit": per_exit, "value_at_exit": value_exit, "years_discounted": years,
+            "target": value_exit / (1 + r) ** years}
+
+
 if __name__ == "__main__":
     # 自己テスト
     eps = {dt.date(2027, 7, 31): 3.0, dt.date(2028, 7, 31): 3.6, dt.date(2029, 7, 31): 4.3}
