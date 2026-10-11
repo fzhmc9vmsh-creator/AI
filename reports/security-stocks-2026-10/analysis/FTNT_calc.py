@@ -265,8 +265,8 @@ def engine_model(prod_g, k1m=1.0, opex_g=None, gm_p=None, gm_s=0.875, other=150.
 
 # 製品成長率のパス(価格・構成・台数の分解は報告書 3章・10章)
 PG = {
-    'engine':  {2027: -0.06, 2028: 0.05, 2029: 0.08, 2030: 0.08, 2031: 0.07, 2032: 0.06, 2033: 0.05, 2034: 0.05},
-    'company': {2027: 0.06, 2028: 0.09, 2029: 0.10, 2030: 0.10, 2031: 0.09, 2032: 0.08, 2033: 0.07, 2034: 0.06},
+    'engine':  {2027: -0.06, 2028: 0.06, 2029: 0.09, 2030: 0.09, 2031: 0.08, 2032: 0.07, 2033: 0.06, 2034: 0.06},
+    'company': {2027: 0.06, 2028: 0.10, 2029: 0.11, 2030: 0.11, 2031: 0.10, 2032: 0.09, 2033: 0.08, 2034: 0.07},
     'bear':    {2027: -0.18, 2028: -0.03, 2029: 0.05, 2030: 0.06, 2031: 0.06, 2032: 0.05, 2033: 0.04, 2034: 0.04},
 }
 OPEX_G = {
@@ -458,7 +458,7 @@ imp_k1 = solve_param(v_k1, 0.9, 2.5)
 imp_opex = solve_param(v_opex, -0.20, 0.12, increasing=False)
 m_imp = engine_model(PG['engine'], k1m=imp_k1, opex_g=OPEX_G['engine'], gm_p=GMP['engine'], p26=PROD26['engine'])
 m_opx = engine_model(PG['engine'], opex_g={y: imp_opex for y in YEARS[1:]}, gm_p=GMP['engine'], p26=PROD26['engine'])
-p(f'市場が暗に置く値: 製品の長期成長率(2028〜34) {imp_prod:.1%}(エンジン 5〜8%)')
+p(f'市場が暗に置く値: 製品の長期成長率(2028〜34) {imp_prod:.1%}(エンジン 6〜9%)')
 p(f'  サービス請求係数の倍率 {imp_k1:.3f} → サービス売上 CAGR 2026→31 {vl.cagr(m_imp["Sr"][2026], m_imp["Sr"][2031], 5):.1%}'
   f'(エンジン {vl.cagr(M["engine"]["Sr"][2026], M["engine"]["Sr"][2031], 5):.1%})')
 p(f'  費用の伸び {imp_opex:.1%}/年 → 2031年の営業利益率 {m_opx["om"][2031]:.1%}(エンジン {M["engine"]["om"][2031]:.1%})')
@@ -487,7 +487,7 @@ add('2027年の製品売上(−18%〜+6%、基準−6%)', run(pg=pg_lo), run(pg=
 pg_l2 = dict(PG['engine']); pg_h2 = dict(PG['engine'])
 for y in range(2029, 2035):
     pg_l2[y] = 0.03; pg_h2[y] = 0.12
-add('製品の長期成長率 2029〜34(3%〜12%、基準5〜8%)', run(pg=pg_l2), run(pg=pg_h2), '3%/12%')
+add('製品の長期成長率 2029〜34(3%〜12%、基準6〜9%)', run(pg=pg_l2), run(pg=pg_h2), '3%/12%')
 add('サービス請求係数 k1(±5%: サービス成長 ±約2pt/年)', run(k1m=0.95), run(k1m=1.05), '0.95/1.05')
 add('費用の伸び(年+11%〜+7%: 営業利益率 ±約4pt)', run(og={y: 0.11 for y in YEARS[1:]}), run(og={y: 0.07 for y in YEARS[1:]}), '11%/7%')
 add('競争優位期間(成長が3%に収束する年 2036〜2046)', run(fade_end=2036), run(fade_end=2046), '2036/2046')
@@ -640,3 +640,101 @@ out = dict(price=PRICE, mcap=MCAP, ev_total=EV, net_cash=NET_CASH, k1=k1, k2=k2,
 with open(OUT + 'FTNT_calc_out.json', 'w') as f:
     json.dump(out, f, ensure_ascii=False, indent=1, default=lambda o: str(o))
 p('\n書き出し: FTNT_F13.csv, FTNT_F18.csv, FTNT_F10.csv, FTNT_calc_out.json')
+
+# ---------------------------------------------------------------------------
+# O. 製品1ドルが生むサービス売上(エンジン式のインパルス応答)と、ストック粗利の固定費カバー率
+# ---------------------------------------------------------------------------
+hdr('O. フロー→ストック転換')
+sr_prev, dr_prev, tot_sr, path_sr = 0.0, 0.0, 0.0, []
+for t in range(40):
+    sb = k1 * sr_prev + (k2 if t == 0 else 0.0)
+    srv = C_FWD * (dr_prev + sb)
+    dr_prev = dr_prev + sb - srv
+    sr_prev = srv
+    tot_sr += srv
+    path_sr.append(srv)
+p(f'製品1ドル → サービス売上: 1年目 {path_sr[0]:.3f}、2年目 {path_sr[1]:.3f}、5年目 {path_sr[4]:.3f}、10年目 {path_sr[9]:.3f}、40年累計 {tot_sr:.2f}'
+  f'(年あたりの減衰 {1-path_sr[5]/path_sr[4]:.1%})')
+pv_sr = sum(v / (1 + R) ** (i + 0.5) for i, v in enumerate(path_sr))
+p(f'  サービス粗利(87.5%)の現在価値 {pv_sr*0.875:.2f} + 製品粗利 0.695 = 製品1ドル当たりの粗利の現在価値 {pv_sr*0.875+0.695:.2f}')
+sgp26 = M['engine']['Sr'][2026] * 0.875
+p(f'2026E ストック(サービス)粗利 {sgp26:.0f} ÷ non-GAAP 費用 {M["engine"]["opex"][2026]:.0f} = 固定費カバー率 {sgp26/M["engine"]["opex"][2026]:.0%}'
+  f'(製品粗利 {M["engine"]["P"][2026]*0.695:.0f} はほぼ全額が上乗せ)')
+d_oi_bear = (M['engine']['P'][2027] - M['bear']['P'][2027]) * 0.685
+p(f'2027年 製品−18%(弱気)と−6%(エンジン)の差による営業利益の差 約 {d_oi_bear:.0f}(エンジン営業利益 {M["engine"]["oi"][2027]:.0f} の {d_oi_bear/M["engine"]["oi"][2027]:.0%})')
+# 2026年の製品増分の分解(推計): 価格 +8%、構成(ASP) +7%、台数 +15.5%
+pr, mx, un = math.log(1.08), math.log(1.07), math.log(PROD26['engine'] / 2218.2) - math.log(1.08) - math.log(1.07)
+inc = PROD26['engine'] - 2218.2
+tot_l = pr + mx + un
+p(f'2026年の製品増分 {inc:.0f} の分解(推計): 価格 {inc*pr/tot_l:.0f}、構成・ASP {inc*mx/tot_l:.0f}、台数 {inc*un/tot_l:.0f}(台数の伸び {math.exp(un)-1:.1%})')
+# 前回の谷(2023→2024): 製品 −0.9% の年に non-GAAP EPS は +45%
+p(f'前回の谷 2023→2024: 製品 {1909/1927-1:+.1%}、サービス {4047/3378-1:+.1%}、non-GAAP EPS {2.37/1.63-1:+.1%}、営業利益率 28.4%→34.1%')
+
+# ---------------------------------------------------------------------------
+# N. 横比較用の要約 FTNT_summary.json(報告書の判断と一致させる定性項目は定数で持つ)
+# ---------------------------------------------------------------------------
+def r2(x, n=3):
+    return round(float(x), n)
+
+CR = {'1': 'A', '2': 'S', '3': 'B', '4': 'S', '5': 'A', '6': 'D', '7': 'D', '8': 'A', '9': 'B', '10': 'B', '11': 'A', '12': 'B', '13': 'B'}
+summary = {
+    'ticker': 'FTNT', 'company': 'Fortinet', 'price': PRICE, 'price_date': '2026-10-09', 'market_cap_usd_bn': r2(MCAP / 1000, 1),
+    'diluted_shares_mn': DIL_NOW, 'fy_end_month': 12, 'net_cash_usd_bn': r2(NET_CASH / 1000, 2),
+    'structure_rating': RATING, 'condition_ratings': CR, 'condition9_applicable': True,
+    'rules_fired': ['致命条件の拒否権: 非発動(E以下なし)', '条件6-7の対評価: 発動(PEGが4〜5と高く「安い理由」の前提が成立しないため両条件ともD。構造の弱さではなく価格の問題)',
+                    'C×4上限: 非発動(C評価0件)', 'N/A除外: 非発動(条件9を適用)'],
+    'archetype': 'ORCL型とVRT型の中間(サービスはORCL型の継続課金・前受金、製品はVRT型の売り切りと更新サイクル。ただし自社ASICで陳腐化リスクを顧客の更新需要に変える)',
+    'business_model_types': ['G: FortiGate 機器・ソフトライセンス(製品、売上の約36%)', 'A: FortiGuard・FortiCare・SASE・SecOps のサブスクリプション(サービス、約64%)'],
+    'core_variables': [
+        {'name': '2027年の製品売上(更新・価格転嫁・AI容量増の反動の深さ)', 'market_implied': '反動なし(コンセンサス2027年売上90億ドル=製品+3%前後、調整後EPS+10%)',
+         'our_estimate': '−6%(弱気−18%、強気+6%)。2026年の製品増分7.4億ドルのうち価格転嫁と2026年EoS群が約半分', 'advantage_type': '分析'},
+        {'name': '製品の長期成長率(2029〜34年)', 'market_implied': f'年{imp_prod:.0%}(株価194.75ドルを正当化する値。2019〜25年のトレンド18%の延長)',
+         'our_estimate': '年6〜9%(市場成長7%前後+シェア獲得。トレンドのうちシェア獲得部分は先細る)', 'advantage_type': '分析(予測可能性は低く、シナリオと確率で扱う)'},
+        {'name': '営業利益率の定常状態(費用の伸び)', 'market_implied': f'他の前提を据え置くと2031年に営業利益率{m_opx["om"][2031]:.0%}が必要',
+         'our_estimate': '36〜37%(2026年ガイダンス35〜37%。2024年の費用抑制後の水準)', 'advantage_type': '分析'}],
+    'edge': {'exists': True,
+             'statement': ('市場(株価)は2026年の製品売上+33%を構造的な段差とみて、製品が過去6年のトレンド(年18%)で伸び続けることを織り込む'
+                           f'(株価の含意: 製品年{imp_prod:.0%}、事業実態EPS10年年率{RDCF[10]:.0%})。構造上、2026年の製品は2024〜25年の消化期(トレンド比−8〜−9%)から'
+                           'トレンド線への回復で、山ではない。ただし価格転嫁(製品の約8%)と2026年EoS群(増分の約3割)は2027年に剥落して製品は−6%前後、'
+                           '2028年以降は年6〜9%。2027年2月の通期見通しで製品の減速が確認されれば、市場倍率(調整後PER42倍)でも約166ドル(−15%)。'
+                           '方向は株価に対して弱気側(買いのエッジではない)'),
+             'advantage_type': '分析', 'kpi': '2027年の製品売上ガイダンスと2027年上期の製品売上の前年比',
+             'threshold': '2027年上期の製品売上の前年比が−5%以下なら差分を確認、+5%以上なら差分を否定',
+             'timing': '2027年2月(Q4 2026決算・2027年通期見通し)〜2027年8月(Q2 2027決算)', 'value_per_share_if_resolved': r2(mk['engine'], 0)},
+    'eps_definition': '事業実態EPS = non-GAAP希薄化後EPS − SBC×(1−18%)÷株数。株数は過去2年の年率−1.38%で減る系列(自社株買いがSBC相殺分を超える分だけ減少、00_standard §3-1)',
+    'base_business_eps': {'fy': 'FY2026(12月期)', 'value': r2(CONS_BUS[2026])},
+    'eps_paths': {nm: {f'FY{y}': r2(PATHS[nm]['bus'][y]) for y in range(2026, 2032)} for nm in ('consensus', 'company', 'engine', 'bear')},
+    'adj_eps_consensus': {f'FY{y}': r2(CONS_ADJ[y]) for y in range(2026, 2032)},
+    'sbc_to_revenue_path': {f'FY{y}': SBC_RATIO[y] for y in range(2026, 2032)},
+    'allowed_peg': {'path_a': [4.2, 6.1], 'path_b': [1.0, 1.5], 'path_c': [1.45, 1.75], 'adopted': list(PEG_ADOPT),
+                    'note': ('経路aは FTNT 自身の調整後PEG 4.2〜4.6、6社中央値6.1(業界全体の期待の高さであり許容値には使わない)。経路bは慣行1.0〜1.5、'
+                             '経路cは構造A(1.3〜1.6)にCAP+0.2・資本不要の成長+0.1・ストック比率+0.05、製品サイクル−0.15・脆弱性と訴訟−0.05で1.45〜1.75。'
+                             f'採用1.4〜1.8(中央1.6)。目標株価は規約どおり(採用経路=事業エンジン{TGT["engine"]["price"]:.1f})。'
+                             f'定常状態経由(§3-2)はエンジン{SST["engine"]["peg1.6"]:.1f}・コンセンサス{SST["consensus"]["peg1.6"]:.1f}で、出口gが7%と低く11.1倍の下限に近いため規約どおりの値を採用。'
+                             f'交差確認のDCF(2027-10時点、3%へ2041年までに収束)はエンジン{DCF["engine"]:.0f}・コンセンサス{DCF["consensus"]:.0f}・会社{DCF["company"]:.0f}・弱気{DCF["bear"]:.0f}')},
+    'targets_12m': {k: r2(TGT[k]['price'], 1) for k in ('consensus', 'company', 'engine', 'bear')},
+    'adopted_path': ADOPT, 'gaps': {k: r2(TGT[k]['gap']) for k in ('consensus', 'company', 'engine')},
+    'probabilities': PROBS, 'expected_price': r2(ev_['expected_price'], 1), 'expected_return': r2(ev_['expected_return']),
+    'asymmetry': {'downside_pct': r2(down), 'upside_pct': r2(up), 'ratio': r2((TGT['company']['price'] - PRICE) / (PRICE - TGT['bear']['price']), 2), 'convex': False},
+    'decision': DEC,
+    'entry_zones': {'alpha': ALPHA, 'Z1': r2(Z['Z1'], 1), 'Z2': r2(Z['Z2'], 1), 'zone': Z['zone']},
+    'steady_state': {'steady_earnings_usd_mn': r2(ss_earn, 0), 'steady_state_value_usd_bn': r2(split['steady_state_value'] / 1000, 1),
+                     'growth_price_usd_bn': r2(split['growth_price'] / 1000, 1), 'growth_share': r2(split['growth_share_of_mcap'])},
+    'value_time_split': {'within_3y': r2(within3, 2), 'beyond_3y': r2(1 - within3, 2)},
+    'cap_years': 15, 'incremental_roic': '前受金の増加が設備・運転資本を上回り、2024→26年の増分投下資本はマイナス(算出不能)。R&D資本化・前受金の増加を年2.5億ドルに抑えた保守版で約85%',
+    'current_multiples': {k: r2(v) for k, v in mult.items()},
+    'growth': {'revenue_yoy_latest_q': 0.256, 'arr_or_proxy_yoy': 0.241, 'arr_proxy_name': 'billings(TTM、前年比)。ARR は2026年に開示が見当たらない',
+               'nnarr_or_proxy_yoy': 0.26, 'eps_cagr_3y_consensus': r2(vl.cagr(CONS_BUS[2026], CONS_BUS[2029], 3)), 'eps_cagr_5y_engine': r2(g5_eng)},
+    'rule_of_40': r2(rule40, 2),
+    'triggers': {'upgrade': ['株価が Z2(約64ドル)以下に下落', '2027年上期の製品売上が前年比+5%以上かつサービス売上+15%以上(会社シナリオ側へ確度更新)',
+                             '2027年通期の billings ガイダンスが+12%以上で、価格要因を除いても製品台数の伸びが続くと開示'],
+                 'downgrade': ['2027年上期の製品売上が前年比−15%以下(弱気パス)', 'サービス請求額の伸びが+10%を下回る', 'non-GAAP営業利益率が33%を下回る',
+                               '悪用される重大脆弱性が続き、更新率・付帯率の低下が開示される'],
+                 'exit': ['保有時: 2四半期連続で製品の前年比が−10%以下かつサービス請求額の伸びが10%未満(ループの弱いリンクの破綻)']},
+    'one_line': ('事業は構造A(ASICによる低コスト・前受金で資本不要の成長・SBC4%)だが、株価194.75ドルは製品が年17%で伸び続ける前提を織り込み、'
+                 '2027年の製品反動(−6%前後)を見ていない。規約の目標株価は71ドル(エンジン)〜113ドル(会社)で見送り圏。監視とし、64ドル以下か2027年の製品の伸びの確認で再評価'),
+    'data_corrections': 9, 'known_constraints': 14,
+}
+with open(OUT + 'FTNT_summary.json', 'w') as f:
+    json.dump(summary, f, ensure_ascii=False, indent=2)
+p('書き出し: FTNT_summary.json')

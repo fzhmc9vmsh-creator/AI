@@ -97,7 +97,9 @@ for q in Q:
     if i >= 7:
         ttm = sum(REV[x] for x in Q[i - 3:i + 1]) / sum(REV[x] for x in Q[i - 7:i - 3]) - 1
     sd = (y - prev_yoy) if (y is not None and prev_yoy is not None) else None
-    rows18.append(('売上(四半期, 百万ドル)', q, REV[q], qoq, ttm if ttm is not None else y, sd))
+    rows18.append(('売上(四半期, 百万ドル)', q, REV[q], qoq, ttm, sd))
+    if y is not None:
+        rows18.append(('売上前年比(四半期)', q, round(y, 4), None, None, sd))
     if y is not None:
         prev_yoy = y
     P(f'{q} 売上 {REV[q]:7.1f}  QoQ年率 {qoq if qoq is None else f"{qoq:6.1%}"}  YoY {y if y is None else f"{y:6.1%}"}  TTM YoY {ttm if ttm is None else f"{ttm:6.1%}"}  2階差分 {sd if sd is None else f"{sd*100:+.1f}pt"}')
@@ -394,7 +396,13 @@ for k, d in PATHS.items():
         evs = (t * SH_NOW - nc) / ntm_rev_t
         XCHK[(k, lab)] = evs
         P(f'{JP[k]:6s} {lab}: 目標 {t:6.1f} → EV/NTM売上 {evs:5.1f}倍(NTM売上 {ntm_rev_t:,.0f}、売上成長 {d[2028]["rev"]/d[2027]["rev"]-1:.0%})')
-P(f'参考: 現在の EV/NTM売上 {EV/(2867*3/12+3690*9/12):.1f}倍。成熟同業の目安(本文で出所付き): Akamai 約3〜4倍(成長5%)')
+P(f'参考: 現在の EV/NTM売上 {EV/(2867*3/12+3690*9/12):.1f}倍')
+# 弱気パスの交差確認: 調整後EPS(市場の慣行)に低成長ピアの倍率を当てる。AKAM 調整後PER 16.1倍(peer_peg_table.md)
+AKAM_PER = 16.1
+ntm_adj_bear = vl.ntm_eps({FYE[y]: BEAR[y]['adj_eps'] for y in YRS}, vl.TARGET_DATE)
+g_adj_bear = vl.cagr(BEAR[2027]['adj_eps'], BEAR[2030]['adj_eps'], 3)
+P(f'弱気の交差確認: NTM調整後EPS(2027-10〜) {ntm_adj_bear:.2f} × AKAM 調整後PER {AKAM_PER} = {ntm_adj_bear*AKAM_PER:.1f}; '
+  f'× 調整後PEG 1.0×g({g_adj_bear:.1%}) = {ntm_adj_bear*g_adj_bear*100:.1f}')
 
 ADOPT = 'ss'   # 採用: 定常状態経由(理由は報告書10章)
 T12 = {k: tgt[k][ADOPT] for k in PATHS}
@@ -531,6 +539,31 @@ for nm, kw in [('DNR ±3pt', dict(dnr_shift=0.03)), ('DNR −3pt', dict(dnr_shif
     sens1[nm] = engine_variant(**kw)[0]
 base_t = engine_variant()[0]
 P(f'基準 {base_t:.1f}; ' + ', '.join(f'{k}: {v:.1f}({v-base_t:+.1f})' for k, v in sens1.items()))
+# 新規コホート比率 s の水準差(2027〜2031年)の感応度
+def engine_s_variant(ds):
+    qr = {k: v for k, v in qrev.items() if k[0] in ('2025', '2026')}
+    for y in range(2027, 2032):
+        for i in range(4):
+            qr[(str(y), i + 1)] = qr[(str(y - 1), i + 1)] * dnr_path[y][i] / (1 - (s_path[y] + ds))
+    rv = {y: sum(qr[(str(y), i)] for i in range(1, 5)) for y in range(2026, 2032)}
+    for y, r in zip(range(2032, 2037), [0.21, 0.195, 0.175, 0.155, 0.135]):
+        rv[y] = rv[y - 1] * (1 + r)
+    d = run_path('v', rv, opm=opm_e, sbc={}, sbc_usd=sbc_usd_e, fcfm=fcf_e)
+    gx = vl.cagr(d[2030]['beps'], d[2033]['beps'], 3)
+    return vl.steady_state_target(d[2030]['beps'], FYE[2030], 1.6, gx)['target']
+
+
+P('新規コホート比率の水準差: ' + ', '.join(f'{ds*100:+.0f}pt: {engine_s_variant(ds):.1f}' for ds in (-0.02, -0.01, 0.01, 0.02)))
+# AIの収益化(Monetization Gateway・Pay per crawl・AI Gateway)のオプション: 2030年に売上 X、限界利益率60%
+for x in (150, 300, 600):
+    de = x * 0.60 * (1 - TAX) / SH_NOW
+    val = de * tgt['engine']['per_exit'] / (1 + R) ** tgt['engine']['yrs']
+    P(f'AI収益化オプション: 2030年売上 {x}百万ドル → 事業実態EPS +{de:.2f} → 12か月目標 +{val:.1f}ドル(出口PER {tgt["engine"]["per_exit"]:.1f}倍)')
+# 障害の反復: DNR −2pt(2027〜2031年)
+P(f'障害の反復でDNR −2pt: {engine_variant(-0.02)[0]:.1f}({engine_variant(-0.02)[0]-base_t:+.1f})')
+# 欧州の罰金(イタリア 1,420万ユーロ、1ユーロ=1.08ドルと仮定)の1株当たり
+P(f'イタリアの制裁金 1,420万ユーロ ≒ {14.2*1.08:.1f}百万ドル = 1株 {14.2*1.08/SH_NOW:.3f}ドル')
+
 with open(f'{OUT}/NET_F12.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(f12[0].keys()))
     w.writeheader()

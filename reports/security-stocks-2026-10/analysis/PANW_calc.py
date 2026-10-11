@@ -40,7 +40,7 @@ NG_OPM = {2025: 0.288, 2026: 0.292}   # non-GAAP 営業利益率(FY26 投資家�
 NG_GM = {2025: 0.764, 2026: 0.758}
 ADJ_EPS_Q = {'FY25': [0.78, 0.81, 0.80, 0.95], 'FY26': [0.93, 1.03, 0.85, 1.02]}  # 分割後(2024-12-12 効力の2:1分割)
 NG_NI_FY26 = 662 + 732 + 684 + 853      # 四半期の non-GAAP 純利益の和
-OCF_FY26, CAPEX_FY26, ADJ_FCF_FY26 = 4553, 440, 4408
+OCF_FY26, CAPEX_FY26, ADJ_FCF_FY26 = 4553, 440, 4414   # 調整後FCF 4,414(38.4%、会社定義。HQ capex 91 等を加算)
 FCF_FY25 = 3469                          # 営業CF 3,716 − capex 247
 GAAP_NI_FY26, GAAP_EPS_FY26 = 307, 0.40
 
@@ -412,6 +412,14 @@ SENS.sort(key=lambda r: -r['swing'])
 # PEG(CAP の代理)の感度は別に: 1.2〜1.9
 PEG_SENS = {peg: vl.target_price(TARGET['engine']['ntm'], peg, TARGET['engine']['g'])['price'] for peg in (1.0, 1.2, 1.55, 1.9, 2.0)}
 
+# F12: 経路×PEG の感応度と、芯2変数(SBC 経路×営業利益率)の格子
+F12_PEG = {k: {peg: vl.target_price(TARGET[k]['ntm'], peg, TARGET[k]['g'])['price'] for peg in (1.0, 1.3, 1.55, 1.8, 2.0)} for k in TARGET}
+SBC_CASES = {'14%据え置き': [0.14] * 9, '基準(FY31 11.2%)': E['sbc'],
+             '加速(FY31 8.4%)': [0.135, 0.12, 0.108, 0.096, 0.084, 0.078, 0.072, 0.068, 0.065]}
+OPM_CASES = {'−3pt': [0.295] + [x - 0.03 * min(1, i / 4) for i, x in enumerate(E['opm'][1:], 1)], '基準': E['opm'],
+             '+3pt': [0.295] + [x + 0.03 * min(1, i / 4) for i, x in enumerate(E['opm'][1:], 1)]}
+F12_GRID = {sk: {ok: engine_target_with(sbc=sv, opm=ov)[0] for ok, ov in OPM_CASES.items()} for sk, sv in SBC_CASES.items()}
+
 # ---------------------------------------------------------------- 9. 機構台帳の大きさ(Δ目標株価、事業エンジン経路基準)
 def d_target(**kw):
     return engine_target_with(**kw)[0] - base_t
@@ -492,17 +500,19 @@ rev_series = [(k, REV_FY24Q[k]) for k in ('FY24Q1', 'FY24Q2', 'FY24Q3')] + [(q[0
 org_rev_series = [(p, v - ACQ_REV.get(p, 0)) for p, v in rev_series]
 rpo_series = [('FY24Q3', 11.3)] + [(q[0], q[4]) for q in Q]
 # 純新規 NGS ARR(有機、十億ドル)。前年比のみ意味があるので qoq は空欄
-nn = []
+nn_q = []
 for i in range(1, len(org_series)):
-    nn.append((org_series[i][0], org_series[i][1] - org_series[i - 1][1]))
+    nn_q.append((org_series[i][0], org_series[i][1] - org_series[i - 1][1]))
+# 純新規は季節性が大きいので直近4四半期の合計(TTM)で見る
+nn = [(nn_q[i][0], sum(v for _, v in nn_q[i - 3:i + 1])) for i in range(3, len(nn_q))]
 f18 += kpi_rows('有機NGS ARR(買収除く・十億ドル)', org_series)
 f18 += kpi_rows('報告NGS ARR(十億ドル)', ngs_series)
 f18 += kpi_rows('有機売上(百万ドル)', org_rev_series)
 f18 += kpi_rows('RPO(十億ドル)', rpo_series)
-f18 += kpi_rows('有機の純新規NGS ARR(十億ドル)', nn)
+f18 += kpi_rows('有機の純新規NGS ARR(直近4四半期合計・十億ドル)', nn)
 for r in f18:
     if r[0].startswith('有機の純新規'):
-        r[3] = None   # 純新規は四半期の季節性が大きく前期比年率は意味を持たない
+        r[3] = None   # TTM 合計の前期比年率は意味が薄いので空欄
 wcsv('F18', ['kpi', 'period', 'value', 'qoq_annualized', 'ttm_yoy', 'second_diff'], [r for r in f18])
 
 # F10: 収益ラインの時系列(百万ドル)
@@ -550,18 +560,25 @@ summary = {
     'archetype': 'ORCL型寄り(継続課金・プラットフォーム)+一部VRT型(機器の更新サイクル)',
     'business_model_types': ['A(NGS: SASE・SecOps・クラウド・Idira)', 'G(ファイアウォール機器)', 'B(可観測性・XSIAMのデータ量連動)'],
     'core_variables': [
-        {'name': 'プラットフォーム化顧客のNRR(既存顧客の売上継続率)の逓減速度',
-         'market_implied': '株価は10年間 FCF−SBC 年{:.0%}成長を織り込む(NRR 120%超の長期維持に相当)'.format(REV_DCF[0.09]),
-         'our_estimate': 'FY27 119%→FY31 115%へ年1pt逓減(コホート成熟とELA飽和)', 'advantage_type': '分析'},
+        {'name': 'non-GAAP営業利益率の拡大ペース(FY28 調整後FCFマージン40%目標の確度)',
+         'market_implied': '株価はFCF−SBCの10年間 年{:.1%}成長を要し、売上成長に加えて大幅な利益率拡大を暗に置く'.format(REV_DCF[0.09]),
+         'our_estimate': '29.5%(FY27ガイダンス)→33.5%(FY31)、年+1pt。実績はFY25→FY27で年+0.35pt',
+         'advantage_type': '分析(粗利率低下・クラウド原価・買収事業の利益率を分解)'},
         {'name': 'SBC/売上の低下経路',
-         'market_implied': '調整後EPS(SBC除外)でPER約{:.0f}倍の評価。SBCを費用と見ていない'.format(per_adj_ntm),
-         'our_estimate': '14.0%(FY27)→11.2%(FY31)。過去4年は14.5〜16.6%で横ばい', 'advantage_type': '分析'},
-        {'name': '有機売上成長(NGS ARR から レガシー転換分を除いた実額)',
-         'market_implied': '報告 NGS ARR +63%・ガイダンス +22〜23% を成長の物差しにする',
-         'our_estimate': '有機売上 +14〜16%(FY26 Q3 +14%、Q4 約+16%、FY27 約+14%)', 'advantage_type': '分析'},
+         'market_implied': '調整後EPS(SBC除外)ベースでPER約{:.0f}倍。SBCを費用として織り込んでいない'.format(per_adj_ntm),
+         'our_estimate': '14.0%(FY27)→11.2%(FY31)。実績はFY23 16.6%→FY26 14.9%(加速償却除き13.4%)',
+         'advantage_type': '分析'},
+        {'name': '競争優位期間(CAP)と高成長の持続年数',
+         'market_implied': '10年超の20%台後半の1株当たり成長(リバースDCF)',
+         'our_estimate': 'CAPは約12年あるが、事業実態EPS成長はFY27→FY30の年約24%からFY32以降13%前後へ逓減',
+         'advantage_type': '分析(参照クラス)。予測可能性は低く確率で扱う'},
+        {'name': '有機の成長(プラットフォーム化顧客のNRRと新規件数)',
+         'market_implied': '報告NGS ARR +63%・純新規ほぼ倍増を成長の物差しにする',
+         'our_estimate': '有機の純新規NGS ARR(直近4四半期)は14.7億ドルで前年比+8%(推定)。有機売上はFY26 +15%、FY27 +12〜13%',
+         'advantage_type': '分析(有機・買収の分解)'},
     ],
     'edge': {'exists': True,
-             'statement': '市場は報告NGS ARR+63%とAI需要を見て、PANWに10年超の高成長を織り込む(事業実態PER約{:.0f}倍)。構造上は有機売上+14〜16%、1株当たりは株数増とSBCで総額より遅く、FY27調整後EPSは+9%にとどまる。FY27の有機売上とFY28 FCFマージン40%の達成・SBC比率で確認でき、差が解消したときの1株価値は約{:.0f}ドル'.format(per_biz_ntm, B),
+             'statement': '市場は報告NGS ARR+63%とAI需要を物差しに、調整後PER約{:.0f}倍(事業実態PER約{:.0f}倍)を払い、FCF−SBCの10年間年{:.0%}成長を織り込む。構造上は有機売上+12〜16%、営業利益率は年+0.4pt、SBC/売上は14〜15%で、FY27の調整後EPSは株数増で+9%にとどまる。FY27の有機売上・SBC/売上とFY28の調整後FCFマージン40%で確認でき、差が解消したときの1株当たり価値は約{:.0f}ドル(規約)、DCF交差確認で約{:.0f}ドル'.format(per_adj_ntm, per_biz_ntm, REV_DCF[0.09], B, DCF['engine']['per_share']),
              'advantage_type': '分析(有機・買収の分解、総額と1株当たりの分解、リバースDCF)',
              'kpi': '有機売上成長率・有機の純新規NGS ARR・SBC/売上・調整後FCFマージン',
              'threshold': '有機売上+18%以上が2四半期続けば差分は縮小(市場側が正しい)。+13%未満なら拡大',
@@ -594,7 +611,7 @@ summary = {
                           'fcf_margin_ttm': round(fcf_margin_ttm, 3), 'sbc_to_revenue_ttm': round(sbc_ttm, 3)},
     'growth': {'revenue_yoy_latest_q': 0.34, 'arr_or_proxy_yoy': round(org_ngs['FY26Q4'] / org_ngs['FY25Q4'] - 1, 3),
                'arr_proxy_name': 'NGS ARR(有機・買収除く推定。報告値は+63%)',
-               'nnarr_or_proxy_yoy': round((org_ngs['FY26Q4'] - org_ngs['FY26Q3']) / (org_ngs['FY25Q4'] - org_ngs['FY25Q3']) - 1, 3), 'eps_cagr_3y_consensus': round(vl.cagr(adj_eps_fy26, CONS_EPS[2029], 3), 3),
+               'nnarr_or_proxy_yoy': round(nn[-1][1] / nn[-5][1] - 1, 3),   # 有機の純新規 NGS ARR(直近4四半期合計)の前年比(推定) 'eps_cagr_3y_consensus': round(vl.cagr(adj_eps_fy26, CONS_EPS[2029], 3), 3),
                'eps_cagr_5y_engine': round(vl.cagr(biz_eps_fy26_norm, P['engine'][2031]['biz_eps'], 5), 3)},
     'rule_of_40': round(0.235 + 0.38, 3),
     'triggers': {
@@ -603,8 +620,8 @@ summary = {
         'downgrade': ['有機の純新規NGS ARRが2四半期連続で前年割れ(LLM移行の一過性を除く)', 'プラットフォーム化顧客のNRRが115%未満',
                       '株式対価の大型買収(株数+3%超)'],
         'exit': ['保有時: 有機売上成長+10%未満、またはPAN-OSの重大脆弱性に起因する大口解約の開示']},
-    'one_line': '事業はプラットフォーム化で継続課金80%・FCFマージン38%の優良構造(構造評価A)だが、株価は有機成長14〜16%に対し10年超の高成長を織り込み、規約上の12か月目標は{:.0f}〜{:.0f}ドル。監視とし、{:.0f}ドル以下で分割エントリーを検討'.format(L, U, Z['Z2']),
-    'data_corrections': 0, 'known_constraints': 0,
+    'one_line': '事業はプラットフォーム化で継続課金80%・FCFマージン38%の優良構造(構造評価A)だが、株価は有機売上成長12〜16%に対し10年超の高成長を織り込み、規約上の12か月目標は{:.0f}〜{:.0f}ドル。監視とし、{:.0f}ドル以下で分割エントリーを検討'.format(L, U, Z['Z2']),
+    'data_corrections': 6, 'known_constraints': 15,
 }
 
 if __name__ == '__main__':
@@ -644,6 +661,8 @@ if __name__ == '__main__':
     for s in SENS:
         print(f"  {s['name']}: {s['lo_label']} {s['lo']:.1f} / {s['hi_label']} {s['hi']:.1f}  振れ {s['swing']:.1f} (定常 {s['lo_ss']:.1f}〜{s['hi_ss']:.1f} 振れ {s['swing_ss']:.1f})")
     print('PEG感度', {k: round(v, 1) for k, v in PEG_SENS.items()})
+    print('F12 経路×PEG', {k: {p: round(v, 1) for p, v in d.items()} for k, d in F12_PEG.items()})
+    print('F12 SBC×営業利益率', {k: {o: round(v, 1) for o, v in d.items()} for k, d in F12_GRID.items()})
     print('== 機構 Δ目標', {k: round(v, 1) for k, v in MECH.items()}, f'金利100bp EPS {rate_eps:.3f}')
     print('== エンジン内訳 FY27')
     print({k: round(v, 3) for k, v in P['engine'][2027]['d'].items()})

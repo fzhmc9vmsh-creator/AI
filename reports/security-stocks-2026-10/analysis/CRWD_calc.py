@@ -738,3 +738,70 @@ summary = {
 with open(f'{OUT}/CRWD_summary.json', 'w') as f:
     json.dump(summary, f, ensure_ascii=False, indent=2)
 p('summary.json written')
+
+# ---------------------------------------------------------------------------
+# 12. 追加の図表データ(F17: ARR 経路の比較、F15: 価値感度トルネード、F12: 感応度マトリクス)
+# ---------------------------------------------------------------------------
+with open(f'{OUT}/CRWD_F17.csv', 'w', newline='') as f:
+    w = csv.writer(f)
+    w.writerow(['fy_end', 'path', 'ending_arr_usd_mn', 'note'])
+    for y in (2024, 2025, 2026):
+        w.writerow([dt.date(y, 1, 31).isoformat(), 'actual', {2024: 3438, 2025: 4240, 2026: 5250}[y], '実績(FY24末は FY25Q1 ARR−NNARR の派生)'])
+    for n in ('engine', 'company', 'bear'):
+        for y in range(2027, 2038):
+            w.writerow([FY_END[y].isoformat(), n, round(MODEL[n][y]['arr_end']), '延長' if y > 2031 else ''])
+    for y in range(2027, 2038):
+        w.writerow([FY_END[y].isoformat(), 'market_implied', round(m_impl[y]['arr_end']) if y > 2027 else 6608,
+                    f'株価{PRICE}を正当化するARR成長 年{G_IMPL:.1%}(リバースDCF)'])
+    # 会社の数値目標(FY30 100億、FY35 200億。間は等比補間)
+    tg = {2027: 6607.5, 2030: 10000.0, 2035: 20000.0}
+    for y in range(2027, 2036):
+        if y <= 2030:
+            v = 6607.5 * (10000 / 6607.5) ** ((y - 2027) / 3)
+        else:
+            v = 10000 * 2 ** ((y - 2030) / 5)
+        w.writerow([FY_END[y].isoformat(), 'company_target', round(v), '会社目標(FY30 100億・FY35 200億、間は等比補間)'])
+with open(f'{OUT}/CRWD_F15_sensitivity.csv', 'w', newline='') as f:
+    w = csv.writer(f)
+    w.writerow(['variable', 'range', 'dcf_low', 'dcf_high', 'dcf_base', 'ss_target_low', 'ss_target_high', 'ss_target_base'])
+    for s_ in SENS:
+        w.writerow([s_['var'], s_['range'], round(s_['dcf_lo'], 1), round(s_['dcf_hi'], 1), round(base_dcf, 1),
+                    round(s_['ss_lo'], 1), round(s_['ss_hi'], 1), round(base_ss, 1)])
+with open(f'{OUT}/CRWD_F12.csv', 'w', newline='') as f:
+    w = csv.writer(f)
+    w.writerow(['table', 'row_label', 'col_label', 'value_usd_per_share'])
+    for sbc31, row in F12A.items():
+        for pg, v in zip((1.2, 1.5, 1.8, 2.0), row):
+            w.writerow(['F12a_定常状態経由目標(SBC_FY31×出口PEG)', f'SBC/売上FY31={sbc31:.0%}', f'出口PEG={pg}', round(v, 1)])
+    for dn, row in F12B.items():
+        for do, v in zip((-0.03, 0.0, 0.03, 0.06), row):
+            w.writerow(['F12b_DCF(NRRシフト×営業利益率シフト)', f'NRR{dn:+.0%}', f'営業利益率{do:+.0%}', round(v, 1)])
+    for sbc31, row in F12C.items():
+        for gt, v in zip((0.03, 0.04, 0.05), row):
+            w.writerow(['F12c_DCF(SBC_FY31×終価成長率)', f'SBC/売上FY31={sbc31:.0%}', f'終価g={gt:.0%}', round(v, 1)])
+p('追加CSV(F17・F15・F12)written')
+
+# ---------------------------------------------------------------------------
+# 13. 報告書で使う追加の確認値
+# ---------------------------------------------------------------------------
+p('== 13. 追加の確認値 ==')
+p(f'engine DCF(SBC をゼロとした場合){dcf_value(engine_variant(sbc=[0.0] * 13))[0]:.1f} / SBC を FY28 から 6% に固定 {dcf_value(engine_variant(sbc=[0.255] + [0.06] * 12))[0]:.1f}')
+_E = PATHS['engine']
+_saved = _E['sbc']
+_E['sbc'] = [0.0] * 13
+_lo, _hi = 0.0, 0.8
+for _ in range(50):
+    _mid = (_lo + _hi) / 2
+    if dcf_value(path_flat_growth(_mid))[0] < PRICE:
+        _lo = _mid
+    else:
+        _hi = _mid
+_E['sbc'] = _saved
+p(f'SBC をゼロとしても株価が織り込む ARR 年成長率 {_mid:.1%}')
+_sbc27 = 0.255 * 6001
+p(f'SBC の希薄化(FY27 SBC {_sbc27:,.0f}): 株価 {PRICE} なら年 {_sbc27/PRICE:.1f}百万株({_sbc27/PRICE/DIL:.2%})、engine DCF 価値 {base_dcf:.1f} なら {_sbc27/base_dcf:.1f}百万株({_sbc27/base_dcf/DIL:.2%})')
+p(f'Q2 FY27 の増分マージン: 非GAAP営業利益 {(371.6-255.0)/(1470.9-1170):.1%}、GAAP 営業損益の改善 {(-33.2+105.5)/(1470.9-1170):.1%}')
+p(f'cRPO÷ARR {4922/5840:.2f} / RPO÷ARR {10700/5840:.2f} / 繰延収益 {3497.1+1345.1:,.1f}')
+for _y, _q, _rep in [(2025, [3438, 3650, 3860, 4020, 4240], 3953.6), (2026, [4240, 4440, 4660, 4920, 5250], 4810)]:
+    _est = K_REV * sum((_q[i] + _q[i + 1]) / 2 for i in range(4)) / 4
+    p(f'エンジン式の照合 FY{_y}: 再構成 {_est:,.1f} / 報告 {_rep:,.1f}({_est/_rep-1:+.1%})')

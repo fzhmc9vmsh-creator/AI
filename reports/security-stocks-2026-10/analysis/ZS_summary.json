@@ -1,0 +1,251 @@
+{
+  "ticker": "ZS",
+  "company": "Zscaler, Inc.",
+  "price": 233.73,
+  "price_date": "2026-10-09",
+  "market_cap_usd_bn": 39.73,
+  "diluted_shares_mn": 170.0,
+  "fy_end_month": 7,
+  "net_cash_usd_bn": 1.749,
+  "structure_rating": "B",
+  "condition_ratings": {
+    "1": "C",
+    "2": "B",
+    "3": "B",
+    "4": "S",
+    "5": "B",
+    "6": "D",
+    "7": "C",
+    "8": "B",
+    "9": "C",
+    "10": "B",
+    "11": "C",
+    "12": "B",
+    "13": "B"
+  },
+  "condition9_applicable": true,
+  "rules_fired": [
+    "C評価4条件(1・7・9・11)→総合はB以上にしない(発動)",
+    "致命条件の拒否権(E以下なし、非発動)",
+    "条件6-7の対評価(6=D・7=C: 安さの見かけは SBC 除外による)",
+    "条件9は適用(AIトラフィックの制御・Security for AI)"
+  ],
+  "archetype": "ORCL型寄り(継続課金のインライン基盤)だが席課金とSBC依存。MU/VRT/AVGO型ではない",
+  "business_model_types": [
+    "A(ユーザー席課金の Zero Trust Exchange)",
+    "B(Z-Flex・非席の従量課金: 新規ACVの約30%)",
+    "A+MDR(Red Canary)"
+  ],
+  "core_variables": [
+    {
+      "name": "SBC控除後営業利益率(調整後営業利益率−SBC/売上)の FY31 水準",
+      "market_implied": "約19%(定常状態経由)/約16%(DCF)",
+      "our_estimate": "8.2%(FY26 実績 -1.6%)",
+      "advantage_type": "分析(会計による歪み: SBC を費用として扱う)"
+    },
+    {
+      "name": "競争優位期間(CAP)",
+      "market_implied": "15年超(出口PEG 2.0 超に相当)",
+      "our_estimate": "10〜12年",
+      "advantage_type": "分析(増分シェアの低下: PANW SASE +35〜40%、Netskope +27%、ZS 有機 +20%)"
+    },
+    {
+      "name": "有機の純新規ARRの伸び",
+      "market_implied": "FY28 +9%(コンセンサス売上の逆算)",
+      "our_estimate": "FY27 +5%、FY28 +9%、その後 +2〜6%",
+      "advantage_type": "エッジなし(感度が低い)"
+    }
+  ],
+  "edge": {
+    "exists": true,
+    "statement": "市場は調整後EPS(PER 47倍)とSBC控除前のFCF(EV/FCF 40倍)で評価し、ガイダンスの保守性とAI需要を上振れ要因と見ている。SBCを費用とみなすとオーナー利益はほぼゼロで、株価はFY31にSBC控除後営業利益率 約20%(現在 −1%)を要求する。SBC/売上は過去2年で年 −0.2pt しか下がっておらず、株価は過大。",
+    "advantage_type": "分析(会計による歪み)",
+    "kpi": "SBC/売上(通期)と SBC控除後営業利益率",
+    "threshold": "FY27 で SBC/売上 ≤22%(差分の否定側)/ ≥24%(差分の確認側)",
+    "timing": "FY27 Q2〜Q4 決算(2027年2〜9月)",
+    "value_per_share_if_resolved": 106.1
+  },
+  "eps_definition": "事業実態EPS = (調整後純利益 − SBC(関連給与税込み)×(1−21%))÷ 現在の希薄化後株数 170百万株。買収無形資産償却は除外したまま",
+  "base_business_eps": {
+    "fy": "FY2026",
+    "value": 0.323
+  },
+  "eps_paths": {
+    "consensus": {
+      "FY2027": 0.705,
+      "FY2028": 1.081,
+      "FY2029": 1.258,
+      "FY2030": 1.907,
+      "FY2031": 2.704,
+      "FY2032": 3.66,
+      "FY2033": 4.783,
+      "FY2034": 6.084
+    },
+    "company": {
+      "FY2027": 0.772,
+      "FY2028": 1.43,
+      "FY2029": 2.001,
+      "FY2030": 3.196,
+      "FY2031": 4.745,
+      "FY2032": 6.708,
+      "FY2033": 9.139,
+      "FY2034": 12.108
+    },
+    "engine": {
+      "FY2027": 0.691,
+      "FY2028": 1.126,
+      "FY2029": 1.388,
+      "FY2030": 2.153,
+      "FY2031": 3.094,
+      "FY2032": 4.222,
+      "FY2033": 5.544,
+      "FY2034": 7.071
+    },
+    "bear": {
+      "FY2027": 0.654,
+      "FY2028": 1.07,
+      "FY2029": 1.275,
+      "FY2030": 1.929,
+      "FY2031": 2.69,
+      "FY2032": 3.555,
+      "FY2033": 4.527,
+      "FY2034": 5.603
+    }
+  },
+  "adj_eps_consensus": {
+    "FY2027": 4.91,
+    "FY2028": 5.6
+  },
+  "sbc_to_revenue_path": {
+    "FY2027": 0.235,
+    "FY2028": 0.225,
+    "FY2029": 0.215,
+    "FY2030": 0.205,
+    "FY2031": 0.195,
+    "FY2032": 0.185,
+    "FY2033": 0.175,
+    "FY2034": 0.165
+  },
+  "allowed_peg": {
+    "path_a": [
+      3.39,
+      9.9
+    ],
+    "path_b": [
+      1.0,
+      1.5
+    ],
+    "path_c": [
+      1.1,
+      1.4
+    ],
+    "adopted": [
+      1.1,
+      1.4
+    ],
+    "note": "経路aは調整後EPS基準のピア実勢(業界全体の期待の高さ)で、許容値の根拠に使わない。事業実態EPS基準の ZS の PER は FY27 で約400倍超で比較不能。採用は b と c の重なり 1.1〜1.4。出口PEGは CAP に応じて 1.0(弱気)〜1.8(会社)"
+  },
+  "targets_12m": {
+    "consensus": 90.7,
+    "company": 225.6,
+    "engine": 106.1,
+    "bear": 53.7
+  },
+  "targets_12m_note": {
+    "adopted_method": "定常状態経由(00_standard §3-2 の2)。近い年度の事業実態EPSがほぼゼロで、規約どおりの方法は不安定",
+    "conventional_ntm_x_per": {
+      "consensus": 49.6,
+      "company": 93.7,
+      "engine": 58.6,
+      "bear": 49.6
+    },
+    "steady_state_route": {
+      "consensus": 90.7,
+      "company": 225.6,
+      "engine": 106.1,
+      "bear": 53.7
+    },
+    "dcf_cross_check": {
+      "consensus": 109.8,
+      "company": 344.2,
+      "engine": 127.8,
+      "bear": 78.6
+    }
+  },
+  "adopted_path": "engine",
+  "gaps": {
+    "consensus": -0.612,
+    "company": -0.035,
+    "engine": -0.546
+  },
+  "probabilities": {
+    "bear": 0.2,
+    "consensus": 0.3,
+    "engine": 0.35,
+    "company": 0.15
+  },
+  "expected_price": 108.9,
+  "expected_return": -0.534,
+  "asymmetry": {
+    "downside_pct": -0.77,
+    "upside_pct": -0.035,
+    "ratio": 0.0,
+    "convex": false
+  },
+  "decision": "見送り",
+  "entry_zones": {
+    "alpha": 0.25,
+    "Z1": 60.4,
+    "Z2": 92.8,
+    "zone": "見送り圏"
+  },
+  "steady_state": {
+    "steady_earnings_usd_mn": 1085.0,
+    "steady_state_value_usd_bn": 12.06,
+    "growth_price_usd_bn": 27.68,
+    "growth_share": 0.697
+  },
+  "value_time_split": {
+    "within_3y": 0.023,
+    "beyond_3y": 0.977
+  },
+  "cap_years": 11,
+  "incremental_roic": "約15%(SBC込みの成長投資に対する定常状態の税引後利益。推定)",
+  "current_multiples": {
+    "per_business_ntm": 305.0,
+    "per_adj_ntm": 46.5,
+    "peg_business_3y": 7.74,
+    "peg_adj_3y": 3.03,
+    "ev_sales_ntm": 9.41,
+    "ev_fcf_ntm": 40.5,
+    "fcf_margin_ttm": 0.232,
+    "sbc_to_revenue_ttm": 0.245
+  },
+  "growth": {
+    "revenue_yoy_latest_q": 0.249,
+    "arr_or_proxy_yoy": 0.25,
+    "arr_proxy_name": "ARR(Red Canary 込み 25%、有機 20%)",
+    "nnarr_or_proxy_yoy": 0.17,
+    "eps_cagr_3y_consensus": 0.153,
+    "eps_cagr_5y_engine": 0.571
+  },
+  "rule_of_40": 0.487,
+  "triggers": {
+    "upgrade": [
+      "SBC/売上が通期で 21%以下に低下し、調整後営業利益率 25%以上と同時に達成(SBC控除後営業利益率 ≥4%)",
+      "有機の純新規ARRが2四半期連続で前年比 +15%以上",
+      "株価が分割エントリー圏の上限 Z2 以下"
+    ],
+    "downgrade": [
+      "有機の純新規ARRが前年比マイナスを2四半期連続",
+      "NRR が 112% 以下",
+      "SBC/売上が 25% 超に再上昇"
+    ],
+    "exit": [
+      "保有しない(見送り)。保有中なら: SBC控除後営業利益率が FY27 にマイナスのまま、かつ有機NNARRが減少"
+    ]
+  },
+  "one_line": "見送り: 調整後PEGは6社で最も低いが、SBC(売上の約25%)を費用とみなすとオーナー利益はほぼゼロ。株価はFY31 ARR 80億ドル超とSBC比率の急低下の両方を織り込み、事業エンジン経路の目標 106 ドルを大きく上回る。Z2(93ドル)以下で再検討。",
+  "data_corrections": 3,
+  "known_constraints": 12
+}
