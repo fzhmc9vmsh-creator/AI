@@ -109,7 +109,7 @@ def ngs_engine(nrr, newplat, uplift, pre_arr, g_np, g_idira, g_obs):
         cnt += newplat[i]
         total = plat + nonplat + idira + obs
         out[y] = dict(ngs=total, plat=plat, nonplat=nonplat, idira=idira, obs=obs, plat_count=cnt,
-                      d_expansion=exp_plat, d_newplat=new_up, d_nonplat=np_growth - migr,
+                      d_expansion=exp_plat, d_newplat=new_up, d_nonplat=np_growth, d_migration=-migr,
                       d_idira=d_idira, d_obs=d_obs)
     return out
 
@@ -139,8 +139,8 @@ implied_legacy_g = implied_legacy_fy27 / LEGACY_FY26 - 1
 # ---------------------------------------------------------------- 3. 経路の定義
 PATHS = {
     'engine': dict(
-        nrr=[1.19, 1.18, 1.17, 1.16, 1.15, 1.14, 1.13, 1.12, 1.11],
-        newplat=[600, 580, 560, 540, 500, 460, 420, 380, 340], uplift=1.3, pre_arr=0.6, g_np=0.03,
+        nrr=[1.19, 1.17, 1.16, 1.15, 1.14, 1.13, 1.12, 1.11, 1.10],
+        newplat=[600, 560, 520, 480, 440, 400, 360, 330, 300], uplift=1.2, pre_arr=0.6, g_np=0.03,
         g_idira=[0.20, 0.19, 0.18, 0.16, 0.14, 0.12, 0.11, 0.10, 0.09],
         g_obs=[0.40, 0.32, 0.26, 0.22, 0.18, 0.15, 0.13, 0.11, 0.10],
         legacy_g=[-0.10, -0.06, -0.04, -0.03, -0.02, -0.02, -0.01, -0.01, -0.01],
@@ -149,10 +149,10 @@ PATHS = {
         sbc=[0.140, 0.133, 0.126, 0.119, 0.112, 0.105, 0.098, 0.092, 0.086],
         mna_dil=0.003, fcf_m=[0.38, 0.40, 0.405, 0.41, 0.415, 0.42, 0.42, 0.42, 0.42]),
     'company': dict(
-        nrr=[1.20, 1.20, 1.19, 1.18, 1.17, 1.16, 1.15, 1.14, 1.13],
-        newplat=[700, 700, 680, 650, 600, 550, 500, 450, 400], uplift=1.4, pre_arr=0.6, g_np=0.04,
-        g_idira=[0.22, 0.22, 0.20, 0.18, 0.16, 0.14, 0.12, 0.11, 0.10],
-        g_obs=[0.50, 0.40, 0.30, 0.25, 0.20, 0.17, 0.14, 0.12, 0.10],
+        nrr=[1.20, 1.18, 1.16, 1.15, 1.14, 1.13, 1.12, 1.11, 1.10],
+        newplat=[650, 620, 580, 550, 500, 460, 420, 380, 340], uplift=1.2, pre_arr=0.6, g_np=0.04,
+        g_idira=[0.22, 0.21, 0.19, 0.17, 0.15, 0.13, 0.12, 0.11, 0.10],
+        g_obs=[0.50, 0.38, 0.28, 0.22, 0.18, 0.15, 0.13, 0.11, 0.10],
         legacy_g=[-0.08, -0.05, -0.03, -0.02, -0.01, -0.01, 0.0, 0.0, 0.0],
         opm=[0.297, 0.315, 0.330, 0.345, 0.355, 0.365, 0.370, 0.375, 0.380],
         other0=350, other_step=60,
@@ -405,6 +405,8 @@ sens('non-GAAP営業利益率(FY31 ±3pt)', dict(opm=[0.295] + [x - 0.03 * min(1
      dict(opm=[0.295] + [x + 0.03 * min(1, i / 4) for i, x in enumerate(E['opm'][1:], 1)]), '−3pt', '+3pt')
 sens('レガシー売上の減少率(毎年±3pt)', dict(legacy_g=[x - 0.03 for x in E['legacy_g']]), dict(legacy_g=[x + 0.03 for x in E['legacy_g']]), '−3pt/年', '+3pt/年')
 sens('Idira(CyberArk)の成長率(±5pt)', dict(g_idira=[max(0, x - 0.05) for x in E['g_idira']]), dict(g_idira=[x + 0.05 for x in E['g_idira']]), '−5pt', '+5pt')
+sens('有機の成長(NRR±2pt と新規件数±25% の同時)', dict(nrr=[x - 0.02 for x in E['nrr']], newplat=[x * 0.75 for x in E['newplat']]),
+     dict(nrr=[x + 0.02 for x in E['nrr']], newplat=[x * 1.25 for x in E['newplat']]), '弱い側', '強い側')
 sens('株式対価の買収による希薄化(年0〜1%)', dict(mna_dil=0.0), dict(mna_dil=0.01), '0%', '1%/年')
 SENS.sort(key=lambda r: -r['swing'])
 # PEG(CAP の代理)の感度は別に: 1.2〜1.9
@@ -590,8 +592,9 @@ summary = {
                           'peg_business_3y': round(peg_biz, 2), 'peg_adj_3y': round(peg_adj, 2),
                           'ev_sales_ntm': round(ev_sales, 1), 'ev_fcf_ntm': round(ev_fcf, 1),
                           'fcf_margin_ttm': round(fcf_margin_ttm, 3), 'sbc_to_revenue_ttm': round(sbc_ttm, 3)},
-    'growth': {'revenue_yoy_latest_q': 0.34, 'arr_or_proxy_yoy': 0.63, 'arr_proxy_name': 'NGS ARR(報告。有機は約+26%)',
-               'nnarr_or_proxy_yoy': round(1.0 / 0.49 - 1, 2), 'eps_cagr_3y_consensus': round(vl.cagr(adj_eps_fy26, CONS_EPS[2029], 3), 3),
+    'growth': {'revenue_yoy_latest_q': 0.34, 'arr_or_proxy_yoy': round(org_ngs['FY26Q4'] / org_ngs['FY25Q4'] - 1, 3),
+               'arr_proxy_name': 'NGS ARR(有機・買収除く推定。報告値は+63%)',
+               'nnarr_or_proxy_yoy': round((org_ngs['FY26Q4'] - org_ngs['FY26Q3']) / (org_ngs['FY25Q4'] - org_ngs['FY25Q3']) - 1, 3), 'eps_cagr_3y_consensus': round(vl.cagr(adj_eps_fy26, CONS_EPS[2029], 3), 3),
                'eps_cagr_5y_engine': round(vl.cagr(biz_eps_fy26_norm, P['engine'][2031]['biz_eps'], 5), 3)},
     'rule_of_40': round(0.235 + 0.38, 3),
     'triggers': {

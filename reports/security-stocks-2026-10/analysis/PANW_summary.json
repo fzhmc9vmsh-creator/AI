@@ -1,0 +1,225 @@
+{
+  "ticker": "PANW",
+  "company": "Palo Alto Networks",
+  "price": 418.78,
+  "price_date": "2026-10-09",
+  "market_cap_usd_bn": 342.6,
+  "diluted_shares_mn": 840.0,
+  "fy_end_month": 7,
+  "net_cash_usd_bn": 6.13,
+  "structure_rating": "A",
+  "condition_ratings": {
+    "1": "A",
+    "2": "A",
+    "3": "A",
+    "4": "S",
+    "5": "A",
+    "6": "D",
+    "7": "D",
+    "8": "A",
+    "9": "B",
+    "10": "B",
+    "11": "A",
+    "12": "A",
+    "13": "A"
+  },
+  "condition9_applicable": true,
+  "rules_fired": [
+    "致命条件の拒否権: 非発動(E以下なし)",
+    "C×4上限: 非発動(C評価0件)",
+    "条件6-7の対評価: 発動(PEGが高い理由は市場の楽観であり、安い理由の検証は成立しない。両条件ともD)",
+    "エッジなし(買い方向)のため買いは不可: 該当(乖離が負のため結果に影響なし)"
+  ],
+  "archetype": "ORCL型寄り(継続課金・プラットフォーム)+一部VRT型(機器の更新サイクル)",
+  "business_model_types": [
+    "A(NGS: SASE・SecOps・クラウド・Idira)",
+    "G(ファイアウォール機器)",
+    "B(可観測性・XSIAMのデータ量連動)"
+  ],
+  "core_variables": [
+    {
+      "name": "プラットフォーム化顧客のNRR(既存顧客の売上継続率)の逓減速度",
+      "market_implied": "株価は10年間 FCF−SBC 年28%成長を織り込む(NRR 120%超の長期維持に相当)",
+      "our_estimate": "FY27 119%→FY31 115%へ年1pt逓減(コホート成熟とELA飽和)",
+      "advantage_type": "分析"
+    },
+    {
+      "name": "SBC/売上の低下経路",
+      "market_implied": "調整後EPS(SBC除外)でPER約97倍の評価。SBCを費用と見ていない",
+      "our_estimate": "14.0%(FY27)→11.2%(FY31)。過去4年は14.5〜16.6%で横ばい",
+      "advantage_type": "分析"
+    },
+    {
+      "name": "有機売上成長(NGS ARR から レガシー転換分を除いた実額)",
+      "market_implied": "報告 NGS ARR +63%・ガイダンス +22〜23% を成長の物差しにする",
+      "our_estimate": "有機売上 +14〜16%(FY26 Q3 +14%、Q4 約+16%、FY27 約+14%)",
+      "advantage_type": "分析"
+    }
+  ],
+  "edge": {
+    "exists": true,
+    "statement": "市場は報告NGS ARR+63%とAI需要を見て、PANWに10年超の高成長を織り込む(事業実態PER約169倍)。構造上は有機売上+14〜16%、1株当たりは株数増とSBCで総額より遅く、FY27調整後EPSは+9%にとどまる。FY27の有機売上とFY28 FCFマージン40%の達成・SBC比率で確認でき、差が解消したときの1株価値は約106ドル",
+    "advantage_type": "分析(有機・買収の分解、総額と1株当たりの分解、リバースDCF)",
+    "kpi": "有機売上成長率・有機の純新規NGS ARR・SBC/売上・調整後FCFマージン",
+    "threshold": "有機売上+18%以上が2四半期続けば差分は縮小(市場側が正しい)。+13%未満なら拡大",
+    "timing": "FY27 Q2〜Q4(2027-02〜2027-08)",
+    "value_per_share_if_resolved": 105.7
+  },
+  "eps_definition": "事業実態EPS = 調整後EPS − 株式報酬関連費用(給与税込み)×(1−22%)÷現在の希薄化後株数840百万株(§3-1)。買収無形償却は除外したまま",
+  "base_business_eps": {
+    "fy": "FY26(2026-07期)",
+    "value": 2.27
+  },
+  "eps_paths": {
+    "consensus": {
+      "FY27": 2.38,
+      "FY28": 2.96,
+      "FY29": 3.55,
+      "FY30": 4.18,
+      "FY31": 4.87,
+      "FY32": 5.61
+    },
+    "company": {
+      "FY27": 2.45,
+      "FY28": 3.29,
+      "FY29": 4.26,
+      "FY30": 5.41,
+      "FY31": 6.65,
+      "FY32": 8.0
+    },
+    "engine": {
+      "FY27": 2.36,
+      "FY28": 2.95,
+      "FY29": 3.65,
+      "FY30": 4.48,
+      "FY31": 5.44,
+      "FY32": 6.4
+    },
+    "bear": {
+      "FY27": 2.16,
+      "FY28": 2.4,
+      "FY29": 2.66,
+      "FY30": 2.97,
+      "FY31": 3.33,
+      "FY32": 3.72
+    }
+  },
+  "adj_eps_consensus": {
+    "FY27": 4.19,
+    "FY28": 4.88,
+    "FY29": 5.45,
+    "FY30": 6.1,
+    "FY31": 6.78,
+    "FY32": 7.45
+  },
+  "sbc_to_revenue_path": {
+    "FY27": 0.14,
+    "FY28": 0.133,
+    "FY29": 0.126,
+    "FY30": 0.119,
+    "FY31": 0.112,
+    "FY32": 0.105
+  },
+  "allowed_peg": {
+    "path_a": [
+      3.4,
+      9.9
+    ],
+    "path_b": [
+      1.0,
+      1.5
+    ],
+    "path_c": [
+      1.4,
+      1.7
+    ],
+    "adopted": [
+      1.4,
+      1.7
+    ],
+    "note": "経路aは市場が業界全体に付ける倍率(中央値約6.1)で許容値の根拠にしない。経路b(事業実態EPS成長約21%、慣行1〜1.5)と経路c(構造評価A=1.3〜1.6、CAP約12年とストック比率80%で+0.1、SBC・希薄化と負の非対称性で±0)の収束で1.4〜1.7(FY28基準)を採用"
+  },
+  "targets_12m": {
+    "consensus": 84.4,
+    "company": 147.0,
+    "engine": 105.7,
+    "bear": 32.6
+  },
+  "targets_note": "規約どおり(NTM事業実態EPS×PEG×g): consensus 84.4, company 147.0, engine 105.7, bear 32.6 / 定常状態経由(FY31×出口PER、9%割引): consensus 72.3, company 141.7, engine 96.2, bear 32.5。FY27の事業実態EPSが調整後EPSの約57%残り近い年度のPEGが安定するため、規約どおりの値を採用",
+  "adopted_path": "engine",
+  "gaps": {
+    "consensus": -0.798,
+    "company": -0.649,
+    "engine": -0.748
+  },
+  "probabilities": {
+    "bear": 0.3,
+    "consensus": 0.35,
+    "engine": 0.25,
+    "company": 0.1
+  },
+  "expected_price": 80.5,
+  "expected_return": -0.808,
+  "asymmetry": {
+    "downside_pct": -0.922,
+    "upside_pct": -0.649,
+    "ratio": 0.7,
+    "convex": false
+  },
+  "decision": "監視",
+  "entry_zones": {
+    "alpha": 0.2,
+    "Z1": 35.9,
+    "Z2": 95.2,
+    "zone": "見送り圏"
+  },
+  "steady_state": {
+    "steady_earnings_usd_mn": 4477,
+    "steady_state_value_usd_bn": 49.7,
+    "growth_price_usd_bn": 302.0,
+    "growth_share": 0.859
+  },
+  "value_time_split": {
+    "within_3y": 0.067,
+    "beyond_3y": 0.933
+  },
+  "cap_years": 12,
+  "incremental_roic": "有機の成長は前受金(繰延収益148億ドル)で賄われ増分ROICは非常に高い(拘束資本が負)。買収(約260億ドル)の増分ROICはFY27で約1〜2%、FY31でも約4%と資本コスト9%を下回る",
+  "current_multiples": {
+    "per_business_ntm": 169.4,
+    "per_adj_ntm": 97.3,
+    "peg_business_3y": 8.16,
+    "peg_adj_3y": 7.28,
+    "ev_sales_ntm": 23.8,
+    "ev_fcf_ntm": 62.1,
+    "fcf_margin_ttm": 0.384,
+    "sbc_to_revenue_ttm": 0.149
+  },
+  "growth": {
+    "revenue_yoy_latest_q": 0.34,
+    "arr_or_proxy_yoy": 0.263,
+    "arr_proxy_name": "NGS ARR(有機・買収除く推定。報告値は+63%)",
+    "nnarr_or_proxy_yoy": 0.122,
+    "eps_cagr_3y_consensus": 0.125,
+    "eps_cagr_5y_engine": 0.192
+  },
+  "rule_of_40": 0.615,
+  "triggers": {
+    "upgrade": [
+      "株価が Z2 以下(約95ドル)へ下落",
+      "有機売上成長+18%以上が2四半期連続かつSBC/売上12%以下",
+      "FY28 調整後FCFマージン40%の達成と FCF−SBC/株の+20%超"
+    ],
+    "downgrade": [
+      "有機の純新規NGS ARRが2四半期連続で前年割れ(LLM移行の一過性を除く)",
+      "プラットフォーム化顧客のNRRが115%未満",
+      "株式対価の大型買収(株数+3%超)"
+    ],
+    "exit": [
+      "保有時: 有機売上成長+10%未満、またはPAN-OSの重大脆弱性に起因する大口解約の開示"
+    ]
+  },
+  "one_line": "事業はプラットフォーム化で継続課金80%・FCFマージン38%の優良構造(構造評価A)だが、株価は有機成長14〜16%に対し10年超の高成長を織り込み、規約上の12か月目標は33〜147ドル。監視とし、95ドル以下で分割エントリーを検討",
+  "data_corrections": 0,
+  "known_constraints": 0
+}

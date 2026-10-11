@@ -1,0 +1,260 @@
+{
+  "ticker": "OKTA",
+  "company": "Okta, Inc.",
+  "price": 232.13,
+  "price_date": "2026-10-09",
+  "market_cap_usd_bn": 40.58,
+  "diluted_shares_mn": 178.808,
+  "fy_end_month": 1,
+  "net_cash_usd_bn": 2.3,
+  "structure_rating": "B",
+  "condition_ratings": {
+    "1": "B",
+    "2": "A",
+    "3": "C",
+    "4": "S",
+    "5": "C",
+    "6": "D",
+    "7": "D",
+    "8": "B",
+    "9": "C",
+    "10": "B",
+    "11": "B",
+    "12": "B",
+    "13": "B"
+  },
+  "condition9_applicable": true,
+  "rules_fired": [
+    "致命条件の拒否権: 非発動(E以下なし)",
+    "条件6-7の対評価: D/Dで整合(安くない理由はAIエージェントへの再分類)",
+    "C×4上限: 非発動(C は条件3・5・9の3つ)",
+    "対象外(N/A): なし"
+  ],
+  "archetype": "ORCL型寄りのストック型SaaS(従量ではなく座席課金)。SSO/MFA層はバンドルによるコモディティ化圧力(AVGO型の要素)",
+  "business_model_types": [
+    "A(ストック型SaaS: Workforce・Customer Identity)",
+    "A→B候補(エージェント接続数による課金、早期アクセスのみ)"
+  ],
+  "core_variables": [
+    {
+      "name": "中核の売上成長率の持続(cRPO・NRRの再加速、新製品のクロスセル)",
+      "market_implied": "リバースDCFで FY28〜FY37 年率 18%(エンジン経路の利益率前提)",
+      "our_estimate": "年率11〜12.5%(cRPO+14%・新製品30%・NRR107%)、FY33以降は10%→6%へ減衰",
+      "advantage_type": "分析"
+    },
+    {
+      "name": "AIエージェントのアイデンティティが独立した課金単位になる時期と規模",
+      "market_implied": "新しい原子単位として売上の倍増級を織り込む(会社シナリオでも FY32 に約9.5億ドルで株価に届かない)",
+      "our_estimate": "FY29 までは人間の座席への上乗せ・同梱が中心。独立課金は早期アクセスの接続数課金のみ",
+      "advantage_type": "分析"
+    },
+    {
+      "name": "SBC/売上の低下と営業レバレッジ(事業実態利益への転換率)",
+      "market_implied": "調整後EPSで評価(SBCを無視)",
+      "our_estimate": "FY27 14.4%→FY32 8%。事業実態EPSは FY27 約2.0ドル(ピア表の簡易値1.31より高い)",
+      "advantage_type": "分析"
+    }
+  ],
+  "edge": {
+    "exists": true,
+    "statement": "市場はOktaを「AIエージェントのアイデンティティで成長が再加速する急成長株」に分類し直し、年初来約2.8倍に買い上げた。事業エンジンで見ると、再加速の実体は既存顧客へのIGA・PAMのクロスセル(新製品が契約獲得の約30%、上乗せ約40%)で、エージェントは人間の座席への上乗せ・同梱として値付けされ新しい原子単位になっていない。現在株価は売上の年率18%成長を10年織り込むが、NRR107%+新規4pt前後のエンジンでは11〜12.5%が上限であり、株価は事業価値を上回る。",
+    "advantage_type": "分析",
+    "kpi": "NRR(TTM)、cRPO成長率、エージェント製品の売上開示・独立課金の価格表",
+    "threshold": "NRR 110%以上かつcRPO成長15%以上を2四半期連続、またはエージェント関連の売上が年1億ドル超と開示",
+    "timing": "FY27 Q3(2026年12月初旬)〜FY28 Q2(2027年8月)の決算",
+    "value_per_share_if_resolved": 103.0
+  },
+  "eps_definition": "事業実態EPS =(会社定義の non-GAAP 希薄化後EPS × non-GAAP 株数_t − SBC_t×(1−21%))÷ GAAP 希薄化後株数 178.808百万株(00_standard §3・§3-1。税率は会社の non-GAAP 長期税率21%)",
+  "base_business_eps": {
+    "fy": "FY2027(2027-01期、コンセンサス基準)",
+    "value": 1.99
+  },
+  "eps_paths": {
+    "consensus": {
+      "FY2027": 1.99,
+      "FY2028": 2.43,
+      "FY2029": 2.91,
+      "FY2030": 3.51,
+      "FY2031": 4.19,
+      "FY2032": 4.93
+    },
+    "company": {
+      "FY2027": 2.07,
+      "FY2028": 2.99,
+      "FY2029": 4.08,
+      "FY2030": 5.51,
+      "FY2031": 7.09,
+      "FY2032": 8.83
+    },
+    "engine": {
+      "FY2027": 2.07,
+      "FY2028": 2.78,
+      "FY2029": 3.66,
+      "FY2030": 4.59,
+      "FY2031": 5.55,
+      "FY2032": 6.65
+    },
+    "bear": {
+      "FY2027": 1.98,
+      "FY2028": 2.25,
+      "FY2029": 2.63,
+      "FY2030": 3.05,
+      "FY2031": 3.49,
+      "FY2032": 3.95
+    }
+  },
+  "adj_eps_consensus": {
+    "FY2027": 3.93,
+    "FY2028": 4.36,
+    "FY2029": 4.89
+  },
+  "adj_eps_paths": {
+    "consensus": {
+      "FY2027": 3.93,
+      "FY2028": 4.36,
+      "FY2029": 4.89,
+      "FY2030": 5.52,
+      "FY2031": 6.21,
+      "FY2032": 6.95
+    },
+    "company": {
+      "FY2027": 4.02,
+      "FY2028": 4.91,
+      "FY2029": 6.04,
+      "FY2030": 7.49,
+      "FY2031": 9.21,
+      "FY2032": 11.06
+    },
+    "engine": {
+      "FY2027": 4.02,
+      "FY2028": 4.68,
+      "FY2029": 5.54,
+      "FY2030": 6.52,
+      "FY2031": 7.52,
+      "FY2032": 8.62
+    },
+    "bear": {
+      "FY2027": 3.92,
+      "FY2028": 4.3,
+      "FY2029": 4.76,
+      "FY2030": 5.25,
+      "FY2031": 5.76,
+      "FY2032": 6.28
+    }
+  },
+  "sbc_to_revenue_path": {
+    "FY2027": 0.144,
+    "FY2028": 0.13,
+    "FY2029": 0.12,
+    "FY2030": 0.11,
+    "FY2031": 0.1,
+    "FY2032": 0.09
+  },
+  "allowed_peg": {
+    "path_a": [
+      5.1,
+      6.1
+    ],
+    "path_b": [
+      1.0,
+      1.4
+    ],
+    "path_c": [
+      1.15,
+      1.5
+    ],
+    "adopted": [
+      1.2,
+      1.45
+    ],
+    "note": "経路aはピアの調整後PEG(OKTA 5.1、6社中央値約6.1)で「市場の実勢」であり許容値の根拠にしない。経路bは3年gの一部がSBC比率の低下(有限の源泉)であるため1.0〜1.4。経路cは構造評価Bの1.0〜1.3にCAP約10年・ストック比率・定常状態利益率との差・エージェントの選択肢を加点。採用1.2〜1.45(会社シナリオ1.35〜1.65、弱気0.85〜1.05)。現在株価を正当化するPEGは 3.0(事業エンジン)〜4.3(コンセンサス)"
+  },
+  "targets_12m": {
+    "consensus": 70.8,
+    "company": 169.7,
+    "engine": 103.0,
+    "bear": 35.4
+  },
+  "targets_12m_note": "採用は規約どおりの方法(2027-10-11のNTM事業実態EPS×PEG×g、PEG中央)。定常状態経由: コンセンサス 68.1, 会社シナリオ 174.9, 事業エンジン 92.2, 弱気 30.9。交差確認(事業実態利益のDCF、r=9%・永続3%): コンセンサス 115.6, 会社シナリオ 201.7, 事業エンジン 145.2, 弱気 81.3。DCF値でも全経路で現在株価を下回り、判断(見送り)は変わらない",
+  "adopted_path": "engine",
+  "gaps": {
+    "consensus": -0.695,
+    "company": -0.269,
+    "engine": -0.556
+  },
+  "probabilities": {
+    "bear": 0.25,
+    "consensus": 0.35,
+    "engine": 0.3,
+    "company": 0.1
+  },
+  "expected_price": 81.5,
+  "expected_return": -0.649,
+  "expected_return_dcf_reference": -0.464,
+  "expected_return_bear_floor_reference": -0.612,
+  "bear_floor_steady_state_per_share": 69.8,
+  "asymmetry": {
+    "downside_pct": -0.847,
+    "upside_pct": -0.269,
+    "ratio": -0.317,
+    "convex": false
+  },
+  "decision": "見送り",
+  "entry_zones": {
+    "alpha": 0.225,
+    "Z1": 39.4,
+    "Z2": 91.5,
+    "zone": "見送り圏",
+    "Z1_dcf_reference": 90.5,
+    "Z2_dcf_reference": 128.9
+  },
+  "steady_state": {
+    "steady_earnings_usd_mn": 1069.0,
+    "steady_state_value_usd_bn": 14.17,
+    "growth_price_usd_bn": 27.33,
+    "growth_share": 0.659
+  },
+  "value_time_split": {
+    "within_3y": 0.16,
+    "beyond_3y": 0.84
+  },
+  "cap_years": 10,
+  "incremental_roic": "約26%(成長S&Mを顧客寿命で資産化した推計。前提の幅で20〜35%)",
+  "current_multiples": {
+    "per_business_ntm": 101.81,
+    "per_adj_ntm": 55.051,
+    "peg_business_3y": 5.036,
+    "peg_adj_3y": 4.454,
+    "ev_sales_ntm": 11.396,
+    "ev_fcf_ntm": 39.96,
+    "fcf_margin_ttm": 0.313,
+    "sbc_to_revenue_ttm": 0.164
+  },
+  "growth": {
+    "revenue_yoy_latest_q": 0.106,
+    "arr_or_proxy_yoy": 0.141,
+    "arr_proxy_name": "cRPO",
+    "nnarr_or_proxy_yoy": 0.228,
+    "eps_cagr_3y_consensus": 0.118,
+    "eps_cagr_5y_engine": 0.263
+  },
+  "rule_of_40": 41.8,
+  "triggers": {
+    "upgrade": [
+      "株価が Z2(約91ドル)以下に下落(規約どおりの目標株価基準)。DCF基準では約129ドル以下で分割エントリーを検討",
+      "NRR 110%以上かつcRPO成長15%以上が2四半期連続(事業エンジン経路→会社シナリオ経路への確度移動)",
+      "エージェント製品の独立した価格表(エージェント数・接続数課金)と売上の開示"
+    ],
+    "downgrade": [
+      "cRPO成長が10%を割る(Q3 ガイダンス11〜12%を下回る)",
+      "NRRが105%以下に低下",
+      "SBC/売上が四半期で16%超に再上昇"
+    ],
+    "exit": [
+      "保有していないため該当なし(見送り)。保有者は NRR 105%以下かつ cRPO 成長10%未満の同時発生、または重大な侵害の再発を撤退条件とする"
+    ]
+  },
+  "one_line": "事業は改善している(cRPO+14%、新製品30%、SBC比率14%へ低下)が、232ドルは事業エンジンの価値(規約約103ドル、DCF約145ドル)を大きく上回り、AIエージェントが新しい課金単位になる前提を先取りしている。見送り。",
+  "data_corrections": 9,
+  "known_constraints": 12
+}

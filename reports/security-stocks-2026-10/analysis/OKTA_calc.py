@@ -344,7 +344,7 @@ for y in range(30, 39):
 eng = path_from_drivers(
     3240.0,
     growth={28: 0.120, 29: 0.125, 30: 0.120, 31: 0.115, 32: 0.110, 33: 0.10, 34: 0.09, 35: 0.08, 36: 0.07, 37: 0.065, 38: 0.06},
-    opm={27: 0.267, 28: 0.275, 29: 0.290, 30: 0.305, 31: 0.315, 32: 0.325, 33: 0.335, 34: 0.34, 35: 0.345, 36: 0.35, 37: 0.35, 38: 0.35},
+    opm={27: 0.265, 28: 0.275, 29: 0.290, 30: 0.305, 31: 0.315, 32: 0.325, 33: 0.335, 34: 0.34, 35: 0.345, 36: 0.35, 37: 0.35, 38: 0.35},
     sbc={27: SBC27_RATIO, 28: 0.125, 29: 0.110, 30: 0.100, 31: 0.090, 32: 0.080, 33: 0.075, 34: 0.070, 35: 0.065, 36: 0.06, 37: 0.06, 38: 0.06},
 )
 for y in range(33, 39):
@@ -355,7 +355,7 @@ agent = {27: 0, 28: 30, 29: 120, 30: 300, 31: 600, 32: 950, 33: 1300, 34: 1650, 
 comp = path_from_drivers(
     3240.0,
     growth={28: 0.13, 29: 0.13, 30: 0.13, 31: 0.125, 32: 0.12, 33: 0.11, 34: 0.10, 35: 0.09, 36: 0.08, 37: 0.07, 38: 0.06},
-    opm={27: 0.267, 28: 0.285, 29: 0.305, 30: 0.325, 31: 0.34, 32: 0.35, 33: 0.36, 34: 0.365, 35: 0.37, 36: 0.37, 37: 0.37, 38: 0.37},
+    opm={27: 0.265, 28: 0.285, 29: 0.305, 30: 0.325, 31: 0.34, 32: 0.35, 33: 0.36, 34: 0.365, 35: 0.37, 36: 0.37, 37: 0.37, 38: 0.37},
     sbc={27: SBC27_RATIO, 28: 0.125, 29: 0.110, 30: 0.095, 31: 0.085, 32: 0.075, 33: 0.07, 34: 0.065, 35: 0.06, 36: 0.06, 37: 0.06, 38: 0.06},
     extra=agent,
 )
@@ -647,6 +647,15 @@ print('   (参考)DCF値での乖離:', {JP[k]: f'{v*100:+.1f}%' for k, v in GAP
 Z_DCF = vl.zones(B=DCF['engine'], U=DCF['company'], L=DCF['bear'], alpha=alpha, price=PRICE, edge=EDGE)
 print(f'   (参考)DCF値でのエントリー価格帯: Z1={Z_DCF["Z1"]:.1f} Z2={Z_DCF["Z2"]:.1f}')
 
+# 代替値(規約外・参考): 弱気の下値に定常状態価値の床を置く。規約どおりの弱気値(PER約14倍)は「成長ゼロでも残る価値」
+# (定常状態営業利益率36%で1株約70ドル)を下回り、事業本体と整合しない(A1・A8)。本体は規約値、代替値は併記のみ。
+BEAR_FLOOR = ss[0.36]['per_share']
+ALT = dict(ADOPT)
+ALT['bear'] = max(ADOPT['bear'], BEAR_FLOOR)
+EV_ALT = vl.expected_value(ALT, PROBS, PRICE)
+print(f'   (参考)弱気に定常状態価値の床 {BEAR_FLOOR:.1f} を置いた場合: 期待株価 {EV_ALT["expected_price"]:.1f}、'
+      f'期待リターン {EV_ALT["expected_return"]*100:+.1f}%、下値 {BEAR_FLOOR/PRICE-1:+.1%}')
+
 # ----------------------------------------------------------------------------------------------
 # 11. 現在の倍率・成長・効果測定(自社株買い・SBC)
 # ----------------------------------------------------------------------------------------------
@@ -763,6 +772,8 @@ summary = {
     'probabilities': PROBS,
     'expected_price': round(EV_['expected_price'], 1), 'expected_return': round(EV_['expected_return'], 3),
     'expected_return_dcf_reference': round(EV_DCF['expected_return'], 3),
+    'expected_return_bear_floor_reference': round(EV_ALT['expected_return'], 3),
+    'bear_floor_steady_state_per_share': round(BEAR_FLOOR, 1),
     'asymmetry': {'downside_pct': round(down, 3), 'upside_pct': round(up, 3),
                   'ratio': round((ADOPT['company'] - PRICE) / (PRICE - ADOPT['bear']), 3), 'convex': False},
     'decision': DEC,

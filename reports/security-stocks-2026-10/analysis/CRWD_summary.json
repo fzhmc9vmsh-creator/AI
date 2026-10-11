@@ -1,0 +1,237 @@
+{
+  "ticker": "CRWD",
+  "company": "CrowdStrike Holdings, Inc.",
+  "price": 275.04,
+  "price_date": "2026-10-09",
+  "market_cap_usd_bn": 287.3,
+  "diluted_shares_mn": 1044.469,
+  "fy_end_month": 1,
+  "net_cash_usd_bn": 4.26,
+  "structure_rating": "A",
+  "condition_ratings": {
+    "1": "A",
+    "2": "B",
+    "3": "B",
+    "4": "S",
+    "5": "A",
+    "6": "D",
+    "7": "D",
+    "8": "A",
+    "9": "B",
+    "10": "B",
+    "11": "A",
+    "12": "A",
+    "13": "A"
+  },
+  "condition9_applicable": true,
+  "rules_fired": [
+    "対象外(N/A)なし(条件9は適用)",
+    "致命条件の拒否権: 非発動(E以下なし)",
+    "条件6-7の対評価: 発動(PEGは全経路で1を大きく超え、安い理由の検証は前提不成立)",
+    "C×4上限: 非発動(C評価0)"
+  ],
+  "archetype": "ORCL型寄り(継続課金・業務停止不可の運用基盤)。ただしSBCが重く1株当たりの所有者利益が薄い",
+  "business_model_types": [
+    "A(ストック型SaaS: Falconサブスクリプション)",
+    "B(Flex: 契約枠からの引き出し型。Next-Gen SIEMはデータ量課金)"
+  ],
+  "core_variables": [
+    {
+      "name": "SBC/売上の低下経路",
+      "market_implied": "株価275ドルは、SBC控除後の所有者利益で見ると、SBC比率がFY31までに10%前後へ下がりARRが年30%前後で10年続くことと整合(リバースDCF)。コンセンサスはSBCを除外して見ている",
+      "our_estimate": "FY27 25.5%(Q2単独27.1%と上昇中)→FY31 20.0%→FY35 14.0%(ServiceNowの年−0.5〜−1.5ptを参照)",
+      "advantage_type": "分析(SBC控除後の事業実態EPS・所有者利益での再計算)"
+    },
+    {
+      "name": "NNARRの持続(既存顧客の純拡張と新規)",
+      "market_implied": "コンセンサス売上FY28 7,360(NNARR横ばい相当)〜FY31 12,950。株価はそれを大きく上回る成長を織り込む",
+      "our_estimate": "FY28 NNARR 約1,580(NRR 116%・新規7.8%)、ARR FY31 約142億ドル。Flex転換の上乗せ(+40%)はNNARRの約15%で、非Flexプール(35.5億ドル)の縮小とともに年1割程度ずつ薄れる",
+      "advantage_type": "分析(Flex ARRの付け替え分解とコホートの再Flex)"
+    },
+    {
+      "name": "競争優位期間(出口倍率)",
+      "market_implied": "出口PER換算で100倍超を要する",
+      "our_estimate": "CAP 12年前後、出口PEG 1.6(出口PER 約56倍)",
+      "advantage_type": "分析"
+    }
+  ],
+  "edge": {
+    "exists": true,
+    "statement": "市場はAI時代の勝者として調整後EPS・FCF(SBC足し戻し後)で値付けし、株価は売上コンセンサスがほぼ動かない中で年初来2.5倍になった。SBCを費用として扱うと、株価275ドルはARRが年約32%で10年続くこと(会社目標の約2倍のペース)を要する。差は、SBC/売上が下がらない(FY27は25%超へ上昇)ことと、FY28のNNARR成長が20%前後に落ち着くことで確認される",
+    "advantage_type": "分析",
+    "kpi": "SBC/売上(四半期)とNNARR前年比",
+    "threshold": "SBC/売上が2四半期連続で24%以上かつFY28 NNARRガイダンスが+20%程度(>25%でない)",
+    "timing": "Q3 FY27(2026年12月上旬)〜Q4 FY27とFY28ガイダンス(2027年3月上旬)",
+    "value_per_share_if_resolved": 65.1
+  },
+  "eps_definition": "事業実態EPS = (調整後EPS×株数_t − SBC(雇用主給与税込み)×(1−22%))÷現在の希薄化後株数1,044.469百万株。分割後",
+  "base_business_eps": {
+    "fy": "FY2027(1月期、コンセンサス調整後EPS 1.26)",
+    "value": 0.119
+  },
+  "eps_paths": {
+    "consensus": {
+      "FY2027": 0.119,
+      "FY2028": 0.298,
+      "FY2029": 0.609,
+      "FY2030": 0.98,
+      "FY2031": 1.456,
+      "FY2032": 2.036,
+      "FY2033": 2.737,
+      "FY2034": 3.563,
+      "FY2035": 4.427
+    },
+    "company": {
+      "FY2027": 0.114,
+      "FY2028": 0.386,
+      "FY2029": 0.901,
+      "FY2030": 1.452,
+      "FY2031": 2.162,
+      "FY2032": 3.077,
+      "FY2033": 4.22,
+      "FY2034": 5.518,
+      "FY2035": 6.937
+    },
+    "engine": {
+      "FY2027": 0.114,
+      "FY2028": 0.271,
+      "FY2029": 0.592,
+      "FY2030": 1.013,
+      "FY2031": 1.545,
+      "FY2032": 2.162,
+      "FY2033": 2.913,
+      "FY2034": 3.803,
+      "FY2035": 4.834
+    },
+    "bear": {
+      "FY2027": 0.114,
+      "FY2028": 0.132,
+      "FY2029": 0.306,
+      "FY2030": 0.517,
+      "FY2031": 0.762,
+      "FY2032": 1.059,
+      "FY2033": 1.413,
+      "FY2034": 1.827,
+      "FY2035": 2.304
+    }
+  },
+  "adj_eps_consensus": {
+    "FY2027": 1.26,
+    "FY2028": 1.61,
+    "FY2029": 2.049,
+    "FY2030": 2.543,
+    "FY2031": 3.128
+  },
+  "sbc_to_revenue_path": {
+    "FY2027": 0.255,
+    "FY2028": 0.245,
+    "FY2029": 0.23,
+    "FY2030": 0.215,
+    "FY2031": 0.2,
+    "FY2032": 0.185,
+    "FY2033": 0.17,
+    "FY2034": 0.155,
+    "FY2035": 0.14
+  },
+  "allowed_peg": {
+    "path_a": [
+      3.4,
+      9.9
+    ],
+    "path_b": [
+      1.3,
+      1.8
+    ],
+    "path_c": [
+      1.4,
+      1.8
+    ],
+    "adopted": [
+      1.4,
+      1.7
+    ],
+    "note": "経路aは6社の調整後PEG(市場が業界に付ける倍率で許容値ではない)。採用は年度別に1.4〜1.7(engine)、出口PEGは1.6。12か月目標: 規約どおり(NTM事業実態EPS×PEG×g)= engine 33.9〜38.8、consensus 35.4〜40.4、company 54.7〜62.0、bear 13.6〜16.1。定常状態経由(採用)= engine 65.1、consensus 57.1、company 107.3、bear 23.3。交差確認の所有者利益DCF(2027-10-11)= engine 97.0、company 141.0"
+  },
+  "targets_12m": {
+    "consensus": 57.1,
+    "company": 107.3,
+    "engine": 65.1,
+    "bear": 23.3
+  },
+  "adopted_path": "engine",
+  "gaps": {
+    "consensus": -0.792,
+    "company": -0.61,
+    "engine": -0.763
+  },
+  "probabilities": {
+    "bear": 0.25,
+    "consensus": 0.3,
+    "engine": 0.3,
+    "company": 0.15
+  },
+  "expected_price": 58.6,
+  "expected_return": -0.787,
+  "asymmetry": {
+    "downside_pct": -0.915,
+    "upside_pct": -0.61,
+    "ratio": null,
+    "convex": false
+  },
+  "decision": "監視",
+  "entry_zones": {
+    "alpha": 0.2,
+    "Z1": 25.6,
+    "Z2": 58.6,
+    "zone": "見送り圏"
+  },
+  "steady_state": {
+    "steady_earnings_usd_mn": 1984.0,
+    "steady_state_value_usd_bn": 22.0,
+    "growth_price_usd_bn": 265.2,
+    "growth_share": 0.923
+  },
+  "value_time_split": {
+    "within_3y": 0.016,
+    "beyond_3y": 0.984
+  },
+  "cap_years": 12,
+  "incremental_roic": "約12%(買収を含む)〜17%(買収除き)。資本コスト9%を上回るが、SBCを成長投資に含めると高くはない",
+  "current_multiples": {
+    "per_business_ntm": 1153.927,
+    "per_adj_ntm": 184.179,
+    "peg_business_3y": 15.199,
+    "peg_adj_3y": 7.3,
+    "ev_sales_ntm": 40.974,
+    "ev_fcf_ntm": 126.382,
+    "fcf_margin_ttm": 0.281,
+    "sbc_to_revenue_ttm": 0.242
+  },
+  "growth": {
+    "revenue_yoy_latest_q": 0.257,
+    "arr_or_proxy_yoy": 0.253,
+    "arr_proxy_name": "期末ARR",
+    "nnarr_or_proxy_yoy": 0.505,
+    "eps_cagr_3y_consensus": 0.264,
+    "eps_cagr_5y_engine": 0.8
+  },
+  "rule_of_40": 53.8,
+  "triggers": {
+    "upgrade": [
+      "株価が事業エンジン経路の分割エントリー圏上限(Z2)以下に下がる",
+      "SBC/売上が2四半期連続で前年比2pt以上低下し、FY28ガイダンスが営業利益率30%以上",
+      "FY28 NNARRガイダンス+25%以上かつ再Flex顧客の拡張率+25%以上の維持"
+    ],
+    "downgrade": [
+      "GRRが96%以下に低下",
+      "NNARRが2四半期連続で前年割れ(一時要因で説明できない)",
+      "SBC/売上がFY28も25%以上"
+    ],
+    "exit": [
+      "保有していないため該当なし(監視)。保有中なら: Flex顧客ARRの前年比が+40%を下回り、かつNNARRが前年割れ"
+    ]
+  },
+  "one_line": "事業はA評価の優良企業だが、株価275ドルはSBC控除後の所有者利益に対してARR年約32%成長が10年続く前提を要し、事業エンジン経路の12か月目標65ドルを大きく上回るため監視(買付は59ドル以下、確認KPIはSBC/売上とNNARR)",
+  "data_corrections": 14,
+  "known_constraints": 12
+}

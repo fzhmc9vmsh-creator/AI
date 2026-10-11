@@ -230,6 +230,12 @@ def sbc_path(rev):
         prev = v
     return out
 
+# 認識率 c: 2026年はサービス売上 5,240(ガイダンス上限 5,220 をわずかに上回る、過去の上振れ幅)に合わせ、2027年以降は
+# 2026E 含意(0.382)と 2024〜25年平均(0.390)の中間 0.385 を使う(複数年契約の比率上昇で認識が遅れる方向を織り込む)
+C_FWD = 0.385
+SR26_TARGET = 5240.0
+
+
 def engine_model(prod_g, k1m=1.0, opex_g=None, gm_p=None, gm_s=0.875, other=150.0, p26=2960.0, k1_drift=0.0):
     """製品の成長率パス → サービス請求 → 繰延収益 → サービス売上 → 粗利 → 営業利益 → 調整後EPS → 事業実態EPS。"""
     P, Sb, Sr, DR, rev, opex, oi, adj, bus = {}, {}, {}, {}, {}, {}, {}, {}, {}
@@ -238,7 +244,11 @@ def engine_model(prod_g, k1m=1.0, opex_g=None, gm_p=None, gm_s=0.875, other=150.
         P[y] = p26 if y == 2026 else P[y - 1] * (1 + prod_g[y])
         kk = k1 * k1m * (1 + k1_drift) ** max(0, y - 2026)
         Sb[y] = kk * sr_prev + k2 * P[y]
-        Sr[y] = c * (dr_prev + Sb[y])
+        if y == 2026:
+            c_y = SR26_TARGET / (DR_END[2025] + k1 * cal[2025]['Sr'] + k2 * PROD26['engine'])
+        else:
+            c_y = C_FWD
+        Sr[y] = c_y * (dr_prev + Sb[y])
         DR[y] = dr_prev + Sb[y] - Sr[y]
         rev[y] = P[y] + Sr[y]
         gp = P[y] * gm_p[y] + Sr[y] * gm_s
@@ -319,16 +329,21 @@ for nm, pth in PATHS.items():
         g3 = vl.cagr(e0, e3, 3)
         lo, hi = PEG_BY_FY[y]
         fl, fh = vl.fair_per(lo, g3), vl.fair_per(hi, g3)
+        # PEG×g が無成長の価値(1/r = 11.1倍)を下回る年度は、定常状態経由(00_standard §3-2)と同じ下限 11.1 倍を適用し印を付ける
+        pl, ph = max(fl['capped'], 1 / R), max(fh['capped'], 1 / R)
         f13.append(dict(fy_end=f'{y}-12-31', path=nm, business_eps=round(e0, 3), g_3y=round(g3, 4), peg_low=lo, peg_high=hi,
-                        fair_per_low=round(fl['capped'], 1), fair_per_high=round(fh['capped'], 1),
-                        fair_price_low=round(fl['capped'] * e0, 1), fair_price_high=round(fh['capped'] * e0, 1),
-                        is_extension=(nm == 'consensus' and y + 3 > 2028) or y + 3 > 2031))
+                        fair_per_low=round(pl, 1), fair_per_high=round(ph, 1),
+                        fair_price_low=round(pl * e0, 1), fair_price_high=round(ph * e0, 1),
+                        is_extension=(nm == 'consensus' and y + 3 > 2028) or y + 3 > 2031,
+                        per_floor_applied=(fl['capped'] < 1 / R)))
 with open(OUT + 'FTNT_F13.csv', 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(f13[0].keys()))
     w.writeheader()
     w.writerows(f13)
 for r_ in f13:
-    p(r_)
+    p(f"{r_['path']:9s} {r_['fy_end']} EPS {r_['business_eps']:.2f} g3 {r_['g_3y']:.1%} PEG {r_['peg_low']}-{r_['peg_high']} "
+      f"PER {r_['fair_per_low']}-{r_['fair_per_high']} 適正株価 {r_['fair_price_low']}-{r_['fair_price_high']}"
+      f"{' 延長' if r_['is_extension'] else ''}{' 下限11.1倍' if r_['per_floor_applied'] else ''}")
 
 # 12か月目標株価: 2027-10-11 時点の NTM 事業実態EPS × 妥当PER(PEG × g)。g は NTM(2027-10) → NTM(2030-10) の CAGR
 TGT = {}
@@ -439,8 +454,8 @@ def v_opex(og):
     return dcf_value(m['bus'])
 
 imp_prod = solve_param(v_prod_long, 0.0, 0.40)
-imp_k1 = solve_param(v_k1, 0.9, 1.4)
-imp_opex = solve_param(v_opex, -0.05, 0.12, increasing=False)
+imp_k1 = solve_param(v_k1, 0.9, 2.5)
+imp_opex = solve_param(v_opex, -0.20, 0.12, increasing=False)
 m_imp = engine_model(PG['engine'], k1m=imp_k1, opex_g=OPEX_G['engine'], gm_p=GMP['engine'], p26=PROD26['engine'])
 m_opx = engine_model(PG['engine'], opex_g={y: imp_opex for y in YEARS[1:]}, gm_p=GMP['engine'], p26=PROD26['engine'])
 p(f'市場が暗に置く値: 製品の長期成長率(2028〜34) {imp_prod:.1%}(エンジン 5〜8%)')
@@ -570,7 +585,7 @@ ALPHA = 0.20
 Z = vl.zones(B=TGT[ADOPT]['price'], U=TGT['company']['price'], L=TGT['bear']['price'], alpha=ALPHA, price=PRICE, edge=EDGE)
 p(f'最終判断: {DEC}(構造評価 {RATING}、採用経路 {ADOPT})')
 p(f'エントリー価格帯(α={ALPHA}): Z1 {Z["Z1"]:.1f}、Z2 {Z["Z2"]:.1f}、現在 {PRICE} → {Z["zone"]}')
-PROBS = {'bear': 0.25, 'consensus': 0.25, 'engine': 0.40, 'company': 0.10}
+PROBS = {'bear': 0.20, 'consensus': 0.25, 'engine': 0.40, 'company': 0.15}
 ev_ = vl.expected_value({k: TGT[k]['price'] for k in PROBS}, PROBS, PRICE)
 p(f'確率 {PROBS} → 期待株価 {ev_["expected_price"]:.1f}、期待リターン {ev_["expected_return"]:+.1%}')
 down = vl.gap(TGT['bear']['price'], PRICE)
@@ -595,7 +610,7 @@ for pg27 in (-0.18, -0.06, 0.0, 0.06):
     n27 = vl.ntm_eps(em, dt.date(2027, 10, 11)); n30 = vl.ntm_eps(em, dt.date(2030, 10, 11))
     g = vl.cagr(n27, n30, 3)
     row = {peg: vl.target_price(n27, peg, g)['price'] for peg in (1.2, 1.6, 2.0, 3.0)}
-    f12[pg27] = dict(ntm=n27, g=g, **row)
+    f12[f'{pg27:+.2f}'] = dict(ntm=n27, g=g, **{f'peg{k}': v for k, v in row.items()})
     p(f'製品2027 {pg27:+.0%}: NTM {n27:.2f}、g {g:.1%}、PEG1.2 {row[1.2]:.0f} / 1.6 {row[1.6]:.0f} / 2.0 {row[2.0]:.0f} / 3.0 {row[3.0]:.0f}')
 # PEG がいくつなら株価を正当化するか(エンジン・コンセンサス)
 for nm in ('engine', 'consensus', 'company'):
@@ -609,7 +624,7 @@ for sr in (0.035, 0.039, 0.045):
 # ---------------------------------------------------------------------------
 # M. 出力(報告書・summary.json 用)
 # ---------------------------------------------------------------------------
-out = dict(price=PRICE, mcap=MCAP, ev=EV, net_cash=NET_CASH, k1=k1, k2=k2, c=c, recon=recon, trend_growth=math.exp(b) - 1,
+out = dict(price=PRICE, mcap=MCAP, ev_total=EV, net_cash=NET_CASH, k1=k1, k2=k2, c=c, recon=recon, trend_growth=math.exp(b) - 1,
            paths={nm: {'adj': {y: PATHS[nm]['adj'][y] for y in range(2026, 2032)}, 'bus': {y: PATHS[nm]['bus'][y] for y in range(2026, 2032)},
                        'rev': {y: PATHS[nm]['rev'][y] for y in range(2026, 2032)}, 'sbc_ratio': {y: PATHS[nm]['sbc'][y] / PATHS[nm]['rev'][y] for y in range(2026, 2032)}}
                   for nm in PATHS},

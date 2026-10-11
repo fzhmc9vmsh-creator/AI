@@ -386,7 +386,12 @@ m = MODEL['engine']
 pv3 = sum(m[y]['owner'] / (1 + R) ** ((FY_END[y] - vl.VALUATION_DATE).days / 365.25) for y in (2028, 2029, 2030))
 v_total = dcf_value(m)[0] * DIL - NET_CASH
 TIME_SPLIT = dict(within_3y=pv3 / v_total, beyond_3y=1 - pv3 / v_total)
-p(f'価値の時間分布(engine): 3年以内 {TIME_SPLIT["within_3y"]:.1%} / それ以降 {TIME_SPLIT["beyond_3y"]:.1%}')
+pv3_b = sum(m[y]['biz_ni'] / (1 + R) ** ((FY_END[y] - vl.VALUATION_DATE).days / 365.25) for y in (2028, 2029, 2030))
+pv_all_b = sum(m[y]['biz_ni'] / (1 + R) ** ((FY_END[y] - vl.VALUATION_DATE).days / 365.25) for y in range(2028, 2040)) \
+    + m[2039]['biz_ni'] * (1 + G_T) / (R - G_T) / (1 + R) ** ((FY_END[2039] - vl.VALUATION_DATE).days / 365.25)
+TIME_SPLIT_B = dict(within_3y=pv3_b / pv_all_b, beyond_3y=1 - pv3_b / pv_all_b)
+p(f'価値の時間分布(engine、買収支出控除後の所有者利益): 3年以内 {TIME_SPLIT["within_3y"]:.1%} / それ以降 {TIME_SPLIT["beyond_3y"]:.1%}')
+p(f'価値の時間分布(engine、買収控除前の事業実態純利益): 3年以内 {TIME_SPLIT_B["within_3y"]:.1%} / それ以降 {TIME_SPLIT_B["beyond_3y"]:.1%}(FY28〜30 の PV {pv3_b:,.0f} / 全体 {pv_all_b:,.0f})')
 
 # ---------------------------------------------------------------------------
 # 7. 価値感度分析(芯の特定): engine の定常状態経由目標と DCF の変化
@@ -460,6 +465,18 @@ for sbc31 in (0.12, 0.16, 0.20, 0.24):
         row.append(ss_target(mm, peg))
     F12A[sbc31] = row
     p(f'SBC {sbc31:.0%}: ' + ' / '.join(f'PEG {pg}: {v:.1f}' for pg, v in zip((1.2, 1.5, 1.8, 2.0), row)))
+p('== F12c: FY31 の SBC/売上 × 終価成長率 → 所有者利益DCF 1株価値(engine、評価日) ==')
+F12C = {}
+for sbc31 in (0.12, 0.16, 0.20, 0.24):
+    path = [0.255]
+    for k in range(1, 5):
+        path.append(0.255 + (sbc31 - 0.255) * k / 4)
+    for k in range(5, 13):
+        path.append(max(0.10, sbc31 - 0.015 * (k - 4)))
+    mm = engine_variant(sbc=path)
+    row = [dcf_value(mm, g_t=gt)[0] for gt in (0.03, 0.04, 0.05)]
+    F12C[sbc31] = row
+    p(f'SBC {sbc31:.0%}: ' + ' / '.join(f'終価g {gt:.0%}: {v:.1f}' for gt, v in zip((0.03, 0.04, 0.05), row)))
 p('== F12b: NRR シフト × 営業利益率シフト → DCF 1株価値(engine) ==')
 F12B = {}
 for dn in (-0.03, 0.0, 0.03, 0.06):
@@ -674,7 +691,7 @@ summary = {
         {'name': 'SBC/売上の低下経路', 'market_implied': '株価275ドルは、SBC控除後の所有者利益で見ると、SBC比率がFY31までに10%前後へ下がりARRが年30%前後で10年続くことと整合(リバースDCF)。コンセンサスはSBCを除外して見ている',
          'our_estimate': 'FY27 25.5%(Q2単独27.1%と上昇中)→FY31 20.0%→FY35 14.0%(ServiceNowの年−0.5〜−1.5ptを参照)', 'advantage_type': '分析(SBC控除後の事業実態EPS・所有者利益での再計算)'},
         {'name': 'NNARRの持続(既存顧客の純拡張と新規)', 'market_implied': 'コンセンサス売上FY28 7,360(NNARR横ばい相当)〜FY31 12,950。株価はそれを大きく上回る成長を織り込む',
-         'our_estimate': 'FY28 NNARR 約1,580(NRR 116%・新規7.8%)、ARR FY31 約145億ドル。Flex転換の上乗せ(+40%)はNNARRの約15%で、非Flexプール(35.5億ドル)の縮小とともに年1割程度ずつ薄れる', 'advantage_type': '分析(Flex ARRの付け替え分解とコホートの再Flex)'},
+         'our_estimate': 'FY28 NNARR 約1,580(NRR 116%・新規7.8%)、ARR FY31 約142億ドル。Flex転換の上乗せ(+40%)はNNARRの約15%で、非Flexプール(35.5億ドル)の縮小とともに年1割程度ずつ薄れる', 'advantage_type': '分析(Flex ARRの付け替え分解とコホートの再Flex)'},
         {'name': '競争優位期間(出口倍率)', 'market_implied': '出口PER換算で100倍超を要する', 'our_estimate': 'CAP 12年前後、出口PEG 1.6(出口PER 約' + f"{RESULT['engine']['per_exit']:.0f}" + '倍)', 'advantage_type': '分析'},
     ],
     'edge': {'exists': True,
@@ -702,7 +719,7 @@ summary = {
     'entry_zones': {'alpha': ALPHA, 'Z1': round(Z['Z1'], 1), 'Z2': round(Z['Z2'], 1), 'zone': Z['zone']},
     'steady_state': {'steady_earnings_usd_mn': round(SS['中']['earnings'], 0), 'steady_state_value_usd_bn': round(SS['中']['steady_state_value'] / 1000, 1),
                      'growth_price_usd_bn': round(SS['中']['growth_price'] / 1000, 1), 'growth_share': round(SS['中']['growth_share_of_mcap'], 3)},
-    'value_time_split': {'within_3y': round(TIME_SPLIT['within_3y'], 3), 'beyond_3y': round(TIME_SPLIT['beyond_3y'], 3)},
+    'value_time_split': {'within_3y': round(TIME_SPLIT_B['within_3y'], 3), 'beyond_3y': round(TIME_SPLIT_B['beyond_3y'], 3)},
     'cap_years': 12, 'incremental_roic': f'約{INC_ROIC[0]:.0%}(買収を含む)〜{INC_ROIC[1]:.0%}(買収除き)。資本コスト9%を上回るが、SBCを成長投資に含めると高くはない',
     'current_multiples': {k: round(v, 3) for k, v in CUR.items()},
     'growth': {'revenue_yoy_latest_q': round(1470.9 / 1170 - 1, 3), 'arr_or_proxy_yoy': round(5840 / 4660 - 1, 3), 'arr_proxy_name': '期末ARR',

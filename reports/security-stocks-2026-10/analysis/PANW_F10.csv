@@ -1,0 +1,12 @@
+period,line,revenue_usd_mn,is_forecast
+FY25,NGS由来(有機・推定),4750,0
+FY25,レガシー(機器・付随サブスク・保守・推定),4471,0
+FY26,NGS由来(有機・推定),5936,0
+FY26,レガシー(機器・付随サブスク・保守・推定),4686,0
+FY26,買収(CyberArk・Chronosphere),858,0
+FY27E,NGS由来(有機・推定),7732,1
+FY27E,レガシー(機器・付随サブスク・保守・推定),4217,1
+FY27E,買収(CyberArk・Chronosphere),2270,1
+FY28E,NGS由来(有機・推定),9494,1
+FY28E,レガシー(機器・付随サブスク・保守・推定),3964,1
+FY28E,買収(CyberArk・Chronosphere),2806,1
