@@ -1,70 +1,79 @@
 # Cloudflare (NET) 定量データ表
 
 収集者: Haiku / 取得日: 2026-10-11 / 評価基準日: 2026-10-11
-株価: 2026-10-09(金)終値は未取得。代わりに直近終値 2026-10-08 = 341.89 USD を暫定掲載(表1)。
+株価: 2026-10-09(金)終値 = 360.93 USD(Tier 3、Yahoo Finance・CNN・GuruFocus で一致。前日終値 341.89 + 19.04 と整合)。
 
 ## 0. 取得条件と読み方
 
 - 取得手段は WebSearch のみ。WebFetch・curl は使っていない。
-- **WebSearch の予算が途中で尽きた。** この実行の上限は200回(ターン内で他エージェントと共有)で、こちらが実行できたのは26回。その後の5件は「予算切れで実行されなかった」応答になった。他の手段で迂回することはしていない。このため、コンセンサス(表6)、10/9 終値、Q3 2026 日程、買収、SBC、バランスシート大半、2021〜2023年度などは未検索で欠損としている。
-- 数値は検索結果の要約文から確認した。会社の 8-K Ex.99.1、IR の PDF、10-Q の原文は直接開いていない(WebFetch 不可)。要約には決算リリースや 10-Q の引用が含まれていたため、会社発表値として扱っている。
-- 区分の印: (算)=既取得値からの算出で、式を併記。(単独)=単一の二次出典のみ。(未確定)=出典間で食い違う、または疑義あり。印のない値は会社発表(8-K/IR/10-Q 由来として要約に現れたもの)。
+- **検索の履歴**: 初回(上限到達まで)26回成功。再開時(上限12回)は12回すべて使用し、予算を使い切った。以後の検索は行っていない。
+- 数値は検索結果の要約文から確認した。会社の 8-K Ex.99.1、IR の PDF、10-Q の原文は直接開いていない(WebFetch 不可)。要約に引用された会社発表値は Tier 1 として扱う。
+- **Tier**(research-protocol.md §2): 1 = 会社開示 / 2 = 公的統計 / 3 = 主要報道・アナリスト集計・格付・株価データ / 4 = ブログ・AI生成要約・個別サイト。出典が衝突したら上位 Tier を採る。
+- 区分の印: (算)=既取得値からの算出(式を併記)。(単独)=単一出典のみ。(未確定)=出典間で食い違う、または疑義あり。Tier 表記のない値は Tier 1。
 - 比率は金額からの算出(小数1桁)。会社公表の丸め値と一致するものを確認済み。
-- CSV(NET_quarterly.csv)には、会社発表値と(算)の値のみを入れた。(単独)(未確定)の値は空欄にした。
+- CSV(NET_quarterly.csv)には、Tier 1 の値と(算)の値のみを入れた。(単独)(未確定)の値は空欄にした。
+- 2026-06-30 時点の capex の定義: FCF = 営業CF − (有形固定資産の購入 + 資本化された社内利用ソフトウェア)。2026Q2 で照合済み(117.6 − 61.2 = 56.4)。本表の capex は後者の合計。
 
-## 1. 欠損項目一覧
+## 1. 欠損項目一覧(再開後)
 
-- 表1: 10/9 終値、時価総額(公式値)、発行済株式数(10-Q 表紙)、希薄化後株数(公式値)、52週高安(10/9時点)、次回決算日、2024〜2026年の買収
-- 表2: 米国比率(全期)、GAAP粗利率(2024Q4、2025Q4〜2026Q1 ほか)、non-GAAP粗利率(多数)、GAAP EPS(多数)、SBC(全期)、2025Q3〜2026Q1 の営業CF・capex・FCF、希薄化後株数(全期)、2025Q3〜2026Q1 の GAAP純利益
-- 表3: 有料顧客数(全期の総数)、大口顧客の売上比率(多数)、年間500万ドル超の顧客数(全期)、DNR(2024年全期、2025Q3〜Q4 の会社公表値)、RPO(多数、2026Q2 は未確定)、cRPO 金額(全期)、Workers 開発者数(会社公表値)
-- 表4: FY2021〜2022 の全項目、FY2023 の売上・GAAP粗利率など、FY の SBC・EPS・株数・自社株買い
-- 表5: FY2024 と FY2025 の期初ガイダンス、FY2026 期初の non-GAAP 営業利益・正確なレンジ、2026Q1 決算時の Q2 2026 ガイダンス、中期目標
-- 表6: 全項目(コンセンサス、目標株価、レーティング)
-- 表7: 2026-06-30 の現金・短期投資、2026年満期転換社債の残高、リース負債、繰延収益、購入コミットメント、のれん・無形資産、株主資本
+- 表1: 希薄化後株数(2026Q2 の加重平均・公式値)、52週高安の 10/9 時点の値(MarketBeat の 158.83〜370.35 は日付不明)、次回決算日、2024〜2026年の買収
+- 表2: 米国比率(全期)、GAAP粗利率(2024Q4・2025Q3・2025Q4・2026Q1・2026Q2 以外)、non-GAAP粗利率(多数)、GAAP EPS(多数)、SBC(2024全期・2025Q2〜Q4・2026Q2)、営業CF(2025Q3〜Q4)、希薄化後株数(全期)
+- 表3: 有料顧客数(全期の総数)、大口顧客の売上比率(多数)、年間500万ドル超の顧客数(全期)、DNR(2024全期、2025Q3〜Q4 の会社公表値)、RPO(2026Q2 は未確定)、cRPO 金額(全期)、Workers 開発者数(会社公表値)
+- 表4: FY2021 全項目、FY2022 の売上・利益、FY2023 の non-GAAP EPS・FCF・capex・SBC、FY の希薄化後株数(公式値)、自社株買い(全年)
+- 表5: FY2024・FY2025 の期初ガイダンス、FY2026 期初の正確なレンジ、2026Q1 決算時の Q2 2026 ガイダンス、中期目標
+- 表6: 2028・2029 年度の売上コンセンサス(確度の低い単独値のみ)、目標株価の高値(BTIG 413 は下限)
+- 表7: 2026-06-30 の繰延収益以外の大半(のれん・無形資産、購入コミットメント)、2026 Notes の 6/30 時点の残高(帳簿額は確認、元本は 2025年の開示から)
 
 ---
 
 ## 2. 表1 基本情報
 
-| 項目 | 値 | 区分 | 出典 | 備考 |
+| 項目 | 値 | 区分・Tier | 出典 | 備考 |
 |---|---|---|---|---|
-| 上場取引所 | NYSE: NET | 会社 | [S15] | |
-| 株価(2026-10-09 終値) | 欠損 | — | — | 未取得。代わりに直近終値: 2026-10-08 = 341.89 USD(前日 10-07 = 342.97、10-06 = 355.01) [S22] |
-| 時価総額 | 欠損(公式値) | 参考 | [S23] | 2026-08-13 時点の参考値 117.8 USD bn(株価 330.82、株式数 356.1M 表示)。現在値ではない |
-| 発行済株式数(A+B 合計) | 欠損 | (未確定) | — | 10-Q 表紙は未取得。不一致: 317.32M(Yahoo、2026-02) / 321.18M(Google、日付不明) / 344M(Halo、完全希薄化、2026-07-24) / 356.1M(ChartRow、2026-08-13) [S26][S25][S24][S23] |
-| 希薄化後株数(直近四半期) | 欠損(公式値) | (算・参考) | [S1] | Q2 2026 GAAP 純損失 170.0 ÷ EPS 0.48 ≈ 354M(GAAP は希薄化=基本)。非GAAP 107.8 ÷ 非GAAP EPS 0.29 ≈ 372M。EPS の丸めで各 ±4〜7M。公式値ではない |
-| 52週高値・安値 | 欠損(10/9 時点) | 参考 | [S23] | 2026-08-13 時点: 高値 332.22 / 安値 158.83。他時点の値は不一致: 高値 276.82 [S25]、高値 291 / 安値 158.83 [S24]、高値 260.00 / 安値 89.42 [S26] |
-| CEO | Matthew Prince(51歳) | 会社 | [S19] | Co-Chair を兼任。2026 DEF 14A(基準日 2026-04-30) |
-| CFO | Thomas Seifert(62歳) | 会社 | [S19] | CFO 在任は 2017年6月から。2026年中盤に 10b5-1 売却の報道あり(単独) |
-| 直近決算発表日 | 2026-08-06(Q2 2026) | 会社 | [S1] | |
+| 上場取引所 | NYSE: NET | T1 | [S15] | |
+| 株価(2026-10-09 終値) | **360.93 USD** | T3 | [S42][S44][S22] | +19.04(+5.57%)。前日終値 341.89(S22)と整合。Investing.com の履歴表は 358.46 を示し(不一致)、TradingKey の記事は +3.72% と報じる(不一致)。360.93 を採用 |
+| 時価総額 | **128.5 bn USD** | (算) T1×T3 | 下記式 | 360.93 × 355.931M(2026-06-30 の A+B 株数)= 128,467M。Yahoo の intraday 128.52bn と整合。CNN の 121.74bn は不一致(単独) |
+| 発行済株式数(A+B 合計) | **355.931M**(2026-06-30) | T1 | [S3](貸借対照表、要約経由) | Class A 322.176M + Class B 33.755M。前回の 10-K 表紙(2026-02-12): A 317.576M + B 34.404M = 351.980M(T1、要約経由) |
+| 希薄化後株数(2026Q2 加重平均) | 欠損(公式値) | — | — | 参考: Q3 2026 ガイダンスの加重平均株式数 約374M(T1)。Q2 の非GAAP純利益 107.8 ÷ 非GAAP EPS 0.29 ≈ 372M(算、EPS の丸めで ±7M) |
+| 52週高値・安値 | 高 370.35 / 安 158.83 | T3(日付不明) | [S46] | MarketBeat の株価ページ。2026-10-06 に新高値(MarketBeat)。前回の 2026-08-13 時点は 332.22 / 158.83 [S23] |
+| CEO | Matthew Prince(51歳) | T1 | [S19] | Co-Chair を兼任。2026 DEF 14A(基準日 2026-04-30) |
+| CFO | Thomas Seifert(62歳) | T1 | [S19] | CFO 在任は 2017年6月から。2026年中盤に 10b5-1 売却の報道あり(単独) |
+| 直近決算発表日 | 2026-08-06(Q2 2026) | T1 | [S1] | |
 | 次回決算予定日 | 欠損 | — | — | Q3 2026 の日程発表は未確認。参考: 前年 Q3 決算は 2025-10-30 [S11] |
-| 買収(2024〜2026) | 欠損 | — | — | 未検索(予算切れ) |
+| 買収(2024〜2026) | 欠損 | — | — | 未検索(検索上限) |
+
+時価総額の式: 360.93 USD × 355.931M 株 = 128,467M USD(約 128.5 bn)。
 
 ---
 
 ## 3. 表2 四半期業績(2024Q1〜2026Q2)
 
-単位: 売上・利益・CF・capex・FCF は US$ mn、EPS は US$、比率は %。
+単位: 売上・利益・CF・capex・FCF は US$ mn、EPS は US$、比率は %。SBC は SBC 費用(給与税を除く)。
 
-| 四半期 | 期末日 | 総売上 | 米国比率 | GAAP粗利率 | non-GAAP粗利率 | GAAP営業利益 | non-GAAP営業利益(率) | GAAP純利益 | GAAP EPS | non-GAAP EPS | SBC | 営業CF | capex | capex/売上 | FCF | 希薄化後株数 | 出典 |
+| 四半期 | 期末日 | 総売上 | 米国比率 | GAAP粗利率 | non-GAAP粗利率 | GAAP営業利益 | non-GAAP営業利益(率) | GAAP純利益 | GAAP EPS | non-GAAP EPS | SBC | 営業CF | capex(PP&E+社内ソフト) | capex/売上 | FCF | 希薄化後株数 | 出典 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 2024Q1 | 2024-03-31 | 378.6 | 欠損 | 77.5% | 79.5% | -54.6 | 42.4(11.2%) | -35.5 | -0.10 | 0.16 | 欠損 | 73.6 | 38.0(算) | 10.0%(算) | 35.6 | 欠損 | [S17][S13] |
 | 2024Q2 | 2024-06-30 | 401.0(約401、精密値未確認) | 欠損 | 77.8% | 欠損 | 34.7(未確定・疑義、下記) | 57.0(14.2%) | -15.1 | 欠損 | 0.20 | 欠損 | 74.8 | 36.5(算) | 9.1%(算) | 38.3 | 欠損 | [S16][S12] |
 | 2024Q3 | 2024-09-30 | 430.1 | 欠損 | 77.7% | 欠損 | -30.8 | 63.5(14.8%) | -15.3 | 欠損 | 0.20 | 欠損 | 104.7 | 59.4(算) | 13.8%(算) | 45.3 | 欠損 | [S15][S10] |
-| 2024Q4 | 2024-12-31 | 459.9 | 欠損 | 欠損 | 欠損 | -34.7 | 67.2(14.6%) | -12.9(算: FY -78.8 から9M -65.9 を引く) | 欠損 | 欠損 | 欠損 | 127.3(算: FY 380.4 から9M 253.1 を引く) | 79.6(算) | 17.3%(算) | 47.7(算: FY 166.9 から9M 119.2 を引く) | 欠損 | [S14] |
-| 2025Q1 | 2025-03-31 | 479.1 | 欠損 | 75.9% | 欠損 | -53.2 | 56.0(11.7%) | -38.5 | 欠損 | 0.16 | 欠損 | 145.8 | 92.9(算) | 19.4%(算) | 52.9 | 欠損 | [S13] |
+| 2024Q4 | 2024-12-31 | 459.9 | 欠損 | 欠損 | 欠損 | -34.7 | 67.2(14.6%) | **-12.8**(比較値、T1) | 欠損 | **0.19**(比較値、T1) | 欠損 | 127.3(算: FY 380.4 − 9M 253.1) | 79.6(算) | 17.3%(算) | 47.7(算: FY 166.9 − 9M 119.2) | 欠損 | [S14][S8] |
+| 2025Q1 | 2025-03-31 | 479.1 | 欠損 | 75.9% | 欠損 | -53.2 | 56.0(11.7%) | -38.5 | 欠損 | 0.16 | **95.5**(比較値、T1) | 145.8 | 92.9(算) | 19.4%(算) | 52.9 | 欠損 | [S13][S6] |
 | 2025Q2 | 2025-06-30 | 512.3 | 欠損 | 74.9% | 76.3% | -67.3 | 72.3(14.1%) | -50.4 | -0.15 | 0.21 | 欠損 | 99.8 | 66.5(算) | 13.0%(算) | 33.3 | 欠損 | [S12][S1] |
-| 2025Q3 | 2025-09-30 | 562.0 | 欠損 | 74.0% | 欠損 | -37.5 | 85.9(15.3%) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | [S10] |
-| 2025Q4 | 2025-12-31 | 614.5 | 欠損 | 欠損 | 欠損 | -49.2 | 89.6(14.6%) | 欠損(FY -102.3) | 欠損 | 0.28(単独・SA、未確認) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | [S8][S33] |
-| 2026Q1 | 2026-03-31 | 639.8 | 欠損 | 欠損 | 欠損 | -62.0 | 73.1(11.4%) | 欠損 | 欠損 | 0.27(未確定: SA は 0.25) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | [S6][S32][S5] |
-| 2026Q2 | 2026-06-30 | 696.1 | 欠損 | 71.8% | 73.1% | -205.7 | 96.1(13.8%) | -170.0 | -0.48 | 0.29 | 欠損 | 117.6 | 61.2(算) | 8.8%(算) | 56.4 | 欠損 | [S1][S3] |
-| 2026Q3 | 未発表 | ガイダンス 736.0〜737.0 | — | — | — | ガイダンス non-GAAP 営業利益 129.0〜130.0 | — | — | — | ガイダンス 0.34 | — | — | — | — | — | — | [S1] |
+| 2025Q3 | 2025-09-30 | 562.0 | 欠損 | 74.0% | 欠損 | -37.5 | 85.9(15.3%) | **-1.3**(算: FY −102.3 − Q1 − Q2 − Q4) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | **75.0**(算: FY 260.6 − Q1 − Q2 − Q4 99.4) | 欠損 | [S10][S8][S47] |
+| 2025Q4 | 2025-12-31 | 614.5 | 欠損 | 欠損 | 欠損 | -49.2 | 89.6(14.6%) | **-12.1** | **-0.03** | **0.28** | 欠損 | 欠損 | 欠損 | 欠損 | **99.4**(決算コール、T1) | 欠損 | [S8][S48] |
+| 2026Q1 | 2026-03-31 | 639.8 | 欠損 | 欠損 | 欠損 | -62.0 | 73.1(11.4%) | **-22.9**(算: 6M −192.9 − Q2 −170.0) | 欠損 | 0.27(未確定: SA は 0.25) | **114.2**(T1、8-K) | **158.3**(算: 6M 275.9 − Q2 117.6) | **74.2**(算: PP&E 65.2 + 社内ソフト 9.0) | 11.6%(算) | **84.1**(算: 6M 140.5 − Q2 56.4) | 欠損 | [S6][S7][S49][S50] |
+| 2026Q2 | 2026-06-30 | 696.1 | 欠損 | 71.8% | 73.1% | -205.7 | 96.1(13.8%) | -170.0 | -0.48 | 0.29 | 欠損(SBC+給与税 140.6) | 117.6 | 61.2(算: PP&E 50.0 + 社内ソフト 11.2) | 8.8%(算) | 56.4 | 欠損 | [S1][S3][S49] |
+| 2026Q3 | 未発表 | ガイダンス 736.0〜737.0 | — | — | — | ガイダンス non-GAAP 営業利益 129.0〜130.0 | — | — | — | ガイダンス 0.34 | — | — | — | — | — | 約374(ガイダンス) | [S1] |
 
 注記:
-- 2024Q2 の GAAP 営業利益 34.7 は単独出典で、2024Q4 と同値。非GAAP 調整額を計算すると 22.3 となり、他期の約94〜102 と比べて極端に小さい。疑義があり、CSV では空欄にした。
+- 2024Q2 の GAAP 営業利益 34.7 は単独出典で、2024Q4 と同値。非GAAP 調整額が 22.3 となり、他期の約94〜102 より極端に小さい。疑義があり、CSV では空欄にした。
 - 2024Q2 の売上 401.0 は要約の「about $401 million」に基づく。精密値は未確認。
-- 2026Q1 の non-GAAP EPS は、会社の決算要約では 0.27(約3.77億株)。Seeking Alpha の要約では 0.25。食い違うため未確定。
-- 2026Q1 の米国比率について、OpenCapital の単独データは 315.83 百万ドル(約49%)。検証していないため欄は欠損とした。
+- 2024 年の non-GAAP EPS を四半期で足すと 0.16 + 0.20 + 0.20 + 0.19 = 0.75 で、FY2024 の 0.75 と一致する(検算済み)。
+- 2025 年 Q3 の non-GAAP EPS は、FY 0.93 − (Q1 0.16 + Q2 0.21 + Q4 0.28) = 0.28(算、丸め ±0.01)。確定値ではないため CSV は空欄。
+- 2026Q1 の non-GAAP EPS は、会社の決算要約では 0.27。Seeking Alpha の要約では 0.25 で、食い違い(未確定)。Zacks の決算前コンセンサスは 0.23。
+- 2026Q2 の SBC は、8-K の調整表が途中で切れたため未確定。SBC と給与税の合計は 140.6(T1)。
+- 2026Q1 の SBC 114.2 と 2025Q1 の SBC 95.5 は、8-K/補足資料の調整表から(T1)。
+- 2026 年 6 か月の SBC 費用について、10-Q の文章から 217.9 と読める記述があるが、2025 年 6 か月の値と読める(D&A 87.7 が 2025 年の比較値と一致するため)。推定・単独で、表には入れていない。
+- 2026Q2 の米国比率について、OpenCapital の単独データは Q1 2026 で 315.83 百万ドル(約49%)。検証していないため欄は欠損とした。
 - 2026Q3 は未発表。検索で確認できなかった。前年の Q3 は 2025-10-30 に発表された [S11]。
 
 ---
@@ -88,6 +97,7 @@ KPI 定義・開示の変更:
 - 大口顧客は年間経常収益(Annualized Revenue)10万ドル超で、四半期売上×4で算出。登録機関のみの顧客や 1.1.1.1・WARP などの消費者向けは除外される [S4 の要約]。
 - 2024Q4 の「100万ドル超 173 社」は10万ドル超とは別の指標。
 - DNR の定義は、前年同期の同一顧客の売上に対する比率。新規顧客の ARR を含まず、専門サービスとフリー→有料の移行も除外される [S4]。
+- 今回の再開では、KPI の新しい値は得られなかった(検索上限のため、Q2 2026 投資家向け資料 [S51] は未確認)。
 
 ---
 
@@ -95,13 +105,15 @@ KPI 定義・開示の変更:
 
 単位: US$ mn。FCF マージンは会社公表値、その他の比率は算出。
 
-| 年度 | 総売上 | 売上成長 | GAAP粗利率 | non-GAAP営業利益率 | GAAP純利益 | non-GAAP純利益 | GAAP EPS | non-GAAP EPS | SBC | 営業CF | capex | capex/売上 | FCF | FCFマージン | 期末希薄化後株数 | 自社株買い | 出典 |
+| 年度 | 総売上 | 売上成長 | GAAP粗利率 | non-GAAP営業利益率 | GAAP純利益 | non-GAAP純利益 | GAAP EPS | non-GAAP EPS | SBC | 営業CF | capex | capex/売上 | FCF | FCFマージン | 期末希薄化後株数(加重平均、算・粗い) | 自社株買い | 出典 |
 |---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|---|
 | 2021 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 未検索 |
-| 2022 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 未検索 |
-| 2023 | 欠損 | 欠損 | 欠損 | 欠損 | -183.9 | 169.7 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | [S14](比較値) |
-| 2024 | 1,669.6 | +29% | 欠損 | 13.8%(算: 非GAAP営業利益四半期合計 230.1) | -78.8 | 269.0 | 欠損 | 欠損 | 欠損 | 380.4 | 213.5(算) | 12.8%(算) | 166.9 | 10.0% | 欠損 | 欠損 | [S14] |
-| 2025 | 2,167.9 | +30% | 欠損 | 14.0%(算: 非GAAP営業利益四半期合計 303.8) | -102.3 | 342.9 | 欠損 | 欠損 | 欠損 | 603.1 | 342.5(算) | 15.8%(算) | 260.6 | 12.0% | 欠損 | 欠損 | [S8] |
+| 2022 | 算: 約975(FY2023 の成長率 33% から逆算、範囲 972〜977) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | **123.6**(T1、比較値) | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | [S52] |
+| 2023 | **1,296.7**(T1) | +33% | 欠損 | **122.0 / 9.4%**(T1、後続リリースの比較値) | -183.9 | 169.7 | 欠損 | 欠損 | 欠損 | **254.4**(T1) | 欠損 | 欠損 | 欠損(2023Q4 のみ 50.7) | 欠損 | 欠損 | 欠損 | [S52][S14] |
+| 2024 | 1,669.6 | +29% | 欠損 | 13.8%(算: 非GAAP営業利益四半期合計 230.1) | -78.8 | 269.0 | **-0.23** | **0.75** | **338.5**(給与税を除く。給与税込みは 356.4) | 380.4 | 213.5(算) | 12.8%(算) | 166.9 | 10.0% | 算: 約343(GAAP 純損失 78.8 ÷ EPS 0.23、粗い)/ 約359(非GAAP 269.0 ÷ 0.75、粗い) | 欠損 | [S14][S48] |
+| 2025 | 2,167.9 | +30% | 欠損 | 14.0%(算: 非GAAP営業利益四半期合計 303.8) | -102.3 | 342.9 | **-0.29** | **0.93** | **451.5**(給与税を除く。給与税込みは 489.9) | 603.1 | 342.5(算) | 15.8%(算) | 260.6 | 12.0% | 算: 約353(102.3 ÷ 0.29、粗い)/ 約369(342.9 ÷ 0.93、粗い) | 欠損 | [S8][S48] |
+
+注: FY2025 の 4 四半期の non-GAAP EPS の合計は 0.16 + 0.21 + (算 0.28) + 0.28 = 0.93 と整合する。
 
 ---
 
@@ -126,104 +138,138 @@ KPI 定義・開示の変更:
 | 2026Q2 決算(2026-08-06) | FY2026 | 2,864〜2,870 | 443〜445 | 1.25〜1.26 | — | [S1] |
 | 中期目標 | 欠損 | 欠損 | 欠損 | 欠損 | 未検索 | 未検索 |
 
-注: 2026年の 2,864〜2,870 と non-GAAP EPS 1.25〜1.26 は会社ガイダンスであり、コンセンサスではない。
+注: 2026 年の 2,864〜2,870 と non-GAAP EPS 1.25〜1.26 は会社ガイダンスであり、コンセンサスではない。
 
 ---
 
 ## 7. 表6 コンセンサス
 
-TradingView の検索(`allowed_domains: ["tradingview.com"]`)は、予算切れで未実行。
+データ提供元は集計サイトのため、すべて Tier 3 または Tier 4。snapshot の日付が揃っていないため、年度の値は参考値。
 
 | 会計年度 | 売上コンセンサス(平均・高・低) | non-GAAP EPS コンセンサス(平均・高・低) | アナリスト数 | 出典 | 出典日付 |
 |---|---|---|---|---|---|
-| 2026 | 欠損 | 欠損 | 欠損 | — | — |
-| 2027 | 欠損 | 欠損 | 欠損 | — | — |
-| 2028 | 欠損 | 欠損 | 欠損 | — | — |
+| 2026 | 平均 2.87B / 高 2.94B / 低 2.87B(Yahoo、T3)。Seeking Alpha の 2026年4月時点は 2.80B(T4) | 平均 1.26 / 高 1.32 / 低 1.25(Yahoo と StockAnalysis、T3)。WallStreetZen は平均 1.29 / 高 1.94 / 低 1.18(T4)。Seeking Alpha 4月時点は 1.12(T4) | 売上 30 / EPS 31(Yahoo) | [S53][S54] | Yahoo 欄は約4か月前の snapshot(2026年6月頃・推定)。StockAnalysis は取得時点不明 |
+| 2027 | 平均 3.69B / 高 4.04B / 低 3.55B(Yahoo、T3) | 平均 1.67 / 高 1.98 / 低 1.39(Yahoo、T3)。valueinvesting.io は平均約 1.5(T4、単独) | 売上 32 / EPS 33(Yahoo) | [S53] | 同上 |
+| 2028 | 平均約 4.6B(valueinvesting.io、T4、単独・範囲不明) | 平均約 2.2(valueinvesting.io、T4、単独) | 16(valueinvesting.io、単独) | [S55](T4) | 日付不明。値は snippet から読み取りが困難 |
 | 2029 | 欠損 | 欠損 | 欠損 | — | — |
-| 2030 | 欠損 | 欠損 | 欠損 | — | — |
 
-- アナリスト目標株価(平均・高・低): 欠損
-- レーティング分布: 欠損
+- 四半期の決算前コンセンサス(参考・Zacks、T3): 2026Q1 売上 621.9 / EPS 0.23(実績 639.8 / 0.27)。2026Q2 売上 665.4 / EPS 0.27(実績 696.1 / 0.29)。[S56][S57]
+- アナリスト目標株価(MarketBeat、T3): 2026-10-01 時点の平均 321.85、2026-10-06 の平均 326.33、株価ページの consensus 328.19(株価ページの現在値 360.32)。最高値は BTIG の 413(2026-10-06 に 382 から引き上げ、Buy 維持、T3)。最低値は欠損(WallStreetZen の 160 は T4、約8日前、単独)。[S58][S59]
+- WallStreetZen(T4): 平均 329.67 / 高 400 / 低 160(21 名、約8日前)。ただし高値 400 は BTIG の 413 より低く古い。
+- レーティング分布(MarketBeat、2026-10-01、T3): 33 社のうち Buy 21、Strong Buy 1、Hold 7、Sell 4。コンセンサスは "Moderate Buy"。
 
 ---
 
 ## 8. 表7 バランスシート
 
-| 項目 | 2026-06-30 の値 | 直近で確認できた値 | 出典 | 備考 |
+| 項目 | 2026-06-30 の値(US$ mn) | 直近で確認できた値 | 出典・Tier | 備考 |
 |---|---|---|---|---|
-| 現金・短期投資(AFS 含む) | 欠損 | 2025-12-31 = 4,101.3 / 2025-09-30 = 4,043.5 / 2025-06-30 = 3,959.7 | [S8][S10][S12] | Q2 2026 の残高は未確認 |
-| 0% 転換社債 2030(満期 2030-06-15) | 元本 2,000.0(10-Q の記述) | 2025年6月発行、正味手取り 1,971.0 | [S4] | 6/30 時点の帳簿額は未確認 |
-| 0% 転換社債 2026(満期 2026-08-15) | 欠損(残高未確認) | 発行額 1,125.0(2021-08-10 価格決定。超過配分 168.75 の行使有無は未確認)。初期転換価格 約191.34(単独・Benzinga) | [S20][S37] | 満期は 6/30 の後。残高と決済状況は欠損 |
-| 0% 転換社債 2031(満期 2031-08-15) | 6/30 後の事象(対象外) | 元本 2,175.0、初期転換価格 約496.94、決済 2026-08-13 予定 | [S21][S38] | 2026年8月の価格決定。6/30 残高には含まれない |
-| ファイナンス・オペレーティングリース負債 | 欠損 | 欠損 | — | 未取得 |
-| 繰延収益 | 欠損 | 欠損 | — | 未取得 |
+| 現金・現金同等物 | **1,663.8** | 2025-12-31 = 943.5 | [S3][S4] T1 | 貸借対照表(千ドル単位 1,663,773) |
+| 有価証券(AFS) | **2,499.0** | 2025-12-31 = 3,157.7 | [S3][S4] T1 | |
+| 現金・投資の合計 | **4,162.8** | 2025-12-31 = 4,101.3 / 2025-09-30 = 4,043.5 / 2025-06-30 = 3,959.7 | [S3] T1、[S8][S10][S12] | 会社が記載した合計値 |
+| 転換社債(流動) = 2026 Notes の帳簿額 | **1,293.3** | 2025-12-31 = 1,291.3 | [S4] T1 | 2026 Notes は 2026-08-15 満期。流動に分類 |
+| 転換社債(非流動) = 2030 Notes の帳簿額 | **1,977.0** | — | [S4] T1 | 2030 Notes の元本 2,000.0 から未償却発行費を差し引いた額(推定の照合) |
+| 2026 Notes 元本 | 1,293.75(2025年の開示値) | — | [S60] T1 | 1,125.0 + 超過配分 168.75。2026-06-30 の残高は帳簿額 1,293.3 で、ほぼ元本どおり |
+| 2026 Notes の転換価格 | 約 191.34 | — | [S37] T3(単独・2021年の発行時) | 転換比率は未確認。決済・償還の状況は未確認 |
+| 2030 Notes | 元本 2,000.0、0%、満期 2030-06-15 | 2025年6月発行、正味手取り 1,971.0 | [S4] T1 | |
+| 2031 Notes | 6/30 後の事象(対象外) | 元本 2,175.0、初期転換価格 約 496.94、決済 2026-08-13 予定 | [S21][S38] T3 | 2026年8月の価格決定 |
+| 繰延収益(流動) | **812.2** | 2025-12-31 = 684.2 | [S4] T1 | |
+| 繰延収益(非流動) | **40.3** | 2025-12-31 = 41.1 | [S4] T1 | |
+| オペレーティング・リース負債(流動) | **78.2** | 2025-12-31 = 70.9 | [S4] T1 | |
+| オペレーティング・リース負債(非流動) | **180.8** | 2025-12-31 = 182.0 | [S4] T1 | 合計 259.1(算) |
+| ファイナンス・リース負債 | 欠損 | — | — | 未確認 |
 | 購入コミットメント(ネットワーク・データセンター) | 欠損 | 欠損 | — | 未取得 |
 | のれん・無形資産 | 欠損 | 欠損 | — | 未取得 |
-| 株主資本 | 欠損 | 欠損 | — | 未取得 |
-| 有形固定資産(純額) | 703.2(うち米国 375.0) | 2025-12-31 の米国 298.3 | [S4] | 10-Q の記述。米国比率は 53% |
+| 総資産 | 6,474.1 | 2025-12-31 = 6,036.3 | [S4] T1 | |
+| 総負債 | 4,854.1 | — | [S4] T1 | |
+| 株主資本 | **1,620.0** | 2025-12-31 = 1,459.1 | [S4] T1 | 総資産 − 総負債 = 1,620.0(整合) |
+| 有形固定資産(純額) | 703.2(うち米国 375.0) | 2025-12-31 の米国 298.3 | [S4] T1 | 米国比率 53% |
 | RPO | 2026-03-31 = 2,543.5(Q2 は未確定 2,732) | — | [S5][S31] | 12か月内計上 64%(10-Q の記述) |
 
 ---
 
 ## 9. 出典の食い違い・要確認事項
 
-1. **2026Q1 non-GAAP EPS**: 0.27(決算要約、約3.77億株)と 0.25(Seeking Alpha 要約)。未確定。CSV は 0.27 で、要8-K 確認。
+1. **2026Q1 non-GAAP EPS**: 0.27(決算要約、Tier 1 の引用)と 0.25(Seeking Alpha、T4)。未確定。CSV は 0.27 で、要8-K 確認。
 2. **2024Q2 GAAP 営業利益**: 34.7 は単独出典で、2024Q4 と同値。非GAAP 調整額の規模から見て疑義あり。CSV は空欄。
 3. **2024Q2 売上**: 約401(精密値は未確認)。
-4. **2026Q2 RPO**: 2,732(Stock Taper)。同ページ内でも売上成長率が 36% と +8.8% で矛盾しており、単独・未確定。CSV は空欄。
-5. **2025Q4 non-GAAP EPS**: 0.28(Seeking Alpha 要約、単独)。CSV は空欄。
-6. **発行済株式数**: 317.32M / 321.18M / 344M / 356.1M。時点の違いがあり、未確定。
-7. **52週レンジ**: 高値 276.82 / 291 / 332.22。時点の違いがあり、未確定。
-8. **不採用**: Kalshi の「Q2 2026 reported $99.4M」(明らかな誤り)。Yahoo SG の時価総額 125.46B(日付不明)。Trade-Ideas の 349.07(古い値)。
-9. **大口顧客数 2023・2024**: 2,756 / 3,497 は二次分析の単独値で、CSV には入れていない。
-10. **Q4 2024 GAAP 純利益 -12.9**: FY 値からの算出で、CSV には入れている(算)。
+4. **2026Q2 RPO**: 2,732(Stock Taper、T4)。同ページ内でも売上成長率が 36% と +8.8% で矛盾しており、単独・未確定。CSV は空欄。
+5. **株価(10/9)**: 360.93(Yahoo・CNN・GuruFocus、T3)と 358.46(Investing.com の履歴表、T3、不一致)、+3.72%(TradingKey の記事、T3、騰落率が不一致)。前日終値 341.89 + 19.04 = 360.93 と整合するため 360.93 を採用。
+6. **時価総額**: 128.5bn(算)と Yahoo の intraday 128.52bn、ad-hoc-news 128.1bn が近い。CNN の 121.74bn は不一致。
+7. **2026 年 EPS コンセンサス**: 1.12(SA、2026年4月)〜1.29(WallStreetZen)と幅がある。snapshot の日付が違うため未確定。
+8. **52週高値**: 370.35(MarketBeat、日付不明)と 332.22(2026-08-13、ChartRow)。前者が新しい値と思われるが未確定。
+9. **Q4 2024 GAAP 純利益**: 会社の比較値は -12.8(T1)。従来の算出 -12.9 は丸めの差で、会社値を採用。
+10. **Q4 2025 non-GAAP EPS**: 0.28 は会社の決算要約で確認された(以前の SA 単独値を、会社値で置き換え)。
+11. **大口顧客数 2023・2024**: 2,756 / 3,497 は二次分析の単独値で、CSV には入れていない。
+12. **不採用**: Kalshi の「Q2 2026 reported $99.4M」(明らかな誤り)。Yahoo SG の時価総額 125.46B(日付不明)。Trade-Ideas の 349.07(古い値)。
+13. **FY2023 の revenue**: 1,296.7 は会社の要約値(T1)。FY2022 の売上 約975 は算出(33% からの逆算)で、確定値ではない。
 
 ---
 
 ## 10. 出典一覧(取得日 2026-10-11)
 
-| ID | 内容 | URL |
-|---|---|---|
-| S1 | Q2 2026 決算リリース(Business Wire) | https://secure.businesswire.com/news/home/20260806407787/en/Cloudflare-Announces-Second-Quarter-2026-Financial-Results |
-| S2 | Q2 2026 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000053/q226exhibit991.htm |
-| S3 | Q2 2026 Ex.99.1(IR PDF) | https://cloudflare.net/files/doc_financials/2026/q2/Q2-26-Exhibit-99-1.pdf |
-| S4 | Q2 2026 10-Q(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000054/cloud-20260630.htm |
-| S5 | Q1 2026 10-Q(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000038/cloud-20260331.htm |
-| S6 | Q1 2026 決算リリース(Business Wire) | https://www.businesswire.com/news/home/20260507927382/en/Cloudflare-Announces-First-Quarter-2026-Financial-Results |
-| S7 | Q1 2026 8-K/A Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000035/q126exhibit991.htm |
-| S8 | Q4/FY2025 決算リリース(Business Wire) | https://www.businesswire.com/news/home/20260210624682/en/Cloudflare-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/ |
-| S9 | Q4/FY2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733326000008/q425exhibit991.htm |
-| S10 | Q3 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000140/q325exhibit991.htm |
-| S11 | Q3 2025 決算リリース(Business Wire、2025-10-30) | https://www.businesswire.com/news/home/20251030894066/en |
-| S12 | Q2 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000136/q225exhibit991.htm |
-| S13 | Q1 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000081/q125exhibit991.htm |
-| S14 | Q4/FY2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000017/q424exhibit991.htm |
-| S15 | Q3 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000083/q324exhibit991.htm |
-| S16 | Q2 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000069/q224exhibit991.htm |
-| S17 | Q1 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000048/q124exhibit991.htm |
-| S18 | Q4/FY2023 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000004/q423exhibit991.htm |
-| S19 | 2026 DEF 14A(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000119312526263809/d160227ddef14a.htm |
-| S20 | 2026 転換社債発行の報道(2021-08-10) | https://www.businesswire.com/news/home/20210810006078/en |
-| S21 | 2031 転換社債の価格決定(Webull) | https://www.webull.com/news/15383297032283136 |
-| S22 | Yahoo Finance(AU)NET 株価履歴 | https://au.finance.yahoo.com/quote/NET/history/ |
-| S23 | ChartRow NET | https://chartrow.com/quote/net |
-| S24 | Halo NET | https://stag.www.halo-technologies.com/markets/shares/nys/net |
-| S25 | Google Finance NET(日付不明) | https://www.google.com/finance/quote/NET:NYSE?sa=X |
-| S26 | Yahoo Finance NZ key statistics | https://nz.finance.yahoo.com/quote/NET/key-statistics |
-| S27 | MarketBeat Q2 2026 決算コール要約 | https://www.marketbeat.com/instant-alerts/cloudflare-q2-earnings-call-highlights-2026-08-08/ |
-| S28 | MarketBeat Q4 2025 決算コール要約 | https://www.marketbeat.com/instant-alerts/cloudflare-q4-earnings-call-highlights-2026-02-10/ |
-| S29 | TIKR Q2 2026 記事 | https://www.tikr.com/blog/cloudflare-q2-report-gross-margin-turned-up-for-the-first-time-in-two-years |
-| S30 | TIKR Q1 2026 記事(人員削減) | https://tikr.com/blog/cloudflare-q1-2026-34-revenue-growth-but-announces-20-workforce-reduction |
-| S31 | Stock Taper Q2 2026 要約(信頼性低) | https://www.stocktaper.com/earningsCallSummary/NET/2026/Q2 |
-| S32 | Seeking Alpha PR ページ(Q1 2026) | https://seekingalpha.com/pr/20506904 |
-| S33 | Seeking Alpha PR ページ(Q4 2025) | https://seekingalpha.com/pr/20394905 |
-| S34 | Q1 2026 決算コール(IR PDF、直接未確認) | https://cloudflare.net/files/doc_financials/2026/q1/CORRECTED-TRANSCRIPT-Cloudflare-Inc-NET-US-Q1-2026-Earnings-Call-7-May-2026-5-00-PM-ET.pdf |
-| S35 | OpenCapital 地域別セグメント(単独・未検証) | https://www.opencapital.sh/stocks/net/metrics/segments?change=qoq |
-| S36 | Benzinga 2021 転換社債記事 | https://benzinga.com/z/22438284 |
-| S37 | Benzinga 2021 転換価格(単独) | https://benzinga.com/z/22438284 |
-| S38 | Nasdaq 2031 転換社債記事 | https://www.nasdaq.com/articles/cloudflare-prices-2175-bln-zero-coupon-senior-notes |
-| S39 | Q2 2026 決算コール(Quartr) | https://quartr.com/events/cloudflare-inc-net-q2-2026_3s9oMh1m |
-| S40 | StockStory 記事(Q1 2026 決算、FY2026 期初中点・単独) | https://stocks.observer-reporter.com/observerreporter/article/stockstory-2026-5-7-cloudflare-nysenet-reports-bullish-q1-cy2026-but-stock-drops-12 |
-| S41 | Q2 2026 Workers 開発者数(二次) | https://www.tickerreport.com/?p=13535993 |
+| ID | Tier | 内容 | URL |
+|---|---|---|---|
+| S1 | 1 | Q2 2026 決算リリース(Business Wire) | https://secure.businesswire.com/news/home/20260806407787/en/Cloudflare-Announces-Second-Quarter-2026-Financial-Results |
+| S2 | 1 | Q2 2026 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000053/q226exhibit991.htm |
+| S3 | 1 | Q2 2026 Ex.99.1(IR PDF、貸借対照表・株数) | https://cloudflare.net/files/doc_financials/2026/q2/Q2-26-Exhibit-99-1.pdf |
+| S4 | 1 | Q2 2026 10-Q(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000054/cloud-20260630.htm |
+| S5 | 1 | Q1 2026 10-Q(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000038/cloud-20260331.htm |
+| S6 | 1 | Q1 2026 決算リリース(Business Wire) | https://www.businesswire.com/news/home/20260507927382/en/Cloudflare-Announces-First-Quarter-2026-Financial-Results |
+| S7 | 1 | Q1 2026 8-K/A Ex.99.1(SEC、SBC 調整表) | https://www.sec.gov/Archives/edgar/data/0001477333/000147733326000035/q126exhibit991.htm |
+| S8 | 1 | Q4/FY2025 決算リリース(Business Wire) | https://www.businesswire.com/news/home/20260210624682/en/Cloudflare-Announces-Fourth-Quarter-and-Fiscal-Year-2025-Financial-Results/ |
+| S9 | 1 | Q4/FY2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733326000008/q425exhibit991.htm |
+| S10 | 1 | Q3 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000140/q325exhibit991.htm |
+| S11 | 1 | Q3 2025 決算リリース(Business Wire、2025-10-30) | https://www.businesswire.com/news/home/20251030894066/en |
+| S12 | 1 | Q2 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000136/q225exhibit991.htm |
+| S13 | 1 | Q1 2025 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000081/q125exhibit991.htm |
+| S14 | 1 | Q4/FY2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000017/q424exhibit991.htm |
+| S15 | 1 | Q3 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000083/q324exhibit991.htm |
+| S16 | 1 | Q2 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000069/q224exhibit991.htm |
+| S17 | 1 | Q1 2024 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000048/q124exhibit991.htm |
+| S18 | 1 | Q4/FY2023 8-K Ex.99.1(SEC) | https://www.sec.gov/Archives/edgar/data/1477333/000147733324000004/q423exhibit991.htm |
+| S19 | 1 | 2026 DEF 14A(SEC) | https://www.sec.gov/Archives/edgar/data/0001477333/000119312526263809/d160227ddef14a.htm |
+| S20 | 1 | 2021 転換社債発行(Business Wire) | https://www.businesswire.com/news/home/20210810006078/en |
+| S21 | 3 | 2031 転換社債の価格決定(Webull) | https://www.webull.com/news/15383297032283136 |
+| S22 | 3 | Yahoo Finance(AU)NET 株価履歴 | https://au.finance.yahoo.com/quote/NET/history/ |
+| S23 | 3 | ChartRow NET(2026-08-13 時点) | https://chartrow.com/quote/net |
+| S24 | 3 | Halo NET(2026-07-24 時点) | https://stag.www.halo-technologies.com/markets/shares/nys/net |
+| S25 | 3 | Google Finance NET(日付不明) | https://www.google.com/finance/quote/NET:NYSE?sa=X |
+| S26 | 3 | Yahoo Finance NZ key statistics | https://nz.finance.yahoo.com/quote/NET/key-statistics |
+| S27 | 3 | MarketBeat Q2 2026 決算コール要約 | https://www.marketbeat.com/instant-alerts/cloudflare-q2-earnings-call-highlights-2026-08-08/ |
+| S28 | 3 | MarketBeat Q4 2025 決算コール要約 | https://www.marketbeat.com/instant-alerts/cloudflare-q4-earnings-call-highlights-2026-02-10/ |
+| S29 | 3 | TIKR Q2 2026 記事 | https://www.tikr.com/blog/cloudflare-q2-report-gross-margin-turned-up-for-the-first-time-in-two-years |
+| S30 | 3 | TIKR Q1 2026 記事(人員削減) | https://tikr.com/blog/cloudflare-q1-2026-34-revenue-growth-but-announces-20-workforce-reduction |
+| S31 | 4 | Stock Taper Q2 2026 要約(信頼性低) | https://www.stocktaper.com/earningsCallSummary/NET/2026/Q2 |
+| S32 | 4 | Seeking Alpha PR ページ(Q1 2026、EPS 0.25) | https://seekingalpha.com/pr/20506904 |
+| S33 | 4 | Seeking Alpha PR ページ(Q4 2025、EPS 0.28 の初出。会社値で確認) | https://seekingalpha.com/pr/20394905 |
+| S34 | 1 | Q1 2026 決算コール(IR PDF、直接未確認) | https://cloudflare.net/files/doc_financials/2026/q1/CORRECTED-TRANSCRIPT-Cloudflare-Inc-NET-US-Q1-2026-Earnings-Call-7-May-2026-5-00-PM-ET.pdf |
+| S35 | 3 | OpenCapital 地域別セグメント(単独・未検証) | https://www.opencapital.sh/stocks/net/metrics/segments?change=qoq |
+| S36 | 3 | Benzinga 2021 転換社債記事 | https://benzinga.com/z/22438284 |
+| S37 | 3 | Benzinga 2021 転換価格(単独) | https://benzinga.com/z/22438284 |
+| S38 | 3 | Nasdaq 2031 転換社債記事 | https://www.nasdaq.com/articles/cloudflare-prices-2175-bln-zero-coupon-senior-notes |
+| S39 | 1 | Q2 2026 決算コール(Quartr) | https://quartr.com/events/cloudflare-inc-net-q2-2026_3s9oMh1m |
+| S40 | 3 | StockStory 記事(Q1 2026、FY2026 期初中点・単独) | https://stocks.observer-reporter.com/observerreporter/article/stockstory-2026-5-7-cloudflare-nysenet-reports-bullish-q1-cy2026-but-stock-drops-12 |
+| S41 | 4 | Q2 2026 Workers 開発者数(二次) | https://www.tickerreport.com/?p=13535993 |
+| S42 | 3 | Yahoo Finance NET(株価 360.93、時価総額 intraday 128.52bn) | https://finance.yahoo.com/quote/NET/ |
+| S43 | 3 | CNN NET(時価総額 121.74bn、不一致) | https://www.cnn.com/markets/stocks/NET |
+| S44 | 3 | GuruFocus(2026-10-09 の +5.6% と 360.93) | https://www.gurufocus.com/news/9117923/cloudflare-inc-net-stock-up-56-but-gf-value-says-overvalued-gf-score-67100 |
+| S45 | 3 | TradingKey(2026-10-09 の +3.72% 記事、参考) | https://www.tradingkey.com/news/market-movers/262208942-market-movers-net-20261009 |
+| S22b | 3 | Investing.com 株価履歴(358.46、不一致) | https://www.investing.com/equities/cloudflare-inc-historical-data |
+| S46 | 3 | MarketBeat NET 株価ページ(52週 158.83〜370.35、現在値 360.32、consensus 328.19) | https://www.marketbeat.com/stocks/NYSE/NET/ |
+| S47 | 1 | Q3 2025 8-K(FY 比較の検算用、要約経由) | https://www.sec.gov/Archives/edgar/data/1477333/000147733325000140/cloud-20251030.htm |
+| S48 | 1 | Q4 2025 Ex.99.1(PDF、EPS 比較値・SBC・FCF 99.4 の出典) | https://cloudflare.net/files/doc_financials/2025/q4/Q4-25-Exhibit-99-1_FINAL.pdf |
+| S49 | 1 | Q2 2026 Ex.99.1 の 6か月キャッシュフロー・SBC+給与税(要約経由) | https://cloudflare.net/files/doc_financials/2026/q2/Q2-26-Exhibit-99-1.pdf |
+| S50 | 1 | Q1 2026 補足資料(SBC 114.2 / 95.5) | https://cloudflare.net/files/doc_financials/2026/q1/Q1-26-Supplemental-Financial-Information.pdf |
+| S51 | 1 | Q2 2026 投資家向け資料(未読) | https://www.cloudflare.net/files/doc_financials/2026/q2/Q2-2026-Cloudflare-Investor-Presentation.pdf |
+| S52 | 1 | Q4 2023 Ex.99.1(PDF、FY2023 の revenue・OCF・non-GAAP 営業利益、要約経由) | https://cloudflare.net/files/doc_financials/2023/q4/Q4-23-Exhibit-99-1.pdf |
+| S53 | 3 | Yahoo Finance NET analysis(コンセンサス、約4か月前の snapshot) | https://finance.yahoo.com/quote/NET/analysis/ |
+| S54 | 3 | StockAnalysis NET forecast(2026 EPS 平均 1.26 / 高 1.32 / 低 1.25、30 名) | https://stockanalysis.com/stocks/net/forecast/ |
+| S55 | 4 | valueinvesting.io NET estimates(2028 含む、読み取り困難) | https://valueinvesting.io/NET/estimates |
+| S56 | 3 | Zacks 決算前記事(Q1 2026、Yahoo 経由) | https://finance.yahoo.com/markets/stocks/articles/cloudflare-post-q1-earnings-whats-154100894.html |
+| S57 | 3 | Zacks 決算前記事(Q2 2026、TradingView 経由) | https://www.tradingview.com/news/zacks:44a7a8eb9094b:0-cloudflare-to-post-q2-earnings-what-s-in-store-for-the-stock/ |
+| S58 | 3 | MarketBeat コンセンサス(2026-10-01、33 社、Moderate Buy) | https://www.marketbeat.com/instant-alerts/consensus-cloudflare-inc-nyse-net-receives-consensus-rating-of-moderate-buy-from-analysts-2026-10-01/ |
+| S59 | 3 | MarketBeat BTIG 目標株価引き上げ(2026-10-06、382→413) | https://www.marketbeat.com/instant-alerts/analyst-cloudflare-nyse-net-stock-price-expected-to-rise-btig-research-analyst-says-2026-10-06/ |
+| S60 | 1 | Cloudflare 2025 年 Q2 10-Q(2026 Notes 元本 1,293,750、2030 Notes 2,000,000、要約経由) | https://cloudflare.net/files/doc_financials/2025/q2/Cloudflare-Inc-10-Q-for-period-end-30-Jun-25.pdf |
 
-注: S35(OpenCapital)は本文では ID を付けず、参考として言及のみ。S36 と S37 は同じ Benzinga の URL。
+注: S22b は Investing.com(食い違い)の参照のみ。S35 は本文で参考言及のみ。S36 と S37 は同じ Benzinga の URL。

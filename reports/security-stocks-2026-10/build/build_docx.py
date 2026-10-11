@@ -237,7 +237,7 @@ def auto_align_table(tbl: dict) -> None:
                     texts[col].append(ast_text(cell[4]))
                 col += span
     for j, spec in enumerate(colspecs):
-        if spec[0]["t"] != "AlignDefault":
+        if spec[0]["t"] != "AlignDefault" or (j == 0 and ncols > 1):   # 第1列は行ラベルとして左寄せのまま
             continue
         votes = [v for v in (numeric_like(x) for x in texts[j]) if v is not None]
         if votes and sum(1 for v in votes if v) / len(votes) >= 0.6:
@@ -1030,7 +1030,15 @@ def fix_lists(d: docx.document.Document) -> None:
     except Exception:
         return
     BULLETS = ["•", "–", "▪", "•", "–", "▪", "•", "–", "▪"]
+    seen = set()
     for absn in numbering.findall(qn("w:abstractNum")):
+        nsid = absn.find(qn("w:nsid"))
+        if nsid is not None:                     # nsid は 8 桁 16 進でなければならない(pandoc は短い値を出す)
+            v = re.sub(r"[^0-9A-Fa-f]", "", nsid.get(qn("w:val")) or "")[-8:].rjust(8, "0").upper()
+            while v in seen:
+                v = f"{(int(v, 16) + 1) & 0xFFFFFFFF:08X}"
+            seen.add(v)
+            nsid.set(qn("w:val"), v)
         for lvl in absn.findall(qn("w:lvl")):
             fmt = lvl.find(qn("w:numFmt"))
             il = int(lvl.get(qn("w:ilvl")))
@@ -1054,6 +1062,37 @@ def fix_lists(d: docx.document.Document) -> None:
                 lvl.append(rpr)
 
 
+def normalize_xml_order(root) -> None:
+    """pandoc 出力の pPr / rPr の子要素順をスキーマ順に揃える(Word の厳格な検証対策)。"""
+    for tag, order in (("pPr", PPR_ORDER), ("rPr", RPR_ORDER)):
+        for node in root.iter(qn("w:" + tag)):
+            kids = list(node)
+            keyed = [(order.index(lname(k)) if lname(k) in order else len(order), i, k) for i, k in enumerate(kids)]
+            if [k[0] for k in keyed] == sorted(k[0] for k in keyed):
+                continue
+            for k in kids:
+                node.remove(k)
+            for _, _, k in sorted(keyed, key=lambda x: (x[0], x[1])):
+                node.append(k)
+
+
+def keep_lead_ins(body) -> None:
+    """「…は次のとおり:」のように : で終わる段落が、直後の表・コード・図から離れないようにする。"""
+    for p in body.findall(qn("w:p")):
+        nxt = p.getnext()
+        if nxt is None:
+            continue
+        sid = get_pstyle(p) or ""
+        if sid.startswith("Heading") or sid.startswith("TOC"):
+            continue
+        txt = para_text(p).rstrip()
+        if not txt.endswith((":", "：")):
+            continue
+        if nxt.tag == qn("w:tbl") or (nxt.tag == qn("w:p") and get_pstyle(nxt) in (
+                "SourceCode", "TableCaption", "CaptionedFigure", "Figure")):
+            ppr_set(p, el("keepNext"))
+
+
 def assemble(stage1: Path, out: Path, manifest: dict, pages: dict[int, int] | None = None,
              page_by_index: list | None = None) -> dict:
     """pandoc 出力に後処理を施して out に保存。pages は「見出し順の index -> ページ」。"""
@@ -1067,6 +1106,8 @@ def assemble(stage1: Path, out: Path, manifest: dict, pages: dict[int, int] | No
     apply_markers(body)
     process_tables(body, stats)
     stats["images"] = process_figures(body)
+    keep_lead_ins(body)
+    normalize_xml_order(body)
 
     heads = collect_headings(body)
     add_toc_bookmarks(body, heads)
