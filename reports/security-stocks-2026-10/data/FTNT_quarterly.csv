@@ -1,0 +1,11 @@
+quarter,total_revenue_usd_mn,product_revenue_usd_mn,service_revenue_usd_mn,billings_usd_mn,gaap_gross_margin_pct,product_gross_margin_pct,service_gross_margin_pct,gaap_operating_margin_pct,non_gaap_operating_margin_pct,gaap_net_income_usd_mn,gaap_diluted_eps_usd,non_gaap_diluted_eps_usd,sbc_usd_mn,operating_cash_flow_usd_mn,capex_usd_mn,free_cash_flow_usd_mn,diluted_shares_mn,unified_sase_arr_yoy_pct,secops_arr_yoy_pct,firewall_refresh_progress_pct,deals_over_1m_count_yoy_pct,deals_over_1m_value_yoy_pct,deferred_revenue_total_usd_mn,rpo_usd_mn,product_revenue_yoy_pct
+2024Q1,1350,409,944.4,,,,,23.7,28.5,,,0.43,,830,,609,,,,,,,,,-18.3
+2024Q2,1434.3,451.9,982.4,1540,,,,30.5,35.1,,,,,342,,,,,,,,,5900,,-4.4
+2024Q3,1510,473.9,1030,1580,,,,31.2,36.1,,,,,608.1,,571.8,,,,,,,,6100,1.7
+2024Q4,1660,574,,2000,,,,,39,,,0.74,,,,,775.2,,,,,,,,18
+2025Q1,1540,459,1080,1600,,,,,34.2,,0.56,0.58,,,,782.8,,,,,,,,,12
+2025Q2,1630,,,1780,,,,28,33,,0.57,0.64,,,,,,,,,29,51,,6640,
+2025Q3,1720,559.3,,1810,81.6,,,32,36.9,,,0.74,,,,,,,,,,,,,18
+2025Q4,1910,691,,2370,79.6,66.9,86.8,33,37,,,0.81,,620.2,,577.4,,,,,,,,,20
+2026Q1,1850,645,1210,2090,,,,31.4,35.8,,0.72,0.82,,,,1010,,,,,,,7350,,41
+2026Q2,2050,773.0,1270,2370,80.2,,,34,38,606.3,0.82,0.901,,1040,,966,,,,,,,7680,,52

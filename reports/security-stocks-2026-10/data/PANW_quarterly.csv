@@ -1,0 +1,11 @@
+quarter,period_end,revenue_usd_mn,revenue_is_rounded,product_revenue_usd_mn,subscription_support_revenue_usd_mn,gaap_gross_margin_pct,nongaap_operating_margin_pct,nongaap_operating_income_usd_mn,gaap_operating_income_usd_mn,gaap_net_income_usd_mn,nongaap_net_income_usd_mn,gaap_eps_diluted_usd,nongaap_eps_diluted_usd,pre_split_eps_flag,sbc_usd_mn,operating_cf_usd_mn,capex_usd_mn,fcf_company_adjusted_usd_mn,diluted_shares_mn,ngs_arr_usd_mn,ngs_arr_yoy_pct,rpo_usd_mn,rpo_yoy_pct,crpo_usd_mn,billings_usd_mn,acquisition_revenue_usd_mn,acquisition_ngs_arr_usd_mn,acquisition_rpo_usd_mn
+FY24Q3,2024-04-30,2000,1,,,,26,,,278.8,454.9,0.79,1.32,1,,,,,,,,11300,23,,,,,
+FY24Q4,2024-07-31,2200,1,,,,,,,357.7,522.2,1.01,1.51,1,,,,,,4220,43,12700,20,,,,,
+FY25Q1,2024-10-31,2100,1,,,,28.8,,,350.7,544.9,0.99,1.56,1,,,,,,4500,40,12600,20,,,,74,
+FY25Q2,2025-01-31,2300,1,,,,,,,267,,0.38,0.81,0,,,,,,4800,37,13000,21,,,,,
+FY25Q3,2025-04-30,2300,1,,,,,,,,,0.37,0.80,0,,,,,,5100,34,13500,19,,,,,
+FY25Q4,2025-07-31,2500,1,,,,,768,497,253.8,673.0,0.36,0.95,0,,1000,,954,,5600,32,15800,24,,,,,
+FY26Q1,2025-10-31,2500,1,,,,,,,334,662,0.47,0.93,0,,,,,,5900,29,15500,24,,,,,
+FY26Q2,2026-01-31,2600,1,,,,,,,432,732,0.61,1.03,0,,,,,,6300,33,16000,23,,,,,
+FY26Q3,2026-04-30,3000,1,,,,,,,-177,684,-0.22,0.85,0,,,,910,,8100,60,18400,36,,,388,1600,1800
+FY26Q4,2026-07-31,3410,0,,,,,1000,172,-282,853,-0.35,1.02,0,,1400,,1300,,9100,63,21200,34,,,,,
