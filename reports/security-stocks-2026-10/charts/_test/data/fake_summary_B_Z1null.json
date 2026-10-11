@@ -1,0 +1,17 @@
+{
+ "ticker": "銘柄B",
+ "price": 520.0,
+ "price_date": "2026-10-09",
+ "entry_zones": {
+  "alpha": 0.0,
+  "Z1": null,
+  "Z2": 380.0,
+  "zone": "見送り圏"
+ },
+ "targets_12m": {
+  "consensus": 455.0,
+  "company": 520.0,
+  "engine": 610.0,
+  "bear": 300.0
+ }
+}

@@ -1,0 +1,17 @@
+{
+ "ticker": "銘柄A",
+ "price": 300.0,
+ "price_date": "2026-10-09",
+ "entry_zones": {
+  "alpha": 0.12,
+  "Z1": 240.0,
+  "Z2": 330.0,
+  "zone": "分割エントリー圏"
+ },
+ "targets_12m": {
+  "consensus": 350.0,
+  "company": 410.0,
+  "engine": 480.0,
+  "bear": 210.0
+ }
+}
