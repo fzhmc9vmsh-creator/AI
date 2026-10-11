@@ -114,9 +114,9 @@ KPI の定義変更: 2026年の要約では **Unified SASE・SecOps の ARR が�
 | 2024Q3 | 欠損(+14%、コール要約。billings か ARR かは不明) | 欠損(+32%、コール要約。同上) | 欠損 | 欠損 | 欠損 | 6,100(+15%) | +1.7% | S17 |
 | 2024Q4 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | +18% | S16 |
 | 2025Q1 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | +12% | S15 |
-| 2025Q2 | 22%(**未確定**、§2 #4) | 35%(**未確定**、§2 #4) | 「2026年の更新サイクルの 40〜50% を消化」(2025Q2 時点の経営発言。二次) | 件数 +29%、金額 +51% | 欠損 | 6,640(current 3,450。Zacks 系) | 欠損 | S14・S31 |
+| 2025Q2 | 22%(**未確定**、§2 #4) | 35%(**未確定**、§2 #4) | 「2026年の更新サイクルの 40〜50% を消化」(2025Q2 時点の経営発言。二次) | 件数 +29%、金額 +51% | 欠損 | 6,640(current 3,450。Zacks 系) | 欠損 | S14・S28 |
 | 2025Q3 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | 欠損 | +18% | S13 |
-| 2025Q4 | 欠損(Unified SASE billings +40%) | 欠損(SecOps billings ≈+6%、単独の分析記事) | 欠損 | 30%超(下限。CSV は空欄) | 欠損 | 欠損 | +20% | S11・S12・S31 |
+| 2025Q4 | 欠損(Unified SASE billings +40%) | 欠損(SecOps billings ≈+6%、単独の分析記事) | 欠損 | 30%超(下限。CSV は空欄) | 欠損 | 欠損 | +20% | S11・S12・S28 |
 | 2026Q1 | 欠損 | 欠損 | 欠損 | 欠損 | 7,350(current 3,730) | 欠損 | +41% | S09(Q1 比較値) |
 | 2026Q2 | 欠損(billings +35%) | 欠損(billings +25%) | 欠損 | 欠損 | 7,680(current 3,840) | 7,730(**単独・未確定**。CSV は空欄) | +52% | S03・S09・S10 |
 
@@ -271,6 +271,4 @@ TradingView 直接取得は不可。TradingView 予想ページの取得は一�
 | S25 | アナリスト評価(StreetInsider・Stockalarm・TipRanks・Barchart 系) | https://www.streetinsider.com/rating_history.php?q=FTNT ・ https://pro.stockalarm.io/quote/FTNT/analysts ・ https://www.tipranks.com/stocks/FTNT/forecast ・ https://www.tradingview.com/news/barchart:e404b3b11094b:0-what-are-wall-street-analysts-target-price-for-fortinet-stock/ | 二次 |
 | S26 | TradingView 予想ページ(FY2027 ラベル) | https://www.tradingview.com/symbols/NASDAQ-FTNT/forecast/ | 二次(日付不明) |
 | S27 | FY2027 EPS コンセンサス(Zacks 系。記事は未特定・候補) | https://www.tradingview.com/news/zacks:bb0a9b652094b:0-fortinet-securing-the-ai-revolution/ | 二次(単独) |
-| S31 | 2025Q2 KPI(refresh cycle、$1M 案件)・2025Q4 $1M 案件 | https://fintool.com/app/research/companies/FTNT/earnings/Q2%202025 ・ https://www.marketbeat.com/instant-alerts/fortinet-q4-earnings-call-highlights-2026-02-05/ | 二次 |
-
-(S28〜S30 は検索結果の番号を欠番にしている。使っていない。)
+| S28 | 2025Q2 KPI(refresh cycle、$1M 案件)・2025Q4 $1M 案件 | https://fintool.com/app/research/companies/FTNT/earnings/Q2%202025 ・ https://www.marketbeat.com/instant-alerts/fortinet-q4-earnings-call-highlights-2026-02-05/ | 二次 |
