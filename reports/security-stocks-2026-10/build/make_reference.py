@@ -261,8 +261,8 @@ def build_styles_xml() -> str:
                    ppr=tab + '<w:spacing w:before="0" w:after="0" ' + exact(14) + '/><w:ind w:left="480" w:right="560"/>',
                    rpr='<w:color w:val="404040"/>' + size(9)))
     S.append(style("Header", "header", ui=99, q=False,
-                   ppr=(f'<w:tabs><w:tab w:val="right" w:pos="{TEXT_W}"/></w:tabs>'
-                        '<w:pBdr><w:bottom w:val="single" w:sz="4" w:space="3" w:color="BFBFBF"/></w:pBdr>'
+                   ppr=('<w:pBdr><w:bottom w:val="single" w:sz="4" w:space="3" w:color="BFBFBF"/></w:pBdr>'
+                        f'<w:tabs><w:tab w:val="right" w:pos="{TEXT_W}"/></w:tabs>'
                         '<w:spacing w:before="0" w:after="0" ' + exact(12) + '/>'),
                    rpr='<w:color w:val="7F7F7F"/>' + size(8)))
     S.append(style("Footer", "footer", ui=99, q=False,
