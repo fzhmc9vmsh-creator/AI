@@ -1,0 +1,11 @@
+quarter,period_end,revenue_usd_mn,us_revenue_pct,gaap_gross_margin_pct,non_gaap_gross_margin_pct,gaap_operating_income_usd_mn,non_gaap_operating_income_usd_mn,non_gaap_operating_margin_pct,gaap_net_income_usd_mn,gaap_diluted_eps_usd,non_gaap_diluted_eps_usd,sbc_usd_mn,operating_cash_flow_usd_mn,capex_usd_mn,capex_to_revenue_pct,fcf_usd_mn,diluted_shares_mn,paying_customers,large_customers_100k,customers_over_1m,customers_over_5m,large_customers_revenue_share_pct,dnr_pct,rpo_usd_mn,crpo_yoy_growth_pct,workers_developers_mn,largest_acv_deal_usd_mn
+2024Q1,2024-03-31,378.6,,77.5,79.5,-54.6,42.4,11.2,-35.5,-0.10,0.16,,73.6,38.0,10.0,35.6,,,,,,,,,,,
+2024Q2,2024-06-30,401.0,,77.8,,,57.0,14.2,-15.1,,0.20,,74.8,36.5,9.1,38.3,,,,,,,,,,,
+2024Q3,2024-09-30,430.1,,77.7,,-30.8,63.5,14.8,-15.3,,0.20,,104.7,59.4,13.8,45.3,,,,,,,,,,,
+2024Q4,2024-12-31,459.9,,,,-34.7,67.2,14.6,-12.9,,,,127.3,79.6,17.3,47.7,,,,173,,,,,,,
+2025Q1,2025-03-31,479.1,,75.9,,-53.2,56.0,11.7,-38.5,,0.16,,145.8,92.9,19.4,52.9,,,3527,,,,111,,,,
+2025Q2,2025-06-30,512.3,,74.9,76.3,-67.3,72.3,14.1,-50.4,-0.15,0.21,,99.8,66.5,13.0,33.3,,,3712,,,,114,,,,
+2025Q3,2025-09-30,562.0,,74.0,,-37.5,85.9,15.3,,,,,,,,,,,,,,,,,30,,
+2025Q4,2025-12-31,614.5,,,,-49.2,89.6,14.6,,,,,,,,,,,,,,,,,34,,42.5
+2026Q1,2026-03-31,639.8,,,,-62.0,73.1,11.4,,,0.27,,,,,,,,4416,,,,118,2543.5,34,,
+2026Q2,2026-06-30,696.1,,71.8,73.1,-205.7,96.1,13.8,-170.0,-0.48,0.29,,117.6,61.2,8.8,56.4,,,4698,,,,120,,35,,
