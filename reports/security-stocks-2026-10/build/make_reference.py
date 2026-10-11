@@ -175,13 +175,13 @@ def build_styles_xml() -> str:
                         '<w:left w:val="single" w:sz="24" w:space="8" w:color="' + BORDER + '"/>'
                         '<w:bottom w:val="single" w:sz="4" w:space="3" w:color="F2F2F2"/>'
                         '</w:pBdr><w:shd w:val="clear" w:color="auto" w:fill="F2F2F2"/>'
-                        '<w:spacing w:before="0" w:after="0" ' + exact(16) + '/>'
+                        '<w:spacing w:before="0" w:after="80" ' + exact(16) + '/>'
                         '<w:ind w:left="300" w:right="120" w:firstLine="0"/>'),
                    rpr='<w:color w:val="404040"/>'))
 
     # ---- コード --------------------------------------------------------------
     S.append(style("SourceCode", "Source Code", custom=True, based="Normal", nxt="SourceCode", q=True,
-                   ppr=('<w:pBdr>'
+                   ppr=('<w:keepLines/><w:pBdr>'
                         '<w:top w:val="single" w:sz="4" w:space="3" w:color="D0D7E2"/>'
                         '<w:left w:val="single" w:sz="4" w:space="4" w:color="D0D7E2"/>'
                         '<w:bottom w:val="single" w:sz="4" w:space="3" w:color="D0D7E2"/>'

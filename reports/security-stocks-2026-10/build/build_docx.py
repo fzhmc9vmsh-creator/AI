@@ -203,6 +203,48 @@ ID_ATTR_INDEX = {"Header": 1, "Div": 0, "Span": 0, "CodeBlock": 0, "Code": 0, "I
 HR_XML = '<w:p><w:pPr><w:pStyle w:val="HorizontalRule"/></w:pPr></w:p>'
 
 
+def ast_text(obj) -> str:
+    """AST ノードのプレーンテキスト(表セルの数値判定用)。"""
+    if isinstance(obj, list):
+        return "".join(ast_text(x) for x in obj)
+    if not isinstance(obj, dict):
+        return ""
+    t, c = obj.get("t"), obj.get("c")
+    if t == "Str":
+        return c
+    if t in ("Space", "SoftBreak", "LineBreak"):
+        return " "
+    if t == "Code":
+        return c[1]
+    if t in ("Link", "Span", "Quoted", "Cite"):
+        return ast_text(c[1])
+    if t in ("Emph", "Strong", "Strikeout", "Underline", "SmallCaps", "Subscript", "Superscript", "Plain", "Para"):
+        return ast_text(c)
+    return ""
+
+
+def auto_align_table(tbl: dict) -> None:
+    """配置指定のない列(AlignDefault)が数値中心なら右寄せにする。明示指定(:--- / ---: / :-:)は尊重。"""
+    colspecs, bodies = tbl["c"][2], tbl["c"][4]
+    ncols = len(colspecs)
+    texts: dict[int, list[str]] = {j: [] for j in range(ncols)}
+    for body in bodies:
+        for row in body[3]:                       # 本体行のみ(ヘッダーは判定に使わない)
+            col = 0
+            for cell in row[1]:
+                span = cell[3]
+                if span == 1 and col < ncols:
+                    texts[col].append(ast_text(cell[4]))
+                col += span
+    for j, spec in enumerate(colspecs):
+        if spec[0]["t"] != "AlignDefault":
+            continue
+        votes = [v for v in (numeric_like(x) for x in texts[j]) if v is not None]
+        if votes and sum(1 for v in votes if v) / len(votes) >= 0.6:
+            spec[0] = {"t": "AlignRight"}
+
+
+
 class AstCtx:
     def __init__(self, base_dir: Path, prefix: str, warnings: list[str]):
         self.base_dir, self.prefix, self.warnings = base_dir, prefix, warnings
@@ -221,6 +263,8 @@ def transform(obj, ctx: AstCtx):
         obj["c"] = transform(obj["c"], ctx)
     if t == "HorizontalRule":
         return {"t": "RawBlock", "c": ["openxml", HR_XML]}
+    if t == "Table":
+        auto_align_table(obj)
     if t in ID_ATTR_INDEX:
         c = obj["c"]
         attr = c[ID_ATTR_INDEX[t]]
@@ -509,6 +553,7 @@ def jp_date(s: str) -> str:
 
 def build_cover(manifest: dict) -> list:
     els = []
+    frame_els = []
     # 上部のアクセントバー(段落の下罫線)
     bar = el("p")
     set_pstyle(bar, "Normal")
@@ -553,8 +598,8 @@ def build_cover(manifest: dict) -> list:
             ppr_set(p, fr)
             if i > 0:
                 ppr_set(p, el("spacing", before=60, after=0, line=260, lineRule="exact"))
-            els.append(p)
-    return els
+            frame_els.append(p)
+    return frame_els + els
 
 
 # --------------------------------------------------------------------------- 3c. 見出し・目次
@@ -849,24 +894,24 @@ def process_table(tbl, stats: dict) -> None:
         mnw[j] = max(mnw[j], 2 * unit + pad)
     widths = compute_widths(nat, mnw, TEXT_W_TW)
 
-    # ---- 数値列の判定と配置
+    # ---- 列の配置: AST 段階で決めた配置(pandoc が書いた jc)を採用。jc が無ければ内容から判定
     col_align: dict[int, str] = {}
+    norm = {"start": "left", "end": "right", "left": "left", "right": "right", "center": "center", "both": "both"}
     for j in range(ncols):
-        votes = []
-        explicit = None
+        jcs, votes = [], []
         for r_i, row in enumerate(table):
             for c in row:
                 if c["col"] != j or c["span"] != 1:
                     continue
                 p0 = c["tc"].find(qn("w:p"))
                 jc = p0.find(qn("w:pPr") + "/" + qn("w:jc")) if p0 is not None else None
-                if jc is not None and explicit is None:
-                    explicit = jc.get(qn("w:val"))
+                if jc is not None:
+                    jcs.append(norm.get(jc.get(qn("w:val")), "left"))
                 if r_i >= header_n:
                     votes.append(numeric_like(" ".join(c["lines"])))
         judged = [v for v in votes if v is not None]
-        if explicit in ("right", "center", "left", "both"):
-            col_align[j] = explicit
+        if jcs:
+            col_align[j] = max(set(jcs), key=jcs.count)
         elif judged and sum(1 for v in judged if v) / len(judged) >= 0.6:
             col_align[j] = "right"
         else:
