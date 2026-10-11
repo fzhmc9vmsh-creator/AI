@@ -384,6 +384,18 @@ for k, d in PATHS.items():
     P(f'        定常状態経由: FY2030 事業実態EPS {e30:.2f}、出口g(2030→33) {gx:.1%}、出口PEG {EXIT_PEG[k]} → 出口PER {ss["per_exit"]:.1f} → '
       f'2030年末価値 {ss["value_at_exit"]:.1f} → {ss["years_discounted"]:.2f}年割引 → 目標 {ss["target"]:.1f}(出口PEG±0.2: {ss_lo["target"]:.1f}〜{ss_hi["target"]:.1f})')
 
+# 交差確認: 各目標株価が 2027-10-11 時点で含意する EV/NTM売上(売上倍率)
+P('--- 交差確認: 目標株価の含意 EV/NTM売上(2027-10〜2028-09)')
+XCHK = {}
+for k, d in PATHS.items():
+    ntm_rev_t = d[2027]['rev'] * 3 / 12 + d[2028]['rev'] * 9 / 12
+    nc = d[2027]['cash'] - NOTES_2030 - NOTES_2031
+    for lab, t in (('定常状態経由', tgt[k]['ss']), ('規約どおり', tgt[k]['conv'])):
+        evs = (t * SH_NOW - nc) / ntm_rev_t
+        XCHK[(k, lab)] = evs
+        P(f'{JP[k]:6s} {lab}: 目標 {t:6.1f} → EV/NTM売上 {evs:5.1f}倍(NTM売上 {ntm_rev_t:,.0f}、売上成長 {d[2028]["rev"]/d[2027]["rev"]-1:.0%})')
+P(f'参考: 現在の EV/NTM売上 {EV/(2867*3/12+3690*9/12):.1f}倍。成熟同業の目安(本文で出所付き): Akamai 約3〜4倍(成長5%)')
+
 ADOPT = 'ss'   # 採用: 定常状態経由(理由は報告書10章)
 T12 = {k: tgt[k][ADOPT] for k in PATHS}
 gaps = {k: vl.gap(T12[k], PRICE) for k in PATHS}
