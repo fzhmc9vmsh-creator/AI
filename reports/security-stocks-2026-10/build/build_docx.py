@@ -265,6 +265,15 @@ def transform(obj, ctx: AstCtx):
         return {"t": "RawBlock", "c": ["openxml", HR_XML]}
     if t == "Table":
         auto_align_table(obj)
+    if t == "Figure" and ast_text(obj["c"][2]).lstrip().startswith("[画像なし"):
+        # 画像欠落: pandoc は非画像の Figure を 1 セルの表にしてしまうので、段落に置き換える
+        cap = obj["c"][1][1]
+        blocks = list(obj["c"][2])
+        for cb in cap:
+            if cb.get("t") in ("Plain", "Para"):
+                blocks.append({"t": "Para", "c": [{"t": "Emph", "c": cb["c"]}]})
+        return {"t": "Div", "c": [["", [], []], [b if b.get("t") != "Plain" else {"t": "Para", "c": b["c"]}
+                                                  for b in blocks]]}
     if t in ID_ATTR_INDEX:
         c = obj["c"]
         attr = c[ID_ATTR_INDEX[t]]
