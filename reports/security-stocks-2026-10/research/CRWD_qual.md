@@ -23,6 +23,65 @@
 
 ---
 
+## A. 経営陣シナリオの一次情報
+
+### A1. 経営陣の発言(FY27 Q2、2026-08-26)—要約の和訳
+
+以下は文字起こしの**要約**であり、逐語ではない。
+- カーツ氏は説明会の冒頭で、「Mythos の瞬間」(原文ママ)から数週間の期間と位置づけ、サイバーセキュリティの転換点と述べた(Webull の文字起こし要約、Tier 4)。https://www.webull.com/news/15474227996476416
+- 「AIエージェントが市場の新たな敵対者になった」(roic.ai の文字起こし要約、Tier 3〜4)。エージェントが暴走する事例に触れ、AIDR は好調だったと述べた。
+- Q2 を「会社史上最高の四半期」と表現(複数の要約が一致、Tier 3)。
+- Flex が成長の中核。51%の顧客が6モジュール以上を採用(Futunn 見出し、Tier 4。**母数の定義が未確認**)。https://news.futunn.com/en/th/post/78352303/crowdstrike-q2-earnings-call-the-mythos-moment-for-ai-is
+- Q3 の期末ARRガイダンスは 61.84〜61.88億ドル(前年同期比+26%)(Globe and Mail の文字起こし、Tier 3)。
+- 原文確認先: roic.ai https://www.roic.ai/quote/CRWD/transcripts/2027-year/2-quarter 、Globe and Mail https://www.theglobeandmail.com/investing/markets/stocks/CRWD/pressreleases/4355978/crowdstrike-crwd-q2-2027-earnings-call-transcript/
+
+### A2. 数値目標とその定義・期限
+
+| 時期 | 目標 | 出典 / Tier |
+|---|---|---|
+| 2025-09-18 Investor Day | ARR 100億ドルを FY2031(2031年1月期)までに、200億ドルを FY2036 までに。FY2029 に営業利益率 28〜32%、FCFマージン 34〜38% | CNBC https://www.cnbc.com/2025/09/18/crowdstrike-looks-out-10-years-at-its-investor-day-and-the-cybersecurity-stock-soared.html (Tier 3)。利益率の定義(non-GAAP か)は**未確認** |
+| 2026-09 Fal.Con 投資家向け説明(ポドベア氏) | **100億ドルを FY2030 に前倒し、200億ドルを FY2035 に前倒し**。200億ドルの約30%に到達済み。AIセキュリティの市場規模を2034年に2,150億ドルと主張 | Investing.com https://www.investing.com/news/transcripts/crowdstrike-at-falcon-investor-briefing-ai-push-lifts-growth-outlook-93CH-4886858 (Tier 3)。同説明で利益率目標が更新されたかは**欠損** |
+| FY2027 通期 NNARR | 成長率ガイダンス 22.5%(期初)→27.7%(Q1で+520bp)→34.0%(Q2で+630bp)。中央値は 13.55億ドル(レンジ 13.50〜13.59億ドル) | 会社IR(Tier 1 を要約経由で確認)。期初は Q4 FY26 発表時に 12.13〜12.64億ドル(前年比+20〜25%) |
+
+- ARR の定義(10-K の要約): 12か月以内に失効する契約は、既存条件で更新されるものと仮定してARRに含める。更新交渉中の失効済み契約の売上も、交渉が続く間はARRに残る。重要性の注記: **ARR は更新の失敗を遅れて反映する定義**であり、継続率の確認には別指標が要る。
+- 計算(独自): FY2026 期末ARR 52.5億ドルから FY2030 末に 100億ドルへは、年率約17.5%の成長でよい。FY2031 目標なら約13.8%、FY2035 の200億ドルは約16.0%。**足元のARR成長(+25%前後)より低い**(E5で扱う)。
+- 計算(独自): ガイダンスの内訳から逆算した Q4 FY27 NNARR は約 4.21億ドル(13.55 − Q1 2.56 − Q2 3.33 − Q3 3.45)。前年同期の 3.31億ドルに対し約+27%。Q3 は約3.45億ドルで、逆算した前年同期 約2.65億ドルに対し約+30%。**H2 の成長率は、Q2 の+51% より低く置かれている。**
+
+### A3. ピース一覧
+
+| ピース | 目的(会社の説明) | 発表日・規模 | 進捗を示す数値 | 出典 / Tier |
+|---|---|---|---|---|
+| **Falcon Flex** | 支出枠を先に確保し、顧客が Falcon 製品を追加するたびに引き出す | 開始時期は欠損 | Flex 採用顧客のARR: Q4 FY26 16.9億ドル(**単独**、swotpal、Tier 4)→Q1 FY27 19億ドル超(+99%、Flex口座の四半期純増300社超)→Q2 22.9億ドル超(+101%)。全社ARRに占める割合は 約32%→約34%→約39%(計算) | Fool の Q1 文字起こし(Tier 3)、会社IR(Q2) |
+| Flex for Services | サービス契約の消費型。プラットフォーム契約とは独立 | 2026-03(日付欠損) | 欠損 | CrowdStrike プレスリリース(Tier 1)https://www.crowdstrike.com/en-us/press-releases/crowdstrike-launches-flex-for-services-bringing-flexible-cybersecurity-services-consumption-to-the-agentic-era/ |
+| **SGNL**(アイデンティティ) | 継続的で文脈に応じた認可。「常時の特権を持たせない」 | 発表 2026-01-08、完了 2026-02-20。見出し価格 7.4億ドル | 10-K: 現金 6.279億ドル(取得現金 940万ドル控除後)+代替株式報酬の公正価値 890万ドル。**見出しの7.4億ドルとの差は出典内で説明なし** | CNBC https://www.cnbc.com/2026/01/08/crowdstrike-ai-cybersecurity-sgnl-acquisition.html 、10-K(Tier 1) |
+| **Seraphic**(ブラウザ保護) | ブラウザ内のランタイム保護を Falcon に追加 | 完了 2026-02-03。約4.2億ドル | 欠損 | SecurityWeek https://www.securityweek.com/crowdstrike-to-acquire-browser-security-firm-seraphic-for-420-million/ 、10-K |
+| **Pangea**(AIアプリ保護) | 生成AIアプリのガードレール | 2.6億ドル(Yahoo Finance、Tier 3。発表日は欠損) | AIDR との関係は**未確認**。AIDR のARRは Q1 で前期比+250%超、Q2 でほぼ3倍 | Yahoo Finance |
+| **Onum**(データパイプライン) | Next-Gen SIEM へのデータ取り込み(「ネットワークデータ・インテリジェンス」) | 2.9億ドル(Yahoo Finance)。発表日は欠損 | 欠損 | 同上、8-K(2026-04-16)の要約 |
+| **Adaptive Shield**(SaaS保護) | SaaS の設定不備・体制の管理 | 約3億ドル(推定のみ。公式価格は未確認、Tier 4)。2024年 | 欠損 | Richmond Advisory(Tier 4) |
+| **Charlotte AI** | 生成AIの助手→エージェント型SOC | 2026-09-02: 資格を満たすモジュールの契約者に「月次クレジット付きの標準権利」として提供。高度機能(エージェント型の検知選別・対応)は有料のCharlotte AIモジュールのまま | 顧客数・ARRは欠損 | SiliconANGLE https://siliconangle.com/2026/09/02/crowdstrike-gives-ai-agents-an-identity-provider-parallel-soc-investigations-and-package-blocking/ (Tier 3) |
+| Fal.Con 2026 の新製品 | AIエージェントの保護と運用 | SafeMind、Falcon Guardian、Agentic Identity Provider(AIエージェント用のID基盤)を発表 | 欠損 | Investing.com(Tier 3)、SiliconANGLE |
+
+- 買収4件(Pangea、Onum、SGNL、Seraphic)の見出し価格合計: 約17.1億ドル(計算。Adaptive Shield の推定約3億ドルを足すと約20億ドル)。重要性の注記: 買収の対価の大半は現金だが、SBC・株数への影響は欠損。
+- **CCP(2024年7月障害後の顧客支援パッケージ)の設計と終了時期、AWS・Google・NVIDIA 等の提携、資本政策(自社株買い・負債)は、今回の検索では取得できなかった。欠損。**
+- 注: 依頼文の買収先4社のうち、SGNL・Pangea・Onum・Adaptive Shield は確認。**Seraphic は依頼文になかったが出典で確認した追加分。**
+
+### A4. ガイダンス達成状況・過去の約束
+
+- 直近(FY27)のNNARR成長率ガイダンスは、期初の 22.5%から 34.0%へ2回上方修正された(合計 +11.5ポイント)。Q2 のNNARRはガイダンス上限を 4,500万ドル超えた。会社は**期初を低めに置き、四半期ごとに引き上げている**。
+- FY2026: NNARR は通期で過去最高の 10.1億ドル(初の10億ドル超)。Q4 FY26 は 3.31億ドル(+47%)、期末ARR 52.5億ドル(+24%)、売上 13.1億ドル(+23%)(会社IR、Tier 1 を要約経由で確認)。
+- **FY2024〜FY2025 の期初ガイダンスと実績の比較、および「下期のNNARR再加速」の約束とその結果は、取得できなかった。欠損。** 間接的には FY26 Q4 の NNARR が+47% であり、再加速は数字に出ている。
+- 重要性の注記: ガイダンスの保守性(期初低め)が3四半期連続の「上振れ」を作る構造なら、上振れ自体は先行指標としての情報価値が小さい。ただし FY2024〜25 の比較が欠損なので判断不能。
+
+### A5. 経営陣の経歴・在任・報酬
+
+- CEO ジョージ・カーツ、CFO バート・ポドベア。マイケル・セントナス氏(役職は出典の要約に記載なし)。経歴・在任年数・交代は**欠損**。
+- 報酬(2026 年の PRE 14A、Tier 1 を要約経由で確認): FY2026 の基本給はカーツ氏 110万ドル(従来100万ドル)、セントナス氏 87.5万ドル、ポドベア氏 70万ドル。カーツ氏は 2025年12月に**相対TSR(他社比の株主総利回り)に連動する業績連動株式**を付与された。セントナス氏には、株価の相対的な優位と「ARR200億ドル」の構想に連動する特別な付与が取締役会で承認された(8-K)。
+- 年次報酬で使う指標の種類は non-GAAP 指標という以外は**欠損**。NNARR や FCF が KPI かどうかは未確認。
+- 重要性の注記: TSR は1株当たりの収益率を測る単位であり、総額の指標(総ARR・総利益)より1株当たり価値と整合しやすい。ただし対象の報酬に占める割合は欠損。
+- 出典: https://www.sec.gov/Archives/edgar/data/1535527/000110465926046009/tm2532333-1_pre14a.htm
+
+---
+
 ## B. 市場の仮説の出典
 
 ### B1. 直近2回の決算説明会でアナリストが繰り返した質問(関心の所在)
@@ -112,65 +171,6 @@
 
 ---
 
-## A. 経営陣シナリオの一次情報
-
-### A1. 経営陣の発言(FY27 Q2、2026-08-26)—要約の和訳
-
-以下は文字起こしの**要約**であり、逐語ではない。
-- カーツ氏は説明会の冒頭で、「Mythos の瞬間」(原文ママ)から数週間の期間と位置づけ、サイバーセキュリティの転換点と述べた(Webull の文字起こし要約、Tier 4)。https://www.webull.com/news/15474227996476416
-- 「AIエージェントが市場の新たな敵対者になった」(roic.ai の文字起こし要約、Tier 3〜4)。エージェントが暴走する事例に触れ、AIDR は好調だったと述べた。
-- Q2 を「会社史上最高の四半期」と表現(複数の要約が一致、Tier 3)。
-- Flex が成長の中核。51%の顧客が6モジュール以上を採用(Futunn 見出し、Tier 4。**母数の定義が未確認**)。https://news.futunn.com/en/th/post/78352303/crowdstrike-q2-earnings-call-the-mythos-moment-for-ai-is
-- Q3 の期末ARRガイダンスは 61.84〜61.88億ドル(前年同期比+26%)(Globe and Mail の文字起こし、Tier 3)。
-- 原文確認先: roic.ai https://www.roic.ai/quote/CRWD/transcripts/2027-year/2-quarter 、Globe and Mail https://www.theglobeandmail.com/investing/markets/stocks/CRWD/pressreleases/4355978/crowdstrike-crwd-q2-2027-earnings-call-transcript/
-
-### A2. 数値目標とその定義・期限
-
-| 時期 | 目標 | 出典 / Tier |
-|---|---|---|
-| 2025-09-18 Investor Day | ARR 100億ドルを FY2031(2031年1月期)までに、200億ドルを FY2036 までに。FY2029 に営業利益率 28〜32%、FCFマージン 34〜38% | CNBC https://www.cnbc.com/2025/09/18/crowdstrike-looks-out-10-years-at-its-investor-day-and-the-cybersecurity-stock-soared.html (Tier 3)。利益率の定義(non-GAAP か)は**未確認** |
-| 2026-09 Fal.Con 投資家向け説明(ポドベア氏) | **100億ドルを FY2030 に前倒し、200億ドルを FY2035 に前倒し**。200億ドルの約30%に到達済み。AIセキュリティの市場規模を2034年に2,150億ドルと主張 | Investing.com https://www.investing.com/news/transcripts/crowdstrike-at-falcon-investor-briefing-ai-push-lifts-growth-outlook-93CH-4886858 (Tier 3)。同説明で利益率目標が更新されたかは**欠損** |
-| FY2027 通期 NNARR | 成長率ガイダンス 22.5%(期初)→27.7%(Q1で+520bp)→34.0%(Q2で+630bp)。中央値は 13.55億ドル(レンジ 13.50〜13.59億ドル) | 会社IR(Tier 1 を要約経由で確認)。期初は Q4 FY26 発表時に 12.13〜12.64億ドル(前年比+20〜25%) |
-
-- ARR の定義(10-K の要約): 12か月以内に失効する契約は、既存条件で更新されるものと仮定してARRに含める。更新交渉中の失効済み契約の売上も、交渉が続く間はARRに残る。重要性の注記: **ARR は更新の失敗を遅れて反映する定義**であり、継続率の確認には別指標が要る。
-- 計算(独自): FY2026 期末ARR 52.5億ドルから FY2030 末に 100億ドルへは、年率約17.5%の成長でよい。FY2031 目標なら約13.8%、FY2035 の200億ドルは約16.0%。**足元のARR成長(+25%前後)より低い**(E5で扱う)。
-- 計算(独自): ガイダンスの内訳から逆算した Q4 FY27 NNARR は約 4.21億ドル(13.55 − Q1 2.56 − Q2 3.33 − Q3 3.45)。前年同期の 3.31億ドルに対し約+27%。Q3 は約3.45億ドルで、逆算した前年同期 約2.65億ドルに対し約+30%。**H2 の成長率は、Q2 の+51% より低く置かれている。**
-
-### A3. ピース一覧
-
-| ピース | 目的(会社の説明) | 発表日・規模 | 進捗を示す数値 | 出典 / Tier |
-|---|---|---|---|---|
-| **Falcon Flex** | 支出枠を先に確保し、顧客が Falcon 製品を追加するたびに引き出す | 開始時期は欠損 | Flex 採用顧客のARR: Q4 FY26 16.9億ドル(**単独**、swotpal、Tier 4)→Q1 FY27 19億ドル超(+99%、Flex口座の四半期純増300社超)→Q2 22.9億ドル超(+101%)。全社ARRに占める割合は 約32%→約34%→約39%(計算) | Fool の Q1 文字起こし(Tier 3)、会社IR(Q2) |
-| Flex for Services | サービス契約の消費型。プラットフォーム契約とは独立 | 2026-03(日付欠損) | 欠損 | CrowdStrike プレスリリース(Tier 1)https://www.crowdstrike.com/en-us/press-releases/crowdstrike-launches-flex-for-services-bringing-flexible-cybersecurity-services-consumption-to-the-agentic-era/ |
-| **SGNL**(アイデンティティ) | 継続的で文脈に応じた認可。「常時の特権を持たせない」 | 発表 2026-01-08、完了 2026-02-20。見出し価格 7.4億ドル | 10-K: 現金 6.279億ドル(取得現金 940万ドル控除後)+代替株式報酬の公正価値 890万ドル。**見出しの7.4億ドルとの差は出典内で説明なし** | CNBC https://www.cnbc.com/2026/01/08/crowdstrike-ai-cybersecurity-sgnl-acquisition.html 、10-K(Tier 1) |
-| **Seraphic**(ブラウザ保護) | ブラウザ内のランタイム保護を Falcon に追加 | 完了 2026-02-03。約4.2億ドル | 欠損 | SecurityWeek https://www.securityweek.com/crowdstrike-to-acquire-browser-security-firm-seraphic-for-420-million/ 、10-K |
-| **Pangea**(AIアプリ保護) | 生成AIアプリのガードレール | 2.6億ドル(Yahoo Finance、Tier 3。発表日は欠損) | AIDR との関係は**未確認**。AIDR のARRは Q1 で前期比+250%超、Q2 でほぼ3倍 | Yahoo Finance |
-| **Onum**(データパイプライン) | Next-Gen SIEM へのデータ取り込み(「ネットワークデータ・インテリジェンス」) | 2.9億ドル(Yahoo Finance)。発表日は欠損 | 欠損 | 同上、8-K(2026-04-16)の要約 |
-| **Adaptive Shield**(SaaS保護) | SaaS の設定不備・体制の管理 | 約3億ドル(推定のみ。公式価格は未確認、Tier 4)。2024年 | 欠損 | Richmond Advisory(Tier 4) |
-| **Charlotte AI** | 生成AIの助手→エージェント型SOC | 2026-09-02: 資格を満たすモジュールの契約者に「月次クレジット付きの標準権利」として提供。高度機能(エージェント型の検知選別・対応)は有料のCharlotte AIモジュールのまま | 顧客数・ARRは欠損 | SiliconANGLE https://siliconangle.com/2026/09/02/crowdstrike-gives-ai-agents-an-identity-provider-parallel-soc-investigations-and-package-blocking/ (Tier 3) |
-| Fal.Con 2026 の新製品 | AIエージェントの保護と運用 | SafeMind、Falcon Guardian、Agentic Identity Provider(AIエージェント用のID基盤)を発表 | 欠損 | Investing.com(Tier 3)、SiliconANGLE |
-
-- 買収4件(Pangea、Onum、SGNL、Seraphic)の見出し価格合計: 約17.1億ドル(計算。Adaptive Shield の推定約3億ドルを足すと約20億ドル)。重要性の注記: 買収の対価の大半は現金だが、SBC・株数への影響は欠損。
-- **CCP(2024年7月障害後の顧客支援パッケージ)の設計と終了時期、AWS・Google・NVIDIA 等の提携、資本政策(自社株買い・負債)は、今回の検索では取得できなかった。欠損。**
-- 注: 依頼文の買収先4社のうち、SGNL・Pangea・Onum・Adaptive Shield は確認。**Seraphic は依頼文になかったが出典で確認した追加分。**
-
-### A4. ガイダンス達成状況・過去の約束
-
-- 直近(FY27)のNNARR成長率ガイダンスは、期初の 22.5%から 34.0%へ2回上方修正された(合計 +11.5ポイント)。Q2 のNNARRはガイダンス上限を 4,500万ドル超えた。会社は**期初を低めに置き、四半期ごとに引き上げている**。
-- FY2026: NNARR は通期で過去最高の 10.1億ドル(初の10億ドル超)。Q4 FY26 は 3.31億ドル(+47%)、期末ARR 52.5億ドル(+24%)、売上 13.1億ドル(+23%)(会社IR、Tier 1 を要約経由で確認)。
-- **FY2024〜FY2025 の期初ガイダンスと実績の比較、および「下期のNNARR再加速」の約束とその結果は、取得できなかった。欠損。** 間接的には FY26 Q4 の NNARR が+47% であり、再加速は数字に出ている。
-- 重要性の注記: ガイダンスの保守性(期初低め)が3四半期連続の「上振れ」を作る構造なら、上振れ自体は先行指標としての情報価値が小さい。ただし FY2024〜25 の比較が欠損なので判断不能。
-
-### A5. 経営陣の経歴・在任・報酬
-
-- CEO ジョージ・カーツ、CFO バート・ポドベア。マイケル・セントナス氏(役職は出典の要約に記載なし)。経歴・在任年数・交代は**欠損**。
-- 報酬(2026 年の PRE 14A、Tier 1 を要約経由で確認): FY2026 の基本給はカーツ氏 110万ドル(従来100万ドル)、セントナス氏 87.5万ドル、ポドベア氏 70万ドル。カーツ氏は 2025年12月に**相対TSR(他社比の株主総利回り)に連動する業績連動株式**を付与された。セントナス氏には、株価の相対的な優位と「ARR200億ドル」の構想に連動する特別な付与が取締役会で承認された(8-K)。
-- 年次報酬で使う指標の種類は non-GAAP 指標という以外は**欠損**。NNARR や FCF が KPI かどうかは未確認。
-- 重要性の注記: TSR は1株当たりの収益率を測る単位であり、総額の指標(総ARR・総利益)より1株当たり価値と整合しやすい。ただし対象の報酬に占める割合は欠損。
-- 出典: https://www.sec.gov/Archives/edgar/data/1535527/000110465926046009/tm2532333-1_pre14a.htm
-
----
-
 ## C. 一次情報(スカットルバット)
 
 | # | 観察 | 内容 | 出典 / Tier | 独立性 |
@@ -178,7 +178,7 @@
 | C1 | Falcon Flex の契約実態 | Flex は確保した支出枠から製品追加時に引き出す形。Q2 の大型案件はすべて Flex。Flex 新規顧客のARRが当期NNARRの34%(**単独**)。Flex 採用顧客のARRの四半期増加分(約3.9億ドル。Q1 の「19億ドル超」を下限として計算)は、当期の全社NNARR(3.33億ドル)を**上回る**ので、増加分の一部は既存ARRが Flex 口座に付け替わった結果と推定される | Fal.Con 報道(Tier 3)、会社IR、上記計算 | 会社開示の再掲。独立ではない |
 | C2 | Gartner マジック・クアドラント(エンドポイント保護) | 2026年版(2026-05-26付)でCrowdStrikeはリーダー(連続7回目、会社ブログの記載)。Trend もリーダー。Bitdefender はビジョナリー。SentinelOne の位置は要約に記載なし | https://www.crowdstrike.com/en-us/blog/crowdstrike-leader-in-2026-gartner-magic-quadrant-for-endpoint-protection/ (ベンダー発信、Tier 4)。**Gartner原文で確認が必要** | 独立(評価者はGartner)だが転載はベンダー |
 | C3 | Gartner Peer Insights(利用者レビュー) | エンドポイント保護部門で CrowdStrike Falcon、Sophos、SentinelOne が最高評価の群に入る。点数は欠損 | https://www.gartner.com/reviews/market/endpoint-protection-platforms (Tier 3) | 独立(顧客) |
-| C4 | Delta 航空の訴訟 | 2025-05、ジョージア州フルトン郡上級裁判所(エラービー判事)は、故意の虚偽表示・不告知による詐欺の主張を除き、過失とコンピュータ侵入の主張を継続させた。Delta は損失を約5億ドル(収益減3.8億ドル+費用1.7億ドル)と主張。会社側は、契約上の上限により賠償は個位数百万ドルにとどまるか、無効と見込む。**2026年の判断・和解は検索で見つからず** | The Register https://www.theregister.com/security/2025/05/21/deltas-lawsuit-against-crowdstrike-given-go-ahead/273034 、Transportation Today(Tier 3) | 独立 |
+| C4 | Delta 航空の訴訟 | 2025-05、ジョージア州フルトン郡上級裁判所(エラービー判事)は、故意の虚偽表示・不告知による詐欺の主張を除き、過失とコンピュータ侵入の主張を継続させた。Delta は損失を約5億ドル(収益減3.8億ドル+費用1.7億ドル)と主張。会社側は、契約上の上限により賠償は数百万ドル(一桁百万ドル台)にとどまるか、無効と見込む。**2026年の判断・和解は検索で見つからず** | The Register https://www.theregister.com/security/2025/05/21/deltas-lawsuit-against-crowdstrike-given-go-ahead/273034 、Transportation Today(Tier 3) | 独立 |
 | C5 | 乗客の集団訴訟(連邦) | 一部は棄却、契約違反(払い戻し不履行)やモントリオール条約違反は継続 | BankInfoSecurity(Tier 3) | 独立 |
 | C6 | 障害後の顧客離脱 | 離脱率・総継続率(GRR)は**欠損**。間接証拠: 期末ARR+25%、NNARR過去最高 | — | — |
 
