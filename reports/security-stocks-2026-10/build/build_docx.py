@@ -280,6 +280,7 @@ def transform(obj, ctx: AstCtx):
             path = (ctx.base_dir / unquote(url)).resolve()
             if not path.exists():
                 ctx.warnings.append(f"画像が見つかりません: {url} (基準 {ctx.base_dir})")
+                return {"t": "Strong", "c": text_inlines(f"[画像なし: {url}]")}
             obj["c"][2][0] = str(path)
     return obj
 
@@ -1224,7 +1225,7 @@ def render_png(pdf: Path, outdir: Path, dpi: int = 60, first: int = 1, last: int
 
 # --------------------------------------------------------------------------- main
 def build(manifest_path: Path, out_path: Path | None, preview: bool, prefill: bool, keep: bool,
-          preview_dir: Path | None, dpi: int) -> Path:
+          preview_dir: Path | None, dpi: int, strict: bool = False) -> Path:
     manifest = json.loads(manifest_path.read_text(encoding="utf-8"))
     if "title" not in manifest:
         raise BuildError("manifest.json に title がありません")
@@ -1276,6 +1277,8 @@ def build(manifest_path: Path, out_path: Path | None, preview: bool, prefill: bo
 
     for w in warnings:
         log(f"WARNING: {w}")
+    if strict and warnings:
+        raise BuildError(f"警告が {len(warnings)} 件あります(--strict)")
     log(f"OK: {out_path}  (見出し {stats['headings']}, 表 {stats.get('tables', 0)}, 図 {stats['images']}, "
         f"数値列 {stats.get('numeric_cols', 0)})")
     return out_path
@@ -1290,10 +1293,11 @@ def main(argv=None) -> int:
     ap.add_argument("--dpi", type=int, default=60, help="プレビュー PNG の解像度")
     ap.add_argument("--no-prefill", action="store_true", help="目次のページ番号プリフィルを行わない")
     ap.add_argument("--keep", action="store_true", help="pandoc 出力(stage1)も残す")
+    ap.add_argument("--strict", action="store_true", help="警告(画像欠落など)があれば異常終了にする")
     a = ap.parse_args(argv)
     try:
         build(Path(a.manifest), Path(a.output) if a.output else None, a.preview, not a.no_prefill, a.keep,
-              Path(a.preview_dir) if a.preview_dir else None, a.dpi)
+              Path(a.preview_dir) if a.preview_dir else None, a.dpi, a.strict)
     except BuildError as e:
         log(f"ERROR: {e}")
         return 1
