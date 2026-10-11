@@ -1,0 +1,23 @@
+月,月末終値_USD,出典,備考
+2025-01,170.06,Digrin ORCL 月次表 real列 https://www.digrin.com/stocks/detail/ORCL/price (検索要約経由 2026-10-11取得),unadjusted 列と判断 要確認
+2025-02,166.06,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-03,139.81,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-04,140.72,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-05,165.53,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-06,218.63,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-07,253.77,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-08,226.13,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-09,281.24,Digrin ORCL 月次表 real列 (検索要約経由),日次の最高終値は 2025-09-10 の 324.63 (Capital.com) / 328.33 (ts2.tech) で月末ではない
+2025-10,262.61,Digrin ORCL 月次表 real列 / TipRanks 2025-10-31 終値 262.61 (検索要約),2出典で一致 H2 既存の単一要約値と整合
+2025-11,201.95,Digrin ORCL 月次表 real列 (検索要約経由),要確認
+2025-12,194.91,Digrin ORCL 月次表 real列 / Fund Library 2025-12-31 終値 194.91 (検索要約),2出典で一致 別出典 Macrotrends/Capital.com 194.39 とは不一致 (要確認)
+2026-01,164.58,Digrin ORCL 月次表 real列 (検索要約経由),要確認 同じ1月に 2026-01-26 の終値 182.44 (別ページ) があり 月末値として低すぎないか要確認 (adjusted 163.44)
+2026-02,145.40,Digrin ORCL 月次表 real列 (検索要約経由),要確認 (adjusted 144.39) 2026-02-06 終値 142.62 (Macrotrends) と整合的
+2026-03,147.11,Digrin ORCL 月次表 real列 (検索要約経由),要確認 (adjusted 146.09) 2026-03-11 日中 162.05 (MarketBeat) は別日
+2026-04,161.39,Digrin ORCL 月次表 real列 (検索要約経由),要確認 (adjusted 160.83)
+2026-05,225.78,Digrin ORCL 月次表 real列 (検索要約経由),要確認 (adjusted 225.00) 2026-06-03 終値 230.33 (StockAnalysis) と整合的
+2026-06,NA,-,Digrin は adjusted 146.04 のみ取得 real列は未取得のため欠損のまま 2026-06-11 決算後に10%超下落 (日中 sentisense 要約)
+2026-07,129.87,Digrin ORCL 月次表 real列 (検索要約経由),要確認 (adjusted 同値) 2026-07-15 安値 123.66 (単一要約) / 133.07 (Robinhood 表示) 2026-07-24 123.64 (Capital.com 要約) いずれも月末値ではない
+2026-08,144.50,Digrin ORCL 月次表 (検索要約経由 adjusted と real が同値 144.50),要確認 月末性の表示なし 8/19 終値 143.81 (Equibles) 8/26 終値 148.85 (StockAnalysis) と整合的 2026-08下旬 150.66 (Syfe 表示 日付不明)
+2026-09,NA,-,月末終値 (9/30) は未取得 日次参考のみ: 9/1 終値 141.32 (financialcontent) 9/4 158.78 (H2 既存表記; investsmart は 5 Sep と表示) 9/9 161.63 (financialcontent 日付ずれあり) 9/18 147.61 (Benzinga) 9/24 139.54 (H2 既存) いずれも月末ではない
+2026-10-09,141.40,https://marketbeat.com/instant-alerts/price-oracle-nyse-orcl-shares-up-43-whats-next-2026-10-09,要確認 単一出典 当日終値 月末ではない 2026-10-10 は土曜日で取引なし

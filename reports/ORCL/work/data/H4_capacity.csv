@@ -1,0 +1,11 @@
+日付,指標,値,単位,出典,URL,掲載日,Tier,注記
+FY2026 通期 (2025-06-01〜2026-05-31),稼働開始したデータセンター容量(年間増分),1.2,GW,報道要約 (S12),NA,NA,3,出典URL未特定(N15)
+FY2026 Q3 (2026-02-28期末四半期),稼働開始したデータセンター容量(四半期増分),400,MW,DatacenterDynamics (S8),https://datacenterdynamics.com/en/news/oracle-stood-up-400mw-of-data-center-capacity-in-latest-quarter-has-secured-10gw-of-power-for-the-next-three-years/,NA,3,決算コール要約
+FY2027 Q1 (2026-08-31期末),稼働予定のデータセンター容量(予定値・実績未確認),1,GW,報道要約 (S12),NA,NA,3,予定値のため稼働容量には含めない(N15)
+2026-04 (報道要約の記載),契約済み電力容量(Bloom Energy 燃料電池・最大),2.8,GW,Fierce Network (S9),https://www.fierce-network.com/newswire/oracle-commits-28gw-blooms-fuel-cell-power,2026-04 (要約記載),3,最大枠
+2026-04 (報道要約の記載),契約済み電力容量(Bloom Energy 燃料電池・初期契約分),1.2,GW,Fierce Network (S9),https://www.fierce-network.com/newswire/oracle-commits-28gw-blooms-fuel-cell-power,2026-04 (要約記載),3,初期の契約済み分
+FY2026 Q3 決算コール (掲載日未確認),確保済み電力容量(今後3年のパイプライン),10,GW以上,DatacenterDynamics (S8),https://datacenterdynamics.com/en/news/oracle-stood-up-400mw-of-data-center-capacity-in-latest-quarter-has-secured-10gw-of-power-for-the-next-three-years/,NA,3,CEO発言の要約。確保の定義は未確認(N16)
+NA,リージョン数(Oracle Database@AWS),20,regions,DatacenterDynamics (S10),https://www.datacenterdynamics.com/en/news/oracle-databaseaws-now-offered-in-20-global-regions/,NA,3,見出し記載
+NA,リージョン数(Oracle Database@Google Cloud・稼働),15,regions,DatacenterDynamics (S11),https://www.datacenterdynamics.com/en/news/oracle-adds-new-regions-to-multicloud-offering-with-google-and-microsoft-adds-new-capabilities/,NA,3,追加2予定 (N14: Azure 33 は未採用)
+NA,リージョン数(Oracle Cloud 全体),NA,regions,NA,NA,NA,NA,未取得
+NA,契約済み電力容量(10-K 公式値),NA,GW,NA,NA,NA,NA,未取得

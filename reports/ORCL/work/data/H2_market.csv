@@ -1,0 +1,41 @@
+項目,値,単位,基準日,出典URL,掲載日,取得日,備考
+株価 (終値),141.40,USD,2026-10-09,https://marketbeat.com/instant-alerts/price-oracle-nyse-orcl-shares-up-43-whats-next-2026-10-09,2026-10-09,2026-10-11,要確認 単一出典 別検索3回でも2出典目は確認できず
+株価 日中レンジ,136.50-142.90,USD,2026-10-10,検索要約 URL特定不可,2026-10-10,2026-10-11,【無効の可能性】2026-10-10 は土曜日で NYSE 休場のため日中取引なし 出典も不明 採用しない
+52週高値,NA,USD,NA,NA,NA,2026-10-11,窓内 (2025-10-09以降) の値は未取得 下限 311.01 (2025-10-15 日中 MarketBeat 検索要約 要確認) 既存の 345.72 は 2025-09-10 付近で窓外
+52週安値,114.50,USD,2026-08下旬表示,https://www.syfe.com/stocks/us/ORCL,2026-08下旬,2026-10-11,日付不明 別出典 114.54 (Upstox 2026-08-08) 123.66 は不一致
+52週安値 (2026年初来・窓内と判断),114.51,USD,2026-09-05表示,https://www.investsmart.com.au/security/nyse/orcl/oracle-corp/share-price,2026-09-05,2026-10-11,2026年内の安値 窓内と判断 (2026年の安値より低い安値は窓内に見当たらず) 検索要約経由 Upstox 114.54 とほぼ一致
+2025年9月以降の最高値 (日中),345.72,USD,2025-09-10付近,https://www.robinhood.com/stocks/ORCL,NA,2026-10-11,表示値
+2025年9月以降の最高値 (終値),328.33,USD,2025-09-10,https://ts2.tech/nl/oracles-ai-cloudbom-van-300-miljard-dollar-laat-orcl-aandeel-stijgen-wat-nu/,NA,2026-10-11,別出典 324.63 (Capital.com https://capital.com/en-eu/analysis/oracle-orcl-stock-forecast) と不一致
+時価総額,421.9B,USD,2026-08下旬 (株価150.66時点),https://www.syfe.com/stocks/us/ORCL,2026-08下旬,2026-10-11,2026-10-09 時点は下の自己計算行を参照
+発行済株式数 (基本),NA,百万株,NA,参考: https://kuvera.in/us-stocks/oracle-corp-orcl (2.87B 古い) / https://angelone.in/us-stocks/oracle-corp (2.76B 古い),NA,2026-10-11,10-Q 未取得 ATM 発行あり 参考 Q1 FY27 加重平均基本株数 2966 百万株 (placera.se 2026-09-10) は期末発行株数ではない
+希薄化後株式数,3000,百万株,2026-06-01〜2026-08-31 (Q1 FY27 期間),https://www.placera.se/pressmeddelanden/oracle-announces-q1-results-driven-by-triple-digit-growth-in-cloud-infrastructure-revenues-20260910,2026-09-10,2026-10-11,Q1 FY27 diluted 加重平均 3000 (前年同期 2909) 単位 百万株 は表の桁からの推定 要確認 10-Q 原文 https://www.sec.gov/Archives/edgar/data/0001341439/000119312526389274/orcl-20260831.htm では未確認 参考 AlphaQuery FY2026 通期 2.91B
+配当 (年額),2.00,USD,2026-03 発表 / 2026-07 落ち日,https://www.marketbeat.com/instant-alerts/oracle-corporation-nyseorcl-announces-quarterly-dividend-of-050-2026-03-11/,2026-03-11,2026-10-11,1回 0.50 x 4 10月分は要確認
+配当利回り (MarketBeat 2026-03),1.2,%,2026-03 (株価162.05),https://www.marketbeat.com/instant-alerts/oracle-corporation-nyseorcl-announces-quarterly-dividend-of-050-2026-03-11/,2026-03-11,2026-10-11,出典間で不一致
+配当利回り (fullratio),1.21,%,NA,https://fullratio.com/stocks/nyse-orcl/dividend,NA,2026-10-11,
+配当利回り (HL trailing 12M),1.36,%,NA,https://www.hl.co.uk/shares/shares-search-results/o/oracle-corp-comm-stock-us$0.01/dividends,NA,2026-10-11,
+配当利回り (Walnut),1.54,%,2026-08,https://walnutinvest.com/stocks/orcl/dividend,2026-08,2026-10-11,
+配当利回り (自己計算 2.00/141.40),1.41,%,2026-10-09,自己計算,NA,2026-10-11,参考
+予想PER 今期,17.7,倍,2026-10-09,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,(自己計算) 株価 141.40 / TickFlow FY27 平均 EPS 7.98 (掲載日不明) 会社ガイダンス 8.10 基準では 17.5 (自己計算)
+予想PER 来期,13.1,倍,2026-10-09,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,(自己計算) 株価 141.40 / TickFlow FY28 平均 EPS 10.78 (掲載日不明) FY28 EPS レンジ 7.36-14.05 と広い
+Forward P/E (Yahoo),17.64,倍,2026-08下旬,https://finance.yahoo.com/quote/ORCL/key-statistics/,2026-08下旬,2026-10-11,Current列と推定 要確認
+Forward P/E (Yahoo UK),18.25,倍,2026-07頃,https://uk.finance.yahoo.com/quote/ORCL,2026-07頃,2026-10-11,
+実績PER (Yahoo),24.43,倍,2026-08下旬,https://finance.yahoo.com/quote/ORCL/key-statistics/,2026-08下旬,2026-10-11,列対応 要確認
+EV (Yahoo),539.57,十億USD,2026-08下旬,https://finance.yahoo.com/quote/ORCL/key-statistics/,2026-08下旬,2026-10-11,UK版 539.93 (2026-07頃)
+純有利子負債,97.6,十億USD,FY2026末 (2026-05-31),MarketScreener valuation (URL特定不可),NA,2026-10-11,定義不明 要確認
+ベータ (5年月次 Yahoo US),1.72,倍,取得日不明,https://finance.yahoo.com/quote/orcl/,NA,2026-10-11,
+ベータ (Yahoo UK),1.60,倍,取得日不明,https://uk.finance.yahoo.com/quote/ORCL,NA,2026-10-11,
+空売り比率 (% of float),2.7,%,2026-09下旬,https://www.benzinga.com/quote/ORCL/sentiment,2026-09下旬,2026-10-11,上昇傾向表示
+空売り比率 (Equibles),1.7,%,2026-08-19,https://equibles.com/stocks/ORCL,2026-08-19,2026-10-11,50.1M株 1.4日カバー 算定方法が異なる
+アナリスト平均目標 (Bullstory),237.97,USD,2026-09-19 検証,https://bullstory.io/en/stocks/orcl/forecast/price-target,2026-09-19,2026-10-11,高400 低110 41名 評価 Buy
+アナリスト平均目標 (Benzinga),252,USD,2026-09-18 (株価147.61),https://kr.benzinga.com/quote/ORCL/price-targets,2026-09-18,2026-10-11,28名 高低 NA
+アナリスト平均目標 (MarketBeat),265.03,USD,掲載日不明,https://www.marketbeat.com/stocks/NASDAQ/ORCL/forecast/,NA,2026-10-11,高400 低145 39名 要確認
+アナリスト平均目標 (MarketScreener),237.97,USD,掲載日不明,https://in.marketscreener.com/quote/stock/ORACLE-CORPORATION-120970792/consensus/,NA,2026-10-11,43名 高低 NA
+アナリスト平均目標 (Barchart 参考・古い),178.48,USD,2026年春と推定 要確認,Barchart 記事 URL特定不可,NA,2026-10-11,高246 35名
+目標株価 Mizuho,320,USD,2026-09-08 報道,https://pulse.byoviral.com/trend/2026-09-08/mizuho-sees-oracle-at-320-as-ai-cloud-capacity-jumps,2026-09-08,2026-10-11,
+目標株価 Freedom Broker,205,USD,2026-09-14 引き下げ,https://kr.benzinga.com/quote/ORCL/price-targets,2026-09-14,2026-10-11,
+目標株価 Argus,225,USD,2026-09-14 維持,https://kr.benzinga.com/quote/ORCL/price-targets,2026-09-14,2026-10-11,
+レーティング (Benzinga) 件数,28,名,2026-09-18,https://kr.benzinga.com/quote/ORCL/price-targets,2026-09-18,2026-10-11,Strong Buy 1 / Buy 24 / Hold 3 / Sell 0
+レーティング (MarketBeat) 件数,39,名,掲載日不明,https://www.marketbeat.com/stocks/NASDAQ/ORCL/forecast/,NA,2026-10-11,Strong Buy 2 / Buy 28 / Hold 8 / Sell 1 Moderate Buy
+レーティング (Bullstory),41,名,2026-09-19,https://bullstory.io/en/stocks/orcl/forecast/price-target,2026-09-19,2026-10-11,内訳 NA 評価 Buy
+時価総額 (2026-10-09 自己計算),419.4,B USD,2026-10-09,https://www.placera.se/pressmeddelanden/oracle-announces-q1-results-driven-by-triple-digit-growth-in-cloud-infrastructure-revenues-20260910,2026-09-10,2026-10-11,(自己計算) 141.40 x 2966 百万株 (Q1 FY27 加重平均基本株数) 期末発行株数ではないため概算
+予想PER 会社ガイダンス基準 (自己計算),17.5,倍,2026-10-09,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,2026-09-10,2026-10-11,(自己計算) 141.40 / 8.10 会社ガイダンス (コンセンサスではない)
