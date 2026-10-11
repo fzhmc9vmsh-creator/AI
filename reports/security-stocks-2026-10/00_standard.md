@@ -1,0 +1,100 @@
+# 共通分析基準(全エージェント必読)
+
+世界のトップ・サイバーセキュリティ銘柄6社を、銘柄分析メソッド(meigara-bunseki-method)で
+審査し、順位付けする。本書は6社の分析を同じ物差しで比較できるようにするための共通規約であり、
+スキル本体の規定に追加する。スキル本体と矛盾する場合はスキル本体(特に business-core-method.md)を優先する。
+
+- スキル本体: `/root/.claude/skills/synced/d5524a36-023e-44e0-82ef-a185c180efe9_97f00e8a-e07f-474c-8eeb-29009efb3a97/meigara-bunseki-method/SKILL.md`
+- 参照ファイル: 同ディレクトリの `references/` 配下 8 本
+- 作業ルート: `/home/user/AI/reports/security-stocks-2026-10/`
+
+## 1. 対象と評価基準日
+
+| ティッカー | 社名 | 取引所(TradingView表記) | 決算期末 | 型(business-core §8) |
+|---|---|---|---|---|
+| PANW | Palo Alto Networks | NASDAQ-PANW | 7月末 | A(+G: ファイアウォール機器) |
+| CRWD | CrowdStrike | NASDAQ-CRWD | 1月末 | A(+B: Flex従量) |
+| FTNT | Fortinet | NASDAQ-FTNT | 12月末 | G+A(機器+サービス) |
+| NET | Cloudflare | NYSE-NET | 12月末 | B |
+| ZS | Zscaler | NASDAQ-ZS | 7月末 | A(+B) |
+| OKTA | Okta | NASDAQ-OKTA | 1月末 | A |
+
+- 除外: Check Point(CHKP)はイスラエル籍でNASDAQ単独上場のため、条件4(日本株か米国株)の判断が割れる。
+  スキルのゲート規定に従い今回の母集団から除外し、ピアPEG(経路a)の参照にのみ使う。
+- Microsoft・Cisco・Broadcom 等はセキュリティ売上を持つが純粋銘柄ではないため除外する。
+- **評価基準日: 2026-10-11(日)。株価は 2026-10-09(金)の終値**を使う(取れない場合は取得できた直近終値と日付を明記)。
+
+## 2. 情報取得の制約(全員が守ること)
+
+- この環境では WebFetch と curl による外部サイトの直接取得が**ネットワーク方針で拒否される**
+  (tradingview.com、sec.gov、stockanalysis.com 等すべて DNS 解決不可)。**使えるのは WebSearch のみ**。
+- WebSearch は検索結果の要約文と出典URLを返す。数値は必ず出典URLと取得日(2026-10-11)を付けて記録する。
+- 情報源 Tier(research-protocol.md §2)を厳守する。会社IR(ir.*、investors.*、プレスリリース、10-Q/10-K の要約)を
+  最優先とし、Tier 3〜4 の単独出典の数値は「単独出典」と印を付ける。
+- 検索結果に**明らかに会社発表と食い違う記事が混ざる**(例: 存在しない決算値を報じるサイト)。
+  2つ以上の出典で一致しない重要数値は、会社IRに当たり直し、決着しなければ両論併記+「未確定」とする。
+- **数値を推測で埋めない。** 見つからなければ「欠損」と書く。
+- TradingView のコンセンサスは直接取得できないため、`allowed_domains: ["tradingview.com"]` での検索、
+  その後 Zacks・Yahoo Finance・MarketBeat・Nasdaq・S&P Global/Visible Alpha を引用した報道で補う。
+  出所と取得日を必ず記録し、「TradingView直接取得不可」を既知の制約に記載する。
+
+## 3. EPS の定義(6社共通)
+
+| 名称 | 定義 |
+|---|---|
+| GAAP EPS | 会社報告の希薄化後GAAP EPS |
+| 調整後EPS | 会社定義の non-GAAP 希薄化後EPS(SBC・買収無形償却・買収関連費用・構造改革費などを除外) |
+| **事業実態EPS(基準EPS)** | 調整後EPS − SBC×(1−t)÷希薄化後株数。t=会社の non-GAAP 長期税率(不明なら22%)。買収無形資産の償却は除外したままとし、買収の対価は株数(株式対価)と現金・負債で別途評価する。受取利息は経常的な収益として残すが、金利低下の感応度を別記する |
+
+- 将来年度の事業実態EPSは、コンセンサス調整後EPSから、**SBC/売上比率の年度別の見通し**で SBC を控除して作る。
+  SBC/売上比率の見通しは各社の実績トレンドと会社目標から各分析者が決め、根拠を Appendix B に書く。
+- 比較のため、調整後EPS基準の PER・PEG も併記する(市場の慣行との対照)。
+- 過去の成長率の外挿は禁止。コンセンサス最終年度より先は事業エンジン経路の考え方で延長し、延長部分と明記する。
+
+## 4. 時間の揃え方とバリュエーション規約
+
+- 各社の年度別テーブル(F13)は**各社の会計年度**で作る。表に決算期末を必ず書く。
+- **目標株価(12か月)= 2027-10-11 時点の NTM 事業実態EPS × 妥当PER**。
+  NTM EPS は会計年度EPSを月数で按分した加重平均で求める(`build/valuation_lib.py` の `ntm_eps`)。
+  妥当PER = 許容PEG × g×100。g は同時点から先 3 年の事業実態EPS CAGR(50%で頭打ち。頭打ちなしの値も併記)。
+- 条件6(5年後EPS成長率でPEG<1)は 5 年CAGR で判定する(延長部分を含む場合は明記)。
+- **資本コスト 9.0%**(感応度 8%・10%)。定常状態価値 = 定常状態利益(SBC控除後・税引後)÷ 9%。
+  成長の値段 = 時価総額 − 定常状態価値(valuation-model.md §3-5)。
+- 許容PEGは 3 経路の収束で決める(valuation-model.md §3-3)。経路a(同一基準ピア)は Opus 統括が作る
+  `data/peer_peg_table.md` を使う。
+- エントリー価格帯・2軸マトリクス・αは scenario-strategy.md §6、valuation-model.md §4-1 の【再設計】値を使う。
+- 計算はすべて `build/valuation_lib.py` を import したコードで行い、スクリプトを `analysis/{T}_calc.py` に残す。
+
+## 5. 条件9(AIの停めない運用)の扱い
+
+6社はいずれも AI を守る製品(AIアプリ・エージェントのセキュリティ、AIによるSOC自動化)または AI 推論基盤
+(Cloudflare Workers AI)を提供しており、**条件9を適用する見込み**。各分析者が一次資料で関与の内容と
+売上規模を確認して最終判定する。
+
+## 6. 順位付けの方法(Opus 統括が Part I で適用)
+
+1. 第一キー: 最終判断区分(買い > 買い検討 > 監視 > 見送り)
+2. 第二キー: 確率加重の期待リターン(弱気・ベース・強気・事業エンジンの各目標株価と確率)
+3. 第三キー: 構造評価(S〜F)
+4. 第四キー: 非対称性(上値幅 ÷ 下値幅)
+- 「事業の質の順位」(構造評価と競争優位期間)と「投資魅力の順位」(上記)は分けて示す。
+  スキルの目的は割安な優良企業の見極めであり、主たる順位は投資魅力の順位とする。
+
+## 7. 言語規律
+
+- 本文・表・見出しはすべて日本語。英語の引用は和訳を主とし、原文は括弧で最小限。
+- 専門用語・英略語は初出時に日本語で一言定義する(ARR=年間経常収益、NNARR=純新規ARR、
+  NRR=既存顧客の売上継続率、RPO=残存履行義務、cRPO=12か月以内に計上予定のRPO、SASE、SIEM、XDR、SSE 等)。
+- 原因は「なぜ」を2層以上たどる。見出しはメッセージ型(主張を含む完全文)。
+
+## 8. ファイルの置き場所
+
+| 種類 | 担当モデル | パス |
+|---|---|---|
+| 定量データ表 | Haiku | `data/{T}_data.md` |
+| ピアのバリュエーション表 | Haiku | `data/peers_raw.md` |
+| ピアPEG表(経路a) | Opus 統括 | `data/peer_peg_table.md` |
+| 定性調査(経営陣シナリオ・市場の仮説・一次情報) | Sonnet | `research/{T}_qual.md` |
+| 個別銘柄の分析報告書 | Opus | `analysis/{T}_report.md`、`analysis/{T}_summary.json`、`analysis/{T}_calc.py`、`analysis/{T}_*.csv` |
+| 図表 | Sonnet | `charts/{T}_F*.png`、`charts/X_*.png` |
+| Word 組版 | Sonnet(組版スクリプト)/ Opus(品質確認) | `build/`、`out/` |
