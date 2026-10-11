@@ -51,9 +51,19 @@ def cagr(v0: float, v1: float, years: float) -> float:
     return (v1 / v0) ** (1.0 / years) - 1.0
 
 
-def fair_per(peg: float, g: float, cap: float = G_CAP) -> dict:
-    """妥当PER = PEG × g×100。頭打ちあり・なしの両方を返す。"""
-    return {"capped": peg * min(g, cap) * 100.0, "uncapped": peg * g * 100.0, "g_capped": min(g, cap)}
+def fair_per(peg: float, g: float, cap: float = G_CAP, floor: float = 1.0 / COST_OF_CAPITAL) -> dict:
+    """妥当PER = PEG × g×100。頭打ちあり・なしの両方を返す。
+
+    下限は成長ゼロの PER(1/資本コスト = 11.1倍)。00_standard.md §3-3。
+    """
+    return {"capped": max(floor, peg * min(g, cap) * 100.0), "uncapped": max(floor, peg * g * 100.0),
+            "g_capped": min(g, cap)}
+
+
+def steady_state_value_per_share(steady_earnings_total: float, diluted_shares: float,
+                                 r: float = COST_OF_CAPITAL) -> float:
+    """1株当たり定常状態価値(弱気パスの床。00_standard.md §3-3)。単位は入力に合わせる。"""
+    return steady_earnings_total / r / diluted_shares
 
 
 def peg_of(price: float, eps: float, g: float) -> float:
