@@ -388,6 +388,25 @@ FCF_M_VS_NI_M_FY35 = (P['engine'][2035]['fcf_minus_sbc'] / P['engine'][2035]['re
 REQ_PEG = {k: PRICE / TARGET[k]['ntm'] / (TARGET[k]['g'] * 100) for k in TARGET}
 
 
+def dcf_earn_trunc(path, last_fy, r=0.09, g_term=0.04, at=vl.TARGET_DATE):
+    """利益ベース DCF で、高成長を last_fy で打ち切り、その後は永久成長 g_term とした場合(CAP の長さの感度)。"""
+    pv, cash = 0.0, NET_CASH
+    for y in FYS:
+        if y > last_fy:
+            break
+        cf = P[path][y]['earn_cf']
+        if FY_END[y] <= at:
+            cash += cf
+            continue
+        pv += cf / (1 + r) ** ((FY_END[y] - at).days / 365.25)
+    last = P[path][last_fy]['biz_ni'] * (1 + g_term) + WC_RATE * P[path][last_fy]['rev'] * g_term
+    tv = last / (r - g_term) / (1 + r) ** ((FY_END[last_fy] - at).days / 365.25)
+    return (pv + tv + cash) / SH_DIL
+
+
+DCF_TRUNC = {y: dcf_earn_trunc('engine', y) for y in (2029, 2031, 2033, 2035)}
+
+
 def reverse_dcf(r=0.09, g_term=0.04, years=10, base=None):
     """現在株価を正当化する FCF−SBC の年成長率(10年一定、その後永久成長)を二分法で求める。"""
     base = base if base is not None else P['engine'][2027]['fcf_minus_sbc']
@@ -707,6 +726,7 @@ if __name__ == '__main__':
     print('DCF(FCF−SBC)', {k: (round(v['per_share'], 1), round(v['within3'], 3), round(v['pv_tv_share'], 3)) for k, v in DCF.items()}, '資本コスト感応', {r: round(v, 1) for r, v in DCF_R.items()})
     print('床: 基準', round(SS_FLOOR_BASE, 1), '弱気', round(SS_FLOOR_BEAR, 1), '弱気定常利益', round(bear_ss_earn), {k: (round(TARGET[k]['raw_target'], 1), round(TARGET[k]['target'], 1)) for k in TARGET})
     print('DCF 2027-10-11 FCF−SBC', {k: round(v, 1) for k, v in DCF_T1.items()}, ' 利益ベース', {k: round(v, 1) for k, v in DCF_EARN_T1.items()}, ' 利益g3%', round(DCF_EARN_T1_G3, 1), ' 利益ベース現在', {k: round(v, 1) for k, v in DCF_EARN_NOW.items()})
+    print('利益DCF 高成長の打ち切り年度別', {k: round(v, 1) for k, v in DCF_TRUNC.items()})
     print('FY35 FCF−SBC÷事業実態純利益 −1:', round(FCF_VS_EARN_FY35, 3), ' マージン', [round(x, 3) for x in FCF_M_VS_NI_M_FY35], ' 必要PEG', {k: round(v, 2) for k, v in REQ_PEG.items()})
     print('リバースDCF(FCF−SBC 10年成長率)', {r: f'{v:.1%}' for r, v in REV_DCF.items()}, ' 調整後FCF基準', f'{REV_DCF_PREFCF:.1%}')
     print('== 感度(芯)')
