@@ -170,15 +170,15 @@
     "note": "経路aはピアの調整後PEG(OKTA 5.1、6社中央値約6.1)で「市場の実勢」であり許容値の根拠にしない。経路bは3年gの一部がSBC比率の低下(有限の源泉)であるため1.0〜1.4。経路cは構造評価Bの1.0〜1.3にCAP約10年・ストック比率・定常状態利益率との差・エージェントの選択肢を加点。採用1.2〜1.45(会社シナリオ1.35〜1.65、弱気0.85〜1.05)。現在株価を正当化するPEGは 3.0(事業エンジン)〜4.3(コンセンサス)"
   },
   "targets_12m": {
-    "consensus": 70.8,
+    "consensus": 79.3,
     "company": 169.7,
     "engine": 103.0,
-    "bear": 35.4
+    "bear": 68.6
   },
-  "targets_12m_note": "採用は規約どおりの方法(2027-10-11のNTM事業実態EPS×PEG×g、PEG中央)。定常状態経由: コンセンサス 68.1, 会社シナリオ 174.9, 事業エンジン 92.2, 弱気 30.9。交差確認(事業実態利益のDCF、r=9%・永続3%): コンセンサス 115.6, 会社シナリオ 201.7, 事業エンジン 145.2, 弱気 81.3。DCF値でも全経路で現在株価を下回り、判断(見送り)は変わらない",
+  "targets_12m_note": "採用は規約どおりの方法(2027-10-11のNTM事業実態EPS×PEG×g、PEG中央、PER下限11.1倍)に、§3-3の床(1株当たり定常状態価値+純現金)を適用。PEG法の値: コンセンサス 70.8, 会社シナリオ 169.7, 事業エンジン 103.0, 弱気 35.4。床: コンセンサス 79.3, 会社シナリオ 79.3, 事業エンジン 79.3, 弱気 68.6(弱気は営業利益率42%→36%・座席−2%で定常状態利益1,069→898百万ドル)。コンセンサスにも同じ理由で床を適用(PEG法70.8は定常状態価値を下回り事業本体と整合しない)。定常状態経由: コンセンサス 68.1, 会社シナリオ 174.9, 事業エンジン 92.2, 弱気 30.9。交差確認(事業実態利益のDCF、r=9%・永続3%): コンセンサス 115.6, 会社シナリオ 201.7, 事業エンジン 145.2, 弱気 81.3。DCF値でも全経路で現在株価を下回り、判断(見送り)は変わらない",
   "adopted_path": "engine",
   "gaps": {
-    "consensus": -0.695,
+    "consensus": -0.659,
     "company": -0.269,
     "engine": -0.556
   },
@@ -188,21 +188,31 @@
     "engine": 0.3,
     "company": 0.1
   },
-  "expected_price": 81.5,
-  "expected_return": -0.649,
+  "expected_price": 92.8,
+  "expected_return": -0.6,
   "expected_return_dcf_reference": -0.464,
-  "expected_return_bear_floor_reference": -0.612,
-  "bear_floor_steady_state_per_share": 69.8,
+  "floors_steady_state_per_share": {
+    "consensus": 79.3,
+    "company": 79.3,
+    "engine": 79.3,
+    "bear": 68.6
+  },
+  "targets_peg_method_before_floor": {
+    "consensus": 70.8,
+    "company": 169.7,
+    "engine": 103.0,
+    "bear": 35.4
+  },
   "asymmetry": {
-    "downside_pct": -0.847,
+    "downside_pct": -0.704,
     "upside_pct": -0.269,
-    "ratio": -0.317,
+    "ratio": -0.382,
     "convex": false
   },
   "decision": "見送り",
   "entry_zones": {
     "alpha": 0.225,
-    "Z1": 39.4,
+    "Z1": 76.4,
     "Z2": 91.5,
     "zone": "見送り圏",
     "Z1_dcf_reference": 90.5,

@@ -415,6 +415,30 @@ PEG_12M = {'consensus': (1.20, 1.45), 'engine': (1.20, 1.45), 'company': (1.35, 
 # ----------------------------------------------------------------------------------------------
 # 6. 年度別適正株価(F13)と 12か月目標株価(規約どおり / 定常状態経由)
 # ----------------------------------------------------------------------------------------------
+# --- 下値の床(00_standard §3-3): 1株当たり定常状態価値 = 定常状態利益 ÷ 9% ÷ 希薄化後株数 + 1株当たり純現金
+#     中央: 定常状態の営業利益率42%(SBC控除後)。弱気: 36%(Microsoft のバンドルによる長い尾の値下げ −3pt、
+#     防衛的な維持費の増加 −3pt)かつ売上の基盤 −2%(顧客の人員削減による座席の縮小)。
+SS_M_CENTRAL, SS_M_BEAR, BEAR_SEAT_LOSS = 0.42, 0.36, 0.02
+
+
+def ss_floor(rev, margin):
+    return vl.steady_state_value_per_share(rev * margin * (1 - TAX), DIL_SH_GAAP) + CASH / DIL_SH_GAAP
+
+
+def floor_for(k, rev):
+    if k == 'bear':
+        return ss_floor(rev * (1 - BEAR_SEAT_LOSS), SS_M_BEAR)
+    return ss_floor(rev, SS_M_CENTRAL)
+
+
+FLOOR_NOW = {k: floor_for(k, 3221.0) for k in ('consensus', 'company', 'engine', 'bear')}
+print(f'\n[下値の床 §3-3] 定常状態価値/株(FY27売上3,221基準・現金込み): 中央42% = {FLOOR_NOW["consensus"]:.1f}、'
+      f'弱気36%・座席−2% = {FLOOR_NOW["bear"]:.1f}(現金を除くと {FLOOR_NOW["consensus"]-CASH/DIL_SH_GAAP:.1f} / {FLOOR_NOW["bear"]-CASH/DIL_SH_GAAP:.1f})')
+bear_ss_earn = 3221 * (1 - BEAR_SEAT_LOSS) * SS_M_BEAR * (1 - TAX)
+cen_ss_earn = 3221 * SS_M_CENTRAL * (1 - TAX)
+print(f'   定常状態利益: 中央 {cen_ss_earn:.0f} → 弱気 {bear_ss_earn:.0f}(差 {bear_ss_earn-cen_ss_earn:.0f}: 値下げ {-3221*0.03*(1-TAX):.0f}、'
+      f'維持費 {-3221*0.03*(1-TAX):.0f}、座席 {-(3221*0.02)*SS_M_BEAR*(1-TAX):.0f})')
+
 f13 = []
 for k, p in PATHS.items():
     for y in range(27, 33):
@@ -422,9 +446,13 @@ for k, p in PATHS.items():
         g = vl.cagr(e0, e3, 3)
         lo, hi = PEG_BY_FY[k][y]
         fp_lo, fp_hi = vl.fair_per(lo, g)['capped'], vl.fair_per(hi, g)['capped']
+        fl = floor_for(k, p[y]['rev'])
+        pr_lo, pr_hi = fp_lo * e0, fp_hi * e0
         f13.append(dict(fy_end=FY[y].isoformat(), path=JP[k], business_eps=round(e0, 3), g_3y=round(g, 4), peg_low=lo, peg_high=hi,
-                        fair_per_low=round(fp_lo, 1), fair_per_high=round(fp_hi, 1), fair_price_low=round(fp_lo * e0, 1),
-                        fair_price_high=round(fp_hi * e0, 1), is_extension=bool(p[y]['ext'] or p[y + 3]['ext'])))
+                        fair_per_low=round(fp_lo, 1), fair_per_high=round(fp_hi, 1), fair_price_low=round(max(pr_lo, fl), 1),
+                        fair_price_high=round(max(pr_hi, fl), 1), is_extension=bool(p[y]['ext'] or p[y + 3]['ext']),
+                        peg_price_low=round(pr_lo, 1), peg_price_high=round(pr_hi, 1), floor_price=round(fl, 1),
+                        floor_applied=bool(pr_lo < fl)))
 with open(os.path.join(OUT, 'OKTA_F13.csv'), 'w', newline='') as f:
     w = csv.DictWriter(f, fieldnames=list(f13[0].keys()))
     w.writeheader()
@@ -432,7 +460,8 @@ with open(os.path.join(OUT, 'OKTA_F13.csv'), 'w', newline='') as f:
 print('\n[F13] 年度別適正株価(その年度の事業実態EPS × PEG × 3年 g)')
 for r_ in f13:
     print(f'   {r_["path"]} {r_["fy_end"]}: EPS {r_["business_eps"]:.2f} g {r_["g_3y"]*100:.1f}% PEG {r_["peg_low"]}〜{r_["peg_high"]}'
-          f' PER {r_["fair_per_low"]}〜{r_["fair_per_high"]} 適正株価 {r_["fair_price_low"]}〜{r_["fair_price_high"]}' + (' [延長含む]' if r_['is_extension'] else ''))
+          f' PER {r_["fair_per_low"]}〜{r_["fair_per_high"]} PEG価格 {r_["peg_price_low"]}〜{r_["peg_price_high"]} 床 {r_["floor_price"]}'
+          f' → 適正株価 {r_["fair_price_low"]}〜{r_["fair_price_high"]}' + (' [床適用]' if r_['floor_applied'] else '') + (' [延長含む]' if r_['is_extension'] else ''))
 
 T12 = {}
 print('\n[12か月目標株価] 規約: 2027-10-11 の NTM 事業実態EPS × PEG × g(同時点から3年の事業実態EPS CAGR)')
@@ -457,7 +486,11 @@ for k, p in PATHS.items():
 
 # 採用: 規約どおりの値(中央)と定常状態経由の値の平均ではなく、どちらかを選ぶ(00_standard §3-2)。
 # OKTA は FY+1 の事業実態EPSが調整後EPSの約5割残り、規約どおりの方法が安定する → 規約どおり(中央)を採用。定常状態経由は交差確認。
-ADOPT = {k: T12[k]['std_mid'] for k in PATHS}
+RULE_MID = {k: T12[k]['std_mid'] for k in PATHS}
+ADOPT = {k: max(T12[k]['std_mid'], FLOOR_NOW[k]) for k in PATHS}
+FLOOR_HIT = {k: T12[k]['std_mid'] < FLOOR_NOW[k] for k in PATHS}
+print('   PEG法の値(PER下限11.1倍込み):', {JP[k]: round(v, 1) for k, v in RULE_MID.items()})
+print('   床(§3-3):', {JP[k]: round(v, 1) for k, v in FLOOR_NOW.items()}, '→ 床が効いた経路:', [JP[k] for k, v in FLOOR_HIT.items() if v])
 print('   採用(規約どおり・中央):', {JP[k]: round(v, 1) for k, v in ADOPT.items()})
 
 # ----------------------------------------------------------------------------------------------
@@ -482,6 +515,13 @@ def dcf_value(p, at=vl.TARGET_DATE, r=R, g_term=0.03, net_cash=CASH):
 DCF = {k: dcf_value(p) for k, p in PATHS.items()}
 print('\n[交差確認: 事業実態利益のDCF(r=9%、永続3%、2027-10-11時点)]', {JP[k]: round(v, 1) for k, v in DCF.items()})
 DCF_now = {k: dcf_value(p, at=vl.VALUATION_DATE) for k, p in PATHS.items()}
+# DCF の前提感応度と終価の比率(事業エンジン経路、2027-10-11 時点)
+DCF_R = {r_: dcf_value(eng, r=r_) for r_ in (0.08, 0.09, 0.10)}
+DCF_GT = {gt: dcf_value(eng, g_term=gt) for gt in (0.02, 0.03)}
+_tv = eng[38]['be'] * DIL_SH_GAAP * 1.03 / (R - 0.03) / (1 + R) ** ((FY[38] - vl.TARGET_DATE).days / 365.25)
+TV_SHARE = _tv / (DCF['engine'] * DIL_SH_GAAP)
+print('   事業エンジンDCFの感応度: r', {k: round(v, 1) for k, v in DCF_R.items()}, '/ 永続成長', {k: round(v, 1) for k, v in DCF_GT.items()},
+      f'/ 終価の比率 {TV_SHARE*100:.0f}%')
 print('   同(2026-10-11 時点)', {JP[k]: round(v, 1) for k, v in DCF_now.items()})
 
 
@@ -635,7 +675,7 @@ down = ADOPT['bear'] / PRICE - 1
 up = ADOPT['company'] / PRICE - 1
 print('\n[最終判断]')
 print('   乖離:', {JP[k]: f'{v*100:+.1f}%' for k, v in GAPS.items()})
-print(f'   確率 {PROBS} → 期待株価 {EV_["expected_price"]:.1f}、期待リターン {EV_["expected_return"]*100:+.1f}%')
+print(f'   確率 {PROBS} → 確率加重の適正価値 {EV_["expected_price"]:.1f}、確率加重の乖離 {EV_["expected_return"]*100:+.1f}%')
 print(f'   非対称性: 下値 {down*100:+.1f}% / 上値(会社シナリオ) {up*100:+.1f}% → 凸性なし')
 print(f'   判断(構造評価{RATING}×事業エンジン経路の乖離): {DEC}')
 print(f'   エントリー価格帯: α={alpha:.3f} Z1={Z["Z1"]:.1f} Z2={Z["Z2"]:.1f} 現在株価のゾーン={Z["zone"]}')
@@ -643,18 +683,9 @@ print(f'   エントリー価格帯: α={alpha:.3f} Z1={Z["Z1"]:.1f} Z2={Z["Z2"]
 GAPS_DCF = {k: DCF[k] / PRICE - 1 for k in PATHS}
 EV_DCF = vl.expected_value(DCF, PROBS, PRICE)
 print('   (参考)DCF値での乖離:', {JP[k]: f'{v*100:+.1f}%' for k, v in GAPS_DCF.items()},
-      f'期待リターン {EV_DCF["expected_return"]*100:+.1f}% → 判断 {vl.decision(RATING, GAPS_DCF[ADOPTED_PATH], EDGE)}')
+      f'確率加重の乖離 {EV_DCF["expected_return"]*100:+.1f}% → 判断 {vl.decision(RATING, GAPS_DCF[ADOPTED_PATH], EDGE)}')
 Z_DCF = vl.zones(B=DCF['engine'], U=DCF['company'], L=DCF['bear'], alpha=alpha, price=PRICE, edge=EDGE)
 print(f'   (参考)DCF値でのエントリー価格帯: Z1={Z_DCF["Z1"]:.1f} Z2={Z_DCF["Z2"]:.1f}')
-
-# 代替値(規約外・参考): 弱気の下値に定常状態価値の床を置く。規約どおりの弱気値(PER約14倍)は「成長ゼロでも残る価値」
-# (定常状態営業利益率36%で1株約70ドル)を下回り、事業本体と整合しない(A1・A8)。本体は規約値、代替値は併記のみ。
-BEAR_FLOOR = ss[0.36]['per_share']
-ALT = dict(ADOPT)
-ALT['bear'] = max(ADOPT['bear'], BEAR_FLOOR)
-EV_ALT = vl.expected_value(ALT, PROBS, PRICE)
-print(f'   (参考)弱気に定常状態価値の床 {BEAR_FLOOR:.1f} を置いた場合: 期待株価 {EV_ALT["expected_price"]:.1f}、'
-      f'期待リターン {EV_ALT["expected_return"]*100:+.1f}%、下値 {BEAR_FLOOR/PRICE-1:+.1%}')
 
 # ----------------------------------------------------------------------------------------------
 # 11. 現在の倍率・成長・効果測定(自社株買い・SBC)
@@ -763,7 +794,11 @@ summary = {
                              '定常状態利益率との差・エージェントの選択肢を加点。採用1.2〜1.45(会社シナリオ1.35〜1.65、弱気0.85〜1.05)。'
                              f'現在株価を正当化するPEGは {PEG_IMPLIED["engine"]:.1f}(事業エンジン)〜{PEG_IMPLIED["consensus"]:.1f}(コンセンサス)')},
     'targets_12m': {k: round(v, 1) for k, v in ADOPT.items()},
-    'targets_12m_note': ('採用は規約どおりの方法(2027-10-11のNTM事業実態EPS×PEG×g、PEG中央)。定常状態経由: ' +
+    'targets_12m_note': ('採用は規約どおりの方法(2027-10-11のNTM事業実態EPS×PEG×g、PEG中央、PER下限11.1倍)に、§3-3の床(1株当たり定常状態価値+純現金)を適用。'
+                         'PEG法の値: ' + ', '.join(f'{JP[k]} {RULE_MID[k]:.1f}' for k in PATHS) +
+                         '。床: ' + ', '.join(f'{JP[k]} {FLOOR_NOW[k]:.1f}' for k in PATHS) +
+                         '(弱気は営業利益率42%→36%・座席−2%で定常状態利益1,069→' + f'{bear_ss_earn:.0f}' + '百万ドル)。'
+                         'コンセンサスにも同じ理由で床を適用(PEG法70.8は定常状態価値を下回り事業本体と整合しない)。定常状態経由: ' +
                          ', '.join(f'{JP[k]} {T12[k]["ss"]:.1f}' for k in PATHS) +
                          '。交差確認(事業実態利益のDCF、r=9%・永続3%): ' + ', '.join(f'{JP[k]} {DCF[k]:.1f}' for k in PATHS) +
                          '。DCF値でも全経路で現在株価を下回り、判断(見送り)は変わらない'),
@@ -772,8 +807,8 @@ summary = {
     'probabilities': PROBS,
     'expected_price': round(EV_['expected_price'], 1), 'expected_return': round(EV_['expected_return'], 3),
     'expected_return_dcf_reference': round(EV_DCF['expected_return'], 3),
-    'expected_return_bear_floor_reference': round(EV_ALT['expected_return'], 3),
-    'bear_floor_steady_state_per_share': round(BEAR_FLOOR, 1),
+    'floors_steady_state_per_share': {k: round(v, 1) for k, v in FLOOR_NOW.items()},
+    'targets_peg_method_before_floor': {k: round(v, 1) for k, v in RULE_MID.items()},
     'asymmetry': {'downside_pct': round(down, 3), 'upside_pct': round(up, 3),
                   'ratio': round((ADOPT['company'] - PRICE) / (PRICE - ADOPT['bear']), 3), 'convex': False},
     'decision': DEC,

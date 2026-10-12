@@ -805,3 +805,40 @@ p(f'cRPO÷ARR {4922/5840:.2f} / RPO÷ARR {10700/5840:.2f} / 繰延収益 {3497.1
 for _y, _q, _rep in [(2025, [3438, 3650, 3860, 4020, 4240], 3953.6), (2026, [4240, 4440, 4660, 4920, 5250], 4810)]:
     _est = K_REV * sum((_q[i] + _q[i + 1]) / 2 for i in range(4)) / 4
     p(f'エンジン式の照合 FY{_y}: 再構成 {_est:,.1f} / 報告 {_rep:,.1f}({_est/_rep-1:+.1%})')
+
+# ---------------------------------------------------------------------------
+# 14. 共通基準 §3-3(下値の床と PER 下限)の確認
+# ---------------------------------------------------------------------------
+FLOOR = SS['中']['steady_state_value'] / DIL
+FLOOR_RANGE = (SS['低']['steady_state_value'] / DIL, SS['高']['steady_state_value'] / DIL)
+min_fair_per = min(r[6] for r in F13_ROWS)
+p('== 14. §3-3 の確認 ==')
+p(f'1株当たり定常状態価値(床){FLOOR:.1f}(幅 {FLOOR_RANGE[0]:.1f}〜{FLOOR_RANGE[1]:.1f})/ 弱気パスの採用目標 {TGT["bear"]:.1f} → 床を{"上回る(床は不発動)" if TGT["bear"] >= FLOOR else "下回る(床を適用)"}')
+p(f'弱気パスの規約どおりの目標 {RESULT["bear"]["regular"][0]:.1f}〜{RESULT["bear"]["regular"][1]:.1f} は床を下回るため、規約どおりを採る場合は床 {FLOOR:.1f} に引き上げる')
+p(f'F13 の妥当PERの最小値 {min_fair_per:.1f} 倍 > 下限 11.1 倍(PER 下限は不発動)')
+with open(f'{OUT}/CRWD_summary.json') as f:
+    _s = json.load(f)
+_s['allowed_peg']['note'] += (f' 共通基準§3-3: 1株当たり定常状態価値(床){FLOOR:.1f}ドルに対し弱気の採用目標{TGT["bear"]:.1f}は上回り床は不発動'
+                              f'(規約どおりの弱気{RESULT["bear"]["regular"][0]:.1f}〜{RESULT["bear"]["regular"][1]:.1f}は床未満のため採るなら{FLOOR:.1f}へ)。妥当PERの最小{min_fair_per:.1f}倍で11.1倍下限も不発動。'
+                              'expected_price/expected_return は確率加重の適正価値と現在株価との確率加重の乖離であり、12か月の株価予想ではない。')
+with open(f'{OUT}/CRWD_summary.json', 'w') as f:
+    json.dump(_s, f, ensure_ascii=False, indent=2)
+
+# ---------------------------------------------------------------------------
+# 15. 採用法(定常状態経由)と DCF の差の分解(統括レビュー指摘3)
+#   DCF の終価を「CAP 終了後は超過リターンなし」(所有者利益÷r、成長の価値ゼロ)に置き換えると、
+#   定常状態経由の目標と比べられる。
+# ---------------------------------------------------------------------------
+p('== 15. 定常状態経由 対 DCF の差の分解 ==')
+DCF_CAP = {}
+for n in ('consensus', 'company', 'engine', 'bear'):
+    v4 = dcf_value(MODEL[n], at=vl.TARGET_DATE)[0]
+    v2 = dcf_value(MODEL[n], at=vl.TARGET_DATE, g_t=0.02)[0]
+    v0 = dcf_value(MODEL[n], at=vl.TARGET_DATE, g_t=0.0)[0]
+    DCF_CAP[n] = dict(g4=v4, g2=v2, g0=v0)
+    p(f'{n:9s}: 定常状態経由 {TGT[n]:.1f} / DCF(2027-10-11)終価成長4% {v4:.1f}・2% {v2:.1f}・0%(CAP 終了後は超過リターンなし){v0:.1f}')
+_m = MODEL['engine']
+_v31 = RESULT['engine']['value_exit'] * DIL
+p(f'engine の FY31 末価値 {_v31/1000:.1f}十億 = FY31 売上の {_v31/_m[2031]["rev"]:.1f}倍、FCF の {_v31/_m[2031]["fcf"]:.1f}倍、調整後純利益の {_v31/_m[2031]["adj_ni"]:.1f}倍、事業実態純利益の {_v31/_m[2031]["biz_ni"]:.1f}倍')
+_rate_sens = 0.01 * 5400 * (1 - T_ADJ) / DIL
+p(f'金利感応度: 現金利回り −100bp で FY28 調整後EPS −{_rate_sens:.3f}ドル')

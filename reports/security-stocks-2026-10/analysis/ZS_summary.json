@@ -149,7 +149,7 @@
     "consensus": 90.7,
     "company": 225.6,
     "engine": 106.1,
-    "bear": 53.7
+    "bear": 70.9
   },
   "targets_12m_note": {
     "adopted_method": "定常状態経由(00_standard §3-2 の2)。近い年度の事業実態EPSがほぼゼロで、規約どおりの方法は不安定",
@@ -163,14 +163,17 @@
       "consensus": 90.7,
       "company": 225.6,
       "engine": 106.1,
-      "bear": 53.7
+      "bear": 70.9
     },
     "dcf_cross_check": {
       "consensus": 109.8,
       "company": 344.2,
       "engine": 127.8,
       "bear": 78.6
-    }
+    },
+    "bear_floor": "弱気パスの定常状態経由の値 53.7 は床を下回るため、床 70.9(標準の床 70.9 と弱気固有の床 71.9 の低い方)を採用。テール(現在の規模で侵食)は 55.3",
+    "probability_weighted_note": "確率加重の値は12か月の株価予想ではなく、確率加重の適正価値と現在株価の乖離(00_standard §3-3)",
+    "company_target_vs_price": "会社シナリオ経路の目標は株価とほぼ等しく、株価は会社シナリオの完全達成を織り込む"
   },
   "adopted_path": "engine",
   "gaps": {
@@ -184,10 +187,10 @@
     "engine": 0.35,
     "company": 0.15
   },
-  "expected_price": 108.9,
-  "expected_return": -0.534,
+  "expected_price": 112.4,
+  "expected_return": -0.519,
   "asymmetry": {
-    "downside_pct": -0.77,
+    "downside_pct": -0.697,
     "upside_pct": -0.035,
     "ratio": 0.0,
     "convex": false
@@ -195,7 +198,7 @@
   "decision": "見送り",
   "entry_zones": {
     "alpha": 0.25,
-    "Z1": 60.4,
+    "Z1": 79.6,
     "Z2": 92.8,
     "zone": "見送り圏"
   },

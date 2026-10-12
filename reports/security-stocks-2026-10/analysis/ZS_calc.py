@@ -338,8 +338,26 @@ RATINGS = {'1': 'C', '2': 'B', '3': 'B', '4': 'S', '5': 'B', '6': 'D', '7': 'C',
 STRUCT = 'B'
 EDGE = True   # 差分あり(方向は下: 市場は SBC 控除前の FCF・調整後EPS で評価している)
 ADOPTED = 'engine'
+# 下値の床(00_standard §3-3): 弱気パスの目標株価は 1株当たり定常状態価値を下回らせない
+FLOOR_STD = vl.steady_state_value_per_share(SS['base']['earnings'], SH_NOW)          # 現在の定常状態利益(1,085)÷9%÷170
+# 弱気シナリオ固有の床(目標時点 2027-10): 弱気の NTM 売上 × (1−侵食10%: 席数縮小 −4.5%・更新時の値引き −2.5%・解約増 −3%)
+#   × 定常状態利益率の低位推定(32.1%: 競争下で維持用 S&M を厚く残す)+ 純現金の利息
+_bear = PATHS['bear']['rows']
+BEAR_NTM_REV = _bear[2028]['rev'] * 10 / 12 + _bear[2029]['rev'] * 2 / 12
+EROSION = 0.045 + 0.025 + 0.030
+FLOOR_BEAR_TD = ((BEAR_NTM_REV * (1 - EROSION) * SS['low']['margin'] + NET_CASH * YIELD) * (1 - TAX)) / vl.COST_OF_CAPITAL / SH_NOW
+# テール(F14): 侵食が現在の規模(FY26 売上)で起き、成長も止まる場合
+_ss_pre = REV[2026] * SS['base']['margin'] + NET_CASH * YIELD
+_lost = REV[2026] * EROSION * GM_NG            # 失う売上は粗利率 80% で利益を減らす
+_def = REV[2026] * 0.01                          # 解約防衛の維持用 S&M +1pt
+SS_TAIL_EARN = (_ss_pre - _lost - _def) * (1 - TAX)
+FLOOR_TAIL = SS_TAIL_EARN / vl.COST_OF_CAPITAL / SH_NOW
+FLOOR = min(FLOOR_STD, FLOOR_BEAR_TD)
+BEAR_PATH_VALUE = RES['bear']['ss_target']
 T12 = {k: RES[k]['ss_target'] for k in RES}
+T12['bear'] = max(BEAR_PATH_VALUE, FLOOR)
 T12_DCF = {k: RES[k]['dcf'] for k in RES}
+T12_DCF['bear'] = max(T12_DCF['bear'], FLOOR)
 T12_CONV = {k: RES[k]['conv_mid'] for k in RES}
 PROB = {'bear': 0.20, 'consensus': 0.30, 'engine': 0.35, 'company': 0.15}
 EVAL = vl.expected_value(T12, PROB, PRICE)
@@ -509,7 +527,10 @@ def write_summary():
             'adopted_method': '定常状態経由(00_standard §3-2 の2)。近い年度の事業実態EPSがほぼゼロで、規約どおりの方法は不安定',
             'conventional_ntm_x_per': {k: round(T12_CONV[k], 1) for k in T12_CONV},
             'steady_state_route': {k: round(T12[k], 1) for k in T12},
-            'dcf_cross_check': {k: round(T12_DCF[k], 1) for k in T12_DCF}},
+            'dcf_cross_check': {k: round(T12_DCF[k], 1) for k in T12_DCF},
+            'bear_floor': f'弱気パスの定常状態経由の値 {BEAR_PATH_VALUE:.1f} は床を下回るため、床 {FLOOR:.1f}(標準の床 {FLOOR_STD:.1f} と弱気固有の床 {FLOOR_BEAR_TD:.1f} の低い方)を採用。テール(現在の規模で侵食)は {FLOOR_TAIL:.1f}',
+            'probability_weighted_note': '確率加重の値は12か月の株価予想ではなく、確率加重の適正価値と現在株価の乖離(00_standard §3-3)',
+            'company_target_vs_price': '会社シナリオ経路の目標は株価とほぼ等しく、株価は会社シナリオの完全達成を織り込む'},
         'adopted_path': ADOPTED, 'gaps': {k: round(v, 3) for k, v in GAPS.items()},
         'probabilities': PROB, 'expected_price': round(EVAL['expected_price'], 1), 'expected_return': round(EVAL['expected_return'], 3),
         'asymmetry': {'downside_pct': round(DOWN, 3), 'upside_pct': round(UP, 3),
@@ -599,6 +620,9 @@ if __name__ == '__main__':
     print(f'株価を正当化する FY31 SBC控除後営業利益率: 定常状態経由 {REQ_OWNER_SS*100:.1f}% / DCF {REQ_OWNER_DCF*100:.1f}%(エンジン経路 {r31["owner_margin"]*100:.1f}%)')
     print(f'会社の利益率・SBC経路のまま株価を正当化する NNARR 伸び(FY28-31 毎年): {REQ_NN*100:.1f}%')
     print()
+    print('== 下値の床 ==')
+    print(f'標準の床 {FLOOR_STD:.1f} / 弱気固有の床(目標時点、NTM売上 {BEAR_NTM_REV:.0f}×(1−{EROSION:.0%})×{SS["low"]["margin"]:.1%}) {FLOOR_BEAR_TD:.1f} / テール(現在規模で侵食) {FLOOR_TAIL:.1f}(定常利益 {SS_TAIL_EARN:.0f})')
+    print(f'弱気パスの定常状態経由の値 {BEAR_PATH_VALUE:.1f} → 床を適用して {T12["bear"]:.1f}')
     print('== 判断 ==')
     print('12か月目標(採用=定常状態経由):', {k: round(v, 1) for k, v in T12.items()})
     print('規約どおり(NTM×PER):', {k: round(v, 1) for k, v in T12_CONV.items()})

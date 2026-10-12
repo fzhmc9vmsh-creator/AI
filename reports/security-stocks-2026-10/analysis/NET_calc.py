@@ -84,6 +84,7 @@ q2_int = 107.8 / (1 - TAX) - 96.1
 P(f'Q2 2026: non-GAAP NI 107.8 = (営業利益96.1 + 受取利息等 I)×(1−22%) → I = {q2_int:.1f}/四半期(年率 {q2_int*4:.0f}、資金4.1bnに対し {q2_int*4/4100:.1%})')
 P(f'  → 調整後EPSのうち受取利息の寄与(2026年、税引後): 約 {170*(1-TAX)/SH_NOW:.2f} ドル/株(調整後EPS 1.26 の {170*(1-TAX)/SH_NOW/1.26:.0%})')
 P(f'Q2 2026 非GAAP希薄化後株数の逆算: 107.8/0.29 = {107.8/0.29:.0f}M(EPS丸めで ±7M)')
+P(f'金利1pt低下の調整後EPSへの影響: 手元資金 {CASH_POST:,.0f} × 1% × (1−22%) ÷ {SH_NOW}M = −{CASH_POST*0.01*(1-TAX)/SH_NOW:.2f} ドル/株')
 
 # ---------------------------------------------------------------- 2. 加速度表(F18)とエンジン照合
 sec('1. 根幹KPIの加速度(F18)')
@@ -191,6 +192,20 @@ P(f'ガイダンスの含意: Q3 営業利益率 {129.5/736.5:.1%} / Q4 売上 {
 P(f'FCF: 2024 {FY_FCF[2024]/FY_REV[2024]:.1%} / 2025 {FY_FCF[2025]/FY_REV[2025]:.1%} / 2026上期 {(84.1+56.4)/(639.8+696.1):.1%}; SBC控除後FCF 2025 {FY_FCF[2025]-FY_SBCPT[2025]:.0f}')
 P(f'capex/売上: 2024 {FY_CAPEX[2024]/FY_REV[2024]:.1%} / 2025 {FY_CAPEX[2025]/FY_REV[2025]:.1%}(ネットワークcapex 2026年 14〜15% 見通し)')
 P(f'ガイダンス超過: Q1 {639.8/620.5-1:+.1%} / Q2 {696.1/664.5-1:+.1%}; 通期ガイダンス中央値 2,790→2,809→2,867')
+
+# 四半期の増分営業利益率(前年同期比)と、会社目標(2028年末に年換算50億ドル)に必要な成長率
+inc_q3 = (129.5 - NG_OPI['2025Q3']) / (736.5 - REV['2025Q3'])
+inc_q4 = (q4_opi - NG_OPI['2025Q4']) / (q4_rev - REV['2025Q4'])
+inc_q2 = (NG_OPI['2026Q2'] - NG_OPI['2025Q2']) / (REV['2026Q2'] - REV['2025Q2'])
+P(f'増分営業利益率(前年同期比): 2026Q2 実績 {inc_q2:.1%} / Q3 ガイダンス {inc_q3:.1%} / Q4 含意 {inc_q4:.1%}')
+need_g = (1250 / REV['2026Q2']) ** (1 / 2.5) - 1
+P(f'2028年Q4に四半期売上12.5億ドル(年換算50億ドル)へ: 2026Q2 から年 {need_g:.1%} の成長で到達')
+# F11 シナリオ採点(規模加重): 点数 +大=2、+中=1、+小=0.5、±/保留=0、−=−1
+F11 = [('プール型の大型契約', 0.35, 2), ('大口顧客の獲得・パートナー経路', 0.25, 2), ('人員約20%削減・AIファースト運営', 0.15, 1),
+       ('Workers 開発者基盤', 0.10, 1), ('Workers AI・AI Gateway', 0.05, 0), ('AIエージェントの課金', 0.05, 0),
+       ('SASE/Zero Trust の束ね価格', 0.03, 0), ('0% 転換社債(2031年満期)', 0.02, 0.5)]
+f11_score = sum(w * sc for _, w, sc in F11)
+P(f'F11 規模加重スコア {f11_score:.2f}(+2〜−1 の尺度、重みの合計 {sum(w for _, w, _ in F11):.2f})')
 
 # ---------------------------------------------------------------- 5. 経路モデル
 YRS = list(range(2026, 2037))
@@ -404,6 +419,66 @@ g_adj_bear = vl.cagr(BEAR[2027]['adj_eps'], BEAR[2030]['adj_eps'], 3)
 P(f'弱気の交差確認: NTM調整後EPS(2027-10〜) {ntm_adj_bear:.2f} × AKAM 調整後PER {AKAM_PER} = {ntm_adj_bear*AKAM_PER:.1f}; '
   f'× 調整後PEG 1.0×g({g_adj_bear:.1%}) = {ntm_adj_bear*g_adj_bear*100:.1f}')
 
+# 交差確認(統括レビュー指摘3): SBC を現金費用とみなす DCF(所有者キャッシュフロー)
+#   CF_t = FCF_t − SBC(給与税を除く分を SBC+給与税の92%と仮定)×(1−t) − 受取利息×(1−t)(ネットキャッシュは別に加える)
+#   明示期間 2027〜2036年(2027年は 2027-10-11 以降の1/4のみ)、以後は永久成長 g_T。割引は各年の期末日から 2027-10-11 まで 9%。
+def dcf_value(d, g_t=0.04, r=R, at=vl.TARGET_DATE):
+    pv = 0.0
+    for y in range(2027, 2037):
+        cf = d[y]['fcf'] - d[y]['sbc_usd'] * 0.92 * (1 - TAX) - d[y]['intr'] * (1 - TAX)
+        if y == 2027:
+            cf *= 0.25
+        t = (FYE[y] - at).days / 365.25
+        pv += cf / (1 + r) ** t
+    y = 2036
+    cf36 = d[y]['fcf'] - d[y]['sbc_usd'] * 0.92 * (1 - TAX) - d[y]['intr'] * (1 - TAX)
+    tv = cf36 * (1 + g_t) / (r - g_t)
+    t = (FYE[y] - at).days / 365.25
+    pv_tv = tv / (1 + r) ** t
+    nc = d[2026]['cash'] - NOTES_2030 - NOTES_2031
+    eq = pv + pv_tv + nc
+    return dict(per_share=eq / SH_NOW, pv_explicit=pv, pv_tv=pv_tv, tv_share=pv_tv / (pv + pv_tv), cf36=cf36)
+
+
+P('--- 交差確認: SBC を費用とみなす DCF(12か月後の価値、明示期間 2027〜36年、永久成長 g_T)')
+DCF = {}
+for k, d in PATHS.items():
+    res = {gt: dcf_value(d, gt) for gt in (0.03, 0.04, 0.05)}
+    DCF[k] = res
+    P(f'{JP[k]:6s}: g_T 3% {res[0.03]["per_share"]:6.1f} / 4% {res[0.04]["per_share"]:6.1f} / 5% {res[0.05]["per_share"]:6.1f}'
+      f'(4% のとき 終価の比率 {res[0.04]["tv_share"]:.0%}、2036年CF {res[0.04]["cf36"]:,.0f}、FCF率 {d[2036]["fcf"]/d[2036]["rev"]:.0%}・SBC比率 {d[2036]["sbc_r"]:.1%})')
+P('  資本コスト感応度(エンジン、g_T 4%): ' + ', '.join(f'{rr:.0%}: {dcf_value(ENG, 0.04, rr)["per_share"]:.1f}' for rr in (0.08, 0.10)))
+
+
+# 株価(12か月後 = 株価×1.09)を DCF で正当化する、エンジン経路の売上の上乗せ(2027〜2036年の年成長率への一律加算)
+def dcf_scaled(add_g):
+    rv = {2026: rev_e[2026]}
+    for y in range(2027, 2037):
+        rv[y] = rv[y - 1] * (rev_e[y] / rev_e[y - 1] + add_g)
+    sb = {y: sbc_usd_e[y] * rv[y] / rev_e[y] for y in YRS}
+    d = run_path('dcfv', rv, opm=opm_e, sbc={}, sbc_usd=sb, fcfm=fcf_e)
+    return dcf_value(d, 0.04)['per_share'], d
+
+
+lo_a, hi_a = 0.0, 0.40
+for _ in range(60):
+    mid = (lo_a + hi_a) / 2
+    if dcf_scaled(mid)[0] < PRICE * (1 + R):
+        lo_a = mid
+    else:
+        hi_a = mid
+dcf_add = (lo_a + hi_a) / 2
+_, dd = dcf_scaled(dcf_add)
+cagr_need = (dd[2036]['rev'] / dd[2026]['rev']) ** (1 / 10) - 1
+P(f'DCF で株価を正当化するには、エンジン経路の年成長率に +{dcf_add*100:.1f}pt が要る → 2026→36年の売上CAGR {cagr_need:.1%}(エンジン {(rev_e[2036]/rev_e[2026])**0.1-1:.1%})、'
+  f'2036年売上 {dd[2036]["rev"]/1000:.0f}bn(エンジン {rev_e[2036]/1000:.0f}bn)')
+
+# 統括レビュー指摘1: 下値の床(1株当たり定常状態価値)と PER 下限の確認
+_ss_om = 0.73 - 0.12 - 0.08 - 0.09
+ss_ps = (rev_e[2026] * (_ss_om - 0.09) * (1 - TAX) + NET_CASH * YIELD * (1 - TAX)) / R / SH_NOW
+P(f'下値の床(00_standard §3-3): 1株当たり定常状態価値 {ss_ps:.1f}ドル。弱気の12か月目標 {tgt["bear"]["ss"]:.1f} は床を上回る → {"条件を満たす" if tgt["bear"]["ss"] >= ss_ps else "床を適用"}')
+P(f'妥当PERの下限 11.1倍が効いた年度・経路: ' + (', '.join(f'{r["path"]} {r["fy_end"]}' for r in f13 if r['fair_per_low'] != '' and r['fair_per_low'] <= 11.12) or 'なし'))
+
 ADOPT = 'ss'   # 採用: 定常状態経由(理由は報告書10章)
 T12 = {k: tgt[k][ADOPT] for k in PATHS}
 gaps = {k: vl.gap(T12[k], PRICE) for k in PATHS}
@@ -585,7 +660,7 @@ ALPHA = 0.20
 EDGE = True
 z = vl.zones(B=T12['engine'], U=T12['company'], L=T12['bear'], alpha=ALPHA, price=PRICE, edge=EDGE)
 dec = vl.decision(RATING, gaps['engine'], EDGE)
-P(f'期待株価 {ev["expected_price"]:.1f} / 期待リターン {ev["expected_return"]:+.1%}')
+P(f'確率加重の適正価値 {ev["expected_price"]:.1f} / 現在株価との確率加重の乖離 {ev["expected_return"]:+.1%}(12か月の株価予想ではない。00_standard §3-3)')
 P(f'下値(弱気) {down:+.1%} / 上値(会社シナリオ) {up:+.1%} / 上値÷下値 {ratio:.2f} → 凸性 {"あり" if up > 0 and ratio > 1 else "なし"}')
 P(f'エントリー: α {ALPHA:.0%}  Z1 {z["Z1"]:.1f}  Z2 {z["Z2"]:.1f}  現在 {PRICE} → {z["zone"]}')
 P(f'2軸マトリクス: 構造評価 {RATING} × 乖離(事業エンジン) {gaps["engine"]:+.1%} → {dec}')
@@ -681,7 +756,9 @@ summary = {
                              '出口PEG: 事業エンジン1.6・会社1.8・コンセンサス1.5・弱気1.2。12か月目標は定常状態経由(採用)と規約どおりの両方を計算: '
                              + '; '.join(f'{JP[k]} 定常状態経由 {tgt[k]["ss"]:.1f} / 規約どおり {tgt[k]["conv"]:.1f}' for k in PATHS))},
     'targets_12m': {k: round(T12[k], 1) for k in PATHS},
-    'adopted_path': 'engine', 'gaps': {k: round(gaps[k], 3) for k in ('consensus', 'company', 'engine')},
+    'adopted_path': 'engine',
+    'cross_check_dcf': {k: round(DCF[k][0.04]['per_share'], 1) for k in PATHS},
+    'steady_state_value_per_share': round(ss_ps, 1), 'gaps': {k: round(gaps[k], 3) for k in ('consensus', 'company', 'engine')},
     'probabilities': PROB, 'expected_price': round(ev['expected_price'], 1), 'expected_return': round(ev['expected_return'], 3),
     'asymmetry': {'downside_pct': round(down, 3), 'upside_pct': round(up, 3), 'ratio': round(ratio, 2), 'convex': False},
     'decision': dec,

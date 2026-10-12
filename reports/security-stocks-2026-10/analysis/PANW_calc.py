@@ -225,6 +225,14 @@ def build_consensus_path():
 P = {'consensus': build_consensus_path()}
 for k in ('company', 'engine', 'bear'):
     P[k] = build_driver_path(PATHS[k])
+# 利益ベースのキャッシュフロー: 事業実態純利益 + 前受金等の運転資本流入(増収額の50%。FY26 実績: 調整後FCF−SBC 27.0億ドル −
+# 事業実態純利益 16.0億ドル = 11.1億ドル ÷ 増収額 22.6億ドル ≈ 0.49)
+WC_RATE = 0.5
+for k in P:
+    prev = REV[2026]
+    for y in FYS:
+        P[k][y]['earn_cf'] = P[k][y]['biz_ni'] + WC_RATE * (P[k][y]['rev'] - prev)
+        prev = P[k][y]['rev']
 
 
 # ---------------------------------------------------------------- 4. 目標株価(規約どおり)と定常状態経由
@@ -261,10 +269,6 @@ for k in P:
                      target_lo=t_lo['price'], target_hi=t_hi['price'], target_uncapped=t_mid['price_uncapped'],
                      ss_target=ss['target'], ss_per_exit=ss['per_exit'], ss_g_exit=g_exit, eps_fy31=e31,
                      adj_ntm=ntm_at(k, vl.TARGET_DATE, 'adj_eps'))
-ADOPTED = 'engine'
-PROB = {'bear': 0.30, 'consensus': 0.35, 'engine': 0.25, 'company': 0.10}
-EV = vl.expected_value({k: TARGET[k]['target'] for k in PROB}, PROB, PRICE)
-EV_SS = vl.expected_value({k: TARGET[k]['ss_target'] for k in PROB}, PROB, PRICE)
 
 # ---------------------------------------------------------------- 5. 現在のマルチプル
 ntm_now_biz = ntm_at('engine', vl.VALUATION_DATE)
@@ -320,26 +324,68 @@ split = vl.steady_state_split(ss_earn / 1000, MCAP_DIL)
 ss_earn_alt = (SS_REV * (SS_OPM_PRE_SBC - 0.14) + 350) * (1 - TAX)   # SBC が現状の 14% のまま
 split_alt = vl.steady_state_split(ss_earn_alt / 1000, MCAP_DIL)
 
+# ---- 下値の床(00_standard.md §3-3): 1株当たり定常状態価値
+SS_FLOOR_BASE = split['steady_state_value'] * 1000 / SH_DIL
+# 弱気の定常状態利益: 成長投資を止めた後の売上侵食 −10%(競合の価格攻勢・プラットフォーム化契約の更新時の値下げ・機器更新の減少)、
+# 粗利率圧力 −1.5pt(クラウド原価・メモリ)、定常状態の SBC 11%(基準 8%)、受取利息 3.3億ドル
+BEAR_SS_REV = P['bear'][2027]['rev'] * (1 - 0.10)
+BEAR_SS_OPM = 0.290 + 0.116 + 0.048 - 0.015
+BEAR_SS_SBC = 0.11
+bear_ss_earn = (BEAR_SS_REV * (BEAR_SS_OPM - BEAR_SS_SBC) + 330) * (1 - TAX)
+SS_FLOOR_BEAR = bear_ss_earn / vl.COST_OF_CAPITAL / SH_DIL
+for k in TARGET:
+    fl = SS_FLOOR_BEAR if k == 'bear' else SS_FLOOR_BASE
+    t = TARGET[k]
+    t.update(raw_target=t['target'], raw_ss=t['ss_target'], floor=fl, floored=t['target'] < fl)
+    t['target'] = max(t['target'], fl)
+    t['target_lo'] = max(t['target_lo'], fl)
+    t['target_hi'] = max(t['target_hi'], fl)
+    t['ss_target'] = max(t['ss_target'], fl)
 
-def dcf_per_share(path, r=0.09, g_term=0.04, at=dt.date(2026, 10, 11)):
-    """FCF−SBC(事業実態FCF)の DCF。FY27〜FY35 の後は永久成長。年央割引は簡略化し期末で割り引く。"""
-    pv, pv3 = 0.0, 0.0
+ADOPTED = 'engine'
+PROB = {'bear': 0.30, 'consensus': 0.35, 'engine': 0.25, 'company': 0.10}
+EV = vl.expected_value({k: TARGET[k]['target'] for k in PROB}, PROB, PRICE)
+EV_SS = vl.expected_value({k: TARGET[k]['ss_target'] for k in PROB}, PROB, PRICE)
+
+
+def dcf_per_share(path, r=0.09, g_term=0.04, at=dt.date(2026, 10, 11), cf_key='fcf_minus_sbc'):
+    """FCF−SBC(または利益ベースのCF)の DCF。at 以前に終わる年度の CF はネットキャッシュに加える。
+    FY35 の後は永久成長。期末で割り引く(年央割引はしない)。"""
+    pv, pv3, cash = 0.0, 0.0, NET_CASH
+    first = None
     for y in FYS:
+        cf = P[path][y][cf_key]
+        if FY_END[y] <= at:
+            cash += cf
+            continue
+        first = first or y
         t = (FY_END[y] - at).days / 365.25
-        cf = P[path][y]['fcf_minus_sbc']
         pv += cf / (1 + r) ** t
-        if y <= 2029:
+        if y < first + 3:
             pv3 += cf / (1 + r) ** t
     t_last = (FY_END[2035] - at).days / 365.25
-    tv = P[path][2035]['fcf_minus_sbc'] * (1 + g_term) / (r - g_term)
+    last = P[path][2035][cf_key]
+    if cf_key == 'earn_cf':   # 永久成長期の運転資本流入は増収額(売上×g)の50%に置き換える
+        last = P[path][2035]['biz_ni'] * (1 + g_term) + WC_RATE * P[path][2035]['rev'] * g_term
+        tv = last / (r - g_term)
+    else:
+        tv = last * (1 + g_term) / (r - g_term)
     pv_tv = tv / (1 + r) ** t_last
-    total = pv + pv_tv + NET_CASH
+    total = pv + pv_tv + cash
     return dict(per_share=total / SH_DIL, within3=pv3 / (pv + pv_tv), beyond3=1 - pv3 / (pv + pv_tv),
                 pv_tv_share=pv_tv / (pv + pv_tv))
 
 
 DCF = {k: dcf_per_share(k) for k in P}
 DCF_R = {r: dcf_per_share('engine', r=r)['per_share'] for r in (0.08, 0.09, 0.10)}
+T1 = vl.TARGET_DATE
+DCF_T1 = {k: dcf_per_share(k, at=T1)['per_share'] for k in P}                       # FCF−SBC、2027-10-11 時点
+DCF_EARN_T1 = {k: dcf_per_share(k, at=T1, cf_key='earn_cf')['per_share'] for k in P}  # 利益ベース、2027-10-11 時点
+DCF_EARN_T1_G3 = dcf_per_share('engine', at=T1, cf_key='earn_cf', g_term=0.03)['per_share']
+DCF_EARN_NOW = {k: dcf_per_share(k, cf_key='earn_cf')['per_share'] for k in P}
+FCF_VS_EARN_FY35 = P['engine'][2035]['fcf_minus_sbc'] / P['engine'][2035]['biz_ni'] - 1
+FCF_M_VS_NI_M_FY35 = (P['engine'][2035]['fcf_minus_sbc'] / P['engine'][2035]['rev'], P['engine'][2035]['biz_ni'] / P['engine'][2035]['rev'])
+REQ_PEG = {k: PRICE / TARGET[k]['ntm'] / (TARGET[k]['g'] * 100) for k in TARGET}
 
 
 def reverse_dcf(r=0.09, g_term=0.04, years=10, base=None):
@@ -463,9 +509,10 @@ for k in ('consensus', 'company', 'engine', 'bear'):
         e0 = P[k][y]['biz_eps']
         g3 = vl.cagr(e0, P[k][y + 3]['biz_eps'], 3)
         lo, hi = PEG_BY_FY[k][y]
-        gc = min(g3, vl.G_CAP)
-        f13.append([FY_END[y].isoformat(), k, round(e0, 3), round(g3, 4), lo, hi, round(lo * gc * 100, 1), round(hi * gc * 100, 1),
-                    round(lo * gc * 100 * e0, 1), round(hi * gc * 100 * e0, 1), int(y > 2029)])
+        per_lo, per_hi = vl.fair_per(lo, g3)['capped'], vl.fair_per(hi, g3)['capped']   # 下限 11.1倍込み(§3-3)
+        fl = TARGET[k]['floor']                                                      # 1株当たり定常状態価値の床(§3-3)
+        f13.append([FY_END[y].isoformat(), k, round(e0, 3), round(g3, 4), lo, hi, round(per_lo, 1), round(per_hi, 1),
+                    round(max(per_lo * e0, fl), 1), round(max(per_hi * e0, fl), 1), int(y > 2029)])
 wcsv('F13', ['fy_end', 'path', 'business_eps', 'g_3y', 'peg_low', 'peg_high', 'fair_per_low', 'fair_per_high',
              'fair_price_low', 'fair_price_high', 'is_extension'], f13)
 
@@ -506,10 +553,10 @@ for i in range(1, len(org_series)):
 # 純新規は季節性が大きいので直近4四半期の合計(TTM)で見る
 nn = [(nn_q[i][0], sum(v for _, v in nn_q[i - 3:i + 1])) for i in range(3, len(nn_q))]
 f18 += kpi_rows('有機NGS ARR(買収除く・十億ドル)', org_series)
-f18 += kpi_rows('報告NGS ARR(十億ドル)', ngs_series)
 f18 += kpi_rows('有機売上(百万ドル)', org_rev_series)
-f18 += kpi_rows('RPO(十億ドル)', rpo_series)
 f18 += kpi_rows('有機の純新規NGS ARR(直近4四半期合計・十億ドル)', nn)
+f18 += kpi_rows('RPO(十億ドル)', rpo_series)
+F18_REPORTED_NGS = kpi_rows('報告NGS ARR(十億ドル)', ngs_series)   # 報告値は本文の表にのみ載せる(図は4パネルまで)
 for r in f18:
     if r[0].startswith('有機の純新規'):
         r[3] = None   # TTM 合計の前期比年率は意味が薄いので空欄
@@ -556,7 +603,8 @@ summary = {
     'condition9_applicable': True,
     'rules_fired': ['致命条件の拒否権: 非発動(E以下なし)', 'C×4上限: 非発動(C評価0件)',
                     '条件6-7の対評価: 発動(PEGが高い理由は市場の楽観であり、安い理由の検証は成立しない。両条件ともD)',
-                    'エッジなし(買い方向)のため買いは不可: 該当(乖離が負のため結果に影響なし)'],
+                    'エッジなし(買い方向)のため買いは不可: 該当(乖離が負のため結果に影響なし)',
+                    '§3-3 下値の床: 弱気に適用(規約値32.6ドル→弱気の定常状態価値45.7ドル)。妥当PERの下限11.1倍は非該当(全経路で上回る)'],
     'archetype': 'ORCL型寄り(継続課金・プラットフォーム)+一部VRT型(機器の更新サイクル)',
     'business_model_types': ['A(NGS: SASE・SecOps・クラウド・Idira)', 'G(ファイアウォール機器)', 'B(可観測性・XSIAMのデータ量連動)'],
     'core_variables': [
@@ -578,7 +626,7 @@ summary = {
          'advantage_type': '分析(有機・買収の分解)'},
     ],
     'edge': {'exists': True,
-             'statement': '市場は報告NGS ARR+63%とAI需要を物差しに、調整後PER約{:.0f}倍(事業実態PER約{:.0f}倍)を払い、FCF−SBCの10年間年{:.0%}成長を織り込む。構造上は有機売上+12〜16%、営業利益率は年+0.4pt、SBC/売上は14〜15%で、FY27の調整後EPSは株数増で+9%にとどまる。FY27の有機売上・SBC/売上とFY28の調整後FCFマージン40%で確認でき、差が解消したときの1株当たり価値は約{:.0f}ドル(規約)、DCF交差確認で約{:.0f}ドル'.format(per_adj_ntm, per_biz_ntm, REV_DCF[0.09], B, DCF['engine']['per_share']),
+             'statement': '市場は報告NGS ARR+63%とAI需要を物差しに、調整後PER約{:.0f}倍(事業実態PER約{:.0f}倍)を払い、FCF−SBCの10年間年{:.0%}成長を織り込む。構造上は有機売上+12〜16%、営業利益率は年+0.4pt、SBC/売上は14〜15%で、FY27の調整後EPSは株数増で+9%にとどまる。FY27の有機売上・SBC/売上とFY28の調整後FCFマージン40%で確認でき、差が解消したときの1株当たり価値は約{:.0f}ドル(規約)、利益ベースDCF交差確認で約{:.0f}ドル'.format(per_adj_ntm, per_biz_ntm, REV_DCF[0.09], B, DCF_EARN_T1['engine']),
              'advantage_type': '分析(有機・買収の分解、総額と1株当たりの分解、リバースDCF)',
              'kpi': '有機売上成長率・有機の純新規NGS ARR・SBC/売上・調整後FCFマージン',
              'threshold': '有機売上+18%以上が2四半期続けば差分は縮小(市場側が正しい)。+13%未満なら拡大',
@@ -594,7 +642,9 @@ summary = {
     'targets_12m': {k: round(TARGET[k]['target'], 1) for k in ('consensus', 'company', 'engine', 'bear')},
     'targets_note': '規約どおり(NTM事業実態EPS×PEG×g): ' + ', '.join(f"{k} {TARGET[k]['target']:.1f}" for k in TARGET) +
                     ' / 定常状態経由(FY31×出口PER、9%割引): ' + ', '.join(f"{k} {TARGET[k]['ss_target']:.1f}" for k in TARGET) +
-                    '。FY27の事業実態EPSが調整後EPSの約57%残り近い年度のPEGが安定するため、規約どおりの値を採用',
+                    '。弱気は §3-3 の床(弱気の定常状態利益{:.0f}百万ドル÷9%÷840百万株={:.1f}ドル。規約値{:.1f}ドルから引き上げ)を適用。'.format(bear_ss_earn, SS_FLOOR_BEAR, TARGET['bear']['raw_target']) +
+                    'DCF交差確認(2027-10-11時点、事業エンジン経路): 利益ベース{:.1f}ドル(永久成長3%なら{:.1f})、FCF−SBCベース{:.1f}ドル。'.format(DCF_EARN_T1['engine'], DCF_EARN_T1_G3, DCF_T1['engine']) +
+                    'FY27の事業実態EPSが調整後EPSの約57%残り近い年度のPEGが安定し、PEG1.55がCAP約12年と整合するため、規約どおりの値を採用(DCFはCAPが20年超に延びた場合の上側参照)',
     'adopted_path': ADOPTED, 'gaps': {k: round(v, 3) for k, v in GAPS.items()},
     'probabilities': PROB, 'expected_price': round(EV['expected_price'], 1), 'expected_return': round(EV['expected_return'], 3),
     'asymmetry': {'downside_pct': round(vl.gap(L, PRICE), 3), 'upside_pct': round(vl.gap(U, PRICE), 3),
@@ -655,6 +705,9 @@ if __name__ == '__main__':
     print('== 成長の値段')
     print(f'定常状態利益 {ss_earn:.0f}M 価値 {split["steady_state_value"]:.1f}B 成長の値段 {split["growth_price"]:.1f}B ({split["growth_share_of_mcap"]:.1%}) / SBC14%版 {ss_earn_alt:.0f}M {split_alt["steady_state_value"]:.1f}B ({split_alt["growth_share_of_mcap"]:.1%})')
     print('DCF(FCF−SBC)', {k: (round(v['per_share'], 1), round(v['within3'], 3), round(v['pv_tv_share'], 3)) for k, v in DCF.items()}, '資本コスト感応', {r: round(v, 1) for r, v in DCF_R.items()})
+    print('床: 基準', round(SS_FLOOR_BASE, 1), '弱気', round(SS_FLOOR_BEAR, 1), '弱気定常利益', round(bear_ss_earn), {k: (round(TARGET[k]['raw_target'], 1), round(TARGET[k]['target'], 1)) for k in TARGET})
+    print('DCF 2027-10-11 FCF−SBC', {k: round(v, 1) for k, v in DCF_T1.items()}, ' 利益ベース', {k: round(v, 1) for k, v in DCF_EARN_T1.items()}, ' 利益g3%', round(DCF_EARN_T1_G3, 1), ' 利益ベース現在', {k: round(v, 1) for k, v in DCF_EARN_NOW.items()})
+    print('FY35 FCF−SBC÷事業実態純利益 −1:', round(FCF_VS_EARN_FY35, 3), ' マージン', [round(x, 3) for x in FCF_M_VS_NI_M_FY35], ' 必要PEG', {k: round(v, 2) for k, v in REQ_PEG.items()})
     print('リバースDCF(FCF−SBC 10年成長率)', {r: f'{v:.1%}' for r, v in REV_DCF.items()}, ' 調整後FCF基準', f'{REV_DCF_PREFCF:.1%}')
     print('== 感度(芯)')
     print(f'基準 目標 {base_t:.1f} 定常 {base_ss:.1f} FY30 NGS {base_ngs30:.2f}')

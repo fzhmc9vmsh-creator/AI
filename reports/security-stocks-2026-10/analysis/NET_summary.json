@@ -154,6 +154,13 @@
     "bear": 29.4
   },
   "adopted_path": "engine",
+  "cross_check_dcf": {
+    "consensus": 97.1,
+    "company": 150.7,
+    "engine": 157.3,
+    "bear": 32.9
+  },
+  "steady_state_value_per_share": 24.2,
   "gaps": {
     "consensus": -0.784,
     "company": -0.599,

@@ -320,6 +320,26 @@ p('エンジン vs コンセンサス(売上):', {y: f'{M["engine"]["rev"][y]/CO
 # F. 許容PEG・年度別適正株価(F13)・12か月目標株価
 # ---------------------------------------------------------------------------
 hdr('F. PEG・F13・目標株価')
+# 定常状態(成長投資を止めた場合)の利益と1株当たり価値(00_standard §3-3 の床)
+# 基準: 2026年の正規化売上(製品をトレンド水準へ)× 営業利益率50%(成長のためのS&M・R&Dを除く)− SBC 3.9%、+受取利息150、税18%
+SS_OM = 0.50
+# 弱気: 製品の値下げ競争で製品粗利率 −3.5pt(69.5%→66%)× 製品比率約30% = 営業利益率 −1.05pt。売上は弱気の谷の年(FY2027)の水準
+SS_OM_BEAR = SS_OM - 0.30 * (GMP['engine'][2026] - GMP['bear'][2027])
+
+
+def ss_floor(rev, om):
+    earn = (rev * (om - 0.039) + 150.0) * (1 - TAX)
+    return earn, earn / R / DIL_NOW
+
+
+REV_NORM26 = trend[2026] + M['engine']['Sr'][2026]
+SS_BASE = ss_floor(REV_NORM26, SS_OM)
+SS_BEAR = ss_floor(PATHS['bear']['rev'][2027], SS_OM_BEAR)
+p(f'定常状態の床: 基準 利益 {SS_BASE[0]:.0f} → 1株 {SS_BASE[1]:.1f}(売上 {REV_NORM26:.0f}、営業利益率 {SS_OM:.0%})')
+p(f'  弱気: 売上 {PATHS["bear"]["rev"][2027]:.0f}(製品 {M["bear"]["P"][2027]:.0f}、サービス {M["bear"]["Sr"][2027]:.0f})、営業利益率 {SS_OM_BEAR:.2%} '
+  f'→ 利益 {SS_BEAR[0]:.0f}(基準比 {SS_BEAR[0]-SS_BASE[0]:+.0f}: 売上要因 {(PATHS["bear"]["rev"][2027]-REV_NORM26)*(SS_OM-0.039)*(1-TAX):+.0f}、'
+  f'利益率要因 {PATHS["bear"]["rev"][2027]*(SS_OM_BEAR-SS_OM)*(1-TAX):+.0f})→ 1株 {SS_BEAR[1]:.1f}')
+
 PEG_BY_FY = {2026: (1.5, 1.8), 2027: (1.4, 1.7), 2028: (1.5, 1.8), 2029: (1.5, 1.8), 2030: (1.4, 1.7), 2031: (1.3, 1.6)}
 PEG_ADOPT = (1.4, 1.8)
 f13 = []
@@ -328,22 +348,28 @@ for nm, pth in PATHS.items():
         e0, e3 = pth['bus'][y], pth['bus'][y + 3]
         g3 = vl.cagr(e0, e3, 3)
         lo, hi = PEG_BY_FY[y]
-        fl, fh = vl.fair_per(lo, g3), vl.fair_per(hi, g3)
-        # PEG×g が無成長の価値(1/r = 11.1倍)を下回る年度は、定常状態経由(00_standard §3-2)と同じ下限 11.1 倍を適用し印を付ける
-        pl, ph = max(fl['capped'], 1 / R), max(fh['capped'], 1 / R)
+        fl, fh = vl.fair_per(lo, g3), vl.fair_per(hi, g3)   # 下限 11.1倍は valuation_lib 側で適用(00_standard §3-3)
+        pl, ph = fl['capped'], fh['capped']
+        price_lo, price_hi = pl * e0, ph * e0
+        ss_applied = False
+        if nm == 'bear':  # 弱気の床: その年度の弱気の売上から計算した1株当たり定常状態価値
+            fl_y = ss_floor(PATHS['bear']['rev'][y], SS_OM_BEAR)[1]
+            if price_lo < fl_y:
+                ss_applied = True
+            price_lo, price_hi = max(price_lo, fl_y), max(price_hi, fl_y)
         f13.append(dict(fy_end=f'{y}-12-31', path=nm, business_eps=round(e0, 3), g_3y=round(g3, 4), peg_low=lo, peg_high=hi,
                         fair_per_low=round(pl, 1), fair_per_high=round(ph, 1),
-                        fair_price_low=round(pl * e0, 1), fair_price_high=round(ph * e0, 1),
+                        fair_price_low=round(price_lo, 1), fair_price_high=round(price_hi, 1),
                         is_extension=(nm == 'consensus' and y + 3 > 2028) or y + 3 > 2031,
-                        per_floor_applied=(fl['capped'] < 1 / R)))
+                        per_floor_applied=bool(lo * min(g3, vl.G_CAP) * 100 < 1 / R), ss_floor_applied=ss_applied))
 with open(OUT + 'FTNT_F13.csv', 'w', newline='') as f:
-    w = csv.DictWriter(f, fieldnames=list(f13[0].keys()))
+    w = csv.DictWriter(f, fieldnames=list(f13[0].keys()))  # noqa
     w.writeheader()
     w.writerows(f13)
 for r_ in f13:
     p(f"{r_['path']:9s} {r_['fy_end']} EPS {r_['business_eps']:.2f} g3 {r_['g_3y']:.1%} PEG {r_['peg_low']}-{r_['peg_high']} "
       f"PER {r_['fair_per_low']}-{r_['fair_per_high']} 適正株価 {r_['fair_price_low']}-{r_['fair_price_high']}"
-      f"{' 延長' if r_['is_extension'] else ''}{' 下限11.1倍' if r_['per_floor_applied'] else ''}")
+      f"{' 延長' if r_['is_extension'] else ''}{' 下限11.1倍' if r_['per_floor_applied'] else ''}{' 定常状態の床' if r_['ss_floor_applied'] else ''}")
 
 # 12か月目標株価: 2027-10-11 時点の NTM 事業実態EPS × 妥当PER(PEG × g)。g は NTM(2027-10) → NTM(2030-10) の CAGR
 TGT = {}
@@ -356,11 +382,15 @@ for nm, pth in PATHS.items():
     hi = vl.target_price(ntm27, PEG_ADOPT[1], g)
     mid = vl.target_price(ntm27, sum(PEG_ADOPT) / 2, g)
     adj_map = {FY(y): pth['adj'][y] for y in YEARS}
-    TGT[nm] = dict(ntm=ntm27, g=g, per=mid['per'], price=mid['price'], low=lo['price'], high=hi['price'],
-                   price_uncapped=mid['price_uncapped'], gap=vl.gap(mid['price'], PRICE),
+    price_mid, price_lo, price_hi, floor_used = mid['price'], lo['price'], hi['price'], False
+    if nm == 'bear' and price_mid < SS_BEAR[1]:   # 00_standard §3-3: 弱気は定常状態価値を下回らせない
+        price_mid, price_lo, price_hi, floor_used = SS_BEAR[1], max(price_lo, SS_BEAR[1]), max(price_hi, SS_BEAR[1]), True
+    TGT[nm] = dict(ntm=ntm27, g=g, per=mid['per'], price=price_mid, low=price_lo, high=price_hi, peg_route=mid['price'],
+                   floor_used=floor_used, price_uncapped=mid['price_uncapped'], gap=vl.gap(price_mid, PRICE),
                    ntm_adj=vl.ntm_eps(adj_map, dt.date(2027, 10, 11)))
-    p(f'{nm}: NTM事業実態EPS(2027-10) {ntm27:.3f}、g {g:.1%}、妥当PER {mid["per"]:.1f}(PEG 1.6)、目標 {mid["price"]:.1f}'
-      f'(1.4〜1.8: {lo["price"]:.1f}〜{hi["price"]:.1f})、乖離 {vl.gap(mid["price"], PRICE):+.1%}、NTM調整後EPS {TGT[nm]["ntm_adj"]:.2f}')
+    p(f'{nm}: NTM事業実態EPS(2027-10) {ntm27:.3f}、g {g:.1%}、妥当PER {mid["per"]:.1f}(PEG 1.6)、PEG経路 {mid["price"]:.1f}'
+      f'(1.4〜1.8: {lo["price"]:.1f}〜{hi["price"]:.1f})→ 目標 {price_mid:.1f}{"(定常状態の床)" if floor_used else ""}、'
+      f'乖離 {vl.gap(price_mid, PRICE):+.1%}、NTM調整後EPS {TGT[nm]["ntm_adj"]:.2f}')
 
 # 定常状態経由の目標株価(00_standard §3-2): FY+5 = FY2031、出口g = FY2031→FY2034 の CAGR、出口PEG 1.0〜2.0(CAP根拠で 1.6)
 SST = {}
@@ -514,9 +544,8 @@ for lab, pg in (('製品2027 −18%', pg_lo), ('製品2027 +6%', pg_hi)):
 hdr('I. 成長の値段')
 # 定常状態利益: 2026年の正規化売上(製品をトレンド水準へ)× 定常状態の営業利益率(成長投資を止めた場合 50%、SBC 3.9% 控除)
 prod_norm26 = trend[2026]
-rev_norm26 = prod_norm26 + M['engine']['Sr'][2026]
-ss_om = 0.50
-ss_earn = (rev_norm26 * (ss_om - 0.039) + 150.0) * (1 - TAX)
+rev_norm26 = REV_NORM26
+ss_earn = SS_BASE[0]
 split = vl.steady_state_split(ss_earn, MCAP)
 p(f'正規化製品 {prod_norm26:.0f}、正規化売上 {rev_norm26:.0f}、定常状態利益 {ss_earn:.0f}、定常状態価値 {split["steady_state_value"]:.0f}、'
   f'成長の値段 {split["growth_price"]:.0f}({split["growth_share_of_mcap"]:.1%})')
@@ -587,7 +616,9 @@ p(f'最終判断: {DEC}(構造評価 {RATING}、採用経路 {ADOPT})')
 p(f'エントリー価格帯(α={ALPHA}): Z1 {Z["Z1"]:.1f}、Z2 {Z["Z2"]:.1f}、現在 {PRICE} → {Z["zone"]}')
 PROBS = {'bear': 0.20, 'consensus': 0.25, 'engine': 0.40, 'company': 0.15}
 ev_ = vl.expected_value({k: TGT[k]['price'] for k in PROBS}, PROBS, PRICE)
-p(f'確率 {PROBS} → 期待株価 {ev_["expected_price"]:.1f}、期待リターン {ev_["expected_return"]:+.1%}')
+p(f'確率 {PROBS} → 確率加重の適正価値 {ev_["expected_price"]:.1f}、現在株価との乖離(確率加重の乖離) {ev_["expected_return"]:+.1%}')
+for nm in ('engine', 'consensus', 'company'):
+    p(f'DCF が含意する PER・PEG({nm}): PER {DCF[nm]/TGT[nm]["ntm"]:.1f}、PEG {DCF[nm]/TGT[nm]["ntm"]/(TGT[nm]["g"]*100):.2f}')
 down = vl.gap(TGT['bear']['price'], PRICE)
 up = vl.gap(TGT['company']['price'], PRICE)
 p(f'非対称性(規約の目標株価): 下値 {down:+.1%}、上値 {up:+.1%}')
@@ -710,11 +741,14 @@ summary = {
                     'note': ('経路aは FTNT 自身の調整後PEG 4.2〜4.6、6社中央値6.1(業界全体の期待の高さであり許容値には使わない)。経路bは慣行1.0〜1.5、'
                              '経路cは構造A(1.3〜1.6)にCAP+0.2・資本不要の成長+0.1・ストック比率+0.05、製品サイクル−0.15・脆弱性と訴訟−0.05で1.45〜1.75。'
                              f'採用1.4〜1.8(中央1.6)。目標株価は規約どおり(採用経路=事業エンジン{TGT["engine"]["price"]:.1f})。'
-                             f'定常状態経由(§3-2)はエンジン{SST["engine"]["peg1.6"]:.1f}・コンセンサス{SST["consensus"]["peg1.6"]:.1f}で、出口gが7%と低く11.1倍の下限に近いため規約どおりの値を採用。'
+                             f'定常状態経由(§3-2)はエンジン{SST["engine"]["peg1.6"]:.1f}・コンセンサス{SST["consensus"]["peg1.6"]:.1f}で、FTNTは事業実態EPSが調整後EPSの90%残り近い年度のPEGが安定するため§3-2の前提(事業実態EPSがほぼゼロ)に当たらず、規約どおりの値を採用。'
                              f'交差確認のDCF(2027-10時点、3%へ2041年までに収束)はエンジン{DCF["engine"]:.0f}・コンセンサス{DCF["consensus"]:.0f}・会社{DCF["company"]:.0f}・弱気{DCF["bear"]:.0f}')},
     'targets_12m': {k: r2(TGT[k]['price'], 1) for k in ('consensus', 'company', 'engine', 'bear')},
     'adopted_path': ADOPT, 'gaps': {k: r2(TGT[k]['gap']) for k in ('consensus', 'company', 'engine')},
     'probabilities': PROBS, 'expected_price': r2(ev_['expected_price'], 1), 'expected_return': r2(ev_['expected_return']),
+    'expected_return_note': '確率加重の適正価値と現在株価の乖離(12か月の株価予想ではない。00_standard §3-3)',
+    'bear_floor': {'steady_earnings_bear_usd_mn': r2(SS_BEAR[0], 0), 'floor_per_share': r2(SS_BEAR[1], 1), 'peg_route_bear': r2(TGT['bear']['peg_route'], 1),
+                   'note': '弱気のPEG経路(34.8)は定常状態価値を下回るため床を適用。弱気の定常状態利益は基準3,198から売上要因と製品の値下げ(営業利益率−1.05pt)で減額'},
     'asymmetry': {'downside_pct': r2(down), 'upside_pct': r2(up), 'ratio': r2((TGT['company']['price'] - PRICE) / (PRICE - TGT['bear']['price']), 2), 'convex': False},
     'decision': DEC,
     'entry_zones': {'alpha': ALPHA, 'Z1': r2(Z['Z1'], 1), 'Z2': r2(Z['Z2'], 1), 'zone': Z['zone']},
