@@ -59,6 +59,14 @@ design-spec.md・bcg-slide-method と矛盾するときは、この文書を優�
 - 監査(`audit_deck.py`): title-wrap(Major)、orphan(テイクアウェイ・リード・なぜの行は Major、他は Minor)、num-split(Minor)。Minor も画像で実際に起きていれば直す。
 - 描画の確認は LibreOffice(代替フォント)。Windows の Meiryo UI と幅が違うので、見積もりに 8% の余裕を持たせてある。
 
+## 4b. 実装の注意(pptxgenjs 3.12 で実際に起きたこと)
+
+- **保存は必ず `L.save(pres, file)`**(`pres.writeFile` を使わない)。pptxgenjs は複数の文字の塊(runs)を持つ段落で `<a:pPr>` を塊ごとに出し、スキーマ違反になる(Windows の PowerPoint で修復の警告の原因)。`save` が段落ごとに最初の 1 つだけを残す。付属の validate.py ではこの違反を検出できない。
+- **同じ項目の中の改行**は "\n" で書く。`L.bullets`・`L.mechPanel` は `softBreakBefore`(`<a:br/>`)に変換する。pptxgenjs は `bullet` を持つ塊で段落を分けるので、続きの塊に bullet を付けてはいけない。
+- **右パネル(mechPanel)**は文字量から高さを見積もり、11〜9pt のうち収まる最大の大きさを選ぶ。理由の箱は中身に合わせ、上がる/下がる条件は下端に揃う。
+- **凡例**は図で使った線の種類だけを出す。
+- **監査の幅の見積もり**は描画の代替フォントより 8% 厳しい。部品(箱の名前・線のラベル)も同じ余裕で折り返しを決める。
+
 ## 5. 制作の分担と手順
 
 | 担当 | 仕事 |
