@@ -3,6 +3,11 @@ name: bcg-slide-method
 description: スキル和名は「BCGスライド級スライド作成メソッド」。分析文章(レポート・調査結果・evidence台帳など)を入力として、戦略コンサルティングファーム(BCG級)品質の16:9パワーポイントを安定して作成するための完全メソッド。ユーザーが「この文章をパワポにして」「コンサル品質のスライドで」「BCG風の資料にして」「分析資料をスライドにまとめて」「プレゼン資料を作って」などと言及したら、またはpptx作成を伴う分析資料化の依頼があったら必ずこのスキルを使うこと。メッセージ抽出→ストーリーライン→表現パターン選択(決定木)→デザインシステム(配色hex・座標グリッド・タイポグラフィpt)準拠の実装→3層監査ループ(構造・仕様・視覚)→納品までを含む。invest-consulting-deckスキル等のテーマ特化スキルと併用する場合も、デザイン品質規範は本スキルを正とする。
 ---
 
+> **注記(2026-10-17)**
+> - `references/` の 6 文書は、原本が手元になかったため invest-consulting-deck の `scripts/`(lib.js・audit_deck.py)と `references/deck-rules-v2.md` から再構成した**代替版**である。本文中の R1〜R11・P-1〜P-19・C-1〜C-5 の番号は、代替版では lib.js の部品名に読み替える(`references/pattern-library.md`)。
+> - 実装の部品(座標・チャート・関係図・機械監査)は invest-consulting-deck の `scripts/` を使う(lib.js は pptxgenjs。本文の python-pptx は読み替える)。
+> - 最新の必須事項は invest-consulting-deck の `references/deck-rules-v2.md` が優先する。本文や references と矛盾したら、そちらに従う。
+
 # BCGスライド級スライド作成メソッド(bcg-slide-method)
 
 分析文章を入力に、**「1スライド=1メッセージ、メッセージは図解が証明する」**構造の
