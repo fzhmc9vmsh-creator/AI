@@ -113,10 +113,11 @@ def audit(path):
                         cmr = inch(cell.margin_right) if cell.margin_right is not None else 0.1
                         cin = max(0.05, cw - cml - cmr) * 0.92
                         for p in cell.text_frame.paragraphs:
-                            ptxt = ''.join(r.text for r in p.runs).strip()
+                          psz = max([r.font.size.pt for r in p.runs if r.font.size is not None] or [10.0])
+                          for ptxt in p.text.replace('\v', '\n').split('\n'):
+                            ptxt = ptxt.strip()
                             if not ptxt:
                                 continue
-                            psz = max([r.font.size.pt for r in p.runs if r.font.size is not None] or [10.0])
                             lines_p = wrap_lines(ptxt, cin / (psz / 72.0))
                             if len(lines_p) > 1:
                                 last = lines_p[-1].strip()
@@ -171,22 +172,23 @@ def audit(path):
                 issues.append((i, sev, 'text-fit', nm, f'推定 {need_h:.2f}in > 枠 {h:.2f}in(「{text[:24]}…」)'))
             # 4b. 改行の位置
             for p in tf.paragraphs:
-                ptxt = ''.join(r.text for r in p.runs).strip()
-                if not ptxt:
-                    continue
                 psz = max([r.font.size.pt for r in p.runs if r.font.size is not None] or [pt])
                 max_em = inner_w / (psz / 72.0)
-                lines_p = wrap_lines(ptxt, max_em)
-                if nm == 'title' and len(lines_p) > 1:
-                    issues.append((i, 'Major', 'title-wrap', nm, f'段落が折り返す(改行位置を "\\n" で明示): 「{ptxt[:30]}…」'))
-                elif len(lines_p) > 1 and tf.word_wrap is not False:
-                    last = lines_p[-1].strip()
-                    if text_width_em(last) <= 2.05:
-                        sev = 'Major' if nm in ('takeaway', 'kicker', 'hdr_why') or nm.startswith('tile') else 'Minor'
-                        issues.append((i, sev, 'orphan', nm, f'末行が「{last}」だけ(「{ptxt[:20]}…」)'))
-                    for a, b in zip(lines_p, lines_p[1:]):
-                        if re.search(r'[0-9]$', a.rstrip()) and b.lstrip().startswith(UNITS):
-                            issues.append((i, 'Minor', 'num-split', nm, f'数字と単位が泣き別れ「…{a.rstrip()[-8:]} / {b.lstrip()[:6]}…」'))
+                for ptxt in p.text.replace('\v', '\n').split('\n'):   # 段落の中の改行(<a:br>)ごとに見る
+                  ptxt = ptxt.strip()
+                  if not ptxt:
+                    continue
+                  lines_p = wrap_lines(ptxt, max_em)
+                  if nm == 'title' and len(lines_p) > 1:
+                      issues.append((i, 'Major', 'title-wrap', nm, f'段落が折り返す(改行位置を "\\n" で明示): 「{ptxt[:30]}…」'))
+                  elif len(lines_p) > 1 and tf.word_wrap is not False:
+                      last = lines_p[-1].strip()
+                      if text_width_em(last) <= 2.05:
+                          sev = 'Major' if nm in ('takeaway', 'kicker', 'hdr_why') or nm.startswith('tile') else 'Minor'
+                          issues.append((i, sev, 'orphan', nm, f'末行が「{last}」だけ(「{ptxt[:20]}…」)'))
+                      for a, b in zip(lines_p, lines_p[1:]):
+                          if re.search(r'[0-9]$', a.rstrip()) and b.lstrip().startswith(UNITS):
+                              issues.append((i, 'Minor', 'num-split', nm, f'数字と単位が泣き別れ「…{a.rstrip()[-8:]} / {b.lstrip()[:6]}…」'))
             if nm == 'title' and len([p for p in tf.paragraphs if ''.join(r.text for r in p.runs).strip()]) > 2:
                 issues.append((i, 'Major', 'title-wrap', nm, 'タイトルが 3 行以上'))
             if not nm.startswith('ovl_') and not nm.startswith('bg_'):

@@ -7,7 +7,7 @@ module.exports = function build(pres, L) {
     { name: '全社の営業利益率', labels: yrs, values: [33.3, 32.9, 31.0, 32.7, 33.5, 34.1] },
     { name: 'AI 事業の営業利益率', labels: yrs, values: [10.5, 22.1, 22.6, 27.6, 29.3, 30.4] },
   ], opts: { showLegend: true, legendPos: 'b', chartColors: [C.dark, C.light], lineSize: 2, dataLabelPosition: 't', dataLabelFormatCode: '0.0', valAxisMinVal: 0, valAxisMaxVal: 40 } },
-  { takeawayText: '利益率の低下は構成の変化(AI の売上比率 30% → 66%)によるもので、AI 事業そのものは稼働の成熟で改善する' });
+  { takeawayText: '利益率の低下は構成の変化(AI の売上比率\n30% → 66%)によるもので、\nAI 事業そのものは稼働の成熟で改善する' });
 
   L.table(s, [
     ['年度', '売上成長', 'R40(FCF)', 'R40(オーナー)'],
@@ -18,6 +18,6 @@ module.exports = function build(pres, L) {
     ['FY32', '12%', '26', '46'],
   ], { x: 9.05, y: 3.25, w: 3.78, colW: [0.78, 0.9, 0.95, 1.15], fontSize: 10, rowH: 0.34 });
 
-  L.text(s, 'R40 = 売上成長率 + 利益率。オーナー = オーナー利益(EBITDA − 維持投資 − 現金税)。償却費は将来の現金支出ではないため、維持投資で置き換えた', { x: 9.05, y: 5.45, w: 3.78, h: 1.1, fontSize: 8.5, color: C.sub, objectName: 'note' });
+  L.text(s, 'R40 = 売上成長率 + 利益率。オーナー = オーナー利益(EBITDA − 維持投資 − 現金税)。償却費は将来の現金支出ではないため、\n維持投資で置き換えた', { x: 9.05, y: 5.45, w: 3.78, h: 1.1, fontSize: 8.5, color: C.sub, objectName: 'note' });
   return s;
 };

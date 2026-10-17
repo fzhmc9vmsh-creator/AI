@@ -14,4 +14,4 @@ for (const id of L.MT.ORDER) {
 }
 L.setCtx(null);
 const out = process.argv[2] || 'ORCL_deck.pptx';
-pres.writeFile({ fileName: out }).then(() => console.log(`written ${out}; slides ${L.MT.ORDER.length - missing.length}; missing: ${missing.join(',') || 'none'}; 図の重なり ${L.warnings.length} 件`));
+L.save(pres, out).then(() => console.log(`written ${out}; slides ${L.MT.ORDER.length - missing.length}; missing: ${missing.join(',') || 'none'}; 図の重なり ${L.warnings.length} 件`));

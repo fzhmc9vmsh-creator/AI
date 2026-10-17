@@ -10,6 +10,8 @@ ORCL 資料(2026-10)で使った部品。新しい案件では作業フォルダ
 | one.js | 1 枚だけ作って監査と画像化: `node one.js 08b` → tmp/s08b.jpg |
 | build.js | meta.js の順に全スライドを組み立てる: `node build.js` |
 | examples/s08b.js | 関係図の手本(事業どうしの関係)。関係図はこの密度と書き方を基準にする |
+| examples/s21_condition5_career.js | 条件5(経営者)を経歴 → 現職 → 担う事業 → 結果で描いた例 |
+| examples/s08d_story_map.js | 会社のシナリオ(ストーリー図 + 目標の札 + 容量の時間軸)の例 |
 
 準備:
 ```

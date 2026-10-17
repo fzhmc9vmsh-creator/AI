@@ -10,7 +10,7 @@ build(pres, L);
 L.warnings.forEach(w => console.log('図:', w));
 console.log(`図の重なり ${L.warnings.length} 件`);
 const out = `tmp/${id}.pptx`;
-pres.writeFile({ fileName: out }).then(() => {
+L.save(pres, out).then(() => {
   try { console.log(execSync(`python3 audit_deck.py ${out}`).toString()); } catch (e) { console.log(e.stdout.toString()); }
   // 画像化: pptx スキルの soffice.py(サンドボックス向けの起動)があれば使い、なければ soffice を直接呼ぶ
   const fs = require('fs'), glob = (d) => { try { return fs.readdirSync(d).map(x => d + '/' + x + '/pptx/scripts/office/soffice.py').find(f => fs.existsSync(f)); } catch (e) { return null; } };

@@ -8,9 +8,9 @@ module.exports = function build(pres, L) {
   });
   L.flow(s, [
     { head: '構造評価', boxes: [{ text: 'B', tone: 'key', size: 28, bold: true, h: 0.8 }, { text: '出発 PEG 1.0〜1.3', tone: 'in', h: 0.55 }] },
-    { head: '許容 PEG', boxes: [{ text: '1.0', tone: 'on', size: 28, bold: true, h: 0.8 }, { text: '下限を採用(倍率は全シナリオ共通)', tone: 'in', h: 0.55 }] },
-    { head: '妥当 PER(3 経路の平均)', boxes: [{ text: 'a 同業 23 倍 / b PEG × 3 年成長率 / c 需給エンジンの価値', tone: 'in', h: 1.4 }] },
-    { head: '年度末の目標', boxes: [{ text: 'PER × 翌年度 EPS × 生存確率', tone: 'in', h: 1.4 }] },
+    { head: '許容 PEG', boxes: [{ text: '1.0', tone: 'on', size: 28, bold: true, h: 0.8 }, { text: '下限を採用\n(倍率は全シナリオ共通)', tone: 'in', h: 0.55 }] },
+    { head: '妥当 PER(3 経路の平均)', boxes: [{ text: 'a 同業 23 倍 /\nb PEG × 3 年成長率 /\nc 需給エンジンの価値', tone: 'in', h: 1.4 }] },
+    { head: '年度末の目標', boxes: [{ text: 'PER × 翌年度 EPS ×\n生存確率', tone: 'in', h: 1.4 }] },
     { head: '理論株価', boxes: [{ text: '261 ドル', tone: 'key', size: 26, bold: true, h: 0.8 }, { text: '加重 251・株価 143', tone: 'in', h: 0.55 }] },
   ], { y: 1.62, h: 1.6, gap: 0.3 });
   L.table(s, [

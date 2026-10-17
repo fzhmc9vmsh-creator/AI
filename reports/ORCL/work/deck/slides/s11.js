@@ -12,11 +12,11 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 0.5, 1.62, 6.05, '競合比較: 品質 × 価格 × 価値連鎖', 'pane_l');
   L.table(s, [
     ['製品', '価格(対競合)', '品質', '差を生む活動'],
-    ['AI 容量(H100)', '10 ドル/時。AWS の 1.45 倍・CoreWeave の 1.62 倍', 'ClusterMAX は Gold(最上位は CoreWeave・Nebius)', '資金と DC・電力の確保'],
+    ['AI 容量(H100)', '10 ドル/時。\nAWS の 1.45 倍・\nCoreWeave の 1.62 倍', 'ClusterMAX は Gold(最上位は CoreWeave・Nebius)', '資金と DC・\n電力の確保'],
     ['汎用計算', '月額で AWS・Azure より 45% 安い', 'SLA 99.99% で同水準', 'ハード外の仮想化'],
-    ['外向き通信', '月 50TB で AWS の 12.6 分の 1', '比較なし', 'ネットワーク設計'],
+    ['外向き通信', '月 50TB で AWS の\n12.6 分の 1', '比較なし', 'ネットワーク設計'],
     ['DB ライセンス', '同じコアで必要なライセンスが半分', 'DB 本体は同一', 'ライセンス規則'],
-    ['Database@', 'OCI と同一価格。他社の契約枠に算入可', '移設不要で低遅延', '他社クラウド内への配置'],
+    ['Database@', 'OCI と同一価格。他社の契約枠に算入可', '移設不要で低遅延', '他社クラウド内\nへの配置'],
   ], {
     x: 0.5, y: 2.0, w: 6.05, colW: [1.25, 1.75, 1.55, 1.5], fontSize: 9, rowH: 0.6,
     align: ['left', 'left', 'left', 'left'], name: 'tbl_compete',
@@ -28,11 +28,11 @@ module.exports = function build(pres, L) {
   const BW = 1.9, BH = 1.45;
   const STR = { 弱: C.primary, 中: C.amber, 強: C.red };
   const forces = [
-    { id: 'entry', x: 8.855, y: 2.0, name: '新規参入', str: '弱', fact: 'ガスタービン納期 約 3 年、系統連系 約 40 か月、変圧器 128〜160 週' },
+    { id: 'entry', x: 8.855, y: 2.0, name: '新規参入', str: '弱', fact: 'ガスタービン納期 約 3 年、\n系統連系 約 40 か月、\n変圧器 128〜160 週' },
     { id: 'supp', x: 6.78, y: 3.55, name: '供給者', str: '強', fact: 'NVIDIA が AI 計算の約 8 割(近似)。メモリ価格の上昇が capex を押し上げ' },
     { id: 'rival', x: 8.855, y: 3.55, name: '業界内の競争', str: '中', fact: 'H100 実勢: 大手 7.19 ドル・ネオクラウド 2.80 ドル。1 年契約は +38%' },
-    { id: 'buyer', x: 10.93, y: 3.55, name: '買い手', str: '強', fact: 'OpenAI が受注残の約 45%。計算契約は売上見通しの約 32 倍' },
-    { id: 'subst', x: 8.855, y: 5.1, name: '代替', str: '中', fact: 'Google TPU(Anthropic 2027 年から約 3.5GW)、AWS 自社チップ 年換算 250 億ドル超' },
+    { id: 'buyer', x: 10.93, y: 3.55, name: '買い手', str: '強', fact: 'OpenAI が受注残の約 45%。\n計算契約は売上見通しの\n約 32 倍' },
+    { id: 'subst', x: 8.855, y: 5.1, name: '代替', str: '中', fact: 'Google TPU(Anthropic\n2027 年から約 3.5GW)、\nAWS 自社チップ 年換算\n250 億ドル超' },
   ];
   forces.forEach(f => {
     L.box(s, f.x, f.y, BW, BH, { round: true, name: 'ovl_force_' + f.id });

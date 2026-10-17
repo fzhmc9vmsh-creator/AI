@@ -6,7 +6,7 @@
 - `L.agenda(pres, 1, 7)`
 
 ## s09 損益フロー(Sonnet)
-- まずサンキー図を資料の配色で描き直す。元の作図スクリプト charts2/make_f19.py(改変版が assets/make_sankey.py、データは assets/data/) を `deck/assets/make_sankey.py` にコピーして直す(元のファイルは編集しない):
+- まずサンキー図を資料の配色で描き直す。`/tmp/claude-0/-home-user-AI/dc835e23-63d2-59ca-97e5-1016f0daf3fe/scratchpad/orcl/charts2/make_f19.py`(データは同じ場所の data/) を `deck/assets/make_sankey.py` にコピーして直す(元のファイルは編集しない):
   - 図のタイトル・副題・出典・右下の「読み方」の箱を消す(スライド側に書く)
   - 色: 売上の流れ `#D9D9D9`(ノード `#767676`)、利益の流れ `#86C99B`(ノード `#197A56`)、費用の流れ `#C0392B` の透明度 0.25(ノード `#C0392B`)。文字は `#333333`、強調の赤字は `#C0392B`
   - 大きさ 8.4 × 5.0 インチ、200 dpi、背景白、余白を詰める。出力 `deck/assets/sankey_q1fy27.png`

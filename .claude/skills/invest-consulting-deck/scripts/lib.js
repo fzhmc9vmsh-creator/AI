@@ -204,7 +204,10 @@ function bullets(s, items, { x, y, w, h, fontSize = 10.5, color = C.text, name =
     if (Array.isArray(it)) {
       it.forEach((r, j) => runs.push({ text: r.text, options: Object.assign({ bullet: j === 0 ? { indent: 12 } : undefined, breakLine: j === it.length - 1 && !last, paraSpaceAfter: gap }, r.options || {}) }));
     } else {
-      runs.push({ text: it, options: { bullet: { indent: 12 }, breakLine: !last, paraSpaceAfter: gap } });
+      // 項目の中の "\n" は同じ項目の中で改行する(記号を付け直さない)
+      // (pptxgenjs は bullet を持つ塊で段落を分けるので、続きの塊には bullet を付けない)
+      String(it).split('\n').forEach((pt, j, arr) => runs.push({ text: pt, options: Object.assign(j === 0 ? { bullet: { indent: 12 }, paraSpaceAfter: gap } : { softBreakBefore: true },
+        j === arr.length - 1 ? { breakLine: !last } : {}) }));
     }
   });
   s.addText(runs, { x, y, w, h, fontFace: FONT, fontSize, color, valign: 'top', margin: 0.04, isTextBox: true, objectName: name });
@@ -583,7 +586,8 @@ function flowMap(s, spec) {
   // 7. 凡例
   if (spec.legend !== false) {
     const ly = bot + 0.06;
-    [['カネ', 'money'], ['モノ・サービス', 'goods'], ['リスク', 'risk'], ['契約・統治', 'ctrl']].forEach(([lab, k], i) => {
+    const used = new Set(E.map(e => e.kind || 'money'));
+    [['カネ', 'money'], ['モノ・サービス', 'goods'], ['リスク', 'risk'], ['契約・統治', 'ctrl']].filter(([, k]) => used.has(k)).forEach(([lab, k], i) => {
       const st = edgeStyle(k), lx = X + i * 1.55;
       seg(s, lx, ly + 0.11, lx + 0.4, ly + 0.11, st, true, false, 'ovl_' + tag('leg' + i));
       text(s, lab, { x: lx + 0.46, y: ly, w: 1.05, h: 0.22, fontSize: 8, color: C.sub, margin: 0, valign: 'middle', objectName: 'ovl_' + tag('legt' + i) });
@@ -615,25 +619,38 @@ function flowMap(s, spec) {
 }
 
 // 関係図スライドの右パネル: 仕組み(図の番号と対応)→ 評価の理由 → 上がる条件・下がる条件
-function mechPanel(s, { mech, reason, up, down, head = '仕組み(図の ①② … と対応)', x = 9.25, mechH, bottom = 6.32, fontSize = 9.5 }) {
+// 文字量から高さを見積もり、収まる最大の文字の大きさ(10.5〜9pt)を選ぶ。理由の箱は中身に合わせ、上がる/下がる条件は下端に揃える
+function mechPanel(s, { mech, reason, up, down, head = '仕組み(図の ①② … と対応)', x = 9.25, mechH = 0, bottom = 6.32, fontSize }) {
   const w = W - M - x;
+  const lh = (pt) => pt / 72 * 1.2;
+  const lines = (str, pt, bw) => String(str).split('\n').reduce((a, ln) => a + Math.max(1, Math.ceil(estW(ln, pt) * 1.08 / (bw - 0.08) - 0.02)), 0);
+  const hasUD = up || down;
+  const udH = hasUD ? (up ? lines('上がる条件  ' + up, 8.5, w) : 0) * lh(8.5) + (down ? lines('下がる条件  ' + down, 8.5, w) : 0) * lh(8.5) + 0.08 : 0;
+  const reasonH = lines(reason, 10, w - 0.24) * lh(10) + 0.3;
+  const mechEst = (pt) => mech.reduce((a, m, i) => a + lines(CIRC[i + 1] + ' ' + m, pt, w) * lh(pt) + 5 / 72, 0) + 0.08;
+  const avail = bottom - 1.98 - 0.08 - (hasUD ? 0.08 : 0);
+  let fs = fontSize;
+  if (!fs) fs = [11, 10.5, 10, 9.5, 9].find(f => Math.max(mechH, mechEst(f)) + reasonH + udH <= avail) || 9;
+  const mh = Math.max(mechH, mechEst(fs));
+  const extra = Math.max(0, avail - mh - reasonH - udH);
+  const rBox = reasonH + Math.min(extra, 0.3);
   paneHead(s, x, 1.62, w, head, 'mech_head');
   const runs = [];
   mech.forEach((m, i) => {
     const last = i === mech.length - 1;
     runs.push({ text: CIRC[i + 1] + ' ', options: { bold: true, color: C.primary, paraSpaceAfter: 5 } });
-    runs.push({ text: m, options: { color: C.text, breakLine: !last, paraSpaceAfter: 5 } });
+    // 項目の中の "\n" は段落を分けずに改行する(項目の間隔と区別するため)
+    const parts = String(m).split('\n');
+    parts.forEach((pt, j) => runs.push({ text: pt, options: Object.assign({ color: C.text, paraSpaceAfter: 5 }, j > 0 ? { softBreakBefore: true } : {}, j === parts.length - 1 ? { breakLine: !last } : {}) }));
   });
-  const hasUD = up || down;
-  const mh = mechH || (hasUD ? 2.55 : 2.95);
-  s.addText(runs, { x, y: 1.98, w, h: mh, fontFace: FONT, fontSize, valign: 'top', margin: 0.03, isTextBox: true, objectName: 'mech' });
-  const ry = 1.98 + mh + 0.08, rh = hasUD ? bottom - 0.74 - ry - 0.08 : bottom - ry;
-  takeaway(s, x, ry, w, rh, reason, { fontSize: 10 });
+  s.addText(runs, { x, y: 1.98, w, h: mh, fontFace: FONT, fontSize: fs, valign: 'top', margin: 0.03, isTextBox: true, objectName: 'mech' });
+  const ry = bottom - (hasUD ? udH + 0.08 : 0) - rBox;
+  takeaway(s, x, ry, w, rBox, reason, { fontSize: 10 });
   if (hasUD) {
     const r = [];
     if (up) r.push({ text: '上がる条件  ', options: { bold: true, color: C.primary } }, { text: up, options: { color: C.text, breakLine: !!down } });
     if (down) r.push({ text: '下がる条件  ', options: { bold: true, color: C.red } }, { text: down, options: { color: C.text } });
-    s.addText(r, { x, y: bottom - 0.74, w, h: 0.74, fontFace: FONT, fontSize: 8.5, valign: 'top', margin: 0.03, isTextBox: true, objectName: 'updown' });
+    s.addText(r, { x, y: bottom - udH, w, h: udH, fontFace: FONT, fontSize: 8.5, valign: 'top', margin: 0.03, isTextBox: true, objectName: 'updown' });
   }
 }
 
@@ -663,6 +680,27 @@ function timeBand(s, { x, y, w, h, from, to, step = 5, bars, labelW = 1.55, name
   });
 }
 
-module.exports = { pptxgen, C, GRADE, FONT, W, H, M, GRID, CHAPTERS, MT, newDeck, text, contentSlide, header, badge, takeaway, box, arrow, table, agenda, cover, closing, chartStyle,
+// 保存: pptxgenjs 3.12 は複数の文字の塊(runs)を持つ段落で <a:pPr> を塊ごとに出す(スキーマ違反で、PowerPoint の修復の警告の原因)。
+// 段落ごとに最初の <a:pPr> だけを残して書き出す。build.js・one.js はこの関数で保存する
+function dedupePPr(xml) {
+  return xml.replace(/<a:p>([\s\S]*?)<\/a:p>/g, (m, inner) => {
+    let seen = false;
+    return '<a:p>' + inner.replace(/<a:pPr\b[^>]*\/>|<a:pPr\b[^>]*>[\s\S]*?<\/a:pPr>/g, (pp) => { if (seen) return ''; seen = true; return pp; }) + '</a:p>';
+  });
+}
+async function save(pres, fileName) {
+  const JSZip = require('./node_modules/jszip');
+  const buf = await pres.write({ outputType: 'nodebuffer' });
+  const zip = await JSZip.loadAsync(buf);
+  let fixed = 0;
+  for (const f of Object.keys(zip.files).filter(n => /^ppt\/(slides|slideLayouts|slideMasters)\/[^/]+\.xml$/.test(n))) {
+    const x = await zip.file(f).async('string'), y = dedupePPr(x);
+    if (y !== x) { fixed++; zip.file(f, y); }
+  }
+  require('fs').writeFileSync(fileName, await zip.generateAsync({ type: 'nodebuffer', compression: 'DEFLATE' }));
+  return fixed;
+}
+
+module.exports = { save, dedupePPr, pptxgen, C, GRADE, FONT, W, H, M, GRID, CHAPTERS, MT, newDeck, text, contentSlide, header, badge, takeaway, box, arrow, table, agenda, cover, closing, chartStyle,
   paneHead, bullets, kpiTiles, chartPanel, structure, t15Side, twoPane, flow, matrix, T15,
   flowMap, mechPanel, kpiBand, timeBand, estW, CIRC, setCtx, warnings };

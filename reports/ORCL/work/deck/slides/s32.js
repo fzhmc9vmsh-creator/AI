@@ -25,10 +25,10 @@ module.exports = function build(pres, L) {
     valAxes: [Object.assign({}, axis), Object.assign({ valAxisHidden: true }, axis)],
     catAxes: [{ catAxisLineShow: true }, { catAxisHidden: true }],
   }));
-  L.takeaway(s, 9.05, 1.7, 3.78, 1.35, 'ベースの 5 年 CAGR は 33.9%(PEG 0.62)。FY30 の非GAAP EPS はコンセンサス 20.5 ドルで、会社目標 21 ドルとほぼ同じ');
+  L.takeaway(s, 9.05, 1.7, 3.78, 1.35, 'ベースの 5 年 CAGR は 33.9%(PEG 0.62)。\nFY30 の非GAAP EPS はコンセンサス\n20.5 ドルで、会社目標 21 ドルとほぼ同じ');
   L.bullets(s, [
-    'FY27→FY30 の 3 年は、どのシナリオでもコンセンサス × シナリオ比で置いた',
+    'FY27→FY30 の 3 年は、どのシナリオでも\nコンセンサス × シナリオ比で置いた',
     '弱気の FY31: OpenAI 向けとみなす容量の 6 割を、需給緩和後の相場で再販して 8.6 ドルへ下がる',
-    'FY31・32 は延長部分で、確度は FY27〜30 より低い',
+    'FY31・32 は延長部分で、\n確度は FY27〜30 より低い',
   ], { x: 9.05, y: 3.2, w: 3.78, h: 3.45, fontSize: 10.5, name: 'points' });
 };

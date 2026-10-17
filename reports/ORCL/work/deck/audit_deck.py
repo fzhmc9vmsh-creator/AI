@@ -3,6 +3,7 @@
 スライドの機械監査(L2)。bcg-slide-method の audit-loop.md が同期フォルダに無いため、
 invest-consulting-deck/references/design-spec.md の規定から作った代替。
 検査: 範囲・余白 / 配色 / フォント名・サイズ / 文字の収まり(推定) / 文字枠の重なり / 出所・ページ番号 / タイトルの形
+      / 改行(タイトルの段落は折り返さない=改行位置は "\n" で明示、他の文の末行が 2 文字以下、数字と単位の泣き別れ)
 使い方: python3 audit_deck.py deck.pptx [--json out.json]
 例外指定: shape の name が 'bg_'(全面背景・パネル)で始まるものは余白・重なり検査から除外。
          'ovl_' で始まるものは意図した重ね(チャート上のラベル等)として重なり検査から除外。
@@ -38,6 +39,33 @@ def text_width_em(s):
     return w
 
 
+UNBREAK = re.compile(r"[A-Za-z0-9.,%$+\-/:'&@()_]+")
+NO_START = set('、。,.)）」』】〕・ー々ゃゅょっャュョッァィゥェォ%％')
+UNITS = ('ドル', '倍', '億', '兆', '万', '%', '年', '月', '日', 'GW', 'MW', 'bp', 'pt', '社', '件', 'か月', '株', '円')
+
+
+def wrap_lines(text, max_em):
+    """推定の折り返し: 英数字の連なりは切らない。行頭禁則の文字は前の行にぶら下げる。各行の文字列を返す"""
+    toks = []
+    i = 0
+    while i < len(text):
+        m = UNBREAK.match(text, i)
+        if m and m.end() > i:
+            toks.append(m.group()); i = m.end()
+        else:
+            toks.append(text[i]); i += 1
+    lines, cur, cw = [], '', 0.0
+    for t in toks:
+        tw = text_width_em(t)
+        if cw + tw > max_em and cur.strip() and not (len(t) == 1 and t in NO_START):
+            lines.append(cur); cur, cw = ('' if t == ' ' else t), (0.0 if t == ' ' else tw)
+        else:
+            cur += t; cw += tw
+    if cur:
+        lines.append(cur)
+    return lines
+
+
 def iter_shapes(shapes, dx=0, dy=0):
     for sh in shapes:
         if sh.shape_type == 6:  # group
@@ -68,13 +96,36 @@ def audit(path):
             # 1. 範囲と余白
             if x < -0.01 or y < -0.01 or x + w > W_IN + 0.01 or y + h > H_IN + 0.01:
                 issues.append((i, 'Blocker', 'bounds', nm, f'範囲外 x={x:.2f} y={y:.2f} w={w:.2f} h={h:.2f}'))
-            elif not nm.startswith('bg_') and (x < MARGIN - 0.2 or x + w > W_IN - MARGIN + 0.2 or y < 0.25 or y + h > H_IN - 0.2):
+            elif not nm.startswith('bg_') and (x < MARGIN - 0.2 or x + w > W_IN - MARGIN + 0.2 or y < (0.04 if nm.startswith('hdr_') else 0.25) or y + h > H_IN - 0.2):
                 issues.append((i, 'Major', 'margin', nm, f'余白不足 x={x:.2f} y={y:.2f} 右端={x + w:.2f} 下端={y + h:.2f}'))
             # 2. 配色
             xml = sh._element.xml
             bad = {c.upper() for c in colors_in(xml)} - PALETTE
             if bad:
                 issues.append((i, 'Major', 'palette', nm, f'規定外の色 {sorted(bad)}'))
+            if getattr(sh, 'has_table', False) and sh.has_table:
+                # 4c. 表のセルの改行(末行 1〜2 文字、数字と単位の泣き別れ)
+                tbl = sh.table
+                for ri, row in enumerate(tbl.rows):
+                    for ci, cell in enumerate(row.cells):
+                        cw = inch(tbl.columns[ci].width)
+                        cml = inch(cell.margin_left) if cell.margin_left is not None else 0.1
+                        cmr = inch(cell.margin_right) if cell.margin_right is not None else 0.1
+                        cin = max(0.05, cw - cml - cmr) * 0.92
+                        for p in cell.text_frame.paragraphs:
+                          psz = max([r.font.size.pt for r in p.runs if r.font.size is not None] or [10.0])
+                          for ptxt in p.text.replace('\v', '\n').split('\n'):
+                            ptxt = ptxt.strip()
+                            if not ptxt:
+                                continue
+                            lines_p = wrap_lines(ptxt, cin / (psz / 72.0))
+                            if len(lines_p) > 1:
+                                last = lines_p[-1].strip()
+                                if text_width_em(last) <= 2.05:
+                                    issues.append((i, 'Minor', 'orphan', f'{nm}[{ri},{ci}]', f'表のセルの末行が「{last}」だけ(「{ptxt[:20]}…」)'))
+                                for a, b in zip(lines_p, lines_p[1:]):
+                                    if re.search(r'[0-9]$', a.rstrip()) and b.lstrip().startswith(UNITS):
+                                        issues.append((i, 'Minor', 'num-split', f'{nm}[{ri},{ci}]', f'表のセルで数字と単位が泣き別れ「…{a.rstrip()[-8:]} / {b.lstrip()[:6]}…」'))
             if not sh.has_text_frame:
                 continue
             tf = sh.text_frame
@@ -119,6 +170,27 @@ def audit(path):
             if tf.word_wrap is not False and need_h > h + 0.02:
                 sev = 'Blocker' if need_h > h * 1.25 else 'Major'
                 issues.append((i, sev, 'text-fit', nm, f'推定 {need_h:.2f}in > 枠 {h:.2f}in(「{text[:24]}…」)'))
+            # 4b. 改行の位置
+            for p in tf.paragraphs:
+                psz = max([r.font.size.pt for r in p.runs if r.font.size is not None] or [pt])
+                max_em = inner_w / (psz / 72.0)
+                for ptxt in p.text.replace('\v', '\n').split('\n'):   # 段落の中の改行(<a:br>)ごとに見る
+                  ptxt = ptxt.strip()
+                  if not ptxt:
+                    continue
+                  lines_p = wrap_lines(ptxt, max_em)
+                  if nm == 'title' and len(lines_p) > 1:
+                      issues.append((i, 'Major', 'title-wrap', nm, f'段落が折り返す(改行位置を "\\n" で明示): 「{ptxt[:30]}…」'))
+                  elif len(lines_p) > 1 and tf.word_wrap is not False:
+                      last = lines_p[-1].strip()
+                      if text_width_em(last) <= 2.05:
+                          sev = 'Major' if nm in ('takeaway', 'kicker', 'hdr_why') or nm.startswith('tile') else 'Minor'
+                          issues.append((i, sev, 'orphan', nm, f'末行が「{last}」だけ(「{ptxt[:20]}…」)'))
+                      for a, b in zip(lines_p, lines_p[1:]):
+                          if re.search(r'[0-9]$', a.rstrip()) and b.lstrip().startswith(UNITS):
+                              issues.append((i, 'Minor', 'num-split', nm, f'数字と単位が泣き別れ「…{a.rstrip()[-8:]} / {b.lstrip()[:6]}…」'))
+            if nm == 'title' and len([p for p in tf.paragraphs if ''.join(r.text for r in p.runs).strip()]) > 2:
+                issues.append((i, 'Major', 'title-wrap', nm, 'タイトルが 3 行以上'))
             if not nm.startswith('ovl_') and not nm.startswith('bg_'):
                 boxes.append((nm, x, y, w, h, text[:16]))
         # 5. 文字枠の重なり
@@ -134,6 +206,10 @@ def audit(path):
         if kind == 'content' and i > 1:
             if not has_pg:
                 issues.append((i, 'Major', 'footer', '-', 'ページ番号なし'))
+            if title and not has_src:
+                issues.append((i, 'Major', 'footer', '-', '出所の行なし'))
+            if title and 'hdr_theme' not in names:
+                issues.append((i, 'Major', 'header', '-', '見出し帯(現在地・テーマ・なぜ)なし'))
         # 7. タイトルの形(メッセージ型: 体言止めを避ける)
         if kind == 'content' and title:
             if len(title) < 18:
