@@ -22,7 +22,7 @@ module.exports = function build(pres, L) {
     ], options: { showValue: true, secondaryValAxis: true, secondaryCatAxis: true, chartColors: [C.primary] } },
   ], L.chartStyle({
     x: 0.5, y: 1.98, w: 6.3, h: 3.2, objectName: 'chart',
-    showLegend: true, legendPos: 'b', chartColors: [C.teal, C.red, C.primary], lineSize: 2, lineDataSymbolSize: 6,
+    showLegend: true, legendPos: 'b', chartColors: [C.teal, C.red, C.primary], lineSize: 2, lineDataSymbolSize: 6, displayBlanksAs: 'gap',
     dataLabelPosition: 't', dataLabelFormatCode: '0.0', ...axis,
     valAxes: [Object.assign({}, axis), Object.assign({ valAxisHidden: true }, axis)],
     catAxes: [{ catAxisLineShow: true }, { catAxisHidden: true }],
@@ -40,5 +40,5 @@ module.exports = function build(pres, L) {
     ['Q3 の金利上昇(+55〜60bp)', '約 −2〜3 億ドル', '約 −2.5〜3.5 億ドル'],
   ], { x: 7.05, y: 1.98, w: 5.78, colW: [2.4, 1.69, 1.69], fontSize: 10, rowH: 0.42 });
   L.text(s, 'Q3 の行はヘッジ前の推計。Q2 は金利スワップの益が評価減の多くを打ち消した', { x: 7.05, y: 4.6, w: 5.78, h: 0.5, fontSize: 9 });
-  L.takeaway(s, 7.05, 5.2, 5.78, 1.45, '損失の前提は実績より保守的で、「利益は偽物」という空売りの主張は信用の数字では裏付けが弱い。\n弱点は金利: 割引率が薄く、金利が上がるとマークが下がる');
+  L.takeaway(s, 7.05, 5.2, 5.78, 1.45, '損失の前提は実績より保守的で、\n「利益は偽物」という空売りの主張は信用の数字では裏付けが弱い。\n弱点は金利: 割引率が薄く、金利が上がるとマークが下がる');
 };
