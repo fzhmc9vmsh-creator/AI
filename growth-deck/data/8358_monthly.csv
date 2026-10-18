@@ -1,0 +1,27 @@
+# 単位: revenue_mn_twd=百万台湾ドル(合併売上高、月次)、yoy=前年同月比(%)。直近24か月(2024-10〜2026-09)。2026-10分は未公表(10月上旬〜中旬公表予定のため本件時点では未取得)。
+# 億元表記の月は小数2桁(=百万1桁相当の精度)、千元値が取れた月は千元精度。2025-07のyoyはwinvest記載値(7.73%)。
+month,revenue_mn_twd,yoy,source
+2024-10,523.00,-10.2,https://finance.technews.tw/2024/11/08/co-tech-8358-202410-financial-report/
+2024-11,560.00,-4.0,https://finance.technews.tw/2024/12/09/co-tech-8358-202411-financial-report/
+2024-12,623.00,6.5,https://finance.technews.tw/2025/01/09/co-tech-8358-202412-financial-report/
+2025-01,562.00,12.1,https://finance.technews.tw/2025/02/07/co-tech-8358-202501-financial-report/
+2025-02,563.00,12.2,https://finance.technews.tw/2025/03/07/co-tech-8358-202502-financial-report/
+2025-03,602.68,19.9,https://finance.technews.tw/2025/04/09/co-tech-8358-202503-financial-report/
+2025-04,663.00,20.2,https://finance.technews.tw/2025/05/09/co-tech-8358-202504-financial-report/
+2025-05,666.00,10.0,https://finance.technews.tw/2025/06/09/co-tech-8358-202505-financial-report/
+2025-06,671.22,2.0,https://finance.technews.tw/2025/07/09/co-tech-8358-202506-financial-report/
+2025-07,651.00,7.7,https://winvest.tw/News/Detail/66256
+2025-08,661.00,9.0,https://finance.technews.tw/2025/09/09/co-tech-8358-202508-financial-report/
+2025-09,671.00,15.3,https://finance.technews.tw/2025/10/09/co-tech-8358-202509-financial-report/
+2025-10,701.00,34.1,https://finance.technews.tw/2025/11/06/co-tech-8358-202510-financial-report/
+2025-11,716.00,27.8,https://finance.technews.tw/2025/12/09/co-tech-8358-202511-financial-report/
+2025-12,750.70,20.4,https://finance.technews.tw/2026/01/09/co-tech-8358-202512-financial-report/
+2026-01,820.00,45.9,https://finance.technews.tw/2026/02/09/co-tech-8358-202601-financial-report/
+2026-02,851.00,51.1,https://finance.technews.tw/2026/03/09/co-tech-8358-202602-financial-report/
+2026-03,860.69,42.8,https://finance.technews.tw/2026/04/09/co-tech-8358-202603-financial-report/
+2026-04,900.77,35.8,https://finance.technews.tw/2026/05/08/co-tech-8358-202604-financial-report/
+2026-05,941.90,41.4,https://finance.technews.tw/2026/06/09/co-tech-8358-202605-financial-report/
+2026-06,962.29,43.4,https://finance.technews.tw/2026/07/09/co-tech-8358-202606-financial-report/
+2026-07,1009.00,54.9,https://finance.technews.tw/2026/08/07/co-tech-8358-202607-financial-report/
+2026-08,1056.00,59.7,https://finance.technews.tw/2026/09/09/co-tech-8358-202608-financial-report/
+2026-09,1104.00,64.6,https://finance.technews.tw/2026/10/08/co-tech-8358-202609-financial-report/

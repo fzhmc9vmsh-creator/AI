@@ -1,0 +1,9 @@
+# 単位: revenue・op_income=百万台湾ドル(未取得は不明)、eps=台湾ドル(TWD)。fiscal_year=暦年(12月決算)。出典ごとに1行。日付欄は記事の公開日(URL由来の推定の場合は注記を参照、data.md参照)。
+fiscal_year,revenue,op_income,eps,n_analysts,source,date
+2026,不明,不明,10.00,不明,https://money.udn.com/money/story/5607/9242324 (経済日報・聯合報系の報道。原文の日付・分析機関は未確認),不明
+2027,不明,不明,17.70,不明,https://money.udn.com/money/story/5607/9242324 (同上),不明
+2026,不明,不明,10.02,不明,https://www.ctee.com.tw/news/20260105700167-430201 (工商時報報道。URL日付より推定),2026-01-05
+2027,不明,不明,17.83,不明,https://www.ctee.com.tw/news/20260105700167-430201 (同上),2026-01-05
+2026,不明,不明,9.98,1,https://www.businesstoday.com.tw/article/category/183008/post/202608120007/ (高盛報告の報道。URL日付より推定。買い・目標株価940円),2026-08-12
+2027,不明,不明,26.51,1,https://www.businesstoday.com.tw/article/category/183008/post/202608120007/ (高盛。同上),2026-08-12
+2028,不明,不明,42.58,1,https://www.businesstoday.com.tw/article/category/183008/post/202608120007/ (高盛。同上),2026-08-12

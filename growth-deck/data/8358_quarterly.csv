@@ -1,0 +1,12 @@
+# 単位: revenue・op_income・ordinary_or_pretax・net_income=百万台湾ドル(TWD mn)、eps=台湾ドル(TWD)。決算期12月、period=暦年四半期。「derived」=他値からの差引・加算による推計、「不明」=未取得。
+period,revenue,op_income,ordinary_or_pretax,net_income,eps,source
+2024Q1,1505.42,不明,不明,不明,不明,https://tw.stock.yahoo.com/quote/8358/income-statement (売上のみ。月次合計15.06億と整合)
+2024Q2,1816.55,不明,不明,不明,不明,https://tw.stock.yahoo.com/quote/8358/income-statement (売上のみ。月次累計差引18.16億と整合)
+2024Q3,1793.02,不明,不明,不明,0.88,売上: https://tw.stock.yahoo.com/quote/8358/income-statement / EPS: https://pchome.megatime.com.tw/stock/sto4/ock4/sid8358.html (一次資料未照合)
+2024Q4,1706.58,不明,不明,不明,0.77,売上: https://tw.stock.yahoo.com/quote/8358/income-statement / EPS: https://pchome.megatime.com.tw/stock/sto4/ock4/sid8358.html (一次資料未照合)
+2025Q1,1728.00,不明,不明,不明,1.05,売上: 月次累計17.28億 https://finance.technews.tw/2025/04/09/co-tech-8358-202503-financial-report/ / EPS: 検索結果の公告転載(一次資料未照合)
+2025Q2,2001.00,不明,不明,不明,0.66,derived: 売上 1-6月37.29億 - Q1 17.28億 / EPS 1-9月2.71 - Q1 1.05 - Q3 1.00。矛盾: poorstock.com/fund/8358 は1.71と記載(未解決)
+2025Q3,1986.00,不明,315.00,253.00,1.00,https://wantrich.chinatimes.com/news/20251106900516-420101 (114年第3季 公告転載。稅前3.15億 / 歸屬母公司淨利2.53億 / EPS 1.00)
+2025Q4,2168.00,不明,不明,378.00,1.50,derived: 売上 FY 78.80億 - 1-9月 57.12億 / 純利益 FY 10.63億 - 1-9月 6.85億 / EPS FY 4.21 - 1-9月 2.71。FY値: https://winvest.tw/News/Detail/90588 。玩股Q4表(売上5,894百万)は不整合のため不採用
+2026Q1,2532.02,648.98,649.09,519.61,2.06,https://www.wantgoo.com/stock/8358/financial-statements/income-statement (玩股損益表。1-4月累計純利7.06億・EPS 2.8と整合)
+2026Q2,2804.96,不明,不明,546.00,2.16,EPS: https://www.nstock.tw/news/article_m?id=520234 (見出し「2026年第2季 綜合損益表 EPS 2.16」。上半期EPS 4.22と整合) / 売上: 月次合計 https://histock.tw/stock/8358/%E6%AF%8F%E6%9C%88%E7%87%9F%E6%94%B6 / 純利益はderived: EPS 2.16 x 株数252.588百万
