@@ -1,4 +1,4 @@
-// 2-3 増収の源泉と利益率の経路(手本 ORCL s15 の横棒の作りと、ORCL s10 の右パネルの表の作り。タイトル・ページ番号は meta.js が入れる)
+// 2-3 増収の源泉と利益率の経路(手本の横棒と右パネルの表の作り。タイトル・ページ番号は meta.js が入れる)
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {

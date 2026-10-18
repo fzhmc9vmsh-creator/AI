@@ -1,4 +1,4 @@
-// 2-1 成長分野(手本 ORCL s08c を写経。タイトル・ページ番号は meta.js が入れる)
+// 2-1 成長分野(手本を写経。タイトル・ページ番号は meta.js が入れる)
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
@@ -24,7 +24,7 @@ module.exports = function build(pres, L) {
     x: 0.5, y: 1.62, w: 8.2, colW: [1.35, 1.4, 1.35, 1.55, 1.75, 0.8], fontSize: 9, rowH: 0.5,
     align: ['left', 'left', 'left', 'left', 'left', 'center'],
   });
-  L.takeaway(s, 0.5, 5.55, 8.2, 0.8, 'B/S 貸出は規模で、LPB は資本を使わずに伸びる点で注目度が最も高い。\n新領域は数字が出るまでオプションとして扱う');
+  L.takeaway(s, 0.5, 5.55, 8.2, 0.8, 'B/S 貸出は規模で、LPB は資本の上限(2027 年)の先を担えるかで注目度が最も高い。\nLPB は足元で停滞。新領域は数字が出るまでオプションとして扱う');
 
   // 右: 1 株価値 × 伸びの 2 軸マトリクス(highlight は [x, y]: x = 伸び 0 穏やか / 1 速い、y = 0 大 / 1 小)
   L.paneHead(s, 8.95, 1.62, 3.88, '1 株価値 × 伸びで見た位置');

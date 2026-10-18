@@ -1,4 +1,4 @@
-// 2-2 会社のシナリオ(2/2): 部品の採点(手本 ORCL s08e を写経。タイトル・ページ番号は meta.js が入れる)
+// 2-2 会社のシナリオ(2/2): 部品の採点(手本を写経。タイトル・ページ番号は meta.js が入れる)
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
