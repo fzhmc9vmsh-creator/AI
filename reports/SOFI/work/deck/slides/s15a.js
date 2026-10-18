@@ -5,7 +5,7 @@ module.exports = function build(pres, L) {
     source: 'research_r3/R10_growth_engine_cac.md・R11・R12、会社開示(Q2 2026)、calc/out/growth_v2.json',
   });
   L.flowMap(s, {
-    name: 's15a', h: 5.0, cols: [1.4, 1.5, 1.55, 1.5], rows: 4.2, nodeH: 0.72,
+    name: 's15a', h: 5.0, cols: [1.4, 1.5, 1.55, 1.3], rows: 4.2, nodeH: 0.72,
     lanes: [{ label: '会員', c0: 0, c1: 0 }, { label: 'SoFi の成長エンジン', c0: 1, c1: 2, self: true }, { label: '資金と資本', c0: 3, c1: 3 }],
     groups: [{ label: '獲得と関係', c0: 1, c1: 1, r0: 0, r1: 3.1 }, { label: '収益化', c0: 2, c1: 2, r0: 0, r1: 3.1 }],
     nodes: [
@@ -27,7 +27,7 @@ module.exports = function build(pres, L) {
       { from: 'newm', to: 'dd', label: '給与振込', kind: 'money', n: 2, fo: -0.4, tof: -0.4 },
       { from: 'dd', to: 'money', label: '安い預金', kind: 'money' },
       { from: 'money', to: 'bs', label: '資金', kind: 'money', n: 3 },
-      { from: 'ex', to: 'cross', label: '製品を足す', kind: 'money', n: 4, lw: 0.8 },
+      { from: 'ex', to: 'cross', label: '製品を足す', kind: 'goods', n: 4, lw: 0.93 },
       { from: 'cross', to: 'fees', label: '手数料', kind: 'money' },
       { from: 'cross', to: 'sm', label: '製品当たり\n獲得費 −15%', kind: 'ctrl', n: 5, lw: 0.95, fo: -0.3, tof: -0.3 },
       { from: 'bs', to: 'cap', label: '資本を使う', kind: 'risk', n: 6, lw: 0.86 },
@@ -40,8 +40,8 @@ module.exports = function build(pres, L) {
     mech: [
       '販促費(年 15.7 億ドル、売上の 32%)で会員を取る。\n純増は四半期 110 万人、会員当たり 357 ドル',
       '新しい会員が給与振込を設定して主口座になる。\n会員の預金の約 97% が給与振込・主口座の会員',
-      '安い預金(平均 3.07%、倉庫ラインより 1.56pt 安い)が\nB/S 貸出を支え、NIM 5.98%',
-      '既存会員が製品を足す。クロスバイは 1 年で 35% → 51%、\n既存会員の製品は 2.5 倍',
+      '安い預金(平均 3.07%、倉庫ラインより\n1.56pt 安い)が B/S 貸出を支え、\nNIM 5.98%',
+      '既存会員が製品を足す。\nクロスバイは 1 年で 35% → 51%、\n既存会員の製品は 2.5 倍',
       'クロスバイが増えるほど製品当たり獲得費が下がる\n(210 → 178 ドル、−15%)',
       'ただし貸出は自己資本を使う。自給率 0.34 で、\nLPB への配分は 49% → 29% に下がった',
     ],
