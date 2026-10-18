@@ -42,8 +42,8 @@ const warnings = [];
 function newDeck() {
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
-  pres.author = 'Oracle 長期保有適格性審査';
-  pres.title = 'Oracle(ORCL)長期保有適格性審査';
+  pres.author = 'SoFi 長期保有適格性審査';
+  pres.title = 'SoFi Technologies(SOFI)長期保有適格性審査';
   pres.theme = { headFontFace: FONT, bodyFontFace: FONT };
   return pres;
 }
@@ -355,10 +355,10 @@ function matrix(s, { x, y, w, h, xLabels, yLabels, xTitle, yTitle, cells, highli
 //   cols: [幅, …]      箱の列の幅(inch)。通路の幅 = (w − Σ幅) ÷ (列数 − 1)。ラベルを置く通路は 1.0in 以上(手本 s08b は約 1.0in)
 //   rows: n            行数。r = 0..n-1(0.5 刻み可)
 //   nodeH              箱の高さ(既定: 行の高さ − 0.22、最大 0.82)
-//   lanes: [{label, c0, c1, self}]     背景の帯(誰の領域か)。self = Oracle(薄緑)、他は薄灰
+//   lanes: [{label, c0, c1, self}]     背景の帯(誰の領域か)。self = 自社(薄緑)、他は薄灰
 //   groups: [{label, c0, c1, r0, r1}]  事業単位などの点線の囲み(ラベルは上辺の上に載る)
 //   nodes: [{id, c, r, cs, rs, label, sub, kind, h, w, dx, dy, tag: {text, tone: red|green|amber}}]
-//          kind: self(Oracle 本体・緑塗り)/ unit(Oracle の事業・白地に緑枠)/ ext(外部)/ ok(有利・薄緑)/ risk(不利・赤枠)/ key(要点・濃緑塗り)/ note(枠なしの注記)
+//          kind: self(自社本体・緑塗り)/ unit(自社の事業・白地に緑枠)/ ext(外部)/ ok(有利・薄緑)/ risk(不利・赤枠)/ key(要点・濃緑塗り)/ note(枠なしの注記)
 //   edges: [{from, to, label, kind, n, fs, ts, fo, tof, mx, my, lpos, lw, ldx, ldy, below, left, both}]
 //          kind: money(カネ・濃緑の太線)/ goods(モノ・サービス・ティール)/ risk(リスク・赤の破線)/ ctrl(契約・統治・情報・灰の破線)
 //          n: 仕組みの番号 → ラベルの頭に ①② が付き、mechPanel の同じ番号の説明と対応する
