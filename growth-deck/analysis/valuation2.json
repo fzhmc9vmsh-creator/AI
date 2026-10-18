@@ -1,0 +1,164 @@
+{
+ "nittobo": {
+  "dcf": {
+   "engine": 3686,
+   "company": 4279,
+   "bear": 1387,
+   "consensus": 2058
+  },
+  "growth_price": {
+   "ss_eps": 125.12,
+   "ss_value": 1564,
+   "price": 2989,
+   "growth_value": 1425,
+   "growth_share": 0.477
+  },
+  "sens": [
+   3686,
+   [
+    {
+     "var": "FY29以降のT-glass価格(他社認定の時期)",
+     "low": -0.24,
+     "high": 0.128
+    },
+    {
+     "var": "T-glassの実効数量の伸び(能力立上げ)",
+     "low": -0.174,
+     "high": 0.116
+    },
+    {
+     "var": "電子材料に占めるT系の比率",
+     "low": -0.136,
+     "high": 0.136
+    },
+    {
+     "var": "NE・その他の数量成長",
+     "low": -0.084,
+     "high": 0.067
+    },
+    {
+     "var": "増産投資の償却負担",
+     "low": -0.042,
+     "high": 0.021
+    }
+   ]
+  ]
+ },
+ "mitsui": {
+  "dcf": {
+   "engine": 2887,
+   "company": 2896,
+   "bear": 1929,
+   "consensus": 3027
+  },
+  "sotp": {
+   "rows": [
+    {
+     "seg": "銅箔(MicroThin・VSP・FaradFlex)",
+     "ordinary": 740,
+     "np": 577,
+     "per": 22,
+     "value": 12698,
+     "note": "ROIC52%・シェア95%・CAP10年超、利益成長年12%"
+    },
+    {
+     "seg": "その他機能材料(触媒・機能粉等)",
+     "ordinary": 185,
+     "np": 144,
+     "per": 12,
+     "value": 1732,
+     "note": "貴金属価格の影響が大きい"
+    },
+    {
+     "seg": "金属(製錬・リサイクル)",
+     "ordinary": 330,
+     "np": 257,
+     "per": 8,
+     "value": 2059,
+     "note": "景気循環。正規化経常益"
+    },
+    {
+     "seg": "自動車部品・調整",
+     "ordinary": -45,
+     "np": -35,
+     "per": 10,
+     "value": -351,
+     "note": "赤字のドアロック等"
+    }
+   ],
+   "total": 16138,
+   "net_debt": 500,
+   "equity": 15638,
+   "per_share": 2724,
+   "per_share_fy28": true
+  },
+  "growth_price": {
+   "ss_eps": 142.66,
+   "ss_value": 1783,
+   "price": 2659,
+   "growth_value": 876,
+   "growth_share": 0.329
+  },
+  "sens": [
+   2887,
+   [
+    {
+     "var": "銅箔の利益成長(能力増と値上げ)",
+     "low": -0.121,
+     "high": 0.104
+    },
+    {
+     "var": "金属事業の正規化利益",
+     "low": -0.083,
+     "high": 0.077
+    },
+    {
+     "var": "触媒・機能粉",
+     "low": -0.026,
+     "high": 0.02
+    }
+   ]
+  ]
+ },
+ "cotech": {
+  "dcf": {
+   "engine": 175,
+   "company": 295,
+   "bear": 86,
+   "consensus": 219,
+   "gs": 436
+  },
+  "growth_price": {
+   "ss_eps": 9.81,
+   "ss_value": 109,
+   "price": 461.5,
+   "growth_value": 352,
+   "growth_share": 0.764
+  },
+  "sens": [
+   175,
+   [
+    {
+     "var": "HVLP4の加工費(2028年以降の価格)",
+     "low": -0.284,
+     "high": 0.378
+    },
+    {
+     "var": "HVLP3+4の数量(三廠の立上げ)",
+     "low": -0.16,
+     "high": 0.214
+    },
+    {
+     "var": "汎用銅箔の粗利率",
+     "low": -0.077,
+     "high": 0.057
+    },
+    {
+     "var": "販管費",
+     "low": -0.03,
+     "high": 0.02
+    }
+   ]
+  ]
+ }
+}
