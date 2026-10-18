@@ -1,10 +1,10 @@
-// 条件2 コア事業の稼ぐ力と資本(評価 C)。指示書 spec/ch3.md の s18 節
-// 配置は 4 列・4 行、評価 C の高さ(h 4.66、mechPanel bottom 6.32)と kpiBand
+// 条件2 コア事業の稼ぐ力と資本(評価 B、C との境界)。指示書 spec/ch3.md の s18 節
+// 配置は 4 列・4 行、評価 B の高さ(h 4.66、mechPanel bottom 6.32)と kpiBand
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 資金の出し手 → SoFi の資本の源 → 使い道と結果 → 評価。①〜⑥ は右と対応。数値は Q2 2026(2026-06-30)と需給エンジン',
     source: '会社開示(10-Q Q2 2026、自己資本比率の表)、research_r2/R7_funding_rates_capital.md、calc/out/val.json(engine_detail・steady_state・rotce)',
-    grade: 'C', condNo: 2,
+    grade: 'B', condNo: 2,
   });
   L.flowMap(s, {
     name: 's18', h: 4.66, cols: [1.35, 1.45, 1.45, 1.35], rows: 4, nodeH: 0.72,
@@ -22,7 +22,7 @@ module.exports = function build(pres, L) {
       { id: 'rwa', c: 2, r: 0, kind: 'risk', label: 'リスク資産(RWA)', sub: '372 → 487 億ドル\n(半年で +31%)' },
       { id: 'bs', c: 2, r: 1, kind: 'unit', label: 'B/S 貸出', sub: 'NIM 5.98%' },
       { id: 'lpb', c: 2, r: 2, kind: 'ok', label: 'LPB', sub: '資本を使わない\n手数料 4.6%' },
-      { id: 'steady', c: 2, r: 3, kind: 'unit', label: '定常の稼ぐ力', sub: '成長を止めれば\n純利益 約 15 億ドル' },
+      { id: 'steady', c: 2, r: 3, kind: 'unit', label: '定常の稼ぐ力', sub: '成長を止めれば\n純利益 約 15 億ドル\n(ROTCE 約 15%)' },
       { id: 'rotce', c: 3, r: 0, kind: 'risk', label: 'ROTCE', sub: '2026 年 7〜9%\n資本コスト 13.9%' },
       { id: 'tbv', c: 3, r: 2, label: 'TBVPS', sub: '7.34 ドル\n(増資で +56%)' },
     ],
@@ -48,12 +48,12 @@ module.exports = function build(pres, L) {
       '上期の貸出の伸びが続くと、必要資本は年約 30 億ドルで自前の約 3 倍。比率は半年で 22.9% → 18.8%',
       'このままでは 2027 年に\n運用の下限(14〜15%)に当たる',
       'その先は資本を使わない LPB に回すか増資。CFO は「現行計画では増資は不要」',
-      '今の規模で成長を止めれば純利益は約 15 億ドル\n(1 株 9.06 ドル)。今は成長の先行費用で ROTCE 7〜9%',
+      '今の規模で成長を止めれば純利益は約 15 億ドル\n(ROTCE 約 15%、必要資本ベース 18%)で\n資本コストを上回る。今の 7〜9% は成長投資の結果',
     ],
-    reason: '定常なら稼ぐが、成長が資本を食う。\nROTCE が資本コスト 13.9% を超えるのは\n2029〜30 年のため C',
-    up: 'ROTCE 12% 以上と比率 16% 以上を保ち、\nLPB の比率が上がれば B',
-    down: 'ROTCE 9% 未満が続くか、比率 15% 未満・\n増資なら D',
+    reason: '定常の稼ぐ力は資本コストを上回り、\n単位経済も正。留保は自給率 0.34 と\n買い手への依存で、C との境界の B',
+    up: 'ROTCE 12% 以上と比率 16% 以上を保ち、\nLPB の配分が 40% 超に戻れば A 寄り',
+    down: '自給率が上がらないまま比率 15% 未満、\nまたは増資なら C',
   });
-  L.kpiBand(s, '総自己資本比率 16% 未満で警戒・14% 未満で D 候補 / ROTCE 12% 以上で B 候補・9% 未満が 2 四半期続けば D 候補 / 増資の発表で D 候補(毎四半期)');
+  L.kpiBand(s, '総自己資本比率 16% 未満で警戒・14% 未満で C 候補 / 自給率(資本の生成 ÷ 必要資本の増加)0.5 以上で確度を上げる / LPB の配分 40% 超で A 候補(毎四半期)');
   return s;
 };
