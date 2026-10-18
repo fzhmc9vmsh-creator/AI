@@ -42,7 +42,8 @@ module.exports = function build(pres, L) {
   ], L.chartStyle({
     x: 9.05, y: 1.95, w: 3.78, h: 1.15, barDir: 'bar', barGrouping: 'percentStacked',
     chartColors: [C.primary, C.amber, C.red, C.sub], showLegend: true, legendPos: 'b',
-    dataLabelPosition: 'ctr', dataLabelColor: 'FFFFFF', dataLabelFormatCode: '[>=2]0"%";""',
+    // 4% 未満の細い区間(保留 3%)はラベルを出さず、表の P9 で読む(5% と 3% のラベルが重なるため)
+    dataLabelPosition: 'ctr', dataLabelColor: 'FFFFFF', dataLabelFormatCode: '[>=4]0"%";""',
     catAxisHidden: true, valAxisHidden: true, valGridLine: { style: 'none' }, objectName: 'chart_weight',
   }));
   L.takeaway(s, 9.05, 3.2, 3.78, 0.95, '判定は「条件付きのプラス」。作動している部品の多くが資本を使い、資本の上限が筋書きの速さを決める');
@@ -52,7 +53,7 @@ module.exports = function build(pres, L) {
   L.table(s, [
     ['', '会社', 'コンセンサス', 'エンジン'],
     ['EPS(ドル)', '1.03〜1.12', '1.08', '1.10'],
-    ['ROTCE', '20〜30%(長期)', '—', '12.5%'],
+    ['ROTCE', '20〜30%\n(長期)', '—', '12.5%'],
   ], { x: 9.05, y: 4.65, w: 3.78, colW: [1.06, 0.9, 0.91, 0.91], fontSize: 8.5, rowH: 0.34 });
   L.text(s, 'EPS の目標はエンジンでも届く。ROTCE の目標には\n届かず、成長が生む価値は小さい。理論株価は\nエンジンの EPS を土台にした', {
     x: 9.05, y: 5.75, w: 3.78, h: 0.95, fontSize: 8.5,

@@ -6,7 +6,8 @@ module.exports = function build(pres, L) {
     source: '会社開示(Q2 2026 10-Q)、research_r2/R6_pnl_margin.md §1・§4、calc/out/val.json',
   });
 
-  // 左: 増収の内訳。増加と減少を 2 系列に分けた積み上げの横棒(該当しない点は 0 でラベルを消す)
+  // 左: 増収の内訳。増加と減少を 2 系列に分け、100% 重ねた横棒(各項目は片方の系列だけが値を持つ = 積み上げと同じ見た目)。
+  // 積み上げにしないのは、短い棒(13.5)の白いラベルが白地にはみ出して読めなくなるため。ラベルは棒の外に濃い字で出す。0 の点は消す
   L.paneHead(s, 0.5, 1.62, 6.3, '増収 3.64 億ドルの内訳(百万ドル)');
   const cats = ['純金利収益', 'ローン組成・売却の損益', 'インターチェンジ・会費ほか', 'LPB 手数料', 'テクノロジー'];
   s.addChart(pres.charts.BAR, [
@@ -14,10 +15,10 @@ module.exports = function build(pres, L) {
     { name: '減少', labels: cats, values: [0, 0, 0, 0, -38.3] },
   ], L.chartStyle({
     x: 0.5, y: 1.98, w: 6.3, h: 3.3, objectName: 'chart',
-    barDir: 'bar', barGrouping: 'stacked', chartColors: [C.primary, C.red],
-    dataLabelPosition: 'ctr', dataLabelColor: C.white, dataLabelFormatCode: '0.0;-0.0;;',
+    barDir: 'bar', barGrouping: 'clustered', barOverlapPct: 100, chartColors: [C.primary, C.red],
+    dataLabelPosition: 'outEnd', dataLabelColor: C.text, dataLabelFormatCode: '0.0;-0.0;;',
     catAxisOrientation: 'maxMin', catAxisLabelPos: 'low',
-    valAxisHidden: true, valGridLine: { style: 'none' }, valAxisMinVal: -60, valAxisMaxVal: 300,
+    valAxisHidden: true, valGridLine: { style: 'none' }, valAxisMinVal: -80, valAxisMaxVal: 300,
     showLegend: true, legendPos: 'b',
   }));
   L.text(s, '会員当たり収益(年換算)は 304 → 316 ドル(+4%)。会員 +35% × 会員当たり +4% で増収 +40%。\n増収の 74% は B/S 貸出の利ざや。ローン損益の増加は主に金利スワップの益(前年は損失)', {
