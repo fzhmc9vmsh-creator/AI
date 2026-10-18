@@ -281,6 +281,29 @@ def cond6():
                                  "コンセンサスは 4% 上、誤差 ±15% の内側)。安さは SoFi 固有でなく消費者金融の群の安さ → 条件7 で扱う")
 
 
+# ---------------------------------------------------------------- 価値評価(スキルの年度別評価テーブル §3-4 どおり。第3版で修正)
+# 利用者の指摘「EPS 成長率は年 32〜40% なのだから PEG 1.0 でも理論株価はそんなに低くならない。経営陣とその裏付けを分析したはず」(2026-10-18)。
+# 第1〜2版の fair_path は、妥当 PER を「同業の PER 13.6 倍・PEG × g・エンジンの DCF 倍率」の 3 つの平均にしていた。
+# スキル(valuation-model §3-3)は「機械的な平均はしない」と定めており、同業の PER と DCF は PEG の導出と交差確認に使うもの。
+# さらに g を翌年度から 3 年(減速した後の伸び)で取っていた。正: 妥当 PER = PEG × g、g = 当該年度から 3 年の EPS CAGR、適正株価 = 妥当 PER × 当該年度の EPS。
+def fair_path_skill(eps, peg, surv=0.985, years=(2026, 2027, 2028, 2029), w=(0.4, 0.3, 0.2, 0.1)):
+    e = vm.ext(eps, 2030)
+    rows = []
+    for t in years:
+        g = vm.cagr(e[t], e[t + 3], 3)
+        g5 = vm.cagr(e[t], e[t + 5], 5) if (t + 5) in e else g
+        if g5 < 0.15:                       # 成熟年度は理論式(§3-4)。ROE 18%、永続 5%
+            per = vm.theory_per(vm.G_LR, 0.18)
+            how = "理論式"
+        else:
+            per = peg[t] * g * 100
+            how = "PEG×g"
+        price = per * e[t]
+        pv = price / (1 + vm.COE) ** (t - 2026) * surv
+        rows.append(dict(year=t, eps=e[t], g=g, g5=g5, peg=peg[t], per=per, how=how, price=price, pv=pv))
+    return rows, sum(r["pv"] * wi for r, wi in zip(rows, w))
+
+
 # ---------------------------------------------------------------- 構造評価 → 許容 PEG・α(第3版で規則を追加: 等級内の位置を条件の構成で決める)
 # 利用者の指摘「構造評価が上がって許容 PEG が変わらないのは意味が分からない」(2026-10-18)。
 # 等級(S〜C)は従来の規則(拒否権・C×4 の上限)で決め、等級のレンジの中の位置を条件の点数の平均で決める。
@@ -317,7 +340,8 @@ def grade_of(grades):
 
 
 # 第3版の現在の構造(条件9 は対象外)
-GRADES_NOW = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "A", 7: "B", 8: "B", 10: "B", 11: "B", 12: "B", 13: "B"}
+GRADES_NOW = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "A", 7: "A", 8: "B", 10: "B", 11: "B", 12: "B", 13: "B"}
+GRADES_NOW_C7B = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "A", 7: "B", 8: "B", 10: "B", 11: "B", 12: "B", 13: "B"}
 GRADES_V2 = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "B", 7: "C", 8: "C", 10: "B", 11: "B", 12: "B", 13: "C"}
 GRADES_V1 = {1: "B", 2: "C", 3: "B", 4: "S", 5: "B", 6: "B", 7: "C", 8: "C", 10: "B", 11: "B", 12: "B", 13: "C"}
 # 節点の成否で動く条件(振れ幅は対称: 良い側 +1 段、悪い側 −1 段)。条件2 は 2028 年の ROTCE で決める
@@ -362,10 +386,7 @@ def tree_v3(eng_mult, cond=None, p3=None):
         stc = structure(path)
         sg = scenario_grades(st, stc[2028]["rotce"])
         gr = grade_of(sg)
-        peg_keep = dict(vm.PEG)
-        vm.PEG = gr["peg"]
-        _, val = vm.fair_path(vm.eps_of(path), eng_mult)
-        vm.PEG = peg_keep
+        _, val = fair_path_skill(vm.eps_of(path), gr["peg"])
         p = p3 if st["N3"] else 1 - p3
         for k in ("N1", "N2"):
             pc = cond[(k, "N3")][0 if st["N3"] else 1]
@@ -444,7 +465,7 @@ def two_layer(t, base_st):
 COND13 = [
     (1, "競争優位", "B", "B", "B(上方の留保)"), (2, "コア事業の CF", "B(C との境界)", "B", "B"), (3, "資産の転用", "B", "B", "B(上方の留保)"),
     (4, "財務の健全性", "S", "S", "S"), (5, "経営者", "B", "B", "B"), (6, "EPS 成長と PEG", "B", "A", "A"),
-    (7, "安い理由", "C", "B", "B"), (8, "コモディティでない", "C", "B", "B(上方の留保)"), (9, "停めない運用", "対象外", "対象外", "対象外"),
+    (7, "安い理由", "C", "A", "A"), (8, "コモディティでない", "C", "B", "B(上方の留保)"), (9, "停めない運用", "対象外", "対象外", "対象外"),
     (10, "無形資産の陳腐化", "B", "B", "B"), (11, "模倣困難", "B", "B", "B(上方の留保)"), (12, "収益の性格", "B", "B", "B(上方の留保)"),
     (13, "アーキタイプ", "C", "B", "B(上方の留保)"),
 ]
@@ -462,18 +483,93 @@ def run():
     out["cond6"] = cond6()
 
     g_now, g_v2, g_v1 = grade_of(GRADES_NOW), grade_of(GRADES_V2), grade_of(GRADES_V1)
-    out["grade_rule"] = dict(now=g_now, v2_recalc=g_v2, v1_recalc=g_v1, v2_used=dict(g2.PEG_B), v2_alpha_used=0.225)
+    out["grade_rule"] = dict(now=g_now, v2_recalc=g_v2, v1_recalc=g_v1, c7b=grade_of(GRADES_NOW_C7B), v2_used=dict(g2.PEG_B), v2_alpha_used=0.225)
     vm.PEG = dict(g_now["peg"])
     base = vm.engine()
     ev = vm.engine_value(base)
     eng_mult = {t: ev * (1 + vm.COE) ** (t - 2026 + 0.2) / base[t + 1]["eps"] for t in [2026, 2027, 2028, 2029]}
     paths = {"consensus": vm.CONS, "company": vm.COMP, "engine": vm.eps_of(base)}
-    out["values"] = {k: round(vm.fair_path(e, eng_mult)[1], 2) for k, e in paths.items()}
+    peg_now = g_now["peg"]
+    out["values"] = {k: fair_path_skill(e, peg_now)[1] for k, e in paths.items()}
+    out["rows"] = {k: fair_path_skill(e, peg_now)[0] for k, e in paths.items()}
+    out["values_peg10"] = {k: fair_path_skill(e, {y: 1.0 for y in vm.YEARS})[1] for k, e in paths.items()}   # PEG 1.0 固定の参考
+    # 第1〜2版の方法(3 つの PER の平均)での値: 比較のために残す
+    out["values_old_method"] = {k: vm.fair_path(e, eng_mult)[1] for k, e in paths.items()}
     vm.PEG = dict(g2.PEG_B)
-    out["values_v2peg"] = {k: round(vm.fair_path(e, eng_mult)[1], 2) for k, e in paths.items()}
-    vm.PEG = dict(g_now["peg"])
-    out["rows_engine"] = [{kk: (round(vv, 3) if isinstance(vv, float) else vv) for kk, vv in r.items()}
-                          for r in vm.fair_path(paths["engine"], eng_mult)[0]]
+    out["values_old_method_v2peg"] = {k: vm.fair_path(e, eng_mult)[1] for k, e in paths.items()}
+    vm.PEG = dict(peg_now)
+    # 交差確認(平均しない。ずれの理由を記録する): DCF(FCFE、資本コスト 13.86%、終価 PER 理論式)、TBV × ROTCE、同業・市場の PER
+    out["cross"] = dict(dcf=ev, tbv=vm.tbv_check(0.15), terminal_per=vm.theory_per(vm.G_LR, 0.18),
+                        per_implied_now=out["rows"]["engine"][0]["per"], market_ntm_pe=vm.PRICE / (0.205 * 0.60 + 0.795 * 0.83),
+                        peers=dict(SP500=(19.0, 0.15), NU=(16.0, 0.309), LC=(11.2, 0.343), HOOD=(44.0, 0.274), ALLY=(7.3, 0.218), COF=(8.4, 0.166)),
+                        dcf_value_share_after_2030=None)
+    # 株価が示す PEG(エンジンの g で、年度別テーブルの価値が株価に一致する PEG の水準)
+    lo, hi = 0.2, 1.5
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        pg = {y: mid - 0.05 * i for i, y in enumerate([2026, 2027, 2028, 2029])}
+        if fair_path_skill(paths["engine"], pg)[1] > vm.PRICE:
+            hi = mid
+        else:
+            lo = mid
+    out["implied_peg_start"] = (lo + hi) / 2
+
+    # ---- 信用と資本の制約の数量化(価値への効き。倍率では割り引かず、EPS 経路・確率・株数で数える)
+    cc = {}
+    for label, shock in (("+0.5pt(N3 の悪い側)", 0.005), ("+1.0pt(2023 年並みの上昇)", 0.010), ("+2.0pt(保有の損益分岐 5.7%)", 0.020)):
+        pth = vm.engine(credit_shock=shock)
+        cc[label] = dict(eps2027=pth[2027]["eps"], eps2028=pth[2028]["eps"], value=fair_path_skill(vm.eps_of(pth), peg_now)[1],
+                         cap2028=pth[2028]["cap_ratio"])
+    # 株価が示す恒常の信用悪化(エンジンの他の前提はそのまま)
+    lo, hi = 0.0, 0.08
+    for _ in range(60):
+        mid = (lo + hi) / 2
+        if fair_path_skill(vm.eps_of(vm.engine(credit_shock=mid)), peg_now)[1] > vm.PRICE:
+            lo = mid
+        else:
+            hi = mid
+    cc["implied_shock"] = (lo + hi) / 2
+    # 資本: 基準・強気・弱気の総自己資本比率の経路と、増資が要る場合の希薄化(10 億ドルを株価 14.55 ドルで)
+    caps = {}
+    for nm, st in (("base", None), ("bull", "○○○○"), ("bear", "××××")):
+        if st is None:
+            pth = base
+        else:
+            kw = {}
+            for k, ok in zip(["N1", "N2", "N3", "N4"], [s == "○" for s in st]):
+                for var, (succ, fail) in g2.SHOCKS[k].items():
+                    kw[var] = succ if ok else fail
+            pth = vm.engine(**kw)
+        caps[nm] = {y: pth[y]["cap_ratio"] for y in vm.YEARS[1:]}
+        caps[nm + "_ss"] = self_suff(pth)
+    raise_sh = 1.0e9 / vm.PRICE
+    cc["capital"] = dict(paths=caps, floor=0.14, raise_1b_shares=raise_sh, raise_1b_dilution=raise_sh / vm.SH_DIL_26,
+                         raise_1b_value=out["values"]["engine"] * (1 - raise_sh / (vm.SH_DIL_26 + raise_sh)) + 1.0e9 / (vm.SH_DIL_26 + raise_sh))
+    # 同業との比較(R17・R16。検索要約経由)
+    cc["peers_credit"] = [
+        dict(name="SoFi 個人ローン", now="報告 2.62%・all-in 約 3.7%(Q2'26)", peak="3.98%(2023Q4、報告)", quality="FICO 746・年収 16.9 万ドル"),
+        dict(name="LendingClub 個人ローン", now="3.2%(Q2'26、保有分)", peak="5.0%(2023 年通期。Q3 5.1%)", quality="未取得(古い値 FICO 約 713)"),
+        dict(name="Discover 個人ローン", now="4.21%(2025Q1)", peak="4.24%(2024Q4)", quality="未取得"),
+        dict(name="Capital One 国内カード(参考)", now="4.71%(Q2'26)", peak="—", quality="—"),
+    ]
+    cc["peers_capital"] = [
+        dict(name="SoFi", cet1="18.7%(要検証)・総自己資本 18.8%", target="low-to-mid teens", payout="0%", equity_raise="2025 年に計 32 億ドル(12 月に普通株 15 億ドル)。CFO は 9 月に「現行計画で普通株の増資は不要」"),
+        dict(name="LendingClub", cet1="17.0%(Q1'26)", target="未取得", payout="未取得", equity_raise="検索で見つからず"),
+        dict(name="Capital One", cet1="13.7%(Q2'26)", target="未取得", payout="約 107%(配当 5.0 億 + 自社株買い 27 億ドル ÷ 純利益 30 億)", equity_raise="—"),
+        dict(name="Ally", cet1="10.1%(Q2'26)", target="未取得", payout="自社株買い 1.5 億ドル", equity_raise="—"),
+        dict(name="Discover(統合前)", cet1="14.1%(Q4'24)", target="—", payout="—", equity_raise="—"),
+    ]
+    cc["excess_capital"] = (0.188 - 0.14) * 48.68e9
+    # 3 つの悪い前提を同時に置いた値: 信用 +1.0pt(2023 年並み)・金利 +100bp(両面と資本コスト)・普通株 10 億ドルの増資
+    nim_d1 = out["rates"]["nii_company"] / base[2027]["iea_avg"]
+    pth = vm.engine(nim=[0.0600, 0.0585 + nim_d1, 0.0575 + nim_d1 / 2, 0.0565, 0.0560], credit_shock=0.0110)
+    coe0 = vm.COE
+    vm.COE, vm.FLOOR = coe0 + 0.01, 1 / (coe0 + 0.01)
+    v = fair_path_skill(vm.eps_of(pth), peg_now)[1] + out["rates"]["mark_net"]["mid"] * 0.78 / 1.396e9
+    vm.COE, vm.FLOOR = coe0, 1 / coe0
+    v = (v * vm.SH_DIL_26 + 1.0e9) / (vm.SH_DIL_26 + raise_sh)
+    cc["all_three_stress"] = v
+    out["credit_capital"] = cc
 
     t = tree_v3(eng_mult)
     out["tree"] = dict(ev=t["ev"], sd=t["sd"], bundles=t["bundles"], p_nodes=t["p_nodes"],
@@ -497,15 +593,26 @@ def run():
     out["two_layer"] = two_layer(t, ph["structure"])
     out["cond13"] = [dict(c=c, name=n, v2=a, now=b_, integrated=i) for c, n, a, b_, i in COND13]
 
+    # 資本コスト +1pt の効き(年度別テーブルでは割引だけに効く)。第2版の方法(DCF 倍率込み)の −0.54 は幅の下限として残す
+    c0 = vm.COE
+    vm.COE = c0 + 0.01
+    v_c = fair_path_skill(paths["engine"], peg_now)[1]
+    vm.COE = c0
+    ps = out["rates"]["per_share"]
+    ps["coe_old_method"] = ps["coe"]
+    ps["coe"] = v_c - out["values"]["engine"]
+    ps["total"] = ps["nii"] + ps["credit"] + ps["mark"] + ps["coe"]
+    ps["total_old_method"] = ps["nii"] + ps["credit"] + ps["mark"] + ps["coe_old_method"]
+    out["rates"]["econ_ytd"] = ps["total"]
+    out["rates"]["market"]["share_of_ytd"] = ps["total"] / (vm.PRICE - 25.1)
+
     # 金利 ±100bp のシナリオ(エンジンに入れた場合): NIM を 1 年目に会社の表の分だけ動かし、信用 +10bp、評価減(純額)、株主資本コスト
     r = out["rates"]
     nim_d1 = r["nii_company"] / base[2027]["iea_avg"]
     up = vm.engine(nim=[0.0600, 0.0585 + nim_d1, 0.0575 + nim_d1 / 2, 0.0565, 0.0560], credit_shock=0.0010)
     coe0 = vm.COE
     vm.COE, vm.FLOOR = coe0 + 0.01, 1 / (coe0 + 0.01)
-    ev_up = vm.engine_value(base)
-    em_up = {tt: ev_up * (1 + vm.COE) ** (tt - 2026 + 0.2) / base[tt + 1]["eps"] for tt in [2026, 2027, 2028, 2029]}
-    v_up = vm.fair_path(vm.eps_of(up), em_up)[1] + r["mark_net"]["mid"] * 0.78 / 1.396e9
+    v_up = fair_path_skill(vm.eps_of(up), peg_now)[1] + r["mark_net"]["mid"] * 0.78 / 1.396e9
     vm.COE, vm.FLOOR = coe0, 1 / coe0
     out["rate_scenario"] = dict(base=out["values"]["engine"], up100=v_up, delta=v_up - out["values"]["engine"])
 
@@ -546,7 +653,7 @@ if __name__ == "__main__":
     for row in c6["rows"]:
         print("  ", {kk: (round(v, 3) if isinstance(v, float) else v) for kk, v in row.items()})
     print("n_market", c6["n_market"], "n_strict", c6["n_strict"], "n_err", c6["n_within_err"])
-    print("values", o["values"]); print("tree ev", round(o["tree"]["ev"], 2), "sd", round(o["tree"]["sd"], 2), "pn", {kk: round(v, 3) for kk, v in o["tree"]["p_nodes"].items()})
+    print("values", {k: round(v, 2) for k, v in o["values"].items()}); print("tree ev", round(o["tree"]["ev"], 2), "sd", round(o["tree"]["sd"], 2), "pn", {kk: round(v, 3) for kk, v in o["tree"]["p_nodes"].items()})
     print("bundles", {kk: {a: round(b, 3) for a, b in v.items()} for kk, v in o["tree"]["bundles"].items()})
     print("implied bull", round(o["implied_bull_p"], 3))
     for s in o["tree_sens"]:
@@ -559,9 +666,17 @@ if __name__ == "__main__":
     for c in o["tree"]["combos"]:
         print("  ", c["state"], round(c["p"], 3), round(c["value"], 2), round(c["eps2028"], 3), round(c["rotce2028"], 3), round(c["fee2028"], 3))
     gr = o["grade_rule"]
-    for k in ("now", "v2_recalc", "v1_recalc"):
+    for k in ("now", "c7b", "v2_recalc", "v1_recalc"):
         g = gr[k]
         print("grade", k, g["letter"], round(g["avg"], 3), g.get("pos") and round(g["pos"], 3), g["peg"] and {y: round(v, 3) for y, v in g["peg"].items()}, g["alpha"] and round(g["alpha"], 4))
-    print("values_v2peg", o["values_v2peg"])
+    print("values_old_method", {k: round(v, 2) for k, v in o["values_old_method"].items()}, "old_v2peg", {k: round(v, 2) for k, v in o["values_old_method_v2peg"].items()})
+    print("values_peg10", {k: round(v, 2) for k, v in o["values_peg10"].items()})
+    for k, rows in o["rows"].items():
+        print(" rows", k, [(r["year"], round(r["eps"], 3), round(r["g"] * 100, 1), round(r["peg"], 3), round(r["per"], 1), r["how"], round(r["price"], 2), round(r["pv"], 2)) for r in rows])
+    print("cross", {k: (round(v, 2) if isinstance(v, float) else v) for k, v in o["cross"].items()})
+    print("implied peg start", round(o["implied_peg_start"], 3))
+    cc = o["credit_capital"]
+    for k, v in cc.items():
+        print(" cc", k, v if not isinstance(v, dict) else {a: (round(b, 3) if isinstance(b, float) else b) for a, b in v.items()})
     for c in o["tree"]["combos"]:
         print("  grade", c["state"], c["letter"], round(c["avg"], 3), round(c["peg26"], 3))
