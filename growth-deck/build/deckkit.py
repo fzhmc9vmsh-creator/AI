@@ -184,10 +184,10 @@ def set_type(slide, t):
 
 # ---- §3 部品 ---------------------------------------------------------------
 def add_title(slide, title, kicker=None):
-    t = _text_at(slide, 0.5, 0.35, 12.3, 0.85, title, 20, bold=True,
+    t = _text_at(slide, 0.5, 0.25, 12.3, 0.78, title, 20, bold=True,
                  color=PRIMARY, valign="b", name="title")
     if kicker:
-        _text_at(slide, 0.5, 1.12, 12.3, 0.3, kicker, 11, color=SUB, name="kicker")
+        _text_at(slide, 0.5, 1.10, 12.3, 0.3, kicker, 11, color=SUB, name="kicker")
     return t
 
 
@@ -353,12 +353,12 @@ def kpi_card(slide, x, y, w, h, value, label, note=None, color=PRIMARY):
     if h < 1.5:
         raise ValueError("kpi_card の高さは 1.5in 以上")
     _rect(slide, x, y, w, h, "bg_kpi_card", fill=WHITE, line=RULE)
-    _text_at(slide, x + 0.2, y + 0.1, w - 0.4, 0.85, value, 40, bold=True,
+    _text_at(slide, x + 0.2, y + 0.08, w - 0.4, 0.85, value, 40, bold=True,
              color=color, name="kpi_value")
-    _text_at(slide, x + 0.2, y + 0.95, w - 0.4, 0.3, label, 11, color=TEXT,
+    _text_at(slide, x + 0.2, y + 0.93, w - 0.4, 0.3, label, 11, color=TEXT,
              name="kpi_label")
     if note:
-        _text_at(slide, x + 0.2, y + 1.25, w - 0.4, 0.26, note, 9, color=SUB,
+        _text_at(slide, x + 0.2, y + 1.2, w - 0.4, 0.26, note, 9, color=SUB,
                  name="kpi_note")
 
 
