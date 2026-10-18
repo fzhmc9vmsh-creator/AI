@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左: 芯の 2 変数(貸倒・販促費率)を動かしたときの理論株価。右: 金利と、別の評価方法との照合',
-    source: 'calc/out/val.json(sens_credit_x_sm・rate_sens・tbv_check・steady_state)',
+    source: 'calc/out/growth_v2.json(sens: 信用 × 販促費率・資本コスト・DCF、第2版)、calc/out/val.json(tbv_check・steady_state)',
   });
 
   // 左: 貸倒 × 販促費率の感応度(ベースの 14.9 だけ太字、12 未満は赤字)
