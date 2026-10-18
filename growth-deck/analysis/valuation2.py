@@ -36,7 +36,7 @@ sotp = [
   ('自動車部品・調整', -45, 10, '赤字のドアロック等'),
 ]
 tot = sum(o * 0.78 * per for _, o, per, _ in sotp)
-net_debt = 500  # 億円【推定】有利子負債1,157億円−現預金(未確定)。round2で更新
+net_debt = 574  # 億円: 有利子負債1,157億円−現金同等物583億円(2026/3末、research/52)
 equity = tot - net_debt
 out['mitsui']['sotp'] = dict(rows=[dict(seg=a, ordinary=o, np=round(o * .78), per=per, value=round(o * .78 * per), note=n) for a, o, per, n in sotp],
                              total=round(tot), net_debt=net_debt, equity=round(equity),
