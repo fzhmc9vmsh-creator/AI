@@ -117,7 +117,7 @@ def make_sankey():
             val += " (%s)" % fmt_yoy(n["yoy"])
         lines.append((val, F_VAL, hl, c))
         if hl:
-            lines.append(("▲総純収益の伸び(+43%)超", F_VAL - 0.3, True, RED))
+            lines.append(("収益の伸び(+43%)を上回る", F_VAL - 0.3, True, RED))
         n["lines"] = lines
         n["lab_h"] = sum(LH(sz) for _, sz, _, _ in lines)
 
