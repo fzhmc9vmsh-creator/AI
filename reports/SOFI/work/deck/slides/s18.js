@@ -3,7 +3,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 資金の出し手 → SoFi の資本の源 → 使い道と結果 → 評価。①〜⑥ は右と対応。数値は Q2 2026(2026-06-30)と需給エンジン',
-    source: '会社開示(10-Q Q2 2026、自己資本比率の表)、research_r2/R7_funding_rates_capital.md、calc/out/val.json(engine_detail・steady_state・rotce)',
+    source: '会社開示(10-Q Q2 2026、自己資本比率の表)、research_r2/R7_funding_rates_capital.md、calc/out/val.json(engine_detail・steady_state・rotce)、calc/out/growth_v2.json(定常の ROTCE)',
     grade: 'B', condNo: 2,
   });
   L.flowMap(s, {
