@@ -43,10 +43,10 @@ module.exports = function build(pres, L) {
     bottom: 6.66,
     mech: [
       'Noto は GS で資本市場、Twitter で上場企業の財務を担った。銀行免許(2022)と GAAP 黒字(Q4 2023)を約束どおり達成',
-      'Lapointe は GS・Uber で財務を担い、2025 年は利益計画(EPS 0.25〜0.27)を上回る 0.39',
-      '貸出は JPM 住宅ローン CFO・Capital One・Citizens の消費者金融を経た Schuppenhauer が率いる',
+      'Lapointe は GS・Uber で財務を担い、\n2025 年は利益計画(EPS 0.25〜0.27)を上回る 0.39',
+      '貸出は JPM 住宅ローン CFO・Capital One・\nCitizens の消費者金融を経た\nSchuppenhauer が率いる',
       '預金・投資・保険は Schwab・JPM で資産運用を担った Keough が率いる',
-      '報酬の PSU は TBV の総額の伸びに連動し、1 株当たりではない。増資で総額は伸びる。CEO は 2026 年に約 225 万ドル(15.73〜18.06 ドル)を買い増し、1,228 万株を保有',
+      '報酬の PSU は TBV の総額の伸びに連動し、\n1 株当たりではない。増資で総額は伸びる。\nCEO は 2026 年に約 225 万ドル\n(15.73〜18.06 ドル)を買い増し、1,228 万株を保有',
     ],
     reason: 'その事業を築いた経験の持ち主が\n貸出と預金を率い、約束の実行力は高い。\n報酬が 1 株当たりでない点で B',
     up: '報酬を 1 株当たりの指標に切り替え、\nROTCE 目標の時期を示せば A',
