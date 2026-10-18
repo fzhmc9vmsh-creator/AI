@@ -266,3 +266,69 @@ if __name__ == "__main__":
     print("entry", o["entry"])
     for c in o["tree_combos"]:
         print(c)
+
+
+# ---------------------------------------------------------------- 第2版の追加(G8): 銀行免許 × フィンテックの組み合わせと資本コスト
+def g8_funding_and_coe():
+    """負債(預金)のコストと株主資本のコストを分けて、貸出 100 ドル当たりの必要利回り(税引前)を比べる。
+    入力: 預金の平均金利 3.07%・倉庫ラインとの差 1.56pt・年 7.126 億ドルの節約(R7、Q2'26)、必要資本 14.5% × RWA、税 23%。"""
+    dep, spread, eq_w, tax = 0.0307, 0.0156, 0.145, 0.23
+    debt_w = 1 - eq_w
+
+    def hurdle(fund_rate, coe):
+        return dict(debt=debt_w * fund_rate, equity=eq_w * coe / (1 - tax), total=debt_w * fund_rate + eq_w * coe / (1 - tax))
+    coe_sofi = vm.COE
+    coe_bank_beta = {b: vm.RF + b * vm.ERP for b in (1.0, 1.3)}
+    rows = dict(
+        sofi=hurdle(dep, coe_sofi),                                   # 銀行免許あり(預金)、株主資本はテック並み(β 1.93)
+        nonbank=hurdle(dep + spread, coe_sofi),                       # 免許なしのフィンテック(倉庫ライン)、同じ β
+        sofi_beta13=hurdle(dep, coe_bank_beta[1.3]),                  # 仮に β が 1.3 に下がった場合
+        sofi_beta10=hurdle(dep, coe_bank_beta[1.0]),                  # 仮に β が銀行並みの 1.0 の場合
+    )
+    savings = 712.6e6                                                  # 会社開示の年換算の節約(Q2'26)
+    sm_ann, tpd_ann = 392.4e6 * 4, 189.5e6 * 4
+    replicate = dict(sm_2024_h1_2026=796.3e6 + 1095.4e6 + 727.9e6, tech_acq=2.3e9, charter_capital=0.75e9)
+    replicate["total"] = sum(replicate.values())
+    return dict(rows=rows, coe=dict(sofi=coe_sofi, beta13=coe_bank_beta[1.3], beta10=coe_bank_beta[1.0]),
+                savings=savings, savings_vs_sm=savings / sm_ann, savings_vs_sm_tpd=savings / (sm_ann + tpd_ann),
+                savings_after_tax_ps=savings * (1 - tax) / vm.SH_DIL_26, fed_funds_gap=(0.0375 + 0.04) / 2 - dep,
+                replicate=replicate)
+
+
+def sens_v2():
+    """構造 B の PEG での感応度: 信用 × 販促費率、株主資本コスト(β)、DCF・TBV・定常状態。"""
+    vm.PEG = dict(PEG_B)
+    base = vm.engine()
+    ev = vm.engine_value(base)
+    em = {t: ev * (1 + vm.COE) ** (t - 2026 + 0.2) / base[t + 1]["eps"] for t in [2026, 2027, 2028, 2029]}
+    grid = []
+    for cs in (-0.0075, 0.0, 0.0075, 0.015):
+        row = []
+        for dsm in (-0.02, 0.0, 0.02):
+            pth = vm.engine(credit_shock=cs, sm=[0.32] + [x + dsm for x in [0.30, 0.285, 0.27, 0.255]])
+            row.append(round(vm.fair_path(vm.eps_of(pth), em)[1], 2))
+        grid.append(dict(credit_pp=cs * 100, values=row))
+    coe0 = vm.COE
+    coe_rows = {}
+    for label, c in (("β1.93", coe0), ("+1pt", coe0 + 0.01), ("β1.3", vm.RF + 1.3 * vm.ERP), ("β1.0", vm.RF + 1.0 * vm.ERP)):
+        vm.COE, vm.FLOOR = c, 1 / c
+        ev_c = vm.engine_value(base)
+        em_c = {t: ev_c * (1 + c) ** (t - 2026 + 0.2) / base[t + 1]["eps"] for t in [2026, 2027, 2028, 2029]}
+        coe_rows[label] = dict(coe=round(c, 4), value=round(vm.fair_path(vm.eps_of(base), em_c)[1], 2), dcf=round(ev_c, 2))
+    vm.COE, vm.FLOOR = coe0, 1 / coe0
+    ss_ni = 4.80e9 * (1 - 0.16 - 0.14 - 0.29) * 0.77
+    req_end26 = 0.145 * 48.68e9 * 62.0 / 52.9
+    return dict(grid=grid, coe=coe_rows, dcf=round(ev, 2), steady_rotce_tbv=ss_ni / (9.5e9 + 0.63e9), steady_rotce_req=ss_ni / req_end26)
+
+
+if __name__ == "__main__":
+    extra = dict(g8=g8_funding_and_coe(), sens=sens_v2())
+    path = os.path.join(OUT, "growth_v2.json")
+    d = json.load(open(path))
+    d.update(extra)
+    json.dump(d, open(path, "w"), ensure_ascii=False, indent=1, default=float)
+    g8 = extra["g8"]
+    print("G8 hurdle", {k: {kk: round(vv * 100, 2) for kk, vv in v.items()} for k, v in g8["rows"].items()})
+    print("G8 coe", g8["coe"], "savings/sm", round(g8["savings_vs_sm"], 3), "savings/(sm+tpd)", round(g8["savings_vs_sm_tpd"], 3),
+          "eps", round(g8["savings_after_tax_ps"], 3), "ff gap", g8["fed_funds_gap"], "replicate", {k: round(v / 1e9, 2) for k, v in g8["replicate"].items()})
+    print("sens", json.dumps(extra["sens"], ensure_ascii=False))
