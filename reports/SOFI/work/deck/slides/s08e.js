@@ -24,7 +24,7 @@ module.exports = function build(pres, L) {
     ['P5', 'LPB(手数料型)', ev('±'), '停滞。組成 37 → 31 億ドル(Q4 2025 → Q2 2026)', '10%'],
     ['P6', '学生ローン(Grad PLUS)', ev('+'), '作動。組成 +170%', '5%'],
     ['P7', '増資と資本政策', ev('+'), '作動。33 億ドルの増資で TBVPS +56%', '5%'],
-    ['P8', 'Tech Platform(Galileo)', ev('−'), '逆行。−23%、貢献利益率 30 → 14%', '5%'],
+    ['P8', 'Tech Platform(Galileo)', ev('±'), '底打ち。前期比 +12.5%、自社コアへ移行。貢献利益率は 30 → 14%', '5%'],
     ['P9', '新領域(SoFiUSD ほか)', ev('保留'), '数字が小さい(SoFiUSD 約 3 億ドル)', '3%'],
     ['P10', '販促費の効率', ev('±'), '販促費率 30.3% → 32.2%。下期の改善待ち', '2%'],
   ], {
@@ -36,8 +36,8 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 9.05, 1.62, 3.78, '規模で重みづけした判定');
   s.addChart(pres.charts.BAR, [
     { name: '作動している +', labels: ['重み'], values: [70] },
-    { name: '両面・停滞', labels: ['重み'], values: [22] },
-    { name: '逆行 −', labels: ['重み'], values: [5] },
+    { name: '両面・停滞', labels: ['重み'], values: [27] },
+    { name: '逆行 −', labels: ['重み'], values: [0] },
     { name: '保留', labels: ['重み'], values: [3] },
   ], L.chartStyle({
     x: 9.05, y: 1.95, w: 3.78, h: 1.15, barDir: 'bar', barGrouping: 'percentStacked',

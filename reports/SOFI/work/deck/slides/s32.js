@@ -4,19 +4,19 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '事業実態 EPS(調整後 EPS。株式報酬を費用に含む)、ドル。2026〜29 年はコンセンサス・会社目標・事業エンジン、2030 年は延長',
-    source: 'コンセンサス(R2・R8)、会社の中期目標(2025→28 年 EPS CAGR 38〜42%)、calc/out/val.json(事業エンジン・強気・弱気)。過去の成長率は使っていない',
+    source: 'コンセンサス(R2・R8)、会社の中期目標(2025→28 年 EPS CAGR 38〜42%)、calc/out/growth_v2.json(4 節点すべて成功・失敗)、calc/out/val.json(事業エンジン)。過去の成長率は使っていない',
   });
   const labels = ['2026', '2027', '2028', '2029', '2030(延長)'];
   const axis = { valAxisMinVal: 0, valAxisMaxVal: 2.2 };
   s.addChart([
     { type: pres.charts.LINE, data: [
-      { name: '強気', labels, values: [0.71, 1.03, 1.36, 1.67, 2.05] },
-      { name: '弱気', labels, values: [0.49, 0.66, 0.86, 1.06, 1.30] },
-      { name: 'コンセンサス', labels, values: [0.60, 0.83, 1.08, 1.32, 1.56] },
+      { name: '4 節点すべて成功', labels, values: [0.673, 1.01, 1.367, 1.716, 2.156] },
+      { name: '4 節点すべて失敗', labels, values: [0.525, 0.684, 0.854, 1.015, 1.221] },
+      { name: 'コンセンサス', labels, values: [0.60, 0.83, 1.08, 1.32, 1.558] },
     ], options: { showValue: false } },
     { type: pres.charts.LINE, data: [
-      { name: 'ベース(事業エンジン)', labels, values: [0.60, 0.85, 1.10, 1.35, 1.66] },
-    ], options: { showValue: true, secondaryValAxis: true, secondaryCatAxis: true, chartColors: [L.C.primary] } },
+      { name: 'ベース(事業エンジン)', labels, values: [0.5993, 0.8448, 1.1034, 1.3494, 1.6571] },
+    ], options: { showValue: true, secondaryValAxis: true, secondaryCatAxis: true, chartColors: [L.C.dark] } },
   ], L.chartStyle({
     x: L.M, y: 1.65, w: 8.35, h: 5.0, objectName: 'chart',
     showLegend: true, legendPos: 'b', chartColors: [L.C.light, L.C.red, L.C.teal], lineSize: 2, lineDataSymbolSize: 6,

@@ -21,7 +21,7 @@ module.exports = function build(pres, L) {
       { id: 'fs', c: 2, r: 0, kind: 'self', label: 'FS 手数料', sub: '0.87 億ドル\n(+81%)' },
       { id: 'lpb', c: 2, r: 1, kind: 'self', label: 'LPB', sub: '年 5.6 億ドル\n(+11%)' },
       { id: 'newb', c: 2, r: 2, h: 0.94, kind: 'self', label: '新領域', sub: 'SoFiUSD 流通\n約 3 億ドル\n中小企業ローン\n2026-06〜' },
-      { id: 'gal', c: 2, r: 3, kind: 'risk', label: 'Galileo', sub: '収益 −23%\n大口顧客が離脱' },
+      { id: 'gal', c: 2, r: 3, kind: 'unit', label: 'Tech Platform', sub: '前期比 +12.5%\n底打ち・\n自社コアへ移行' },
       { id: 'buyers', c: 3, r: 1, h: 0.98, label: 'ローンの買い手', sub: 'Blue Owl・\nFortress・\nBasePoint\n(3 年 30 億ドル)' },
       { id: 'chime', c: 3, r: 3, kind: 'risk', label: 'Chime', sub: '自社基盤へ移行\n解約料\n1,800 万ドル' },
     ],
@@ -44,11 +44,11 @@ module.exports = function build(pres, L) {
       '会員 1,580 万人に製品を足す。新製品の 51% は既存会員が開き、FS 手数料は 0.87 億ドル(+81%)',
       '組成の能力を他社の資金に貸す。LPB 契約は 100 億ドル超、手数料は年 5.6 億ドル(+11%)',
       '銀行免許の上に暗号資産(2025-11 再開)と SoFiUSD(2026-05)を載せた。流通は約 3 億ドルでまだ小さい',
-      '技術基盤の外販は、大口顧客(Chime)が自社基盤へ移り −23%。転用の失敗例',
+      '技術基盤の外販は大口顧客(Chime)の離脱で\n前年比 −23%。ただし前期比 +12.5% で\n底打ちし、SoFi Money を自社の新コアへ移して\n外販の信頼を得る段階',
     ],
-    reason: '会員と組成の基盤の転用は成果が出たが、\n新領域はまだ小さく、技術基盤の外販は\n縮んでいるため B',
-    up: 'LPB 手数料が年 7 億ドルを超え、\nFS 手数料が +40% 以上を保てば A',
-    down: 'LPB 組成が四半期 30 億ドルを割り、\nGalileo の流出が続けば C',
+    reason: '会員と組成の基盤の転用は成果が出た。\nTech Platform は底打ち → 信頼獲得の段階で、\n新領域はまだ小さいため B',
+    up: 'LPB 手数料が年 7 億ドルを超え、\nTech Platform が前年比で増収に戻れば A',
+    down: 'LPB 組成が四半期 30 億ドルを割り、\nTech Platform の貢献利益の低下が続けば C',
   });
   return s;
 };
