@@ -58,6 +58,8 @@ def engine(sh=None, **kw):
         credit_shock=0.0,                         # 個人ローン NCO の恒常変化(pp)。個人ローン残高比 ~48% × iea
         tax=[0.22, 0.23, 0.23, 0.23, 0.23],
         sh_g=0.015, conv_extra=0.03e9,            # SBC 等の年率希薄化、2029 以降の転換社債の追加株(キャップ超)
+        spill_conv=0.30,                          # 資本で持てない個人ローンのうち LPB で組成し直す割合(第2版で引数化。既定は第1版と同じ)
+        extra_rev=[0.0, 0.0, 0.0, 0.0, 0.0],      # 新しい収益線(SoFiUSD の準備資産の利ざや等)。第2版で追加、既定 0
     )
     p.update(kw)
     out = {}
@@ -79,7 +81,7 @@ def engine(sh=None, **kw):
             spill = max(want_end - iea_end, 0.0)                       # 資本で持てない分は LPB へ
             iea_avg = (iea_end_prev + iea_end) / 2
             iea_end_prev = iea_end
-            lpb = lpb * (1 + p["lpb_g_base"][i]) + spill * 0.30 * 0.046  # 溢れた個人ローン相当の3割を組成、手数料 4.6%
+            lpb = lpb * (1 + p["lpb_g_base"][i]) + spill * p["spill_conv"] * 0.046  # 溢れた個人ローン相当の一部を組成、手数料 4.6%
             fs *= 1 + p["fs_g"][i]
             tp *= 1 + p["tp_g"][i]
             gains *= 1 + p["gains_g"][i]
@@ -87,7 +89,7 @@ def engine(sh=None, **kw):
             spill = 0.0
         nii = iea_avg * p["nim"][i]
         credit = -p["credit_shock"] * 0.48 * iea_avg                    # 個人ローン ~48%
-        rev = nii + lpb + fs + tp + gains + p["elim"]
+        rev = nii + lpb + fs + tp + gains + p["elim"] + p["extra_rev"][i]
         if i == 0:
             rev_scale = 4.80e9 / rev                                     # 2026 をガイダンス中央に較正
         rev *= rev_scale
