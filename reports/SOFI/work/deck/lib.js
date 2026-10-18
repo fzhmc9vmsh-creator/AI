@@ -42,8 +42,8 @@ const warnings = [];
 function newDeck() {
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
-  pres.author = 'SoFi 長期保有適格性審査';
-  pres.title = 'SoFi Technologies(SOFI)長期保有適格性審査';
+  pres.author = MT.DOC_AUTHOR || '長期保有適格性審査';   // 文書情報は meta.js の DOC_TITLE・DOC_AUTHOR から(案件の名前を残さない)
+  pres.title = MT.DOC_TITLE || '長期保有適格性審査';
   pres.theme = { headFontFace: FONT, bodyFontFace: FONT };
   return pres;
 }
@@ -61,7 +61,7 @@ function header(s) {
     { text: `第${ctx.ch.no}章 ${ctx.ch.name}`, options: { color: C.sub } },
     { text: '   ›   ', options: { color: C.sub } },
     { text: ctx.secLabel, options: { color: C.dark, bold: true } },
-  ], { x: M, y: 0.06, w: 8.4, h: 0.22, fontFace: FONT, fontSize: 9, margin: 0, valign: 'middle', isTextBox: true, objectName: 'hdr_crumb' });
+  ], { x: M, y: 0.06, w: W - 2 * M - MT.CH.length * 0.9 - 0.1, h: 0.22, fontFace: FONT, fontSize: 9, margin: 0, valign: 'middle', isTextBox: true, objectName: 'hdr_crumb' });
   const pw = 0.86, gap = 0.04, n = MT.CH.length;
   MT.CH.forEach((c, i) => {
     const x = W - M - (n - i) * pw - (n - 1 - i) * gap, on = c.no === ctx.ch.no;
@@ -134,11 +134,12 @@ function agenda(pres, current, page) {
   s.addShape('rect', { x: 0, y: 0, w: W, h: H, fill: { color: C.dark }, line: { color: C.dark }, objectName: 'bg_agenda' });
   text(s, '目次', { x: 0.8, y: 0.55, w: 3.0, h: 0.7, fontSize: 26, bold: true, color: C.white, objectName: 'bg_agenda_lbl' });
   MT.CH.forEach((c, i) => {
-    const y = 1.6 + i * 1.25, on = i === current;
+    const step = MT.CH.length > 4 ? 1.02 : 1.25;           // 5 章以上は間隔を詰める
+    const y = 1.6 + i * step, on = i === current;
     s.addShape('ellipse', { x: 0.85, y, w: 0.5, h: 0.5, fill: { color: on ? C.primary : C.dark }, line: { color: C.white, width: 1 }, transparency: on ? 0 : 50, objectName: 'bg_agenda_n' + i });
     text(s, String(c.no), { x: 0.85, y, w: 0.5, h: 0.5, fontSize: 14, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_nt' + i });
     text(s, c.name, { x: 1.55, y: y - 0.02, w: 6.2, h: 0.54, fontSize: 18, bold: on, color: C.white, valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_ch' + i });
-    if (on) text(s, c.why, { x: 1.55, y: y + 0.52, w: 6.2, h: 0.62, fontSize: 10.5, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
+    if (on) text(s, c.why, { x: 1.55, y: y + 0.5, w: 6.2, h: MT.CH.length > 4 ? 0.48 : 0.62, fontSize: MT.CH.length > 4 ? 10 : 10.5, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
   });
   if (current >= 0) {
     const c = MT.CH[current];

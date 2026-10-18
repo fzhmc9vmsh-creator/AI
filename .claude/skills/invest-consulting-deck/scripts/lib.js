@@ -42,8 +42,8 @@ const warnings = [];
 function newDeck() {
   const pres = new pptxgen();
   pres.layout = 'LAYOUT_WIDE';
-  pres.author = 'Oracle 長期保有適格性審査';
-  pres.title = 'Oracle(ORCL)長期保有適格性審査';
+  pres.author = MT.DOC_AUTHOR || '長期保有適格性審査';   // 文書情報は meta.js の DOC_TITLE・DOC_AUTHOR から(案件の名前を残さない)
+  pres.title = MT.DOC_TITLE || '長期保有適格性審査';
   pres.theme = { headFontFace: FONT, bodyFontFace: FONT };
   return pres;
 }
@@ -61,7 +61,7 @@ function header(s) {
     { text: `第${ctx.ch.no}章 ${ctx.ch.name}`, options: { color: C.sub } },
     { text: '   ›   ', options: { color: C.sub } },
     { text: ctx.secLabel, options: { color: C.dark, bold: true } },
-  ], { x: M, y: 0.06, w: 8.4, h: 0.22, fontFace: FONT, fontSize: 9, margin: 0, valign: 'middle', isTextBox: true, objectName: 'hdr_crumb' });
+  ], { x: M, y: 0.06, w: W - 2 * M - MT.CH.length * 0.9 - 0.1, h: 0.22, fontFace: FONT, fontSize: 9, margin: 0, valign: 'middle', isTextBox: true, objectName: 'hdr_crumb' });
   const pw = 0.86, gap = 0.04, n = MT.CH.length;
   MT.CH.forEach((c, i) => {
     const x = W - M - (n - i) * pw - (n - 1 - i) * gap, on = c.no === ctx.ch.no;
@@ -134,11 +134,12 @@ function agenda(pres, current, page) {
   s.addShape('rect', { x: 0, y: 0, w: W, h: H, fill: { color: C.dark }, line: { color: C.dark }, objectName: 'bg_agenda' });
   text(s, '目次', { x: 0.8, y: 0.55, w: 3.0, h: 0.7, fontSize: 26, bold: true, color: C.white, objectName: 'bg_agenda_lbl' });
   MT.CH.forEach((c, i) => {
-    const y = 1.6 + i * 1.25, on = i === current;
+    const step = MT.CH.length > 4 ? 1.02 : 1.25;           // 5 章以上は間隔を詰める
+    const y = 1.6 + i * step, on = i === current;
     s.addShape('ellipse', { x: 0.85, y, w: 0.5, h: 0.5, fill: { color: on ? C.primary : C.dark }, line: { color: C.white, width: 1 }, transparency: on ? 0 : 50, objectName: 'bg_agenda_n' + i });
     text(s, String(c.no), { x: 0.85, y, w: 0.5, h: 0.5, fontSize: 14, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_nt' + i });
     text(s, c.name, { x: 1.55, y: y - 0.02, w: 6.2, h: 0.54, fontSize: 18, bold: on, color: C.white, valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_ch' + i });
-    if (on) text(s, c.why, { x: 1.55, y: y + 0.52, w: 6.2, h: 0.62, fontSize: 10.5, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
+    if (on) text(s, c.why, { x: 1.55, y: y + 0.5, w: 6.2, h: MT.CH.length > 4 ? 0.48 : 0.62, fontSize: MT.CH.length > 4 ? 10 : 10.5, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
   });
   if (current >= 0) {
     const c = MT.CH[current];
@@ -355,10 +356,10 @@ function matrix(s, { x, y, w, h, xLabels, yLabels, xTitle, yTitle, cells, highli
 //   cols: [幅, …]      箱の列の幅(inch)。通路の幅 = (w − Σ幅) ÷ (列数 − 1)。ラベルを置く通路は 1.0in 以上(手本 s08b は約 1.0in)
 //   rows: n            行数。r = 0..n-1(0.5 刻み可)
 //   nodeH              箱の高さ(既定: 行の高さ − 0.22、最大 0.82)
-//   lanes: [{label, c0, c1, self}]     背景の帯(誰の領域か)。self = Oracle(薄緑)、他は薄灰
+//   lanes: [{label, c0, c1, self}]     背景の帯(誰の領域か)。self = 自社(薄緑)、他は薄灰
 //   groups: [{label, c0, c1, r0, r1}]  事業単位などの点線の囲み(ラベルは上辺の上に載る)
 //   nodes: [{id, c, r, cs, rs, label, sub, kind, h, w, dx, dy, tag: {text, tone: red|green|amber}}]
-//          kind: self(Oracle 本体・緑塗り)/ unit(Oracle の事業・白地に緑枠)/ ext(外部)/ ok(有利・薄緑)/ risk(不利・赤枠)/ key(要点・濃緑塗り)/ note(枠なしの注記)
+//          kind: self(自社本体・緑塗り)/ unit(自社の事業・白地に緑枠)/ ext(外部)/ ok(有利・薄緑)/ risk(不利・赤枠)/ key(要点・濃緑塗り)/ note(枠なしの注記)
 //   edges: [{from, to, label, kind, n, fs, ts, fo, tof, mx, my, lpos, lw, ldx, ldy, below, left, both}]
 //          kind: money(カネ・濃緑の太線)/ goods(モノ・サービス・ティール)/ risk(リスク・赤の破線)/ ctrl(契約・統治・情報・灰の破線)
 //          n: 仕組みの番号 → ラベルの頭に ①② が付き、mechPanel の同じ番号の説明と対応する

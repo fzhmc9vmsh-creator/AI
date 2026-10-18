@@ -1,2 +1,2 @@
-// 第3章の中扉
-module.exports = function build(pres, L) { L.agenda(pres, 2, 16); };
+// 第4章(13条件)の中扉
+module.exports = function build(pres, L) { return L.agenda(pres, 3); };

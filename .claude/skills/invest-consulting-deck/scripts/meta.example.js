@@ -127,4 +127,7 @@ function secPages(chNo) {
   });
 }
 
-module.exports = { CH, ORDER, META, ctxFor, secPages };
+// 文書情報(pptx のタイトル・作成者)。案件ごとに必ず書き換える(lib.js の newDeck が読む)
+const DOC_TITLE = 'Oracle(ORCL)長期保有適格性審査', DOC_AUTHOR = 'Oracle 長期保有適格性審査';
+
+module.exports = { CH, ORDER, META, ctxFor, secPages, DOC_TITLE, DOC_AUTHOR };
