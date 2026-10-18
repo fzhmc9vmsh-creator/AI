@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '構造評価 × 価格乖離の 2 軸マトリクス(valuation-model §4-1)、3 経路の乖離、非対称性、エントリー価格帯(scenario-strategy §6)',
-    source: 'calc/out/val.json、銘柄分析メソッド',
+    source: 'calc/out/growth_v2.json(第2版)、calc/out/val.json、銘柄分析メソッド',
   });
   const c = (t) => ({ text: t });
   L.matrix(s, {

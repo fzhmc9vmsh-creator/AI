@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左: 発生確率 × 影響(本体評価に組み込んだリスクとテールリスク)。右: 兆候とトリガー',
-    source: 'calc/out/val.json、research_r2/R5_credit_fv.md・R7_funding_rates_capital.md、本資料 第3章の監視 KPI',
+    source: 'calc/out/val.json、research_r2/R5_credit_fv.md・R7_funding_rates_capital.md、本資料 第4章の監視 KPI',
   });
   const c = (t) => ({ text: t });
 

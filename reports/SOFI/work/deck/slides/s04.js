@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '13 条件の評価一覧(評価の色は全スライド共通: S 濃緑・A 緑・B 薄緑・C アンバー・対象外は灰)',
-    source: '本資料 第3章(条件別の構造分析)、銘柄分析メソッド Phase 3・6',
+    source: '本資料 第3章(成長の尺度)・第4章(条件別の構造分析)、銘柄分析メソッド Phase 3・6',
     grade: 'B',
   });
   // 評価セル(GRADE の色で塗る)

@@ -10,7 +10,7 @@ module.exports = function build(pres, L) {
   L.kpiTiles(s, [
     { value: '14.7 ドル', label: '理論株価(確率加重)', note: 'ベース 14.9・強気 18.2・弱気 11.8' },
     { value: '14.55 ドル', label: '株価(10/16)', note: '理論株価の 0.99 倍' },
-    { value: 'B', label: '構造評価', note: 'S1・B8・C3(条件 9 は対象外)', color: L.GRADE.B.fill },
+    { value: 'B', label: '構造評価', note: 'S1・B8・C3(条件9 は対象外)', color: L.C.primary },
     { value: '監視', label: '最終判断', note: '分割エントリーの目安 13.2 ドル以下', color: C.dark },
   ], { y: 1.62, h: 1.45 });
 

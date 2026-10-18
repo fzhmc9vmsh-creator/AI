@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: 'Appendix: 計算の前提(事前登録)、既知の制約、免責',
-    source: 'calc/prereg.md、calc/val_model.py、research/・research_r2/ の各ファイル',
+    source: 'calc/prereg.md、calc/val_model.py・growth_v2.py・A2_growth_memo.md、research/・research_r2/・research_r3/ の各ファイル',
   });
 
   // 左: 前提(表)
@@ -18,7 +18,6 @@ module.exports = function build(pres, L) {
     ['税率', '22%(2026 年)、23%(2027 年以降)'],
     ['生存確率', '年 98.5%(年度末の目標を今日へ割り引くときに掛ける)'],
     ['長期成長率', '5%(TBV × ROTCE の照合と定常状態の価値)'],
-    ['評価の型', '銘柄分析メソッド(13 条件・集計の規則・許容 PEG)'],
     ['株価', '14.55 ドル(2026-10-16 終値)'],
     ['第2版の変更', 'PEG(構造 C→B)、確率(25/50/25 → 節点ツリー)、\nα 30% → 22.5%。株価を見た後の変更として事前登録に記録'],
   ], { x: 0.5, y: 1.62, w: 6.2, colW: [1.6, 4.6], fontSize: 10, rowH: 0.37, align: ['left', 'left'] });

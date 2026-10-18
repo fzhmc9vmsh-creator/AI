@@ -3,7 +3,7 @@ module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
     kicker: '構造的要因サマリー: 構造(だから)→ 条件の評価(となり)→ 構造評価への効き(を動かした)',
-    source: '本資料 第3章、calc/out/val.json',
+    source: '本資料 第3章・第4章、calc/out/growth_v2.json',
   });
 
   const up = [

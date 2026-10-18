@@ -1,8 +1,8 @@
 // 投資行動(指示書 spec/ch1_ch4.md の s37)
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    kicker: '時系列投資戦略(4 フェーズ)。判別 KPI は第3章の監視 KPI と共通',
-    source: '銘柄分析メソッド scenario-strategy §7、本資料 第3章・最終判断',
+    kicker: '時系列投資戦略(4 フェーズ)。判別 KPI は第3章(成長の尺度)・第4章の監視 KPI と共通',
+    source: '銘柄分析メソッド scenario-strategy §7、本資料 第3・4章・最終判断',
   });
 
   // 上段: 4 つの矢羽(x 0.5 から幅 3.0、重ね 0.1)。薄緑の矢羽だけ濃緑の文字
