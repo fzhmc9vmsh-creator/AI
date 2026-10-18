@@ -1,0 +1,15 @@
+# 日東紡績 3110 四半期・累計データ. 単位: revenue/op_income/ordinary_or_pretax/net_income=億円, eps=円(1株5株分割 2026-07-01 反映後). 期間: FY2025 = FY3/25(2024年4月〜2025年3月). (cum)=累計, (derived)=通期・累計からの差し引き(私の計算). 空欄=不明. 詳細は /home/user/AI/growth-deck/data/3110_data.md
+period,revenue,op_income,ordinary_or_pretax,net_income,eps,source
+FY2025_1Q,261.15,39.07,,,,https://www2.jpx.co.jp/disc/31100/140120240731559515.pdf (2025年3月期1Q短信)
+FY2025_2Q_cum,,73.45,,,,https://irbank.net/E00542/OperatingIncome?t=Q2 (営業利益のみ)
+FY2025_3Q_cum,815.20,118.11,131.96,94.21,,https://www2.jpx.co.jp/disc/31100/140120250203561915.pdf (cum)
+FY2025_4Q_derived,275.15,46.34,43.72,34.16,,FY2025通期 - 3Q累計 (derived)
+FY2025_FY,1090.35,164.45,175.68,128.37,70.52,https://www2.jpx.co.jp/disc/31100/140120250203561915.pdf ; EPS: https://finance.matsui.co.jp/stock/3110/settlement/index ; 経常・純利益は Diamond/検索要約
+FY2026_1Q,282.31,42.98,43.44,31.47,17.29,https://www2.jpx.co.jp/disc/31100/081220260805509788_tse-qcedjpsm-31100-20260805331100-ixbrl.htm (前年同期比較値) ; EPS: https://finance.matsui.co.jp/stock/3110/settlement/index
+FY2026_2Q_cum,574.12,94.54,91.59,68.78,,https://irbank.net/E00542/OperatingIncome?t=Q2 (OP) ; 他は検索要約 (cum)
+FY2026_2Q_derived,291.81,51.56,48.15,37.31,,FY2026 2Q累計 - 1Q (derived)
+FY2026_3Q_cum,875.94,149.33,,,,検索要約(URL特定不可) (cum)
+FY2026_3Q_derived,301.82,54.79,,,,FY2026 3Q累計 - 2Q累計 (derived)
+FY2026_4Q_derived,306.35,58.86,,,,FY2026通期 - 3Q累計 (derived)
+FY2026_FY,1182.29,208.19,215,417.70,229.47,https://www2.jpx.co.jp/disc/31100/081220260512525575_tse-acedjpsm-31100-20260512331100-ixbrl.htm ; 売上・OP: https://www.traders.co.jp/stocks/61_3110/achievement ; 経常: https://scouter.monex.co.jp/news/detail/3110_20260512_act_20260512_153115_1 ; 純利益: https://the-shashi.com/tse/3110/financials/profit/ ; EPS: https://finance.matsui.co.jp/stock/3110/settlement/index (経常は四捨五入)
+FY2027_1Q,340.33,79.43,84.33,57.97,31.85,https://www2.jpx.co.jp/disc/31100/081220260805509788_tse-qcedjpsm-31100-20260805331100-ixbrl.htm ; https://s.minkabu.jp/stock/3110/settlement

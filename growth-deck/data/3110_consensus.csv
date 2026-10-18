@@ -1,0 +1,6 @@
+# 日東紡績 3110 コンセンサス. 単位: revenue/op_income=億円, eps=円(分割後). 経常利益コンセンサス(参考): FY2027 284.32(2026-07-17), 304.62(2026-09-04), 313.28(2026-09-28)(列なしのため本CSVに含めず、詳細は data/3110_data.md §6). 会社予想(期初・修正後)は本CSVの対象外. 空欄=不明.
+fiscal_year,revenue,op_income,eps,n_analysts,source,date
+FY2027,1386.71,282.43,,,https://kabuyoho.jp/sp/reportAnalyst?bcode=3110 (売上・営業利益・純利益は kabuyoho 7/17時点の表),2026-07-17
+FY2027,,,,7,https://kabuyoho.jp/sp/reportAnalyst?bcode=3110 (レーティング算出人数、目標株価平均4484円),2026-09-25
+FY2028,,,,,検索で取得できず,
+FY2029,,,,,検索で取得できず,
