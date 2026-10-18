@@ -13,7 +13,7 @@ module.exports = function build(pres, L) {
       { id: 'gt', c: 0, r: 0, h: 1.03, kind: 'ok', label: 'Goldman・\nNFL・Twitter', sub: 'Noto: GS 1999〜\n2004 パートナー\nNFL 2008〜10\nTwitter CFO 2014〜17' },
       { id: 'uber', c: 0, r: 1, label: 'Goldman・Uber', sub: 'Lapointe: GS 2012〜15\nUber 2015〜18' },
       { id: 'cons', c: 0, r: 2, rs: 2, kind: 'ok', label: '消費者金融・\n資産運用', sub: 'JPM 住宅ローン CFO・\nCapital One・\nCitizens/Schwab・JPM' },
-      { id: 'noto', c: 1, r: 0, kind: 'self', label: 'Noto\n(CEO)', sub: '2018-02 就任\nWest Point・Wharton' },
+      { id: 'noto', c: 1, r: 0, kind: 'self', label: 'Noto\n(CEO)', sub: '2018-02 就任\nWest Point・Wharton', tag: { text: '⑤ 報酬は TBV の総額', tone: 'amber' } },
       { id: 'lap', c: 1, r: 1, kind: 'self', label: 'Lapointe\n(CFO)', sub: '2018 入社\n2020-09 CFO' },
       { id: 'sch', c: 1, r: 2, kind: 'self', label: 'Schuppenhauer\n(貸出の責任者)', sub: '2024-08 入社' },
       { id: 'keo', c: 1, r: 3, kind: 'self', label: 'Keough\n(FS の責任者)', sub: '2023-03 入社' },
@@ -42,7 +42,7 @@ module.exports = function build(pres, L) {
   L.mechPanel(s, {
     bottom: 6.66,
     mech: [
-      'Noto は GS で資本市場、Twitter で上場企業の財務を担った。銀行免許(2022)と GAAP 黒字(Q4 2023)を約束どおり達成',
+      'Noto は GS で資本市場、\nTwitter で上場企業の財務を担った。\n銀行免許(2022)と GAAP 黒字(Q4 2023)\nを約束どおり達成',
       'Lapointe は GS・Uber で財務を担い、\n2025 年は利益計画(EPS 0.25〜0.27)を上回る 0.39',
       '貸出は JPM 住宅ローン CFO・Capital One・\nCitizens の消費者金融を経た\nSchuppenhauer が率いる',
       '預金・投資・保険は Schwab・JPM で資産運用を担った Keough が率いる',

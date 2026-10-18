@@ -1,5 +1,5 @@
 // 条件2 コア事業の稼ぐ力と資本(評価 C)。指示書 spec/ch3.md の s18 節
-// 配置は ORCL s18(4 列・4 行)、高さと kpiBand は ORCL s23(h 4.66、mechPanel bottom 6.32)
+// 配置は 4 列・4 行、評価 C の高さ(h 4.66、mechPanel bottom 6.32)と kpiBand
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 資金の出し手 → SoFi の資本の源 → 使い道と結果 → 評価。①〜⑥ は右と対応。数値は Q2 2026(2026-06-30)と需給エンジン',

@@ -1,4 +1,4 @@
-// 条件12(評価 B): 収益の性格。指示書 spec/ch3.md の s28 節(配置は手本 ORCL s19 の 3 列 + 外部 1 列)
+// 条件12(評価 B): 収益の性格。指示書 spec/ch3.md の s28 節(3 列 + 外部 1 列の配置)
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 収益の源 → SoFi の収益の種類 → ストックとフロー → 続く条件。①〜④ は右と対応。金額は Q2 2026(百万ドル)',
@@ -15,7 +15,7 @@ module.exports = function build(pres, L) {
       { id: 'orig', c: 0, r: 2, label: '新しい組成', sub: '107 億ドル/四半期' },
       { id: 'b2b', c: 0, r: 3, label: 'Galileo の顧客', sub: '口座 1.35 億' },
       { id: 'nii', c: 1, r: 0, kind: 'key', label: '純金利収益', sub: '788.2(収益の 65%)' },
-      { id: 'fee', c: 1, r: 1, kind: 'unit', label: '継続手数料', sub: '86.7(7%)\nインターチェンジ・Plus' },
+      { id: 'fee', c: 1, r: 1, kind: 'unit', label: '継続手数料', sub: '86.7(7%)\nインターチェンジ・Plus', subSize: 8 },
       { id: 'flow', c: 1, r: 2, kind: 'unit', label: '売却益・LPB', sub: '売却益 150.4(12%)\nLPB 140.9(12%)' },
       { id: 'tp', c: 1, r: 3, kind: 'unit', label: 'Tech Platform', sub: '52.5(4%)' },
       { id: 'stock', c: 2, r: 0, rs: 2, h: 1.85, kind: 'self', label: 'ストック型 約 76%', sub: '残高・口座に課金' },
@@ -31,18 +31,20 @@ module.exports = function build(pres, L) {
       { from: 'b2b', to: 'tp', label: '処理料', kind: 'money' },
       { from: 'nii', to: 'stock', kind: 'ctrl' },
       { from: 'fee', to: 'stock', kind: 'ctrl' },
-      { from: 'tp', to: 'stock', kind: 'ctrl', fo: -0.2 },
+      { from: 'tp', to: 'stock', kind: 'ctrl', fo: -0.2, mx: 4.6 },
+      { from: 'cond1', to: 'stock', kind: 'ctrl' },
+      { from: 'cond2', to: 'flowk', kind: 'ctrl' },
       { from: 'flow', to: 'flowk', kind: 'ctrl' },
-      { from: 'runoff', to: 'nii', label: '目減り', kind: 'risk', n: 4, fo: 0.2 },
+      { from: 'runoff', to: 'nii', label: '目減り', kind: 'risk', n: 4, fo: 0.2, mx: 5.05, lpos: 'v', ldy: -0.165 },
     ],
   });
   L.mechPanel(s, {
     bottom: 6.66, mechH: 1.8,
     mech: [
-      'B/S のローン残高に利息が付く純金利収益が 788.2 百万ドルで収益の 65%',
-      '会員の口座に付く継続手数料と Tech Platform を足すと、ストック型は約 76%',
-      '売却益と LPB は組成のたびに生じるフロー型で、約 24%',
-      'ただし個人ローンは期前返済が年 25.8% と速く、2〜3 年で返済される。残高を保つには組成を続ける必要がある',
+      'B/S のローン残高に利息が付く\n純金利収益が 788.2 百万ドルで収益の 65%',
+      '会員の口座に付く継続手数料と\nTech Platform を足すと、ストック型は約 76%',
+      '売却益と LPB は組成のたびに生じる\nフロー型で、約 24%',
+      'ただし個人ローンは期前返済が\n年 25.8% と速く、2〜3 年で返済される。\n残高を保つには組成を続ける必要がある',
     ],
     reason: '収益の約 4 分の 3 は残高に課金する\nストック型。ただし残高は 2〜3 年で\n入れ替わるため B',
     up: 'Plus の有料会員が 100 万人を超え、\n継続手数料が収益の 15% を超えれば A',
