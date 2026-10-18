@@ -1,0 +1,188 @@
+period,item,value_musd,source,tier
+Q1 FY27,revenue_cloud,11607,"A (決算表 要約)",1
+Q1 FY27,revenue_software,5550,"A (決算表 要約)",1
+Q1 FY27,revenue_hardware,774,"A (決算表 要約)",1
+Q1 FY27,revenue_services,1414,"A (決算表 要約)",1
+Q1 FY27,revenue_total,19345,"A (決算表 要約); 行和一致",1
+Q1 FY27,revenue_cloud_services_license_support_old,NA,"旧区分なし (新区分へ移行)",NA
+Q1 FY27,revenue_cloud_license_onprem_old,NA,"旧区分なし (新区分へ移行)",NA
+Q1 FY27,exp_cloud_and_software,6400,"A (決算表 要約)",1
+Q1 FY27,exp_hardware,281,"A (決算表 要約)",1
+Q1 FY27,exp_services,1052,"A (決算表 要約)",1
+Q1 FY27,exp_sales_marketing,1811,"A (決算表 要約)",1
+Q1 FY27,exp_research_development,2401,"A (決算表 要約)",1
+Q1 FY27,exp_general_admin,376,"A (決算表 要約)",1
+Q1 FY27,exp_amortization_intangibles,202,"C (10-Q 要約)",1
+Q1 FY27,exp_acquisition_related_other,NA,"未取得 (Restructuring and other に含まれる可能性, 要確認)",NA
+Q1 FY27,exp_restructuring,94,"C (10-Q 要約; Restructuring and other として記載)",1
+Q1 FY27,exp_total_operating,12617,"A (要約); 行和と一致",1
+Q1 FY27,operating_income,6728,"(算出 19,345-12,617); B 報告 6.7bn",1
+Q1 FY27,interest_expense,1428,"B (決算発表 要約; 前年同期 923)",1
+Q1 FY27,non_operating_income_net,307,"B (決算発表 要約; 前年同期 73)",1
+Q1 FY27,pretax_income,5607,"B (決算発表 要約); 6,728-1,428+307 で一致",1
+Q1 FY27,income_tax_provision,847,"L (Beancount.io, 原本未確認)",3
+Q1 FY27,net_income_total,4760,"(算出 5,607-847; 法人税が T3 依存)",3
+Q1 FY27,net_income_to_common,4680,"B (決算発表 要約 4.68bn)",1
+Q1 FY27,eps_diluted_usd,1.56,"B (決算発表 要約; 前年同期 1.01)",1
+Q1 FY27,diluted_shares_m,3000,"O (placera 再掲 PR); NI 4,680 / EPS 1.56 と整合 (算出)",1
+Q1 FY27,sbc_total,1127,"C (10-Q 要約; 行和 1,127)",1
+Q1 FY27,sbc_cloud_and_software,134,"C (10-Q 要約; 列配置未検証)",1
+Q1 FY27,sbc_hardware,6,"C (10-Q 要約)",1
+Q1 FY27,sbc_services,51,"C (10-Q 要約)",1
+Q1 FY27,sbc_sales_marketing,171,"C (10-Q 要約)",1
+Q1 FY27,sbc_research_development,667,"C (10-Q 要約)",1
+Q1 FY27,sbc_general_admin,98,"C (10-Q 要約)",1
+Q1 FY26,revenue_cloud,7200,"B 比較列 (丸め 7.2bn; 既存 H1)",1
+Q1 FY26,revenue_software,5700,"既存 H1 (丸め 5.7bn; 決算)",1
+Q1 FY26,revenue_hardware,670,"既存 H1 (決算表 0.670)",1
+Q1 FY26,revenue_services,1349,"既存 H1 (決算表 1.349)",1
+Q1 FY26,revenue_total,14926,"(算出 費用合計 10,649 + 営業利益 4,277); 報告 14.9bn",1
+Q1 FY26,revenue_cloud_services_license_support_old,NA,"旧区分なし",NA
+Q1 FY26,revenue_cloud_license_onprem_old,NA,"旧区分なし",NA
+Q1 FY26,exp_cloud_and_software,3607,"A (前年比較列)",1
+Q1 FY26,exp_hardware,178,"A (前年比較列)",1
+Q1 FY26,exp_services,1099,"A (前年比較列)",1
+Q1 FY26,exp_sales_marketing,2063,"A (前年比較列)",1
+Q1 FY26,exp_research_development,2491,"A (前年比較列)",1
+Q1 FY26,exp_general_admin,376,"A (前年比較列)",1
+Q1 FY26,exp_amortization_intangibles,420,"C (10-Q 比較列)",1
+Q1 FY26,exp_acquisition_related_other,NA,"未取得",NA
+Q1 FY26,exp_restructuring,415,"C (10-Q 比較列 Restructuring and other); 別出典 402 (N) と不一致",1
+Q1 FY26,exp_total_operating,10649,"(算出 行和 3,607+178+1,099+2,063+2,491+376+420+415)",1
+Q1 FY26,operating_income,4277,"(算出 3,427+923-73); 報告 4.3bn (既存 H1, T1)",1
+Q1 FY26,interest_expense,923,"B (比較列)",1
+Q1 FY26,non_operating_income_net,73,"B (比較列)",1
+Q1 FY26,pretax_income,3427,"B (比較列)",1
+Q1 FY26,income_tax_provision,NA,"未取得 (算出目安 約494 = 3,427-2,930 ただし差額未確認)",NA
+Q1 FY26,net_income_total,NA,"未取得",NA
+Q1 FY26,net_income_to_common,2930,"A/B (要約 2.93bn)",1
+Q1 FY26,eps_diluted_usd,1.01,"A (比較列)",1
+Q1 FY26,diluted_shares_m,2909,"M (集計サイト 既存 H1)",3
+Q1 FY26,sbc_total,1124,"C (比較列)",1
+Q1 FY26,sbc_cloud_and_software,156,"C (比較列)",1
+Q1 FY26,sbc_hardware,7,"C (比較列)",1
+Q1 FY26,sbc_services,49,"C (比較列)",1
+Q1 FY26,sbc_sales_marketing,177,"C (比較列)",1
+Q1 FY26,sbc_research_development,647,"C (比較列)",1
+Q1 FY26,sbc_general_admin,88,"C (比較列)",1
+Q4 FY26,revenue_cloud,9880,"(算出 FY26 Cloud 33,989 から Q1-Q3 を差引; 既存 H5)",3
+Q4 FY26,revenue_software,6860,"(算出 既存 H5; 丸め ±0.1)",3
+Q4 FY26,revenue_hardware,924,"(算出 既存 H5)",3
+Q4 FY26,revenue_services,1523,"(算出 既存 H5)",3
+Q4 FY26,revenue_total,19184,"(算出 費用合計 13,051 + 営業利益 6,133); E 報告 19.2bn +21%",1
+Q4 FY26,revenue_cloud_services_license_support_old,NA,"旧区分なし",NA
+Q4 FY26,revenue_cloud_license_onprem_old,NA,"旧区分なし",NA
+Q4 FY26,exp_cloud_and_software,5224,"D (決算表 要約)",1
+Q4 FY26,exp_hardware,293,"D (決算表 要約)",1
+Q4 FY26,exp_services,1155,"D (決算表 要約)",1
+Q4 FY26,exp_sales_marketing,2068,"D (決算表 要約)",1
+Q4 FY26,exp_research_development,2613,"D (決算表 要約)",1
+Q4 FY26,exp_general_admin,444,"D (決算表 要約)",1
+Q4 FY26,exp_amortization_intangibles,431,"D (決算表 要約)",1
+Q4 FY26,exp_acquisition_related_other,NA,"未取得",NA
+Q4 FY26,exp_restructuring,823,"D (決算表 要約; Restructuring and other)",1
+Q4 FY26,exp_total_operating,13051,"D (決算表 要約); 行和一致",1
+Q4 FY26,operating_income,6133,"E (決算発表 要約 6.1bn +20%); 19,184-13,051 で一致",1
+Q4 FY26,interest_expense,NA,"未取得 (FY26 4,599-Q1 923-Q3 1,180 = Q2+Q4 2,496 のみ算出可)",NA
+Q4 FY26,non_operating_income_net,NA,"未取得",NA
+Q4 FY26,pretax_income,NA,"未取得",NA
+Q4 FY26,income_tax_provision,NA,"未取得 (T3 の 1.1bn は整合せず不採用)",NA
+Q4 FY26,net_income_total,4304,"決算表検索の要約 (前年 3,427, +25.6%); T3 thetrading.tools と増減率一致; 要確認",3
+Q4 FY26,net_income_to_common,4227,"(算出 1.45 x 2,915); E 見出し 4.2bn +23%",1
+Q4 FY26,eps_diluted_usd,1.45,"E (決算発表 要約; +21%)",1
+Q4 FY26,diluted_shares_m,2915,"D (決算表 要約; 既存 H1)",1
+Q4 FY26,sbc_total,NA,"未取得 (Q3/Q4 の 9か月/四半期 SBC 未取得)",NA
+Q4 FY26,sbc_cloud_and_software,NA,"未取得",NA
+Q4 FY26,sbc_hardware,NA,"未取得",NA
+Q4 FY26,sbc_services,NA,"未取得",NA
+Q4 FY26,sbc_sales_marketing,NA,"未取得",NA
+Q4 FY26,sbc_research_development,NA,"未取得",NA
+Q4 FY26,sbc_general_admin,NA,"未取得",NA
+Q4 FY25,revenue_cloud,6700,"既存 H1 (R19 T1; 丸め 6.7bn) 補助",1
+Q4 FY25,revenue_total,15900,"既存 H1 (R19 T1; 15.9bn) 補助",1
+Q4 FY25,exp_cloud_and_software,3343,"D (前年比較列) 補助",1
+Q4 FY25,exp_sales_marketing,2306,"D (前年比較列) 補助",1
+Q4 FY25,exp_research_development,2654,"D (前年比較列) 補助",1
+Q4 FY25,exp_general_admin,467,"D (前年比較列) 補助",1
+Q4 FY25,exp_amortization_intangibles,544,"D (前年比較列) 補助",1
+Q4 FY25,exp_restructuring,83,"D (前年比較列; Restructuring and other) 補助",1
+Q4 FY25,net_income_total,3427,"Q4 FY26 要約の比較値; Q1 FY26 税引前と同値のため要確認 補助",3
+Q4 FY25,eps_diluted_usd,1.19,"既存 H1 (R19 T1) 補助",1
+FY26,revenue_cloud,33989,"M (既存 H5 集計, T3); E 34.0bn 見出し",3
+FY26,revenue_software,24541,"M (既存 H5 集計, T3)",3
+FY26,revenue_hardware,3084,"F (10-K 検索要約)",1
+FY26,revenue_services,5743,"F (10-K 検索要約)",1
+FY26,revenue_total,67357,"F (10-K 検索要約); cloud+software 58,530 と整合",1
+FY26,revenue_cloud_services_license_support_old,NA,"旧区分なし",NA
+FY26,revenue_cloud_license_onprem_old,NA,"旧区分なし",NA
+FY26,exp_cloud_and_software,NA,"未取得 (下記の合算のみ)",NA
+FY26,exp_hardware,NA,"未取得 (下記の合算のみ)",NA
+FY26,exp_services,NA,"未取得 (下記の合算のみ)",NA
+FY26,exp_cloud_software_hardware_services_combined,23021,"(算出 46,751-8,331-10,272-1,618-1,671-1,838); 内訳は T3 依存",3
+FY26,exp_sales_marketing,8331,"J (年度費用表 T3, 出典URL未特定); I の SG&A 9,949 = 8,331+1,618 と整合",3
+FY26,exp_research_development,10272,"J (T3); I (StockAnalysis) 10,272 一致",3
+FY26,exp_general_admin,1618,"J (T3)",3
+FY26,exp_amortization_intangibles,1671,"J (T3); 既存 H5 の計算 1,694 とは不一致",3
+FY26,exp_acquisition_related_other,NA,"未取得",NA
+FY26,exp_restructuring,1838,"J (T3; restructuring and other)",3
+FY26,exp_total_operating,46751,"F (10-K 検索要約); 67,357-20,606 と一致",1
+FY26,operating_income,20606,"F/E (要約); I 20,606 一致; TickerLeague 20.78bn は不採用",1
+FY26,interest_expense,4599,"I (StockAnalysis, T3)",3
+FY26,non_operating_income_net,3547,"I (T3; Other non-operating income; Ampere 売却益 2.7bn を含む)",3
+FY26,pretax_income,19554,"I (T3); 20,606-4,599+3,547 で一致",3
+FY26,income_tax_provision,2467,"I (T3); F 要約の実効税率 12.6% と整合",3
+FY26,net_income_total,17087,"I (T3); 19,554-2,467 で一致",3
+FY26,net_income_to_common,16984,"I (T3); E 見出し 17.0bn (T1)",3
+FY26,eps_diluted_usd,5.83,"E (決算発表 要約; +34%)",1
+FY26,diluted_shares_m,2914,"I/H3 (加重平均, T3)",3
+FY26,sbc_total,4811,"H3 (2社一致, T3)",3
+FY26,sbc_cloud_and_software,NA,"未取得",NA
+FY26,sbc_hardware,NA,"未取得",NA
+FY26,sbc_services,NA,"未取得",NA
+FY26,sbc_sales_marketing,NA,"未取得",NA
+FY26,sbc_research_development,NA,"未取得",NA
+FY26,sbc_general_admin,NA,"未取得",NA
+FY25,revenue_cloud,24506,"M (既存 H5 集計, T3)",3
+FY25,revenue_software,24724,"M (既存 H5 集計, T3)",3
+FY25,revenue_hardware,2936,"M (既存 H5 集計, T3)",3
+FY25,revenue_services,5233,"M (既存 H5 集計, T3)",3
+FY25,revenue_total,57399,"G/M (既存 H5 57.399 T1)",1
+FY25,revenue_cloud_services_license_support_old,NA,"旧区分は K 由来の値を exp 側に記載; 売上の旧区分は未取得",NA
+FY25,revenue_cloud_license_onprem_old,NA,"未取得",NA
+FY25,exp_cloud_and_software,11570,"K (tracenable, T3, 0.01bn 丸め, 旧区分 cloud services & license support 相当; 基準差あり)",3
+FY25,exp_hardware,780,"K (tracenable, T3, 丸め)",3
+FY25,exp_services,4580,"K (tracenable, T3, 丸め)",3
+FY25,exp_sales_marketing,8651,"J (T3)",3
+FY25,exp_research_development,9860,"J (T3); I 一致",3
+FY25,exp_general_admin,1602,"J (T3)",3
+FY25,exp_amortization_intangibles,2307,"G 10-K (既存 H1 G26, T1); K 2.31 一致",1
+FY25,exp_acquisition_related_other,NA,"未取得",NA
+FY25,exp_restructuring,374,"J (T3; restructuring and other); K は 300 (restructuring 単独の可能性) と不一致",3
+FY25,exp_total_operating,39721,"G/F (10-K 検索要約 T1); K 39.72 一致",1
+FY25,operating_income,17678,"(算出 57,399-39,721); G/E 報告 17.7bn (T1)",1
+FY25,interest_expense,3578,"I (StockAnalysis, T3)",3
+FY25,non_operating_income_net,60,"I (T3)",3
+FY25,pretax_income,14160,"I (T3); 17,678-3,578+60 で一致",3
+FY25,income_tax_provision,1717,"I (T3)",3
+FY25,net_income_total,12443,"I (T3); 14,160-1,717 で一致; 既存 H1 12.4 (T1)",3
+FY25,net_income_to_common,NA,"未取得 (普通株主帰属額未確認)",NA
+FY25,eps_diluted_usd,4.34,"G (既存 H1; 決算発表 T1)",1
+FY25,diluted_shares_m,2866,"M (加重平均, T3)",3
+FY25,sbc_total,4674,"G (既存 H3/H1; 10-K, T1)",1
+FY25,sbc_cloud_and_software,NA,"未取得",NA
+FY25,sbc_hardware,NA,"未取得",NA
+FY25,sbc_services,NA,"未取得",NA
+FY25,sbc_sales_marketing,NA,"未取得",NA
+FY25,sbc_research_development,NA,"未取得",NA
+FY25,sbc_general_admin,NA,"未取得",NA
+Q3 FY26,revenue_total,17190,"H (決算表 要約)",1
+Q3 FY26,exp_cloud_and_software,4776,"H (10-Q/決算表 要約; 前年 2,882)",1
+Q3 FY26,exp_hardware,183,"H (要約; 前年 197)",1
+Q3 FY26,exp_services,1133,"H (要約; 前年 1,116)",1
+Q3 FY26,exp_sales_marketing,2052,"H (要約; 前年 2,119)",1
+Q3 FY26,exp_amortization_intangibles,413,"N (検索要約, 出典URL未特定)",3
+Q3 FY26,exp_restructuring,153,"N (検索要約, 出典URL未特定)",3
+Q3 FY26,exp_total_operating,11726,"H (要約)",1
+Q3 FY26,operating_income,5464,"H (要約 5,464)",1
+Q3 FY26,interest_expense,1180,"H (要約; 前年 892)",1
+Q3 FY26,eps_diluted_usd,1.27,"既存 H1 (R11 T1)",1

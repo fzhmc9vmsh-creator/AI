@@ -1,0 +1,16 @@
+date,kind,agency_or_metric,value,outlook,event,source_ids,tier,note
+2026-02-02,rating,Fitch,"BBB (LT IDR) / F2 (ST)",Stable,"affirmed; BBB assigned to new benchmark senior notes","S28;S29",2,"relayed via secondary"
+2026-07-09,rating,S&P,"BBB- (LT ICR) / A-3 (ST)",Stable,"downgraded from BBB; short-term from A-2 to A-3; AI spending cited","S25;S26",2,"analyst: another cut possible if leverage stays above 4.5x"
+2026-09 (approx; date inferred),rating,Moody's,Baa2,Negative,"affirmed in connection with equity announcement; outlook remains negative","S27",2,"exact date NA"
+NA,rating,S&P,"BBB (prior rating)",NA,"rating before 2026-07-09 downgrade; outlook NA","NA",NA,"not retrieved"
+NA,rating,Moody's,NA,Negative,"date of change to negative outlook NA; reason NA","S52",3,"not retrieved"
+NA,rating,Fitch,NA,NA,"2025 and earlier rating history NA","NA",NA,"not retrieved"
+2025-09,CDS 5Y bp,ICE (secondary),NA,NA,"not retrieved","NA",NA,"NA"
+2025-11-20,CDS 5Y bp,ICE (secondary),80,NA,"reported near 80 bp in November 2025 (article)","S30",3,"conflicts with 108 and 125 readings"
+2025-11 (mid),CDS 5Y bp,ICE (secondary),108,NA,"Spinel note cites roughly 108 bp in Nov 2025","S34",4,"date ambiguous"
+2025-11 (late),CDS 5Y bp,ICE (secondary),125,NA,"highest since 2022 per Bloomberg/ICE via secondary","S59;S60",3,"Morgan Stanley warned of 150-200 bp risk"
+2026-01-01 (start of year),CDS 5Y bp,ICE (secondary),144,NA,"start-of-year level (secondary)","S32",4,"exact date NA"
+2026-03-27,CDS 5Y bp,ICE (secondary),198.18,NA,"record high at the time","S32;S33",4,NA
+2026-04 (approx),CDS 5Y bp,ICE (secondary),198,NA,"record near 198 per Spinel","S34",4,"date conflicts with 2026-03-27"
+2026-07-17,CDS 5Y bp,ICE (secondary),198.23,NA,"record close (Friday)","S33",4,NA
+2026-07-20,CDS 5Y bp,ICE (secondary),203,NA,"about 2.03%; highest since data began 2008 per Bloomberg/ICE via secondary","S32;S33",4,"KuCoin dates 2026-07-24; conflict noted"

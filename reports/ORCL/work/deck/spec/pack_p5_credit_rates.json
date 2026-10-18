@@ -1,0 +1,1036 @@
+{
+ "rows": [
+  {
+   "group": "信用",
+   "item": "格付 S&P(長期)",
+   "value": "BBB-・見通し安定(2026-07-09 に BBB から 1 ノッチ引き下げ)",
+   "source": "research2/R5_credit.md:33",
+   "source_note": "R5-01, R5-02, R5-03, 既存 H3 S25/S26。Tier 3(S&P 原文は未読)",
+   "note": "短期格付は A-2 から A-3 へ。引き下げ前の見通しは欠損。2026-08-04 以降の格付変更は検索で確認できず(:38)。"
+  },
+  {
+   "group": "信用",
+   "item": "格付 Moody's(長期)",
+   "value": "Baa2・見通しネガティブ(変更日・理由は欠損)",
+   "source": "research2/R5_credit.md:34",
+   "source_note": "R5-04, R5-05, 既存 H3 S27。Tier 3",
+   "note": "2026-02 のノートで Baa2/ネガティブ維持と報道。既存 H3 の確認日『2026-09 頃(推定)』は誤りの可能性が高い(未検証、:327)。"
+  },
+  {
+   "group": "信用",
+   "item": "格付 Fitch(長期)",
+   "value": "BBB・見通し安定(2026-02-02 に新発債へ付与、IDR 据え置き)",
+   "source": "research2/R5_credit.md:35",
+   "source_note": "R5-06, 既存 H3 S28/S29。Tier 3",
+   "note": "短期 F2。2025 年以前の格付履歴は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "格下げ条件 S&P",
+   "value": "調整後レバレッジ 4.5 倍超が継続、FY29 までに FOCF 黒字化せず、AI 戦略への否定的見方",
+   "source": "research2/R5_credit.md:44",
+   "source_note": "R5-01, R5-02, R5-03, R5-07。Tier 3〜4(段落別の帰属は不明)",
+   "note": "主なリスクは顧客集中(OpenAI が RPO $638B のほぼ半分)。OpenAI がつまずくと同社向け建設容量が遊休化、と記載。"
+  },
+  {
+   "group": "信用",
+   "item": "格上げ条件 S&P",
+   "value": "今後 2 年は可能性が低い。成長目標の達成、継続黒字の FCF、調整後レバレッジが持続的に 3 倍台半ばへ",
+   "source": "research2/R5_credit.md:44",
+   "source_note": "R5-01, R5-02, R5-03, R5-07。Tier 3〜4(段落別の帰属は不明)",
+   "note": "格上げには 3 条件が必要と記載。"
+  },
+  {
+   "group": "信用",
+   "item": "格下げ条件 Moody's",
+   "value": "数値トリガーは欠損。レバレッジが一時的に EBITDA の約 5 倍に近づき得る",
+   "source": "research2/R5_credit.md:45",
+   "source_note": "R5-04, R5-05, 既存 S4 D7。Tier 3",
+   "note": "2026-02 の言及として、他のハイパースケーラーより『レバレッジが高く、かつ FCF が赤字』の企業はない、とも記載。"
+  },
+  {
+   "group": "信用",
+   "item": "格下げ条件 Fitch",
+   "value": "EBITDA レバレッジが持続的に 3.5 倍超、または賃料込みで 4 倍超(2026-02 時点)",
+   "source": "research2/R5_credit.md:46",
+   "source_note": "R5-04, R5-06。Tier 3",
+   "note": "Reuters 経由。Fitch 予測(FY26 は 3.5 倍超、FY27〜28 は低下)は capex 引き上げ前で古い(:48)。"
+  },
+  {
+   "group": "信用",
+   "item": "格上げ条件 Moody's・Fitch",
+   "value": "欠損(両社とも格上げ側の数値は記載なし)",
+   "source": "research2/R5_credit.md:45",
+   "source_note": "R5-04, R5-05, 既存 S4 D7。Tier 3",
+   "note": "Fitch の格上げ側も欠損(:46)。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF FY27 S&P",
+   "value": "約 -$42B(従来予想 約 -$24B)",
+   "source": "research2/R5_credit.md:54",
+   "source_note": "R5-01, R5-02, R5-09。Tier 3〜4",
+   "note": "S&P の基本シナリオ(報道経由)。FY27 の capex 引き上げを反映した値と記載。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF FY28 S&P",
+   "value": "約 -$25B(単一出典)",
+   "source": "research2/R5_credit.md:54",
+   "source_note": "R5-02(テスト用サブドメイン)。Tier 3〜4",
+   "note": "BondbloX の 1 件のみ。TIKR -$33B、MarketScreener -$39〜-42B と乖離(:324)。参考値扱い。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF FY29 S&P",
+   "value": "黒字化(基本シナリオ)。「+$6.2B」は出典不明で未検証",
+   "source": "research2/R5_credit.md:54",
+   "source_note": "R5-01, R5-02, R5-09。Tier 3〜4",
+   "note": "金額は採用せず保留(:325)。黒字化の時期は複数出典で一致。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF FY27 Fitch(2026-02 時点)",
+   "value": "約 -$18B(古い)。FY28 以降は欠損",
+   "source": "research2/R5_credit.md:223",
+   "source_note": "Tier 3",
+   "note": "配当前 FCF。capex 引き上げ前の予測で現在値として使わない(:331)。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF FY27〜29 TIKR コンセンサス",
+   "value": "FY27 約 -$38B、FY28 約 -$33B、FY29 約 +$7B",
+   "source": "research2/R5_credit.md:224",
+   "source_note": "Tier 3〜4",
+   "note": "FY30 は欠損。FY29 で黒字化とする。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF MarketScreener(集計値)",
+   "value": "FY28 -$39〜-$42B(capex 約 $102B でピーク)、FY29 +$14〜16B",
+   "source": "research2/R5_credit.md:225",
+   "source_note": "Tier 3",
+   "note": "コンセンサスかは不明、版により差。FY27・FY30 は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF Mizuho(Siti Panigrahi)",
+   "value": "FY29 黒字化、FY30 +$36B",
+   "source": "research2/R5_credit.md:226",
+   "source_note": "Tier 3",
+   "note": "決算前の見解。9/15 に目標株価 $320 を維持。FY27・FY28 は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF Goldman Sachs",
+   "value": "FY29 に損益分岐(capex 増加を受けて後ろ倒し)",
+   "source": "research2/R5_credit.md:228",
+   "source_note": "Tier 3",
+   "note": "FY27・FY28・FY30 は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF Guggenheim",
+   "value": "FY29〜30 に『FCF の滝』(数値は欠損)",
+   "source": "research2/R5_credit.md:229",
+   "source_note": "Tier 3",
+   "note": "年度別の金額は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "FOCF Morgan Stanley(株式アナリスト)",
+   "value": "予想期間を通じて FCF が制約(数値は欠損)",
+   "source": "research2/R5_credit.md:230",
+   "source_note": "Tier 3(既存 S2)",
+   "note": "FY27〜FY30 の数値は欠損。"
+  },
+  {
+   "group": "信用",
+   "item": "FCF 黒字化時期(会社)",
+   "value": "会社は時期を示していない(Q1 FY27 でも)",
+   "source": "research2/R5_credit.md:211",
+   "source_note": "既存 S1 L152, R5-18。Tier 1*/3",
+   "note": "CFO の発言も今回の検索では見つからなかった。"
+  },
+  {
+   "group": "信用",
+   "item": "調整後レバレッジ FY27 S&P(推計)",
+   "value": "約 4.4 倍でピーク(従来 4.8 倍とする要約が 1 件)",
+   "source": "research2/R5_credit.md:55",
+   "source_note": "R5-01, R5-09。Tier 3〜4",
+   "note": "『4 倍台半ば』とする報道が複数(:55)。S&P 原文は未読。"
+  },
+  {
+   "group": "信用",
+   "item": "調整後レバレッジ FY28・FY29 S&P",
+   "value": "欠損",
+   "source": "research2/R5_credit.md:55",
+   "source_note": "R5-01, R5-09。Tier 3〜4",
+   "note": "S&P の調整後債務の定義(未開始リースの扱い)も保留(:65、リース節参照)。"
+  },
+  {
+   "group": "信用",
+   "item": "借入 ÷ EBITDA(Reuters 報道・ファイル算出)",
+   "value": "借入 $129.5B ÷ EBITDA = 約 4.3 倍。リース負債込みで約 5.7 倍",
+   "source": "research2/R5_credit.md:69",
+   "source_note": "R5-04, 既存 H3 S36。Tier 3",
+   "note": "Reuters の計算。ファイル算出(:71): 129.541 ÷ 29.87 = 4.34 倍(算出)。FY26 EBITDA は 20.6 + 7.600 + 1.671 = 29.87(算出、:71)。S&P の 4.4 倍と同じ定義かは判別不能。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2025-09",
+   "value": "欠損",
+   "source": "research2/R5_credit.md:81",
+   "source_note": "—",
+   "note": "2025-09 の読みは見つからず(:81)。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2025-11 上旬〜中旬",
+   "value": "約 80 / 約 108 / 120〜150(出典で不一致)",
+   "source": "research2/R5_credit.md:82",
+   "source_note": "既存 H3 S30/S34、既存 S2。Tier 3〜4",
+   "note": "11 月以前は『50bp 未満』(既存 S2)。日付が曖昧(:330)。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2025-11 下旬",
+   "value": "約 125(2022 年以来の高水準)",
+   "source": "research2/R5_credit.md:83",
+   "source_note": "既存 H3 S59/S60。Tier 3〜4",
+   "note": "BondBloX の見出しは『2023 年 10 月以来の高水準』(:83)。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-01-01",
+   "value": "約 144",
+   "source": "research2/R5_credit.md:84",
+   "source_note": "既存 H3 S32、R5-10。Tier 4",
+   "note": "boerse-express も『年初の 144 から 215 へ』と記載。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-03-27",
+   "value": "198.18(当時の過去最高)",
+   "source": "research2/R5_credit.md:85",
+   "source_note": "既存 H3 S32/S33。Tier 4",
+   "note": "Bloomberg/ICE 経由の二次情報。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-07-17(終値)",
+   "value": "198.23(過去最高の終値)",
+   "source": "research2/R5_credit.md:86",
+   "source_note": "R5-10、既存 H3 S33。Tier 3〜4",
+   "note": "boerse-express は 7/20 付。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-07-20",
+   "value": "約 203(2.03%)",
+   "source": "research2/R5_credit.md:87",
+   "source_note": "R5-11、既存 H3 S32/S33。Tier 3〜4",
+   "note": "Bloomberg が ICE Data Services を引用、2008 年末のデータ開始以来の最高。KuCoin は 7/24 付で同値と報じ、日付が食い違う(:328)。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-07-28 頃",
+   "value": "約 215",
+   "source": "research2/R5_credit.md:88",
+   "source_note": "R5-10、既存 S2。Tier 4",
+   "note": "別記事は『8 月初め』。正確な日付は未確定。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-09-25",
+   "value": "約 227(記録的水準、1 週間で 16% 超上昇)",
+   "source": "research2/R5_credit.md:90",
+   "source_note": "R5-12。Tier 4",
+   "note": "単一の小規模媒体、提供元不明(:95)。同記事は『CDS の水準はデフォルトが迫っている証拠ではない』と注記。投資適格社債の広い指数は約 55bp。9/18 頃の約 196 は算出値で直接の読みではない(:89)。"
+  },
+  {
+   "group": "信用",
+   "item": "CDS 5 年 2026-10",
+   "value": "欠損",
+   "source": "research2/R5_credit.md:91",
+   "source_note": "—",
+   "note": "試した検索語は :379 に記載。"
+  },
+  {
+   "group": "信用",
+   "item": "社債 6.70% 2056 年債の利回り",
+   "value": "初めて 8% 超(2026-09 下旬、記事 9/27)",
+   "source": "research2/R5_credit.md:101",
+   "source_note": "R5-12。Tier 4",
+   "note": "この 1 銘柄のみの記述。銘柄を特定できず未確認扱い(W4 :210)。"
+  },
+  {
+   "group": "信用",
+   "item": "社債 2055 年債の利回り",
+   "value": "約 8%(2026-09 初め)",
+   "source": "research2/R5_credit.md:102",
+   "source_note": "R5-12。Tier 4",
+   "note": "Börse Stuttgart の情報。額面クーポンは不明。"
+  },
+  {
+   "group": "信用",
+   "item": "社債 3.95% 2051 年債",
+   "value": "利回り 約 7.65%、国債比 +213bp(2026-09-25、比較国債 5.52%)",
+   "source": "research2/R5_credit.md:103",
+   "source_note": "R5-13。Tier 4",
+   "note": "個人運営サイト。W4 :176 も同値(約 7.65%、+213bp)。"
+  },
+  {
+   "group": "信用",
+   "item": "社債 4.10% 2061 年債",
+   "value": "利回り 約 7.67%、国債比 +218bp(2026-09-25)",
+   "source": "research3/W4_rates.md:177",
+   "source_note": "therighttrader 要約。Tier 4*",
+   "note": "発行日は欠損。発行後の拡大 48bp の記述から発行時スプレッドを算出した値(W4 :177)。"
+  },
+  {
+   "group": "信用",
+   "item": "2035 年債の現在利回り・スプレッド",
+   "value": "欠損(第三者推計は利回り 約 7.18〜7.23%、2026-09-25)",
+   "source": "research2/R5_credit.md:109",
+   "source_note": "第三者推計は W4 :170-172。Tier 4*",
+   "note": "推計は価格と整合しないとの注記あり(W4 :172)。実勢(TRACE 等)は欠損(W4 :211)。"
+  },
+  {
+   "group": "信用",
+   "item": "2035 年債 国債比スプレッド(2025-09 発行銘柄)",
+   "value": "+187bp(日付不明、2025-11 前後)",
+   "source": "research2/R5_credit.md:108",
+   "source_note": "既存 S2 の記載。Tier 3〜4",
+   "note": "発行時の +105bp(5.20% 2035、SEC FWP、W4 :171)とは別の時点の値。"
+  },
+  {
+   "group": "信用",
+   "item": "40 年債(2025-09-24 発行)",
+   "value": "T+137bp(当初想定 T+165bp)",
+   "source": "research2/R5_credit.md:110",
+   "source_note": "既存 H3 S16/S17。Tier 3",
+   "note": "発行日は 2025-09-24。"
+  },
+  {
+   "group": "信用",
+   "item": "2026-02 新発社債 規模",
+   "value": "8 トランシェ合計 $25.0B(手取り約 $24.9B)",
+   "source": "research2/R5_credit.md:128",
+   "source_note": "R5-15、既存 H3 表 B。Tier 1*",
+   "note": "トランシェ別の金額・国債スプレッド・発行利回りは欠損(:128)。"
+  },
+  {
+   "group": "信用",
+   "item": "2026-02 新発社債 クーポン",
+   "value": "クーポン 4.550%(2029)〜6.850%(2066)、8 トランシェ",
+   "source": "research2/R5_credit.md:120",
+   "source_note": "R5-15、既存 H3 表 B。Tier 1*",
+   "note": "2029 変動 SOFR+1.11%($0.5B)、2031 4.950%、2033 5.350%、2036 5.700%、2046 6.550%、2056 6.700%(:121-126)。2029 固定は $3.0B(:120)。"
+  },
+  {
+   "group": "信用",
+   "item": "2031 年債(4.95%)発行利回り",
+   "value": "利回り 4.988%、国債 3.700%(2031-01)比 +115bp(2026-02-02)",
+   "source": "research2/R7_capital_power.md:45",
+   "source_note": "R7-35。Tier 4(スプレッド)/ 3",
+   "note": "二次市場は 2026-08 初に利回り 6.23%・国債比 約 +180bp(R7 :81)。"
+  },
+  {
+   "group": "信用",
+   "item": "2036 年債(5.70%)発行利回り",
+   "value": "利回り 5.729%、国債 4.000%(2035-11)比 +145bp(2026-02-02)",
+   "source": "research2/R7_capital_power.md:46",
+   "source_note": "R7-35。Tier 4",
+   "note": "同日発行の別トランシェ。"
+  },
+  {
+   "group": "信用",
+   "item": "2046 年債(6.55%)発行利回り",
+   "value": "利回り 6.558%、国債 4.625%(2045-11)比 +170bp(2026-02-02)",
+   "source": "research2/R7_capital_power.md:47",
+   "source_note": "R7-35。Tier 4",
+   "note": "同日発行の別トランシェ。"
+  },
+  {
+   "group": "信用",
+   "item": "2066 年債(6.85%)発行利回り",
+   "value": "利回り 6.864%、国債 4.750%(2055-08)比 +195bp(2026-02-02)",
+   "source": "research2/R7_capital_power.md:48",
+   "source_note": "R7-35。Tier 4",
+   "note": "40 年債。同日発行の別トランシェ。"
+  },
+  {
+   "group": "信用",
+   "item": "2031 年債 二次市場(2026-08 初)",
+   "value": "利回り 6.23%、国債比 約 +180bp",
+   "source": "research2/R7_capital_power.md:81",
+   "source_note": "R7-36。Tier 3",
+   "note": "発行時 +115bp からの拡大は +65bp(算出: 180 − 115)。同一銘柄かは未確認(:81)。"
+  },
+  {
+   "group": "信用",
+   "item": "2033 年債(5.35%)発行時スプレッド",
+   "value": "+130bp(要約)",
+   "source": "research3/W4_rates.md:174",
+   "source_note": "therighttrader 要約。Tier 4*",
+   "note": "満期 2033-05-04(R5 :123)。単一の要約。"
+  },
+  {
+   "group": "信用",
+   "item": "2056 年債(6.70%)発行時スプレッド",
+   "value": "欠損",
+   "source": "research3/W4_rates.md:179",
+   "source_note": "ms-aktuell(既存 R5)。Tier 4*",
+   "note": "R5 :126 では発行金額が欠損。2026-09 下旬の 8% 超の報道は未確認(:101)。"
+  },
+  {
+   "group": "信用",
+   "item": "FY26 の社債・強制転換優先株",
+   "value": "FY26 に社債 $43.0B、強制転換優先株 $5B(配当 6.50%)",
+   "source": "research2/R5_credit.md:201",
+   "source_note": "既存 H1_annual.csv、既存 H3 表 B。MCP 配当は Tier 1*(:142)",
+   "note": "社債 $43.0B は 10-K 関連の検索要約(R5-16、Tier 1*)とも一致。"
+  },
+  {
+   "group": "信用",
+   "item": "ATM 株式売出し(2026)",
+   "value": "$20B(手取り $19.9B)は完了",
+   "source": "research2/R5_credit.md:213",
+   "source_note": "R5-18、既存 S2。Tier 1*/3",
+   "note": "Q1 FY27 時点で完了と記載。"
+  },
+  {
+   "group": "信用",
+   "item": "FY27 の調達(債務+株式)",
+   "value": "約 $40B。『2026 暦年は追加の社債発行なし』と記載",
+   "source": "research2/R5_credit.md:216",
+   "source_note": "既存 H3 表 B。Tier 1*/3",
+   "note": "2026-02 の $25B 発行(:128)が暦年 2026 に含まれるため、この記述の意味は原文から確定できない。"
+  },
+  {
+   "group": "信用",
+   "item": "営業 CF・capex・FCF(FY26、百万 USD)",
+   "value": "営業 CF 31,977、capex 55,663、FCF -23,686",
+   "source": "research2/R5_credit.md:201",
+   "source_note": "既存 H1_annual.csv。Tier 表記なし",
+   "note": "capex 55,663 は $55.7B(:241)と整合。不足分は社債・株式で調達(:201)。"
+  },
+  {
+   "group": "信用",
+   "item": "FY27 capex 見通し(会社)",
+   "value": "総額 $90〜95B(純現金 capex は約 $70B 以内)",
+   "source": "research2/R5_credit.md:212",
+   "source_note": "R5-18、既存 S1/S2。Tier 1*/3",
+   "note": "S&P は FY27 capex 想定を $60B から $90〜95B へ引き上げたと報道(:56)。"
+  },
+  {
+   "group": "信用",
+   "item": "Q1 FY27 キャッシュフロー",
+   "value": "営業 CF $23.1B、capex $28.5B、純現金 capex $17.96B、FCF -$5.4B",
+   "source": "research2/R5_credit.md:213",
+   "source_note": "R5-18、既存 S2。Tier 1*/3",
+   "note": "FCF は 6 四半期連続マイナス。営業 CF に顧客前払い $11.4B を含む。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 FY22",
+   "value": "2,755(百万 USD)",
+   "source": "research2/R5_credit.md:174",
+   "source_note": "R5-17(集計サイト)。Tier 3",
+   "note": "列ラベルなしの系列を順序で解釈(:174)。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 FY23",
+   "value": "3,505(百万 USD)",
+   "source": "research2/R5_credit.md:175",
+   "source_note": "R5-17(集計サイト)。Tier 3",
+   "note": "列ラベルなしの系列を順序で解釈(:175)。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 FY24",
+   "value": "3,514(百万 USD)",
+   "source": "research2/R5_credit.md:176",
+   "source_note": "R5-17(集計サイト)。Tier 3",
+   "note": "列ラベルなしの系列を順序で解釈(:176)。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 FY25",
+   "value": "3,578(百万 USD)",
+   "source": "research2/R5_credit.md:177",
+   "source_note": "既存 R1(StockAnalysis)。Tier 3",
+   "note": "—"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 FY26",
+   "value": "4,599(百万 USD、前年比 +28.5%)",
+   "source": "research2/R5_credit.md:178",
+   "source_note": "既存 R1(StockAnalysis)。Tier 3",
+   "note": "+28.5% はファイル算出(4,599 ÷ 3,578 − 1)。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 Q1 FY26(2025-08-31 期)",
+   "value": "923(百万 USD)",
+   "source": "research2/R5_credit.md:179",
+   "source_note": "既存 R1(Q1 FY27 決算の比較列)。Tier 1*",
+   "note": "—"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 Q2・Q4 FY26",
+   "value": "欠損(Q2 と Q4 の合計のみ 2,496)",
+   "source": "research2/R5_credit.md:180",
+   "source_note": "—",
+   "note": "2,496 は 4,599 − 923 − 1,180 の算出(:180)。"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 Q3 FY26",
+   "value": "1,180(前年同期 892、+32%)",
+   "source": "research2/R5_credit.md:181",
+   "source_note": "既存 R1、R5-17。Tier 1*",
+   "note": "—"
+  },
+  {
+   "group": "信用",
+   "item": "支払利息 Q1 FY27(2026-08-31 期)",
+   "value": "1,428(前年同期比 +54.7%)",
+   "source": "research2/R5_credit.md:183",
+   "source_note": "既存 R1(Q1 FY27 決算)。Tier 1*",
+   "note": "+54.7% はファイル算出(1,428 ÷ 923 − 1)。年換算 5,712(算出: × 4、:183)。"
+  },
+  {
+   "group": "信用",
+   "item": "GAAP 営業利益 ÷ 支払利息(カバレッジ)",
+   "value": "FY26 4.48 倍、Q1 FY27 4.71 倍",
+   "source": "research2/R5_credit.md:191",
+   "source_note": "既存 data/H1_annual.csv、R1、H3(:199)。ファイル算出",
+   "note": "FY25 は 4.95 倍。営業利益 FY26 20,600、Q1 FY27 6,728(百万 USD、:189)。"
+  },
+  {
+   "group": "信用",
+   "item": "EBITDA ÷ 支払利息",
+   "value": "FY26 6.50 倍",
+   "source": "research2/R5_credit.md:195",
+   "source_note": "ファイル算出(:194)",
+   "note": "EBITDA = 営業利益 + 減価償却 + 無形資産償却。FY26 EBITDA 29,871(百万 USD、:194)。"
+  },
+  {
+   "group": "金利",
+   "item": "FF 目標レンジ",
+   "value": "3.75〜4.00%(2026-09-16 に +25bp、12-0)",
+   "source": "research3/W4_rates.md:36",
+   "source_note": "tmgm、Morningstar、KuCoin 要約。Tier 3*",
+   "note": "2023 年 7 月以来の初の利上げ(:15)。複数の二次情報で一致、実施を疑う記述 1 件あり(:195)。一次文書は未読。"
+  },
+  {
+   "group": "金利",
+   "item": "実効 FF 金利(EFFR)",
+   "value": "欠損",
+   "source": "research3/W4_rates.md:41",
+   "source_note": "—",
+   "note": "検索語に含めず(§9 #2、:222)。"
+  },
+  {
+   "group": "金利",
+   "item": "政策金利 2026-06-17",
+   "value": "3.50〜3.75%(据え置き、Warsh 議長の初回会合)",
+   "source": "research3/W4_rates.md:34",
+   "source_note": "Korea Times、KSL 要約。Tier 3*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "FOMC SEP 中央値 2026 年末(2026-09)",
+   "value": "4.1%(6 月 SEP は 3.8%)",
+   "source": "research3/W4_rates.md:37",
+   "source_note": "cryptobriefing、tmgm、KuCoin 要約。Tier 4*/3*",
+   "note": "6 月比 +0.3pt(算出、:39)。"
+  },
+  {
+   "group": "金利",
+   "item": "FOMC SEP 中央値 2027 年(2026-09)",
+   "value": "4.1%(6 月 SEP は 3.6%)",
+   "source": "research3/W4_rates.md:37",
+   "source_note": "cryptobriefing、tmgm、KuCoin 要約。Tier 4*/3*",
+   "note": "6 月比 +0.5pt(算出、:39)。"
+  },
+  {
+   "group": "金利",
+   "item": "FOMC SEP 中央値 2028 年(2026-09)",
+   "value": "3.9%(6 月 SEP は 3.4%)",
+   "source": "research3/W4_rates.md:37",
+   "source_note": "cryptobriefing、tmgm、KuCoin 要約。Tier 4*/3*",
+   "note": "6 月比 +0.5pt(算出、:39)。"
+  },
+  {
+   "group": "金利",
+   "item": "FOMC SEP 中央値 2029 年(2026-09)",
+   "value": "3.6%(6 月 SEP の記載なし)",
+   "source": "research3/W4_rates.md:37",
+   "source_note": "cryptobriefing 由来。Tier 4*/3*",
+   "note": "比較値は tmgm にはなく単一出典(:194)。参考扱い。"
+  },
+  {
+   "group": "金利",
+   "item": "FOMC SEP 長期中立金利(2026-09)",
+   "value": "3.2%(3.25% の表記も 1 件)",
+   "source": "research3/W4_rates.md:37",
+   "source_note": "cryptobriefing、KuCoin(3.2%)、tmgm(3.25%)。Tier 4*/3*",
+   "note": "6 月 3.1%(:35)、3 月 3.1%(:33)。3.25% との食い違いは併記(:193)。"
+  },
+  {
+   "group": "金利",
+   "item": "市場織り込み(短期)",
+   "value": "10 月利上げ確率 約 25%、12 月までに 25bp を織り込み",
+   "source": "research3/W4_rates.md:42",
+   "source_note": "political.org、TradingEconomics 要約。Tier 4*",
+   "note": "2026-10-07 頃。"
+  },
+  {
+   "group": "金利",
+   "item": "市場織り込み(中期)",
+   "value": "2027 年半ばまでに利上げ 4 回(FRB 中央値を上回る)",
+   "source": "research3/W4_rates.md:43",
+   "source_note": "Morningstar 要約。Tier 3*",
+   "note": "日付は 2026-09 下旬以降(日付不明)。ファイル算出: 中心 3.875% + 0.75 = 4.63%、+1.00 = 4.88%(:43)。Morningstar 自身は 2027 年の利下げを予想(:157)。"
+  },
+  {
+   "group": "金利",
+   "item": "CME 先物・OIS(2026 末・2027 末)",
+   "value": "欠損",
+   "source": "research3/W4_rates.md:44",
+   "source_note": "—",
+   "note": "CME FedWatch の直接参照が必要(§9 #1、:221)。"
+  },
+  {
+   "group": "金利",
+   "item": "2 年金利 2026-09-23",
+   "value": "4.85%",
+   "source": "research3/W4_rates.md:57",
+   "source_note": "財務省データ(statisticsoftheworld)。Tier 2*",
+   "note": "2026-10-12 時点は欠損(:63)。"
+  },
+  {
+   "group": "金利",
+   "item": "5 年金利 2026-09-23",
+   "value": "4.99%",
+   "source": "research3/W4_rates.md:57",
+   "source_note": "財務省データ(statisticsoftheworld)。Tier 2*",
+   "note": "2026-10-12 時点は欠損(:63)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-09-23",
+   "value": "5.11%(前日比 +15bp)",
+   "source": "research3/W4_rates.md:57",
+   "source_note": "財務省データ(statisticsoftheworld)。Tier 2*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-09-30",
+   "value": "5.29%",
+   "source": "research3/W4_rates.md:58",
+   "source_note": "StockMarketWatch 月次。Tier 3*/4*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-10-01(2002 年以来の高値)",
+   "value": "約 5.34%(その後反落)",
+   "source": "research3/W4_rates.md:59",
+   "source_note": "Reuters 債券調査の要約。Tier 3*",
+   "note": "10-05 は 5.33%(別報道)/ 5.310%(Tradeweb)、10-07 は 5.307%(political.org)と媒体で不一致(:192)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-10-06(終値)",
+   "value": "5.27%",
+   "source": "research3/W4_rates.md:61",
+   "source_note": "Reuters 債券調査の要約。Tier 3*",
+   "note": "Reuters 債券調査の出発点(:147)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-10-12",
+   "value": "欠損",
+   "source": "research3/W4_rates.md:63",
+   "source_note": "—",
+   "note": "本検索では取得できず(§9 #3、:223)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年金利 2026-07-31 と 2026-08-31",
+   "value": "4.74%(07-31)、4.75%(08-31)",
+   "source": "research3/W4_rates.md:54",
+   "source_note": "Damodaran 要約(07-31)、Reuters 債券調査の要約(08-31、:55)。Tier 3*",
+   "note": "7 月中に 4.45% から上昇(:54)。"
+  },
+  {
+   "group": "金利",
+   "item": "30 年金利 2026-09-23",
+   "value": "5.40%",
+   "source": "research3/W4_rates.md:57",
+   "source_note": "財務省データ(statisticsoftheworld)。Tier 2*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "30 年金利 2026-10-07 頃",
+   "value": "5.653%(24 年近い高値、10 月初旬の報道時点)",
+   "source": "research3/W4_rates.md:62",
+   "source_note": "political.org 要約。Tier 4*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "20 年金利 2026-09-30",
+   "value": "5.68%",
+   "source": "research3/W4_rates.md:58",
+   "source_note": "StockMarketWatch 月次。Tier 3*/4*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "10 年 TIPS 実質利回り(2026-09-17 入札)",
+   "value": "2.653%(2008 年 10 月以来の高水準)",
+   "source": "research3/W4_rates.md:56",
+   "source_note": "tipswatch(財務省入札結果)。Tier 2*/4*",
+   "note": "10 年 BE 約 2.30%(算出: 4.95% − 2.653% = 2.297%、:80)。2026-10 の実質利回りは欠損(:82)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年 TIPS 実質利回りの歴史的水準",
+   "value": "2008 年 10 月以降の 10 年 TIPS 入札で 2.653% を上回る値なし",
+   "source": "research3/W4_rates.md:113",
+   "source_note": "tipswatch 要約。Tier 2*/4*",
+   "note": "TIPS の発行開始は 1997 年(一般知識。出典なし、:115)。それ以前の実質金利は TIPS ベースでは作れない。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回りの 2002 年以来の高値",
+   "value": "2002 年以来の高水準(10 年国債 5.34%、2026 年 10 月初め)",
+   "source": "research2/R5_credit.md:112",
+   "source_note": "R5-14 ms-aktuell 系の報道。Tier 4",
+   "note": "W4 の 10-01 約 5.34% と整合(:59)。米 10 年債 5.3% 台が Oracle 社債の絶対水準を押し上げている(R5 :114)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1962(年次)",
+   "value": "3.95%",
+   "source": "research3/W4_rates.md:99",
+   "source_note": "FRED 年次系列(要約)。Tier 2*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1978(年次)",
+   "value": "8.41%",
+   "source": "research3/W4_rates.md:102",
+   "source_note": "FRED 年次系列(要約)。Tier 2*",
+   "note": "—"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1960 年代平均(1962〜69)",
+   "value": "約 4.84%(算出)",
+   "source": "research3/W4_rates.md:100",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "要約の年次値からの単純平均。年次表は未読で未検証。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1970 年代平均",
+   "value": "約 7.50%(算出)",
+   "source": "research3/W4_rates.md:101",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1980 年代平均",
+   "value": "約 10.60%(算出)",
+   "source": "research3/W4_rates.md:103",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 1990 年代平均",
+   "value": "約 6.66%(算出)",
+   "source": "research3/W4_rates.md:104",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 2000 年代平均",
+   "value": "約 4.46%(算出)",
+   "source": "research3/W4_rates.md:105",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 2010 年代平均",
+   "value": "約 2.40%(算出)",
+   "source": "research3/W4_rates.md:106",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "10 年国債利回り 2020〜2024 年平均",
+   "value": "約 2.73%(算出、2025〜26 は欠損)",
+   "source": "research3/W4_rates.md:107",
+   "source_note": "macrotrends、FRED 系(要約)。Tier 2*/4*",
+   "note": "同上(未検証)。"
+  },
+  {
+   "group": "金利",
+   "item": "1962 年以降の長期平均(名目)",
+   "value": "欠損(参考算出 約 5.85%、入力未検証)",
+   "source": "research3/W4_rates.md:109",
+   "source_note": "算出。Tier 2*/4*",
+   "note": "(8 × 4.84 + 10 × (7.50 + 10.60 + 6.66 + 4.46 + 2.40) + 5 × 2.73) ÷ 63 = 368.57 ÷ 63 ≈ 5.85%(ファイル算出、:109)。"
+  },
+  {
+   "group": "金利",
+   "item": "ERP Damodaran インプライド(S&P 500、2026-08 初)",
+   "value": "4.23%(期待リターン 8.97%)",
+   "source": "research3/W4_rates.md:123",
+   "source_note": "月次更新の要約(stockwirex、Stocktwits、BVResources 系)。Tier 3*",
+   "note": "無リスク金利は 10 年国債と推定(算出: 8.97% − 4.23% = 4.74% = 7 月末の 10 年、:125)。2026-01 年次でも 4.23%(:128)で取り違えの可能性あり(:209)。"
+  },
+  {
+   "group": "金利",
+   "item": "ERP Damodaran 前月(2026-07 初)",
+   "value": "4.20%(期待リターン 8.65%、10 年 4.45%)",
+   "source": "research3/W4_rates.md:126",
+   "source_note": "同上。Tier 3*",
+   "note": "算出: 8.65% − 4.20% = 4.45%(:127)。"
+  },
+  {
+   "group": "金利",
+   "item": "ERP Damodaran 2026-09・10 月",
+   "value": "欠損",
+   "source": "research3/W4_rates.md:129",
+   "source_note": "—",
+   "note": "NYU Stern の Damodaran ページ未読(§9 #16、:236)。"
+  },
+  {
+   "group": "金利",
+   "item": "Kroll 推奨 米国 ERP",
+   "value": "5.0%(5.5%(2025-04)→5.0%(2025-09-02)。2026-09-16 据え置き報道)",
+   "source": "research3/W4_rates.md:130",
+   "source_note": "BVResources 要約、Kroll 2026-01 エグゼクティブサマリー(要約)。Tier 3*",
+   "note": "2026-01 に据え置き確認(:130)。"
+  },
+  {
+   "group": "金利",
+   "item": "Kroll 無リスク金利の扱い(規則)",
+   "value": "正規化 3.5% と 20 年国債スポットの高い方(2025-09 以降の運用)",
+   "source": "research3/W4_rates.md:131",
+   "source_note": "BVResources 要約。Tier 3*",
+   "note": "20 年国債スポット 5.68%(2026-09-30、:132)、規則上の値は 5.68%(算出: max(3.5%, 5.68%)、:133)。2026 年の再確認は欠損(:134)。"
+  },
+  {
+   "group": "金利",
+   "item": "Reuters 債券調査 10 年見通し(2026-10-07、30 名)",
+   "value": "3 か月後 5.00%、6 か月後 4.90%、12 か月後 4.75%",
+   "source": "research3/W4_rates.md:143",
+   "source_note": "Reuters 債券調査(roic.ai 転載)。Tier 3*",
+   "note": "出発点は 10 年 5.27%(10-06)、30 名中 28 名が上振れリスクと回答(:147)。前回調査の旧版は 3 か月中央値 4.50%(:148)。"
+  },
+  {
+   "group": "金利",
+   "item": "Livingston 調査 10 年見通し(2026-06)",
+   "value": "2026 年末 4.30%、2027 年末 4.18%",
+   "source": "research3/W4_rates.md:149",
+   "source_note": "Philadelphia Fed Livingston Survey。Tier 2*",
+   "note": "2026-06 末の 10 年は 4.45%(予測か実績か要約からは判別不能、:151)。"
+  },
+  {
+   "group": "金利",
+   "item": "CBO 基準の 10 年金利見通し(2026-02 公表)",
+   "value": "2026 年 約 4.1%、2031 年 約 4.4%",
+   "source": "research3/W4_rates.md:152",
+   "source_note": "CRFB 要約、原典は CBO。Tier 3*(原典 2)",
+   "note": "2027〜36 年次は欠損(:154)。実績は CBO の従前見通しを 100bp 超上回るとの記述(:156)。"
+  },
+  {
+   "group": "金利",
+   "item": "Morningstar の 2027 年政策金利見通し",
+   "value": "利下げ(市場の織り込みと逆向き)",
+   "source": "research3/W4_rates.md:157",
+   "source_note": "Morningstar。Tier 3*",
+   "note": "日付は 2026-09 以降(日付不明)。"
+  },
+  {
+   "group": "リース",
+   "item": "認識済みリース(2026-08-31)",
+   "value": "オペレーティング 34,621 + ファイナンス 9,185 = 43,806(百万 USD)",
+   "source": "research2/R5_credit.md:200",
+   "source_note": "出典表記なし。本節の注は債務を既存 H3 由来と記載(:199)",
+   "note": "総債務(借入)にはリース負債を含まない(:200)。合計 43,806 はファイル記載値。"
+  },
+  {
+   "group": "リース",
+   "item": "認識済みリース(日付明記なし、FY26 計算で使用)",
+   "value": "37.890(単位は $B 系列)",
+   "source": "research2/R5_credit.md:71",
+   "source_note": "ファイル内の算出注記。出典表記なし",
+   "note": "日付は明記なし。(129.541 + 37.890) ÷ 29.87 = 5.61 倍(ファイル算出、:71)。"
+  },
+  {
+   "group": "リース",
+   "item": "未開始リース(2026-05-31、10-K)",
+   "value": "$260B(データセンターが中心、貸借対照表に未計上)",
+   "source": "research2/R5_credit.md:68",
+   "source_note": "既存 H3 表 D。Tier 1*/3",
+   "note": "ほぼ全てがデータセンター。期間 15〜19 年(:68)。既存 S4 は調整後債務に算入と記載、R5 は確認できず(:65)。"
+  },
+  {
+   "group": "リース",
+   "item": "未開始リース(2026-08-31、10-Q、二次情報)",
+   "value": "$288B",
+   "source": "research2/R5_credit.md:68",
+   "source_note": "既存 H3 表 D(二次)。Tier 1*/3",
+   "note": "債務には含まないと注記(:200)。"
+  },
+  {
+   "group": "リース",
+   "item": "未開始リースの期間",
+   "value": "15〜19 年",
+   "source": "research2/R5_credit.md:68",
+   "source_note": "既存 H3 表 D。Tier 1*/3",
+   "note": "年度別の支払額・開始時期はファイルに記載なし。"
+  },
+  {
+   "group": "リース",
+   "item": "S&P の調整後債務への未開始リース算入",
+   "value": "欠損(算入は確認できず)",
+   "source": "research2/R5_credit.md:65",
+   "source_note": "R5-01, R5-09, 既存 S4 D6。Tier 3",
+   "note": "既存 S4 は『未開始リース $260B を調整後負債の予測に算入』と記載(:65)。ファイル算出では報道の 4.3〜4.4 倍は未開始リースを含まない定義と整合(:71)。保留(:326)。"
+  },
+  {
+   "group": "リース",
+   "item": "Moody's の未開始リースの扱い",
+   "value": "未開始リースを『implicit debt(暗黙の債務)』として扱う警告(2026-02、報道)",
+   "source": "research2/R5_credit.md:66",
+   "source_note": "既存 S4 D7(IDN Financials 報道)。Tier 3",
+   "note": "—"
+  },
+  {
+   "group": "リース",
+   "item": "Fitch の賃料込み閾値",
+   "value": "賃料込みで 4 倍超(EBITDA レバレッジ 3.5 倍超と並ぶ閾値)",
+   "source": "research2/R5_credit.md:67",
+   "source_note": "R5-04。Tier 3",
+   "note": "賃料込みの定義の詳細は欠損(:67)。"
+  },
+  {
+   "group": "リース",
+   "item": "純リース調整後レバレッジ(CreditSights 予測)",
+   "value": "FY28 3.7 倍(予測)",
+   "source": "research2/R5_credit.md:59",
+   "source_note": "既存 S1 S36(有料でプレビューのみ)",
+   "note": "S&P の調整と定義が異なり比較不可(:59)。"
+  },
+  {
+   "group": "リース",
+   "item": "リース込み EBITDAR",
+   "value": "欠損(未算出。賃料の額が欠損)",
+   "source": "research2/R5_credit.md:200",
+   "source_note": "R5 本文の注記(出典表記なし)",
+   "note": "総債務にはリース負債を含まない注記と併記(:200)。"
+  },
+  {
+   "group": "リース",
+   "item": "支払利息に含まれるリース利息",
+   "value": "ファイナンスリースの利息が含まれる可能性あり(未確認)",
+   "source": "research2/R5_credit.md:144",
+   "source_note": "R5 本文の注記",
+   "note": "資本化利息の控除の有無も未確認(:144)。"
+  },
+  {
+   "group": "リース",
+   "item": "パートナーが資金負担する比率(Oracle)",
+   "value": "欠損(比率の記載なし)",
+   "source": "research2/R7_capital_power.md:98",
+   "source_note": "R7 本文の注記(報道、既存 H3 参照、Tier 表記なし)",
+   "note": "3 ファイルのいずれにも比率の記載なし。Oracle はテナントで、資金は開発者側 SPV の借入(:98)。"
+  },
+  {
+   "group": "リース",
+   "item": "開発者 SPV 融資(Vantage Port Washington)",
+   "value": "$38B、初回価格は基準金利 +約 2.5pp(JPMorgan・MUFG 主幹)",
+   "source": "research2/R7_capital_power.md:98",
+   "source_note": "報道、既存 H3 参照(Tier 表記なし)",
+   "note": "Vantage 側の借入で Oracle 本体の債務ではない(:98)。"
+  },
+  {
+   "group": "リース",
+   "item": "開発者 SPV 融資(Stack Project Jupiter)",
+   "value": "$18B、ローンが額面 89〜91 セントで取引と報道",
+   "source": "research2/R7_capital_power.md:98",
+   "source_note": "既存 H3 参照。Tier 4",
+   "note": "Oracle はテナント(報道)(:98)。"
+  },
+  {
+   "group": "リース",
+   "item": "顧客前払い・顧客持ち込み(BYOH)等(FY27)",
+   "value": "FY27 capex $90〜95B のうち $20〜25B",
+   "source": "research2/R5_credit.md:212",
+   "source_note": "R5-18、既存 S1/S2。Tier 1*/3",
+   "note": "顧客の資金(パートナーを含むかは不明)。純現金 capex は約 $70B 以内(:212)。"
+  },
+  {
+   "group": "リース",
+   "item": "顧客前払い(Q1 FY27)",
+   "value": "営業 CF $23.1B のうち顧客前払い $11.4B",
+   "source": "research2/R5_credit.md:213",
+   "source_note": "R5-18、既存 S2。Tier 1*/3",
+   "note": "前払いの対象の内訳は欠損。"
+  },
+  {
+   "group": "リース",
+   "item": "Nebius の前払い(参考、Oracle ではない)",
+   "value": "一部前払いが設備投資の 50〜60% を賄う(要約)",
+   "source": "research2/R7_capital_power.md:234",
+   "source_note": "検索 4 の結果群(個別 URL 特定不可)。Tier 3〜4",
+   "note": "Nebius の例。Oracle の比率は欠損。案件の約 70% で一部前払い(:234)。"
+  }
+ ],
+ "missing": [
+  "信用: S&P の FY28・FY29 の調整後 Debt/EBITDA(欠損、research2/R5_credit.md:55)",
+  "信用: S&P の FY30 の FOCF(欠損、research2/R5_credit.md:54)",
+  "信用: Moody's の格下げ数値トリガーと格上げ条件(欠損、research2/R5_credit.md:45)",
+  "信用: 2025-09 と 2026-10 の 5 年 CDS(欠損、research2/R5_credit.md:81, :91)",
+  "信用: 2026-02 新発債のトランシェ別金額・国債スプレッド・発行利回り(欠損、research2/R5_credit.md:128。2031・2036・2046・2066 の利回りのみ R7 にある)",
+  "信用: 会社開示の加重平均調達金利(欠損、research2/R5_credit.md:136)",
+  "信用: 2035 年債の実勢利回り・スプレッド(欠損、research2/R5_credit.md:109)",
+  "金利: 実効 FF 金利(EFFR)(欠損、research3/W4_rates.md:41)",
+  "金利: 2026 年末・2027 年末の CME 先物・OIS(欠損、research3/W4_rates.md:44)",
+  "金利: 2026-10-12 時点の 2・5・10・20・30 年(欠損、research3/W4_rates.md:63)",
+  "金利: 2026-10 の 10 年 TIPS 実質・BE と 5y5y(欠損、research3/W4_rates.md:81-82)",
+  "金利: 2026 年 YTD 平均と 1980 年代前半の名目ピーク(欠損、research3/W4_rates.md:111-112)",
+  "金利: WSJ・Blue Chip・大手行の 10 年見通し(欠損、research3/W4_rates.md:159-161)",
+  "金利: CBO 2027〜2036 年次の 10 年見通し(欠損、research3/W4_rates.md:154)",
+  "金利: Damodaran の 2026-09・10 月の ERP(欠損、research3/W4_rates.md:129)",
+  "金利: Kroll の 2026 年の正規化無リスク金利の再確認(欠損、research3/W4_rates.md:134)",
+  "金利: FOMC 投影表と財務省 Daily Par Yield Curve などの一次資料は未読(research3/W4_rates.md:221-224)",
+  "リース: パートナー資金負担比率(Oracle の比率。3 ファイル全体に記載なし)",
+  "リース: 未開始リースの年度別支払額・開始時期(ファイルに記載なし)",
+  "リース: 賃料額とリース込み EBITDAR(欠損、research2/R5_credit.md:200)",
+  "リース: S&P の調整後債務への未開始リース算入の可否(欠損、research2/R5_credit.md:65)",
+  "リース: 37.890(十億 USD 相当)の基準日は明記なし(research2/R5_credit.md:71)"
+ ]
+}

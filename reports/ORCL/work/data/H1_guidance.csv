@@ -1,0 +1,12 @@
+announce_date,target_period,item,guidance_value,actual_value,source_ids,source_url_primary,tier,note
+2026-09-10,Q2 FY27,総売上成長率,+30% to +34% (USD・cc),未(次期),R01;R06,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,Tier1(スニペット)/Tier3,
+2026-09-10,FY27,総売上,>= 90 (US$B),未(通期),R01;R06,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,Tier1(スニペット)/Tier3,6月見通しを据え置き
+2026-09-10,FY27,Non-GAAP EPS,8.10 (US$),未(通期),R06,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,Tier3,報道経由
+2026-09-10,FY27,Capex,90 to 95 (US$B),未(通期),R07,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,Tier3,第三者分析
+2026-09-10,FY27,Net cash capex,<= 70 (US$B),未(通期),R07,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,Tier3,第三者分析
+2026-06-10,FY27,総売上,>= 90 (US$B),未(通期),R10,https://www.oracle.com/ae/news/announcement/q4fy26-earnings-release-2026-06-10/,Tier1(スニペット),据え置き
+2026-06-10,FY27,Non-GAAP EPS,8.05 (US$),未(通期),R10,https://www.oracle.com/ae/news/announcement/q4fy26-earnings-release-2026-06-10/,Tier1(スニペット),引き上げ。一時要因(Ampere 売却、Bloom ワラント)を除くと +18%
+2026-06-10,対象期間不明(次四半期と推測、要確認),Non-GAAP EPS,1.72 to 1.76 (USD); cc 1.71 to 1.75,"1.92 (Q1 FY27, 2026-09-10)",R10,https://www.oracle.com/ae/news/announcement/q4fy26-earnings-release-2026-06-10/,Tier1(スニペット),対象期間は抜粋から特定できず
+2026-03-10,Q4 FY26,総クラウド売上成長率,+44% to +48% (cc) / +46% to +50% (USD),総クラウド NA。IaaS +93% (USD),R11;R12,https://investor.oracle.com/investor-news/news-details/2026/Oracle-Announces-Fiscal-Year-2026-Third-Quarter-Financial-Results/default.aspx,Tier3(R12) / Tier1 ページ未確認(R11),原文は未確認
+2025-09-09,Q2 FY26,Non-GAAP EPS,1.61 to 1.65 (USD); 成長率 10% to 12%,2.26 (2025-12-10),R16;R17;R18,https://www.oracle.com/news/announcement/q1fy26-earnings-release-2025-09-09/,Tier1(スニペット)/Tier3,
+2025-09-09,Q1 FY26,Non-GAAP 税率,19%,20.5%,R18,https://www.oracle.com/news/announcement/q1fy26-earnings-release-2025-09-09/,Tier3,決算通話記録

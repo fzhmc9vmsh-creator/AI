@@ -1,0 +1,26 @@
+年度,区分,EPS_平均,EPS_最高,EPS_最低,アナリスト数,EPS定義,売上_平均_B,売上_最高,売上_最低,出典URL,掲載日,取得日,備考
+FY2027,コンセンサス,7.98,8.32,7.33,23,不明,NA,NA,NA,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,
+FY2027,コンセンサス,6.47,NA,NA,NA,不明 (GAAP系の可能性 未確認),NA,NA,NA,https://www.barchart.com/story/news/3478052/earnings-preview-what-to-expect-from-oracles-report,2026-09 (Q1前),2026-10-11,
+FY2027,コンセンサス,6.34,NA,NA,40,不明,89.2,NA,NA,https://www.webull.ca/news-detail/15123152986760192,2026-06頃 要確認,2026-10-11,FY26決算後 直前6.40 売上89.2は決算前
+FY2027,コンセンサス,NA,NA,NA,NA,NA,約90.5,NA,NA,https://finance.yahoo.com/quote/ORCL-PD/analysis/,2026-09-30,2026-10-11,EPS欠損
+FY2027,コンセンサス (Q1前・低品質),7.75,NA,NA,NA,不明,89.5,NA,NA,https://www.thecerbatgem.com/?p=10386305,2026-09,2026-10-11,低品質 ガイダンス記事内の値
+FY2027,コンセンサス (低信頼),6.39,NA,NA,NA,不明,NA,NA,NA,出典URL特定不可,2026-08,2026-10-11,低信頼
+FY2027,独自モデル (非コンセンサス),7.60,NA,NA,NA,独自 diluted,NA,NA,NA,https://www.vcpscanner.com/valuation/orcl/estimates,掲載日不明,2026-10-11,出典自身がコンセンサス未満と表示
+FY2027,コンセンサス (要確認・年度は推定),8.05,8.15,7.82,25,不明 (会社ガイダンス8.10に近く non-GAAP系の可能性),NA,NA,NA,https://tickerleague.com/companies/ORCL/price-target,掲載日不明,2026-10-11,ページは next fiscal year と表記し年度を明示しない FY27 と推定 検索要約経由
+FY2028,コンセンサス,10.78,14.05,7.36,16,不明,NA,NA,NA,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,
+FY2028,コンセンサス,8.78,NA,NA,NA,不明 (FY27 比 +35.7%),NA,NA,NA,https://www.barchart.com/story/news/3478052/earnings-preview-what-to-expect-from-oracles-report,2026-09 (Q1前),2026-10-11,
+FY2028,コンセンサス (低信頼),8.67,NA,NA,NA,不明,NA,NA,NA,出典URL特定不可,2026-08,2026-10-11,低信頼
+FY2028,独自モデル (非コンセンサス),9.42,NA,NA,NA,独自,NA,NA,NA,https://www.vcpscanner.com/valuation/orcl/estimates,掲載日不明,2026-10-11,
+FY2028,コンセンサス (売上のみ),NA,NA,NA,NA,NA,131.5,NA,NA,https://finance.yahoo.com/quote/ORCL-PD/analysis/,2026-09-30,2026-10-11,売上のみ
+FY2028,コンセンサス (売上のみ),NA,NA,NA,35,NA,129.79,130.14,129.44,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,売上 35社 (TickFlow 検索要約経由) Yahoo 131.5 (2026-09-30) と不一致 要確認
+FY2029,コンセンサス (売上のみ),NA,NA,NA,NA,NA,183.24,185.60,176.05,https://www.tickflow.io/stock/ORCL/forecast,掲載日不明,2026-10-11,売上 17社 (TickFlow 検索要約経由) EPS は未取得
+FY2029,独自モデル (非コンセンサス),9.37,NA,NA,NA,独自 diluted,NA,NA,NA,https://www.vcpscanner.com/valuation/orcl/estimates,掲載日不明,2026-10-11,出典自身がコンセンサス未満と表示 参考のみ
+FY2030,コンセンサス,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,2026-10-11,未取得 (現行の平均・最高・最低 とも検索で得られず)
+FY2030,独自モデル (非コンセンサス),10.52,NA,NA,NA,独自 diluted,NA,NA,NA,https://www.vcpscanner.com/valuation/orcl/estimates,掲載日不明,2026-10-11,出典自身がコンセンサス未満と表示 参考のみ
+FY2030,会社目標 (コンセンサスではない),21,NA,NA,NA,non-GAAP (会社目標),225,NA,NA,検索要約経由 (Oracle アナリストデー報道 URL特定不可),2025-10頃,2026-10-11,年率28%成長で FY30 EPS 21 売上 225B の目標 (要確認)
+FY2030,古い参考 (アナリストデー前・現行ではない),18.92,NA,NA,NA,adjusted (LSEG),198.4,NA,NA,検索要約経由 (LSEG データ 引用 URL特定不可),2025-10頃,2026-10-11,古い参考値 現行コンセンサスとして使わない
+FY2031,コンセンサス,NA,NA,NA,NA,NA,NA,NA,NA,-,-,2026-10-11,未取得
+FY2029,コンセンサス (EPS),NA,NA,NA,NA,NA,NA,NA,NA,-,-,2026-10-11,未取得
+Q2 FY2027,会社ガイダンス (コンセンサスではない),NA,NA,NA,NA,non-GAAP,NA,NA,NA,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,2026-09-10,2026-10-11,EPS 1.85-1.93 売上 20.9B-21.5B 成長率30-34%
+Q2 FY2027,コンセンサス (Q1前・低品質),1.82,NA,NA,NA,不明,21.2,NA,NA,https://www.thecerbatgem.com/?p=10386305,2026-09,2026-10-11,Q1後の更新値は未取得
+FY2027,会社ガイダンス (コンセンサスではない),8.10,NA,NA,NA,non-GAAP,90.0以上,NA,NA,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,2026-09-10,2026-10-11,8.05 とする記事あり (https://app.edgar.tools/news/topic/guidance_change) 要確認

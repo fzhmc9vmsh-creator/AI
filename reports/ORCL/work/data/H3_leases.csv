@@ -1,0 +1,18 @@
+period,item,value_musd,timing_or_term,source_ids,tier,note
+2025-08-31,operating lease liabilities,NA,NA,NA,NA,not captured
+2025-08-31,finance lease liabilities,NA,NA,NA,NA,not captured
+2025-08-31,uncommenced lease commitments,99800,NA,"S36;S37",3,"secondary quote attributed to 10-Q; exact source unclear"
+2025-11-30,uncommenced lease commitments,248000,NA,"S35",3,"Bloomberg Dec 2025 via Advisor Perspectives; attributed to 10-Q"
+2026-05-31,operating lease liabilities,NA,NA,"S02;S36",3,"derived candidate 30189 = Reuters total 37890 minus finance 7701; not confirmed; left NA"
+2026-05-31,finance lease liabilities,7701,NA,"S02",1,"10-K via search excerpt"
+2026-05-31,total recognised lease liabilities,37890,NA,"S36",3,"Reuters via CoStar"
+2026-05-31,uncommenced lease commitments,260000,"commence 2026 Q1 FY27 to FY2029; terms 15-19 years; substantially all data centers","S02;S36;S38",1,"10-K via secondary excerpt"
+2026-05-31,lessor borrowing guarantee (max),3300,"matures 2026-09","S02",1,"10-K excerpt; whether repeated in 10-Q is conflicting"
+2026-08-31,operating lease liabilities,34621,NA,"S01;S39",1,"10-Q via secondary excerpt"
+2026-08-31,finance lease liabilities,9185,NA,"S01;S39",1,"10-Q via secondary excerpt"
+2026-08-31,total recognised lease liabilities,43806,NA,"S01;S39",1,"calc = 34621 + 9185; third-party analysis 43.81bn agrees"
+2026-08-31,uncommenced lease commitments,288000,"commence 2026 Q2 FY27 to FY2029; terms 15-19 years; not on balance sheet","S01;S37;S39",1,"10-Q via secondary; earlier 10-Q value 248000 cited by some sources"
+2025-08-31,remaining performance obligations (reference only),455000,NA,"S01",1,"prior-year comparative in Q1 FY27 10-Q via secondary; not purchase obligations"
+2026-08-31,remaining performance obligations (reference only),664000,NA,"S01;S07;S41",1,"not purchase obligations"
+2026-05-31,purchase obligations (non-cancelable),NA,NA,NA,NA,"not retrieved"
+2026-08-31,purchase obligations (non-cancelable),NA,NA,NA,NA,"not retrieved"

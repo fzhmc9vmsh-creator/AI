@@ -1,0 +1,7 @@
+period,period_end,total_debt_musd,cash_and_st_inv_musd,net_debt_musd,equity_musd,note,source_ids
+FY2025Q4,2025-05-31,92568,10786,81782,20969,"total = current 7271 + noncurrent 85297 (calc). cash = cash equivalents only (MS not captured). equity = 10-K total SE as reported; NCI split not verified","S05"
+FY2026Q1,2025-08-31,91315,11005,80310,24154,"total = 9079 + 82236 (calc). cash+MS = 10445 + 560 (calc). equity = Oracle SE (total incl NCI 24666)","S04"
+FY2026Q2,2025-11-30,105000,19200,85800,NA,"total approx from secondary ('about $105bn'), not exact. cash approx 19.2bn cash-only (secondary). net approx (calc). equity NA","S49;S48"
+FY2026Q3,2026-02-28,134605,38455,96150,NA,"total = 9887 + 124718 (calc). cash = cash equivalents only (MS NA). includes Feb-2026 USD25bn notes","S03"
+FY2026Q4,2026-05-31,129541,31894,97647,42508,"total = 7199 (third-party current) + 122342 (XBRL noncurrent); matches 10-K carrying amount 130105 less 564. cash = cash+MS (10-Q liquidity table). equity = Oracle SE; total incl NCI 43056","S02;S01;S46"
+FY2027Q1,2026-08-31,125337,37077,88260,NA,"total = 7625 + 117712 (calc; agrees with secondary ~125.3bn). cash = 36369 cash + 708 MS = 37077 (10-Q). equity NA","S07;S01;S39"

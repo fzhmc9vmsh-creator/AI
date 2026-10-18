@@ -1,0 +1,1232 @@
+{
+ "rows": [
+  {
+   "group": "需要",
+   "item": "Google 全面の月間処理トークン",
+   "value": "9.7T(2024-05)→480T(2025-05)→3,200T(2026-05)",
+   "source": "research4/T4_ai_demand.md:55",
+   "source_note": "[T4-01] Tier 1*(会社発表の二次報道・未監査)",
+   "note": "2024→25 は 49.5 倍(算出: 480 ÷ 9.7)。2025→26 は 6.7 倍(算出: 3,200 ÷ 480)。消費電力は非開示。"
+  },
+  {
+   "group": "需要",
+   "item": "Google API の毎分トークン",
+   "value": "約19B/分(2026-05)",
+   "source": "research4/T4_ai_demand.md:56",
+   "source_note": "[T4-01] Tier 1*",
+   "note": "月換算 820.8T(算出: 19B × 60 × 24 × 30)。全面 3,200T の 25.7%(算出: 820.8 ÷ 3,200)。"
+  },
+  {
+   "group": "需要",
+   "item": "Microsoft Foundry の年 1T トークン超の顧客数",
+   "value": "250社超(2026-01-28)→300社超(2026-04-29)",
+   "source": "research4/T4_ai_demand.md:59",
+   "source_note": "[T4-05] Tier 1*/3*",
+   "note": "+20%(算出: 300 ÷ 250 − 1)。Futurum は「前四半期比 30% 加速」と記述(食い違い)。総トークン量は欠損。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI API の毎分トークン",
+   "value": "6B/分(DevDay 2025)→15B/分(2026-03)",
+   "source": "research4/T4_ai_demand.md:61",
+   "source_note": "[T4-03] Tier 1*(アグリゲーター経由)",
+   "note": "2.5 倍(算出: 15 ÷ 6)。15B/分の月換算 648T(算出: 15B × 60 × 24 × 30)。6B/分の日付は要約に記載なし。"
+  },
+  {
+   "group": "需要",
+   "item": "ChatGPT の週間利用者",
+   "value": "9億超(2026-02-27)→約10億(2026-07)",
+   "source": "research4/T4_ai_demand.md:62",
+   "source_note": "[T4-03] Tier 1*〜3*",
+   "note": "+11%(算出: 10 ÷ 9 − 1)。OpenAI 広報(The Verge)。月間 10 億(2026-06、Reuters/Sensor Tower)とは定義が違う。"
+  },
+  {
+   "group": "需要",
+   "item": "ByteDance Doubao の日次トークン",
+   "value": "120T超(2026-03、3か月で倍増)",
+   "source": "research4/T4_ai_demand.md:63",
+   "source_note": "[T4-24] Tier 3*(180T超は 4*)",
+   "note": "月換算 3,600T(算出: 120T × 30)。Google の 3,200T と同じ桁だが定義は別。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenRouter の週間トークン(第三者ルーター)",
+   "value": "4.6T(2025-09)→113T(2026-08)",
+   "source": "research4/T4_ai_demand.md:64",
+   "source_note": "[T4-24] Tier 4*",
+   "note": "24.6 倍(算出: 113 ÷ 4.6)。別報道は「週 90T 超(2026 年中盤)」「2024-01 から 9,000 倍」。"
+  },
+  {
+   "group": "需要",
+   "item": "推論の電力(McKinsey)",
+   "value": "20.9GW(2025)→93.3GW(2030、年 35%)",
+   "source": "research4/T4_ai_demand.md:34",
+   "source_note": "[T4-02] Tier 3*",
+   "note": "2030 年に推論が DC 総需要の 40% 超とも要約に記述。指標は電力(GW)。"
+  },
+  {
+   "group": "需要",
+   "item": "学習の電力(McKinsey)",
+   "value": "23.1GW(2025)→62.2GW(2030)",
+   "source": "research4/T4_ai_demand.md:35",
+   "source_note": "[T4-02] Tier 3*",
+   "note": "学習の年率 21.9%(算出: (62.2 ÷ 23.1)^(1/5) − 1)。2025 年は学習がわずかに大きい(GW 基準)。"
+  },
+  {
+   "group": "需要",
+   "item": "推論の比率(電力、推論 ÷ (推論+学習))",
+   "value": "47.5%(算出)→60.0%(算出)",
+   "source": "research4/T4_ai_demand.md:36",
+   "source_note": "算出(元資料の McKinsey [T4-02] Tier 3*)",
+   "note": "47.5% = 20.9 ÷ 44.0(算出)、60.0% = 93.3 ÷ 155.5(算出)。44.0 = 20.9 + 23.1、155.5 = 93.3 + 62.2(算出)。"
+  },
+  {
+   "group": "需要",
+   "item": "推論の支出の比率(Futurum)",
+   "value": "2025 年に推論が学習を上回る。2030 年 71.7%",
+   "source": "research4/T4_ai_demand.md:37",
+   "source_note": "[T4-02] Tier 3*",
+   "note": "2030 年 推論 $106.8B、学習 $42.2B(71.7% = 106.8 ÷ 149.0、算出)。「AI プラットフォームのインフラ支出」で大手 capex とは範囲が別。"
+  },
+  {
+   "group": "需要",
+   "item": "推論の計算量の比率(Deloitte、二次引用)",
+   "value": "2023 年 約1/3、2025 年 約1/2、2026 年 約2/3(推定)",
+   "source": "research4/T4_ai_demand.md:38",
+   "source_note": "[T4-02] Tier 3*(二次引用)",
+   "note": "計算量(FLOPs)基準で電力・支出と指標が別。直接比較できない。"
+  },
+  {
+   "group": "需要",
+   "item": "推論の計算量の比率(Introl、二次)",
+   "value": "2029 年 65%",
+   "source": "research4/T4_ai_demand.md:39",
+   "source_note": "[T4-02] Tier 4*(二次)",
+   "note": "集約サイトの記述。原本未確認。"
+  },
+  {
+   "group": "需要",
+   "item": "AI 最適化 IaaS のうち推論向け(Gartner)",
+   "value": "2026 年 55%(約 $23.1B)、2027 年 59%",
+   "source": "research4/T4_ai_demand.md:40",
+   "source_note": "[T4-02] Tier 3*",
+   "note": "約 $23.1B = 42 × 0.55(算出)。2026 年の AI 最適化 IaaS は $42B。"
+  },
+  {
+   "group": "需要",
+   "item": "推論モデル vs 従来の推論 AI(1 タスクの計算量)",
+   "value": "100 倍(Huang、GTC 2025)",
+   "source": "research4/T4_ai_demand.md:78",
+   "source_note": "[T4-06] Tier 1*〜3*(ベンダーの主張)",
+   "note": "比較は「推論モデル」対「従来の推論 AI」。2025-03 の発言。2026 年の再測定は見つからず。"
+  },
+  {
+   "group": "需要",
+   "item": "推論モデル(DeepSeek)vs 非推論モデル(Meta)",
+   "value": "トークン 20 倍・計算 150 倍",
+   "source": "research4/T4_ai_demand.md:79",
+   "source_note": "[T4-06] Tier 3*",
+   "note": "比較対象は DeepSeek(推論モデル)と Meta の非推論モデル。Janus Henderson の記録、2025-03。"
+  },
+  {
+   "group": "需要",
+   "item": "推論モデル vs 従来 LLM(1 ステップのトークン)",
+   "value": "数百トークン → 1 ステップ数万トークン(倍率の明記なし)",
+   "source": "research4/T4_ai_demand.md:80",
+   "source_note": "[T4-06] Tier 3*",
+   "note": "倍率は 数万 ÷ 数百 で数十〜数百倍の幅(算出)。要約の記述のみ。"
+  },
+  {
+   "group": "需要",
+   "item": "エージェント vs チャット(トークン)",
+   "value": "約 4 倍",
+   "source": "research4/T4_ai_demand.md:81",
+   "source_note": "[T4-17] Tier 1*(Anthropic 自社データ)",
+   "note": "エンジニアリング記事、2025-06。2026 年の再測定は見つからず。"
+  },
+  {
+   "group": "需要",
+   "item": "マルチエージェント vs チャット(トークン)",
+   "value": "約 15 倍",
+   "source": "research4/T4_ai_demand.md:82",
+   "source_note": "[T4-17] Tier 1*",
+   "note": "同じく 2025-06。トークン使用量だけで性能のばらつきの 80% を説明。コーディングは並列化しにくいとも記述。"
+  },
+  {
+   "group": "需要",
+   "item": "Stargate UAE(計画)",
+   "value": "1GW(UAE-US AI キャンパス全体 5GW)",
+   "source": "research4/T4_ai_demand.md:97",
+   "source_note": "[T4-25][T4-08] Tier 3*",
+   "note": "2025-05-22 発表。G42 が建設、OpenAI と Oracle が運営、Nvidia GB300 を供給。最初の 200MW は 2026 年末予定(稼働の確認は見つからず)。"
+  },
+  {
+   "group": "需要",
+   "item": "サウジアラビア(Humain)",
+   "value": "$100B(Tier 4 の一覧)、GW は欠損",
+   "source": "research4/T4_ai_demand.md:98",
+   "source_note": "[T4-08] Tier 4*",
+   "note": "「数十万個の Nvidia 最上位チップを 5 年で購入」。単一の Tier 4 出典。"
+  },
+  {
+   "group": "需要",
+   "item": "フランス(MGX・Bpifrance・Mistral・Nvidia 合弁)",
+   "value": "1.4GW、稼働 2028 年予定",
+   "source": "research4/T4_ai_demand.md:99",
+   "source_note": "[T4-08] Tier 3*/4*",
+   "note": "着工は 2026 年下半期。欧州最大の AI キャンパス(パリ地域)。"
+  },
+  {
+   "group": "需要",
+   "item": "EU の AI ギガファクトリー基金",
+   "value": "€20B(最大 5 か所向け)",
+   "source": "research4/T4_ai_demand.md:100",
+   "source_note": "[T4-08] Tier 3*/4*",
+   "note": "期間と内訳は欠損。"
+  },
+  {
+   "group": "需要",
+   "item": "米国 Stargate(発表額と GW)",
+   "value": "発表額 $500B、10GW(JPMorgan 推計)",
+   "source": "research4/T4_ai_demand.md:103",
+   "source_note": "[T4-08] Tier 4*",
+   "note": "GB200 ラック 70,000 台相当。時期は欠損。"
+  },
+  {
+   "group": "需要",
+   "item": "全世界のソブリン AI 計算支出(2026)",
+   "value": "約 $100B(中東 約 $10B、UAE・サウジ 各 約 $4B)",
+   "source": "research4/T4_ai_demand.md:104",
+   "source_note": "[T4-08] Tier 4*(GPU 販売業者のブログ)",
+   "note": "公表された政府コミットメントと予算に基づく推計(ブログの記述)。"
+  },
+  {
+   "group": "需要",
+   "item": "ソブリンクラウド IaaS 支出(Gartner)",
+   "value": "2026 年 $80B(+35.6%)",
+   "source": "research4/T4_ai_demand.md:105",
+   "source_note": "[T4-18](Oracle Alloy 資料の引用)Tier 3*",
+   "note": "2025 年 約 $59.0B(算出: 80 ÷ 1.356)。"
+  },
+  {
+   "group": "需要",
+   "item": "Nvidia のソブリン AI 売上",
+   "value": "欠損",
+   "source": "research4/T4_ai_demand.md:107",
+   "source_note": "[T4-14] Tier 3*",
+   "note": "2 回の検索で見つからず。Nvidia 2026-07 期 DC $89.0B のうち AI Clouds 等は $40.3B(45.3%、算出)。内訳は非開示または未確認。"
+  },
+  {
+   "group": "需要",
+   "item": "Oracle の UAE(Stargate UAE)契約額",
+   "value": "欠損(Oracle は運営側)",
+   "source": "research4/T4_ai_demand.md:114",
+   "source_note": "[T4-25] Tier 3*",
+   "note": "1GW(最初の 200MW は 2026 年末予定)。OpenAI と共に運営。"
+  },
+  {
+   "group": "需要",
+   "item": "Oracle の日本投資",
+   "value": "$8B 超(10 年)",
+   "source": "research4/T4_ai_demand.md:115",
+   "source_note": "[T4-18] Tier 3*",
+   "note": "公共クラウドリージョン(東京・大阪)の拡張とソブリン運用チーム。発表日は要約に無し。投資計画であり RPO ではない。"
+  },
+  {
+   "group": "需要",
+   "item": "Oracle の独・蘭・英投資",
+   "value": "独 $2B/5 年、蘭 $1B/5 年、英 $5B/5 年(英は 2025-03)",
+   "source": "research4/T4_ai_demand.md:117",
+   "source_note": "[T4-18] Tier 3*(独は :117、蘭は :118、英は :119)",
+   "note": "フランクフルト・アムステルダムの AI 容量等。発表日は独・蘭は要約に無し。投資計画であり RPO ではない。"
+  },
+  {
+   "group": "需要",
+   "item": "Anthropic の年換算売上(2025 年末)",
+   "value": "約 $9B",
+   "source": "research4/T4_ai_demand.md:219",
+   "source_note": "[T4-03][T4-04][T4-19] Tier 3*/4*",
+   "note": "2026-02 の $14B は 2025 末比 1.56 倍(算出: 14 ÷ 9)。"
+  },
+  {
+   "group": "需要",
+   "item": "Anthropic の年換算売上(2026-02)",
+   "value": "$14B",
+   "source": "research4/T4_ai_demand.md:220",
+   "source_note": "[T4-04] Tier 4*",
+   "note": "2025 末比 1.56 倍(算出: 14 ÷ 9)。"
+  },
+  {
+   "group": "需要",
+   "item": "Anthropic の年換算売上(2026-04)",
+   "value": "$30B 超",
+   "source": "research4/T4_ai_demand.md:222",
+   "source_note": "[T4-04][W3-7] Tier 3*",
+   "note": "CNBC Disruptor 50 に関連する記事。2026-02 比 2.1 倍超(算出: 30 ÷ 14)。"
+  },
+  {
+   "group": "需要",
+   "item": "Anthropic の年換算売上(2026-07)",
+   "value": "$65B(Bloomberg 引用の集約サイト)",
+   "source": "research4/T4_ai_demand.md:223",
+   "source_note": "[T4-04] Tier 4*",
+   "note": "2026-04 比 2.2 倍(算出: 65 ÷ 30)。2025 末比 7.2 倍(算出: 65 ÷ 9、約 7 か月)。2026 Q2 売上は $11.5B 超(同)/ $10.9B(WSJ 予測)。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2025 年末)",
+   "value": "$20B 超(2025 年の run rate)",
+   "source": "research4/T4_ai_demand.md:219",
+   "source_note": "[T4-03][T4-04][T4-19] Tier 3*/4*",
+   "note": "別の出典は 2025 Q4 の年換算 $16B。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2026-03-31)",
+   "value": "$24B",
+   "source": "research4/T4_ai_demand.md:221",
+   "source_note": "[T4-19] Tier 4*",
+   "note": "同じ出典は「Anthropic が OpenAI を上回った」と記述(食い違い)。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2026-07)",
+   "value": "約 $24B(一出典。他と整合せず)",
+   "source": "research4/T4_ai_demand.md:223",
+   "source_note": "[T4-03][T4-04] Tier 4*",
+   "note": "2026-08 の $40B 超と整合しない(T4 の食い違い)。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2026-08)",
+   "value": "$40B 超",
+   "source": "research4/T4_ai_demand.md:224",
+   "source_note": "[T4-03][T4-26] Tier 3*/4*",
+   "note": "Bloomberg、CNBC が報じたとの記述。未確認。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2026-09 下旬)",
+   "value": "約 $70B(Axios・Reuters の情報源)",
+   "source": "research4/T4_ai_demand.md:225",
+   "source_note": "[T4-26] Tier 3*/4*",
+   "note": "OpenAI 未確認。エンタープライズ販売は 7 月から 2 倍超(同報道)。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の年換算売上(2026-10-08)",
+   "value": "約 $50B(Bloomberg「投資家の期待より小さい」)",
+   "source": "research4/T4_ai_demand.md:226",
+   "source_note": "[T4-26] Tier 3*",
+   "note": "2026-03-31 の $24B 比 2.1 倍(算出: 50 ÷ 24、約 6 か月)。2026 年末 $70B 以上の見込みの報道あり。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の計算能力(CFO)",
+   "value": "0.6GW(2024)→1.9GW(2025)",
+   "source": "research4/T4_ai_demand.md:230",
+   "source_note": "[T4-19] Tier 3*",
+   "note": "3.2 倍(算出: 1.9 ÷ 0.6)。2026-04 株主向けメモで「確保済み 8GW 超、2030 年 30GW 目標」(確保と稼働は別概念)。"
+  },
+  {
+   "group": "需要",
+   "item": "Google Cloud の売上と受注残(2026 Q2)",
+   "value": "売上 $24.8B(+82%)、受注残 $514B",
+   "source": "research4/T4_ai_demand.md:182",
+   "source_note": "[T4-16] Tier 1*/3*",
+   "note": "前年同期 約 $13.6B(算出: 24.8 ÷ 1.82)。営業利益 $8.8B(率 35.6%)。"
+  },
+  {
+   "group": "需要",
+   "item": "Google の供給制約の発言",
+   "value": "「we continue to be supply constrained」(2026 Q2)",
+   "source": "research4/T4_ai_demand.md:183",
+   "source_note": "[T4-16] Tier 3*",
+   "note": "第三者の容量も利用。Cloud の利益率を短期的に押し下げる見込み(同発言)。"
+  },
+  {
+   "group": "需要",
+   "item": "Azure の成長と供給制約の発言(FY26 Q4)",
+   "value": "+43%、次四半期ガイダンス 約 45%(cc)",
+   "source": "research4/T4_ai_demand.md:184",
+   "source_note": "[T4-15] Tier 1*/3*",
+   "note": "「需要は供給を上回り続ける」、緩和時期は示さず。容量は 2 年で約 2 倍の方向。FY26 Q2 は +38%(cc)。"
+  },
+  {
+   "group": "需要",
+   "item": "AWS の成長と受注残(2026 Q2)",
+   "value": "売上 +36.7%、受注残 $496B",
+   "source": "research4/T4_ai_demand.md:186",
+   "source_note": "[T4-20] Tier 1*/3*",
+   "note": "年換算 約 $169B。受注残は 3 か月前 $364B 比 +36%(算出: 496 ÷ 364 − 1)。AI 事業は年換算 $25B 超。"
+  },
+  {
+   "group": "需要",
+   "item": "AWS の容量についての発言",
+   "value": "2026・2027・2028 年とも「需要に容量が足りない」",
+   "source": "research4/T5_supply_components.md:276",
+   "source_note": "[W3] 再掲 Tier 3*",
+   "note": "同行に Microsoft の 2025-10「少なくとも 2026 年 6 月まで」の容量制約発言も記載。"
+  },
+  {
+   "group": "需要",
+   "item": "Nvidia データセンター売上(2026-07 期)",
+   "value": "$89.0B(+117%)",
+   "source": "research4/T4_ai_demand.md:178",
+   "source_note": "[T4-14] Tier 1*/3*",
+   "note": "前年同期 約 $41.0B(算出: 89.0 ÷ 2.17)。前期比 +18%。売上全体 $96.2B(+106%)。"
+  },
+  {
+   "group": "需要",
+   "item": "Nvidia 次四半期ガイダンス(FY27 Q3)",
+   "value": "$108.0B ±2%",
+   "source": "research4/T4_ai_demand.md:179",
+   "source_note": "[T4-14] Tier 1*",
+   "note": "+12.3%(算出: 108 ÷ 96.2 − 1)。中国の DC 計算売上を含まず。粗利率 74.0% ±50bp。"
+  },
+  {
+   "group": "需要",
+   "item": "Goldman: 米大手 5 社の AI インフラ投資(2027)",
+   "value": "$1.2T(+54%)、上振れ $1.4T",
+   "source": "research4/T4_ai_demand.md:164",
+   "source_note": "[T4-23] Tier 3*",
+   "note": "対象は Amazon・Alphabet・Microsoft・Oracle・Meta。2026 年は約 $779B(算出: 1,200 ÷ 1.54)。2026-09 時点の報道。"
+  },
+  {
+   "group": "需要",
+   "item": "Goldman: 2026〜2031 年の累計 AI インフラ支出",
+   "value": "$7.6T",
+   "source": "research4/T4_ai_demand.md:166",
+   "source_note": "[T4-23] Tier 3*",
+   "note": "同じ予測の累計。"
+  },
+  {
+   "group": "需要",
+   "item": "Goldman: 2028 年の投資額",
+   "value": "$1.4T(成長率 12% に鈍化)/ 総額 $2T(別報道)",
+   "source": "research4/T4_ai_demand.md:165",
+   "source_note": "[T4-23] Tier 3*/4*",
+   "note": "$1.2T → $1.4T は +16.7%(算出)で「12%」と合わない。範囲や版の違いの可能性。"
+  },
+  {
+   "group": "需要",
+   "item": "BofA: ハイパースケーラーの capex",
+   "value": "2026 年 $730B。2027・2028 年は年 $1T 超",
+   "source": "research4/T4_ai_demand.md:168",
+   "source_note": "[T4-23] Tier 3*",
+   "note": "2026-07 時点。Evercore も 2027 年に $1T 超と記述。"
+  },
+  {
+   "group": "需要",
+   "item": "Morgan Stanley: 集計 capex",
+   "value": "$805B(2026)、$1.116T(2027)",
+   "source": "research4/T4_ai_demand.md:169",
+   "source_note": "[W3] 再掲 Tier 3*",
+   "note": "本調査では再検索していない。"
+  },
+  {
+   "group": "需要",
+   "item": "会社ガイダンス: Microsoft・Google・Amazon の capex",
+   "value": "MS FY27 約 $175B、Google 2026 年 $195〜205B、Amazon 2026 年 約 $220B",
+   "source": "research4/T4_ai_demand.md:170",
+   "source_note": "表に出典 ID なし(Tier 1*〜3*)",
+   "note": "Google の従来値は $180〜190B。Amazon は従来約 $200B から引上げ、主因はメモリ価格の上昇。"
+  },
+  {
+   "group": "需要",
+   "item": "McKinsey: 2030 年までの AI 累計 capex",
+   "value": "$5.2T(ベース)、$3.7T(抑制)〜$7.9T(加速)",
+   "source": "research4/T4_ai_demand.md:171",
+   "source_note": "[T4-10] Tier 3*",
+   "note": "対象は 2030 年まで。"
+  },
+  {
+   "group": "需要",
+   "item": "OpenAI の計算への支出計画(報道)",
+   "value": "約 $600B(2030 年まで)",
+   "source": "research4/T4_ai_demand.md:172",
+   "source_note": "表に出典 ID なし(Tier 3*)",
+   "note": "Altman の従来 $1.4T / 30GW から縮小(報道)。2030 年売上見通し $280B 超。"
+  },
+  {
+   "group": "需要",
+   "item": "AI 全体(学習+推論)の電力(McKinsey)",
+   "value": "44.0GW(2025、算出)→155.5GW(2030、算出)",
+   "source": "research4/T4_ai_demand.md:148",
+   "source_note": "[T4-02] Tier 3*(作成時期は要約に記載なし)",
+   "note": "44.0 = 20.9 + 23.1、155.5 = 93.3 + 62.2(算出)。"
+  },
+  {
+   "group": "需要",
+   "item": "学習+推論の電力の年率(McKinsey)",
+   "value": "年率 28.7%(算出)",
+   "source": "research4/T4_ai_demand.md:42",
+   "source_note": "算出(元資料の McKinsey [T4-02] Tier 3*)",
+   "note": "(155.5 ÷ 44.0)^(1/5) − 1 = 28.7%(算出)。推論の年率は 35%(line 34 の記述)、学習の年率は 21.9%(算出)。"
+  },
+  {
+   "group": "需要",
+   "item": "McKinsey: DC 総需要(2030)",
+   "value": "約 219GW、新規需要の約 70% が AI",
+   "source": "research4/T4_ai_demand.md:147",
+   "source_note": "[T4-10] Tier 3*",
+   "note": "総額 $6.7T(AI $5.2T、従来 $1.5T)。"
+  },
+  {
+   "group": "需要",
+   "item": "McKinsey: AI 容量(2030、ベース)",
+   "value": "156GW(2025〜2030 の追加 約 125GW)",
+   "source": "research4/T4_ai_demand.md:145",
+   "source_note": "[T4-10] Tier 3*",
+   "note": "The Register は 124GW と記述。2025 年の水準は約 31GW(算出: 156 − 125)。"
+  },
+  {
+   "group": "需要",
+   "item": "McKinsey: 加速・抑制シナリオ(追加容量)",
+   "value": "加速 約 205GW($7.9T)/ 抑制 約 78GW($3.7T)",
+   "source": "research4/T4_ai_demand.md:146",
+   "source_note": "[T4-10] Tier 3*",
+   "note": "幅は 2.6 倍(算出: 205 ÷ 78)。ベースは $5.2T。"
+  },
+  {
+   "group": "需要",
+   "item": "IEA: 世界 DC の電力需要",
+   "value": "485TWh(2025)→945TWh(2030)",
+   "source": "research4/T4_ai_demand.md:149",
+   "source_note": "[T4-11] Tier 2*",
+   "note": "年率 14.3%(算出: (945 ÷ 485)^(1/5) − 1)。2025-04 の数値。2026 年の改訂は確認できず。"
+  },
+  {
+   "group": "需要",
+   "item": "IEA: 米国・中国の DC 電力需要",
+   "value": "米国 224→426TWh、中国 117→277TWh(2025→2030)",
+   "source": "research4/T4_ai_demand.md:150",
+   "source_note": "[T4-11] Tier 2*",
+   "note": "年率 米国 13.7%、中国 18.8%(算出: (426 ÷ 224)^(1/5) − 1、(277 ÷ 117)^(1/5) − 1)。"
+  },
+  {
+   "group": "需要",
+   "item": "Epoch: 最大の学習ランの電力(2030)",
+   "value": "4〜16GW",
+   "source": "research4/T4_ai_demand.md:154",
+   "source_note": "[T4-22] Tier 3*",
+   "note": "年 2.2〜2.9 倍(Epoch の記述)。GW 級 DC の建設は約 2 年。"
+  },
+  {
+   "group": "需要",
+   "item": "Morgan Stanley: 米国の新規電力需要(2026〜2028)",
+   "value": "68GW のうち手当済み 30GW、未解決 38GW",
+   "source": "research4/T4_ai_demand.md:151",
+   "source_note": "[T4-12] Tier 3*",
+   "note": "38 = 68 − 30(算出、元の記述と一致)。Crypto Briefing 経由。"
+  },
+  {
+   "group": "需要",
+   "item": "Morgan Stanley: 総・純ギャップ(2026〜2028)",
+   "value": "総 57GW、純 32GW(楽観 15GW・悲観 42GW)",
+   "source": "research4/T4_ai_demand.md:152",
+   "source_note": "[T4-12] Tier 3*/4*",
+   "note": "純は BTM・燃料電池等の控除後(総需要の 34%)。前行の 38GW とは総/純の定義が違う。"
+  },
+  {
+   "group": "需要",
+   "item": "Morgan Stanley: 2028 年の電力ギャップ",
+   "value": "約 44GW(2025-11 版)",
+   "source": "research4/T4_ai_demand.md:153",
+   "source_note": "[T4-12] Tier 3*/4*",
+   "note": "従来予測 36GW から上方修正。2025 年版は 2025〜2028 年で約 55GW。"
+  },
+  {
+   "group": "需要",
+   "item": "SemiAnalysis(旧、2024-03): 世界の DC クリティカル IT 需要",
+   "value": "96GW(うち AI 約 40GW、2026 年)",
+   "source": "research4/T4_ai_demand.md:155",
+   "source_note": "[T4-13] Tier 3*",
+   "note": "2026 年以降の最新 GW は欠損(有料モデル)。"
+  },
+  {
+   "group": "供給",
+   "item": "変圧器のリード時間(W3 再掲)",
+   "value": "36 か月(従来 18〜24 か月)",
+   "source": "research4/T5_supply_components.md:291",
+   "source_note": "[T5-12]、[W3] 再掲 Tier 3*",
+   "note": "今回の検索では新しい数値は出ず。"
+  },
+  {
+   "group": "供給",
+   "item": "変圧器・系統連系の期間(W3 再掲)",
+   "value": "変圧器 128〜144 週、PJM 約 40 か月",
+   "source": "research4/T4_ai_demand.md:207",
+   "source_note": "[W3] 再掲(T4 表記に Tier なし)",
+   "note": "同じ行: GE Vernova 受注残 116GW、2026 年計画の 1/3〜半分が遅延、Sightline 計画 約 12GW に対し建設中 約 5GW。「PJM 約 40 か月」は元の略記のまま(系統連系の期間と読める)。"
+  },
+  {
+   "group": "供給",
+   "item": "ガスタービン(GE Vernova・Siemens Energy)",
+   "value": "GE Vernova 受注残 116GW、Siemens Energy 69GW",
+   "source": "research4/T5_supply_components.md:292",
+   "source_note": "[T5-22]、[W3] 再掲(Tier 表記なし)",
+   "note": "今回の検索で新情報なし(欠損)。ガスタービンのリード時間と FERC の大口負荷連系規則も新情報なし。"
+  },
+  {
+   "group": "供給",
+   "item": "計画 DC 容量の遅延(2026 年計画分)",
+   "value": "30〜50% が 2028 年に後ろ倒し(予想)",
+   "source": "research4/T5_supply_components.md:290",
+   "source_note": "[T5-20] Tier 3*",
+   "note": "2026-06 時点のアナリスト予想。W3 の「1/3〜半分が遅延」と同趣旨。"
+  },
+  {
+   "group": "供給",
+   "item": "PJM 2028/29 年度の容量オークション",
+   "value": "信頼度要件に 6,831MW 不足、価格は上限 $325/MW-日",
+   "source": "research4/T5_supply_components.md:286",
+   "source_note": "[T5-22] Tier 2*(PJM 公表・要約経由)",
+   "note": "2026-07-14 公表、3 回連続の上限。不足割合 4.6%(算出: 6,831 ÷ 149,182)。予備率 14.7%。"
+  },
+  {
+   "group": "供給",
+   "item": "PJM 2027/28 年度の容量",
+   "value": "信頼度要件に 6.6GW 不足(145,777MW)",
+   "source": "research4/T5_supply_components.md:287",
+   "source_note": "[T5-15] Tier 2*/3*",
+   "note": "2025-12 のオークション。2027 年夏が初めて容量不足を見込む季節。データセンター増は新規発電の約 2 倍(同行)。"
+  },
+  {
+   "group": "供給",
+   "item": "Elon Musk: AI チップ向け電力不足(2027)",
+   "value": "少なくとも 15GW 不足",
+   "source": "research4/T5_supply_components.md:269",
+   "source_note": "[T5-15] Tier 3*/4",
+   "note": "本人は「アナリストのコンセンサス」と説明(G20 の会合)。"
+  },
+  {
+   "group": "供給",
+   "item": "Gartner(2024 年予測): AI DC の電力制約",
+   "value": "2027 年までに AI DC の 40% が電力不足で運用制約",
+   "source": "research4/T5_supply_components.md:270",
+   "source_note": "[T5-15] Tier 3*",
+   "note": "2024 年の予測で旧い。"
+  },
+  {
+   "group": "供給",
+   "item": "Amazon の稼働中の電力",
+   "value": "約 10.6GW(Microsoft・Google の約 2 倍)",
+   "source": "research4/T5_supply_components.md:255",
+   "source_note": "[T5-12][T5-5] Tier 3*",
+   "note": "Jassy の「2027 年末までに容量 2 倍」は二次引用。"
+  },
+  {
+   "group": "供給",
+   "item": "Microsoft のデータセンター規模",
+   "value": "今後 2 年で約 2 倍",
+   "source": "research4/T5_supply_components.md:253",
+   "source_note": "[T5-12][T5-17] Tier 3*",
+   "note": "2026 年度に 88 のデータセンターを追加(MarketBeat 要約)。"
+  },
+  {
+   "group": "供給",
+   "item": "Microsoft の容量制約の期間",
+   "value": "2025-10「少なくとも 2026 年 6 月まで」",
+   "source": "research4/T5_supply_components.md:276",
+   "source_note": "[T5-17] Tier 1*/3*",
+   "note": "2026-01 に「需要が供給を上回り続ける」。2026-07 決算でも制約下(line 277)。制約の終期は欠損。"
+  },
+  {
+   "group": "供給",
+   "item": "Goldman: AI インフラの需給の均衡時期",
+   "value": "2028 年まで均衡しない可能性(2028 年上期が現実的)",
+   "source": "research4/T5_supply_components.md:271",
+   "source_note": "[T5-24] Tier 3*",
+   "note": "以前の想定は 2027 年末。ハイパースケーラーの capex は減らず増え続けるとも記述。"
+  },
+  {
+   "group": "供給",
+   "item": "Digitimes: NVIDIA 次世代向けのメモリ不足",
+   "value": "2027 年を通じて強まり 2028 年にかかる",
+   "source": "research4/T5_supply_components.md:272",
+   "source_note": "[T5-24] Tier 3*",
+   "note": "2026-06-08 の報道。"
+  },
+  {
+   "group": "供給",
+   "item": "供給が追いつく時期(Creative Strategies)",
+   "value": "2027 年が制約のピーク、満額の効果は 2028 年",
+   "source": "research4/T4_ai_demand.md:195",
+   "source_note": "[T4-21] Tier 4*",
+   "note": "2026 年の投資が 2027 年に寄与し始める見方。"
+  },
+  {
+   "group": "供給",
+   "item": "供給が追いつく時期(Intel CEO)",
+   "value": "メモリは「2028 年まで救済なし」",
+   "source": "research4/T4_ai_demand.md:196",
+   "source_note": "[T4-21] Tier 3*",
+   "note": "メモリに限った見解。"
+  },
+  {
+   "group": "供給",
+   "item": "供給が追いつく時期(FT の引用)",
+   "value": "メモリの逼迫は 2028 年以前には緩和しにくい",
+   "source": "research4/T4_ai_demand.md:197",
+   "source_note": "[T4-21] Tier 3*",
+   "note": "新設工場の時間が理由。"
+  },
+  {
+   "group": "供給",
+   "item": "供給が追いつく時期(Counterpoint)",
+   "value": "メモリの需給曲線が交差するのは最短で 2027 年 Q4",
+   "source": "research4/T4_ai_demand.md:198",
+   "source_note": "[T4-21] Tier 3*",
+   "note": "Tarun Pathak の見方。"
+  },
+  {
+   "group": "供給",
+   "item": "BCG Henderson(旧)の AI 計算供給の見方",
+   "value": "2028 年に生成 AI が DC の AI 計算供給の約 34%",
+   "source": "research4/T5_supply_components.md:274",
+   "source_note": "[T5-24] Tier 3",
+   "note": "BCG のモデルは供給が追いつくとする。銀行・チップ供給の予測は 2028 年の不足を示す(line 275)。2028 年の過剰供給の具体的予測は検索で出ず。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM 契約価格(2026 Q1)",
+   "value": "汎用 +90〜95%(前期比、従来予測 +55〜60% から上方修正)",
+   "source": "research4/T5_supply_components.md:149",
+   "source_note": "[T5-8][T5-11] Tier 3*",
+   "note": "Counterpoint: モバイル DRAM +50% 超、NAND +90% 超。Samsung 32GB DDR5 $149 → $239(+60.4%、算出)。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM 契約価格(2026 Q2)",
+   "value": "コンシューマー向け DRAM +45〜50%(前期比)",
+   "source": "research4/T5_supply_components.md:150",
+   "source_note": "[T5-4] Tier 3*",
+   "note": "生産能力の制約と注文の移転(2026-04 時点)。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM 契約価格(2026 Q3)",
+   "value": "汎用 DRAM +13〜18%、NAND +10〜15%",
+   "source": "research4/T5_supply_components.md:151",
+   "source_note": "[T5-4] Tier 3*",
+   "note": "Q3 の値。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM 契約価格(2026 Q4、2026-09-30 公表)",
+   "value": "汎用 DRAM +10〜15%、HBM 込み DRAM +15〜20%、NAND +15〜20%",
+   "source": "research4/T5_supply_components.md:152",
+   "source_note": "[T5-4] Tier 3*",
+   "note": "PC 向け DRAM の Q4 見通しは +0〜5% から +3〜8% に上方修正。サーバー向け DRAM の不足は続く。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM 契約価格の累計(2026 Q1〜Q4、参考)",
+   "value": "約 3.7 倍(算出)",
+   "source": "research4/T5_supply_components.md:153",
+   "source_note": "算出(元資料 [T5-4][T5-8])",
+   "note": "1.925 × 1.475 × 1.155 × 1.125 ≈ 3.7(算出、中央値の連乗)。下限 3.4 倍、上限 4.0 倍(算出)。Q1 は予測、Q2 はコンシューマー、Q3・Q4 は汎用で分類が揃わない参考値。"
+  },
+  {
+   "group": "供給",
+   "item": "DRAM スポット価格",
+   "value": "1 月比 +52%(決算前の記事)",
+   "source": "research4/T5_supply_components.md:154",
+   "source_note": "[T5-7] Tier 3*",
+   "note": "Micron 決算前の記事。"
+  },
+  {
+   "group": "供給",
+   "item": "HBM の混合 ASP(2027 年見通し)",
+   "value": "前年比 +121%(TrendForce、2026-09-29)、UBS +79%",
+   "source": "research4/T5_supply_components.md:162",
+   "source_note": "[T5-26] Tier 3*",
+   "note": "TrendForce(2026-08)は 2027 年の契約価格 +50% 超。予測であり確定契約ではない。"
+  },
+  {
+   "group": "供給",
+   "item": "HBM4 の提示価格(2027 年向け)",
+   "value": "HBM4 $4 台中盤〜後半/Gb、HBM3E 約 $1.50/Gb",
+   "source": "research4/T5_supply_components.md:163",
+   "source_note": "[T5-26] Tier 3*",
+   "note": "元の記述で約 3 倍(算出: 4.5 ÷ 1.5 と仮置き)。提示価格で確定契約ではない。"
+  },
+  {
+   "group": "供給",
+   "item": "HBM 市場規模(Micron)",
+   "value": "2025 年 約 $35B → 2028 年 約 $100B",
+   "source": "research4/T5_supply_components.md:166",
+   "source_note": "[T5-26] Tier 3*/4",
+   "note": "年 約 40%(算出: (100 ÷ 35)^(1/3) − 1 = 41.9%)。2026 年 $50.5B(Meticulous)/ $54.6B(ChipPub)。"
+  },
+  {
+   "group": "供給",
+   "item": "Micron FQ4 2026(2026-09-30 決算)",
+   "value": "売上 $54.23B(+379%)、DRAM $39.77B、FQ1 2027 見通し $61.5B",
+   "source": "research4/T5_supply_components.md:174",
+   "source_note": "[T5-7] Tier 1*/3*",
+   "note": "前年同期 約 $11.3B(算出: 54.23 ÷ 4.79)。FQ1 見通しは +13.4%(算出: 61.5 ÷ 54.23 − 1)。CFO: DRAM 価格は「10% 台後半」上昇。"
+  },
+  {
+   "group": "供給",
+   "item": "Micron CEO(2026-06)の逼迫の期間",
+   "value": "逼迫は暦年 2027 年を超えて続く",
+   "source": "research4/T5_supply_components.md:175",
+   "source_note": "[T5-7][T5-24] Tier 1*/3*",
+   "note": "別の二次記事は「少なくとも 2028 年まで」。原文未確認。"
+  },
+  {
+   "group": "供給",
+   "item": "SK hynix CEO(2026-07-10、Reuters)",
+   "value": "2027 年は供給面で業界史上最悪の年になり得る。2030 年以降も需要が能力を上回る",
+   "source": "research4/T5_supply_components.md:178",
+   "source_note": "[T5-6] Tier 1*/3*",
+   "note": "Kwak Noh-jung 発言。別記事は「HBM は 2027 年まで需要に対し逼迫」(2025-10)。"
+  },
+  {
+   "group": "供給",
+   "item": "UBS: DRAM の供給不足",
+   "value": "少なくとも 2028 年 Q2 まで",
+   "source": "research4/T5_supply_components.md:179",
+   "source_note": "[T5-6] Tier 3*",
+   "note": "DRAM 全体の供給不足の見方。"
+  },
+  {
+   "group": "供給",
+   "item": "HPE CEO(Neri)の価格見通し",
+   "value": "高いメモリ価格は 2027 年に入っても続く",
+   "source": "research4/T5_supply_components.md:182",
+   "source_note": "[T5-11] Tier 1*/3*",
+   "note": "「elevated」メモリ価格の継続。"
+  },
+  {
+   "group": "供給",
+   "item": "Samsung 2026 Q3 暫定(2026-10-08)",
+   "value": "営業利益 107.4 兆ウォン、売上 195 兆ウォン",
+   "source": "research4/T5_supply_components.md:177",
+   "source_note": "[T5-9] Tier 1*/3*",
+   "note": "営業利益率 55.1%(算出: 107.4 ÷ 195)。前年同期 12.17 兆ウォンの 8.8 倍(算出)。メモリ単独は約 110 兆ウォン(アナリスト推計)。確定決算は 2026-10-29。"
+  },
+  {
+   "group": "供給",
+   "item": "メモリの新設能力(Micron)",
+   "value": "最初の波は 2027 年、次の大きな追加は 2028 年下期",
+   "source": "research4/T5_supply_components.md:189",
+   "source_note": "[T5-16] Tier 3*",
+   "note": "シンガポール HBM パッケージ・Idaho・Tongluo。別記事は Idaho の初出荷 2027 年半ば。"
+  },
+  {
+   "group": "供給",
+   "item": "メモリの新設能力(Samsung・SK hynix)",
+   "value": "Samsung P4 は 2026 年稼働・量産 2027 年以降、P5 は 2028 年以降。SK hynix 龍仁は 2027 年 2 月",
+   "source": "research4/T5_supply_components.md:190",
+   "source_note": "[T5-16] Tier 3*(SK hynix は line 191)",
+   "note": "SK hynix の龍仁は 3 か月前倒し(line 191)。"
+  },
+  {
+   "group": "供給",
+   "item": "産業全体のメモリ供給計画",
+   "value": "2027 年まで年 12% の出力増が必要、計画は約 7.5%",
+   "source": "research4/T5_supply_components.md:192",
+   "source_note": "[T5-16] Tier 3*/4",
+   "note": "Counterpoint の記述。Nikkei(二次): DRAM 供給は需要の約 60%。3 社の 2027 年割当で顧客は要求量の 60〜70%(単一出典)。"
+  },
+  {
+   "group": "供給",
+   "item": "CoWoS 月産能力(TSMC、2026 年末)",
+   "value": "約 115k ウェハ/月(JPM、2026-01)",
+   "source": "research4/T5_supply_components.md:58",
+   "source_note": "[T5-2] Tier 3*",
+   "note": "別推計: 120k〜140k(TrendForce 経由、2026-06)、約 130k(2026-09)。推計で 10〜20% ずれる。"
+  },
+  {
+   "group": "供給",
+   "item": "CoWoS 月産能力(2027 年末)",
+   "value": "KGI: 155k → 170k/月(2026-03-09 に引上げ)",
+   "source": "research4/T5_supply_components.md:59",
+   "source_note": "[T5-2] Tier 3*",
+   "note": "理由は土地・人員・クリーンルームの制約。2028 年末 260k(2026-09、二次、最も強気)は line 62。"
+  },
+  {
+   "group": "供給",
+   "item": "TrendForce: 2.5D パッケージの不足",
+   "value": "2027 年に緩和(予想)",
+   "source": "research4/T5_supply_components.md:61",
+   "source_note": "[T5-2] Tier 3*",
+   "note": "TSMC は 2027 年までに CoWoS を 60% 超拡張と予想(同行)。"
+  },
+  {
+   "group": "供給",
+   "item": "NVIDIA Rubin の 2026 年台数(KeyBanc)",
+   "value": "2.0M → 1.5M(HBM4 認定の遅れ)",
+   "source": "research4/T5_supply_components.md:82",
+   "source_note": "[T5-25] Tier 3*",
+   "note": "2026-04 → 07 のメモは「わずかな遅れ、B300 で相殺」。別証券会社は約 2.9M(line 83)。"
+  },
+  {
+   "group": "供給",
+   "item": "NVIDIA の供給コミットメント(2026-08-26)",
+   "value": "$279B(前四半期 $119B)",
+   "source": "research4/T5_supply_components.md:137",
+   "source_note": "[T5-13] Tier 1*/3*",
+   "note": "2.34 倍(算出: 279 ÷ 119)。主にメモリ調達。総コミットメント 約 $366B との記述あり。"
+  },
+  {
+   "group": "供給",
+   "item": "NVIDIA の供給制約(2026-08-26)",
+   "value": "「一部の供給制約」が残る。Vera Rubin は「会社史上最速の立上げ」",
+   "source": "research4/T5_supply_components.md:138",
+   "source_note": "[T5-13] Tier 1*/3*",
+   "note": "遅れの報道は NVIDIA が否定、Rubin は予定どおりで「フル生産」(line 87)。"
+  },
+  {
+   "group": "供給",
+   "item": "AWS Trainium の台数(2026〜2028)",
+   "value": "欠損",
+   "source": "research4/T5_supply_components.md:40",
+   "source_note": "[T5-5] Tier 3*",
+   "note": "時期のみ: Trainium3 の増産は 2027 年初に及ぶ可能性(DigiTimes 断片)。"
+  },
+  {
+   "group": "供給",
+   "item": "NVIDIA の 2027・2028 年の出荷台数",
+   "value": "欠損",
+   "source": "research4/T5_supply_components.md:90",
+   "source_note": "表に出典 ID なし",
+   "note": "2027 年は CoWoS 割当 1.222M ウェハ(45%、MS)のみ。"
+  },
+  {
+   "group": "値上げ",
+   "item": "AWS EC2 Capacity Blocks(H200 系、2026-01-04)",
+   "value": "p5e.48xlarge $34.61 → $39.80/時(約 +15%)",
+   "source": "research4/T5_supply_components.md:233",
+   "source_note": "[T5-10] Tier 3*/4",
+   "note": "39.80 ÷ 34.61 − 1 = 15.0%(算出)。比較基準は 2026-01-04 の旧価格。価格ページの静かな更新。AWS は「需給に基づき定期的に更新」と説明(line 235)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "AWS Capacity Blocks(NVIDIA GPU、2026-07-01)",
+   "value": "約 +20%(P6-B300 $14.04、P6-B200 $12.355 /アクセラレータ時)",
+   "source": "research4/T5_supply_components.md:234",
+   "source_note": "[T5-10] Tier 3*",
+   "note": "比較の旧価格は要約に無し(報道の +20%)。対象: P6-B300・P6-B200・P5・P5e・P5en・P4de。The Information 報道。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Nebius(オンデマンド、2026-10-01)",
+   "value": "H100 SXM5 $3.85 → $4.50、B300 $7.85 → $9.50",
+   "source": "research4/T5_supply_components.md:236",
+   "source_note": "[T5-21] Tier 3*/4(出所は競合 GPU 業者)",
+   "note": "H100 +16.9%(算出: 4.50 ÷ 3.85 − 1)、B300 +21.0%(算出: 9.50 ÷ 7.85 − 1)。オンデマンド全体 +17〜21%。3 か月で 2 回目の改定。"
+  },
+  {
+   "group": "値上げ",
+   "item": "CoreWeave(定価、2026-07)",
+   "value": "約 +25%(全 SKU)、容量は実質売り切れ",
+   "source": "research4/T5_supply_components.md:237",
+   "source_note": "[T5-21][W8] Tier 3*",
+   "note": "比較の旧価格は要約に無し。新規契約は以前より高い価格(報道)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Oracle の GPU 更新価格(2026-09-10、T5 の要約)",
+   "value": "更新時期の GPU は従来契約比 +20% のプレミアムで更新または再販",
+   "source": "research4/T5_supply_components.md:238",
+   "source_note": "[T5-18][W2] Tier 1*",
+   "note": "基準は「従来契約」の価格。稼働率 97.9%(同行)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Oracle 更新対象 GPU(Q1 FY27、T2 の要約)",
+   "value": "更新対象はすべて従来契約比 +20% の価格で更新または再販",
+   "source": "research4/T2_company_rpo_capacity.md:221",
+   "source_note": "[T2-13] Tier 3*(Zacks 経由)",
+   "note": "大半は 4 年以上前の GPU。Q4 FY26 は更新対象 35,000 基・59 顧客、顧客の 49% が GPU の 92% を更新(同行の記述)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Azure・Google Cloud の GPU 価格改定(2026 年)",
+   "value": "欠損(確認できず)",
+   "source": "research4/T5_supply_components.md:240",
+   "source_note": "[T5-10][T5-21]",
+   "note": "Lambda の 2026 年改定も欠損(line 241)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "H100 1 年契約の指数(SemiAnalysis、旧)",
+   "value": "$1.70(2025-10)→$2.35(2026-03)→約 $2.65(2026-06)",
+   "source": "research4/T5_supply_components.md:243",
+   "source_note": "[W2] Tier 3*",
+   "note": "2025-10→2026-03 は +38.2%(算出: 2.35 ÷ 1.70 − 1)、2026-03→06 は +12.8%(算出: 2.65 ÷ 2.35 − 1)、全期間 +55.9%(算出: 2.65 ÷ 1.70 − 1)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "ネオクラウドと大手クラウドの H100 相場(第三者集計、2026-08-16)",
+   "value": "ネオクラウド H100 約 $2.89/時、AWS・Azure・GCP $7〜12/時",
+   "source": "research4/T5_supply_components.md:239",
+   "source_note": "[T5-21] Tier 4",
+   "note": "傾向の分析 1 件。予約・契約・新規 Blackwell は 2026 年上期に上昇、スポットと旧世代 Hopper は軟化。"
+  },
+  {
+   "group": "値上げ",
+   "item": "NVIDIA の粗利率見通しと価格引上げ(2026-08-26)",
+   "value": "Q4 粗利率 71〜72% で底、FY28 72〜73%",
+   "source": "research4/T5_supply_components.md:136",
+   "source_note": "[T5-13] Tier 1*/3*",
+   "note": "CFO: 「実行済みの価格引上げ」が Q1 から効く。Q2 の GAAP 粗利率 75.0%(line 134)。供給側の部材コスト上昇の転嫁と読めるが要約は直接の説明を載せていない。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Dell の定価引上げ(2026-03-30)",
+   "value": "全製品の定価を約 17% 引上げ",
+   "source": "research4/T5_supply_components.md:215",
+   "source_note": "[T5-11] Tier 1*/3*",
+   "note": "COO は値引きの圧縮と見積有効期間の短縮にも言及。"
+  },
+  {
+   "group": "値上げ",
+   "item": "HPE の値上げ(2025-11〜2026-01)",
+   "value": "2025-11・12 月と 2026-01 に値上げ、出荷時点まで再価格設定可能",
+   "source": "research4/T5_supply_components.md:216",
+   "source_note": "[T5-11] Tier 1*/3*",
+   "note": "DRAM と NAND が従来型サーバー BOM の 50% 超(Neri)。値上げで需要は減速していない(同発言)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Lenovo の見積の再提示(2026-01-01)",
+   "value": "未処理の見積を取消し、10〜15% 高く再提示",
+   "source": "research4/T5_supply_components.md:217",
+   "source_note": "[T5-11] Tier 3*",
+   "note": "サーバー価格の転嫁の実例。"
+  },
+  {
+   "group": "値上げ",
+   "item": "Amazon の 2026 年 capex 引上げ",
+   "value": "約 $200B → 約 $220B(+10%)、主因はメモリ価格の上昇",
+   "source": "research4/T5_supply_components.md:224",
+   "source_note": "[W1][W3] 再掲 Tier 3*",
+   "note": "+10%(算出: 220 ÷ 200 − 1)。"
+  },
+  {
+   "group": "値上げ",
+   "item": "AI サーバーの買い手への転嫁率",
+   "value": "欠損",
+   "source": "research4/T5_supply_components.md:220",
+   "source_note": "[T5-11](Tier 表記なし)",
+   "note": "Supermicro の公式値上げも確認できず(line 219)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO(2026-08-31、Q1 FY27)",
+   "value": "$664B(前四半期比 +$26B、前年差 +$209B)",
+   "source": "research4/T2_company_rpo_capacity.md:112",
+   "source_note": "[T2-11][T2-12] Tier 1*",
+   "note": "前年 $455B(2025-08、line 107)。前年比 +45.9%(算出: 664 ÷ 455 − 1)。前期 $638B(line 111)。新規 AI 契約 $30B 超(同行)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO の売上化時期 12 か月以内(10-Q 要約)",
+   "value": "約 13%($86.3B、算出)",
+   "source": "research4/T2_company_rpo_capacity.md:122",
+   "source_note": "[T2-09][T2-10]、W5 Tier 1*",
+   "note": "$86.3B = 664 × 13%(算出)。Q4 FY26 は 12%(約 $76.6B、算出)。S1 の「12 か月内 約 33%」は転記ミスの可能性(T2 食い違い #1、未確認)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO の売上化時期 13〜36 か月",
+   "value": "37%($245.7B、算出)",
+   "source": "research4/T2_company_rpo_capacity.md:123",
+   "source_note": "[T2-09] Tier 1*",
+   "note": "24 か月で年平均 $122.8B(算出: 245.7 ÷ 2)。Q4 FY26 は 34%(約 $216.9B、算出)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO のうち 36 か月以内(Q1 FY27)",
+   "value": "50%($332.0B、算出)",
+   "source": "research4/T2_company_rpo_capacity.md:124",
+   "source_note": "[T2-11][T2-10](表に Tier の記載なし)",
+   "note": "13% + 37% = 50%(算出)。$332.0B = 664 × 50%(算出)。Q4 FY26 は 46%(約 $293.5B、算出)、前年同期は約 35%(FinanceFeeds、line 129)。会社発言「約半分が 36 か月以内」と整合。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO の売上化時期 37〜60 か月",
+   "value": "34%($225.8B、算出)",
+   "source": "research4/T2_company_rpo_capacity.md:125",
+   "source_note": "[T2-09] Tier 1*(1 回の検索要約のみ)",
+   "note": "24 か月で年平均 $112.9B(算出: 225.8 ÷ 2)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "RPO の売上化時期 60 か月超",
+   "value": "16%($106.2B、算出)",
+   "source": "research4/T2_company_rpo_capacity.md:126",
+   "source_note": "算出(残差。元 [T2-09] Tier 1*)",
+   "note": "100 − 13 − 37 − 34 = 16(算出)。664 × 16% = 106.2(算出)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "10GW 超の確保(Q3 FY26 発言)",
+   "value": "今後 3 年間で稼働する 10GW 超の電力・DC 容量を確保(2026-03-10)",
+   "source": "research4/T2_company_rpo_capacity.md:190",
+   "source_note": "[T2-21] Tier 3*",
+   "note": "期間は 2026-03 から 2029-03(算出)。年平均 3.3GW(算出: 10 ÷ 3)。Q1 FY27 での再確認は確認できず(line 195)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "10GW の資金負担",
+   "value": "90% 超をパートナー(開発事業者・貸し手)が負担",
+   "source": "research4/T2_company_rpo_capacity.md:191",
+   "source_note": "[T2-21] Tier 3*",
+   "note": "残りの確保作業は「今月中」に完了予定と発言(同行)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "10GW の定義",
+   "value": "DCD: 「secured 10GW of power」、要約: 「power and data center capacity」",
+   "source": "research4/T2_company_rpo_capacity.md:194",
+   "source_note": "[T2-21] Tier 3*、R7",
+   "note": "契約種別(電力契約・リース・土地)の内訳は欠損。10-K・10-Q の公式値も欠損。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "Q1 FY27 の納入容量",
+   "value": "850MW・30 万基超の GPU",
+   "source": "research4/T2_company_rpo_capacity.md:165",
+   "source_note": "[T2-12][T2-13] Tier 3*",
+   "note": "Q4 の約 3 倍、前年度納入量の 73%(Magouyrk)。見通し「approaching one gigawatt」の 85%(算出: 850 ÷ 1,000)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "Q1 FY27 の納入見通し(Q4 FY26 説明会時点)",
+   "value": "\"approaching one gigawatt\"",
+   "source": "research4/T2_company_rpo_capacity.md:164",
+   "source_note": "[T2-22] Tier 3*(Q4 要約、検索 #19)",
+   "note": "実績 850MW は見通しの 85%(算出)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "FY26 通期の納入容量",
+   "value": "1.2GW 超(\"delivered more than 1.2 gigawatts to customers\")",
+   "source": "research4/T2_company_rpo_capacity.md:160",
+   "source_note": "[T2-12] Tier 3*",
+   "note": "逆算 850 ÷ 0.73 = 1,164MW(算出)。やや食い違う(T2 食い違い #4)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "Q3 FY26 の納入容量",
+   "value": "400MW 超(委託容量の 90% を予定どおりまたは前倒しで納入)",
+   "source": "research4/T2_company_rpo_capacity.md:162",
+   "source_note": "[T2-21] Tier 3*",
+   "note": "DCD は \"stood up 400MW\" と表記。納入と稼働の区別は未確認。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "Q4 FY26 の納入容量",
+   "value": "約 283MW(算出)",
+   "source": "research4/T2_company_rpo_capacity.md:163",
+   "source_note": "算出(元表の記載も算出)",
+   "note": "850 ÷ 3(算出)。\"almost three times\" のためやや多い可能性。Q4 単独の公式値は未取得。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "Q2 FY27 以降の納入見通し",
+   "value": "欠損",
+   "source": "research4/T2_company_rpo_capacity.md:167",
+   "source_note": "検索 #8 の要約、Tier 3*",
+   "note": "Magouyrk: 1GW のサイトは多数の四半期に分けて立ち上がる(拠点名なし)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "拠点 Abilene(TX)",
+   "value": "Q1 FY27: 8 棟中 6 棟・618MW・全体の 75% を顧客に納入",
+   "source": "research4/T2_company_rpo_capacity.md:173",
+   "source_note": "[T2-13][T2-24] Tier 3*",
+   "note": "拠点名は要約に無く Abilene と推定。Q4 FY26(2026-06-10): 42% 納入、次の 90 日で 35% 追加。全棟は 2026 年後半〜2027 年初(R7)。618MW ÷ 0.75 = 約 824MW(算出)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "拠点 Shackelford County(TX)",
+   "value": "115MW が予定より 1 か月以上早く通電。顧客納入は CY2027 上期",
+   "source": "research4/T2_company_rpo_capacity.md:174",
+   "source_note": "Q4 FY26 要約(検索 #19)、S3 Tier 3*",
+   "note": "全体の完成は 2028 Q4(Epoch)〜2029(Baxtel)。Vantage、VoltaGrid の敷地内ガス。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "拠点 Doña Ana County / Project Jupiter(NM)",
+   "value": "2026-09-24 Oracle が force majeure 通知(Bloomberg)",
+   "source": "research4/T2_company_rpo_capacity.md:175",
+   "source_note": "[T2-16][T2-24]、S3 Tier 3*",
+   "note": "2026-09-10 時点で建設は計画どおりと説明、NM は FY27 見通しに影響しないとの説明。目標は 2028 開業、SemiAnalysis は 2029 に遅延。2.45GW(Bloomberg)。Morningstar 見出しは $25B の売上遅延の可能性(本文未読)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "拠点 Port Washington(WI)",
+   "value": "完成 2028 とする報道。拠点別の稼働時期の更新は欠損",
+   "source": "research4/T2_company_rpo_capacity.md:176",
+   "source_note": "[T2-16]、S3 Tier 3*",
+   "note": "約 1GW(別報 1.3GW)、4 棟、Vantage。Q1 FY27 で WI の遅延は FY27 見通しに影響しないと回答(Magouyrk)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "拠点 Saline Township(MI)",
+   "value": "「1GW 超」(S3)、契約電力 1.38GW(S1 の別報)",
+   "source": "research4/T2_company_rpo_capacity.md:177",
+   "source_note": "S3、S1(Tier 3)",
+   "note": "Related Digital、DTE が電力 100%。本調査で新規情報は取得できず(再掲のみ)。稼働時期は欠損。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "OpenAI の RPO への寄与",
+   "value": "約 $300B(WSJ 報道、会社は金額非開示)",
+   "source": "research4/T2_company_rpo_capacity.md:138",
+   "source_note": "S1、W5、[T2-11] Tier 3",
+   "note": "RPO 664 に対し約 45%(算出: 300 ÷ 664)。約 5 年、2027 年開始(WSJ)。S&P は「半分近く」、BofA は「半分超」と推定(食い違い)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "制約の所在(Q1 FY27)",
+   "value": "制約は GPU・ファブから電力生成・DC へ移った",
+   "source": "research4/T2_company_rpo_capacity.md:233",
+   "source_note": "[T2-12] Tier 3*",
+   "note": "Magouyrk 発言の要約。世界の需要は大きいとも記述。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "GPU 稼働率(Q1 FY27)",
+   "value": "97.9%",
+   "source": "research4/T2_company_rpo_capacity.md:231",
+   "source_note": "[T2-12] Tier 3*",
+   "note": "Q4 FY26 は 97.5%(ポッドキャスト要約、T4*、line 220)。"
+  },
+  {
+   "group": "Oracle の受注と容量",
+   "item": "「需要が供給を上回る」の逐語(Q1 FY27)",
+   "value": "欠損(Q1 FY27 の要約には見つからず)",
+   "source": "research4/T2_company_rpo_capacity.md:235",
+   "source_note": "[T2-21](Q3 FY26 の要約)Tier 3*",
+   "note": "Q3 FY26 の要約に \"outpacing supply\"(Magouyrk)が 1 件。原文で要確認。"
+  }
+ ],
+ "missing": [
+  "需要: Microsoft・Anthropic・Meta のトークン総量(research4/T4_ai_demand.md:60・65・66)",
+  "需要: 推論だけの計算需要の年成長率(research4/T4_ai_demand.md:45)",
+  "需要: 推論モデル・エージェント倍率の 2026 年の再測定(research4/T4_ai_demand.md:85)",
+  "需要: Google Cloud の AI 売上単独値、Azure の AI 売上 run rate(research4/T4_ai_demand.md:242・240)",
+  "需要: サウジ Humain の GW、Oracle のサウジ契約(research4/T4_ai_demand.md:98・120)",
+  "供給: ガスタービンのリード時間、FERC 大口負荷連系規則の新情報(research4/T5_supply_components.md:292)",
+  "供給: 変圧器・液冷の 2026 年の新しい数値(research4/T5_supply_components.md:291・304)",
+  "供給: 2028 年に過剰供給となる予測(research4/T5_supply_components.md:275・352)",
+  "供給: Micron の 2027 年の供給・HBM 売上・価格目標(research4/T5_supply_components.md:176)",
+  "供給: Q4 の HBM 単独の価格上昇率(research4/T5_supply_components.md:156)",
+  "供給: NVIDIA の 2027・2028 年の出荷台数、AWS Trainium の台数(research4/T5_supply_components.md:90・40)",
+  "値上げ: Azure・Google Cloud・Lambda の GPU 価格改定(research4/T5_supply_components.md:240・241)",
+  "値上げ: AI サーバーの買い手への価格転嫁率(research4/T5_supply_components.md:220)",
+  "Oracle: Q2 FY27 以降の納入見通し(research4/T2_company_rpo_capacity.md:167)、FY28 capex の数値(同 206)",
+  "Oracle: Michigan の稼働時期(同 177)、10GW の契約種別内訳(同 194)",
+  "Oracle: NVIDIA 調達契約の数量・金額(同 218)、MI450 の稼働実績(同 217)",
+  "Oracle: Q1 FY27 の「需要が供給を上回る」の逐語(同 235)",
+  "全行の数値は検索要約経由で原本未読(T2・T4・T5 の各ファイル冒頭に明記)。会社開示由来も Tier に * を付した"
+ ]
+}

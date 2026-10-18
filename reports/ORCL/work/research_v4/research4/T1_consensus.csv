@@ -1,0 +1,113 @@
+source,metric,fiscal_year,value,n_analysts,high,low,date,tier
+Yahoo Finance ORCL analysis* (current year 2027 表示),EPS_nonGAAP_likely,FY27,8.06,42,8.57,7.72,不明 (90日前 8.03),3
+Yahoo Finance ORCL analysis* (next year 2028 表示),EPS_nonGAAP_likely,FY28,10.93,40,13.51,8.28,不明 (90日前 10.71),3
+tickflow.io ORCL forecast*,EPS_nonGAAP_likely,FY27,7.98,23,8.32,7.33,不明,3
+tickflow.io ORCL forecast*,EPS_nonGAAP_likely,FY28,10.78,16,14.05,7.36,不明,3
+tickflow.io ORCL forecast*,EPS_nonGAAP_likely,FY29,15.67,7,15.93,14.87,不明,3
+tickflow.io ORCL forecast*,EPS_nonGAAP_likely,FY30,20.53,7,20.88,19.48,不明,3
+FactSet中央値 via cnyes記事*,EPS_nonGAAP_likely_median,FY27,8.00,,,,不明 (年度表記 FY/暦年 未確認),3
+FactSet中央値 via cnyes記事*,EPS_nonGAAP_likely_median,FY28,10.65,38,12.50,10.05,不明,3
+FactSet中央値 via cnyes記事*,EPS_nonGAAP_likely_median,FY29,15.88,,16.16,12.35,不明,3
+Parameter.io ブログ*,EPS_basis_unknown,FY27,8.14,,,,不明,4
+thecerbatgem.com (Q1前の記事)*,EPS_consensus_pre_Q1,FY27,7.75,,,,2026-09 Q1前,4
+thecerbatgem.com (Q1前の記事)*,Revenue_consensus_pre_Q1_USDB,FY27,89.5,,,,2026-09 Q1前,4
+Barchart earnings preview*,EPS_GAAPlike_likely,FY27,6.47,,,,決算前 (推定 2026-09 上旬以前),3
+Barchart earnings preview*,EPS_GAAPlike_likely,FY28,8.78,,,,決算前 (推定),3
+Barchart earnings preview*,EPS_GAAPlike_likely_Q2,Q2FY27,1.39,,,,決算前 (推定),3
+Webull 決算後記事*,EPS_GAAPlike_likely,FY27,6.60,,,,2026-09 決算後 (推定),3
+Webull 決算後記事*,EPS_GAAPlike_likely,FY28,9.18,,,,2026-09 決算後 (推定),3
+Webull / Motley Fool 記事*,EPS_GAAPlike_statutory,FY27,6.34,40,,,不明 (statutory 表記),3
+Webull / Motley Fool 記事*,Revenue_consensus_USDB,FY27,89.2,40,,,不明 (statutory 表記),3
+Webull / Motley Fool 記事*,EPS_basis_unknown,FY28,10.92,,,,不明,3
+Webull / Motley Fool 記事*,Revenue_consensus_USDB,FY28,130.2,,,,不明 (+46%),3
+metirai.com financials (推定同一ページ)*,EPS_GAAPlike_likely,FY29,14.20,2,14.34,14.06,不明,3
+VCP Scanner 独自モデル (非コンセンサス)*,Model_EPS,FY27,7.60,,,,不明,4
+VCP Scanner 独自モデル (非コンセンサス)*,Model_EPS,FY28,9.42,,,,不明,4
+VCP Scanner 独自モデル (非コンセンサス)*,Model_EPS,FY29,9.37,,,,不明,4
+VCP Scanner 独自モデル (非コンセンサス)*,Model_Revenue_USDB,FY28,100.4,,,,不明,4
+VCP Scanner 独自モデル (非コンセンサス)*,Model_Revenue_USDB,FY29,118.5,,,,不明,4
+Zacks Research via MarketBeat*,EPS_Zacks_Research_stale,FY27,6.22,,,,2025-09-26 (古い),3
+Zacks Research via MarketBeat*,EPS_Zacks_Research_stale,FY28,7.52,,,,2025-09-26 (古い),3
+既存調査 calc/model.py (tickerleague 25名 TickFlow 16名 H6 再掲),EPS_nonGAAP_likely,FY27,8.05,25,,,不明,3
+Oracle Q1 FY27 release (oracle.com 経由報道)*,Guidance_EPS,FY27,8.10,,,,2026-09-10,1
+Oracle 6月 guidance (edgar.tools GuruFocus 報道)*,Guidance_EPS_prior,FY27,8.05,,,,2026-06-10,1
+Oracle Q1 FY27 release (報道)*,Guidance_Revenue_USDB,FY27,90.0,,,,2026-09-10 (下限 ≥90.0),1
+Oracle Q1 FY27 release (報道)*,Guidance_EPS_Q2 (value=中点 算出),Q2FY27,1.89,,1.93,1.85,2026-09-10,1
+Oracle Q1 FY27 release (報道)*,Guidance_Revenue_Q2_USDB (value=中点 算出),Q2FY27,21.20,,21.5,20.9,2026-09-10,1
+別記事のQ2ガイダンス記載 (媒体未確認)*,Guidance_EPS_Q2_conflict (value=中点 算出),Q2FY27,1.87,,1.91,1.83,不明,4
+thecerbatgem.com (Q1前)*,Q2FY27_EPS_consensus_pre_Q1,Q2FY27,1.82,,,,2026-09 Q1前,4
+thecerbatgem.com (Q1前)*,Q2FY27_Revenue_consensus_pre_Q1_USDB,Q2FY27,21.2,,,,2026-09 Q1前,4
+Benzinga earnings forecasts*,Q2FY27_EPS_consensus,Q2FY27,1.81,,,,不明,3
+Benzinga earnings forecasts*,Q2FY27_Revenue_consensus_USDB,Q2FY27,21.15,,,,不明,3
+Post-Q1 記事 (媒体未確認)*,Q2FY27_EPS_consensus_post_Q1,Q2FY27,1.89,,,,2026-09 Q1後 (推定),4
+Zacks article (Q1 決算記事)*,Q1FY27_EPS_consensus,Q1FY27,1.74,,,,2026-09-10,3
+Oracle Q1 FY27 (報道)*,Q1FY27_EPS_actual,Q1FY27,1.92,,,,2026-09-10,1
+Zacks article (Q1 決算記事)*,Q1FY27_Revenue_consensus_USDB,Q1FY27,19.13,,,,2026-09-10,3
+Oracle Q1 FY27 (報道)*,Q1FY27_Revenue_actual_USDB,Q1FY27,19.35,,,,2026-09-10 (Yahoo 19.34),1
+Yahoo Finance (9月末スナップ)*,Q2FY27_Revenue_flag_inconsistent_USDB,Q2FY27,23.38,,,,2026-09-30 (推定; 列ずれ疑い),3
+Yahoo Finance (9月末スナップ)*,Revenue_consensus_USDB,FY27,90.48,38,,,2026-09-30 (推定),3
+Yahoo Finance (9月末スナップ)*,Revenue_consensus_USDB,FY28,131.45,39,,,2026-09-30 (推定),3
+Yahoo Finance (3月スナップ)*,Revenue_consensus_USDB,FY27,86.37,,,,2026-03 (推定),3
+Simply Wall St ORCL future*,Revenue_consensus_USDB,FY27,89.3,42,,,2026-08-13,3
+Simply Wall St ORCL future*,Revenue_consensus_USDB,FY28,130.64,39,,,2026-08-13,3
+Simply Wall St (7月24日版)*,Revenue_consensus_USDB,FY28,130.47,40,,,2026-07-24,3
+Simply Wall St ORCL future*,Revenue_consensus_USDB,FY29,182.04,24,,,2026-08-13,3
+Simply Wall St (7月版)*,Revenue_consensus_USDB,FY29,181.81,22,,,2026-07 (推定),3
+Simply Wall St ORCL future*,NetIncome_USDB,FY28,27.63,39,,,2026-08-13 (元値 27626M),3
+Simply Wall St (7月24日版)*,NetIncome_USDB,FY28,27.57,40,,,2026-07-24 (元値 27568M),3
+Simply Wall St ORCL future*,NetIncome_USDB,FY29,42.32,24,,,2026-08-13 (元値 42316M),3
+MarketScreener (snapshot A)*,Revenue_basis_unknown_USDB,FY27,89.32,,,,不明 (元値 89315M),3
+MarketScreener (snapshot B)*,Revenue_basis_unknown_USDB,FY27,90.48,,,,不明 (元値 90475M),3
+MarketScreener (2026-10 初旬)*,Revenue_basis_unknown_USDB,FY28,131.71,,,,2026-10 初旬 (元値 131711M),3
+MarketScreener (別スナップ)*,Revenue_basis_unknown_USDB,FY28,131.45,,,,不明 (元値 131448M),3
+MarketScreener (旧)*,Revenue_basis_unknown_USDB,FY28,130.47,,,,不明 (元値 130471M),3
+MarketScreener (2026-09-24)*,Revenue_basis_unknown_USDB,FY29,182.94,,,,2026-09-24 (元値 182935M),3
+MarketScreener (2026-08-12)*,Revenue_basis_unknown_USDB,FY29,182.04,,,,2026-08-12 (元値 182039M),3
+MarketScreener (別スナップ)*,Revenue_basis_unknown_USDB,FY29,181.81,,,,不明 (元値 181807M),3
+MarketScreener*,NetIncome_basis_unknown_USDB,FY27,19.03,,19.14,,不明 (元値 19032-19135M),3
+MarketScreener*,NetIncome_basis_unknown_USDB,FY28,27.5,,,,不明 (約 27.5B),3
+MarketScreener*,NetIncome_basis_unknown_USDB,FY29,41.7,,42.32,41.7,不明 (元値 41.7-42.3B),3
+FactSet中央値 via cnyes記事*,Revenue_median_USDB,FY27,85.1,,,,不明 (他社 89-90 と乖離),3
+FactSet中央値 via cnyes記事*,Revenue_median_USDB,FY28,129.6,,,,不明,3
+FactSet中央値 via cnyes記事*,Revenue_median_USDB,FY29,184.5,,,,不明,3
+TipRanks (単独アナリスト)*,Revenue_single_analyst_USDB,FY29,150,1,,,不明 (約150),3
+S&P Global (Visible Alpha 引用)*,Revenue_consensus_USDB,FY26,67.3,,,,2026-06,3
+Oracle 2024-09 analyst meeting (二次)*,Company_target_Revenue_USDB,FY29,104,,,,2024-09 (旧),1
+Oracle 2025-10 investor day (二次)*,Company_target_Revenue_USDB,FY30,225,,,,2025-10,1
+Oracle 2025-10 investor day (二次)*,Company_target_EPS,FY30,21,,,,2025-10,1
+UBS (二次)*,EPS_single_broker,FY30,20.47,,,,2025 (旧 15.40 から上方),3
+MarketScreener (2026-10 初旬)*,EBIT_basis_unknown_USDB,FY28,49.48,,,,2026-10 初旬 (元値 49476M),3
+MarketScreener (別スナップ)*,EBIT_basis_unknown_USDB,FY28,49.56,,,,不明 (元値 49560M),3
+MarketScreener (旧)*,EBIT_basis_unknown_USDB,FY28,48.32,,,,不明 (元値 48324M),3
+MarketScreener (2026-09-24)*,EBIT_basis_unknown_USDB,FY29,69.55,,,,2026-09-24 (元値 69553M),3
+MarketScreener (2026-09-15)*,EBIT_basis_unknown_USDB,FY29,68.61,,,,2026-09-15 (元値 68611M),3
+MarketScreener (2026-09-11)*,EBIT_basis_unknown_USDB,FY29,67.20,,,,2026-09-11 (元値 67196M),3
+MarketScreener (2026-08-12)*,EBIT_basis_unknown_USDB,FY29,66.90,,,,2026-08-12 (元値 66900M),3
+MarketScreener (7月スナップ)*,EBIT_basis_unknown_USDB,FY29,67.80,,,,2026-07 (推定),3
+MarketScreener (FY26 列)*,EBIT_basis_unknown_USDB,FY26,28.93,,,,不明 (元値 28926M),3
+MarketScreener (2026-10 初旬)*,EBITDA_basis_unknown_USDB,FY28,74.64,,,,2026-10 初旬 (元値 74642M),3
+MarketScreener (旧)*,EBITDA_basis_unknown_USDB,FY28,71.96,,,,不明 (元値 71963M),3
+MarketScreener (2026-09-15/24)*,EBITDA_basis_unknown_USDB,FY29,107.54,,,,2026-09 (元値 107543M),3
+MarketScreener (2026-08-12)*,EBITDA_basis_unknown_USDB,FY29,106.13,,,,2026-08-12 (元値 106132M),3
+MarketScreener (7月)*,EBITDA_basis_unknown_USDB,FY29,103.24,,,,2026-07 (推定; 元値 103239M),3
+MarketScreener (FY26 列)*,EBITDA_basis_unknown_USDB,FY26,36.55,,,,不明 (元値 36549M),3
+TIKR consensus (2026-09 末)*,FCF_consensus_USDB,FY27,-38,,,,2026-09 末,3
+TIKR consensus (2026-09 末)*,FCF_consensus_USDB,FY28,-33,,,,2026-09 末,3
+TIKR consensus (2026-09 末)*,FCF_consensus_USDB,FY29,7,,,,2026-09 末,3
+MarketScreener (page A)*,FCF_basis_unknown_USDB,FY27,-48,,,,不明 (単位 百万USD と推定),3
+MarketScreener (page A)*,FCF_basis_unknown_USDB,FY28,-39,,,,不明 (単位 百万USD と推定),3
+MarketScreener (page A)*,FCF_basis_unknown_USDB,FY29,16,,,,不明 (単位 百万USD と推定),3
+MarketScreener (page B)*,FCF_basis_unknown_USDB,FY28,-41,,,,不明 (単位 百万USD と推定),3
+MarketScreener (page B)*,FCF_basis_unknown_USDB,FY29,15,,,,不明 (単位 百万USD と推定),3
+二次報道 (cryptobriefing 等)*,Capex_net_USDB,FY27,70,,,,不明 (二次・定義未確認),3
+二次報道 (cryptobriefing 等)*,Capex_gross_incl_customer_USDB,FY27,90-95,,,,不明 (顧客負担 20-25 含む),3
+二次報道*,FCF_actual_USDB,FY26,-23.7,,,,FY26 決算 (二次),3
+既存 calc/model.py (再掲)*,OCF_actual_USDB,FY26,31.98,,,,既存 (出典未確認),3
+既存 calc/model.py (再掲)*,Capex_actual_USDB,FY26,55.66,,,,既存 (出典未確認),3
+二次報道 (Q1 FY27)*,Capex_actual_USDB,Q1FY27,28.5,,,,2026-09-10,3
+二次報道 (Q1 FY27)*,FCF_actual_USDB,Q1FY27,-5.4,,,,2026-09-10,3
+TradingView BOATS-ORCL forecast*,TargetPrice_USD,n/a,337.42,45,400,175.14,不明 (過去3か月窓; 既存H2 は34名),3
+Mizuho (二次・日付不明)*,TargetPrice_USD,n/a,320,,,,不明,3
+TradingView ar.NYSE-ORCL forecast-price-target (既存H2 再掲)*,Q_EPS_actual_TradingView,latest reported,2.11,,,,不明 (予想1.96 次期1.74),3
+TradingView ユーザー投稿アイデア*,Model_EPS_user_idea,FY28,15.19,,,,2025 頃 (不明),4
+TradingView ユーザー投稿アイデア*,Model_Revenue_user_idea_USDB,FY28,175.6,,,,2025 頃 (不明),4
