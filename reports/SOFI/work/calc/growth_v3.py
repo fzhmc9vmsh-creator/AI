@@ -281,6 +281,60 @@ def cond6():
                                  "コンセンサスは 4% 上、誤差 ±15% の内側)。安さは SoFi 固有でなく消費者金融の群の安さ → 条件7 で扱う")
 
 
+# ---------------------------------------------------------------- 構造評価 → 許容 PEG・α(第3版で規則を追加: 等級内の位置を条件の構成で決める)
+# 利用者の指摘「構造評価が上がって許容 PEG が変わらないのは意味が分からない」(2026-10-18)。
+# 等級(S〜C)は従来の規則(拒否権・C×4 の上限)で決め、等級のレンジの中の位置を条件の点数の平均で決める。
+# 点数: S 5・A 4・B 3・C 2・D 1・E 0。帯: C [1.5, 2.5)・B [2.5, 3.5)・A [3.5, 4.5)・S [4.5, 5]。
+# 位置 = (平均点 − 帯の下端) ÷ 帯の幅(0〜1 に収める)。PEG = レンジの下端 + 位置 × 幅。α = 上端 − 位置 × 幅。
+# 年度の逓減(成長の成熟): 出発 PEG から年 −0.05(第1・2版と同じ)。
+SCORE = {"S": 5, "A": 4, "B": 3, "C": 2, "D": 1, "E": 0}
+BANDS = {"S": (4.5, 5.0), "A": (3.5, 4.5), "B": (2.5, 3.5), "C": (1.5, 2.5)}
+PEG_RANGE = {"S": (1.6, 2.0), "A": (1.3, 1.6), "B": (1.0, 1.3), "C": (0.8, 1.0)}
+ALPHA_RANGE = {"S": (0.10, 0.15), "A": (0.15, 0.20), "B": (0.20, 0.25), "C": (0.25, 0.35)}
+
+
+def grade_of(grades):
+    """grades: {条件番号: 'S'〜'E'}(対象外は入れない)。等級・平均点・位置・許容 PEG(年度別)・α を返す。"""
+    vals = list(grades.values())
+    avg = sum(SCORE[g] for g in vals) / len(vals)
+    n_c_or_worse = sum(1 for g in vals if SCORE[g] <= 2)
+    if any(g == "E" for g in vals):
+        return dict(letter="E", avg=avg, pos=None, peg=None, alpha=None)
+    letter = next(k for k, (lo, hi) in BANDS.items() if lo <= avg < hi or (k == "S" and avg >= lo))
+    if avg < 1.5:
+        letter = "D"
+    if n_c_or_worse >= 4 and SCORE[letter] > 2:
+        letter = "C"                                  # C×4 以上なら B 以上にしない
+    if letter == "D":
+        return dict(letter="D", avg=avg, pos=None, peg=None, alpha=None)
+    lo, hi = BANDS[letter]
+    pos = min(max((avg - lo) / (hi - lo), 0.0), 1.0)
+    p_lo, p_hi = PEG_RANGE[letter]
+    a_lo, a_hi = ALPHA_RANGE[letter]
+    start = p_lo + pos * (p_hi - p_lo)
+    peg = {2026: start, 2027: start - 0.05, 2028: start - 0.10, 2029: start - 0.15}
+    return dict(letter=letter, avg=avg, pos=pos, n_c=n_c_or_worse, peg=peg, alpha=a_hi - pos * (a_hi - a_lo))
+
+
+# 第3版の現在の構造(条件9 は対象外)
+GRADES_NOW = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "A", 7: "B", 8: "B", 10: "B", 11: "B", 12: "B", 13: "B"}
+GRADES_V2 = {1: "B", 2: "B", 3: "B", 4: "S", 5: "B", 6: "B", 7: "C", 8: "C", 10: "B", 11: "B", 12: "B", 13: "C"}
+GRADES_V1 = {1: "B", 2: "C", 3: "B", 4: "S", 5: "B", 6: "B", 7: "C", 8: "C", 10: "B", 11: "B", 12: "B", 13: "C"}
+# 節点の成否で動く条件(振れ幅は対称: 良い側 +1 段、悪い側 −1 段)。条件2 は 2028 年の ROTCE で決める
+LINKS = {"N1": [1, 8, 11], "N2": [12, 13], "N4": [3]}
+UP = {"S": "S", "A": "S", "B": "A", "C": "B", "D": "C", "E": "D"}
+DOWN = {"S": "A", "A": "B", "B": "C", "C": "D", "D": "E", "E": "E"}
+
+
+def scenario_grades(state, rotce2028):
+    g = dict(GRADES_NOW)
+    for node, conds in LINKS.items():
+        for c in conds:
+            g[c] = UP[g[c]] if state[node] else DOWN[g[c]]
+    g[2] = "A" if rotce2028 >= vm.COE else ("B" if rotce2028 >= 0.11 else "C")
+    return g
+
+
 # ---------------------------------------------------------------- §12 節点ツリー(第3版の確率の更新)
 NODES_V3 = {
     "N1": dict(adj_cond=+0.03, why="+ 製品の前年比 37 → 40 → 43% と加速、会員当たり製品 1.46 → 1.54、製品の純増が会員の 2 倍(初)、会員の前年比 35% を 4 期維持(§3 の読み直し)"
@@ -305,14 +359,20 @@ def tree_v3(eng_mult, cond=None, p3=None):
             for var, (succ, fail) in g2.SHOCKS[k].items():
                 kw[var] = succ if ok else fail
         path = vm.engine(**kw)
+        stc = structure(path)
+        sg = scenario_grades(st, stc[2028]["rotce"])
+        gr = grade_of(sg)
+        peg_keep = dict(vm.PEG)
+        vm.PEG = gr["peg"]
         _, val = vm.fair_path(vm.eps_of(path), eng_mult)
+        vm.PEG = peg_keep
         p = p3 if st["N3"] else 1 - p3
         for k in ("N1", "N2"):
             pc = cond[(k, "N3")][0 if st["N3"] else 1]
             p *= pc if st[k] else 1 - pc
         p *= p4 if st["N4"] else 1 - p4
-        stc = structure(path)
         combos.append(dict(state=st, p=p, value=val, eps2028=path[2028]["eps"], rotce2028=stc[2028]["rotce"],
+                           letter=gr["letter"], avg=gr["avg"], peg26=gr["peg"][2026],
                            fee2028=stc[2028]["fee_share"], ss2028=stc[2028]["self_suff"], members2028=path[2028]["members"]))
     ev = sum(c["p"] * c["value"] for c in combos)
     sd = sum(c["p"] * (c["value"] - ev) ** 2 for c in combos) ** 0.5
@@ -401,19 +461,25 @@ def run():
     out["rates"] = rates_two_sided()
     out["cond6"] = cond6()
 
-    vm.PEG = dict(g2.PEG_B)
+    g_now, g_v2, g_v1 = grade_of(GRADES_NOW), grade_of(GRADES_V2), grade_of(GRADES_V1)
+    out["grade_rule"] = dict(now=g_now, v2_recalc=g_v2, v1_recalc=g_v1, v2_used=dict(g2.PEG_B), v2_alpha_used=0.225)
+    vm.PEG = dict(g_now["peg"])
     base = vm.engine()
     ev = vm.engine_value(base)
     eng_mult = {t: ev * (1 + vm.COE) ** (t - 2026 + 0.2) / base[t + 1]["eps"] for t in [2026, 2027, 2028, 2029]}
     paths = {"consensus": vm.CONS, "company": vm.COMP, "engine": vm.eps_of(base)}
     out["values"] = {k: round(vm.fair_path(e, eng_mult)[1], 2) for k, e in paths.items()}
+    vm.PEG = dict(g2.PEG_B)
+    out["values_v2peg"] = {k: round(vm.fair_path(e, eng_mult)[1], 2) for k, e in paths.items()}
+    vm.PEG = dict(g_now["peg"])
     out["rows_engine"] = [{kk: (round(vv, 3) if isinstance(vv, float) else vv) for kk, vv in r.items()}
                           for r in vm.fair_path(paths["engine"], eng_mult)[0]]
 
     t = tree_v3(eng_mult)
     out["tree"] = dict(ev=t["ev"], sd=t["sd"], bundles=t["bundles"], p_nodes=t["p_nodes"],
                        combos=[dict(state="".join("○" if c["state"][k] else "×" for k in ["N1", "N2", "N3", "N4"]), p=c["p"], value=c["value"],
-                                    eps2028=c["eps2028"], rotce2028=c["rotce2028"], fee2028=c["fee2028"]) for c in t["combos"]])
+                                    eps2028=c["eps2028"], rotce2028=c["rotce2028"], fee2028=c["fee2028"], letter=c["letter"],
+                                    avg=c["avg"], peg26=c["peg26"]) for c in t["combos"]])
     out["nodes_v3"] = NODES_V3
     b = t["bundles"]
     pb = b["bear"]["p"]
@@ -443,8 +509,8 @@ def run():
     vm.COE, vm.FLOOR = coe0, 1 / coe0
     out["rate_scenario"] = dict(base=out["values"]["engine"], up100=v_up, delta=v_up - out["values"]["engine"])
 
-    # エントリー(構造 B: α 22.5%。第2版と同じ表)
-    a = 0.225
+    # エントリー(α は構造の点数の位置から。B の帯 20〜25%)
+    a = g_now["alpha"]
     B = out["values"]["engine"]
     L, U = b["bear"]["value"], b["bull"]["value"]
     out["entry"] = dict(alpha=a, B=B, U=U, L=L, Z1=min(B * (1 - a), L * (1 + a / 2)), Z2=B * (1 - a / 2),
@@ -492,3 +558,10 @@ if __name__ == "__main__":
     print("entry", {kk: round(v, 2) for kk, v in o["entry"].items()}, "gap", {kk: round(v, 3) for kk, v in o["gap"].items()})
     for c in o["tree"]["combos"]:
         print("  ", c["state"], round(c["p"], 3), round(c["value"], 2), round(c["eps2028"], 3), round(c["rotce2028"], 3), round(c["fee2028"], 3))
+    gr = o["grade_rule"]
+    for k in ("now", "v2_recalc", "v1_recalc"):
+        g = gr[k]
+        print("grade", k, g["letter"], round(g["avg"], 3), g.get("pos") and round(g["pos"], 3), g["peg"] and {y: round(v, 3) for y, v in g["peg"].items()}, g["alpha"] and round(g["alpha"], 4))
+    print("values_v2peg", o["values_v2peg"])
+    for c in o["tree"]["combos"]:
+        print("  grade", c["state"], c["letter"], round(c["avg"], 3), round(c["peg26"], 3))
