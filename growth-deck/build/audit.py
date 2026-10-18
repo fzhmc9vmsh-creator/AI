@@ -222,11 +222,11 @@ def check_title(sno, shapes, v):
     cand = None
     for sh in shapes:
         if (sh.has_text_frame and sh.text_frame.text.strip()
-                and abs(IN(sh.left) - 0.5) < 0.02 and abs(IN(sh.top) - 0.35) < 0.02):
+                and abs(IN(sh.left) - 0.5) < 0.02 and abs(IN(sh.top) - 0.25) < 0.02):
             cand = sh
             break
     if cand is None:
-        v.append((sno, "-", "title", "タイトル位置(0.5, 0.35)にテキストがない"))
+        v.append((sno, "-", "title", "タイトル位置(0.5, 0.25)にテキストがない"))
         return
     t = cand.text_frame.text.strip()
     if t.endswith(BANNED_TITLE_END):
