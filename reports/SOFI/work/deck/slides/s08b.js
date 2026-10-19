@@ -11,7 +11,7 @@ module.exports = function build(pres, L) {
   const warn = (m) => L.warnings.push('[s08b] ' + m);
 
   // ---- 部品 -------------------------------------------------------------------------
-  // 箱: kind = key(濃緑)/ unit(白・緑枠)/ ext(白・灰枠)/ risk(白・赤枠)。名前 10pt(hub は 12pt)+ 補足 8.5pt(hub は 9pt)
+  // 箱: kind = key(濃緑)/ unit(白・緑枠)/ ext(白・灰枠)/ risk(白・赤枠)。名前 10pt(hub は 12pt)+ 補足 9pt
   function node(id, x, y, w, h, kind, label, sub, o = {}) {
     boxes[id] = { x, y, w, h };
     const fill = { key: C.dark }[kind] || C.white;
@@ -19,7 +19,7 @@ module.exports = function build(pres, L) {
     const lw = { unit: 1.5, risk: 1.5 }[kind] || 0.75;
     const dark = kind === 'key';
     L.box(s, x, y, w, h, { round: true, fill, line, lw, name: 'ovl_s08b_n_' + id });
-    const lsz = o.lsz || 10, ssz = o.ssz || 8.5;
+    const lsz = o.lsz || 10, ssz = o.ssz || 9;
     const lh = (o.lh !== undefined) ? o.lh : 0.06 + 0.165 * (lsz / 10);
     L.text(s, label, { x: x + 0.04, y: y + 0.03, w: w - 0.08, h: lh, fontSize: lsz, bold: true, color: kind === 'risk' ? C.red : (dark ? C.white : C.dark), align: 'center', valign: 'middle', margin: 0, objectName: 'ovl_s08b_nt_' + id });
     if (sub) L.text(s, sub, { x: x + 0.05, y: y + 0.03 + lh, w: w - 0.1, h: h - lh - 0.06, fontSize: ssz, color: dark ? C.white : C.text, align: 'center', valign: 'top', margin: 0, objectName: 'ovl_s08b_ns_' + id });
@@ -46,7 +46,7 @@ module.exports = function build(pres, L) {
       if (j === 0 && n) runs.push({ text: ['', '①', '②', '③', '④', '⑤', '⑥'][n] + ' ', options: { bold: true } });
       runs.push({ text: p, options: j < parts.length - 1 ? { breakLine: true } : {} });
     });
-    s.addText(runs, { x, y, w, h, fontFace: L.FONT, fontSize: 8.5, color: col, align: 'center', valign: 'middle', margin: 0.02, fill: { color: C.white }, isTextBox: true, objectName: 'ovl_s08b_lab_' + id });
+    s.addText(runs, { x, y, w, h, fontFace: L.FONT, fontSize: 9, color: col, align: 'center', valign: 'middle', margin: 0.02, fill: { color: C.white }, isTextBox: true, objectName: 'ovl_s08b_lab_' + id });
     labs.push({ name: str.replace('\n', ''), x, y, w, h, own: id });
   }
   // 帯の見出し: 細い罫線の上に白地の見出しを中央で載せる
@@ -63,53 +63,53 @@ module.exports = function build(pres, L) {
   const hub = { x: 3.55, y: 2.95, w: 2.25, h: 0.95 };
   node('hub', hub.x, hub.y, hub.w, hub.h, 'key', '会員 1,580 万人', '前年比 +35%\n1 会員 1.54 製品\nクロスバイ 51%', { lsz: 12, ssz: 9, lh: 0.28 });
   // 周りの 6 箱: 左 2(体験・主口座)、上 2(ローン・保険)、右 2(投資・カード)
-  node('exp', 0.5, 1.9, 2.0, 0.6, 'unit', '毎日の体験', '給与を最大 2 日早く\nATM 5.5 万台・補償 300 万ドル');
-  node('money', 0.5, 3.36, 2.0, 0.64, 'unit', 'SoFi Money(主口座)', '預金 455 億ドル\n給与振込の会員が 9 割超');
+  node('exp', 0.5, 1.9, 2.2, 0.6, 'unit', '毎日の体験', '給与を最大 2 日早く\nATM 5.5 万台・補償 300 万ドル');
+  node('money', 0.5, 3.36, 2.2, 0.64, 'unit', 'SoFi Money(主口座)', '預金 455 億ドル\n給与振込の会員が 9 割超');
   node('loan', 3.05, 1.9, 1.55, 0.6, 'unit', 'ローン', '個人・学生・住宅\n会員割引 各 0.25%');
   node('ins', 4.75, 1.9, 1.55, 0.6, 'ext', '保険(提携)', 'アプリから加入');
-  node('inv', 6.85, 1.9, 2.0, 0.6, 'unit', '投資・暗号資産', 'Invest・暗号資産 25 銘柄超');
-  node('card', 6.85, 3.36, 2.0, 0.64, 'unit', 'カード・Plus', '有料会員 20.6 万人');
+  node('inv', 6.65, 1.9, 2.2, 0.6, 'unit', '投資・暗号資産', 'Invest・暗号資産 25 銘柄超');
+  node('card', 6.65, 3.36, 2.2, 0.64, 'unit', 'カード・Plus', '有料会員 20.6 万人');
 
   // 中央 → 各箱(細い実線。箱は線のあとに描くので端は箱で隠れる。ここでは線を先に積み、箱の上に出ないよう端点を縁に置く)
-  line('hub-money', hub.x, 3.68, 2.5, 3.68, spoke);
-  line('hub-exp', hub.x, 3.12, 2.5, 2.3, spoke);
+  line('hub-money', hub.x, 3.68, 2.7, 3.68, spoke);
+  line('hub-exp', hub.x, 3.2, 2.7, 2.35, spoke);
   line('hub-loan', 3.825, hub.y, 3.825, 2.5, spoke);
   line('hub-ins', 5.525, hub.y, 5.525, 2.5, spoke);
-  line('hub-inv', hub.x + hub.w, 3.12, 6.85, 2.3, spoke);
-  line('hub-card', hub.x + hub.w, 3.68, 6.85, 3.68, spoke);
-  num('hub-money', 1, 3.025, 3.68, C.primary);
+  line('hub-inv', hub.x + hub.w, 3.2, 6.65, 2.35, spoke);
+  line('hub-card', hub.x + hub.w, 3.68, 6.65, 3.68, spoke);
+  num('hub-money', 1, 3.125, 3.68, C.primary);
   num('hub-loan', 2, 3.825, 2.725, C.primary);
-  num('hub-card', 3, 6.325, 3.68, C.primary);
-  num('hub-inv', 3, 6.325, 2.71, C.primary);
+  num('hub-card', 3, 6.225, 3.68, C.primary);
+  num('hub-inv', 3, 6.225, 2.775, C.primary);
 
   // ---- 下の帯: お金の流れ(左 → 右) ------------------------------------------------------
-  bandHead('bot', 'お金の流れ', 4.2, 1.3);
-  const RY = 4.5, RH = 0.8, AY = RY + RH / 2;           // 行の上端・高さ・矢印の高さ
-  node('dep', 0.5, RY, 1.1, RH, 'unit', '預金', '455 億ドル\n平均 3.07%');
-  node('bs', 2.85, RY, 1.25, RH, 'key', 'B/S 貸出', 'NIM 5.98%\n個人 261 億ドル\n学生 161 億ドル');
+  bandHead('bot', 'お金の流れ', 4.15, 1.3);
+  const RY = 4.52, RH = 0.8, AY = RY + RH / 2;           // 行の上端・高さ・矢印の高さ
+  node('dep', 0.5, RY, 1.05, RH, 'unit', '預金', '455 億ドル\n平均 3.07%');
+  node('bs', 2.9, RY, 1.25, RH, 'key', 'B/S 貸出', 'NIM 5.98%\n個人 261 億ドル\n学生 161 億ドル');
   node('lpb', 5.35, RY, 1.25, RH, 'unit', 'LPB・売却', '四半期 31 億ドル\n手数料 4.6%');
   node('buy', 7.4, RY, 1.45, RH, 'ext', 'ローンの買い手', 'Blue Owl・Fortress\n契約 100 億ドル超');
-  node('cap', 2.45, 5.65, 2.0, 0.65, 'risk', '自己資本', '比率 18.8%\n下限まで 23 億ドル');
+  node('cap', 2.45, 5.67, 2.0, 0.63, 'risk', '自己資本', '比率 18.8%\n下限まで 23 億ドル');
 
   const flow = { color: C.dark, width: 1.75 };
-  line('dep-bs', 1.6, AY, 2.85, AY, flow, true);
-  line('bs-lpb', 4.1, AY, 5.35, AY, flow, true);
+  line('dep-bs', 1.55, AY, 2.9, AY, flow, true);
+  line('bs-lpb', 4.15, AY, 5.35, AY, flow, true);
   line('lpb-buy', 6.6, AY, 7.4, AY, flow, true);
-  label('dep-bs', 4, '倉庫ラインより\n1.56pt 安い', 1.63, AY - 0.4, 1.19, 0.37, C.dark);
-  label('bs-lpb', 5, '資本で\n抱えきれない分', 4.13, AY - 0.4, 1.19, 0.37, C.dark);
-  label('lpb-buy', 0, '額面 +\n手数料', 6.63, AY - 0.4, 0.74, 0.37, C.dark);
+  label('dep-bs', 4, '倉庫ラインより\n1.56pt 安い', 1.58, AY - 0.43, 1.29, 0.4, C.dark);
+  label('bs-lpb', 5, '資本で\n抱えきれない分', 4.18, AY - 0.43, 1.14, 0.4, C.dark);
+  label('lpb-buy', 0, '額面 +\n手数料', 6.63, AY - 0.43, 0.74, 0.4, C.dark);
   // 貸出 → 自己資本(点線: 資本を使う)
-  line('bs-cap', 3.475, RY + RH, 3.475, 5.65, { color: C.red, width: 1.25, dash: 'dash' }, true);
-  label('bs-cap', 6, '資本を使う', 3.55, 5.38, 0.95, 0.2, C.red);
+  line('bs-cap', 3.525, RY + RH, 3.525, 5.67, { color: C.red, width: 1.25, dash: 'dash' }, true);
+  label('bs-cap', 6, '資本を使う', 3.6, 5.41, 1.0, 0.21, C.red);
   // 帯をまたぐ線は 1 本だけ: SoFi Money → 預金
   line('money-dep', 1.05, 4.0, 1.05, RY, flow, true);
-  label('money-dep', 0, '主口座の預金', 1.12, 4.25, 0.86, 0.19, C.dark);
+  label('money-dep', 0, '主口座の預金', 1.12, 4.22, 0.95, 0.2, C.dark);
 
   // 凡例(右下の空き)
   s.addShape('line', { x: 5.2, y: 6.1, w: 0.4, h: 0.001, line: { color: C.dark, width: 1.75, endArrowType: 'triangle' }, objectName: 'ovl_s08b_leg0' });
-  L.text(s, 'お金・貸出の流れ', { x: 5.66, y: 5.99, w: 1.3, h: 0.22, fontSize: 8, color: C.sub, margin: 0, valign: 'middle', objectName: 'ovl_s08b_legt0' });
+  L.text(s, 'お金・貸出の流れ', { x: 5.66, y: 5.99, w: 1.3, h: 0.22, fontSize: 9, color: C.sub, margin: 0, valign: 'middle', objectName: 'ovl_s08b_legt0' });
   s.addShape('line', { x: 7.0, y: 6.1, w: 0.4, h: 0.001, line: { color: C.red, width: 1.25, dashType: 'dash', endArrowType: 'triangle' }, objectName: 'ovl_s08b_leg1' });
-  L.text(s, '資本を使う', { x: 7.46, y: 5.99, w: 1.0, h: 0.22, fontSize: 8, color: C.sub, margin: 0, valign: 'middle', objectName: 'ovl_s08b_legt1' });
+  L.text(s, '資本を使う', { x: 7.46, y: 5.99, w: 1.0, h: 0.22, fontSize: 9, color: C.sub, margin: 0, valign: 'middle', objectName: 'ovl_s08b_legt1' });
 
   // ---- 検査: 線が箱を貫く / 線どうしが交差 / 文字どうしが重なる ------------------------------------
   const R = Object.entries(boxes).map(([id, r]) => Object.assign({ id }, r));
@@ -146,12 +146,12 @@ module.exports = function build(pres, L) {
   L.mechPanel(s, {
     bottom: 6.32,
     mech: [
-      '会員は 1 つのアプリで預金・ローン・投資・カード・保険を使う。1 会員 1.54 製品、新製品の 51% は既存会員',
-      '給与振込が主口座を作る。給与の早期受け取り・ATM・預金の補償・ローンの会員割引が乗り換えを難しくする',
-      '製品を重ねるほど獲得費は下がる。製品当たり 178 ドルは会員当たり 357 ドルの半分',
-      '主口座の預金(平均 3.07%)は倉庫ラインより 1.56pt 安く、年 7.1 億ドルの節約',
-      '資本で抱えきれないローンは LPB で手数料 4.6% を取って買い手へ渡す',
-      'ただし貸出は自己資本を使う。比率 18.8%、下限 14% まで 23 億ドル',
+      '会員は 1 つのアプリで預金・ローン・\n投資・カード・保険を使う。\n1 会員 1.54 製品、新製品の 51% は既存会員',
+      '給与振込が主口座を作る。\n給与の早期受け取り・ATM・預金の補償・\nローンの会員割引が乗り換えを難しくする',
+      '製品を重ねるほど獲得費は下がる。\n製品当たり 178 ドルは\n会員当たり 357 ドルの半分',
+      '主口座の預金(平均 3.07%)は倉庫ラインより\n1.56pt 安く、年 7.1 億ドルの節約',
+      '資本で抱えきれないローンは LPB で\n手数料 4.6% を取って買い手へ渡す',
+      'ただし貸出は自己資本を使う。\n比率 18.8%、下限 14% まで 23 億ドル',
     ],
     reason: '会員の束が獲得費と資金コストを下げ、\n預金が貸出を支える。律速は自己資本',
     up: 'クロスバイ 50% 超と預金の伸びが続けば、\n束の価値が上がる',
