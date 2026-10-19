@@ -1,4 +1,6 @@
 ticker,name,market,status,industry,g_used_pct,peg_x
+7241.KL,Nextgreen Global Berhad,MY,pass,Conglomerates,44.07,0.003
+INDY.JK,PT. Indika Energy Tbk,ID,pass,Thermal Coal,293.64,0.025
 MUX,McEwen Inc.,US,pass,Other Precious Metals & Mining,159.89,0.037
 GAU,Galiano Gold Inc.,US,pass,Gold,60.53,0.057
 603929.SS,"L&K Engineering (Suzhou) Co.,Ltd.",SH,pass,Engineering & Construction,109.68,0.083
@@ -10,10 +12,12 @@ GAU,Galiano Gold Inc.,US,pass,Gold,60.53,0.057
 9863.HK,"Zhejiang Leapmotor Technology Co., Ltd.",HK,pass,Auto Manufacturers,87.84,0.118
 MNTK,"Montauk Renewables, Inc.",US,pass,Specialty Chemicals,74.62,0.118
 GGAL,Grupo Financiero Galicia S.A.,US,pass,Banks - Regional,47.94,0.124
+603822.SS,"Zhejiang Jiaao Enprotech Stock Co., Ltd",SH,pass,Specialty Chemicals,63.27,0.128
 1921.HK,Dalipal Holdings Limited,HK,pass,Oil & Gas Equipment & Services,88.54,0.129
 7489.HK,"VOYAH Automotive Technology Co., Ltd.",HK,pass,Auto Manufacturers,34.62,0.137
 ALGT,Allegiant Travel Company,US,pass,Airlines,60.97,0.144
 EGO,Eldorado Gold Corporation,US,pass,Gold,60.28,0.144
+RE4.SI,Geo Energy Resources Limited,SG,pass,Thermal Coal,60.92,0.145
 1030.HK,Seazen Group Limited,HK,pass,Real Estate - Development,61.73,0.146
 1907.HK,China Risun Group Limited,HK,pass,Chemicals,38.17,0.158
 688472.SS,"CSI Solar Co., Ltd.",SH,pass,Solar,84.13,0.159
@@ -22,8 +26,10 @@ BTG,B2Gold Corp.,US,pass,Gold,43.65,0.161
 NESR,National Energy Services Reunited Corp.,US,pass,Oil & Gas Equipment & Services,53.92,0.167
 CDNL,Cardinal Infrastructure Group Inc.,US,pass,Engineering & Construction,33.13,0.168
 ARIS,Aris Mining Corporation,US,pass,Gold,40.6,0.174
+600409.SS,"Tangshan Sanyou Chemical Industries Co.,Ltd",SH,pass,Chemicals,110.53,0.178
 FBRT,"Franklin BSP Realty Trust, Inc.",US,pass,REIT - Mortgage,33.49,0.183
 SVM,Silvercorp Metals Inc.,US,pass,Silver,45.46,0.189
+SMGR.JK,PT Semen Indonesia (Persero) Tbk,ID,pass,Building Materials,55.76,0.19
 600985.SS,"Huaibei Mining Holdings Co.,Ltd.",SH,pass,Specialty Chemicals,64.35,0.192
 EQPT,EquipmentShare.com Inc.,US,pass,Rental & Leasing Services,108.74,0.197
 0683.HK,Kerry Properties Limited,HK,pass,Real Estate - Development,42.99,0.202
@@ -35,6 +41,7 @@ FCBM,"First Carolina Financial Services, Inc.",US,pass,Banks - Regional,49.09,0.
 3939.HK,Wanguo Gold Group Limited,HK,pass,Gold,57.86,0.239
 9147.T,"Nippon Express Holdings, Inc.",JP,pass,Integrated Freight & Logistics,59.23,0.244
 600352.SS,"Zhejiang Longsheng Group Co.,Ltd",SH,pass,Specialty Chemicals,40.3,0.247
+603035.SS,"Jiangsu Changshu Automotive Trim Group Co., Ltd.",SH,pass,Auto Parts,33.49,0.25
 SW,Smurfit Westrock Plc,US,pass,Packaging & Containers,62.87,0.252
 603997.SS,"Ningbo Jifeng Auto Parts Co., Ltd.",SH,pass,Auto Parts,60.0,0.256
 EQX,Equinox Gold Corp.,US,pass,Gold,36.35,0.257
@@ -48,17 +55,21 @@ PGC,Peapack-Gladstone Financial Corporation,US,pass,Banks - Regional,34.41,0.301
 JMSB,"John Marshall Bancorp, Inc.",US,pass,Banks - Regional,33.24,0.303
 HOPE,"Hope Bancorp, Inc.",US,pass,Banks - Regional,32.73,0.304
 601633.SS,Great Wall Motor Company Limited,SH,pass,Auto Manufacturers,40.17,0.31
+600389.SS,"Nantong Jiangshan Agrochemical & Chemicals Co.,Ltd.",SH,pass,Agricultural Inputs,31.27,0.311
 WBI,WaterBridge Infrastructure LLC,US,pass,Oil & Gas Equipment & Services,101.84,0.312
 UHAL-B,U-Haul Holding Company,US,pass,Rental & Leasing Services,96.43,0.313
 1818.HK,Zhaojin Mining Industry Company Limited,HK,pass,Gold,38.74,0.32
 9699.HK,"Hangzhou SF Intra-city Industrial Co., Ltd.",HK,pass,Integrated Freight & Logistics,32.43,0.321
 MT,ArcelorMittal S.A.,US,pass,Steel,35.8,0.322
 6680.HK,"JL Mag Rare-Earth Co., Ltd.",HK,pass,Metal Fabrication,41.45,0.332
+603163.SS,"Acter Technology Integration Group Co., Ltd.",SH,pass,Engineering & Construction,61.77,0.341
 600048.SS,"Poly Developments and Holdings Group Co., Ltd.",SH,pass,Real Estate - Development,98.67,0.349
 VBNK,VersaBank,US,pass,Banks - Regional,43.51,0.372
 603885.SS,"Juneyao Airlines Co., Ltd",SH,pass,Airlines,46.09,0.376
+688377.SS,"Nanjing Develop Advanced Manufacturing Co., Ltd.",SH,pass,Oil & Gas Equipment & Services,44.58,0.376
 TFIN,"Triumph Financial, Inc.",US,pass,Banks - Regional,62.12,0.378
 AMRC,"Ameresco, Inc.",US,pass,Engineering & Construction,34.38,0.38
+688196.SS,"Longyan Zhuoyue New Energy Co., Ltd.",SH,pass,Specialty Chemicals,35.48,0.381
 ASM,Avino Silver & Gold Mines Ltd.,US,pass,Other Precious Metals & Mining,33.91,0.382
 9064.T,"Yamato Holdings Co., Ltd.",JP,pass,Trucking,64.31,0.391
 SNDR,"Schneider National, Inc.",US,pass,Trucking,58.57,0.392
@@ -71,6 +82,7 @@ MRTN,"Marten Transport, Ltd.",US,pass,Trucking,69.03,0.44
 ARCB,ArcBest Corporation,US,pass,Trucking,35.78,0.442
 OIG,Orion180 Insurance Group Inc.,US,pass,Insurance - Property & Casualty,34.22,0.45
 CVLG,"Covenant Logistics Group, Inc.",US,pass,Trucking,31.3,0.457
+688116.SS,"Jiangsu Cnano Technology Co., Ltd.",SH,pass,Specialty Chemicals,49.07,0.463
 NE,Noble Corporation plc,US,pass,Oil & Gas Drilling,74.45,0.466
 5726.T,"OSAKA Titanium technologies Co.,Ltd.",JP,pass,Other Industrial Metals & Mining,44.7,0.471
 MWH,"SOLV Energy, Inc.",US,pass,Utilities - Renewable,33.82,0.476
@@ -83,11 +95,18 @@ MTZ,"MasTec, Inc.",US,pass,Engineering & Construction,33.37,0.531
 603308.SS,"Anhui Yingliu Electromechanical Co., Ltd.",SH,pass,Metal Fabrication,58.89,0.585
 CTRI,"Centuri Holdings, Inc.",US,pass,Utilities - Regulated Gas,41.49,0.596
 LWAY,"Lifeway Foods, Inc.",US,pass,Packaged Foods,39.88,0.6
+605208.SS,"Shanghai Yongmaotai Automotive Technology Co., Ltd.",SH,pass,Auto Parts,34.16,0.645
 141A.T,"TRIAL Holdings, Inc.",JP,pass,Discount Stores,46.27,0.678
 601155.SS,"Seazen Holdings Co., Ltd",SH,pass,Real Estate - Development,40.05,0.682
+688386.SS,Pan Asian Microvent Tech (Jiangsu) Corporation,SH,pass,Specialty Chemicals,32.94,0.688
+0215.KL,Solarvest Holdings Berhad,MY,pass,Solar,39.97,0.692
 6969.HK,Smoore International Holdings Limited,HK,pass,Tobacco,35.51,0.697
+7081.KL,Pharmaniaga Berhad,MY,borderline,Medical Distribution,30.76,0.121
 1866.HK,China XLX Fertiliser Ltd.,HK,borderline,Agricultural Inputs,27.1,0.221
 ITRG,Integra Resources Corp.,US,borderline,Other Precious Metals & Mining,29.33,0.223
+7179.KL,Lagenda Properties Berhad,MY,borderline,Residential Construction,26.18,0.224
+3417.KL,Eastern & Oriental Berhad,MY,borderline,Real Estate - Development,24.55,0.226
+ADRO.JK,PT Alamtri Resources Indonesia Tbk,ID,borderline,Thermal Coal,23.75,0.24
 1050.HK,Karrie International Holdings Limited,HK,borderline,Metal Fabrication,29.18,0.241
 TBBK,"The Bancorp, Inc.",US,borderline,Banks - Regional,27.52,0.259
 WD,"Walker & Dunlop, Inc.",US,borderline,Mortgage Finance,24.76,0.264
@@ -104,7 +123,9 @@ GBFH,GBank Financial Holdings Inc.,US,borderline,Banks - Regional,25.71,0.319
 9930.HK,Horizon Construction Development Limited,HK,borderline,Rental & Leasing Services,26.49,0.326
 0631.HK,Sany Heavy Equipment International Holdings Company Limited,HK,borderline,Farm & Heavy Construction Machinery,25.21,0.335
 DCOM,"Dime Commercial Bancshares, Inc.",US,borderline,Banks - Regional,29.06,0.35
+603181.SS,"Zhejiang Huangma Technology Co.,Ltd",SH,borderline,Specialty Chemicals,27.45,0.358
 1458.HK,Zhou Hei Ya International Holdings Company Limited,HK,borderline,Packaged Foods,22.43,0.36
+0351.KL,Lim Seong Hai Capital Berhad,MY,borderline,Engineering & Construction,24.08,0.371
 KRNY,Kearny Financial Corp.,US,borderline,Banks - Regional,27.02,0.373
 AEBI,Aebi Schmidt Holding AG,US,borderline,Farm & Heavy Construction Machinery,30.58,0.377
 600141.SS,"Hubei Xingfa Chemicals Group Co., Ltd.",SH,borderline,Chemicals,30.68,0.393
@@ -118,6 +139,7 @@ AAP,"Advance Auto Parts, Inc.",US,borderline,Auto Parts,30.22,0.43
 AUGO,Aura Minerals Inc.,US,borderline,Gold,27.99,0.444
 1768.HK,"Busy Ming Group Co., Ltd.",HK,borderline,Food Distribution,25.36,0.45
 RNGR,"Ranger Energy Services, Inc.",US,borderline,Oil & Gas Equipment & Services,24.79,0.458
+603305.SS,"Ningbo Xusheng Group Co., Ltd.",SH,borderline,Auto Parts,30.08,0.477
 603162.SS,"Fujian Highton Development Co., Ltd.",SH,borderline,Marine Shipping,23.75,0.48
 600575.SS,"Huaihe Energy (Group) Co.,Ltd",SH,borderline,Integrated Freight & Logistics,23.08,0.481
 MFG,"Mizuho Financial Group, Inc.",US,borderline,Banks - Regional,23.36,0.498
@@ -126,25 +148,34 @@ NU,Nu Holdings Ltd.,US,borderline,Banks - Regional,29.57,0.504
 UVV,Universal Corporation,US,borderline,Tobacco,22.32,0.504
 600031.SS,"Sany Heavy Industry Co.,Ltd",SH,borderline,Farm & Heavy Construction Machinery,25.53,0.52
 ECVT,Ecovyst Inc.,US,borderline,Specialty Chemicals,25.44,0.521
+1171.KL,MBSB Berhad,MY,borderline,Banks - Regional,22.23,0.522
 STLD,"Steel Dynamics, Inc.",US,borderline,Steel,24.19,0.527
 5232.T,"Sumitomo Osaka Cement Co., Ltd.",JP,borderline,Building Materials,23.24,0.535
 LOMA,Loma Negra Compañía Industrial Argentina Sociedad Anónima,US,borderline,Building Materials,26.87,0.538
+603299.SS,"Jiang Su Suyan Jingshen Co.,Ltd",SH,borderline,Chemicals,25.01,0.543
+600508.SS,"Shanghai Datun Energy Resources Co., Ltd.",SH,borderline,Thermal Coal,28.57,0.546
+COCOCO.BK,Thai Coconut Public Company Limited,TH,borderline,Packaged Foods,24.63,0.572
 EVI,"EVI Industries, Inc.",US,borderline,Industrial Distribution,29.9,0.584
 603129.SS,"Zhejiang Cfmoto Power Co.,Ltd",SH,borderline,Recreational Vehicles,27.66,0.593
 SHLS,"Shoals Technologies Group, Inc.",US,borderline,Solar,23.64,0.613
 2810.T,House Foods Group Inc.,JP,borderline,Packaged Foods,30.71,0.619
+5398.KL,Gamuda Berhad,MY,borderline,Engineering & Construction,29.09,0.623
 1828.HK,FWD Group Holdings Limited,HK,borderline,Insurance - Life,22.73,0.643
 STRL,"Sterling Infrastructure, Inc.",US,borderline,Engineering & Construction,29.0,0.654
 CSGP,"CoStar Group, Inc.",US,borderline,Real Estate Services,30.35,0.662
 KGS,"Kodiak Gas Services, Inc.",US,borderline,Oil & Gas Equipment & Services,24.75,0.668
 1164.HK,CGN Mining Company Limited,HK,borderline,Uranium,23.05,0.682
+1287.KL,Exsim Hospitality Berhad,MY,borderline,Real Estate - Development,24.51,0.684
 600176.SS,"China Jushi Co., Ltd.",SH,borderline,Building Materials,22.56,0.689
 9418.T,"U-NEXT HOLDINGS Co.,Ltd.",JP,borderline,Conglomerates,23.25,0.691
 HSAI,Hesai Group,US,borderline,Auto Parts,25.07,0.741
+600882.SS,"Shanghai Milkground Food Tech Co., Ltd",SH,borderline,Packaged Foods,32.84,0.752
 FSTR,L.B. Foster Company,US,borderline,Railroads,25.0,0.764
 688545.SS,"Hubei Sinophorus Electronic Materials Co.,Ltd.",SH,borderline,Specialty Chemicals,59.6,0.772
 ORN,"Orion Group Holdings, Inc.",US,borderline,Engineering & Construction,32.62,0.784
+688503.SS,"Changzhou Fusion New Material Co., Ltd.",SH,borderline,Solar,31.68,0.803
 603688.SS,"Jiangsu Pacific Quartz Co., Ltd",SH,borderline,Specialty Chemicals,53.19,0.85
 MAMA,"Mama's Creations, Inc.",US,borderline,Packaged Foods,50.0,0.856
 LSTR,"Landstar System, Inc.",US,borderline,Integrated Freight & Logistics,29.22,0.862
+603916.SS,"Sobute New Materials Co., Ltd",SH,borderline,Building Materials,25.0,0.876
 600208.SS,"Quzhou Xin'an Development Co., Ltd.",SH,borderline,Real Estate - Development,52.75,0.955

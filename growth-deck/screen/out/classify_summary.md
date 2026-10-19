@@ -1,88 +1,91 @@
 # 業種仕分けの結果
 
-- 入力: pass + borderline = 403 銘柄
-- 除外(業種): 149 銘柄
-- 確認対象: 254 銘柄(うち pass 152)
+- 入力: pass + borderline = 473 銘柄
+- 除外(業種): 180 銘柄
+- 確認対象: 293 銘柄(うち pass 172)
 
 ## 確認対象の業種分布
 
 | 業種 | 件数 |
 |---|---|
-| Semiconductors | 33 |
-| Electronic Components | 22 |
-| Semiconductor Equipment & Materials | 18 |
-| Electrical Equipment & Parts | 18 |
+| Semiconductors | 34 |
+| Electronic Components | 30 |
+| Semiconductor Equipment & Materials | 20 |
+| Specialty Industrial Machinery | 20 |
+| Electrical Equipment & Parts | 20 |
 | Software - Application | 17 |
-| Specialty Industrial Machinery | 13 |
 | Internet Retail | 12 |
+| Aerospace & Defense | 12 |
 | Communication Equipment | 10 |
-| Aerospace & Defense | 10 |
 | Software - Infrastructure | 8 |
 | Biotechnology | 7 |
+| Information Technology Services | 7 |
 | Computer Hardware | 6 |
+| Drug Manufacturers - Specialty & Generic | 6 |
+| Consumer Electronics | 6 |
+| Medical Devices | 5 |
 | Internet Content & Information | 5 |
-| Drug Manufacturers - Specialty & Generic | 4 |
 | Advertising Agencies | 4 |
-| Consumer Electronics | 4 |
-| Information Technology Services | 4 |
-| Medical Devices | 4 |
 | Leisure | 4 |
 | Scientific & Technical Instruments | 4 |
+| Building Products & Equipment | 4 |
 | Restaurants | 4 |
+| Furnishings, Fixtures & Appliances | 3 |
 | Credit Services | 3 |
-| Building Products & Equipment | 3 |
+| Telecom Services | 3 |
+| Medical Care Facilities | 3 |
 | Diagnostics & Research | 3 |
 | Apparel Manufacturing | 3 |
-| Furnishings, Fixtures & Appliances | 2 |
 | Asset Management | 2 |
 | Gambling | 2 |
 | Capital Markets | 2 |
-| Telecom Services | 2 |
 | Staffing & Employment Services | 2 |
 | Health Information Services | 2 |
+| Apparel Retail | 2 |
 | Drug Manufacturers - General | 2 |
+| Specialty Retail | 2 |
+| Specialty Business Services | 2 |
 | Electronic Gaming & Multimedia | 1 |
 | Footwear & Accessories | 1 |
 | Home Improvement Retail | 1 |
 | Pollution & Treatment Controls | 1 |
 | Security & Protection Services | 1 |
 | Healthcare Plans | 1 |
-| Apparel Retail | 1 |
 | Entertainment | 1 |
 | Household & Personal Products | 1 |
+| Infrastructure Operations | 1 |
 | Consulting Services | 1 |
 | Education & Training Services | 1 |
-| Medical Care Facilities | 1 |
 | Medical Instruments & Supplies | 1 |
-| Specialty Retail | 1 |
-| Specialty Business Services | 1 |
 
 ## 除外した業種
 
 | 業種 | 件数 |
 |---|---|
-| Banks - Regional | 16 |
+| Banks - Regional | 17 |
+| Auto Parts | 13 |
+| Specialty Chemicals | 13 |
 | Gold | 11 |
-| Auto Parts | 10 |
-| Specialty Chemicals | 8 |
-| Oil & Gas Equipment & Services | 8 |
-| Engineering & Construction | 7 |
+| Engineering & Construction | 10 |
+| Oil & Gas Equipment & Services | 9 |
+| Real Estate - Development | 7 |
 | Trucking | 7 |
+| Thermal Coal | 6 |
 | Auto Manufacturers | 6 |
-| Real Estate - Development | 5 |
+| Packaged Foods | 6 |
+| Solar | 5 |
+| Chemicals | 5 |
+| Building Materials | 5 |
 | Rental & Leasing Services | 5 |
 | Integrated Freight & Logistics | 5 |
 | Steel | 4 |
-| Packaged Foods | 4 |
 | Farm & Heavy Construction Machinery | 4 |
 | Other Precious Metals & Mining | 3 |
-| Solar | 3 |
 | Airlines | 3 |
-| Chemicals | 3 |
 | Metal Fabrication | 3 |
-| Building Materials | 3 |
+| Conglomerates | 2 |
 | Other Industrial Metals & Mining | 2 |
-| Thermal Coal | 2 |
+| Agricultural Inputs | 2 |
 | Tobacco | 2 |
 | Recreational Vehicles | 2 |
 | Marine Shipping | 2 |
@@ -97,7 +100,8 @@
 | Copper | 1 |
 | Utilities - Regulated Gas | 1 |
 | Discount Stores | 1 |
-| Agricultural Inputs | 1 |
+| Medical Distribution | 1 |
+| Residential Construction | 1 |
 | Mortgage Finance | 1 |
 | Oil & Gas E&P | 1 |
 | Food Distribution | 1 |
@@ -105,5 +109,4 @@
 | Insurance - Life | 1 |
 | Real Estate Services | 1 |
 | Uranium | 1 |
-| Conglomerates | 1 |
 | Railroads | 1 |
