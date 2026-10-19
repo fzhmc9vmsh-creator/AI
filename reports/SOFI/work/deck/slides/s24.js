@@ -1,20 +1,20 @@
-// 条件8(評価 C): コモディティ性。指示書 spec/ch3.md の s24 節
+// 条件8(評価 B・第3版): 単品はコモディティ、束は同業との相対で評価。指示書 spec/v3.md の s24 節(改訂)
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    kicker: '左から: 借り手 → SoFi の事業 → ローンの買い手 ← 価格の基準。①〜⑤ は右と対応。収益の内訳は Q2 2026',
-    source: '会社開示(Q2 2026 決算・10-Q)、research_r2/R9_products_people.md(各社の価格表)、research/R4_scuttlebutt.md(LPB 契約・プライベートクレジット)',
-    grade: 'C', condNo: 8,
+    kicker: '左から: 借り手 → SoFi の事業 → ローンの買い手 ← 価格の基準。①〜⑤ は右と対応。収益の内訳は Q2 2026。評価は単品でなく束 × 同業との相対で決める(第5版)',
+    source: '会社開示(Q2 2026 決算・10-Q)、research_r2/R9_products_people.md(各社の価格表)、research/R4_scuttlebutt.md(LPB 契約・プライベートクレジット)、research_r4/R16・R17',
+    grade: 'B', condNo: 8,
   });
   L.flowMap(s, {
     name: 's24', h: 4.66, cols: [1.2, 1.45, 1.4, 1.35], rows: 3,
     lanes: [{ label: '借り手', c0: 0, c1: 0 }, { label: 'SoFi の事業', c0: 1, c1: 1, self: true }, { label: 'ローンの買い手', c0: 2, c1: 2 }, { label: '価格の基準', c0: 3, c1: 3 }],
     nodes: [
-      { id: 'borrow', c: 0, r: 0, label: '借りる会員', sub: 'FICO 746\n金利を比べて選ぶ' },
+      { id: 'borrow', c: 0, r: 0, label: '借りる会員', sub: 'FICO 746\n純償却 2.62%\n(同業 3.2〜4.2%)' },
       { id: 'rel', c: 0, r: 1, kind: 'ok', label: '会員との関係', sub: 'クロスバイ 51%\n1 会員 1.54 製品' },
       { id: 'dd', c: 0, r: 2, kind: 'ok', label: '給与振込の預金', sub: '平均 3.07%' },
       { id: 'nii', c: 1, r: 0, kind: 'unit', label: '貸出の利ざや', sub: '収益の 65%\nNIM 5.98%', tag: { text: '商品', tone: 'red', above: true } },
       { id: 'lpb', c: 1, r: 1, kind: 'unit', label: 'LPB・売却益', sub: '収益の 24%', tag: { text: '商品', tone: 'red', above: true } },
-      { id: 'fee', c: 1, r: 2, kind: 'unit', label: '手数料・会費', sub: '収益の 11%', tag: { text: '差別化', tone: 'green', above: true } },
+      { id: 'fee', c: 1, r: 2, kind: 'unit', label: '手数料・会費', sub: '収益の 11%', tag: { text: '差別化(束)', tone: 'green', above: true } },
       { id: 'bo', c: 2, r: 0, label: 'Blue Owl・Fortress', sub: 'LPB 契約\n100 億ドル超' },
       { id: 'pc', c: 2, r: 1, kind: 'risk', label: 'プライベート\nクレジット', sub: '個人ローン組成の約 1/4\nに資金(前年 6%)', subSize: 8 },
       { id: 'bank', c: 2, r: 2, label: '銀行・ABS の投資家', sub: '全額売却 106.5%\n(Q4 2025)' },
@@ -39,14 +39,14 @@ module.exports = function build(pres, L) {
     mech: [
       '借り手は FICO 746 の優良層で、金利を比べて選ぶ。APR 帯は LendingClub・LightStream と重なる',
       '抱えきれないローンは LPB と売却で他社に渡す。収益の 24%',
-      '買い手はほぼ額面と手数料 4.6% で買う。市場で値の付く商品で、上乗せは小さい',
+      '買い手はほぼ額面と手数料 4.6% で買う。単品のローンは市場で値の付く商品',
       'プライベートクレジットは 2025 年の個人ローン組成の約 1/4 に資金を出し(前年 6%)、競合にも同じ資金が回る',
-      '差別化は会員との関係(クロスバイ 51%)と安い預金。商品の部分が収益の約 6 割を占める',
+      '束では差が出る: 製品当たり獲得費 178 ドル(会員当たりの半分)、純償却は同業より低く、預金は同業より低い金利で +54%',
     ],
-    reason: 'ローンは市場で値の付く商品。\n差別化は会員との関係と預金にあり、\n収益の約 6 割が商品の性格のため C',
-    up: 'NIM 5.8% 以上と LPB 手数料率 4.5% 以上を\n保てば B',
-    down: 'NIM 5.3% 未満か、手数料率 3.5% 未満なら D',
+    reason: '単品は商品だが、束では獲得費・貸倒・\n資金コストの 3 つで同業より低い。\n束に値段が付く証拠はまだ無く B',
+    up: '有料会員と手数料型の比率が上がり、\n束に値段が付けば A',
+    down: '純償却が同業並み(3.5% 超)になり、\n預金金利を同業並みに上げないと預金が\n減るなら C',
   });
-  L.kpiBand(s, 'NIM 5.8% 以上で B 候補・5.3% 未満で D 候補 / LPB の手数料率 4.5% 以上で確度を上げ・3.5% 未満で D 候補(毎四半期)');
+  L.kpiBand(s, '製品当たり獲得費 200 ドル以下・個人ローン純償却 3.0% 以下で確度を上げ / 預金の基本金利を同業並みに上げないと預金が減れば C 候補(毎四半期)');
   return s;
 };

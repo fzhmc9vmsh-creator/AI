@@ -1,58 +1,44 @@
-// 2-4 競争優位(手本を写経。左: 競合比較の表、右: ファイブフォース。タイトル・ページ番号は meta.js が入れる)
+// 2-4 競争優位: 体験の束(第3版・作り直し。指示書 spec/v3.md の s11 節。手本: s04 の表 + s15b の takeaway)
+// タイトル・ページ番号は meta.js が入れる。左: 体験の束の同業比較の表、右: 束の差が数字に出ているかの表
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
-    kicker: '左: 競合に対する価格・品質・差を生む活動(各社の公表レンジ、2026 年)。右: ファイブフォース(各力の強さと SoFi の利ざやへの効き)',
-    source: 'research_r2/R9_products_people.md(LendingTree・NerdWallet・各社ページ・J.D. Power)、research/R4_scuttlebutt.md(預金金利・TransUnion)',
+    kicker: '左: 体験の束を同業と比べる(○ あり / × なし / — 未確認。各社の公開情報の理解で原文とは未照合)。右: 束の差が数字に出ているか',
+    source: 'research_r4/R16_flywheel_quality_holding.md、research_r4/R17_credit_capital_peers.md、research/R1b_kpi.md、各社の公開情報',
   });
 
-  // ---- 左: 競合比較 ----
-  L.paneHead(s, 0.5, 1.62, 6.05, '競合比較: 品質 × 価格 × 価値連鎖', 'pane_l');
+  // ---- 左: 体験の束の同業比較(SoFi の列は tint の地に太字) ----
+  L.paneHead(s, 0.5, 1.62, 7.6, '体験の束の要素(同業との比較)', 'pane_l');
+  const so = (t) => ({ text: t, options: { fill: { color: C.tint }, bold: true } });
   L.table(s, [
-    ['製品', '価格(対競合)', '品質', '差を生む活動'],
-    ['個人ローン', 'APR 6.99〜35.49%・\n手数料 0〜7%。\nLightStream 6.49〜\n25.39%・手数料なし', 'アプリ評価 4.7。\n借り手 FICO 746', '会員の基盤と\n安い預金'],
-    ['普通預金', '3.30%(給与振込が条件)。\nAmex 3.90・Chime 3.75・\nCapital One 3.50%', 'NerdWallet 5.0、\n月額手数料なし', '給与振込で\n主口座になる'],
-    ['大学院ローン', '固定 2.45〜14.83%。\n連邦 PLUS 9.07%+\n手数料 4.2%', 'Yale が代替の\n筆頭に案内', '借換で培った\n審査'],
-    ['投資', '売買手数料 0 ドル\n(競合も 0)', 'J.D. Power\nDIY 部門 1 位', 'アプリの一体化'],
-    ['会員サブスク', 'Plus 月 10 ドル。\nRobinhood Gold 5 ドル、\nChime Prime 無料', '有料 20.6 万人', '預金金利の\n上乗せ'],
+    ['要素', 'SoFi', 'Chime', 'LendingClub', 'Ally', 'Robinhood'],
+    ['銀行免許(自前の預金)', so('○'), '×(提携銀行)', '○', '○', '×'],
+    ['給与の早期受け取り', so('○(最大 2 日)'), '○', '—', '—', '—'],
+    ['個人ローン', so('○'), '×', '○', '×', '×'],
+    ['学生ローン', so('○'), '×', '×', '×', '×'],
+    ['証券・暗号資産', so('○'), '×', '×', '○(証券)', '○'],
+    ['有料会員', so('○(Plus)'), '—', '×', '×', '○(Gold)'],
+    ['会員向けのローン金利割引', so('○(各 0.25%)'), '—', '—', '—', '—'],
   ], {
-    x: 0.5, y: 2.0, w: 6.05, colW: [1.25, 1.75, 1.55, 1.5], fontSize: 9, rowH: 0.6,
-    align: ['left', 'left', 'left', 'left'], name: 'tbl_compete',
-  });
-  L.takeaway(s, 0.5, 5.75, 6.05, 0.95, '安いのは学生ローンだけで、個人ローンと Plus は割高。それでも預金は競合より安く集まる。優位は価格ではなく、給与振込で主口座になる関係');
-
-  // ---- 右: ファイブフォース(中央は SoFi の利ざや。右下は takeaway) ----
-  L.paneHead(s, 6.78, 1.62, 6.05, 'ファイブフォース(業界構造)', 'pane_r');
-  const BW = 1.9, BH = 1.45;
-  const STR = { 弱: C.primary, 中: C.amber, 強: C.red };
-  const forces = [
-    { id: 'rival', x: 6.78, y: 2.0, name: '業界内の競争', str: '強', fact: '個人ローン残高 2,810 億ドル(+9.6%)を LendingClub・Upstart・大手行が奪い合う' },
-    { id: 'entry', x: 8.855, y: 2.0, name: '新規参入', str: '中', fact: 'SoFi は銀行の買収で\n約 1 年、払込資本\n7.5 億ドル。LendingClub も\n預金 102 億ドルで同じ型' },
-    { id: 'supp', x: 6.78, y: 3.55, name: '資金の出し手(供給者)', str: '弱', fact: '預金者は給与振込で定着。LPB の買い手は契約 100 億ドル超で取り合い' },
-    { id: 'buyer', x: 10.93, y: 3.55, name: '借り手(買い手)', str: '中', fact: 'FICO 746 の高所得層は\n他行も欲しい顧客。\n金利で乗り換える' },
-    { id: 'subst', x: 8.855, y: 5.1, name: '代替品', str: '中', fact: 'カード・ホームエクイティ・\nプライベートクレジットの\n直接貸出' },
-  ];
-  forces.forEach(f => {
-    L.box(s, f.x, f.y, BW, BH, { round: true, name: 'ovl_force_' + f.id });
-    // 名前の括弧の中(例: 「(供給者)」)は小さい字で続ける。1.3 インチの枠に 1 行で収めるため(文言は変えない)
-    const i = f.name.indexOf('(');
-    const nameRuns = i < 0 ? f.name : [{ text: f.name.slice(0, i) }, { text: f.name.slice(i), options: { fontSize: 8, bold: false } }];
-    L.text(s, nameRuns, { x: f.x + 0.08, y: f.y + 0.07, w: 1.5, h: 0.28, fontSize: 9.5, bold: true, color: C.dark, margin: 0, valign: 'middle', objectName: 'force_n_' + f.id });
-    L.text(s, f.str, { x: f.x + 1.58, y: f.y + 0.07, w: 0.24, h: 0.28, fontSize: 10, bold: true, color: STR[f.str], align: 'right', margin: 0, valign: 'middle', objectName: 'force_s_' + f.id });
-    L.text(s, f.fact, { x: f.x + 0.08, y: f.y + 0.4, w: BW - 0.16, h: BH - 0.47, fontSize: 8.5, color: C.text, margin: 0, objectName: 'force_f_' + f.id });
+    x: 0.5, y: 2.0, w: 7.6, colW: [1.9, 1.1, 1.1, 1.3, 1.1, 1.1], fontSize: 9.5, rowH: 0.42,
+    align: ['left', 'center', 'center', 'center', 'center', 'center'], name: 'tbl_bundle',
   });
 
-  // 中央: SoFi の利ざや(濃緑の箱)。各力は中央へ矢印で向かう
-  const hx = 8.855, hy = 3.55, cx = hx + BW / 2, cy = hy + BH / 2;
-  L.box(s, hx, hy, BW, BH, { round: true, fill: C.dark, line: C.dark, name: 'ovl_hub' });
-  L.text(s, 'SoFi の利ざや\nNIM 5.98%', { x: hx + 0.08, y: hy + 0.1, w: BW - 0.16, h: BH - 0.2, fontSize: 13, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, objectName: 'hub_t' });
-  L.arrow(s, cx, 3.45, cx, hy, { color: C.sub, width: 1 });                              // 上: 新規参入
-  L.arrow(s, cx, 5.1, cx, hy + BH, { color: C.sub, width: 1 });                          // 下: 代替品
-  L.arrow(s, 6.78 + BW, cy, hx, cy, { color: C.sub, width: 1 });                         // 左: 資金の出し手
-  L.arrow(s, 10.93, cy, hx + BW, cy, { color: C.sub, width: 1 });                        // 右: 借り手
-  L.arrow(s, 6.78 + BW, 2.0 + BH, hx, hy, { color: C.sub, width: 1 });                   // 左上: 業界内の競争
+  // ---- 右: 束の差が数字に出ているか ----
+  L.paneHead(s, 8.35, 1.62, 4.48, '束の差が数字に出ているか', 'pane_r');
+  L.table(s, [
+    ['指標', 'SoFi', '比較'],
+    ['獲得費(製品当たり)', '178 ドル', '会員当たり 357 ドルの半分'],
+    ['個人ローンの純償却', '2.62%', 'LendingClub 3.2%・\nDiscover 4.2%'],
+    ['預金の基本金利', '3.30%', 'Chime 3.75%・Amex 3.90%'],
+    ['預金の伸び(前年比)', '+54%', '金利が低くても増える'],
+    ['資金(倉庫ライン比)', '−1.56pt', '年 7.1 億ドルの節約'],
+  ], {
+    x: 8.35, y: 2.0, w: 4.48, colW: [1.45, 0.85, 2.18], fontSize: 9, rowH: 0.56,
+    align: ['left', 'center', 'left'], name: 'tbl_numbers',
+  });
 
-  // 右下: takeaway(手本の位置)
-  L.takeaway(s, 10.93, 5.1, BW, BH, '競争が強いのは\n貸出の市場。\n資金の側が弱い\n(SoFi に有利)ことが、\n利ざやを支える');
+  // 下端: 結論(単品は市場の商品、束で 3 つが同業より低い)
+  L.takeaway(s, 0.5, 5.95, 12.33, 0.7, '単品(ローン・預金)は市場の商品。だが束では獲得費・貸倒・資金コストの 3 つが同業より低い。\n全部の要素を持つのは SoFi だけで、預金を同業より低い金利で集めても伸びる(主口座の関係が数字に出ている)');
   return s;
 };

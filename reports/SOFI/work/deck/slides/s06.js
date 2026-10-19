@@ -1,20 +1,20 @@
-// 構造的要因サマリー(指示書 spec/ch1_ch4.md の s06 節。カード・縦帯・矢印は手本と同じ。第2版: 帯のバッジは 'B')
+// 構造的要因サマリー(指示書 spec/v3.md の s06 節。カード・縦帯・矢印は手本と同じ。帯のバッジは B)
+// 押し下げは指示書どおり 2 項目(左から 2 枚。3 枚目の枠は空ける)
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
     kicker: '構造的要因サマリー: 構造(だから)→ 条件の評価(となり)→ 構造評価への効き(を動かした)',
-    source: '本資料 第3章・第4章、calc/out/growth_v2.json',
+    source: '本資料 第3章・第4章、calc/out/growth_v3.json',
   });
 
   const up = [
-    { conds: [['1', 'B'], ['11', 'B']], head: '銀行免許 × フィンテックの安い調達', body: '会員の預金の約 97% が給与振込。\n負債は免許なしより 1.33pt 安く、\n節約は年 7.1 億ドル(販促費の 45%)' },
-    { conds: [['3', 'B'], ['12', 'B']], head: '会員の厚みとクロスバイ', body: 'クロスバイは 1 年で 35% → 51%。\n既存会員の製品は 2.5 倍で、\n製品当たり獲得費は −15%' },
-    { conds: [['2', 'B'], ['5', 'B']], head: '攻めの獲得投資と単位経済', body: '販促費 +48% は 6 検査中 4 つで攻め。\n経済的 LTV/CAC は約 2 倍、\n定常の ROTCE 約 15%' },
+    { conds: [['1', 'B'], ['11', 'B']], head: '主口座の関係と安い預金', body: '年 7.1 億ドルの節約。預金金利は\n同業より低くても預金は +54%' },
+    { conds: [['1', 'B'], ['12', 'B']], head: 'クロスセルの加速', body: '製品 前年比 43%、\nクロスバイ 51%' },
+    { conds: [['7', 'A'], ['8', 'B']], head: '同業より良い会員の質', body: '純償却 2.62%。同業は\n3.2〜4.2%' },
   ];
   const down = [
-    { conds: [['13', 'C']], head: '自己資本の律速と買い手への依存', body: '自給率 0.34。LPB への配分は\n49% → 29% と逆方向で、\n2027 年に資本の下限で試される' },
-    { conds: [['8', 'C']], head: 'ローンの商品性', body: 'ローンは買い手がほぼ額面と手数料で\n買う市場の商品で、金利帯も競合と\n重なり、利ざやを守りにくい' },
-    { conds: [['7', 'C']], head: '金利に弱い評価と信用', body: '公正価値の割引率が金利に連動し、\n金利上昇でマークが下がる。景気後退\nなら貸倒も増える' },
+    { conds: [['2', 'B'], ['13', 'B']], head: '自己資本の律速', body: '自給率 0.34。比率は\n半年で −4.1pt' },
+    { conds: [['6', 'A'], ['7', 'A']], head: '消費者金融の群として見られること', body: '株価が示す PEG 0.85\n(構造 C の水準)' },
   ];
 
   const CW = 3.1, GAP = 0.25, CH = 1.85;
@@ -44,12 +44,12 @@ module.exports = function build(pres, L) {
   up.forEach((c, i) => card(c, i, 2.0, 'up'));
   down.forEach((c, i) => card(c, i, 4.35, 'down'));
 
-  // 右端の縦帯: 総合評価 C
+  // 右端の縦帯: 構造評価 B
   L.box(s, 10.75, 2.0, 2.08, 4.2, { fill: C.dark, line: C.dark, name: 'ovl_band' });
   L.badge(s, 10.75 + (2.08 - 1.4) / 2, 3.15, 'B', 1.4);
   L.text(s, '構造評価', { x: 10.75, y: 4.7, w: 2.08, h: 0.4, fontSize: 14, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, objectName: 'band_label' });
 
-  // カード列の右端から縦帯へ(上段は緑、下段は赤)
+  // カード列の右端から縦帯へ(上段は緑、下段は赤。下段は最後のカードの右端から)
   L.arrow(s, 0.5 + 2 * (CW + GAP) + CW, 2.0 + CH / 2, 10.75, 2.0 + CH / 2, { color: C.primary, width: 1 });
-  L.arrow(s, 0.5 + 2 * (CW + GAP) + CW, 4.35 + CH / 2, 10.75, 4.35 + CH / 2, { color: C.red, width: 1 });
+  L.arrow(s, 0.5 + (down.length - 1) * (CW + GAP) + CW, 4.35 + CH / 2, 10.75, 4.35 + CH / 2, { color: C.red, width: 1 });
 };
