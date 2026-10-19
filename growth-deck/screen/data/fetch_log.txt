@@ -1,3 +1,4 @@
 [15:42:26] [network] yahoo: OK
 [15:42:26] fetch: 2056 銘柄 (並列 4)
 [15:42:31] fx: 8 通貨 (yfinance, 2026-10-19)
+HTTP Error 404: Not Found{"quoteSummary":{"result":null,"error":{"code":"Not Found","description":"No fundamentals data found for symbol: FOX"}}}
