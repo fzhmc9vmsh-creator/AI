@@ -1,22 +1,2057 @@
 ticker,name,market,source
-9001.T,MockDenki A,JP,mock
-9002.T,MockFood B,JP,mock
-9003.T,MockAuto C,JP,mock
-9004.T,MockSteel D,JP,mock
-9005.T,MockRetail E,JP,mock
-9006.T,MockSoft F,JP,mock
-9007.T,MockPharma G,JP,mock
-9008.T,MockSmall H,JP,mock
-9009.T,MockNoCover I,JP,mock
-9011.T,MockMemory K,JP,mock
-9010.T,MockFail J,JP,mock
-9012.T,MockBank L,JP,mock
-9013.T,MockPremium M,JP,mock
-8001.HK,MockTel N,HK,mock
-8002.HK,MockBank O,HK,mock
-8003.HK,MockRetail P,HK,mock
-MOCKA,Mock Software A,US,mock
-MOCKB,Mock Health B,US,mock
-MOCKC,Mock Energy C,US,mock
-MOCKD,Mock Loss D,US,mock
-MOCKE,Mock Engineering E,US,mock
+NVDA,NVIDIA Corporation,US,yahoo_screener
+TSM,Taiwan Semiconductor Manufacturing Company Limited,US,yahoo_screener
+AVGO,Broadcom Inc.,US,yahoo_screener
+LLY,Eli Lilly and Company,US,yahoo_screener
+SKHY,SK hynix Inc.,US,yahoo_screener
+MU,"Micron Technology, Inc.",US,yahoo_screener
+AMD,"Advanced Micro Devices, Inc.",US,yahoo_screener
+XOM,ExxonMobil Holdings Corporation,US,yahoo_screener
+ASML,ASML Holding N.V.,US,yahoo_screener
+JNJ,Johnson & Johnson,US,yahoo_screener
+ABBV,AbbVie Inc.,US,yahoo_screener
+CSCO,"Cisco Systems, Inc.",US,yahoo_screener
+ORCL,Oracle Corporation,US,yahoo_screener
+UNH,UnitedHealth Group Incorporated,US,yahoo_screener
+MRK,"Merck & Co., Inc.",US,yahoo_screener
+LRCX,Lam Research Corporation,US,yahoo_screener
+AMAT,"Applied Materials, Inc.",US,yahoo_screener
+DELL,Dell Technologies Inc.,US,yahoo_screener
+PANW,"Palo Alto Networks, Inc.",US,yahoo_screener
+BABA,Alibaba Group Holding Limited,US,yahoo_screener
+AZN,AstraZeneca PLC,US,yahoo_screener
+TXN,Texas Instruments Incorporated,US,yahoo_screener
+ARM,Arm Holdings plc,US,yahoo_screener
+CRWD,"CrowdStrike Holdings, Inc.",US,yahoo_screener
+AMGN,Amgen Inc.,US,yahoo_screener
+KLAC,KLA Corporation,US,yahoo_screener
+MRVL,"Marvell Technology, Inc.",US,yahoo_screener
+APH,Amphenol Corporation,US,yahoo_screener
+SNDK,Sandisk Corporation,US,yahoo_screener
+ADI,"Analog Devices, Inc.",US,yahoo_screener
+DIS,The Walt Disney Company,US,yahoo_screener
+ABT,Abbott Laboratories,US,yahoo_screener
+TMUS,"T-Mobile US, Inc.",US,yahoo_screener
+PFE,Pfizer Inc.,US,yahoo_screener
+DHR,Danaher Corporation,US,yahoo_screener
+ETN,Eaton Corporation plc,US,yahoo_screener
+STX,Seagate Technology Holdings plc,US,yahoo_screener
+NOW,"ServiceNow, Inc.",US,yahoo_screener
+MPC,Marathon Petroleum Corporation,US,yahoo_screener
+BP,BP p.l.c.,US,yahoo_screener
+VLO,Valero Energy Corporation,US,yahoo_screener
+COF,Capital One Financial Corporation,US,yahoo_screener
+MFG,"Mizuho Financial Group, Inc.",US,yahoo_screener
+MDT,Medtronic plc,US,yahoo_screener
+PSX,Phillips 66,US,yahoo_screener
+CVS,CVS Health Corporation,US,yahoo_screener
+GLW,Corning Incorporated,US,yahoo_screener
+SYK,Stryker Corporation,US,yahoo_screener
+SBUX,Starbucks Corporation,US,yahoo_screener
+FCX,Freeport-McMoRan Inc.,US,yahoo_screener
+GSK,GSK plc,US,yahoo_screener
+SNY,Sanofi,US,yahoo_screener
+ADBE,Adobe Inc.,US,yahoo_screener
+DDOG,"Datadog, Inc.",US,yahoo_screener
+PWR,"Quanta Services, Inc.",US,yahoo_screener
+ASX,"ASE Technology Holding Co., Ltd.",US,yahoo_screener
+EMR,Emerson Electric Co.,US,yahoo_screener
+CDNS,"Cadence Design Systems, Inc.",US,yahoo_screener
+JCI,Johnson Controls International plc,US,yahoo_screener
+APP,AppLovin Corporation,US,yahoo_screener
+SNPS,"Synopsys, Inc.",US,yahoo_screener
+INTU,Intuit Inc.,US,yahoo_screener
+MMM,3M Company,US,yahoo_screener
+E,Eni S.p.A.,US,yahoo_screener
+UPS,"United Parcel Service, Inc.",US,yahoo_screener
+DASH,"DoorDash, Inc.",US,yahoo_screener
+BN,Brookfield Corporation,US,yahoo_screener
+VRT,Vertiv Holdings Co,US,yahoo_screener
+BX,Blackstone Inc.,US,yahoo_screener
+REGN,"Regeneron Pharmaceuticals, Inc.",US,yahoo_screener
+NTES,"NetEase, Inc.",US,yahoo_screener
+NGG,National Grid plc,US,yahoo_screener
+KKR,KKR & Co. Inc.,US,yahoo_screener
+MSI,"Motorola Solutions, Inc.",US,yahoo_screener
+HPE,Hewlett Packard Enterprise Company,US,yahoo_screener
+CL,Colgate-Palmolive Company,US,yahoo_screener
+SLB,SLB N.V.,US,yahoo_screener
+GM,General Motors Company,US,yahoo_screener
+CMI,Cummins Inc.,US,yahoo_screener
+NU,Nu Holdings Ltd.,US,yahoo_screener
+BE,Bloom Energy Corporation,US,yahoo_screener
+APO,"Apollo Global Management, Inc.",US,yahoo_screener
+AJG,Arthur J. Gallagher & Co.,US,yahoo_screener
+MET,"MetLife, Inc.",US,yahoo_screener
+MPWR,"Monolithic Power Systems, Inc.",US,yahoo_screener
+LNG,"Cheniere Energy, Inc.",US,yahoo_screener
+NUE,Nucor Corporation,US,yahoo_screener
+NXPI,NXP Semiconductors N.V.,US,yahoo_screener
+CAH,"Cardinal Health, Inc.",US,yahoo_screener
+KEYS,"Keysight Technologies, Inc.",US,yahoo_screener
+PCAR,PACCAR Inc,US,yahoo_screener
+FANG,"Diamondback Energy, Inc.",US,yahoo_screener
+VALE,Vale S.A.,US,yahoo_screener
+SE,Sea Limited,US,yahoo_screener
+SRE,Sempra,US,yahoo_screener
+NOK,Nokia Oyj,US,yahoo_screener
+DEO,Diageo plc,US,yahoo_screener
+HONA,Honeywell Aerospace Inc.,US,yahoo_screener
+BDX,"Becton, Dickinson and Company",US,yahoo_screener
+VEEV,Veeva Systems Inc.,US,yahoo_screener
+ALAB,"Astera Labs, Inc.",US,yahoo_screener
+VST,Vistra Corp.,US,yahoo_screener
+EW,Edwards Lifesciences Corporation,US,yahoo_screener
+CIEN,Ciena Corporation,US,yahoo_screener
+ADSK,"Autodesk, Inc.",US,yahoo_screener
+HUM,Humana Inc.,US,yahoo_screener
+WAB,Westinghouse Air Brake Technologies Corporation,US,yahoo_screener
+TEVA,Teva Pharmaceutical Industries Limited,US,yahoo_screener
+VYLR,Vylor Inc.,US,yahoo_screener
+MT,ArcelorMittal S.A.,US,yahoo_screener
+COHR,Coherent Corp.,US,yahoo_screener
+KDP,Keurig Dr Pepper Inc.,US,yahoo_screener
+XYZ,"Block, Inc.",US,yahoo_screener
+WDAY,"Workday, Inc.",US,yahoo_screener
+FITB,Fifth Third Bancorp,US,yahoo_screener
+CARR,Carrier Global Corporation,US,yahoo_screener
+BBD,Banco Bradesco S.A.,US,yahoo_screener
+IQV,IQVIA Holdings Inc.,US,yahoo_screener
+P,"Everpure, Inc.",US,yahoo_screener
+WAT,Waters Corporation,US,yahoo_screener
+AIG,"American International Group, Inc.",US,yahoo_screener
+ONC,BeOne Medicines AG,US,yahoo_screener
+STM,STMicroelectronics N.V.,US,yahoo_screener
+NTAP,"NetApp, Inc.",US,yahoo_screener
+MCHP,Microchip Technology Incorporated,US,yahoo_screener
+CLS,Celestica Inc.,US,yahoo_screener
+ADM,Archer-Daniels-Midland Company,US,yahoo_screener
+EL,The Estée Lauder Companies Inc.,US,yahoo_screener
+CBRE,"CBRE Group, Inc.",US,yahoo_screener
+KR,The Kroger Co.,US,yahoo_screener
+JD,"JD.com, Inc.",US,yahoo_screener
+CCJ,Cameco Corporation,US,yahoo_screener
+STLD,"Steel Dynamics, Inc.",US,yahoo_screener
+EXPE,"Expedia Group, Inc.",US,yahoo_screener
+BIIB,Biogen Inc.,US,yahoo_screener
+CRDO,Credo Technology Group Holding Ltd,US,yahoo_screener
+FLEX,Flex Ltd.,US,yahoo_screener
+OKTA,"Okta, Inc.",US,yahoo_screener
+IRM,Iron Mountain Incorporated,US,yahoo_screener
+ALC,Alcon Inc.,US,yahoo_screener
+MDLN,Medline Inc.,US,yahoo_screener
+AXON,"Axon Enterprise, Inc.",US,yahoo_screener
+ALNY,"Alnylam Pharmaceuticals, Inc.",US,yahoo_screener
+IR,Ingersoll Rand Inc.,US,yahoo_screener
+JBL,Jabil Inc.,US,yahoo_screener
+BSP,Bending Spoons S.p.A.,US,yahoo_screener
+RDDT,"Reddit, Inc.",US,yahoo_screener
+ON,ON Semiconductor Corporation,US,yahoo_screener
+MDB,"MongoDB, Inc.",US,yahoo_screener
+HAL,Halliburton Company,US,yahoo_screener
+SN,"SharkNinja, Inc.",US,yahoo_screener
+FOXA,Fox Corporation,US,yahoo_screener
+RPRX,Royalty Pharma plc,US,yahoo_screener
+CPAY,"Corpay, Inc.",US,yahoo_screener
+FE,FirstEnergy Corp.,US,yahoo_screener
+GFS,GLOBALFOUNDRIES Inc.,US,yahoo_screener
+ATI,ATI Inc.,US,yahoo_screener
+ARES,Ares Management Corporation,US,yahoo_screener
+LH,Labcorp Holdings Inc.,US,yahoo_screener
+Q,"Qnity Electronics, Inc.",US,yahoo_screener
+FISV,"Fiserv, Inc.",US,yahoo_screener
+LPLA,LPL Financial Holdings Inc.,US,yahoo_screener
+FOX,Fox Corporation,US,yahoo_screener
+TPL,Texas Pacific Land Corporation,US,yahoo_screener
+IOT,Samsara Inc.,US,yahoo_screener
+ARXS,"Arxis, Inc.",US,yahoo_screener
+NVT,nVent Electric plc,US,yahoo_screener
+IFF,International Flavors & Fragrances Inc.,US,yahoo_screener
+TSEM,Tower Semiconductor Ltd.,US,yahoo_screener
+BRO,"Brown & Brown, Inc.",US,yahoo_screener
+FWONK,Formula One Group,US,yahoo_screener
+ENTG,"Entegris, Inc.",US,yahoo_screener
+GPN,Global Payments Inc.,US,yahoo_screener
+XPO,"XPO, Inc.",US,yahoo_screener
+USFD,US Foods Holding Corp.,US,yahoo_screener
+SW,Smurfit Westrock Plc,US,yahoo_screener
+OMC,Omnicom Group Inc.,US,yahoo_screener
+SMCI,"Super Micro Computer, Inc.",US,yahoo_screener
+STE,STERIS plc,US,yahoo_screener
+MTSI,"MACOM Technology Solutions Holdings, Inc.",US,yahoo_screener
+PKG,Packaging Corporation of America,US,yahoo_screener
+FWONA,Formula One Group,US,yahoo_screener
+NRG,"NRG Energy, Inc.",US,yahoo_screener
+BSBR,Banco Santander (Brasil) S.A.,US,yahoo_screener
+PR,Permian Resources Corporation,US,yahoo_screener
+AMCR,Amcor plc,US,yahoo_screener
+SNX,TD SYNNEX Corporation,US,yahoo_screener
+YPF,YPF Sociedad Anónima,US,yahoo_screener
+BG,Bunge Global SA,US,yahoo_screener
+SSNC,"SS&C Technologies Holdings, Inc.",US,yahoo_screener
+BEKE,KE Holdings Inc.,US,yahoo_screener
+LUV,Southwest Airlines Co.,US,yahoo_screener
+OVV,Ovintiv Inc.,US,yahoo_screener
+SWKS,"Skyworks Solutions, Inc.",US,yahoo_screener
+TSN,"Tyson Foods, Inc.",US,yahoo_screener
+SOFI,"SoFi Technologies, Inc.",US,yahoo_screener
+CRS,Carpenter Technology Corporation,US,yahoo_screener
+EFX,Equifax Inc.,US,yahoo_screener
+CNH,CNH Industrial N.V.,US,yahoo_screener
+GPC,Genuine Parts Company,US,yahoo_screener
+TOST,"Toast, Inc.",US,yahoo_screener
+LEN-B,Lennar Corporation,US,yahoo_screener
+ZBH,"Zimmer Biomet Holdings, Inc.",US,yahoo_screener
+ZBRA,Zebra Technologies Corporation,US,yahoo_screener
+DT,"Dynatrace, Inc.",US,yahoo_screener
+PAA,"Plains All American Pipeline, L.P.",US,yahoo_screener
+AS,"Amer Sports, Inc.",US,yahoo_screener
+DD,"DuPont de Nemours, Inc.",US,yahoo_screener
+PKX,POSCO Holdings Inc.,US,yahoo_screener
+KSPI,Joint Stock Company Kaspi.kz,US,yahoo_screener
+MGA,Magna International Inc.,US,yahoo_screener
+FTV,Fortive Corporation,US,yahoo_screener
+RVTY,"Revvity, Inc.",US,yahoo_screener
+FTAI,FTAI Aviation Ltd.,US,yahoo_screener
+BIP,Brookfield Infrastructure Partners L.P.,US,yahoo_screener
+HSAI,Hesai Group,US,yahoo_screener
+J,Jacobs Solutions Inc.,US,yahoo_screener
+WMG,Warner Music Group Corp.,US,yahoo_screener
+H,Hyatt Hotels Corporation,US,yahoo_screener
+RBC,RBC Bearings Incorporated,US,yahoo_screener
+CDE,"Coeur Mining, Inc.",US,yahoo_screener
+BEN,Franklin Templeton Inc.,US,yahoo_screener
+LSCC,Lattice Semiconductor Corporation,US,yahoo_screener
+CRBG,"Corebridge Financial, Inc.",US,yahoo_screener
+MTZ,"MasTec, Inc.",US,yahoo_screener
+PFGC,Performance Food Group Company,US,yahoo_screener
+JHX,James Hardie Industries plc,US,yahoo_screener
+SITM,SiTime Corporation,US,yahoo_screener
+MKSI,MKS Inc.,US,yahoo_screener
+CX,"CEMEX, S.A.B. de C.V.",US,yahoo_screener
+CX,"CEMEX, S.A.B. de C.V.",US,yahoo_screener
+RBA,"RB Global, Inc.",US,yahoo_screener
+TYL,"Tyler Technologies, Inc.",US,yahoo_screener
+SGI,Somnigroup International Inc.,US,yahoo_screener
+ARMK,Aramark,US,yahoo_screener
+HTHT,H World Group Limited,US,yahoo_screener
+UNM,Unum Group,US,yahoo_screener
+SUI,"Sun Communities, Inc.",US,yahoo_screener
+PNFP,"Pinnacle Financial Partners, Inc.",US,yahoo_screener
+GEN,Gen Digital Inc.,US,yahoo_screener
+COKE,"Coca-Cola Consolidated, Inc.",US,yahoo_screener
+DOCU,"DocuSign, Inc.",US,yahoo_screener
+GWRE,"Guidewire Software, Inc.",US,yahoo_screener
+SWK,"Stanley Black & Decker, Inc.",US,yahoo_screener
+HALO,"Halozyme Therapeutics, Inc.",US,yahoo_screener
+NBIX,"Neurocrine Biosciences, Inc.",US,yahoo_screener
+SMTC,Semtech Corporation,US,yahoo_screener
+SJM,The J. M. Smucker Company,US,yahoo_screener
+CACI,CACI International Inc,US,yahoo_screener
+TIGO,Millicom International Cellular S.A.,US,yahoo_screener
+GDDY,GoDaddy Inc.,US,yahoo_screener
+JAZZ,Jazz Pharmaceuticals plc,US,yahoo_screener
+STRL,"Sterling Infrastructure, Inc.",US,yahoo_screener
+FN,Fabrinet,US,yahoo_screener
+EMBJ,Embraer S.A.,US,yahoo_screener
+ICLR,ICON Public Limited Company,US,yahoo_screener
+CG,The Carlyle Group Inc.,US,yahoo_screener
+EQX,Equinox Gold Corp.,US,yahoo_screener
+AKAM,"Akamai Technologies, Inc.",US,yahoo_screener
+CSGP,"CoStar Group, Inc.",US,yahoo_screener
+PINS,"Pinterest, Inc.",US,yahoo_screener
+SKM,"SK Telecom Co., Ltd.",US,yahoo_screener
+INIO,Innio N.V.,US,yahoo_screener
+BTSG,"BrightSpring Health Services, Inc.",US,yahoo_screener
+CORT,Corcept Therapeutics Incorporated,US,yahoo_screener
+SNN,Smith & Nephew plc,US,yahoo_screener
+BWA,BorgWarner Inc.,US,yahoo_screener
+MAIR,Madison Air Solutions Corporation,US,yahoo_screener
+HUBS,"HubSpot, Inc.",US,yahoo_screener
+CART,Maplebear Inc.,US,yahoo_screener
+FMS,Fresenius Medical Care AG,US,yahoo_screener
+GNRC,Generac Holdings Inc.,US,yahoo_screener
+ONTO,Onto Innovation Inc.,US,yahoo_screener
+MICC,The Magnum Ice Cream Company N.V.,US,yahoo_screener
+TECH,Bio-Techne Corporation,US,yahoo_screener
+ALB,Albemarle Corporation,US,yahoo_screener
+CHYM,"Chime Financial, Inc.",US,yahoo_screener
+RGEN,Repligen Corporation,US,yahoo_screener
+HRL,Hormel Foods Corporation,US,yahoo_screener
+ARW,"Arrow Electronics, Inc.",US,yahoo_screener
+UHAL,U-Haul Holding Company,US,yahoo_screener
+COO,"The Cooper Companies, Inc.",US,yahoo_screener
+MOH,"Molina Healthcare, Inc.",US,yahoo_screener
+BSY,"Bentley Systems, Incorporated",US,yahoo_screener
+FHN,First Horizon Corporation,US,yahoo_screener
+FDS,FactSet Research Systems Inc.,US,yahoo_screener
+FNF,"Fidelity National Financial, Inc.",US,yahoo_screener
+RTO,Rentokil Initial plc,US,yahoo_screener
+ALGN,"Align Technology, Inc.",US,yahoo_screener
+RRX,Regal Rexnord Corporation,US,yahoo_screener
+TTMI,"TTM Technologies, Inc.",US,yahoo_screener
+KNX,Knight-Swift Transportation Holdings Inc.,US,yahoo_screener
+BMRN,BioMarin Pharmaceutical Inc.,US,yahoo_screener
+NVMI,Nova Ltd.,US,yahoo_screener
+MTCH,"Match Group, Inc.",US,yahoo_screener
+RMBS,Rambus Inc.,US,yahoo_screener
+OSCR,"Oscar Health, Inc.",US,yahoo_screener
+SSL,Sasol Limited,US,yahoo_screener
+GGB,Gerdau S.A.,US,yahoo_screener
+AEIS,"Advanced Energy Industries, Inc.",US,yahoo_screener
+AMG,"Affiliated Managers Group, Inc.",US,yahoo_screener
+PBF,PBF Energy Inc.,US,yahoo_screener
+UHAL-B,U-Haul Holding Company,US,yahoo_screener
+AM,Antero Midstream Corporation,US,yahoo_screener
+SANM,Sanmina Corporation,US,yahoo_screener
+SOLS,"Solstice Advanced Materials, Inc.",US,yahoo_screener
+ENLT,Enlight Renewable Energy Ltd,US,yahoo_screener
+HSIC,"Henry Schein, Inc.",US,yahoo_screener
+DAR,Darling Ingredients Inc.,US,yahoo_screener
+CGNX,Cognex Corporation,US,yahoo_screener
+EDU,New Oriental Education & Technology Group Inc.,US,yahoo_screener
+EGO,Eldorado Gold Corporation,US,yahoo_screener
+APTV,Aptiv PLC,US,yahoo_screener
+VICR,Vicor Corporation,US,yahoo_screener
+TFII,TFI International Inc.,US,yahoo_screener
+ALSN,"Allison Transmission Holdings, Inc.",US,yahoo_screener
+YMM,Full Truck Alliance Co. Ltd.,US,yahoo_screener
+PCTY,Paylocity Holding Corporation,US,yahoo_screener
+FLS,Flowserve Corporation,US,yahoo_screener
+FPS,"Forgent Power Solutions, Inc.",US,yahoo_screener
+FORM,"FormFactor, Inc.",US,yahoo_screener
+KT,KT Corporation,US,yahoo_screener
+ESI,Element Solutions Inc,US,yahoo_screener
+JXN,Jackson Financial Inc.,US,yahoo_screener
+VNOM,"Viper Energy, Inc.",US,yahoo_screener
+VOYA,"Voya Financial, Inc.",US,yahoo_screener
+SPXC,"SPX Technologies, Inc.",US,yahoo_screener
+CHWY,"Chewy, Inc.",US,yahoo_screener
+MOD,Modine Manufacturing Company,US,yahoo_screener
+ETSY,"Etsy, Inc.",US,yahoo_screener
+TKR,The Timken Company,US,yahoo_screener
+OSK,Oshkosh Corporation,US,yahoo_screener
+CAE,CAE Inc.,US,yahoo_screener
+DBX,"Dropbox, Inc.",US,yahoo_screener
+HQY,"HealthEquity, Inc.",US,yahoo_screener
+STN,Stantec Inc.,US,yahoo_screener
+DY,"Dycom Industries, Inc.",US,yahoo_screener
+AVT,"Avnet, Inc.",US,yahoo_screener
+GIL,Gildan Activewear Inc.,US,yahoo_screener
+APPF,"AppFolio, Inc.",US,yahoo_screener
+KMX,"CarMax, Inc.",US,yahoo_screener
+CELH,"Celsius Holdings, Inc.",US,yahoo_screener
+SIMO,Silicon Motion Technology Corporation,US,yahoo_screener
+ACM,AECOM,US,yahoo_screener
+DSGX,The Descartes Systems Group Inc.,US,yahoo_screener
+KTOS,"Kratos Defense & Security Solutions, Inc.",US,yahoo_screener
+PACS,"PACS Group, Inc.",US,yahoo_screener
+LW,"Lamb Weston Holdings, Inc.",US,yahoo_screener
+AUGO,Aura Minerals Inc.,US,yahoo_screener
+PRMB,Primo Brands Corporation,US,yahoo_screener
+TPG,TPG Inc.,US,yahoo_screener
+AXTA,Axalta Coating Systems Ltd.,US,yahoo_screener
+EMN,Eastman Chemical Company,US,yahoo_screener
+MTDR,Matador Resources Company,US,yahoo_screener
+ZG,"Zillow Group, Inc.",US,yahoo_screener
+SBSW,Sibanye Stillwater Limited,US,yahoo_screener
+ALKS,Alkermes plc,US,yahoo_screener
+NE,Noble Corporation plc,US,yahoo_screener
+SARO,"StandardAero, Inc.",US,yahoo_screener
+COMP,"Compass, Inc.",US,yahoo_screener
+BTG,B2Gold Corp.,US,yahoo_screener
+SNEX,StoneX Group Inc.,US,yahoo_screener
+Z,"Zillow Group, Inc.",US,yahoo_screener
+ELF,"e.l.f. Beauty, Inc.",US,yahoo_screener
+VFC,V.F. Corporation,US,yahoo_screener
+NOV,NOV Inc.,US,yahoo_screener
+VCTR,"Victory Capital Holdings, Inc.",US,yahoo_screener
+NICE,NICE Ltd.,US,yahoo_screener
+AMRX,"Amneal Pharmaceuticals, Inc.",US,yahoo_screener
+GLBE,Global-E Online Ltd.,US,yahoo_screener
+LNTH,"Lantheus Holdings, Inc.",US,yahoo_screener
+ESE,ESCO Technologies Inc.,US,yahoo_screener
+RNG,"RingCentral, Inc.",US,yahoo_screener
+TXNM,"TXNM Energy, Inc.",US,yahoo_screener
+PLXS,Plexus Corp.,US,yahoo_screener
+EPAM,"EPAM Systems, Inc.",US,yahoo_screener
+CVLT,"Commvault Systems, Inc.",US,yahoo_screener
+DOX,Amdocs Limited,US,yahoo_screener
+OTEX,Open Text Corporation,US,yahoo_screener
+INGM,Ingram Micro Holding Corporation,US,yahoo_screener
+CAMT,Camtek Ltd.,US,yahoo_screener
+ENIC,Enel Chile S.A.,US,yahoo_screener
+WEX,WEX Inc.,US,yahoo_screener
+OWL,Blue Owl Capital Inc.,US,yahoo_screener
+AAON,"AAON, Inc.",US,yahoo_screener
+CVI,"CVR Energy, Inc.",US,yahoo_screener
+ALGM,"Allegro MicroSystems, Inc.",US,yahoo_screener
+ENS,EnerSys,US,yahoo_screener
+NPO,Enpro Inc.,US,yahoo_screener
+MUR,Murphy Oil Corporation,US,yahoo_screener
+VNO,Vornado Realty Trust,US,yahoo_screener
+CWEN,"Clearway Energy, Inc.",US,yahoo_screener
+EXLS,"ExlService Holdings, Inc.",US,yahoo_screener
+ST,Sensata Technologies Holding plc,US,yahoo_screener
+GGAL,Grupo Financiero Galicia S.A.,US,yahoo_screener
+LEA,Lear Corporation,US,yahoo_screener
+MBGL,"Mobility Global, Inc.",US,yahoo_screener
+TEX,Terex Corporation,US,yahoo_screener
+BROS,Dutch Bros Inc.,US,yahoo_screener
+FSV,FirstService Corporation,US,yahoo_screener
+FIGR,"Figure Technology Solutions, Inc.",US,yahoo_screener
+BILI,Bilibili Inc.,US,yahoo_screener
+LSTR,"Landstar System, Inc.",US,yahoo_screener
+LOAR,Loar Holdings Inc.,US,yahoo_screener
+BLDR,"Builders FirstSource, Inc.",US,yahoo_screener
+VEON,VEON Ltd.,US,yahoo_screener
+AVAL,Grupo Aval Acciones y Valores S.A.,US,yahoo_screener
+WH,"Wyndham Hotels & Resorts, Inc.",US,yahoo_screener
+DLB,"Dolby Laboratories, Inc.",US,yahoo_screener
+DOCS,"Doximity, Inc.",US,yahoo_screener
+CWST,"Casella Waste Systems, Inc.",US,yahoo_screener
+JBTM,JBT Marel Corporation,US,yahoo_screener
+BOX,"Box, Inc.",US,yahoo_screener
+LKQ,LKQ Corporation,US,yahoo_screener
+SNDR,"Schneider National, Inc.",US,yahoo_screener
+GXO,"GXO Logistics, Inc.",US,yahoo_screener
+BXSL,Blackstone Secured Lending Fund,US,yahoo_screener
+MTN,"Vail Resorts, Inc.",US,yahoo_screener
+HAE,Haemonetics Corporation,US,yahoo_screener
+MMSI,"Merit Medical Systems, Inc.",US,yahoo_screener
+PAGP,"Plains GP Holdings, L.P.",US,yahoo_screener
+BGC,"BGC Group, Inc.",US,yahoo_screener
+ACIW,"ACI Worldwide, Inc.",US,yahoo_screener
+WAY,Waystar Holding Corp.,US,yahoo_screener
+GRFS,"Grifols, S.A.",US,yahoo_screener
+KVYO,"Klaviyo, Inc.",US,yahoo_screener
+MTRN,Materion Corporation,US,yahoo_screener
+POR,Portland General Electric Company,US,yahoo_screener
+SYM,Symbotic Inc.,US,yahoo_screener
+SHC,Sotera Health Company,US,yahoo_screener
+NXST,"Nexstar Media Group, Inc.",US,yahoo_screener
+NOVT,Novanta Inc.,US,yahoo_screener
+MEOH,Methanex Corporation,US,yahoo_screener
+CNO,"CNO Financial Group, Inc.",US,yahoo_screener
+LPX,Louisiana-Pacific Corporation,US,yahoo_screener
+RYAN,"Ryan Specialty Holdings, Inc.",US,yahoo_screener
+OBDC,Blue Owl Capital Corporation,US,yahoo_screener
+SBRA,"Sabra Health Care REIT, Inc.",US,yahoo_screener
+MWH,"SOLV Energy, Inc.",US,yahoo_screener
+NSIT,"Insight Enterprises, Inc.",US,yahoo_screener
+SR,Spire Inc.,US,yahoo_screener
+FBIN,"Fortune Brands Innovations, Inc.",US,yahoo_screener
+BB,BlackBerry Limited,US,yahoo_screener
+KGS,"Kodiak Gas Services, Inc.",US,yahoo_screener
+AMTM,"Amentum Holdings, Inc.",US,yahoo_screener
+RITM,Rithm Capital Corp.,US,yahoo_screener
+CSW,"CSW Industrials, Inc.",US,yahoo_screener
+PSN,Parsons Corporation,US,yahoo_screener
+IRDM,Iridium Communications Inc.,US,yahoo_screener
+DK,"Delek US Holdings, Inc.",US,yahoo_screener
+OPCH,"Option Care Health, Inc.",US,yahoo_screener
+HCC,"Warrior Met Coal, Inc.",US,yahoo_screener
+HASI,"HA Sustainable Infrastructure Capital, Inc.",US,yahoo_screener
+YOU,"Clear Secure, Inc.",US,yahoo_screener
+GEF,"Greif, Inc.",US,yahoo_screener
+FLG,"Flagstar Bank, National Association",US,yahoo_screener
+MDA,MDA Space Ltd.,US,yahoo_screener
+CIGI,Colliers International Group Inc.,US,yahoo_screener
+KRMN,Karman Holdings Inc.,US,yahoo_screener
+SIG,Signet Jewelers Limited,US,yahoo_screener
+VSEC,VSE Corporation,US,yahoo_screener
+CNR,"Core Natural Resources, Inc.",US,yahoo_screener
+CNK,"Cinemark Holdings, Inc.",US,yahoo_screener
+VNT,Vontier Corporation,US,yahoo_screener
+CUZ,Cousins Properties Incorporated,US,yahoo_screener
+CRGY,Crescent Energy Company,US,yahoo_screener
+CCC,CCC Intelligent Solutions Holdings Inc.,US,yahoo_screener
+LFST,"LifeStance Health Group, Inc.",US,yahoo_screener
+ENVA,"Enova International, Inc.",US,yahoo_screener
+VSH,"Vishay Intertechnology, Inc.",US,yahoo_screener
+STWD,"Starwood Property Trust, Inc.",US,yahoo_screener
+SEI,"Solaris Energy Infrastructure, Inc.",US,yahoo_screener
+KLIC,"Kulicke and Soffa Industries, Inc.",US,yahoo_screener
+ITGR,Integer Holdings Corporation,US,yahoo_screener
+WHD,"Cactus, Inc.",US,yahoo_screener
+DLO,DLocal Limited,US,yahoo_screener
+ALH,Alliance Laundry Holdings Inc.,US,yahoo_screener
+BCO,The Brink's Company,US,yahoo_screener
+SLGN,Silgan Holdings Inc.,US,yahoo_screener
+TENB,"Tenable Holdings, Inc.",US,yahoo_screener
+MMYT,MakeMyTrip Limited,US,yahoo_screener
+GEF-B,"Greif, Inc.",US,yahoo_screener
+HRI,Herc Holdings Inc.,US,yahoo_screener
+WK,Workiva Inc.,US,yahoo_screener
+TPC,Tutor Perini Corporation,US,yahoo_screener
+OTF,Blue Owl Technology Finance Corp.,US,yahoo_screener
+BDC,Belden Inc.,US,yahoo_screener
+PRIM,Primoris Services Corporation,US,yahoo_screener
+JOYY,JOYY Inc.,US,yahoo_screener
+ICUI,"ICU Medical, Inc.",US,yahoo_screener
+ESAB,ESAB Corporation,US,yahoo_screener
+BMA,Banco Macro S.A.,US,yahoo_screener
+ENPH,"Enphase Energy, Inc.",US,yahoo_screener
+ARQT,"Arcutis Biotherapeutics, Inc.",US,yahoo_screener
+NP,Neptune Insurance Holdings Inc.,US,yahoo_screener
+KTB,"Kontoor Brands, Inc.",US,yahoo_screener
+TNL,Travel + Leisure Co.,US,yahoo_screener
+VVV,Valvoline Inc.,US,yahoo_screener
+AQN,Algonquin Power & Utilities Corp.,US,yahoo_screener
+DIOD,Diodes Incorporated,US,yahoo_screener
+PAY,"Paymentus Holdings, Inc.",US,yahoo_screener
+INDV,"Indivior Pharmaceuticals, Inc.",US,yahoo_screener
+QTWO,"Q2 Holdings, Inc.",US,yahoo_screener
+MNDY,monday.com Ltd.,US,yahoo_screener
+DOO,BRP Inc.,US,yahoo_screener
+BRC,Brady Corporation,US,yahoo_screener
+AYA,Aya Gold & Silver Inc.,US,yahoo_screener
+CBT,Cabot Corporation,US,yahoo_screener
+AXTI,"AXT, Inc.",US,yahoo_screener
+MSGE,Madison Square Garden Entertainment Corp.,US,yahoo_screener
+MIR,"Mirion Technologies, Inc.",US,yahoo_screener
+PLMR,"Palomar Holdings, Inc.",US,yahoo_screener
+EQPT,EquipmentShare.com Inc.,US,yahoo_screener
+NVST,Envista Holdings Corporation,US,yahoo_screener
+AVNT,Avient Corporation,US,yahoo_screener
+OGN,Organon & Co.,US,yahoo_screener
+ARIS,Aris Mining Corporation,US,yahoo_screener
+ERO,Ero Copper Corp.,US,yahoo_screener
+SRAD,Sportradar Group AG,US,yahoo_screener
+LAZ,"Lazard, Inc.",US,yahoo_screener
+ACLS,"Axcelis Technologies, Inc.",US,yahoo_screener
+ZIM,ZIM Integrated Shipping Services Ltd.,US,yahoo_screener
+ZGN,Ermenegildo Zegna N.V.,US,yahoo_screener
+NIC,"Nicolet Bankshares, Inc.",US,yahoo_screener
+CENX,Century Aluminum Company,US,yahoo_screener
+BFAM,Bright Horizons Family Solutions Inc.,US,yahoo_screener
+GNW,"Genworth Financial, Inc.",US,yahoo_screener
+NATL,NCR Atleos Corporation,US,yahoo_screener
+RHI,Robert Half Inc.,US,yahoo_screener
+AAMI,Acadian Asset Management Inc.,US,yahoo_screener
+ASH,Ashland Inc.,US,yahoo_screener
+FA,First Advantage Corporation,US,yahoo_screener
+WT,"WisdomTree, Inc.",US,yahoo_screener
+CXT,"Crane NXT, Co.",US,yahoo_screener
+BULL,Webull Corporation,US,yahoo_screener
+TOWN,TowneBank,US,yahoo_screener
+AGYS,"Agilysys, Inc.",US,yahoo_screener
+SMG,The Scotts Miracle-Gro Company,US,yahoo_screener
+FOUR,"Shift4 Payments, Inc.",US,yahoo_screener
+BELFB,Bel Fuse Inc.,US,yahoo_screener
+SBCF,Seacoast Banking Corporation of Florida,US,yahoo_screener
+IPGP,IPG Photonics Corporation,US,yahoo_screener
+GBDC,"Golub Capital BDC, Inc.",US,yahoo_screener
+MIAX,"Miami International Holdings, Inc.",US,yahoo_screener
+LQDA,Liquidia Corporation,US,yahoo_screener
+WRBY,Warby Parker Inc.,US,yahoo_screener
+SPSC,"SPS Commerce, Inc.",US,yahoo_screener
+EFXT,Enerflex Ltd.,US,yahoo_screener
+PENG,"Penguin Solutions, Inc.",US,yahoo_screener
+ABM,ABM Industries Incorporated,US,yahoo_screener
+CBZ,"CBIZ, Inc.",US,yahoo_screener
+MNSO,MINISO Group Holding Limited,US,yahoo_screener
+SDRL,Seadrill Limited,US,yahoo_screener
+CXW,"CoreCivic, Inc.",US,yahoo_screener
+KN,Knowles Corporation,US,yahoo_screener
+ARCB,ArcBest Corporation,US,yahoo_screener
+TGB,Trekor Metals Limited,US,yahoo_screener
+EXTR,"Extreme Networks, Inc.",US,yahoo_screener
+GPI,"Group 1 Automotive, Inc.",US,yahoo_screener
+KD,"Kyndryl Holdings, Inc.",US,yahoo_screener
+PRVA,"Privia Health Group, Inc.",US,yahoo_screener
+KYIV,Kyivstar Group Ltd.,US,yahoo_screener
+UNFI,"United Natural Foods, Inc.",US,yahoo_screener
+NTCT,"NetScout Systems, Inc.",US,yahoo_screener
+IMAX,IMAX Corporation,US,yahoo_screener
+CLBT,Cellebrite DI Ltd.,US,yahoo_screener
+HURN,Huron Consulting Group Inc.,US,yahoo_screener
+LFTO,"Liftoff Mobile, Inc.",US,yahoo_screener
+AMBP,Ardagh Metal Packaging S.A.,US,yahoo_screener
+HGV,Hilton Grand Vacations Inc.,US,yahoo_screener
+DGII,Digi International Inc.,US,yahoo_screener
+BHF,"Brighthouse Financial, Inc.",US,yahoo_screener
+CARG,"CarGurus, Inc.",US,yahoo_screener
+VECO,Veeco Instruments Inc.,US,yahoo_screener
+AAP,"Advance Auto Parts, Inc.",US,yahoo_screener
+KWR,Quaker Chemical Corporation,US,yahoo_screener
+MH,"McGraw Hill, Inc.",US,yahoo_screener
+ALM,Almonty Industries Inc.,US,yahoo_screener
+ATRO,Astronics Corporation,US,yahoo_screener
+BCC,Boise Cascade Company,US,yahoo_screener
+CWK,Cushman & Wakefield Limited,US,yahoo_screener
+BHE,"Benchmark Electronics, Inc.",US,yahoo_screener
+POWI,"Power Integrations, Inc.",US,yahoo_screener
+BELFA,Bel Fuse Inc.,US,yahoo_screener
+FG,"F&G Annuities & Life, Inc.",US,yahoo_screener
+GPK,Graphic Packaging Holding Company,US,yahoo_screener
+RNW,ReNew Energy Global Plc,US,yahoo_screener
+FBNC,First Bancorp,US,yahoo_screener
+FIVN,"Five9, Inc.",US,yahoo_screener
+HCM,HUTCHMED (China) Limited,US,yahoo_screener
+ROG,Rogers Corporation,US,yahoo_screener
+NGVT,Ingevity Corporation,US,yahoo_screener
+EXK,Endeavour Silver Corp.,US,yahoo_screener
+OSW,OneSpaWorld Holdings Limited,US,yahoo_screener
+PAYO,Payoneer Global Inc.,US,yahoo_screener
+WTTR,"Select Water Solutions, Inc.",US,yahoo_screener
+EEFT,"Euronet Worldwide, Inc.",US,yahoo_screener
+BLKB,"Blackbaud, Inc.",US,yahoo_screener
+GRND,Grindr Inc.,US,yahoo_screener
+LB,LandBridge Corporation,US,yahoo_screener
+CHA,Chagee Holdings Limited,US,yahoo_screener
+VC,Visteon Corporation,US,yahoo_screener
+DBD,"Diebold Nixdorf, Incorporated",US,yahoo_screener
+PTON,"Peloton Interactive, Inc.",US,yahoo_screener
+CALX,"Calix, Inc.",US,yahoo_screener
+DXC,DXC Technology Company,US,yahoo_screener
+DAO,"Youdao, Inc.",US,yahoo_screener
+LEU,Centrus Energy Corp.,US,yahoo_screener
+FLYW,Flywire Corporation,US,yahoo_screener
+UPST,"Upstart Holdings, Inc.",US,yahoo_screener
+HLIO,"Helios Technologies, Inc.",US,yahoo_screener
+BGSI,Boyd Group Services Inc.,US,yahoo_screener
+VVX,"V2X, Inc.",US,yahoo_screener
+STGW,Stagwell Inc.,US,yahoo_screener
+RH,RH,US,yahoo_screener
+HRMY,"Harmony Biosciences Holdings, Inc.",US,yahoo_screener
+NCNO,"nCino, Inc.",US,yahoo_screener
+VERX,"Vertex, Inc.",US,yahoo_screener
+SVM,Silvercorp Metals Inc.,US,yahoo_screener
+HIMX,"Himax Technologies, Inc.",US,yahoo_screener
+PGNY,"Progyny, Inc.",US,yahoo_screener
+PHIN,PHINIA Inc.,US,yahoo_screener
+DV,"DoubleVerify Holdings, Inc.",US,yahoo_screener
+PRLB,"Proto Labs, Inc.",US,yahoo_screener
+NMRK,"Newmark Group, Inc.",US,yahoo_screener
+CTOS,"Custom Truck One Source, Inc.",US,yahoo_screener
+CTRI,"Centuri Holdings, Inc.",US,yahoo_screener
+RSI,"Rush Street Interactive, Inc.",US,yahoo_screener
+SONO,"Sonos, Inc.",US,yahoo_screener
+TBBK,"The Bancorp, Inc.",US,yahoo_screener
+INVX,"Innovex International, Inc.",US,yahoo_screener
+MQ,"Marqeta, Inc.",US,yahoo_screener
+PAX,Patria Investments Limited,US,yahoo_screener
+MAN,ManpowerGroup Inc.,US,yahoo_screener
+NESR,National Energy Services Reunited Corp.,US,yahoo_screener
+INOD,Innodata Inc.,US,yahoo_screener
+EVTC,"EVERTEC, Inc.",US,yahoo_screener
+CPRI,Capri Holdings Limited,US,yahoo_screener
+ALGT,Allegiant Travel Company,US,yahoo_screener
+XPRO,Expro Ltd,US,yahoo_screener
+ASTH,"Astrana Health, Inc.",US,yahoo_screener
+MFP,"Midera Food Processing, Inc.",US,yahoo_screener
+MNR,Mach Natural Resources LP,US,yahoo_screener
+ATEN,"A10 Networks, Inc.",US,yahoo_screener
+ATS,ATS Corporation,US,yahoo_screener
+SPB,"Spectrum Brands Holdings, Inc.",US,yahoo_screener
+NYAX,Nayax Ltd.,US,yahoo_screener
+PDFS,"PDF Solutions, Inc.",US,yahoo_screener
+BL,"BlackLine, Inc.",US,yahoo_screener
+PICS,PicS N.V.,US,yahoo_screener
+ALHC,"Alignment Healthcare, Inc.",US,yahoo_screener
+DCOM,"Dime Commercial Bancshares, Inc.",US,yahoo_screener
+BXMT,"Blackstone Mortgage Trust, Inc.",US,yahoo_screener
+HGTY,"Hagerty, Inc.",US,yahoo_screener
+HOPE,"Hope Bancorp, Inc.",US,yahoo_screener
+GLOB,Globant S.A.,US,yahoo_screener
+GEL,"Genesis Energy, L.P.",US,yahoo_screener
+PRGS,Progress Software Corporation,US,yahoo_screener
+NTST,NETSTREIT Corp.,US,yahoo_screener
+ARDT,"Ardent Health, Inc.",US,yahoo_screener
+NBHC,National Bank Holdings Corporation,US,yahoo_screener
+EVCM,EverCommerce Inc.,US,yahoo_screener
+ANIP,"ANI Pharmaceuticals, Inc.",US,yahoo_screener
+FSUN,FirstSun Capital Bancorp,US,yahoo_screener
+NEXA,Nexa Resources S.A.,US,yahoo_screener
+OMCL,"Omnicell, Inc.",US,yahoo_screener
+BFC,Bank First Corporation,US,yahoo_screener
+ALNT,Allient Inc.,US,yahoo_screener
+NOMD,Nomad Foods Limited,US,yahoo_screener
+DSGR,"Distribution Solutions Group, Inc.",US,yahoo_screener
+LOB,"Live Oak Bancshares, Inc.",US,yahoo_screener
+PAHC,Phibro Animal Health Corporation,US,yahoo_screener
+FOIL,Londian Wason New Energy Tech Inc.,US,yahoo_screener
+TSLX,"Sixth Street Specialty Lending, Inc.",US,yahoo_screener
+ICFI,"ICF International, Inc.",US,yahoo_screener
+STC,Stewart Information Services Corporation,US,yahoo_screener
+WBI,WaterBridge Infrastructure LLC,US,yahoo_screener
+THRM,Gentherm Incorporated,US,yahoo_screener
+EFOR,"Everforth, Inc.",US,yahoo_screener
+SVV,"Savers Value Village, Inc.",US,yahoo_screener
+OCFC,OceanFirst Financial Corp.,US,yahoo_screener
+PRKS,United Parks & Resorts Inc.,US,yahoo_screener
+TFIN,"Triumph Financial, Inc.",US,yahoo_screener
+ENR,"Energizer Holdings, Inc.",US,yahoo_screener
+HLF,Herbalife Ltd.,US,yahoo_screener
+PGY,Pagaya Technologies Ltd.,US,yahoo_screener
+JJSF,J&J Snack Foods Corp.,US,yahoo_screener
+PCRX,"Pacira BioSciences, Inc.",US,yahoo_screener
+MLKN,"MillerKnoll, Inc.",US,yahoo_screener
+HLMN,Hillman Solutions Corp.,US,yahoo_screener
+PNTG,"The Pennant Group, Inc.",US,yahoo_screener
+CRSR,"Corsair Gaming, Inc.",US,yahoo_screener
+AGRO,Adecoagro S.A.,US,yahoo_screener
+ATLC,Atlanticus Holdings Corporation,US,yahoo_screener
+CXM,"Sprinklr, Inc.",US,yahoo_screener
+ADNT,Adient plc,US,yahoo_screener
+ETON,"Eton Pharmaceuticals, Inc.",US,yahoo_screener
+DMC,Del Monte Corporation,US,yahoo_screener
+CNMD,CONMED Corporation,US,yahoo_screener
+EYE,"National Vision Holdings, Inc.",US,yahoo_screener
+LQDT,"Liquidity Services, Inc.",US,yahoo_screener
+RES,"RPC, Inc.",US,yahoo_screener
+VISN,"Vistance Networks, Inc.",US,yahoo_screener
+ARLO,"Arlo Technologies, Inc.",US,yahoo_screener
+SLVM,Sylvamo Corporation,US,yahoo_screener
+DFIN,"Donnelley Financial Solutions, Inc.",US,yahoo_screener
+USPH,"U.S. Physical Therapy, Inc.",US,yahoo_screener
+FLO,"Flowers Foods, Inc.",US,yahoo_screener
+DOLE,Dole plc,US,yahoo_screener
+PRG,"PROG Holdings, Inc.",US,yahoo_screener
+SCSC,"ScanSource, Inc.",US,yahoo_screener
+SHLS,"Shoals Technologies Group, Inc.",US,yahoo_screener
+RDWR,Radware Ltd.,US,yahoo_screener
+TRUP,"Trupanion, Inc.",US,yahoo_screener
+CCEC,Capital Clean Energy Carriers Corp.,US,yahoo_screener
+HLIT,Harmonic Inc.,US,yahoo_screener
+JCAP,"Jefferson Capital, Inc.",US,yahoo_screener
+LOMA,Loma Negra Compañía Industrial Argentina Sociedad Anónima,US,yahoo_screener
+GDRX,"GoodRx Holdings, Inc.",US,yahoo_screener
+HZO,"MarineMax, Inc.",US,yahoo_screener
+CDRE,"Cadre Holdings, Inc.",US,yahoo_screener
+VTOL,Bristow Group Inc.,US,yahoo_screener
+UTI,"Universal Technical Institute, Inc.",US,yahoo_screener
+ECVT,Ecovyst Inc.,US,yahoo_screener
+AMTB,Amerant Bancorp Inc.,US,yahoo_screener
+ROCK,"Gibraltar Industries, Inc.",US,yahoo_screener
+AGBK,AGI Inc,US,yahoo_screener
+TNC,Tennant Company,US,yahoo_screener
+AMPH,"Amphastar Pharmaceuticals, Inc.",US,yahoo_screener
+OMDA,"Omada Health, Inc.",US,yahoo_screener
+WD,"Walker & Dunlop, Inc.",US,yahoo_screener
+MSDL,Morgan Stanley Direct Lending Fund,US,yahoo_screener
+STAA,STAAR Surgical Company,US,yahoo_screener
+TRIP,"Tripadvisor, Inc.",US,yahoo_screener
+GNK,Genco Shipping & Trading Limited,US,yahoo_screener
+LZ,"LegalZoom.com, Inc.",US,yahoo_screener
+GSHD,"Goosehead Insurance, Inc.",US,yahoo_screener
+VYX,NCR Voyix Corporation,US,yahoo_screener
+YELP,Yelp Inc.,US,yahoo_screener
+DLX,Deluxe Corporation,US,yahoo_screener
+AVO,"Mission Produce, Inc.",US,yahoo_screener
+UPWK,Upwork Inc.,US,yahoo_screener
+MRTN,"Marten Transport, Ltd.",US,yahoo_screener
+AVEX,AEVEX Corp.,US,yahoo_screener
+ODD,Oddity Tech Ltd.,US,yahoo_screener
+MMI,"Marcus & Millichap, Inc.",US,yahoo_screener
+EE,"Excelerate Energy, Inc.",US,yahoo_screener
+OCSL,Oaktree Specialty Lending Corporation,US,yahoo_screener
+PWP,Perella Weinberg Partners,US,yahoo_screener
+AMRC,"Ameresco, Inc.",US,yahoo_screener
+UVV,Universal Corporation,US,yahoo_screener
+MUX,McEwen Inc.,US,yahoo_screener
+GSBD,"Goldman Sachs BDC, Inc.",US,yahoo_screener
+NBBK,"NB Bancorp, Inc.",US,yahoo_screener
+UPBD,"Upbound Group, Inc.",US,yahoo_screener
+TBLA,Taboola.com Ltd.,US,yahoo_screener
+RPC,"Ridgepost Capital, Inc",US,yahoo_screener
+OIG,Orion180 Insurance Group Inc.,US,yahoo_screener
+CMP,"Compass Minerals International, Inc.",US,yahoo_screener
+EIG,"Employers Holdings, Inc.",US,yahoo_screener
+APEI,"American Public Education, Inc.",US,yahoo_screener
+DAKT,"Daktronics, Inc.",US,yahoo_screener
+ASM,Avino Silver & Gold Mines Ltd.,US,yahoo_screener
+RPD,"Rapid7, Inc.",US,yahoo_screener
+ASTE,"Astec Industries, Inc.",US,yahoo_screener
+ACEL,"Accel Entertainment, Inc.",US,yahoo_screener
+NX,Quanex Building Products Corporation,US,yahoo_screener
+FSSL,FS Specialty Lending Fund,US,yahoo_screener
+RERE,ATRenew Inc.,US,yahoo_screener
+MTUS,Metallus Inc.,US,yahoo_screener
+AEBI,Aebi Schmidt Holding AG,US,yahoo_screener
+FRBT,"Forbright, Inc.",US,yahoo_screener
+BLMN,"Bloomin' Brands, Inc.",US,yahoo_screener
+PXED,"Phoenix Education Partners, Inc.",US,yahoo_screener
+PAYS,"Paysign, Inc.",US,yahoo_screener
+REF,Reformation Inc.,US,yahoo_screener
+GHM,Graham Corporation,US,yahoo_screener
+PSEC,Prospect Capital Corporation,US,yahoo_screener
+VPG,"Vishay Precision Group, Inc.",US,yahoo_screener
+ESRT,"Empire State Realty Trust, Inc.",US,yahoo_screener
+WRLD,World Acceptance Corporation,US,yahoo_screener
+OBE,Obsidian Energy Ltd.,US,yahoo_screener
+GOOS,Canada Goose Holdings Inc.,US,yahoo_screener
+WLFC,Willis Lease Finance Corporation,US,yahoo_screener
+TTI,"TETRA Technologies, Inc.",US,yahoo_screener
+VREX,Varex Imaging Corporation,US,yahoo_screener
+BBSI,"Barrett Business Services, Inc.",US,yahoo_screener
+ALRS,Alerus Financial Corporation,US,yahoo_screener
+CVLG,"Covenant Logistics Group, Inc.",US,yahoo_screener
+ABX,"Abacus Global Management, Inc.",US,yahoo_screener
+PGC,Peapack-Gladstone Financial Corporation,US,yahoo_screener
+COLL,"Collegium Pharmaceutical, Inc.",US,yahoo_screener
+GCMG,GCM Grosvenor Inc.,US,yahoo_screener
+LXU,"LSB Industries, Inc.",US,yahoo_screener
+TRNS,"Transcat, Inc.",US,yahoo_screener
+FEIM,"Frequency Electronics, Inc.",US,yahoo_screener
+MITK,"Mitek Systems, Inc.",US,yahoo_screener
+CRTO,Criteo S.A.,US,yahoo_screener
+LYTS,LSI Industries Inc.,US,yahoo_screener
+VBNK,VersaBank,US,yahoo_screener
+TIGR,UP Fintech Holding Limited,US,yahoo_screener
+SWIM,"Latham Group, Inc.",US,yahoo_screener
+SCHL,Scholastic Corporation,US,yahoo_screener
+BWMN,Bowman Consulting Group Ltd.,US,yahoo_screener
+DCBO,Docebo Inc.,US,yahoo_screener
+YEXT,"Yext, Inc.",US,yahoo_screener
+MLAB,"Mesa Laboratories, Inc.",US,yahoo_screener
+CGBD,"Carlyle Secured Lending, Inc.",US,yahoo_screener
+RGR,"Sturm, Ruger & Company, Inc.",US,yahoo_screener
+CWBC,Community West Bancshares,US,yahoo_screener
+VTEX,VTEX,US,yahoo_screener
+MG,"Mistras Group, Inc.",US,yahoo_screener
+PHR,"Phreesia, Inc.",US,yahoo_screener
+WOOF,"Petco Health and Wellness Company, Inc.",US,yahoo_screener
+PKOH,Park-Ohio Holdings Corp.,US,yahoo_screener
+MSBI,"Midland States Bancorp, Inc.",US,yahoo_screener
+PSTL,"Postal Realty Trust, Inc.",US,yahoo_screener
+WGO,"Winnebago Industries, Inc.",US,yahoo_screener
+PRTH,"Priority Technology Holdings, Inc.",US,yahoo_screener
+GDYN,"Grid Dynamics Holdings, Inc.",US,yahoo_screener
+NRDS,"NerdWallet, Inc.",US,yahoo_screener
+KE,"Kimball Electronics, Inc.",US,yahoo_screener
+GILT,Gilat Satellite Networks Ltd.,US,yahoo_screener
+MDXG,"MiMedx Group, Inc.",US,yahoo_screener
+PFLT,PennantPark Floating Rate Capital Ltd.,US,yahoo_screener
+PZZA,"Papa John's International, Inc.",US,yahoo_screener
+RSVR,"Reservoir Media, Inc.",US,yahoo_screener
+HDL,Super Hi International Holding Ltd.,US,yahoo_screener
+CLMB,"Climb Global Solutions, Inc.",US,yahoo_screener
+MAMA,"Mama's Creations, Inc.",US,yahoo_screener
+GAU,Galiano Gold Inc.,US,yahoo_screener
+IRWD,"Ironwood Pharmaceuticals, Inc.",US,yahoo_screener
+CRD-A,Crawford & Company,US,yahoo_screener
+MLR,"Miller Industries, Inc.",US,yahoo_screener
+LMB,"Limbach Holdings, Inc.",US,yahoo_screener
+JBI,"Janus International Group, Inc.",US,yahoo_screener
+CRD-B,Crawford & Company,US,yahoo_screener
+KRNY,Kearny Financial Corp.,US,yahoo_screener
+HNRG,Hallador Energy Company,US,yahoo_screener
+HOV,"Hovnanian Enterprises, Inc.",US,yahoo_screener
+CARS,Cars.com Inc.,US,yahoo_screener
+OOMA,"Ooma, Inc.",US,yahoo_screener
+NCDL,Nuveen Churchill Direct Lending Corp.,US,yahoo_screener
+NEXN,Nexxen International Ltd.,US,yahoo_screener
+PANL,Pangaea Logistics Solutions Ltd.,US,yahoo_screener
+FBRT,"Franklin BSP Realty Trust, Inc.",US,yahoo_screener
+BWAY,BrainsWay Ltd.,US,yahoo_screener
+QUAD,"Quad/Graphics, Inc.",US,yahoo_screener
+ITRG,Integra Resources Corp.,US,yahoo_screener
+ABR,"Arbor Realty Trust, Inc.",US,yahoo_screener
+LXFR,Luxfer Holdings PLC,US,yahoo_screener
+CZNC,Citizens & Northern Corporation,US,yahoo_screener
+BBCP,"Concrete Pumping Holdings, Inc.",US,yahoo_screener
+NRC,NRC Health,US,yahoo_screener
+BNED,"Barnes & Noble Education, Inc.",US,yahoo_screener
+EROC,"ERock, Inc.",US,yahoo_screener
+ALLT,Allot Ltd.,US,yahoo_screener
+HVT,"Haverty Furniture Companies, Inc.",US,yahoo_screener
+KMDA,Kamada Ltd.,US,yahoo_screener
+TRTX,"TPG RE Finance Trust, Inc.",US,yahoo_screener
+MNRO,"Monro, Inc.",US,yahoo_screener
+IPI,"Intrepid Potash, Inc.",US,yahoo_screener
+MBUU,"Malibu Boats, Inc.",US,yahoo_screener
+CDRO,"Codere Online Luxembourg, S.A.",US,yahoo_screener
+ACCO,Acco Brands Corporation,US,yahoo_screener
+DIN,"Dine Brands Global, Inc.",US,yahoo_screener
+OPRT,Oportun Financial Corporation,US,yahoo_screener
+VRRM,Verra Mobility Corporation,US,yahoo_screener
+USCB,"USCB Financial Holdings, Inc.",US,yahoo_screener
+CTRN,"Citi Trends, Inc.",US,yahoo_screener
+AVBC,"Avidia Bancorp, Inc.",US,yahoo_screener
+AUNA,Auna SA,US,yahoo_screener
+NGS,"Natural Gas Services Group, Inc.",US,yahoo_screener
+FCBM,"First Carolina Financial Services, Inc.",US,yahoo_screener
+CINT,CI&T Inc.,US,yahoo_screener
+RMNI,"Rimini Street, Inc.",US,yahoo_screener
+LSAK,"Lesaka Technologies, Inc.",US,yahoo_screener
+SHOE,Shoe Station Group Inc.,US,yahoo_screener
+FSTR,L.B. Foster Company,US,yahoo_screener
+ORN,"Orion Group Holdings, Inc.",US,yahoo_screener
+RNGR,"Ranger Energy Services, Inc.",US,yahoo_screener
+KNOP,KNOT Offshore Partners LP,US,yahoo_screener
+BCML,BayCom Corp,US,yahoo_screener
+CDNL,Cardinal Infrastructure Group Inc.,US,yahoo_screener
+LWAY,"Lifeway Foods, Inc.",US,yahoo_screener
+TWFG,"TWFG, Inc.",US,yahoo_screener
+JAKK,"JAKKS Pacific, Inc.",US,yahoo_screener
+JMSB,"John Marshall Bancorp, Inc.",US,yahoo_screener
+PINE,"Alpine Income Property Trust, Inc.",US,yahoo_screener
+DBI,Designer Brands Inc.,US,yahoo_screener
+CION,CION Investment Corporation,US,yahoo_screener
+NOA,North American Construction Group Ltd.,US,yahoo_screener
+FVRR,Fiverr International Ltd.,US,yahoo_screener
+HLLY,Holley Inc.,US,yahoo_screener
+IIIV,"i3 Verticals, Inc.",US,yahoo_screener
+IMXI,"International Money Express, Inc.",US,yahoo_screener
+PMTS,CPI Card Group Inc.,US,yahoo_screener
+MNTK,"Montauk Renewables, Inc.",US,yahoo_screener
+ZKH,ZKH Group Limited,US,yahoo_screener
+EGHT,"8x8, Inc.",US,yahoo_screener
+HCKT,"The Hackett Group, Inc.",US,yahoo_screener
+HRZN,Horizon Technology Finance Corporation,US,yahoo_screener
+RELL,"Richardson Electronics, Ltd.",US,yahoo_screener
+III,"Information Services Group, Inc.",US,yahoo_screener
+AUDC,AudioCodes Ltd.,US,yahoo_screener
+DSP,Viant Technology Inc.,US,yahoo_screener
+ELVA,Electrovaya Inc.,US,yahoo_screener
+RWAY,Runway Growth Finance Corp.,US,yahoo_screener
+AVNW,"Aviat Networks, Inc.",US,yahoo_screener
+GBFH,GBank Financial Holdings Inc.,US,yahoo_screener
+KGEI,Kolibri Global Energy Inc.,US,yahoo_screener
+EVI,"EVI Industries, Inc.",US,yahoo_screener
+RBBN,Ribbon Communications Inc.,US,yahoo_screener
+IMMR,Immersion Corporation,US,yahoo_screener
+AENT,Alliance Entertainment Holding Corporation,US,yahoo_screener
+ASYS,"Amtech Systems, Inc.",US,yahoo_screener
+BZUN,Baozun Inc.,US,yahoo_screener
+SGC,"Superior Group of Companies, Inc.",US,yahoo_screener
+PLX,"Protalix BioTherapeutics, Inc.",US,yahoo_screener
+LOVE,The Lovesac Company,US,yahoo_screener
+HMH,HMH Holding Inc.,US,yahoo_screener
+CZWI,"Citizens Community Bancorp, Inc.",US,yahoo_screener
+DHX,"DHI Group, Inc.",US,yahoo_screener
+PERF,Perfect Corp.,US,yahoo_screener
+CPSS,"Consumer Portfolio Services, Inc.",US,yahoo_screener
+8001.T,ITOCHU Corporation,JP,yahoo_screener
+6981.T,"Murata Manufacturing Co., Ltd.",JP,yahoo_screener
+6752.T,Panasonic Holdings Corporation,JP,yahoo_screener
+8053.T,Sumitomo Corporation,JP,yahoo_screener
+5803.T,Fujikura Ltd.,JP,yahoo_screener
+6701.T,NEC Corporation,JP,yahoo_screener
+8750.T,"Daiichi Life Group, Inc.",JP,yahoo_screener
+5802.T,"Sumitomo Electric Industries, Ltd.",JP,yahoo_screener
+4062.T,"Ibiden Co.,Ltd.",JP,yahoo_screener
+2802.T,"Ajinomoto Co., Inc.",JP,yahoo_screener
+5108.T,Bridgestone Corporation,JP,yahoo_screener
+8035.T,Tokyo Electron Limited,JP,yahoo_screener
+8309.T,"Sumitomo Mitsui Trust Group, Inc.",JP,yahoo_screener
+5401.T,Nippon Steel Corporation,JP,yahoo_screener
+4452.T,Kao Corporation,JP,yahoo_screener
+4307.T,"Nomura Research Institute, Ltd.",JP,yahoo_screener
+8267.T,"Aeon Co., Ltd.",JP,yahoo_screener
+8830.T,"Sumitomo Realty & Development Co., Ltd.",JP,yahoo_screener
+1925.T,"Daiwa House Industry Co., Ltd.",JP,yahoo_screener
+7013.T,IHI Corporation,JP,yahoo_screener
+7735.T,"SCREEN Holdings Co., Ltd.",JP,yahoo_screener
+5801.T,"Furukawa Electric Co., Ltd.",JP,yahoo_screener
+7532.T,Pan Pacific International Holdings Corporation,JP,yahoo_screener
+9107.T,"Kawasaki Kisen Kaisha, Ltd.",JP,yahoo_screener
+7012.T,"Kawasaki Heavy Industries, Ltd.",JP,yahoo_screener
+9843.T,"Nitori Holdings Co., Ltd.",JP,yahoo_screener
+7181.T,"Japan Post Insurance Co., Ltd.",JP,yahoo_screener
+7270.T,Subaru Corporation,JP,yahoo_screener
+7733.T,Olympus Corporation,JP,yahoo_screener
+8113.T,Unicharm Corporation,JP,yahoo_screener
+8136.T,"Sanrio Company, Ltd.",JP,yahoo_screener
+7259.T,Aisin Corporation,JP,yahoo_screener
+9147.T,"Nippon Express Holdings, Inc.",JP,yahoo_screener
+9602.T,"Toho Co., Ltd.",JP,yahoo_screener
+7911.T,TOPPAN Holdings Inc.,JP,yahoo_screener
+5706.T,"Mitsui Kinzoku Company, Limited",JP,yahoo_screener
+9202.T,ANA Holdings Inc.,JP,yahoo_screener
+6869.T,Sysmex Corporation,JP,yahoo_screener
+5411.T,"JFE Holdings, Inc.",JP,yahoo_screener
+9684.T,"Square Enix Holdings Co., Ltd.",JP,yahoo_screener
+6724.T,Seiko Epson Corporation,JP,yahoo_screener
+3092.T,"ZOZO, Inc.",JP,yahoo_screener
+8766.T,"Tokio Marine Holdings, Inc.",JP,yahoo_screener
+1878.T,"Daito Trust Construction Co.,Ltd.",JP,yahoo_screener
+3391.T,Tsuruha Holdings Inc.,JP,yahoo_screener
+8377.T,"Hokuhoku Financial Group, Inc.",JP,yahoo_screener
+8060.T,Canon Marketing Japan Inc.,JP,yahoo_screener
+5406.T,"Kobe Steel, Ltd.",JP,yahoo_screener
+8952.T,Japan Real Estate Investment Corporation,JP,yahoo_screener
+2501.T,Sapporo Breweries Limited,JP,yahoo_screener
+4183.T,"Mitsui Chemicals, Inc.",JP,yahoo_screener
+1911.T,"Sumitomo Forestry Co., Ltd.",JP,yahoo_screener
+3231.T,"Nomura Real Estate Holdings, Inc.",JP,yahoo_screener
+7276.T,"Koito Manufacturing Co., Ltd.",JP,yahoo_screener
+7261.T,Mazda Motor Corporation,JP,yahoo_screener
+9513.T,"Electric Power Development Co., Ltd.",JP,yahoo_screener
+8227.T,"SHIMAMURA Co., Ltd.",JP,yahoo_screener
+6473.T,JTEKT Corporation,JP,yahoo_screener
+5393.T,Nichias Corporation,JP,yahoo_screener
+9009.T,"Keisei Electric Railway Co., Ltd.",JP,yahoo_screener
+3283.T,"Nippon Prologis REIT, Inc.",JP,yahoo_screener
+9064.T,"Yamato Holdings Co., Ltd.",JP,yahoo_screener
+9506.T,"Tohoku Electric Power Company, Incorporated",JP,yahoo_screener
+4676.T,"Fuji Media Holdings, Inc.",JP,yahoo_screener
+6368.T,Organo Corporation,JP,yahoo_screener
+2282.T,NH Foods Ltd.,JP,yahoo_screener
+3405.T,"Kuraray Co., Ltd.",JP,yahoo_screener
+4812.T,Dentsu Soken Inc.,JP,yahoo_screener
+4967.T,"Kobayashi Pharmaceutical Co., Ltd.",JP,yahoo_screener
+2871.T,Nichirei Corporation,JP,yahoo_screener
+6324.T,Harmonic Drive Systems Inc.,JP,yahoo_screener
+8012.T,"Nagase & Co., Ltd.",JP,yahoo_screener
+5938.T,LIXIL Corporation,JP,yahoo_screener
+8984.T,Daiwa House REIT Investment Corporation,JP,yahoo_screener
+9831.T,"Yamada Holdings Co., Ltd.",JP,yahoo_screener
+7649.T,"Sugi Holdings Co.,Ltd.",JP,yahoo_screener
+7211.T,Mitsubishi Motors Corporation,JP,yahoo_screener
+5233.T,Taiheiyo Cement Corporation,JP,yahoo_screener
+8088.T,Iwatani Corporation,JP,yahoo_screener
+7988.T,Nifco Inc.,JP,yahoo_screener
+9008.T,Keio Corporation,JP,yahoo_screener
+141A.T,"TRIAL Holdings, Inc.",JP,yahoo_screener
+6141.T,"DMG Mori Co., Ltd.",JP,yahoo_screener
+9533.T,"Toho Gas Co., Ltd.",JP,yahoo_screener
+7164.T,"ZENKOKU HOSHO Co.,Ltd.",JP,yahoo_screener
+9065.T,Sankyu Inc.,JP,yahoo_screener
+3397.T,TORIDOLL Holdings Corporation,JP,yahoo_screener
+1961.T,"Sanki Engineering Co., Ltd.",JP,yahoo_screener
+6728.T,"ULVAC, Inc.",JP,yahoo_screener
+8020.T,Kanematsu Corporation,JP,yahoo_screener
+3116.T,Toyota Boshoku Corporation,JP,yahoo_screener
+8424.T,"Fuyo General Lease Co., Ltd.",JP,yahoo_screener
+7867.T,"TOMY Company, Ltd.",JP,yahoo_screener
+5463.T,Maruichi Steel Tube Ltd.,JP,yahoo_screener
+6135.T,"Makino Milling Machine Co., Ltd.",JP,yahoo_screener
+6753.T,Sharp Corporation,JP,yahoo_screener
+3269.T,Advance Residence Investment Corporation,JP,yahoo_screener
+4681.T,"Resorttrust, Inc.",JP,yahoo_screener
+2810.T,House Foods Group Inc.,JP,yahoo_screener
+4202.T,Daicel Corporation,JP,yahoo_screener
+7419.T,Nojima Corporation,JP,yahoo_screener
+2593.T,"Ito En, Ltd.",JP,yahoo_screener
+5741.T,UACJ Corporation,JP,yahoo_screener
+7984.T,"Kokuyo Co., Ltd.",JP,yahoo_screener
+8955.T,Japan Prime Realty Investment Corporation,JP,yahoo_screener
+5805.T,SWCC Corporation,JP,yahoo_screener
+8078.T,"Hanwa Co., Ltd.",JP,yahoo_screener
+8425.T,"Mizuho Leasing Company, Limited",JP,yahoo_screener
+9504.T,"The Chugoku Electric Power Co., Inc.",JP,yahoo_screener
+3387.T,create restaurants holdings inc.,JP,yahoo_screener
+8022.T,Mizuno Corporation,JP,yahoo_screener
+6454.T,"Max Co., Ltd.",JP,yahoo_screener
+4368.T,"Fuso Chemical Co.,Ltd.",JP,yahoo_screener
+2264.T,"Morinaga Milk Industry Co., Ltd.",JP,yahoo_screener
+6526.T,Socionext Inc.,JP,yahoo_screener
+9418.T,"U-NEXT HOLDINGS Co.,Ltd.",JP,yahoo_screener
+9436.T,Okinawa Cellular Telephone Company,JP,yahoo_screener
+6622.T,DAIHEN Corporation,JP,yahoo_screener
+2206.T,"Ezaki Glico Co., Ltd.",JP,yahoo_screener
+8111.T,Goldwin Inc.,JP,yahoo_screener
+8174.T,"Nippon Gas Co., Ltd.",JP,yahoo_screener
+3279.T,Activia Properties Inc.,JP,yahoo_screener
+3697.T,SHIFT Inc.,JP,yahoo_screener
+4373.T,"Simplex Holdings, Inc.",JP,yahoo_screener
+6544.T,"Japan Elevator Service Holdings Co.,Ltd.",JP,yahoo_screener
+3226.T,Mitsui Fudosan Accommodations Fund Inc.,JP,yahoo_screener
+2726.T,"PAL GROUP Holdings CO., LTD.",JP,yahoo_screener
+2811.T,"Kagome Co., Ltd.",JP,yahoo_screener
+7552.T,Happinet Corporation,JP,yahoo_screener
+5384.T,Fujimi Incorporated,JP,yahoo_screener
+1414.T,"SHO-BOND Holdings Co.,Ltd.",JP,yahoo_screener
+9302.T,"MITSUI-SOKO HOLDINGS Co., Ltd.",JP,yahoo_screener
+8967.T,"Japan Logistics Fund, Inc.",JP,yahoo_screener
+7740.T,"Tamron Co.,Ltd.",JP,yahoo_screener
+7846.T,Pilot Corporation,JP,yahoo_screener
+6590.T,Shibaura Mechatronics Corporation,JP,yahoo_screener
+7716.T,Nakanishi Inc.,JP,yahoo_screener
+1979.T,Taikisha Ltd.,JP,yahoo_screener
+7744.T,"Noritsu Koki Co., Ltd.",JP,yahoo_screener
+3282.T,"Comforia Residential REIT, Inc",JP,yahoo_screener
+7313.T,"TS TECH Co., Ltd.",JP,yahoo_screener
+1861.T,"Kumagai Gumi Co.,Ltd.",JP,yahoo_screener
+6412.T,Heiwa Holdings Inc.,JP,yahoo_screener
+8194.T,Life Corporation,JP,yahoo_screener
+8964.T,Mitsui Fudosan Retail Fund Investment Corporation,JP,yahoo_screener
+8273.T,"Izumi Co., Ltd.",JP,yahoo_screener
+7242.T,KYB Corporation,JP,yahoo_screener
+4887.T,"Sawai Group Holdings Co., Ltd.",JP,yahoo_screener
+4107.T,ISE Chemicals Corporation,JP,yahoo_screener
+5331.T,"Noritake Co., Limited",JP,yahoo_screener
+6516.T,"Sanyo Denki Co., Ltd.",JP,yahoo_screener
+5482.T,Aichi Steel Corporation,JP,yahoo_screener
+9722.T,Fujita Kanko Inc.,JP,yahoo_screener
+2602.T,"The Nisshin OilliO Group,Ltd.",JP,yahoo_screener
+6807.T,"Japan Aviation Electronics Industry, Limited",JP,yahoo_screener
+9682.T,DTS Corporation,JP,yahoo_screener
+7004.T,Kanadevia Corporation,JP,yahoo_screener
+1333.T,Umios Corporation,JP,yahoo_screener
+7220.T,"Musashi Seimitsu Industry Co., Ltd.",JP,yahoo_screener
+4553.T,"Towa Pharmaceutical Co., Ltd.",JP,yahoo_screener
+2124.T,"JAC Recruitment Co., Ltd.",JP,yahoo_screener
+3591.T,Wacoal Holdings Corp.,JP,yahoo_screener
+8957.T,"Tokyu REIT, Inc.",JP,yahoo_screener
+5232.T,"Sumitomo Osaka Cement Co., Ltd.",JP,yahoo_screener
+5423.T,"Tokyo Steel Manufacturing Co., Ltd.",JP,yahoo_screener
+8923.T,Tosei Corporation,JP,yahoo_screener
+8966.T,"Heiwa Real Estate REIT, Inc.",JP,yahoo_screener
+6379.T,RAIZNEXT Corporation,JP,yahoo_screener
+7685.T,"BuySell Technologies Co.,Ltd.",JP,yahoo_screener
+3076.T,Ai Holdings Corporation,JP,yahoo_screener
+6315.T,TOWA Corporation,JP,yahoo_screener
+3481.T,Mitsubishi Estate Logistics REIT Investment Corporation,JP,yahoo_screener
+1926.T,"Raito Kogyo Co., Ltd.",JP,yahoo_screener
+6745.T,Hochiki Corporation,JP,yahoo_screener
+2805.T,S&B Foods Inc.,JP,yahoo_screener
+1968.T,"Taihei Dengyo Kaisha, Ltd.",JP,yahoo_screener
+5310.T,"Toyo Tanso Co., Ltd.",JP,yahoo_screener
+8803.T,"Heiwa Real Estate Co., Ltd.",JP,yahoo_screener
+215A.T,"Timee, Inc.",JP,yahoo_screener
+9068.T,"Maruzen Showa Unyu Co., Ltd.",JP,yahoo_screener
+8032.T,Japan Pulp and Paper Company Limited,JP,yahoo_screener
+2146.T,"UT Group Co.,Ltd.",JP,yahoo_screener
+6420.T,Galilei Holdings Co.Ltd.,JP,yahoo_screener
+2695.T,"Kura Sushi, Inc.",JP,yahoo_screener
+3296.T,NIPPON REIT Investment Corporation,JP,yahoo_screener
+3087.T,"DOUTOR NICHIRES Holdings Co., Ltd.",JP,yahoo_screener
+7148.T,"Financial Partners Group Co.,Ltd.",JP,yahoo_screener
+8179.T,"ROYAL HOLDINGS Co., Ltd.",JP,yahoo_screener
+3865.T,Hokuetsu Corporation,JP,yahoo_screener
+3543.T,"KOMEDA Holdings Co., Ltd.",JP,yahoo_screener
+4216.T,Asahi Yukizai Corporation,JP,yahoo_screener
+9889.T,JBCC Holdings Inc.,JP,yahoo_screener
+3778.T,SAKURA Internet Inc.,JP,yahoo_screener
+3002.T,Gunze Limited,JP,yahoo_screener
+4914.T,Takasago International Corporation,JP,yahoo_screener
+3765.T,"GungHo Online Entertainment, Inc.",JP,yahoo_screener
+3964.T,Aucnet Inc.,JP,yahoo_screener
+9166.T,GENDA Inc.,JP,yahoo_screener
+7282.T,"Toyoda Gosei Co., Ltd.",JP,yahoo_screener
+7283.T,"Aisan Industry Co., Ltd.",JP,yahoo_screener
+6258.T,Hirata Corporation,JP,yahoo_screener
+3104.T,"Fujibo Holdings, Inc.",JP,yahoo_screener
+6254.T,"Nomura Micro Science Co., Ltd.",JP,yahoo_screener
+8057.T,"Uchida Yoko Co., Ltd.",JP,yahoo_screener
+9842.T,Arclands Corporation,JP,yahoo_screener
+4819.T,"Digital Garage, Inc.",JP,yahoo_screener
+3612.T,"World Co., Ltd.",JP,yahoo_screener
+8595.T,"JAFCO Co., Ltd.",JP,yahoo_screener
+6104.T,"Shibaura Machine Co.,Ltd.",JP,yahoo_screener
+8117.T,Central Automotive Products Ltd.,JP,yahoo_screener
+2281.T,"Prima Meat Packers, Ltd.",JP,yahoo_screener
+7512.T,Aeon Hokkaido Corporation,JP,yahoo_screener
+5911.T,Yokogawa Bridge Holdings Corp.,JP,yahoo_screener
+9757.T,Funai Soken Holdings Incorporated,JP,yahoo_screener
+4417.T,Global Security Experts Inc.,JP,yahoo_screener
+5253.T,COVER Corporation,JP,yahoo_screener
+2874.T,"Yokorei Co.,Ltd.",JP,yahoo_screener
+7944.T,Roland Corporation,JP,yahoo_screener
+5726.T,"OSAKA Titanium technologies Co.,Ltd.",JP,yahoo_screener
+6235.T,"Optorun Co.,Ltd.",JP,yahoo_screener
+6463.T,"TPR Co., Ltd.",JP,yahoo_screener
+6627.T,"Tera Probe, Inc.",JP,yahoo_screener
+4413.T,"baudroie,inc.",JP,yahoo_screener
+9621.T,"CTI Engineering Co., Ltd.",JP,yahoo_screener
+6277.T,Hosokawa Micron Corporation,JP,yahoo_screener
+7943.T,Nichiha Corporation,JP,yahoo_screener
+9279.T,Gift Holdings Inc.,JP,yahoo_screener
+8125.T,"Wakita & Co.,LTD.",JP,yahoo_screener
+7917.T,ZACROS Corporation,JP,yahoo_screener
+8818.T,"Keihanshin Building Co., Ltd.",JP,yahoo_screener
+3091.T,"BRONCO BILLY Co.,LTD.",JP,yahoo_screener
+6287.T,Sato Corporation,JP,yahoo_screener
+4825.T,Weathernews Inc.,JP,yahoo_screener
+4828.T,Business Engineering Corporation,JP,yahoo_screener
+6458.T,Sinko Industries Ltd.,JP,yahoo_screener
+2379.T,DIP Corporation,JP,yahoo_screener
+6196.T,"Strike Group Co., Ltd.",JP,yahoo_screener
+4996.T,"Kumiai Chemical Industry Co., Ltd.",JP,yahoo_screener
+7613.T,SIIX Corporation,JP,yahoo_screener
+7818.T,"TRANSACTION CO.,Ltd.",JP,yahoo_screener
+3539.T,"JM Holdings Co.,Ltd.",JP,yahoo_screener
+4326.T,INTAGE HOLDINGS Inc.,JP,yahoo_screener
+8244.T,"Kintetsu Department Store Co., Ltd.",JP,yahoo_screener
+3708.T,"Tokushu Tokai Paper Co., Ltd.",JP,yahoo_screener
+4972.T,"Soken Chemical & Engineering Co., Ltd.",JP,yahoo_screener
+5480.T,"Nippon Yakin Kogyo Co., Ltd.",JP,yahoo_screener
+7128.T,UNISOL Holdings Corporation,JP,yahoo_screener
+4480.T,"Medley, Inc.",JP,yahoo_screener
+6768.T,Tamura Corporation,JP,yahoo_screener
+4022.T,"Rasa Industries, Ltd.",JP,yahoo_screener
+6413.T,Riso Kagaku Corporation,JP,yahoo_screener
+3176.T,"Sanyo Trading Co., Ltd.",JP,yahoo_screener
+1822.T,Daiho Corporation,JP,yahoo_screener
+3443.T,"Kawada Technologies, Inc.",JP,yahoo_screener
+6779.T,"Nihon Dempa Kogyo Co., Ltd.",JP,yahoo_screener
+4552.T,"JCR Pharmaceuticals Co., Ltd.",JP,yahoo_screener
+4569.T,"KYORIN Pharmaceutical Co., Ltd.",JP,yahoo_screener
+9511.T,"The Okinawa Electric Power Company, Incorporated",JP,yahoo_screener
+3661.T,"m-up holdings, Inc.",JP,yahoo_screener
+2170.T,Link and Motivation Inc.,JP,yahoo_screener
+6328.T,"Ebara Jitsugyo Co.,Ltd.",JP,yahoo_screener
+6908.T,"Iriso Electronics Co., Ltd.",JP,yahoo_screener
+6309.T,"Tomoe Engineering Co., Ltd.",JP,yahoo_screener
+5461.T,"Chubu Steel Plate Co., Ltd.",JP,yahoo_screener
+6266.T,"Tazmo Co., Ltd.",JP,yahoo_screener
+9552.T,"Quants Research Institute Holdings, Inc.",JP,yahoo_screener
+7388.T,FP Partner Inc.,JP,yahoo_screener
+7860.T,Avex Inc.,JP,yahoo_screener
+4641.T,Altech Corporation,JP,yahoo_screener
+7537.T,Marubun Corporation,JP,yahoo_screener
+2791.T,"Daikokutenbussan Co.,Ltd.",JP,yahoo_screener
+6088.T,SIGMAXYZ Holdings Inc.,JP,yahoo_screener
+4377.T,ONE CAREER Inc.,JP,yahoo_screener
+4318.T,"Quick Co.,Ltd.",JP,yahoo_screener
+9416.T,Vision Inc.,JP,yahoo_screener
+6997.T,Nippon Chemi-Con Corporation,JP,yahoo_screener
+1375.T,"Yukiguni Factory Co., Ltd.",JP,yahoo_screener
+8281.T,"Xebio Holdings Co., Ltd.",JP,yahoo_screener
+5304.T,"Sec Carbon,Limited",JP,yahoo_screener
+3561.T,"Chikaranomoto Holdings Co., Ltd.",JP,yahoo_screener
+2216.T,Kanro Inc.,JP,yahoo_screener
+8914.T,"Arealink Co., Ltd.",JP,yahoo_screener
+147A.T,"Soracom, Inc.",JP,yahoo_screener
+1786.T,Oriental Shiraishi Corporation,JP,yahoo_screener
+3196.T,"HOTLAND HOLDINGS Co., Ltd.",JP,yahoo_screener
+3844.T,Comture Corporation,JP,yahoo_screener
+3475.T,"Good Com Asset Co., Ltd.",JP,yahoo_screener
+5659.T,"Nippon Seisen Co.,Ltd.",JP,yahoo_screener
+7071.T,"Amvis Holdings, Inc.",JP,yahoo_screener
+6817.T,Sumida Corporation,JP,yahoo_screener
+2792.T,"Honeys Holdings Co., Ltd.",JP,yahoo_screener
+4820.T,"EM Systems Co., Ltd.",JP,yahoo_screener
+4577.T,"Daito Pharmaceutical Co., Ltd.",JP,yahoo_screener
+6249.T,"Gamecard Holdings, Inc.",JP,yahoo_screener
+4471.T,"Sanyo Chemical Industries, Ltd.",JP,yahoo_screener
+2910.T,"Rock Field Co.,Ltd.",JP,yahoo_screener
+9740.T,"Central Security Patrols Co., Ltd.",JP,yahoo_screener
+4112.T,"Hodogaya Chemical Co., Ltd.",JP,yahoo_screener
+3333.T,"Asahi Co., Ltd.",JP,yahoo_screener
+6369.T,Toyo Kanetsu K.K.,JP,yahoo_screener
+7409.T,"AeroEdge Co., Ltd.",JP,yahoo_screener
+7475.T,"ALBIS Co.,Ltd.",JP,yahoo_screener
+4396.T,System Support Holdings Inc.,JP,yahoo_screener
+4548.T,Seikagaku Corporation,JP,yahoo_screener
+6125.T,"Okamoto Machine Tool Works, Ltd.",JP,yahoo_screener
+3798.T,"ULS Group, Inc.",JP,yahoo_screener
+3193.T,"Eternal Hospitality Group Co.,Ltd.",JP,yahoo_screener
+3916.T,Digital Information Technologies Corporation,JP,yahoo_screener
+6850.T,Chino Corporation,JP,yahoo_screener
+9467.T,"AlphaPolis Co., Ltd.",JP,yahoo_screener
+9988.HK,Alibaba Group Holding Limited,HK,yahoo_screener
+3308.HK,"Zhongji Innolight Co., Ltd.",HK,yahoo_screener
+1211.HK,BYD Company Limited,HK,yahoo_screener
+9999.HK,"NetEase, Inc.",HK,yahoo_screener
+0981.HK,Semiconductor Manufacturing International Corporation,HK,yahoo_screener
+0019.HK,Swire Pacific Limited,HK,yahoo_screener
+2475.HK,"Luxshare Precision Industry Co., Ltd.",HK,yahoo_screener
+0992.HK,Lenovo Group Limited,HK,yahoo_screener
+6160.HK,BeOne Medicines AG,HK,yahoo_screener
+9618.HK,"JD.com, Inc.",HK,yahoo_screener
+6809.HK,"Montage Technology Co., Ltd.",HK,yahoo_screener
+3986.HK,GigaDevice Semiconductor Inc.,HK,yahoo_screener
+2338.HK,"Weichai Power Co., Ltd.",HK,yahoo_screener
+2269.HK,WuXi Biologics (Cayman) Inc.,HK,yahoo_screener
+6951.HK,"Chaozhou Three-Circle (Group) Co.,Ltd.",HK,yahoo_screener
+6869.HK,Yangtze Optical Fibre And Cable Joint Stock Limited Company,HK,yahoo_screener
+1347.HK,Hua Hong Grace Semiconductor Limited,HK,yahoo_screener
+0175.HK,Geely Automobile Holdings Limited,HK,yahoo_screener
+2423.HK,KE Holdings Inc.,HK,yahoo_screener
+1801.HK,"Innovent Biologics, Inc.",HK,yahoo_screener
+6031.HK,"Sany Heavy Industry Co.,Ltd",HK,yahoo_screener
+2476.HK,"Victory Giant Technology (HuiZhou) Co.,Ltd",HK,yahoo_screener
+9973.HK,"Chery Automobile Co., Ltd.",HK,yahoo_screener
+1972.HK,Swire Properties Limited,HK,yahoo_screener
+1888.HK,Kingboard Laminates Holdings Limited,HK,yahoo_screener
+1179.HK,H World Group Limited,HK,yahoo_screener
+6990.HK,"Sichuan Kelun-Biotech Biopharmaceutical Co., Ltd.",HK,yahoo_screener
+1138.HK,"COSCO SHIPPING Energy Transportation Co., Ltd.",HK,yahoo_screener
+1208.HK,MMG Limited,HK,yahoo_screener
+2268.HK,WuXi XDC Cayman Inc.,HK,yahoo_screener
+1177.HK,Sino Biopharmaceutical Limited,HK,yahoo_screener
+0763.HK,ZTE Corporation,HK,yahoo_screener
+6613.HK,"Lens Technology Co., Ltd.",HK,yahoo_screener
+1519.HK,J&T Global Express Limited,HK,yahoo_screener
+0914.HK,Anhui Conch Cement Company Limited,HK,yahoo_screener
+1787.HK,"Shandong Gold Mining Co., Ltd.",HK,yahoo_screener
+1377.HK,"Guangdong Dtech Technology Co., Ltd.",HK,yahoo_screener
+1768.HK,"Busy Ming Group Co., Ltd.",HK,yahoo_screener
+9901.HK,New Oriental Education & Technology Group Inc.,HK,yahoo_screener
+2319.HK,China Mengniu Dairy Company Limited,HK,yahoo_screener
+6693.HK,Chifeng Jilong Gold Mining Group Limited,HK,yahoo_screener
+1818.HK,Zhaojin Mining Industry Company Limited,HK,yahoo_screener
+0291.HK,China Resources Beer (Holdings) Company Limited,HK,yahoo_screener
+9927.HK,"Seres Group Co.,Ltd",HK,yahoo_screener
+2333.HK,Great Wall Motor Company Limited,HK,yahoo_screener
+3939.HK,Wanguo Gold Group Limited,HK,yahoo_screener
+0522.HK,ASMPT Limited,HK,yahoo_screener
+0148.HK,Kingboard Holdings Limited,HK,yahoo_screener
+6969.HK,Smoore International Holdings Limited,HK,yahoo_screener
+6656.HK,"Sigenergy Technology Co., Ltd",HK,yahoo_screener
+9863.HK,"Zhejiang Leapmotor Technology Co., Ltd.",HK,yahoo_screener
+6821.HK,"Asymchem Laboratories (Tianjin) Co., Ltd.",HK,yahoo_screener
+0285.HK,BYD Electronic (International) Company Limited,HK,yahoo_screener
+0023.HK,"The Bank of East Asia, Limited",HK,yahoo_screener
+3759.HK,"Pharmaron Beijing Co., Ltd.",HK,yahoo_screener
+9626.HK,Bilibili Inc.,HK,yahoo_screener
+1157.HK,"Zoomlion Heavy Industry Science and Technology Co., Ltd.",HK,yahoo_screener
+3996.HK,China Energy Engineering Corporation Limited,HK,yahoo_screener
+3396.HK,Legend Holdings Corporation,HK,yahoo_screener
+3668.HK,Yancoal Australia Ltd,HK,yahoo_screener
+1828.HK,FWD Group Holdings Limited,HK,yahoo_screener
+1989.HK,Delton Technology (Guangzhou) Inc.,HK,yahoo_screener
+1735.HK,Central New Energy Holding Group Limited,HK,yahoo_screener
+1688.HK,Lingyi iTech (Guangdong) Company,HK,yahoo_screener
+7618.HK,"JINGDONG Industrials, Inc.",HK,yahoo_screener
+0470.HK,"Wuxi Lead Intelligent Equipment CO.,LTD.",HK,yahoo_screener
+3347.HK,"Hangzhou Tigermed Consulting Co., Ltd",HK,yahoo_screener
+2380.HK,China Power International Development Limited,HK,yahoo_screener
+0101.HK,Hang Lung Properties Limited,HK,yahoo_screener
+3200.HK,"Shenzhen Han's CNC Technology Co., Ltd.",HK,yahoo_screener
+2208.HK,"Goldwind Science&Technology Co., Ltd.",HK,yahoo_screener
+1797.HK,East Buy Holding Limited,HK,yahoo_screener
+0268.HK,Kingdee International Software Group Company Limited,HK,yahoo_screener
+6979.HK,ZJLD Group Inc,HK,yahoo_screener
+1729.HK,Time Interconnect Technology Limited,HK,yahoo_screener
+6088.HK,FIT Hon Teng Limited,HK,yahoo_screener
+3931.HK,"CALB Group Co., Ltd.",HK,yahoo_screener
+0683.HK,Kerry Properties Limited,HK,yahoo_screener
+2357.HK,AviChina Industry & Technology Company Limited,HK,yahoo_screener
+0631.HK,Sany Heavy Equipment International Holdings Company Limited,HK,yahoo_screener
+3277.HK,Gpixel Changchun Microelectronics Inc.,HK,yahoo_screener
+0867.HK,China Medical System Holdings Limited,HK,yahoo_screener
+2386.HK,"SINOPEC Engineering (Group) Co., Ltd.",HK,yahoo_screener
+9896.HK,MINISO Group Holding Limited,HK,yahoo_screener
+0780.HK,Tongcheng Travel Holdings Limited,HK,yahoo_screener
+3317.HK,"Shenzhen Xunce Technology Co., Ltd.",HK,yahoo_screener
+6810.HK,"Shanghai Sunmi Technology Co., Ltd.",HK,yahoo_screener
+2602.HK,Onewo Inc.,HK,yahoo_screener
+9889.HK,"Dongguan Rural Commercial Bank Co., Ltd.",HK,yahoo_screener
+1385.HK,Shanghai Fudan Microelectronics Group Company Limited,HK,yahoo_screener
+6680.HK,"JL Mag Rare-Earth Co., Ltd.",HK,yahoo_screener
+0013.HK,HUTCHMED (China) Limited,HK,yahoo_screener
+1860.HK,Mobvista Inc.,HK,yahoo_screener
+0968.HK,Xinyi Solar Holdings Limited,HK,yahoo_screener
+0189.HK,Dongyue Group Limited,HK,yahoo_screener
+2276.HK,"Shanghai Conant Optical Co., Ltd.",HK,yahoo_screener
+6098.HK,Country Garden Services Holdings Company Limited,HK,yahoo_screener
+0817.HK,China Jinmao Holdings Group Limited,HK,yahoo_screener
+0325.HK,Bloks Group Limited,HK,yahoo_screener
+3858.HK,Jiaxin International Resources Investment Limited,HK,yahoo_screener
+0548.HK,Shenzhen Expressway Corporation Limited,HK,yahoo_screener
+0014.HK,Hysan Development Company Limited,HK,yahoo_screener
+2525.HK,Hesai Group,HK,yahoo_screener
+1357.HK,"Meitu, Inc.",HK,yahoo_screener
+0512.HK,Grand Pharmaceutical Group Limited,HK,yahoo_screener
+2880.HK,"Liaoning Port Co., Ltd.",HK,yahoo_screener
+1277.HK,Kinetic Development Group Limited,HK,yahoo_screener
+9858.HK,China Youran Dairy Group Limited,HK,yahoo_screener
+1164.HK,CGN Mining Company Limited,HK,yahoo_screener
+1651.HK,Precision Tsugami (China) Corporation Limited,HK,yahoo_screener
+3933.HK,The United Laboratories International Holdings Limited,HK,yahoo_screener
+3899.HK,CIMC Enric Holdings Limited,HK,yahoo_screener
+2610.HK,Nanshan Aluminium International Holdings Limited,HK,yahoo_screener
+1112.HK,Health and Happiness (H&H) International Holdings Limited,HK,yahoo_screener
+0440.HK,Dah Sing Financial Holdings Limited,HK,yahoo_screener
+6699.HK,Angelalign Technology Inc.,HK,yahoo_screener
+0340.HK,Tongguan Gold Group Limited,HK,yahoo_screener
+2556.HK,Marketingforce Management Ltd,HK,yahoo_screener
+0152.HK,Shenzhen International Holdings Limited,HK,yahoo_screener
+2580.HK,"Aux Electric Co., Ltd.",HK,yahoo_screener
+6682.HK,"Phancy Group Co., Ltd.",HK,yahoo_screener
+1866.HK,China XLX Fertiliser Ltd.,HK,yahoo_screener
+6865.HK,"Flat Glass Group Co., Ltd.",HK,yahoo_screener
+2715.HK,"Estun Automation Co., Ltd",HK,yahoo_screener
+0081.HK,China Overseas Grand Oceans Group Limited,HK,yahoo_screener
+0467.HK,United Energy Group Limited,HK,yahoo_screener
+0546.HK,Fufeng Group Limited,HK,yahoo_screener
+1030.HK,Seazen Group Limited,HK,yahoo_screener
+3677.HK,"Jiangsu Zenergy Battery Technologies Group Co., Ltd.",HK,yahoo_screener
+0697.HK,Shoucheng Holdings Limited,HK,yahoo_screener
+9611.HK,"Shanghai Longcheer Technology Co., Ltd.",HK,yahoo_screener
+0934.HK,Sinopec Kantons Holdings Limited,HK,yahoo_screener
+2128.HK,China Lesso Group Holdings Limited,HK,yahoo_screener
+2233.HK,West China Cement Limited,HK,yahoo_screener
+1114.HK,Brilliance China Automotive Holdings Limited,HK,yahoo_screener
+0354.HK,Chinasoft International Limited,HK,yahoo_screener
+6067.HK,"Shenzhen Senior Technology Material Co., Ltd.",HK,yahoo_screener
+2145.HK,"Shanghai Chicmax Cosmetic Co., Ltd.",HK,yahoo_screener
+1310.HK,HKBN Ltd.,HK,yahoo_screener
+3983.HK,China BlueChemical Ltd.,HK,yahoo_screener
+9690.HK,TUHU Car Inc.,HK,yahoo_screener
+2155.HK,Morimatsu International Holdings Company Limited,HK,yahoo_screener
+6185.HK,CanSino Biologics Inc.,HK,yahoo_screener
+6190.HK,"Bank of Jiujiang Co., Ltd.",HK,yahoo_screener
+2586.HK,Dmall Inc.,HK,yahoo_screener
+9699.HK,"Hangzhou SF Intra-city Industrial Co., Ltd.",HK,yahoo_screener
+3738.HK,Vobile Group Limited,HK,yahoo_screener
+1798.HK,"China Datang Corporation Renewable Power Co., Limited",HK,yahoo_screener
+2657.HK,"Shanghai Forest Cabin Cosmetics Group Co., Ltd.",HK,yahoo_screener
+1375.HK,"Central China Securities Co., Ltd.",HK,yahoo_screener
+0826.HK,Tiangong International Company Limited,HK,yahoo_screener
+2186.HK,Luye Pharma Group Ltd.,HK,yahoo_screener
+1907.HK,China Risun Group Limited,HK,yahoo_screener
+2190.HK,"Zylox-Tonbridge Medical Technology Co., Ltd.",HK,yahoo_screener
+7489.HK,"VOYAH Automotive Technology Co., Ltd.",HK,yahoo_screener
+1691.HK,JS Global Lifestyle Company Limited,HK,yahoo_screener
+2465.HK,"Jiangsu Lopal Tech. Group Co., Ltd.",HK,yahoo_screener
+9989.HK,"Shenzhen Hepalink Pharmaceutical Group Co., Ltd.",HK,yahoo_screener
+6078.HK,"Hygeia Healthcare Holdings Co., Limited",HK,yahoo_screener
+1951.HK,Jinxin Fertility Group Limited,HK,yahoo_screener
+0839.HK,China Education Group Holdings Limited,HK,yahoo_screener
+2451.HK,Luyuan Group Holding (Cayman) Limited,HK,yahoo_screener
+0866.HK,China Qinfa Group Limited,HK,yahoo_screener
+9658.HK,Super Hi International Holding Ltd.,HK,yahoo_screener
+1921.HK,Dalipal Holdings Limited,HK,yahoo_screener
+2291.HK,"LEPU ScienTech Medical Technology (Shanghai) Co., Ltd.",HK,yahoo_screener
+9676.HK,"Shiyue Daotian Group Co., Ltd.",HK,yahoo_screener
+1896.HK,Maoyan Entertainment,HK,yahoo_screener
+9936.HK,Ximei Resources Holding Limited,HK,yahoo_screener
+1300.HK,Trigiant Group Limited,HK,yahoo_screener
+1405.HK,DPC Dash Ltd,HK,yahoo_screener
+6686.HK,Noah Holdings Limited,HK,yahoo_screener
+0777.HK,NetDragon Websoft Holdings Limited,HK,yahoo_screener
+1809.HK,Prinx Chengshan Holdings Limited,HK,yahoo_screener
+0819.HK,Tianneng Power International Limited,HK,yahoo_screener
+0178.HK,Sa Sa International Holdings Limited,HK,yahoo_screener
+1666.HK,Tong Ren Tang Technologies Co. Ltd.,HK,yahoo_screener
+1050.HK,Karrie International Holdings Limited,HK,yahoo_screener
+6826.HK,"Shanghai Haohai Biological Technology Co., Ltd.",HK,yahoo_screener
+2517.HK,"Guoquan Food (Shanghai) Co., Ltd.",HK,yahoo_screener
+0933.HK,Viva Goods Company Limited,HK,yahoo_screener
+0581.HK,China Oriental Group Company Limited,HK,yahoo_screener
+2598.HK,"Lianlian DigiTech Co., Ltd.",HK,yahoo_screener
+9860.HK,Adicon Holdings Limited,HK,yahoo_screener
+0405.HK,Yuexiu Real Estate Investment Trust,HK,yahoo_screener
+2041.HK,MEDCAPTAIN,HK,yahoo_screener
+6090.HK,Butong Group,HK,yahoo_screener
+6831.HK,Green Tea Group Limited,HK,yahoo_screener
+0341.HK,Café de Coral Holdings Limited,HK,yahoo_screener
+2199.HK,Regina Miracle International (Holdings) Limited,HK,yahoo_screener
+3319.HK,"A-Living Smart City Services Co., Ltd.",HK,yahoo_screener
+3880.HK,Medtide Inc.,HK,yahoo_screener
+2342.HK,Comba Telecom Systems Holdings Limited,HK,yahoo_screener
+1873.HK,Viva Biotech Holdings,HK,yahoo_screener
+2408.HK,"Guangzhou Xiao Noodles Catering Management Co., Ltd.",HK,yahoo_screener
+0710.HK,BOE Varitronix Limited,HK,yahoo_screener
+2235.HK,"MicroTech Medical (Hangzhou) Co., Ltd.",HK,yahoo_screener
+2409.HK,Seacon Shipping Group Holdings Limited,HK,yahoo_screener
+6626.HK,Yuexiu Services Group Limited,HK,yahoo_screener
+3709.HK,EEKA Fashion Holdings Limited,HK,yahoo_screener
+2411.HK,Shenzhen Pagoda Industrial (Group) Corporation Limited,HK,yahoo_screener
+1848.HK,China Aircraft Leasing Group Holdings Limited,HK,yahoo_screener
+0732.HK,Truly International Holdings Limited,HK,yahoo_screener
+2660.HK,Zengame Technology Holding Limited,HK,yahoo_screener
+0331.HK,FSE Lifestyle Services Limited,HK,yahoo_screener
+1521.HK,Frontage Holdings Corporation,HK,yahoo_screener
+0596.HK,Inspur Digital Enterprise Technology Limited,HK,yahoo_screener
+0882.HK,Tianjin Development Holdings Limited,HK,yahoo_screener
+1747.HK,Home Control International Limited,HK,yahoo_screener
+1516.HK,Sunac Services Holdings Limited,HK,yahoo_screener
+9930.HK,Horizon Construction Development Limited,HK,yahoo_screener
+2290.HK,Lung Fung Group Holdings Limited,HK,yahoo_screener
+0098.HK,Xingfa Aluminium Holdings Limited,HK,yahoo_screener
+1458.HK,Zhou Hei Ya International Holdings Company Limited,HK,yahoo_screener
+2499.HK,"Folangsi Co., Ltd.",HK,yahoo_screener
+2197.HK,"Clover Biopharmaceuticals, Ltd.",HK,yahoo_screener
+2149.HK,"BaTeLab Co., Ltd.",HK,yahoo_screener
+1899.HK,Xingda International Holdings Limited,HK,yahoo_screener
+1911.HK,China Renaissance Holdings Limited,HK,yahoo_screener
+1045.HK,APT Satellite Holdings Limited,HK,yahoo_screener
+0658.HK,"China High Speed Transmission Equipment Group Co., Ltd.",HK,yahoo_screener
+2219.HK,Chaoju Eye Care Holdings Limited,HK,yahoo_screener
+9991.HK,Baozun Inc.,HK,yahoo_screener
+3798.HK,Homeland Interactive Technology Ltd.,HK,yahoo_screener
+0917.HK,Qunabox Group Limited,HK,yahoo_screener
+2886.HK,Binhai Investment Company Limited,HK,yahoo_screener
+688825.SS,CXMT Corporation,SH,yahoo_screener
+601138.SS,"Foxconn Industrial Internet Co., Ltd.",SH,yahoo_screener
+688256.SS,Cambricon Technologies Corporation Limited,SH,yahoo_screener
+600183.SS,"Shengyi Technology Co.,Ltd.",SH,yahoo_screener
+601869.SS,Yangtze Optical Fibre And Cable Joint Stock Limited Company,SH,yahoo_screener
+600150.SS,China CSSC Holdings Limited,SH,yahoo_screener
+603268.SS,"Guangdong Songfa Ceramics Co.,Ltd.",SH,yahoo_screener
+600031.SS,"Sany Heavy Industry Co.,Ltd",SH,yahoo_screener
+600176.SS,"China Jushi Co., Ltd.",SH,yahoo_screener
+600111.SS,"China Northern Rare Earth (Group) High-Tech Co.,Ltd",SH,yahoo_screener
+600487.SS,"Hengtong Optic-Electric Co., Ltd.",SH,yahoo_screener
+601633.SS,Great Wall Motor Company Limited,SH,yahoo_screener
+688120.SS,"Hwatsing Technology Co., Ltd.",SH,yahoo_screener
+601100.SS,"Jiangsu Hengli Hydraulic Co.,Ltd",SH,yahoo_screener
+600026.SS,"COSCO SHIPPING Energy Transportation Co., Ltd.",SH,yahoo_screener
+600893.SS,"AECC Aviation Power Co.,Ltd",SH,yahoo_screener
+601868.SS,China Energy Engineering Corporation Limited,SH,yahoo_screener
+600584.SS,"JCET Group Co., Ltd.",SH,yahoo_screener
+600905.SS,"China Three Gorges Renewables (Group) Co.,Ltd.",SH,yahoo_screener
+600522.SS,"Jiangsu Zhongtian Technology Co., Ltd.",SH,yahoo_screener
+600010.SS,"Inner Mongolia Baotou Steel Union Co., Ltd.",SH,yahoo_screener
+603501.SS,"OmniVision Integrated Circuits Group, Inc.",SH,yahoo_screener
+605117.SS,"Ningbo Deye Technology Group Co., Ltd.",SH,yahoo_screener
+603256.SS,"Grace Fabric Technology Co.,Ltd.",SH,yahoo_screener
+601186.SS,China Railway Construction Corporation Limited,SH,yahoo_screener
+600673.SS,"Guangdong HEC Technology Holding Co., Ltd",SH,yahoo_screener
+688183.SS,"Shengyi Electronics Co., Ltd.",SH,yahoo_screener
+600988.SS,Chifeng Jilong Gold Mining Group Limited,SH,yahoo_screener
+601669.SS,"Power Construction Corporation of China, Ltd",SH,yahoo_screener
+601127.SS,"Seres Group Co.,Ltd",SH,yahoo_screener
+600436.SS,"Zhangzhou Pientzehuang Pharmaceutical Co., Ltd.",SH,yahoo_screener
+688525.SS,"BIWIN Storage Technology Co., Ltd.",SH,yahoo_screener
+603893.SS,"Rockchip Electronics Co., Ltd.",SH,yahoo_screener
+600023.SS,"Zhejiang Zheneng Electric Power Co., Ltd.",SH,yahoo_screener
+600482.SS,"China Shipbuilding Industry Group Power Co., Ltd.",SH,yahoo_screener
+600048.SS,"Poly Developments and Holdings Group Co., Ltd.",SH,yahoo_screener
+688036.SS,"Shenzhen Transsion Holdings Co., Ltd.",SH,yahoo_screener
+688200.SS,"Beijing Huafeng Test & Control Technology Co.,Ltd.",SH,yahoo_screener
+603799.SS,"Zhejiang Huayou Cobalt Co., Ltd",SH,yahoo_screener
+688249.SS,Nexchip Semiconductor Corporation,SH,yahoo_screener
+689009.SS,Ninebot Limited,SH,yahoo_screener
+688777.SS,"Supcon Technology Co.,Ltd",SH,yahoo_screener
+600372.SS,"AVIC Airborne Systems Co., Ltd.",SH,yahoo_screener
+688729.SS,"Beijing E-Town Semiconductor Technology Co., Ltd.",SH,yahoo_screener
+600221.SS,"Hainan Airlines Holding Co., Ltd.",SH,yahoo_screener
+688313.SS,"Henan Shijia Photons Technology Co., Ltd.",SH,yahoo_screener
+600219.SS,"Shandong Nanshan Aluminium Co.,Ltd.",SH,yahoo_screener
+600845.SS,"Shanghai Baosight Software Co.,Ltd.",SH,yahoo_screener
+601699.SS,"Shanxi Lu'an Environmental Energy Development Co., Ltd.",SH,yahoo_screener
+600256.SS,"Guanghui Energy Co., Ltd.",SH,yahoo_screener
+688630.SS,"Circuit Fabology Microelectronics Equipment Co., Ltd.",SH,yahoo_screener
+600879.SS,"China Aerospace Times Electronics CO., LTD.",SH,yahoo_screener
+600105.SS,Jiangsu Etern Company Limited,SH,yahoo_screener
+600460.SS,"Hangzhou Silan Microelectronics Co., Ltd.",SH,yahoo_screener
+603129.SS,"Zhejiang Cfmoto Power Co.,Ltd",SH,yahoo_screener
+601058.SS,"Sailun Group Co., Ltd.",SH,yahoo_screener
+600869.SS,"Far East Smarter Energy Co., Ltd.",SH,yahoo_screener
+600498.SS,"Fiberhome Telecommunication Technologies Co., Ltd.",SH,yahoo_screener
+600985.SS,"Huaibei Mining Holdings Co.,Ltd.",SH,yahoo_screener
+600871.SS,Sinopec Oilfield Service Corporation,SH,yahoo_screener
+688775.SS,Arashi Vision Inc.,SH,yahoo_screener
+688099.SS,"Amlogic (Shanghai) Co.,Ltd.",SH,yahoo_screener
+600352.SS,"Zhejiang Longsheng Group Co.,Ltd",SH,yahoo_screener
+688536.SS,3Peak Incorporated,SH,yahoo_screener
+601777.SS,"Chongqing Afari Technology Co., Ltd.",SH,yahoo_screener
+688122.SS,"Western Superconducting Technologies Co., Ltd.",SH,yahoo_screener
+600085.SS,"Beijing Tongrentang Co., Ltd",SH,yahoo_screener
+603806.SS,"Hangzhou First Applied Material Co., Ltd.",SH,yahoo_screener
+600021.SS,"Shanghai Electric Power Co., Ltd.",SH,yahoo_screener
+600143.SS,"Kingfa Sci. & Tech. Co., Ltd.",SH,yahoo_screener
+688728.SS,GalaxyCore Inc.,SH,yahoo_screener
+601866.SS,"COSCO SHIPPING Development Co., Ltd.",SH,yahoo_screener
+600699.SS,Ningbo Joyson Electronic Corp.,SH,yahoo_screener
+600329.SS,Tianjin Pharmaceutical Da Ren Tang Group Corporation Limited,SH,yahoo_screener
+600956.SS,China Suntien Green Energy Corporation Limited,SH,yahoo_screener
+600157.SS,"Wintime Energy Group Co.,Ltd.",SH,yahoo_screener
+600667.SS,Wuxi Taiji Industry Limited Corporation,SH,yahoo_screener
+600515.SS,"Hainan Airport Infrastructure Co., Ltd",SH,yahoo_screener
+600301.SS,"Guangxi Huaxi Nonferrous Metal Co.,Ltd",SH,yahoo_screener
+600777.SS,Shandong Xinchao Energy Corporation Limited,SH,yahoo_screener
+603920.SS,"Olympic Circuit Technology Co., Ltd",SH,yahoo_screener
+600536.SS,China National Software & Service Company Limited,SH,yahoo_screener
+688472.SS,"CSI Solar Co., Ltd.",SH,yahoo_screener
+600737.SS,"Cofco Sugar Holding CO.,LTD.",SH,yahoo_screener
+601611.SS,China Nuclear Engineering Corporation Limited,SH,yahoo_screener
+688297.SS,"AVIC (Chengdu)UAS Co., Ltd.",SH,yahoo_screener
+603606.SS,"Ningbo Orient Wires & Cables Co.,Ltd.",SH,yahoo_screener
+601155.SS,"Seazen Holdings Co., Ltd",SH,yahoo_screener
+600141.SS,"Hubei Xingfa Chemicals Group Co., Ltd.",SH,yahoo_screener
+688169.SS,"Beijing Roborock Technology Co., Ltd.",SH,yahoo_screener
+600316.SS,"Jiangxi Hongdu Aviation Industry Co., Ltd.",SH,yahoo_screener
+605358.SS,"Hangzhou Lion Electronics Co.,Ltd",SH,yahoo_screener
+600977.SS,"China Film Industry Group Co., Ltd.",SH,yahoo_screener
+603379.SS,"Zhejiang Sanmei Chemical Industry Co.,Ltd.",SH,yahoo_screener
+603568.SS,"Zhejiang Weiming Environment Protection Co., Ltd.",SH,yahoo_screener
+605589.SS,"Jinan Shengquan Group Share Holding Co., Ltd.",SH,yahoo_screener
+688411.SS,"Beijing HyperStrong Technology Co., Ltd.",SH,yahoo_screener
+603179.SS,"Jiangsu Xinquan Automotive Trim Co.,Ltd.",SH,yahoo_screener
+600862.SS,"Avic Aviation High-Technology Co., Ltd.",SH,yahoo_screener
+600299.SS,Bluestar Adisseo Company,SH,yahoo_screener
+600566.SS,"Hubei Jumpcan Pharmaceutical Co., Ltd.",SH,yahoo_screener
+600967.SS,"Inner Mongolia First Machinery Group Co.,Ltd.",SH,yahoo_screener
+688676.SS,"Hainan Jinpan Smart Technology Co., Ltd.",SH,yahoo_screener
+603929.SS,"L&K Engineering (Suzhou) Co.,Ltd.",SH,yahoo_screener
+603308.SS,"Anhui Yingliu Electromechanical Co., Ltd.",SH,yahoo_screener
+600884.SS,"Ningbo Shanshan Co.,Ltd.",SH,yahoo_screener
+600208.SS,"Quzhou Xin'an Development Co., Ltd.",SH,yahoo_screener
+603061.SS,"JHT Design Co.,Ltd.",SH,yahoo_screener
+600816.SS,"J-Yuan Trust Co., Ltd.",SH,yahoo_screener
+600575.SS,"Huaihe Energy (Group) Co.,Ltd",SH,yahoo_screener
+600038.SS,Avicopter Plc,SH,yahoo_screener
+688333.SS,"Xi'an Bright Laser Technologies Co.,Ltd.",SH,yahoo_screener
+600595.SS,"Henan Zhongfu Industrial Co.,Ltd",SH,yahoo_screener
+600098.SS,Guangzhou Development Group Incorporated,SH,yahoo_screener
+688475.SS,"Hangzhou EZVIZ Network Co., Ltd.",SH,yahoo_screener
+688001.SS,"Suzhou HYC Technology Co.,Ltd.",SH,yahoo_screener
+600548.SS,Shenzhen Expressway Corporation Limited,SH,yahoo_screener
+688349.SS,"Sany Renewable Energy Co.,Ltd.",SH,yahoo_screener
+603730.SS,"Shanghai Daimay Automotive Interior Co., Ltd",SH,yahoo_screener
+688545.SS,"Hubei Sinophorus Electronic Materials Co.,Ltd.",SH,yahoo_screener
+600390.SS,Minmetals Capital Company Limited,SH,yahoo_screener
+601865.SS,"Flat Glass Group Co., Ltd.",SH,yahoo_screener
+600582.SS,Tiandi Science & Technology Co.Ltd,SH,yahoo_screener
+601608.SS,"CITIC Heavy Industries Co., Ltd.",SH,yahoo_screener
+688608.SS,"Bestechnic (Shanghai) Co., Ltd.",SH,yahoo_screener
+600765.SS,"AVIC Heavy Machinery Co., Ltd.",SH,yahoo_screener
+603885.SS,"Juneyao Airlines Co., Ltd",SH,yahoo_screener
+601666.SS,"Pingdingshan Tianan Coal. Mining Co., Ltd.",SH,yahoo_screener
+600516.SS,"FangDa Carbon New Material Co.,Ltd",SH,yahoo_screener
+603663.SS,"Sanxiang Advanced Materials Co., Ltd.",SH,yahoo_screener
+603737.SS,"SKSHU Paint Co.,Ltd.",SH,yahoo_screener
+601615.SS,Ming Yang Smart Energy Group Limited,SH,yahoo_screener
+601016.SS,"CECEP Wind-power Corporation Co.,Ltd.",SH,yahoo_screener
+688819.SS,"Tianneng Battery Group Co., Ltd.",SH,yahoo_screener
+603688.SS,"Jiangsu Pacific Quartz Co., Ltd",SH,yahoo_screener
+600170.SS,"Shanghai Construction Group Co., Ltd.",SH,yahoo_screener
+688692.SS,Wuhan Dameng Database Company Limited,SH,yahoo_screener
+603306.SS,"HMT (Xiamen) New Technical Materials Co., Ltd",SH,yahoo_screener
+688143.SS,"Yangtze Optical Electronic Co., Ltd.",SH,yahoo_screener
+603355.SS,"Kingclean Electric Co.,Ltd",SH,yahoo_screener
+603658.SS,"Autobio Diagnostics Co., Ltd.",SH,yahoo_screener
+601139.SS,Shenzhen Gas Corporation Ltd.,SH,yahoo_screener
+688368.SS,"Shanghai Bright Power Semiconductor Co., Ltd.",SH,yahoo_screener
+603341.SS,"Shanghai Longcheer Technology Co., Ltd.",SH,yahoo_screener
+600339.SS,China Petroleum Engineering Corporation,SH,yahoo_screener
+688281.SS,"Shaanxi Huaqin Technology Industry Co.,Ltd.",SH,yahoo_screener
+603881.SS,"Shanghai @hub Co.,Ltd.",SH,yahoo_screener
+601567.SS,"Ningbo Sanxing Medical Electric Co.,Ltd.",SH,yahoo_screener
+601101.SS,"Beijing Haohua Energy Resource Co., Ltd.",SH,yahoo_screener
+600179.SS,"Antong Holdings Co., Ltd.",SH,yahoo_screener
+600057.SS,"Xiamen Xiangyu Co., Ltd.",SH,yahoo_screener
+605111.SS,"Wuxi NCE Power Co.,Ltd.",SH,yahoo_screener
+600835.SS,"Shanghai Mechanical & Electrical Industry Co.,Ltd.",SH,yahoo_screener
+600820.SS,"Shanghai Tunnel Engineering Co., Ltd.",SH,yahoo_screener
+603002.SS,Epoxy Base Electronic Material Corporation Limited,SH,yahoo_screener
+603290.SS,StarPower Semiconductor Ltd.,SH,yahoo_screener
+688531.SS,"Unicomp Technology Group Co., Ltd.",SH,yahoo_screener
+603678.SS,"Fujian Torch Electron Technology Co., Ltd.",SH,yahoo_screener
+688615.SS,"Intsig Information Co., Ltd.",SH,yahoo_screener
+688363.SS,Bloomage BioTechnology Corporation Limited,SH,yahoo_screener
+688403.SS,"Union Semiconductor (Hefei) Co., Ltd.",SH,yahoo_screener
+603171.SS,"Servyou Software Group Co., Ltd.",SH,yahoo_screener
+688208.SS,"Autel Intelligent Technology Corp., Ltd.",SH,yahoo_screener
+688772.SS,"Zhuhai CosMX Battery Co., Ltd.",SH,yahoo_screener
+605196.SS,"Hebei Huatong Wires and Cables Group Co., Ltd.",SH,yahoo_screener
+601966.SS,"Shandong Linglong Tyre Co.,Ltd.",SH,yahoo_screener
+600528.SS,China Railway Hi-tech Industry Corporation Limited,SH,yahoo_screener
+603997.SS,"Ningbo Jifeng Auto Parts Co., Ltd.",SH,yahoo_screener
+600664.SS,"Harbin Pharmaceutical Group Co., Ltd.",SH,yahoo_screener
+603786.SS,"KEBODA TECHNOLOGY Co., Ltd.",SH,yahoo_screener
+600764.SS,China Marine Information Electronics Company Limited,SH,yahoo_screener
+688270.SS,"Great Microwave Technology Co., Ltd.",SH,yahoo_screener
+603456.SS,"Zhejiang Jiuzhou Pharmaceutical Co., Ltd",SH,yahoo_screener
+601019.SS,"Shandong Publishing&Media Co.,Ltd",SH,yahoo_screener
+688392.SS,"SBT Ultrasonic Technology Co., Ltd.",SH,yahoo_screener
+688582.SS,Anhui XDLK Microsystem Corporation Limited,SH,yahoo_screener
+603876.SS,"Jiangsu Dingsheng New Materials Joint-Stock Co.,Ltd",SH,yahoo_screener
+603162.SS,"Fujian Highton Development Co., Ltd.",SH,yahoo_screener
+601369.SS,"Xi'an Shaangu Power Co., Ltd.",SH,yahoo_screener
+600596.SS,"Zhejiang Xinan Chemical Industrial Group Co.,Ltd",SH,yahoo_screener
+688372.SS,"Shanghai V-Test Semiconductor Tech. Co., Ltd.",SH,yahoo_screener
+600056.SS,"China Meheco Group Co., Ltd.",SH,yahoo_screener
+603882.SS,"Guangzhou Kingmed Diagnostics Group Co., Ltd.",SH,yahoo_screener
+600888.SS,"Xinjiang Joinworld Co., Ltd.",SH,yahoo_screener
+688166.SS,"BrightGene Bio-Medical Technology Co., Ltd.",SH,yahoo_screener
+600633.SS,"Zhejiang Daily Digital Culture Group Co.,Ltd",SH,yahoo_screener
+603328.SS,"Guangdong Ellington Electronics Technology Co.,Ltd",SH,yahoo_screener
+688686.SS,"OPT Machine Vision Tech Co., Ltd.",SH,yahoo_screener
+688800.SS,"Suzhou Recodeal Interconnect System Co.,Ltd",SH,yahoo_screener
+603906.SS,"Jiangsu Lopal Tech. Group Co., Ltd.",SH,yahoo_screener
+688484.SS,"Southchip Semiconductor Technology(Shanghai) Co., Ltd.",SH,yahoo_screener
+603303.SS,"Hengdian Group Tospo Lighting Co., Ltd.",SH,yahoo_screener
+688503.SS,"Changzhou Fusion New Material Co., Ltd.",SH,yahoo_screener
+600475.SS,"Wuxi Huaguang Environment & Energy Group Co.,Ltd.",SH,yahoo_screener
+600635.SS,"Shanghai Dazhong Public Utilities(Group) Co.,Ltd.",SH,yahoo_screener
+601222.SS,"Jiangsu Linyang Energy Co., Ltd.",SH,yahoo_screener
+603305.SS,"Ningbo Xusheng Group Co., Ltd.",SH,yahoo_screener
+600155.SS,"Huachuang Yunxin Digital Technology Co., Ltd.",SH,yahoo_screener
+688150.SS,"Shaanxi Lighte Optoelectronics Material Co.,Ltd",SH,yahoo_screener
+601068.SS,China Aluminum International Engineering Corporation Limited,SH,yahoo_screener
+600877.SS,CETC Chips Technology Inc.,SH,yahoo_screener
+601595.SS,"Shanghai Film Co., Ltd.",SH,yahoo_screener
+603626.SS,"Kunshan Kersen Science & Technology Co.,Ltd.",SH,yahoo_screener
+688543.SS,"Jiangxi Guoke Defence Group Co.,Ltd.",SH,yahoo_screener
+600416.SS,"Xiangtan Electric Manufacturing Co., Ltd.",SH,yahoo_screener
+603693.SS,"Jiangsu New Energy Development Co., Ltd.",SH,yahoo_screener
+600409.SS,"Tangshan Sanyou Chemical Industries Co.,Ltd",SH,yahoo_screener
+603927.SS,"Sinosoft Co.,Ltd",SH,yahoo_screener
+600916.SS,"China National Gold Group Gold Jewellery Co.,Ltd.",SH,yahoo_screener
+600720.SS,"CCCC Design & Consulting Group Co., Ltd.",SH,yahoo_screener
+600864.SS,"Harbin Hatou Investment Co.,Ltd",SH,yahoo_screener
+603283.SS,"Suzhou Secote Precision Electronic Co.,LTD",SH,yahoo_screener
+600651.SS,"Shanghai Feilo Acoustics Co.,Ltd",SH,yahoo_screener
+600167.SS,"Luenmei Quantum Co.,Ltd",SH,yahoo_screener
+600456.SS,"Baoji Titanium Industry Co., Ltd.",SH,yahoo_screener
+601952.SS,"Jiangsu Provincial Agricultural Reclamation and Development Co.,Ltd.",SH,yahoo_screener
+688233.SS,Thinkon Semiconductor Jinzhou Corp.,SH,yahoo_screener
+603826.SS,"Fujian Kuncai Material Technology Co., Ltd.",SH,yahoo_screener
+601619.SS,Jiaze Renewables Corporation Limited,SH,yahoo_screener
+688116.SS,"Jiangsu Cnano Technology Co., Ltd.",SH,yahoo_screener
+688088.SS,ArcSoft Corporation Limited,SH,yahoo_screener
+603883.SS,LBX Pharmacy Chain Joint Stock Company,SH,yahoo_screener
+600420.SS,"Shanghai Shyndec Pharmaceutical Co., Ltd.",SH,yahoo_screener
+603203.SS,"Quick Intelligent Equipment Co.,Ltd.",SH,yahoo_screener
+600572.SS,"Zhejiang CONBA Pharmaceutical Co.,Ltd.",SH,yahoo_screener
+688106.SS,"Jinhong Gas Co.,Ltd.",SH,yahoo_screener
+601801.SS,"Anhui Xinhua Media Co., Ltd.",SH,yahoo_screener
+603589.SS,"Anhui Kouzi Distillery Co., Ltd.",SH,yahoo_screener
+603757.SS,"Zhejiang Dayuan Pumps Industry Co., Ltd",SH,yahoo_screener
+900948.SS,"Inner Mongolia Yitai Coal Co.,Ltd.",SH,yahoo_screener
+603505.SS,"China Kings Resources Group Co.,Ltd.",SH,yahoo_screener
+600373.SS,"Chinese Universe Publishing and Media Group Co., Ltd.",SH,yahoo_screener
+688006.SS,Zhejiang HangKe Technology Incorporated Company,SH,yahoo_screener
+603393.SS,"Xinjiang Xintai Natural Gas Co., Ltd.",SH,yahoo_screener
+600338.SS,"Xizang Zhufeng Resources Co., Ltd.",SH,yahoo_screener
+603992.SS,"Xiamen Solex High-tech Industries Co., Ltd.",SH,yahoo_screener
+600508.SS,"Shanghai Datun Energy Resources Co., Ltd.",SH,yahoo_screener
+688139.SS,"Qingdao Haier Biomedical Co.,Ltd",SH,yahoo_screener
+600971.SS,"Anhui Hengyuan Coal Industry and Electricity Power Co.,Ltd",SH,yahoo_screener
+600787.SS,"CMST Development Co.,Ltd.",SH,yahoo_screener
+601163.SS,"Triangle Tyre Co.,Ltd",SH,yahoo_screener
+688306.SS,Ningbo PIA Automation Holding Corp.,SH,yahoo_screener
+600882.SS,"Shanghai Milkground Food Tech Co., Ltd",SH,yahoo_screener
+600184.SS,"North Electro-Optic Co.,Ltd.",SH,yahoo_screener
+600458.SS,"Zhuzhou Times New Material Technology Co., Ltd.",SH,yahoo_screener
+603859.SS,"Nancal Technology Co.,Ltd",SH,yahoo_screener
+601860.SS,"Jiangsu Zijin Rural Commercial Bank Co.,Ltd",SH,yahoo_screener
+600728.SS,"PCI Technology Group Co., Ltd.",SH,yahoo_screener
+600509.SS,"Xinjiang Tianfu Energy Co., Ltd.",SH,yahoo_screener
+600649.SS,"Shanghai Chengtou Holding Co., Ltd.",SH,yahoo_screener
+603619.SS,"Zhongman Petroleum and Natural Gas Group Corp.,Ltd.",SH,yahoo_screener
+603218.SS,"Riyue Heavy Industry Co.,Ltd",SH,yahoo_screener
+605168.SS,"Three's Company Future Technology Group Co., Ltd.",SH,yahoo_screener
+600740.SS,"Shanxi Coking Co., Ltd.",SH,yahoo_screener
+688289.SS,Sansure Biotech Inc.,SH,yahoo_screener
+601003.SS,"Liuzhou Iron&Steel Co., Ltd",SH,yahoo_screener
+603601.SS,"Chongqing Zaisheng Technology Co., Ltd.",SH,yahoo_screener
+603300.SS,"Zhejiang Haikong Nanke Huatie Digital Intelligence and Technology Co., Ltd.",SH,yahoo_screener
+603599.SS,"Anhui Guangxin Agrochemical Co., Ltd.",SH,yahoo_screener
+605123.SS,"Wuxi Paike New Materials Technology Co.,Ltd.",SH,yahoo_screener
+688239.SS,"Guizhou Aviation Technical Development Co., Ltd",SH,yahoo_screener
+600020.SS,Henan Zhongyuan Expressway Company Limited,SH,yahoo_screener
+688182.SS,"Jiangsu Cai Qin Technology Co., Ltd",SH,yahoo_screener
+688076.SS,"Jiangsu Sinopep-Allsino Biopharmaceutical Co., Ltd.",SH,yahoo_screener
+600929.SS,"Snowsky Salt Industry Group CO.,LTD",SH,yahoo_screener
+688789.SS,Hangzhou Honghua Digital Technology Stock Company LTD.,SH,yahoo_screener
+603281.SS,"Hubei Jianghan New Materials Co., Ltd.",SH,yahoo_screener
+603800.SS,"Jiangsu Hongtian Technology Co.,Ltd.",SH,yahoo_screener
+603915.SS,"Jiangsu Guomao Reducer Co., Ltd.",SH,yahoo_screener
+688739.SS,"Liaoning Chengda Biotechnology Co., Ltd.",SH,yahoo_screener
+603269.SS,"Jiangsu Seagull Cooling Tower Co.,Ltd.",SH,yahoo_screener
+603299.SS,"Jiang Su Suyan Jingshen Co.,Ltd",SH,yahoo_screener
+605006.SS,"Shandong Fiberglass Group Co., Ltd",SH,yahoo_screener
+605222.SS,"Shanghai QiFan Cable Co., Ltd",SH,yahoo_screener
+600273.SS,"Zhejiang Jiahua Energy Chemical Industry Co.,Ltd.",SH,yahoo_screener
+688697.SS,"Neway CNC Equipment (Suzhou) Co., Ltd.",SH,yahoo_screener
+688083.SS,"Zwsoft Co.,Ltd.",SH,yahoo_screener
+603608.SS,"Topscore Fashion Co., Ltd.",SH,yahoo_screener
+603319.SS,"Hunan Meihu Intelligent Manufacturing Co., Ltd.",SH,yahoo_screener
+688050.SS,"Eyebright Medical Technology (Beijing) Co., Ltd.",SH,yahoo_screener
+603360.SS,Dalian BIO-CHEM Company Limited,SH,yahoo_screener
+603220.SS,"China Bester Group Telecom Co., Ltd.",SH,yahoo_screener
+600789.SS,"Shandong Lukang Pharmaceutical Co.,Ltd.",SH,yahoo_screener
+603202.SS,"Heilongjiang Tianyouwei Electronics Co., Ltd.",SH,yahoo_screener
+603466.SS,"Shanghai Fengyuzhu Culture Technology Co., Ltd.",SH,yahoo_screener
+605133.SS,"Jiangsu Rongtai Industry Co., Ltd.",SH,yahoo_screener
+600693.SS,"Fujian Dongbai (Group) Co.,Ltd.",SH,yahoo_screener
+600973.SS,"Baosheng Science and Technology Innovation Co.,Ltd.",SH,yahoo_screener
+603227.SS,"Xinjiang Xuefeng Sci-Tech(Group)Co.,Ltd",SH,yahoo_screener
+603809.SS,"Chengdu Haoneng Technology Co., Ltd.",SH,yahoo_screener
+600746.SS,Jiangsu SOPO Chemical Co. Ltd.,SH,yahoo_screener
+600587.SS,"Shinva Medical Instrument Co.,Ltd.",SH,yahoo_screener
+600251.SS,"Xinjiang Guannong Co.,Ltd.",SH,yahoo_screener
+688610.SS,"Hefei I-TEK OptoElectronics Co., Ltd.",SH,yahoo_screener
+600917.SS,Chongqing Gas Group Corporation Ltd.,SH,yahoo_screener
+605060.SS,"Allied Machinery Co., Ltd.",SH,yahoo_screener
+600389.SS,"Nantong Jiangshan Agrochemical & Chemicals Co.,Ltd.",SH,yahoo_screener
+600889.SS,"Nanjing Technical Equipment Technology Co., Ltd.",SH,yahoo_screener
+603538.SS,"Ningbo Menovo Pharmaceutical Co., Ltd.",SH,yahoo_screener
+605333.SS,"Kunshan Huguang Auto Harness Co.,Ltd.",SH,yahoo_screener
+600129.SS,"Chongqing Taiji Industry(Group) Co.,Ltd",SH,yahoo_screener
+601226.SS,"Huadian Heavy Industries Co., Ltd.",SH,yahoo_screener
+600903.SS,Guizhou Gas Group Corporation Ltd.,SH,yahoo_screener
+600557.SS,"Jiangsu Kanion Pharmaceutical Co.,Ltd.",SH,yahoo_screener
+600313.SS,"Zhongnongfa Seed Industry Group Co., Ltd.",SH,yahoo_screener
+688337.SS,"Rigol Technologies Co., Ltd.",SH,yahoo_screener
+603219.SS,"Ningbo Fujia Industrial Co., Ltd.",SH,yahoo_screener
+603496.SS,EmbedWay Technologies (Shanghai) Corporation,SH,yahoo_screener
+600771.SS,"GuangYuYuan Chinese Herbal Medicine Co., Ltd.",SH,yahoo_screener
+600866.SS,"Star Lake Bioscience Co., Inc.Zhaoqing Guangdong",SH,yahoo_screener
+605365.SS,Leedarson IoT Technology Inc.,SH,yahoo_screener
+603416.SS,"Wuxi Xinjie Electric Co., Ltd.",SH,yahoo_screener
+600108.SS,"Gansu Yasheng Industrial (Group) Co., Ltd.",SH,yahoo_screener
+603196.SS,Shanghai Porigine Chemical Material Group Co. Ltd.,SH,yahoo_screener
+688366.SS,"Shanghai Haohai Biological Technology Co., Ltd.",SH,yahoo_screener
+603181.SS,"Zhejiang Huangma Technology Co.,Ltd",SH,yahoo_screener
+603277.SS,"Yindu Kitchen Equipment Co., Ltd",SH,yahoo_screener
+601388.SS,Yechiu Metal Recycling (China) Ltd.,SH,yahoo_screener
+603163.SS,"Acter Technology Integration Group Co., Ltd.",SH,yahoo_screener
+603489.SS,"Bafang Electric (Suzhou) Co.,Ltd.",SH,yahoo_screener
+605007.SS,"Wuzhou Special Paper Group Co., Ltd.",SH,yahoo_screener
+603866.SS,"Toly Bread Co., Ltd.",SH,yahoo_screener
+688631.SS,"Nanjing LES Information Technology Co., Ltd.",SH,yahoo_screener
+603985.SS,"Jiangyin Hengrun Heavy Industries Co., Ltd",SH,yahoo_screener
+603091.SS,"Zhejiang Zhongxin Environmental Protection Technology Group Co., Ltd.",SH,yahoo_screener
+600590.SS,"Tellhow Sci-Tech Co., Ltd.",SH,yahoo_screener
+603368.SS,"Guangxi LiuYao Group Co., Ltd",SH,yahoo_screener
+603980.SS,"Zhejiang Jihua Group Co., Ltd.",SH,yahoo_screener
+603977.SS,"Jiangxi Guotai Group Co.,Ltd.",SH,yahoo_screener
+603229.SS,"Zhejiang Ausun Pharmaceutical Co., Ltd.",SH,yahoo_screener
+603279.SS,Jingjin Equipment Inc.,SH,yahoo_screener
+603050.SS,"Shijiazhuang Kelin Electric Co., Ltd.",SH,yahoo_screener
+688570.SS,"Beijing Tianma Intelligent Control Technology CO., LTD.",SH,yahoo_screener
+600966.SS,"Shandong Bohui Paper Industry Co.,Ltd.",SH,yahoo_screener
+688696.SS,"XGIMI Technology Co.,Ltd.",SH,yahoo_screener
+688601.SS,"Wuxi ETEK Microelectronics Co.,Ltd.",SH,yahoo_screener
+600603.SS,Guanghui Logistics Co.Ltd,SH,yahoo_screener
+688720.SS,"Jiangsu Aisen Semiconductor Material Co.,Ltd.",SH,yahoo_screener
+688305.SS,"KEDE Numerical Control Co., Ltd.",SH,yahoo_screener
+601500.SS,"Jiangsu General Science Technology Co., Ltd.",SH,yahoo_screener
+603990.SS,"Suzhou MedicalSystem Technology Co., Ltd.",SH,yahoo_screener
+603399.SS,"Jinzhou Yongshan Lithium Co., Ltd",SH,yahoo_screener
+688518.SS,"Shenzhen United Winners Laser Co., Ltd.",SH,yahoo_screener
+603366.SS,"Solareast Holdings Co., Ltd.",SH,yahoo_screener
+600425.SS,"Xinjiang Qingsong Building Materials and Chemicals Group Co., Ltd.",SH,yahoo_screener
+600081.SS,"Dong Feng Electronic Technology Co.,Ltd.",SH,yahoo_screener
+600449.SS,"Ningxia Building Materials Group Co.,Ltd",SH,yahoo_screener
+603855.SS,Warom Technology Incorporated Company,SH,yahoo_screener
+603383.SS,"Fujian Apex Software Co.,LTD",SH,yahoo_screener
+688232.SS,"Guo Tai Epoint Software Co.,Ltd",SH,yahoo_screener
+600742.SS,"Changchun FAWAY Group Automobile Components Co., Ltd.",SH,yahoo_screener
+688334.SS,"Xi'an High Voltage Apparatus Research Institute Co., Ltd.",SH,yahoo_screener
+600477.SS,"Hangxiao Steel Structure Co., Ltd.",SH,yahoo_screener
+600106.SS,"Chongqing road & bridge co.,ltd",SH,yahoo_screener
+603877.SS,"Ningbo Peacebird Fashion Co.,Ltd.",SH,yahoo_screener
+603098.SS,"Center International Group Co.,Ltd.",SH,yahoo_screener
+605555.SS,"Ningbo Dechang Electrical Machinery Made Co., Ltd.",SH,yahoo_screener
+603311.SS,"Zhejiang Goldensea Hi-Tech Co., Ltd",SH,yahoo_screener
+605009.SS,"Hangzhou Haoyue Personal Care Co., Ltd",SH,yahoo_screener
+603822.SS,"Zhejiang Jiaao Enprotech Stock Co., Ltd",SH,yahoo_screener
+603012.SS,"Shanghai Chuangli Group Co., Ltd.",SH,yahoo_screener
+601566.SS,"Joeone Co.,Ltd",SH,yahoo_screener
+603111.SS,"Nanjing Kangni Mechanical & Electrical Co.,Ltd",SH,yahoo_screener
+600230.SS,"Cangzhou Dahua Co., Ltd.",SH,yahoo_screener
+603105.SS,"Zhejiang Sunoren Solar Technology Co.,Ltd.",SH,yahoo_screener
+600829.SS,HPGC Renmintongtai Pharmaceutical Corporation,SH,yahoo_screener
+600576.SS,"Zhejiang Sunriver Culture Tourism Co.,Ltd.",SH,yahoo_screener
+600165.SS,"Ningxia Zhongke Biotechnology Co., Ltd",SH,yahoo_screener
+688196.SS,"Longyan Zhuoyue New Energy Co., Ltd.",SH,yahoo_screener
+600284.SS,"Shanghai Pudong Construction Co.,Ltd.",SH,yahoo_screener
+603901.SS,"Hangzhou Youngsun Intelligent Equipment Co., Ltd.",SH,yahoo_screener
+688623.SS,"Zhejiang Shuangyuan Technology Co., Ltd.",SH,yahoo_screener
+600138.SS,"China Cyts Tours Holding Co., Ltd.",SH,yahoo_screener
+603312.SS,"Suzhou West Deane New Power Electric Co.,Ltd.",SH,yahoo_screener
+603211.SS,"Jintuo Technology Co., Ltd.",SH,yahoo_screener
+603711.SS,"XIANGPIAOPIAO Food Co.,Ltd",SH,yahoo_screener
+600644.SS,"Leshan Electric Power Co.,Ltd",SH,yahoo_screener
+688109.SS,"Pinming Technology Co., Ltd.",SH,yahoo_screener
+603499.SS,"Shanghai Sunglow Packaging Technology Co.,Ltd",SH,yahoo_screener
+688389.SS,"Shenzhen Lifotronic Technology Co., Ltd.",SH,yahoo_screener
+600790.SS,"Zhejiang China Light&Textile Industrial City Group Co.,Ltd",SH,yahoo_screener
+688733.SS,"Anhui Estone Materials Technology Co.,Ltd",SH,yahoo_screener
+603158.SS,"Changzhou Tenglong AutoPartsCo.,Ltd.",SH,yahoo_screener
+688226.SS,"Wetown Electric Group Co., Ltd.",SH,yahoo_screener
+600681.SS,"Bestsun Energy Co., Ltd.",SH,yahoo_screener
+688711.SS,"Macmic Science&Technology Co.,Ltd.",SH,yahoo_screener
+688267.SS,"China Catalyst Holding Co., Ltd.",SH,yahoo_screener
+600197.SS,"Xinjiang Yilite Industry Co.,Ltd",SH,yahoo_screener
+603088.SS,JDM JingDaMachine (Ningbo) Co.Ltd,SH,yahoo_screener
+688181.SS,"Beijing Bayi Space LCD Technology Co.,Ltd.",SH,yahoo_screener
+688639.SS,"Anhui Huaheng Biotechnology Co., Ltd.",SH,yahoo_screener
+688307.SS,"Jiaxing ZMAX Optech Co., Ltd.",SH,yahoo_screener
+688768.SS,Anhui Ronds Science & Technology Incorporated Company,SH,yahoo_screener
+605300.SS,"Jiahe Foods Industry Co., Ltd.",SH,yahoo_screener
+605208.SS,"Shanghai Yongmaotai Automotive Technology Co., Ltd.",SH,yahoo_screener
+600168.SS,"Wuhan Sanzhen Industry Holding Co.,Ltd",SH,yahoo_screener
+603060.SS,"China Testing & Certification International Group Co.,Ltd.",SH,yahoo_screener
+605268.SS,"Wangli Security & Surveillance Product Co., Ltd",SH,yahoo_screener
+600976.SS,"Jianmin Pharmaceutical Group Co.,Ltd.",SH,yahoo_screener
+603097.SS,"Jiangsu Huachen Transformer Co., Ltd.",SH,yahoo_screener
+603916.SS,"Sobute New Materials Co., Ltd",SH,yahoo_screener
+603661.SS,"Henglin Home Furnishings Co.,Ltd",SH,yahoo_screener
+603020.SS,"Apple Flavor & Fragrance Group Co.,Ltd.",SH,yahoo_screener
+600101.SS,"Sichuan Mingxing Electric Power Co., Ltd.",SH,yahoo_screener
+600628.SS,"Shanghai New World Co., Ltd",SH,yahoo_screener
+603615.SS,"Chahua Modern Housewares Co., Ltd.",SH,yahoo_screener
+688186.SS,"Zhangjiagang Guangda Special Material Co., Ltd.",SH,yahoo_screener
+603611.SS,"Noblelift Intelligent Equipment Co.,Ltd.",SH,yahoo_screener
+600379.SS,"Shaanxi Baoguang Vacuum Electric Device Co., Ltd.",SH,yahoo_screener
+603081.SS,"Zhejiang Dafeng Industry Co., Ltd",SH,yahoo_screener
+600222.SS,"Henan Taloph Pharmaceutical Stock Co.,Ltd",SH,yahoo_screener
+603928.SS,"Suzhou Xingye Materials Technology Co.,Ltd.",SH,yahoo_screener
+601599.SS,"Zhewen Pictures Group co.,ltd",SH,yahoo_screener
+603960.SS,"Shanghai Kelai Mechatronics Engineering Co.,Ltd.",SH,yahoo_screener
+688786.SS,"Jiangxi Yuean Advanced Materials Co.,Ltd.",SH,yahoo_screener
+603676.SS,"Tibet Weixinkang Medicine Co., Ltd.",SH,yahoo_screener
+600805.SS,"Jiangsu Yueda Investment Co., Ltd.",SH,yahoo_screener
+603032.SS,"Delixi New Energy Technology Co., Ltd.",SH,yahoo_screener
+603062.SS,MEGA P&C Advanced Materials (Shanghai) Company Limited,SH,yahoo_screener
+603869.SS,"ENC Digital Technology Co., Ltd",SH,yahoo_screener
+600727.SS,"Shan Dong Lu Bei Chemical Co.,Ltd",SH,yahoo_screener
+603167.SS,"Bohai Ferry Group Co., Ltd.",SH,yahoo_screener
+603966.SS,"Eurocrane (China) Co., Ltd.",SH,yahoo_screener
+600505.SS,"Sichuan Xichang Electric Power Co.,Ltd.",SH,yahoo_screener
+688386.SS,Pan Asian Microvent Tech (Jiangsu) Corporation,SH,yahoo_screener
+603035.SS,"Jiangsu Changshu Automotive Trim Group Co., Ltd.",SH,yahoo_screener
+603798.SS,Qingdao Copton Technology Company Limited,SH,yahoo_screener
+600333.SS,"Changchun Gas Co,.Ltd",SH,yahoo_screener
+603639.SS,"Hailir Pesticides and Chemicals Group Co.,Ltd.",SH,yahoo_screener
+600527.SS,"Jiangsu Jiangnan High Polymer Fiber Co.,Ltd",SH,yahoo_screener
+603725.SS,"Guangdong Tianan New Material Co., Ltd.",SH,yahoo_screener
+603339.SS,"Square Technology Group Co.,Ltd",SH,yahoo_screener
+603520.SS,"Zhejiang Starry Pharmaceutical Co.,Ltd.",SH,yahoo_screener
+603566.SS,"Pulike Biological Engineering, Inc.",SH,yahoo_screener
+688377.SS,"Nanjing Develop Advanced Manufacturing Co., Ltd.",SH,yahoo_screener
+600067.SS,"Citychamp Dartong Advanced Materials Co., Ltd.",SH,yahoo_screener
+605337.SS,"Zhe Jiang Li Zi Yuan Food Co.,Ltd.",SH,yahoo_screener
+600785.SS,"Yinchuan Xinhua Commercial (Group) Co., Ltd.",SH,yahoo_screener
+603600.SS,"UE Furniture Co., Ltd.",SH,yahoo_screener
+603579.SS,Shanghai Rongtai Health Technology Corporation Limited,SH,yahoo_screener
+603357.SS,"Anhui Transport Consulting & Design Institute Co.,Ltd.",SH,yahoo_screener
+688551.SS,"Hefei Kewell Power System Co.,Ltd.",SH,yahoo_screener
+600467.SS,"Shandong Homey Aquatic Development Co.,Ltd.",SH,yahoo_screener
+688026.SS,"Guangzhou Jet Bio-Filtration Co., Ltd.",SH,yahoo_screener
+605077.SS,"Zhejiang Huakang Pharmaceutical Co., Ltd.",SH,yahoo_screener
+603231.SS,"Solbar Ningbo Protein Technology Co., Ltd.",SH,yahoo_screener
+600731.SS,"Hunan Haili Chemical Industry Co.,Ltd.",SH,yahoo_screener
+603987.SS,"Shanghai Kindly Enterprise Development Group Co.,LTD.",SH,yahoo_screener
+603350.SS,"Ananda Drive Techniques(Shanghai)Co., Ltd.",SH,yahoo_screener
+688070.SS,"Chengdu JOUAV Automation Tech Co.,Ltd.",SH,yahoo_screener
+603309.SS,"Well Lead Medical Co., Ltd.",SH,yahoo_screener
+688722.SS,Beijing Tongyizhong New Material Technology Corporation,SH,yahoo_screener
+603315.SS,"Liaoning Fu-An Heavy Industry Co.,Ltd",SH,yahoo_screener
+688533.SS,"Suzhou SONAVOX Electronics Co.,Ltd.",SH,yahoo_screener
+605108.SS,"Tongqinglou Catering Co., Ltd.",SH,yahoo_screener
+603289.SS,"Tederic Machinery Co., LTD",SH,yahoo_screener
+603970.SS,"Sino-Agri Leading Biosciences Co.,Ltd",SH,yahoo_screener
+603886.SS,"Ganso Co., Ltd.",SH,yahoo_screener
+603096.SS,Thinkingdom Media Group Ltd.,SH,yahoo_screener
+688358.SS,"Chison Medical Technologies Co., Ltd.",SH,yahoo_screener
+603527.SS,"Anhui Zhongyuan New Materials Co., Ltd.",SH,yahoo_screener
+603280.SS,"Fujian South Highway Machinery Co., Ltd.",SH,yahoo_screener
+603585.SS,"Suli Co., Ltd.",SH,yahoo_screener
+688687.SS,"Beijing Kawin Technology Share-Holding Co., Ltd.",SH,yahoo_screener
+600620.SS,"Shanghai Tianchen Co.,Ltd",SH,yahoo_screener
+600419.SS,"Xinjiang Tianrun Dairy Co., Ltd.",SH,yahoo_screener
+603677.SS,"Qijing Machinery Co., Ltd.",SH,yahoo_screener
+603037.SS,"Shanghai Carthane Co.,Ltd.",SH,yahoo_screener
+603017.SS,"ARTS Group Co., Ltd",SH,yahoo_screener
+605166.SS,"Juheshun Advanced Material Co., Ltd.",SH,yahoo_screener
+688080.SS,"Beijing InHand Networks Technology Co., Ltd.",SH,yahoo_screener
+600858.SS,"Inzone Group Co.,Ltd",SH,yahoo_screener
+603617.SS,"Junhe Pumps Holding Co.,Ltd",SH,yahoo_screener
+603086.SS,"Shandong Cynda Chemical Co.,Ltd.",SH,yahoo_screener
+688201.SS,"Beijing Infosec Technologies Co.,Ltd",SH,yahoo_screener
+603136.SS,"Jiangsu Tianmu Lake Tourism Co.,Ltd",SH,yahoo_screener
+603076.SS,"Ningbo Lehui International Engineering Equipment Co.,Ltd",SH,yahoo_screener
+603326.SS,"Nanjing OLO Home Furnishing Co.,Ltd",SH,yahoo_screener
+603787.SS,"Jiangsu Xinri E-Vehicle Co., Ltd.",SH,yahoo_screener
+900926.SS,"Shanghai Baosight Software Co.,Ltd.",SH,yahoo_screener
+603117.SS,"Jiangsu Wanlin Modern Logistics Co., Ltd.",SH,yahoo_screener
+603700.SS,"Ningbo Water Meter (Group) Co.,Ltd.",SH,yahoo_screener
+600692.SS,"Shang Hai Ya Tong Co.,Ltd.",SH,yahoo_screener
+603900.SS,Leysen Jewellery Inc.,SH,yahoo_screener
+603041.SS,"Jiangsu Maysta Chemical Co., Ltd.",SH,yahoo_screener
+600965.SS,"Fortune Ng Fung Food (Hebei) Co.,Ltd",SH,yahoo_screener
+603214.SS,"Shanghai Aiyingshi Co.,Ltd",SH,yahoo_screener
+600561.SS,"Jiangxi Changyun Co., Ltd.",SH,yahoo_screener
+S63.SI,Singapore Technologies Engineering Ltd,SG,yahoo_screener
+G07.SI,Great Eastern Holdings Limited,SG,yahoo_screener
+J36.SI,Jardine Matheson Holdings Limited,SG,yahoo_screener
+9CI.SI,CapitaLand Investment Limited,SG,yahoo_screener
+U96.SI,Sembcorp Industries Ltd,SG,yahoo_screener
+N2IU.SI,Mapletree Pan Asia Commercial Trust,SG,yahoo_screener
+ME8U.SI,Mapletree Industrial Trust,SG,yahoo_screener
+T14.SI,Tianjin Pharmaceutical Da Ren Tang Group Corporation Limited,SG,yahoo_screener
+A7RU.SI,Keppel Infrastructure Trust,SG,yahoo_screener
+AWX.SI,AEM Holdings Ltd.,SG,yahoo_screener
+F17.SI,GuocoLand Limited,SG,yahoo_screener
+558.SI,UMS Integration Limited,SG,yahoo_screener
+TS0U.SI,OUE Real Estate Investment Trust,SG,yahoo_screener
+8C8U.SI,Centurion Accommodation REIT,SG,yahoo_screener
+9A4U.SI,ESR-REIT,SG,yahoo_screener
+NC2.SI,Sri Trang Agro-Industry Public Company Limited,SG,yahoo_screener
+P40U.SI,Starhill Global Real Estate Investment Trust,SG,yahoo_screener
+B61.SI,Bukit Sembawang Estates Limited,SG,yahoo_screener
+W05.SI,Wing Tai Holdings Limited,SG,yahoo_screener
+Q5T.SI,Far East Hospitality Trust,SG,yahoo_screener
+RE4.SI,Geo Energy Resources Limited,SG,yahoo_screener
+CRPU.SI,Sasseur Real Estate Investment Trust,SG,yahoo_screener
+U9E.SI,China Everbright Water Limited,SG,yahoo_screener
+MZH.SI,Nanofilm Technologies International Limited,SG,yahoo_screener
+QC7.SI,Q & M Dental Group (Singapore) Limited,SG,yahoo_screener
+5GD.SI,Sunpower Group Ltd.,SG,yahoo_screener
+HQU.SI,Oiltek International Limited,SG,yahoo_screener
+BHK.SI,SIIC Environment Holdings Ltd.,SG,yahoo_screener
+TLKM.JK,Perusahaan Perseroan (Persero) PT Telekomunikasi Indonesia Tbk,ID,yahoo_screener
+UNTR.JK,PT United Tractors Tbk,ID,yahoo_screener
+ADRO.JK,PT Alamtri Resources Indonesia Tbk,ID,yahoo_screener
+MEDC.JK,PT Medco Energi Internasional Tbk,ID,yahoo_screener
+BTPN.JK,PT Bank SMBC Indonesia Tbk,ID,yahoo_screener
+INDY.JK,PT. Indika Energy Tbk,ID,yahoo_screener
+BSDE.JK,PT Bumi Serpong Damai Tbk,ID,yahoo_screener
+SMGR.JK,PT Semen Indonesia (Persero) Tbk,ID,yahoo_screener
+HRUM.JK,PT Harum Energy Tbk,ID,yahoo_screener
+HEAL.JK,PT Medikaloka Hermina Tbk,ID,yahoo_screener
+BJBR.JK,PT Bank Pembangunan Daerah Jawa Barat dan Banten Tbk,ID,yahoo_screener
+SSIA.JK,PT Surya Semesta Internusa Tbk,ID,yahoo_screener
+CNMA.JK,PT Nusantara Sejahtera Raya Tbk,ID,yahoo_screener
+BIPI.JK,PT Astrindo Nusantara Infrastruktur Tbk,ID,yahoo_screener
+SMRA.JK,PT Summarecon Agung Tbk,ID,yahoo_screener
+GULF-R.BK,Gulf Development Public Company Limited,TH,yahoo_screener
+AOT.BK,Airports of Thailand Public Company Limited,TH,yahoo_screener
+TRUE.BK,True Corporation Public Company Limited,TH,yahoo_screener
+PTTGC.BK,PTT Global Chemical Public Company Limited,TH,yahoo_screener
+OR.BK,PTT Oil and Retail Business Public Company Limited,TH,yahoo_screener
+CCET.BK,Cal-Comp Electronics (Thailand) Public Company Limited,TH,yahoo_screener
+KCE.BK,KCE Electronics Public Company Limited,TH,yahoo_screener
+EGCO.BK,Electricity Generating Public Company Limited,TH,yahoo_screener
+CBG.BK,Carabao Group Public Company Limited,TH,yahoo_screener
+BGRIM.BK,B.Grimm Power Public Company Limited,TH,yahoo_screener
+HANA.BK,Hana Microelectronics Public Company Limited,TH,yahoo_screener
+LH.BK,Land and Houses Public Company Limited,TH,yahoo_screener
+STA.BK,Sri Trang Agro-Industry Public Company Limited,TH,yahoo_screener
+STGT.BK,Sri Trang Gloves (Thailand) Public Company Limited,TH,yahoo_screener
+TASCO.BK,Tipco Asphalt Public Company Limited,TH,yahoo_screener
+BAM.BK,Bangkok Commercial Asset Management Public Company Limited,TH,yahoo_screener
+LHHOTEL.BK,LH Hotel Leasehold Real Estate Investment Trust,TH,yahoo_screener
+PTG.BK,PTG Energy Public Company Limited,TH,yahoo_screener
+TPIPP.BK,TPI Polene Power Public Company Limited,TH,yahoo_screener
+SPCG.BK,SPCG Public Company Limited,TH,yahoo_screener
+SINGER.BK,Singer Thailand Public Company Limited,TH,yahoo_screener
+THG.BK,Thonburi Healthcare Group Public Company Limited,TH,yahoo_screener
+TTA.BK,Thoresen Thai Agencies Public Company Limited,TH,yahoo_screener
+SCGD.BK,SCG Decor Public Company Limited,TH,yahoo_screener
+DUSIT.BK,Dusit Thani Public Company Limited,TH,yahoo_screener
+WHAIR.BK,WHA Industrial Leasehold Real Estate Investment Trust,TH,yahoo_screener
+EASTW.BK,Eastern Water Resources Development and Management Public Company Limited,TH,yahoo_screener
+COCOCO.BK,Thai Coconut Public Company Limited,TH,yahoo_screener
+6742.KL,YTL Power International Berhad,MY,yahoo_screener
+5398.KL,Gamuda Berhad,MY,yahoo_screener
+6888.KL,Axiata Group Berhad,MY,yahoo_screener
+0166.KL,Inari Amertron Berhad,MY,yahoo_screener
+3336.KL,IJM Corporation Berhad,MY,yahoo_screener
+5292.KL,UWC Berhad,MY,yahoo_screener
+0151.KL,Kelington Group Berhad,MY,yahoo_screener
+5005.KL,Unisem (M) Berhad,MY,yahoo_screener
+4715.KL,Genting Malaysia Berhad,MY,yahoo_screener
+0208.KL,Greatech Technology Berhad,MY,yahoo_screener
+7293.KL,Yinson Holdings Berhad,MY,yahoo_screener
+0270.KL,NationGate Holdings Berhad,MY,yahoo_screener
+1171.KL,MBSB Berhad,MY,yahoo_screener
+0215.KL,Solarvest Holdings Berhad,MY,yahoo_screener
+9822.KL,SAM Engineering & Equipment (M) Berhad,MY,yahoo_screener
+0245.KL,MN Holdings Berhad,MY,yahoo_screener
+5250.KL,7-Eleven Malaysia Holdings Berhad,MY,yahoo_screener
+3417.KL,Eastern & Oriental Berhad,MY,yahoo_screener
+0223.KL,Samaiden Group Berhad,MY,yahoo_screener
+5238.KL,AirAsia Group Berhad,MY,yahoo_screener
+8907.KL,EG Industries Berhad,MY,yahoo_screener
+0045.KL,Southern Score Builders Berhad,MY,yahoo_screener
+0303.KL,Alpha IVF Group Berhad,MY,yahoo_screener
+0351.KL,Lim Seong Hai Capital Berhad,MY,yahoo_screener
+7179.KL,Lagenda Properties Berhad,MY,yahoo_screener
+4162.KL,British American Tobacco (Malaysia) Berhad,MY,yahoo_screener
+1287.KL,Exsim Hospitality Berhad,MY,yahoo_screener
+0265.KL,Infomina Berhad,MY,yahoo_screener
+7081.KL,Pharmaniaga Berhad,MY,yahoo_screener
+0291.KL,Critical Holdings Berhad,MY,yahoo_screener
+8052.KL,Central Global Berhad,MY,yahoo_screener
+5351.KL,Empire Premium Food Berhad,MY,yahoo_screener
+5071.KL,Coastal Contracts Bhd,MY,yahoo_screener
+5317.KL,CPE Technology Berhad,MY,yahoo_screener
+7241.KL,Nextgreen Global Berhad,MY,yahoo_screener
+4383.KL,Jaya Tiasa Holdings Berhad,MY,yahoo_screener

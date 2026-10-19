@@ -1,1 +1,7 @@
 market,stage,error,at
+HK,no-source,取扱銘柄の一覧が無い(data/rakuten/HK.csv を配置してください),2026-10-19T15:38:50
+SH,no-source,取扱銘柄の一覧が無い(data/rakuten/SH.csv を配置してください),2026-10-19T15:38:50
+SG,no-source,取扱銘柄の一覧が無い(data/rakuten/SG.csv を配置してください),2026-10-19T15:38:50
+ID,no-source,取扱銘柄の一覧が無い(data/rakuten/ID.csv を配置してください),2026-10-19T15:38:50
+TH,no-source,取扱銘柄の一覧が無い(data/rakuten/TH.csv を配置してください),2026-10-19T15:38:50
+MY,no-source,取扱銘柄の一覧が無い(data/rakuten/MY.csv を配置してください),2026-10-19T15:38:50

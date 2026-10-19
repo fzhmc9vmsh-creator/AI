@@ -1,2 +1,1 @@
 ticker,market,stage,error,at
-9010.T,JP,fetch,RuntimeError: HTTP 404 Not Found (mock: 銘柄データなし),2026-10-19T07:39:23
