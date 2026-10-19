@@ -1,0 +1,69 @@
+# 小型株スクリーニング 94: インド・欧州・イスラエル・豪州・東南アジア・中南米(2026-10-19、WebSearch 38回)
+
+## 0. 結論(先に)
+- **一次ふるい①(コンセンサスEPS 3年CAGR≥31% かつ PEG≤0.75)を、時価総額2億〜10億ドルの範囲で満たす会社は1社も確認できなかった。** 足切りは緩めていない。
+- 最も近いのは (a) Hypoport(独): PEGは約0.5〜0.7で足りるが、CAGRが約26%で5pt不足。(b) Trustpilot(英): CAGR約41%は足りるが、PEGが約0.84で未達で、時価総額も約$1.2Bと上限を少し超える。
+- **範囲外(時価総額が約$2B)だが数字が突出する会社が1社ある。** Hacksaw(スウェーデン、B2Bスロットのレベニューシェア)は、Q2の希薄化後EPSが+43%で、予想PERは約10倍と推定される。範囲を広げるか、Opusの判断を仰ぎたい。
+- 構造の仮評価(6条件の平均)が3.8以上と見込める会社は、今回の候補にはなかった(最高でも3.5前後)。「構造候補」はゼロ。
+- 欧州の vertical SaaS(Lime、Vitec、Craneware、Cerillion、Alfa、Newgen など)は、PERは低いが、EPS成長が+3〜13%程度で、CAGR≥31%に届かない。ふるいが排除したのは「成長が足りない低PER」で、PERの低さは救いにならない。
+- Japan/台湾の再審査枠(カナミック、eWeLL、Andes、M31)は、私の担当地域外なので触れていない。
+
+## 1. 前提と限界(必読)
+- 検索ツールはスニペット要約型で、WebFetchは使えない。**1日売買代金は全社で取得できなかった。**「未取得」と記す。一部の「推定」は流動性の目安に過ぎない。
+- 為替は概算で置いた。GBP/USD 1.30、EUR/USD 1.15、SEK 10.5、INR 89、AUD 0.65、NZD 0.58、MYR 4.2、BRL 5.5。時価総額のドル換算は全て【推定】。
+- 株数が検索で取れなかった会社は、時価総額を「未取得」とするか、【推定】と明記した。
+- アナリスト人数は、取れた場合のみ記載した。多くの小型株は0〜2名で、集計サイトの値はばらつく。会社計画とコンセンサスは区別して記す。
+- EPSの単位(通貨・調整後かどうか)が出所で揃わないものがある。その場合は「揃っていない」と注記した。
+
+## 2. 一覧表(範囲内で確認できた会社と、範囲外の参考)
+凡例: 構造の仮評価は「条件1/8/11/12/13/7」の順に S=5, A=4, B=3, C=2, D=1 で仮置きし、平均を示す(全て【仮置き】)。
+
+| 会社 | ティッカー(市場) | 業種 | 時価総額 | 1日売買代金 | 予想PER(年度) | EPS 3年CAGR(出所・人数、または会社計画) | PEG | 収益の性格 | 構造の仮評価(6条件と平均) | 需要・途上・未注目の一言 | 出典URL・日付 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Hypoport** | HYQ (XETRA、独) | 住宅ローン取引プラットフォーム Europace+不動産金融ソフト | 約€550〜590M(約$0.64〜0.68B)【推定。株価€77.75(9/10)〜€84.95(8月)×約6.9M株】 | 未取得 | 2026e 約17.4倍 / 2027e 約13.5倍【推定=時価総額÷純利益予想】 | 純利益 2026e €31.7M→2027e €40.8M→2028e €50.3M(aktien.guide、アナリスト6名)。2026→28のCAGR **約26%**。3年(2025→28)は2025実績が取れず未確認 | 約0.52(2027e PER÷26)〜0.67(2026e PER÷26)。**CAGRが31%未満で①不成立** | 取引手数料(取扱高連動)が中心。景気・金利で振れる。陳腐化設備は持たない | 4/3/4/3/3/3 = **3.3**【仮置き】 | 株価は年初来約-35%、52週安値€68.20。Europaceの取扱高は横ばい(H1 €38.3B)。「2027〜28の借換え波」を会社が期待。未注目と空売り増の両方。**金利が下がれば純利益が一気に伸びる局面前の可能性。** | https://www.boerse-express.com (9/10)、https://www.cash-online.de/a/hypoport-sieht-sich-auf-kurs-jahresziele-2026-bestaetigt-723902/ (8月)、https://aktien.guide/kursziel/Hypoport-DE0005493365 |
+| **Trustpilot** | TRST (LSE、英) | 消費者レビュー・プラットフォーム(企業向けサブスク) | 約£0.92〜0.99B(約$1.2〜1.3B)【推定。384.5M株(9/30)×238〜258p】。**上限をやや超える** | 未取得 | 2027e 約34倍 / 2028e 約24倍【推定。240p÷7p、÷10p】 | EPS 2026 5p→2027 7p→2028 10p(aktien.guide掲載の集計値。人数不明)。CAGR **約41%**。H1 2026 調整後希薄化EPSは+44%(3.1セント) | 約0.84(2027e PER÷41)。**PEG未達** | 企業向けサブスク(有料プラン)。ブッキング+18%(定為替)、売上+23% | 3/4/4/4/3/3 = **3.5**【仮置き】 | 7月に-11%。バイバック継続(株数は年初394M→384.5M)。AI・エンタープライズ需要。**株価が200p前後に下がればPEG≤0.75、時価総額も$1B以内**【推定】 | https://www.directorstalkinterviews.com/trustpilot-h1-revenue-rises-23-as-ai-and-enterprise-demand-drive-growth/4121262546 (9/15)、https://www.investegate.co.uk/announcement/rns/trustpilot-group--trst/total-voting-rights/9698775 (9/30)、https://stocksguide.com/en/forecast/Trustpilot-GB00BNK9TP58 |
+| **Gentrack** | GTK (NZX/ASX) | 電力・水道会社向け料金請求(CIS)SaaS | 約NZ$420〜490M(約$0.25〜0.29B)【推定。株価NZ$3.76〜4.33。別の集計は大きく食い違う】 | 未取得 | FY27e 約30倍【推定。NZ$3.76÷12.3c。通貨が揃っていない可能性】 | FY26 5.41c→FY27 12.31c(Bell Potter、1名、5/6)。リベース後。UBSはEBITDA予想をFY26 -48%/FY27 -39%/FY28 -42%に下げた。会社の中期目標は「15%超のCAGR」 | 算出不可(3年CAGRを揃えられない) | 継続収益が約78%(HY26 $85.3M/$110M)。乗換えコストは高い | 4/4/4/4/3/2 = **3.5**【仮置き】 | 5月に売上ガイダンスを下げ、$20Mバイバック。FY26決算は11月ごろ(9月決算)【推定】。**ガイダンス後の信頼回復が焦点** | https://fnarena.com/index.php/analysis-data/consensus-forecasts/stock-analysis/?code=GTK 、https://filingreader.com/news-wire/newzealand/2026-05-04/gentrack-cuts-revenue-guidance-and-plans-20m-share-buyback |
+| **Catapult Sports** | CAT (ASX、豪) | スポーツ選手の計測・分析SaaS | 約US$0.7〜0.8B【推定。ROIC.ai $794M(日付不明)】 | 未取得 | FY27e 約40倍超【推定。1名のEPS 8.4豪セント÷株価約A$3.1〜3.7】 | FY27 EPS 8.4c(FNArena、1名、6/12)。ほかの集計は負の値もあり不一致。FY26 EBITDA +67%(US$24.7M)、ACV +28%(定為替)、有機+18% | 約1以上【推定】 | ACV(年間契約額)ベースのサブスク | 3/3/4/4/3/3 = **3.3**【仮置き】 | 決算で株価+17〜23%。無借金、現金$53M超。**EPSが小さい基数からの上昇で、見かけのCAGRは大きくなり得る** | https://fnarena.com/index.php/analysis-data/consensus-forecasts/stock-analysis/?code=CAT 、https://www.proactiveinvestors.co.uk/companies/news/1092569/catapult-delivers-record-revenue-as-operating-profit-jumps-67-1092569.html |
+| SiteMinder | SDR (ASX、豪) | 宿泊施設向けSaaS(予約・取引手数料) | 未取得(株価A$3.40、株数未確認) | 未取得 | FY27e 約97倍【推定。A$3.40÷3.5c】 | MS予想 FY27 EPS 3.5c(FY26前の古い予想)。FY26はEBITDA+96%(A$28.1M)、ARR+24.1%、純損失$11.3M | 算出不可(赤字から) | ARR(サブスク)+取引型 | 構造評価は見送り | 決算で-11%。FY27はARR成長20%台のガイド | https://www.fool.com.au/2026/08/25/siteminder-fy26-profit-nearly-doubles-revenue-jumps-22/ (8/25) |
+| Boku | BOKU (AIM、英) | キャリア決済(モバイル課金)取扱高連動 | 未取得(約93.5p。株数未確認) | 未取得 | FY26 約15.6倍(Edison、ガイダンス引き下げ前の古い値) | FY26 EPS $0.08(引き下げ前)。7/8にFY26売上$135〜142M、EBITDA $38〜42Mへ下方修正。H1売上+11% | 算出不可。**CAGR不足** | 取扱高連動の手数料 | 構造評価は見送り | 1日で-33%。バイバック$23.5M。成長鈍化 | https://www.ajbell.co.uk/news/articles/boku-plunges-33-warns-sales-and-earnings-will-miss-market-hopes (7/8) |
+| Craneware | CRW (AIM、英) | 米病院向け収益管理・価格SaaS | 未取得(約1,040p) | 未取得 | 約11〜12倍(FY26調整後EPS 116.8セント。1,040p÷約90p)【推定】 | FY27売上ガイダンスがARRと同じ$185Mで横ばい。NRR 100%。マージンは中〜高20%台、FY28に30%超を目標 | 算出不可。**成長ゼロ** | 継続収益中心 | 構造評価は見送り | 決算で-22%。7月にサイバー事件 | https://quartr.com/events/craneware-plc-crw-h2-2026_FL5iwYaZ |
+| Cerillion | CER (AIM、英) | 通信事業者向け請求・CRM | 未取得(約1,050p) | 未取得 | 約16〜18倍【推定。0.65ポンドEPSベース】 | 消費者予想EPS 0.57→0.58→0.65(約+3%、+11%) | 算出不可。**CAGR約8〜11%** | 保守・SaaS中心 | 構造評価は見送り | 通期が市場ガイダンスに届かない旨を警告済み | https://stockanalysis.com/quote/aim/CER/forecast/ 、https://simplywall.st/stocks/gb/software/aim-cer/cerillion-shares/future |
+| Alfa Financial Software | ALFA (AIM、英) | リース・ファイナンス業界特化ソフト | 未取得 | 未取得 | 未取得 | H1営業利益-15%(一時費用あり。除くと+2%) | 算出不可。**成長ゼロ** | ライセンス+保守 | 構造評価は見送り | 一時要因を除いても横ばい | https://quartr.com/events/alfa-financial-software-holdings-plc-alfa-h1-2026_oSnjxrYP |
+| Eagle Eye Solutions | EYE (AIM、英) | ロイヤルティ・プロモーションSaaS | 未取得 | 未取得 | 未取得 | 前期ARR+31%だが、総売上-3.1%。FY27に売上・EBITDAとも二桁成長へ復帰を目標(会社発言) | 算出不可 | ARR型 | 構造評価は見送り | 会社目標のみで、アナリストのEPS予想は取れず | https://www.ajbell.co.uk/news/articles/eagle-eye-solutions-says-well-placed-double-digit-revenue-growth |
+| Lime Technologies | LIME (ストックホルム) | 中小企業向けCRM(北欧) | 未取得(株価SEK 234.5) | 未取得 | 未取得 | Q2 EPS SEK 2.39(前年1.97、+21%)。ARR +10%。売上+12%。次回決算 10/20 | 算出不可。**CAGRは約10〜20%** | 継続収益約67%(Q2 SEK 136.7M/205.3M) | 構造評価は見送り | 10/20の決算が近い | https://www.inderes.se/releases/the-trend-continues-increased-growth-and-profitability-interim-report-lime-technologies-ab-publ-january-june-2026 |
+| Vitec Software | VIT B (ストックホルム) | 業種特化ソフト(多数の買収) | 未取得 | 未取得 | 未取得 | Q2 EPS SEK 2.98(前年2.64、約+13%) | 算出不可。**CAGR不足** | 継続収益中心 | 構造評価は見送り | 買収型で成長が機械的 | https://www.webull.com/news/15233229900948480 |
+| Truecaller | TRUE B (ストックホルム) | 発信者識別アプリ(サブスク+広告) | 未取得 | 未取得 | 未取得 | H1 EPS SEK 0.25(前年0.64)。純利益-62%。サブスク売上は定為替で+41%、継続収益が総売上の49% | 算出不可。**EPS減少** | サブスクの比率が上昇中 | 構造評価は見送り | 広告・一時費用で利益が急減 | https://www.inderes.se/releases/truecaller-ab-sequential-growth-across-all-revenue-streams |
+| Pexip | PEXIP (オスロ) | 企業向けビデオ会議基盤 | 未取得 | 未取得 | 未取得 | EPSは取れず。ARR $140.2M(+18%)、EBITDA率22% | 算出不可 | ARR型 | 構造評価は見送り | EPS予想が取れなかったため判定不能 | https://www.inderes.se/releases/pexip-q2-2026-report-continued-growth-and-margin-expansion |
+| Link Mobility | LINK (オスロ) | 企業向けSMS・メッセージング(従量) | 未取得 | 未取得 | 未取得 | EPSは取れず。調整後EBITDA +28%、調整後利益NOK 118M(前年63M)、売上+17% | 算出不可 | 従量課金 | 構造評価は見送り | EPS予想が取れなかったため判定不能 | https://www.linkmobility.com/news/q2-interim-report-2026 |
+| Text SA | TXT (ワルシャワ) | LiveChat/ChatBot等のSaaS | 未取得(株価約43ズウォティ、日付不明) | 未取得 | 未取得 | FY2025/26純利益 -29%(PLN 116.6M)。1Q 2026/27 売上$22.6M(+2.1%) | 算出不可。**EPS減少** | ARR $89.5M | 構造評価は見送り | PKO BP目標45ズウォティ | https://www.parkiet.com/technologie/art44718771-text-pokazal-wyniki-co-mozna-z-nich-wyczytac |
+| Newgen Software | NEWGEN (NSE) | 業務プロセス・コンテンツ管理ソフト | 約₹7,500億【推定。株価₹540×株数は記憶ベース】(約$0.85B) | 未取得 | FY28e 約18.5倍(₹540÷₹29.2) | FY27E EPS ₹28.8→FY28E ₹29.2(ICICI Direct、1社)。Q1 PAT +26%だが売上+11% | 約18倍/1%台。**CAGR不足** | 保守・クラウド・年金型(Annuity売上が約71%) | 構造評価は見送り | 通期のマージン目標20〜25% | https://mailcontent.icicidirect.com/mailcontent/idirect_newgen_q1fy27.pdf |
+| Aurionpro Solutions | AURIONPRO (NSE) | 銀行向けソフト・デジタル決済基盤 | 未取得(株価₹740〜770) | 未取得 | 目標倍率22倍(MNCL) | Q1 PAT -10.6%。売上+6.3%。MNCLはFY27/28のEPSを-9%/-9.6%に下方修正 | 算出不可。**EPS減少** | 銀行向けの受託+ライセンス | 構造評価は見送り | 続けて「冴えない四半期」と評価 | https://www.mnclgroup.com/aurionpro-solutions-ltd-q1fy27-company-update |
+| Zaggle Prepaid | ZAGGLE (NSE) | 法人向けプリペイド・経費管理 | 約₹2,200億前後【推定。₹2.8〜3.2K億から-20%】(約$0.25B) | 未取得 | 約21倍(直近。急落前) | Q1 EPS ₹1.30(前年1.94)、PAT -33%。Dice買収の統合費用 | 算出不可。**EPS減少** | 取扱高連動+SaaS | 構造評価は見送り | 決算後に下限(-20%)。Equirusは目標₹350へ引き下げ | https://inc42.com/buzz/zaggle-plunges-20-to-hit-lower-circuit-after-q1-profit-slump/ |
+| Locaweb(LWSA) | LWSA3 (B3、ブラジル) | ウェブ・EC SaaS | 約US$0.40B(getquin)/R$2.1B(日付不明) | 未取得 | 2026e 約11倍 / 2027e 約9.6倍(XP) | 2Q26 調整後純利益 R$65.7M(+48.7%)、売上は+8.2%。2026→27のEPS増は約+15%(XP PERから逆算)【推定】 | 算出不可。**CAGR約15%** | SaaS・ホスティング(継続) | 構造評価は見送り | 調整後利益は低い基数からの伸び。目標R$5〜6(XP/Safra/Citi) | https://visnoinvest.com.br/news/14795/locaweb-lwsa3-registra-receita-de-r-3752-mi-no-2t26 |
+| Riskified | RSKD (NASDAQ、イスラエル) | EC不正検知(取引ごとの手数料) | 未取得(株数143〜145M、株価未取得) | 未取得 | 未取得(GAAP赤字) | 非GAAP EPS H1 $0.07。通期売上ガイダンス$400〜410M。GAAP純損失$9.1M(Q2) | 算出不可 | GMV連動の手数料 | 構造評価は見送り | 売上+22%に加速。現金$223.6M | https://ir.riskified.com/news-releases/news-release-details/riskified-reports-strong-second-quarter-2026-accelerating |
+| Fiverr | FVRR (NYSE、イスラエル) | フリーランス・マーケットプレイス(手数料) | 約$0.3B【推定。株価$8.86×約36M株。株数は記憶ベース】 | 未取得 | 未取得 | 非GAAP EPS Q2 $0.50(前年$0.69)。2026売上ガイド$356〜372M(-14〜-17%) | 算出不可。**EPS・売上とも減少** | 手数料型だが縮小中 | 構造評価は見送り | AIによる代替で売上減 | https://www.marketbeat.com/instant-alerts/fiverr-international-nysefvrr-announces-earnings-results-misses-estimates-by-002-eps-2026-07-30/ |
+| CoinShares | CSHR (NASDAQ/ストックホルム) | 暗号資産運用(ETP手数料) | 未取得 | 未取得 | 未取得 | H1 2026 純損失$23.9M(前年+$77.6M)。AUM $5.5B(8月末$6.9B) | 算出不可 | AUM連動の手数料 | 構造評価は見送り | 暗号資産相場の影響が大きい | https://quartr.com/events/coinshares-plc-cshr-q2-2026_oj9Lj6CF |
+
+### 2-2. 時価総額が範囲外(上)だが、未審査で数字が目立つ会社
+| 会社 | ティッカー(市場) | 業種 | 時価総額 | 1日売買代金 | 予想PER | EPS | PEG | 収益の性格 | 構造の仮評価 | 一言 | 出典URL・日付 |
+|---|---|---|---|---|---|---|---|---|---|---|---|
+| **Hacksaw** | HACK (ストックホルム) | B2B iGamingスロット開発(レベニューシェア) | SEK 23.35B(7/21)=約$2.2B【推定】 → **範囲外(上)** | 未取得 | 約9〜10倍【推定。H1 EPS €0.315を2倍して通期€0.63前後、株価SEK 68.45≒€6.3】 | Q2 希薄化後EPS €0.158(前年0.111、+43%)。H1 €0.315(前年0.212、+49%)。売上+29%、調整後EBIT率82%。コンセンサスは取れず | 算出不可(コンセンサス不明)。【参考推定】成長が30%台を保てばPEGは0.3前後 | 運営会社の賭け金(GGR)に対する分配金で、ロイヤリティに近い。ヒット作に左右される | 3/3/3/4/2/4 = **3.2**【仮置き】 | 暫定CEO。ライセンスと規制のリスク。**範囲を$2.5Bまで広げれば最優先で調べる価値あり** | https://storage.mfn.se/e9275d67-4763-4df5-86c5-9157cbaf59ea/interim-report-q2-2026.pdf 、https://www.tipranks.com/stocks/se:hack/market-cap |
+| Moltiply Group(旧 MutuiOnline) | MOL (ミラノ) | 保険・住宅ローン比較+BPO | 約€1.4B【推定。€35.20(9/8)×約40M株は記憶ベース】=約$1.6B → **範囲外** | 未取得 | 未取得 | H1 純利益 +69%(€37.1M)、売上+13.7%、EBITDA約+21% | 算出不可 | 手数料+BPO | 構造評価は見送り | 純有利子負債€453M | https://www.borsaitaliana.it/borsa/notizie/teleborsa/finanza/moltiply-l-utile-semestrale-vola-a-371-milioni-di-euro-trainato-dalla-divisione-mavriq-151_2026-09-08_TLB.html?lang=it |
+| Zetrix AI(旧 MyEG) | ZETRIX (Bursa Malaysia) | 電子政府の取引手数料+Zetrixブロックチェーン | RM6.0〜7.0B=約$1.4〜1.7B【推定】 → **範囲外** | 未取得 | 6.7〜8.6倍(MarketInOut、Simply Wall St) | 2Q 純利益RM269.3M(+35%)、H1 +42%(RM540.6M)。ただし集計(2025年11月、5名)の成長は年+7.6%、2026 RM889M→2027 RM1,001M | 算出不可。**CAGR約8%** | 政府手続き手数料に、Zetrixトークン売却や評価損益が混ざる【推定】 | 構造評価は見送り | 利益の質に疑問。ふるいの②は半分だけ該当 | https://theedgemalaysia.com/node/815667 (8/24)、https://simplywall.st/stocks/my/commercial-services/klse-zetrix/zetrix-ai-berhad-shares/future |
+| Nazara Technologies | NAZARA (NSE) | ゲーム・eスポーツ | ₹12,475〜13,147億=約$1.4〜1.5B → 範囲外 | 未取得 | 未取得 | Q1 FY27は純損失₹79.9億。PL CapitalがFY27E EPSを-37%、FY28Eを-15% | 算出不可 | ゲーム+広告 | 構造評価は見送り | 赤字転落 | https://plindia.com/ResReport/NAZARA-6-8-27-PL.pdf |
+| RateGain | RATEGAIN (NSE) | 旅行業界向けSaaS・データ | ₹11,194億=約$1.26B → 範囲外 | 未取得 | 未取得 | Q1 FY27 調整後PAT +148.8%だが、**Sojern買収(2025/11)の連結によるもので有機ではない**。FY27売上ガイド約₹3,100億(+70%) | 算出不可 | SaaS・データ | 構造評価は見送り | 買収効果を除くと成長は鈍る【推定】 | https://www.multibagg.ai/market-pulse/articles/rategain-q1-fy27-profit-surge-cmshbwbii00h30zlglbfbdf94 |
+
+## 3. 二次審査(13条件フル)に回すべき上位5社
+一次ふるい①を満たす会社は無かった。以下は「足切りに最も近い順」で、**条件を緩めるのではなく、不足点を二次で確かめる**という位置づけ。
+
+1. **Hypoport(HYQ、独)**: PEGは約0.5〜0.7で最も安く、CAGRも約26%でほぼ届く。Europaceは銀行700超と仲介者を束ねる取引ネットワークで、条件11(模倣困難)と1(10年の優位)を評価できる。株価は年初来-35%で、金利サイクルの底にいる可能性がある。二次で確かめる点は、(a) 2025実績を含めた3年CAGR(31%に届くか)、(b) 純利益が金利に連動するため「条件12・13」が低くならないか、(c) 空売りが増えている理由。
+2. **Trustpilot(TRST、英)**: 今回確認できた中で唯一、EPSのCAGRが31%を超える(約41%、集計値)。PEGは約0.84で足りないが、株価が200p前後なら0.75以内に入り、時価総額も$1B以内に収まる【推定】。二次で確かめる点は、(a) 調整後EPSとGAAP EPSの差(株式報酬、GAAPはH1に小さな赤字)、(b) 5p→7p→10pの出所と人数、(c) AIによるレビュー信頼性への影響。
+3. **Gentrack(GTK、NZ/豪)**: 乗換えコストの高い公益事業向けSaaSで、継続収益は約78%。FY26→27のEPSは5.4c→12.3cへ反発する予想。ただし5月にガイダンスを下げており、UBSの予想は大きく下方修正されている。**FY26決算(11月ごろ)の直後に、予想の確度を見て判断**するのがよい。PERは約30倍で、CAGRが31%に届くかは、FY28以降の集計が揃わないと決められない。
+4. **Catapult Sports(CAT、豪)**: EBITDA +67%、ACV +28%で、無借金。ただし予想PERは約40倍超【推定】で、EPS予想は1名分のみ。PEGの確認が先決。二次の前に、FY27〜28のEPS予想(複数名)が取れるかを確認する。
+5. **Hacksaw(HACK、スウェーデン)【範囲外】**: 時価総額が約$2.2Bと範囲を超えているが、EPS +43%、売上+29%、調整後EBIT率82%、予想PERは約10倍と推定され、PEGでは今回の中で最も安い可能性が高い。二次に回すなら、Opusが範囲の拡張を許可することが前提。条件13(ヒット依存)と条件12(レベニューシェアの安定性)が弱く、構造の平均は3.2と仮置きした。
+
+## 4. 今回の探索で分かったこと(Opus向けの示唆)
+- 欧州・インド・豪州の小型SaaS/決済株は、2026年に成長鈍化かガイダンス引き下げ(Boku、Craneware、Gentrack、Newgen、Aurionpro、Zaggle、Truecaller、Nazara)が相次いだ。この分野では「PERが低い」ことと「CAGR≥31%」が両立しない。
+- EPSが+40%超で伸びている会社(Hacksaw、Moltiply、Zetrix、Locaweb、RateGain)は、(a) 時価総額が範囲を超える、(b) 低い基数や買収・一過性要因による、(c) 先行きの集計が低い、のいずれかだった。
+- 今回カバーできなかった領域: イスラエルはRiskified/Fiverrのみ確認(Nayax、Global-e、eToro、Pagayaは審査済み)。東南アジアはZetrix(旧MyEG)のみで、他に該当を見つけられなかった。中南米はLocawebのみ。ロイヤリティ・ライセンス(Ecora、Deterra、医薬ロイヤリティの欧州小型株)は検索回数の制約で未着手。取引所系の小型株(インド以外の地方取引所)も未着手。
+- 1日売買代金は全社で未取得。二次に進める会社は、板の厚さを別途確認すること(特にGentrack、Catapult、Hypoportは薄い可能性が高い【推定】)。
