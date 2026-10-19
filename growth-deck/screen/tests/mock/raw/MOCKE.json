@@ -1,0 +1,27 @@
+{
+ "ticker": "MOCKE",
+ "shortName": "Mock Engineering E",
+ "currency": "USD",
+ "marketCap": 9000000000.0,
+ "forwardPE": 20.0,
+ "trailingPE": null,
+ "trailingEps": 4.8,
+ "forwardEps": 5.4,
+ "sector": "Industrials",
+ "industry": "Engineering & Construction",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 5.4,
+   "numberOfAnalysts": 8,
+   "yearAgoEps": 5.0
+  },
+  "+1y": {
+   "avg": 8.32,
+   "numberOfAnalysts": 8,
+   "yearAgoEps": 5.4
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

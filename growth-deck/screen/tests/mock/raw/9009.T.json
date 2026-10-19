@@ -1,0 +1,27 @@
+{
+ "ticker": "9009.T",
+ "shortName": "MockNoCover I",
+ "currency": "JPY",
+ "marketCap": 500000000000.0,
+ "forwardPE": 18.0,
+ "trailingPE": null,
+ "trailingEps": 90,
+ "forwardEps": 110,
+ "sector": "Technology",
+ "industry": "Software - Infrastructure",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 110,
+   "numberOfAnalysts": 0,
+   "yearAgoEps": 100
+  },
+  "+1y": {
+   "avg": 180,
+   "numberOfAnalysts": 0,
+   "yearAgoEps": 110
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

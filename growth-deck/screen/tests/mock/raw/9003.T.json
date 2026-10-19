@@ -1,0 +1,34 @@
+{
+ "ticker": "9003.T",
+ "shortName": "MockAuto C",
+ "currency": "JPY",
+ "marketCap": 5000000000000.0,
+ "forwardPE": 24.0,
+ "trailingPE": null,
+ "trailingEps": 400,
+ "forwardEps": 440,
+ "sector": "Consumer Cyclical",
+ "industry": "Auto Manufacturers",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 440,
+   "numberOfAnalysts": 20,
+   "yearAgoEps": 300
+  },
+  "+1y": {
+   "avg": 588,
+   "numberOfAnalysts": 20,
+   "yearAgoEps": 440
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.12
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

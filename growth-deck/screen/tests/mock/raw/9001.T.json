@@ -1,0 +1,44 @@
+{
+ "ticker": "9001.T",
+ "shortName": "MockDenki A",
+ "currency": "JPY",
+ "marketCap": 2000000000000.0,
+ "forwardPE": 20.0,
+ "trailingPE": null,
+ "trailingEps": 110,
+ "forwardEps": 130,
+ "sector": "Technology",
+ "industry": "Consumer Electronics",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 130,
+   "numberOfAnalysts": 14,
+   "yearAgoEps": 100
+  },
+  "+1y": {
+   "avg": 180,
+   "numberOfAnalysts": 14,
+   "yearAgoEps": 130
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.15
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": {
+  "0y": {
+   "avg": 9000000000000.0,
+   "numberOfAnalysts": 14,
+   "yearAgoRevenue": null
+  },
+  "+1y": {
+   "avg": 10000000000000.0,
+   "numberOfAnalysts": 14
+  }
+ }
+}

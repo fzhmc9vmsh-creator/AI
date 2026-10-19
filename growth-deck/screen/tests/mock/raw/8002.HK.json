@@ -1,0 +1,27 @@
+{
+ "ticker": "8002.HK",
+ "shortName": "MockBank O",
+ "currency": "HKD",
+ "marketCap": 150000000000.0,
+ "forwardPE": 9.0,
+ "trailingPE": null,
+ "trailingEps": 40,
+ "forwardEps": 45,
+ "sector": "Financial Services",
+ "industry": "Banks - Regional",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 45,
+   "numberOfAnalysts": null,
+   "yearAgoEps": 60
+  },
+  "+1y": {
+   "avg": 96.0,
+   "numberOfAnalysts": null,
+   "yearAgoEps": 45
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

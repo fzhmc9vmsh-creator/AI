@@ -1,0 +1,27 @@
+{
+ "ticker": "MOCKD",
+ "shortName": "Mock Loss D",
+ "currency": "USD",
+ "marketCap": 3000000000.0,
+ "forwardPE": null,
+ "trailingPE": null,
+ "trailingEps": -1.2,
+ "forwardEps": -0.5,
+ "sector": "Technology",
+ "industry": "Software - Application",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": -0.5,
+   "numberOfAnalysts": 6,
+   "yearAgoEps": -0.8
+  },
+  "+1y": {
+   "avg": 0.3,
+   "numberOfAnalysts": 6,
+   "yearAgoEps": -0.5
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

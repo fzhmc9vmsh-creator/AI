@@ -1,0 +1,34 @@
+{
+ "ticker": "MOCKA",
+ "shortName": "Mock Software A",
+ "currency": "USD",
+ "marketCap": 60000000000.0,
+ "forwardPE": 22.0,
+ "trailingPE": null,
+ "trailingEps": 2.2,
+ "forwardEps": 2.8,
+ "sector": "Technology",
+ "industry": "Software - Application",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 2.8,
+   "numberOfAnalysts": 25,
+   "yearAgoEps": 2.0
+  },
+  "+1y": {
+   "avg": 3.6,
+   "numberOfAnalysts": 25,
+   "yearAgoEps": 2.8
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.14
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

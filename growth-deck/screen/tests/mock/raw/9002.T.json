@@ -1,0 +1,34 @@
+{
+ "ticker": "9002.T",
+ "shortName": "MockFood B",
+ "currency": "JPY",
+ "marketCap": 800000000000.0,
+ "forwardPE": 28.0,
+ "trailingPE": null,
+ "trailingEps": 190,
+ "forwardEps": 280,
+ "sector": "Consumer Defensive",
+ "industry": "Packaged Foods",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 280,
+   "numberOfAnalysts": 8,
+   "yearAgoEps": 200
+  },
+  "+1y": {
+   "avg": 365,
+   "numberOfAnalysts": 8,
+   "yearAgoEps": 280
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.08
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

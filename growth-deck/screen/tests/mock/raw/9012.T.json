@@ -1,0 +1,34 @@
+{
+ "ticker": "9012.T",
+ "shortName": "MockBank L",
+ "currency": "JPY",
+ "marketCap": 2500000000000.0,
+ "forwardPE": 9.0,
+ "trailingPE": null,
+ "trailingEps": 120,
+ "forwardEps": 128,
+ "sector": "Financial Services",
+ "industry": "Banks - Regional",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 128,
+   "numberOfAnalysts": 10,
+   "yearAgoEps": 80
+  },
+  "+1y": {
+   "avg": 140,
+   "numberOfAnalysts": 10,
+   "yearAgoEps": 128
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.05
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

@@ -1,0 +1,34 @@
+{
+ "ticker": "MOCKB",
+ "shortName": "Mock Health B",
+ "currency": "USD",
+ "marketCap": 30000000000.0,
+ "forwardPE": 19.0,
+ "trailingPE": null,
+ "trailingEps": 3.9,
+ "forwardEps": 4.6,
+ "sector": "Healthcare",
+ "industry": "Drug Manufacturers - Specialty & Generic",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 4.6,
+   "numberOfAnalysts": 12,
+   "yearAgoEps": 4.0
+  },
+  "+1y": {
+   "avg": 6.35,
+   "numberOfAnalysts": 12,
+   "yearAgoEps": 4.6
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.11
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

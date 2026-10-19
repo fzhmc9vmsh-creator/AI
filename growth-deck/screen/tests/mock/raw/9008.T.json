@@ -1,0 +1,27 @@
+{
+ "ticker": "9008.T",
+ "shortName": "MockSmall H",
+ "currency": "JPY",
+ "marketCap": 20000000000.0,
+ "forwardPE": 15.0,
+ "trailingPE": null,
+ "trailingEps": 40,
+ "forwardEps": 48,
+ "sector": "Industrials",
+ "industry": "Specialty Industrial Machinery",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 48,
+   "numberOfAnalysts": 3,
+   "yearAgoEps": 50
+  },
+  "+1y": {
+   "avg": 90,
+   "numberOfAnalysts": 3,
+   "yearAgoEps": 48
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

@@ -1,0 +1,27 @@
+{
+ "ticker": "9006.T",
+ "shortName": "MockSoft F",
+ "currency": "JPY",
+ "marketCap": 400000000000.0,
+ "forwardPE": null,
+ "trailingPE": null,
+ "trailingEps": -20,
+ "forwardEps": -5,
+ "sector": "Technology",
+ "industry": "Software - Application",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": -5,
+   "numberOfAnalysts": 4,
+   "yearAgoEps": -30
+  },
+  "+1y": {
+   "avg": 10,
+   "numberOfAnalysts": 4,
+   "yearAgoEps": -5
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

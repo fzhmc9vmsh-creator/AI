@@ -1,0 +1,27 @@
+{
+ "ticker": "8001.HK",
+ "shortName": "MockTel N",
+ "currency": "HKD",
+ "marketCap": 80000000000.0,
+ "forwardPE": 16.0,
+ "trailingPE": null,
+ "trailingEps": 46,
+ "forwardEps": 55,
+ "sector": "Communication Services",
+ "industry": "Telecom Services",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 55,
+   "numberOfAnalysts": 10,
+   "yearAgoEps": 40
+  },
+  "+1y": {
+   "avg": 72.9,
+   "numberOfAnalysts": 10,
+   "yearAgoEps": 55
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

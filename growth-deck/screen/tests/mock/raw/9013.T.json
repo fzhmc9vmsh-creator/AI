@@ -1,0 +1,27 @@
+{
+ "ticker": "9013.T",
+ "shortName": "MockPremium M",
+ "currency": "JPY",
+ "marketCap": 1200000000000.0,
+ "forwardPE": 36.0,
+ "trailingPE": null,
+ "trailingEps": 150,
+ "forwardEps": 160,
+ "sector": "Technology",
+ "industry": "Software - Application",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 160,
+   "numberOfAnalysts": 11,
+   "yearAgoEps": 100
+  },
+  "+1y": {
+   "avg": 169,
+   "numberOfAnalysts": 11,
+   "yearAgoEps": 160
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

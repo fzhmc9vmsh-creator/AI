@@ -1,0 +1,34 @@
+{
+ "ticker": "9011.T",
+ "shortName": "MockMemory K",
+ "currency": "JPY",
+ "marketCap": 3000000000000.0,
+ "forwardPE": 9.0,
+ "trailingPE": null,
+ "trailingEps": 600,
+ "forwardEps": 640,
+ "sector": "Technology",
+ "industry": "Semiconductor Memory",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 640,
+   "numberOfAnalysts": 12,
+   "yearAgoEps": 400
+  },
+  "+1y": {
+   "avg": 700,
+   "numberOfAnalysts": 12,
+   "yearAgoEps": 640
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.09
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

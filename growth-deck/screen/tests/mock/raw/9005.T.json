@@ -1,0 +1,34 @@
+{
+ "ticker": "9005.T",
+ "shortName": "MockRetail E",
+ "currency": "JPY",
+ "marketCap": 1000000000000.0,
+ "forwardPE": 35.0,
+ "trailingPE": null,
+ "trailingEps": 480,
+ "forwardEps": 505,
+ "sector": "Consumer Cyclical",
+ "industry": "Department Stores",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 505,
+   "numberOfAnalysts": 5,
+   "yearAgoEps": 500
+  },
+  "+1y": {
+   "avg": 520,
+   "numberOfAnalysts": 5,
+   "yearAgoEps": 505
+  }
+ },
+ "growth_estimates": {
+  "stock": {
+   "+5y": 0.02
+  },
+  "industry": {
+   "+5y": null
+  }
+ },
+ "revenue_estimate": null
+}

@@ -1,0 +1,22 @@
+ticker,name,market,source
+9001.T,MockDenki A,JP,mock
+9002.T,MockFood B,JP,mock
+9003.T,MockAuto C,JP,mock
+9004.T,MockSteel D,JP,mock
+9005.T,MockRetail E,JP,mock
+9006.T,MockSoft F,JP,mock
+9007.T,MockPharma G,JP,mock
+9008.T,MockSmall H,JP,mock
+9009.T,MockNoCover I,JP,mock
+9011.T,MockMemory K,JP,mock
+9010.T,MockFail J,JP,mock
+9012.T,MockBank L,JP,mock
+9013.T,MockPremium M,JP,mock
+8001.HK,MockTel N,HK,mock
+8002.HK,MockBank O,HK,mock
+8003.HK,MockRetail P,HK,mock
+MOCKA,Mock Software A,US,mock
+MOCKB,Mock Health B,US,mock
+MOCKC,Mock Energy C,US,mock
+MOCKD,Mock Loss D,US,mock
+MOCKE,Mock Engineering E,US,mock

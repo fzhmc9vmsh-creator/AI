@@ -1,0 +1,27 @@
+{
+ "ticker": "MOCKC",
+ "shortName": "Mock Energy C",
+ "currency": "USD",
+ "marketCap": 25000000000.0,
+ "forwardPE": 6.0,
+ "trailingPE": null,
+ "trailingEps": 5.5,
+ "forwardEps": 5.8,
+ "sector": "Energy",
+ "industry": "Oil & Gas E&P",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 5.8,
+   "numberOfAnalysts": 15,
+   "yearAgoEps": 3.0
+  },
+  "+1y": {
+   "avg": 6.31,
+   "numberOfAnalysts": 15,
+   "yearAgoEps": 5.8
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}

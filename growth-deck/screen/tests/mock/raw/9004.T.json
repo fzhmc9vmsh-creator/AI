@@ -1,0 +1,27 @@
+{
+ "ticker": "9004.T",
+ "shortName": "MockSteel D",
+ "currency": "JPY",
+ "marketCap": 300000000000.0,
+ "forwardPE": 19.0,
+ "trailingPE": null,
+ "trailingEps": 90,
+ "forwardEps": 125,
+ "sector": "Basic Materials",
+ "industry": "Steel",
+ "longBusinessSummary": "モック企業。値は架空。",
+ "earnings_estimate": {
+  "0y": {
+   "avg": 125,
+   "numberOfAnalysts": 6,
+   "yearAgoEps": 100
+  },
+  "+1y": {
+   "avg": 161.3,
+   "numberOfAnalysts": 6,
+   "yearAgoEps": 125
+  }
+ },
+ "growth_estimates": null,
+ "revenue_estimate": null
+}
