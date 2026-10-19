@@ -1,8 +1,8 @@
-// リスク(指示書 spec/ch1_ch4.md の s36)
+// リスク(第3版。指示書 spec/v3.md の s36)
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左: 発生確率 × 影響(本体評価に組み込んだリスクとテールリスク)。右: 兆候とトリガー',
-    source: 'calc/out/val.json、research_r2/R5_credit_fv.md・R7_funding_rates_capital.md、本資料 第4章の監視 KPI',
+    source: 'calc/out/growth_v3.json、research_r2/R5_credit_fv.md・R7_funding_rates_capital.md、本資料 第4章の判別 KPI',
   });
   const c = (t) => ({ text: t });
 
@@ -14,7 +14,7 @@ module.exports = function build(pres, L) {
     yTitle: '発生確率',
     xTitle: '1 株価値への影響',
     cells: [
-      ['Q3 の公正価値の評価減\n(EPS −0.02〜−0.06)', '景気減速で貸倒 +0.75pt\n(理論株価 −2.0)・\n資本の上限で成長が鈍る', '—'].map(c),
+      ['Q3 の公正価値の評価減\n(ヘッジ後 0〜−3.2 億ドル)\n1 株 0〜−0.18','景気減速で貸倒 +1.0pt\n(理論株価 18.4、−3.5)・\n資本の上限で成長が鈍る', '—'].map(c),
       ['Tech Platform の\n追加流出・利上げで\n預金コスト上昇', 'LPB の買い手の撤退\n(プライベート\nクレジットの流動性\nストレス)', '会計の再表示\n(空売りの主張、確率 5% 以下)'].map(c),
     ],
     highlight: [[1, 0]],
@@ -28,6 +28,7 @@ module.exports = function build(pres, L) {
     ['公正価値の評価減', '個人ローンのマーク 104% 未満、学生 103.5% 未満', '毎四半期'],
     ['資本の上限', '総自己資本比率 15% 未満、増資の発表', '毎四半期'],
     ['LPB の買い手の撤退', 'LPB の組成額 30 億ドル/四半期 未満が 2 期、手数料率 4% 未満', '毎四半期'],
+    ['市場が消費者金融の群の倍率で見続ける', '株価が示す PEG 0.85 のまま\n(構造 C の水準)。価値は変わらないが、\n差が埋まる時期が遅れる', '—'],
     ['会計の再表示', '監査人の限定意見・交代、10-K の遅延、SEC の照会、再表示', '随時'],
   ], { x: 7.15, y: 1.7, w: 5.68, colW: [1.65, 2.7, 1.33], fontSize: 9.5, rowH: 0.55, align: ['left', 'left'] });
 };

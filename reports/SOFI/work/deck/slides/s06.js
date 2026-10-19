@@ -1,5 +1,5 @@
 // 構造的要因サマリー(指示書 spec/v3.md の s06 節。カード・縦帯・矢印は手本と同じ。帯のバッジは B)
-// 押し下げは指示書どおり 2 項目(左から 2 枚。3 枚目の枠は空ける)
+// 押し下げは 2 項目。2 枚を広げて上段 3 枚と同じ幅に並べる
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
@@ -13,13 +13,14 @@ module.exports = function build(pres, L) {
     { conds: [['7', 'A'], ['8', 'B']], head: '同業より良い会員の質', body: '純償却 2.62%。同業は\n3.2〜4.2%' },
   ];
   const down = [
-    { conds: [['2', 'B'], ['13', 'B']], head: '自己資本の律速', body: '自給率 0.34。比率は\n半年で −4.1pt' },
-    { conds: [['6', 'A'], ['7', 'A']], head: '消費者金融の群として見られること', body: '株価が示す PEG 0.85\n(構造 C の水準)' },
+    { conds: [['2', 'B']], head: '自己資本の律速', body: '自給率 0.34。総自己資本比率は半年で −4.1pt\n(下限 14% まで 23 億ドル)' },
+    { conds: [['12', 'B'], ['13', 'B']], head: '消費者金融の群として見られること', body: '収益の約 6 割が貸出の利ざや。\n株価が示す PEG 0.85(構造 C の水準)' },
   ];
 
   const CW = 3.1, GAP = 0.25, CH = 1.85;
-  function card(c, i, y, tone) {
-    const x = 0.5 + i * (CW + GAP);
+  function card(c, i, y, tone, cw = CW) {
+    const x = 0.5 + i * (cw + GAP);
+    const CW = cw;
     const upper = tone === 'up';
     L.box(s, x, y, CW, CH, { fill: upper ? C.tint : C.gray, line: upper ? C.light : C.red, name: 'ovl_card_' + tone + i });
     // 1 行目: 条件番号と評価のバッジ
@@ -42,7 +43,8 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 0.5, 1.62, 9.8, '押し上げ要因', 'head_up');
   L.text(s, '押し下げ要因', { x: 0.5, y: 3.97, w: 9.8, h: 0.32, fontSize: 12, bold: true, color: C.red, margin: 0, valign: 'middle', objectName: 'head_down' });
   up.forEach((c, i) => card(c, i, 2.0, 'up'));
-  down.forEach((c, i) => card(c, i, 4.35, 'down'));
+  const DW = (3 * CW + GAP) / 2;
+  down.forEach((c, i) => card(c, i, 4.35, 'down', DW));
 
   // 右端の縦帯: 構造評価 B
   L.box(s, 10.75, 2.0, 2.08, 4.2, { fill: C.dark, line: C.dark, name: 'ovl_band' });
@@ -51,5 +53,5 @@ module.exports = function build(pres, L) {
 
   // カード列の右端から縦帯へ(上段は緑、下段は赤。下段は最後のカードの右端から)
   L.arrow(s, 0.5 + 2 * (CW + GAP) + CW, 2.0 + CH / 2, 10.75, 2.0 + CH / 2, { color: C.primary, width: 1 });
-  L.arrow(s, 0.5 + (down.length - 1) * (CW + GAP) + CW, 4.35 + CH / 2, 10.75, 4.35 + CH / 2, { color: C.red, width: 1 });
+  L.arrow(s, 0.5 + (down.length - 1) * (DW + GAP) + DW, 4.35 + CH / 2, 10.75, 4.35 + CH / 2, { color: C.red, width: 1 });
 };

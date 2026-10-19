@@ -19,7 +19,7 @@ module.exports = function build(pres, L) {
     ['Q2 26', '+7.5%(33.5%)', '+35.0%', '+29%', '+42.7%', '+75%', '1.54', '+54.2%', '+40.5%'],
     // 判定の行: 維持は灰、加速・上昇は緑の太字
     [{ text: '判定', options: { bold: true } }, '—', grey('高水準で維持'), '—', green('加速'), '—', green('上昇'), green('加速'), grey('加速の後に維持')],
-  ], { x: 0.5, y: 1.62, w: 8.3, colW: [0.7, 1.0, 0.95, 0.85, 0.8, 0.85, 0.9, 0.8, 1.45], fontSize: 9, rowH: 0.34 });
+  ], { x: 0.5, y: 1.62, w: 8.3, colW: [0.7, 1.0, 0.95, 0.85, 0.8, 0.85, 0.9, 0.8, 1.45], fontSize: 9, rowH: 0.36 });
 
   // 左下: FS の前年比の分解(Q2 2026)
   L.text(s, 'FS の前年比の分解(Q2 2026)', { x: 0.5, y: 4.45, w: 5.6, h: 0.28, fontSize: 9.5, bold: true, color: C.dark, valign: 'middle', objectName: 'sub_head' });
