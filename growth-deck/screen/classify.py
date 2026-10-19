@@ -55,6 +55,10 @@ def data_flags(r):
     if pd.notna(r.eps_trailing_local) and pd.notna(base) and base > 0:
         if r.eps_trailing_local / base > 3:
             f.append("trailing_jump")
+    if pd.notna(r.forward_pe_x) and r.forward_pe_x < 4:
+        f.append("pe_suspect")
+    if r.est_currency != r.currency:
+        f.append("fx_converted")
     if pd.isna(r.analysts_1y_n) or r.analysts_1y_n < 3:
         f.append("thin_coverage")
     if pd.notna(r.mcap_usd_mn) and r.mcap_usd_mn < 300:
@@ -84,10 +88,10 @@ def main():
     rv["data_flags"] = rv.apply(data_flags, axis=1)
     rv["summary"] = rv.ticker.map(summary_text)
     rv = rv.sort_values(["status", "peg_x"], ascending=[False, True])
-    cols = ["ticker", "name", "market", "status", "industry", "mcap_usd_mn", "g2_eps_cagr_pct",
-            "peg_x", "forward_pe_x", "analysts_1y_n", "data_flags", "summary"]
+    cols = ["ticker", "name", "market", "status", "industry", "mcap_usd_mn", "g2_eps_cagr_pct", "g1f_eps_growth_pct",
+            "g_used_pct", "peg_x", "forward_pe_x", "analysts_1y_n", "data_flags", "summary"]
     rv[cols].to_csv(os.path.join(OUT, "review.csv"), index=False)
-    ex[["ticker", "name", "market", "status", "industry", "g2_eps_cagr_pct", "peg_x"]].to_csv(
+    ex[["ticker", "name", "market", "status", "industry", "g_used_pct", "peg_x"]].to_csv(
         os.path.join(OUT, "excluded.csv"), index=False)
 
     lines = ["# 業種仕分けの結果", "",

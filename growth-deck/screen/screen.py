@@ -1,9 +1,16 @@
 #!/usr/bin/env python3
 """Step 3: 一次ふるい。ネットワーク不要(data/ のキャッシュと為替を読むだけ)。
 
-判定 (g2 = (EPS_+1y平均 / 実績年EPS)^(1/2) - 1 , PEG = 予想PE / (g2 x 100)):
-  合格 pass     : g2 >= 31% かつ PEG <= 0.75
-  境界 borderline: g2 >= 25% かつ PEG <= 0.90 (合格以外)
+判定:
+  g2   = (EPS_+1y平均 / 実績年EPS)^(1/2) - 1   (2年CAGR)
+  g1f  = EPS_+1y平均 / EPS_0y平均 - 1          (来期の伸び。底からの反発で g2 だけ膨らむのを防ぐ)
+  g    = min(g2, g1f)
+  PE   = 株価 / ((EPS_0y + EPS_+1y) / 2)        (株価 = trailingPE x trailingEps。
+         yfinance の forwardPE/forwardEps は分割前の値などで壊れていることがあるため使わない。
+         予想EPSの通貨が株価の通貨と違う場合(香港上場の中国企業など)は為替で換算する)
+  PEG  = PE / (g x 100)
+  合格 pass     : g >= 31% かつ PEG <= 0.75
+  境界 borderline: g >= 22% かつ PEG <= 1.00 (合格以外。二次審査で厳しく見るので網は広めに取る)
   共通の必須条件: 実績EPS > 0, 予想EPS(0y, +1y) > 0, 時価総額 >= 2億USD, アナリスト数 >= 1
   不合格 fail   : 上の条件を満たさない (理由を reasons に残す)
   欠損 missing  : 判定に必要な値が無く、ほかに不合格理由が無い
@@ -25,7 +32,7 @@ from universe import DATA, HERE, log
 
 OUT = HERE / "out"
 G2_PASS, PEG_PASS = 0.31, 0.75
-G2_BORDER, PEG_BORDER = 0.25, 0.90
+G2_BORDER, PEG_BORDER = 0.22, 1.00
 MCAP_USD_MIN = 2e8
 ANALYSTS_MIN = 1
 MARKET_ORDER = ["JP", "US", "HK", "SH", "SG", "ID", "TH", "MY"]
@@ -40,7 +47,8 @@ CYCLICAL_INDUSTRY_KEYS = [
 COLS = ["ticker", "name", "market", "status", "reasons", "missing", "cyclical_flag", "currency",
         "sector", "industry", "mcap_local_mn", "mcap_usd_mn", "fx_local_per_usd",
         "eps_trailing_local", "eps_0y_avg_local", "eps_1y_avg_local", "eps_base_yearago_local",
-        "g2_eps_cagr_pct", "g5y_eps_growth_pct", "forward_pe_x", "peg_x", "analysts_1y_n",
+        "g2_eps_cagr_pct", "g1f_eps_growth_pct", "g_used_pct", "g5y_eps_growth_pct", "price_local",
+        "est_currency", "forward_pe_x", "peg_x", "analysts_1y_n",
         "revenue_1y_avg_mn_local", "fetched_at", "data_source"]
 
 
@@ -74,8 +82,23 @@ def evaluate(u, d, rates):
     eps_tr = num(d.get("trailingEps"))
     eps0, eps1 = num(e0.get("avg")), num(e1.get("avg"))
     base = num(e0.get("yearAgoEps"))          # 実績年のEPS(0y行のyearAgoEps)
+    base_from_trailing = base is None and num(d.get("trailingEps")) is not None
+    est_cur = e1.get("currency") or e0.get("currency") or cur
+    if est_cur != cur:                        # 予想EPSを株価の通貨に換算
+        fx_est = num(rates.get(est_cur))
+        conv = (fx / fx_est) if (fx and fx_est) else None
+        eps0, eps1, base = [(v * conv if (v is not None and conv) else None) for v in (eps0, eps1, base)]
+    if base_from_trailing:                    # 実績年EPSが無いときは直近12か月EPSで代用(株価通貨)
+        base = eps_tr
     an1 = num(e1.get("numberOfAnalysts"))
-    fpe = num(d.get("forwardPE"))
+    tpe = num(d.get("trailingPE"))
+    price = tpe * eps_tr if (tpe and eps_tr and tpe > 0 and eps_tr > 0) else None
+    if price is None:
+        fpe0, feps = num(d.get("forwardPE")), num(d.get("forwardEps"))
+        price = fpe0 * feps if (fpe0 and feps and fpe0 > 0 and feps > 0) else None
+    fpe = None
+    if price is not None and eps0 is not None and eps1 is not None and (eps0 + eps1) > 0:
+        fpe = price / ((eps0 + eps1) / 2)
     g5 = num(((d.get("growth_estimates") or {}).get("stock") or {}).get("+5y"))
     rev1 = num(((d.get("revenue_estimate") or {}).get("+1y") or {}).get("avg"))
 
@@ -105,29 +128,31 @@ def evaluate(u, d, rates):
         fails.append("基準EPS<=0(CAGR計算不能)")
 
     if fpe is None:
-        missing.append("forwardPE")
+        missing.append("株価または予想EPS")
     elif fpe <= 0:
         fails.append("予想PE<=0")
 
     g2 = None
     if base is not None and base > 0 and eps1 is not None and eps1 > 0:
         g2 = (eps1 / base) ** 0.5 - 1
+    g1f = (eps1 / eps0 - 1) if (eps0 is not None and eps0 > 0 and eps1 is not None) else None
+    g = min(g2, g1f) if (g2 is not None and g1f is not None) else None
     peg = None
-    if g2 is not None and g2 > 0 and fpe is not None and fpe > 0:
-        peg = fpe / (g2 * 100)
-    if g2 is not None:
-        if g2 < G2_BORDER:
-            fails.append("EPS成長<25%")
+    if g is not None and g > 0 and fpe is not None and fpe > 0:
+        peg = fpe / (g * 100)
+    if g is not None:
+        if g < G2_BORDER:
+            fails.append("EPS成長<22%" + ("(来期)" if g1f is not None and g1f < g2 else ""))
         elif peg is not None and peg > PEG_BORDER:
-            fails.append("PEG>0.90")
+            fails.append("PEG>1.00")
 
     if fails:
         status = "fail"
     elif missing:
         status = "missing"
-    elif g2 >= G2_PASS and peg <= PEG_PASS:
+    elif g >= G2_PASS and peg <= PEG_PASS:
         status = "pass"
-    elif g2 >= G2_BORDER and peg <= PEG_BORDER:
+    elif g >= G2_BORDER and peg <= PEG_BORDER:
         status = "borderline"
     else:  # ここには来ない想定の保険
         status = "fail"
@@ -140,10 +165,10 @@ def evaluate(u, d, rates):
         reasons = "欠損のため判定不能"
     elif status == "borderline":
         notes = []
-        if g2 < G2_PASS:
-            notes.append("EPS成長25-31%")
+        if g < G2_PASS:
+            notes.append("EPS成長22-31%")
         if peg > PEG_PASS:
-            notes.append("PEG 0.75-0.90")
+            notes.append("PEG 0.75-1.00")
         reasons = ";".join(notes)
 
     def r(x, nd):
@@ -160,8 +185,11 @@ def evaluate(u, d, rates):
         "eps_trailing_local": eps_tr, "eps_0y_avg_local": eps0, "eps_1y_avg_local": eps1,
         "eps_base_yearago_local": base,
         "g2_eps_cagr_pct": r(g2 * 100 if g2 is not None else None, 2),
+        "g1f_eps_growth_pct": r(g1f * 100 if g1f is not None else None, 2),
+        "g_used_pct": r(g * 100 if g is not None else None, 2),
         "g5y_eps_growth_pct": r(g5 * 100 if g5 is not None else None, 2),
-        "forward_pe_x": fpe, "peg_x": r(peg, 3), "analysts_1y_n": an1,
+        "price_local": r(price, 3), "est_currency": est_cur,
+        "forward_pe_x": r(fpe, 2), "peg_x": r(peg, 3), "analysts_1y_n": an1,
         "revenue_1y_avg_mn_local": r(rev1 / 1e6 if rev1 is not None else None, 1),
         "fetched_at": d.get("fetched_at", ""), "data_source": d.get("source", ""),
     }
@@ -186,7 +214,7 @@ def write_csv(path, rows, cols=COLS):
 
 def sort_key(r):
     peg = r["peg_x"] if r["peg_x"] is not None else 1e9
-    return (peg, -(r["g2_eps_cagr_pct"] or 0))
+    return (peg, -(r["g_used_pct"] or 0))
 
 
 def fmt(x, nd=2):
@@ -248,10 +276,11 @@ def build_summary(universe, rows, fx_meta, fetch_errs, uni_errs, generated):
     L.append("")
     L.append("## 判定基準")
     L.append("")
-    L.append("- EPS成長 g2 = (EPS_+1y平均 / 実績年EPS)^(1/2) - 1 (実績年 → 翌々年度の2年CAGR)")
-    L.append("- PEG = 予想PE / (g2 x 100)")
-    L.append("- 合格: g2 >= 31% かつ PEG <= 0.75")
-    L.append("- 境界: g2 >= 25% かつ PEG <= 0.90 (合格を除く)")
+    L.append("- g2 = (EPS_+1y平均 / 実績年EPS)^(1/2) - 1、g1f = EPS_+1y / EPS_0y - 1、g = min(g2, g1f)")
+    L.append("- PE = 株価 / ((EPS_0y + EPS_+1y)/2)、株価 = trailingPE x trailingEps、予想EPSは株価通貨に換算")
+    L.append("- PEG = PE / (g x 100)")
+    L.append("- 合格: g >= 31% かつ PEG <= 0.75")
+    L.append("- 境界: g >= 22% かつ PEG <= 1.00 (合格を除く)")
     L.append("- 共通必須: 実績EPS > 0、予想EPS(0y・+1y) > 0、時価総額 >= 2億USD、アナリスト数 >= 1")
     L.append("- 循環フラグ: 業種による機械的な印 (除外はしない)。合格・境界の件数に併記")
     L.append("")
@@ -269,12 +298,12 @@ def build_summary(universe, rows, fx_meta, fetch_errs, uni_errs, generated):
     L.append(f"## 合格・境界 上位{TOP_N}社 (合格を先、PEG 昇順)")
     L.append("")
     if top:
-        L.append("| # | 判定 | ticker | 名称 | 市場 | 通貨 | 時価総額(百万USD) | EPS成長 g2(%) | 5年成長(%) | PEG | 予想PE(x) | アナリスト数 | 循環 | 備考 |")
+        L.append("| # | 判定 | ticker | 名称 | 市場 | 通貨 | 時価総額(百万USD) | EPS成長 g(%) | 5年成長(%) | PEG | 予想PE(x) | アナリスト数 | 循環 | 備考 |")
         L.append("|---:|---|---|---|---|---|---:|---:|---:|---:|---:|---:|:---:|---|")
         for i, r in enumerate(top, 1):
             judge = "合格" if r["status"] == "pass" else "境界"
             L.append(f"| {i} | {judge} | {r['ticker']} | {r['name']} | {r['market']} | {r['currency']} | "
-                     f"{fmt(r['mcap_usd_mn'], 0)} | {fmt(r['g2_eps_cagr_pct'])} | {fmt(r['g5y_eps_growth_pct'])} | "
+                     f"{fmt(r['mcap_usd_mn'], 0)} | {fmt(r['g_used_pct'])} | {fmt(r['g5y_eps_growth_pct'])} | "
                      f"{fmt(r['peg_x'], 3)} | {fmt(r['forward_pe_x'], 1)} | {fmt(r['analysts_1y_n'], 0)} | "
                      f"{'○' if r['cyclical_flag'] == 1 else ''} | {r['reasons']} |")
     else:
@@ -319,7 +348,7 @@ def build_summary(universe, rows, fx_meta, fetch_errs, uni_errs, generated):
     L.append("")
     L.append("## 注記")
     L.append("")
-    L.append("- 境界の定義は、合格を除いて 'g2 >= 25% かつ PEG <= 0.90' を満たすもの。"
+    L.append("- 境界の定義は、合格を除いて 'g >= 22% かつ PEG <= 1.00' を満たすもの。"
              "必須条件(EPS・時価総額・アナリスト)を満たさないものは境界に入れず不合格。")
     L.append("- 循環フラグは業種名の機械的判定。メモリ半導体などは人が個別に見直すこと。")
     L.append("- 詳細は out/all_scored.csv (全銘柄の数値と理由)、out/pass.csv、out/borderline.csv を参照。")
