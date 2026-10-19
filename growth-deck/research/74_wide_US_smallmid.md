@@ -1,0 +1,58 @@
+# 74 拡大スクリーニング 米国中小型(時価総額10〜300億ドル相当を含む1〜300億ドル) / 調査日 2026-10-19
+
+## 0. 調査の限界(最初に読むこと)
+- WebSearchのみ使用。実施した検索は21回(上限38回)。21回目の直後に「session limit」エラーとなり、残りの検索ができず中断した。未調査の候補は末尾に列挙。
+- 検索結果は集約サイトの断片で、日付と出所が不揃い。コンセンサスEPS(2027/2028)を同一出所・同一日付で取れた銘柄はほぼない。表の「CAGR」「PEG」は、取れた数字からの概算か未確定で、「推定」「未確定」と明記した。
+- 一次ふるい①(EPS 3年CAGR≥30% かつ PEG≤0.8)を、公表データだけで明確に満たすと確認できた銘柄はゼロ。唯一の例外候補がHalozyme(下記)で、これも2027/28年コンセンサスが未取得のため暫定。
+- 指示書の時価総額下限は10億ドル。CEVA(約7.6億ドル)は下限割れで参考扱い。
+
+## 1. 一覧表
+
+| 会社 | ティッカー(市場) | 業種 | 時価総額 | 予想PER(年度) | EPS 3年CAGR(出所・アナリスト数) | PEG | 収益の性格(①の型か) | 構造A+の可能性と理由 | 需要・途上・未注目の一言 | 出典(日付) |
+|---|---|---|---|---|---|---|---|---|---|---|
+| Halozyme | HALO(NASDAQ) | 医薬の皮下投与化技術(ENHANZE)ロイヤリティ | 約137.5億ドル(Stockanalysis 10/16時点、株価121.19ドル) | 約12.2倍(Stockanalysis記載、年度不明)。会社2026年EPSガイダンス中央値8.83ドルで割ると約13.7倍(推定) | 2026年ガイダンスのEPS 8.65〜9.00ドルは前年比+108〜117%。この逆算で2025年EPSは約4.15ドル(推定)。2027/28年コンセンサスは未取得(ある出所は2027年 8.33ドル・2028年 8.84ドルだが約237日前の古い数字で、ガイダンス引き上げ前なので不採用)。2025→2028の3年CAGRは2028年EPSが10〜11ドルなら35〜40%(推定、根拠は会社の「2028年売上20億ドル超」「EBITDA率約70%」のみ) | 2025年起点なら約0.4(推定)。2026年起点の前向きCAGRで見ると伸びは大幅に鈍り、PEG 0.8超の可能性が高い(推定) | ①の型。ロイヤリティ収入(2026年ガイダンス12.2〜12.45億ドル、前年比+41〜43%)が総売上18.35〜19.1億ドルの過半。パートナー製薬の売上連動で、自社設備は持たない | 高。他社製剤に組み込まれ切替コストが高く、設備投資が小さい。懸念は会社の特許満了(2027〜2029年のENHANZE関連特許の満了を指摘する記事あり、未検証)と競合製剤技術 | EPSの急伸が始まった直後で、予想PERは10倍台。株価は10月に+5.9%(アナリスト格上げ)、TD Cowenの目標は130ドル。「ロイヤリティ型の割安株」としてはすでに動意づいている | Q2決算8-K https://www.sec.gov/Archives/edgar/data/0001159036/000115903626000103/ex991q220268-k.htm (2026-08-06) / https://www.easternprogress.com/halozymes-q2-earnings-beat-estimates-2026-outlook-raised-stock-up/article_6f401b8b-f685-5c59-a1ed-d5306d0b0caf.html / https://stockanalysis.com/stocks/halo/ (10/16) / https://www.marketbeat.com/instant-alerts/analyst-halozyme-therapeutics-nasdaq-halo-stock-price-expected-to-rise-td-cowen-analyst-says-2026-10-13/ (10/13) / https://www.kavout.com/market-lens/halozyme-s-record-quarter-is-fully-priced-for-its-royalty-engine-s-limits |
+| Ligand Pharmaceuticals | LGND(NASDAQ) | 医薬ロイヤリティ+Captisol | 約58〜59億ドル(8/11時点、株価293ドル) | 約31倍(2026年調整後EPSガイダンス下限9.00ドル基準、推定) | 2026年ガイダンス下限9.00ドル(従来コンセンサス8.13ドル)。2027年は買収したXOMA Royaltyが約1.50ドル上乗せ(会社見通し)。正式な2027/28コンセンサスは未取得。3年CAGRは未確定 | 未確定(PER約31倍に対し、30%成長が続かないと0.8超) | ①の型。ロイヤリティ中心(2026年見通し2.25〜2.5億ドル、5月時点の表)。Q2は調整後EPS 2.37ドル(+48%)、ロイヤリティ+32% | 中。設備は持たないが、買収(XOMA 7.39億ドル、7/14完了)で伸びを作る面があり、純粋な内生成長ではない | Filspari(FSGS適応)が牽引。PER31倍は成長を織り込み済み | https://www.sec.gov/Archives/edgar/data/0000886163/000088616326000041/q22026earningsrelease_ex991.htm (2026-08-06) / https://www.trefis.com/data/companies/lgnd |
+| InterDigital | IDCC(NASDAQ) | 無線規格の特許ライセンス | 未取得 | 未取得(株価未取得) | 2026年EPSガイダンス10.85〜12.81ドル(7/30に引き上げ。旧8.74〜11.84)。ベンチマークの2026年コンセンサスは9.17ドル(ガイダンス引き上げ前の可能性が高い)。2027/28年は未取得。Samsungと8年・10億ドル超の更新(+67%)。四半期はキャッチアップ収益で乱高下 | 未確定 | ①の型(ライセンス・ロイヤリティ)。ARR 6.26億ドル(+13%)。ただし単発のキャッチアップ収益が大きく「継続課金」と言い切れない | 中。特許は他社の売上に連動し設備不要だが、訴訟依存で更新時に収益が飛ぶ。Samsung契約は今回で長期固定済み | 2026年EPSは前年から大幅増。ただし更新サイクルによるピークの可能性があり、3年CAGRは2029年以降の更新次第 | https://www.sec.gov/Archives/edgar/data/0001405495/000140549526000034/ex991q133126pressrelease.htm / https://www.nasdaq.com/articles/interdigital-q2-earnings-call-highlights / https://kr.benzinga.com/quote/IDCC/earnings-forecasts (2026-07〜08) |
+| Rambus | RMBS(NASDAQ) | メモリ・インターフェースIP/チップ | 未取得 | 約24倍(9月の記事、株価約98ドル)。別出所は8/4時点で44倍(出所間でばらつき) | 2026年コンセンサスは2.95ドル(Seeking Alpha 4月時点)。2027年は+24.8%(Stockalarm、年度基準不明)。3年CAGRは約25%程度とみられるが未確定 | 約1.0(推定。24倍÷25%) | 一部ロイヤリティ・ライセンス。残りは製品(チップ)販売(私の事前知識。今回の検索では売上構成を確認できていない) | 低〜中。売上構成の確認が必要。記事にメモリ循環への曝露の指摘あり | データセンターのメモリ需要。ロイヤリティ主体ではない可能性 | https://247wallst.com/investing/2026/09/22/this-under-the-radar-chip-company-could-have-a-much-bigger-future/ (2026-09-22) / https://eulerpool.com/stock/Rambus-Stock-US7509171069/forwardpe / https://tickflow.io/stock/RMBS/forecast |
+| Royal Gold | RGLD(NASDAQ) | 貴金属ロイヤリティ・ストリーム | 約221.5億ドル(9/1時点) | 約24.5倍(Yahoo、9/1時点) | 2027/28年コンセンサス未取得。Q2売上は前年比+115%(4.51億ドル)、純利益2.36億ドル。金価格依存で、3年CAGR30%の持続は未確認 | 未確定。成長が鈍れば1超 | ①の型(ロイヤリティ・ストリーム)。鉱山設備は鉱山会社が負う | 中。構造は良いが、EPSは金価格の水準次第。景気循環ではなく商品価格循環 | 金価格上昇局面の利益は既に高水準。今後3年の30%成長は金価格の上昇継続が前提 | https://finance.yahoo.com/quote/RGLD/ (9/1時点) |
+| Shift4 Payments | FOUR(NYSE) | 決済(業界特化POS+決済) | 約35〜36億ドル(8/14時点、株価約43〜45ドル) | 約8〜9倍(調整後EPS基準、Yahoo 8/14)。GAAP基準の実績PERは約70倍 | 2026年コンセンサス約5.56〜5.60ドル。2027年 平均6.71ドル(15名、7月末時点、8/6の下方修正前)→+約20%。会社は2026年EPSを5.50〜5.70ドルから5.15〜5.35ドルへ下方修正(中東の旅行混乱約2,500万ドル、為替約2,000万ドル) | 約0.4(推定。8.5÷約20%)。ただしCAGRが30%に届かず一次ふるい①未達 | 取引手数料型。ただし調整後EPSとGAAPの乖離が大きい | 低〜中。決済網+業界特化だが、成長率が20%台で足切り未達。買収と負債が多い(私の事前知識。今回は未確認) | 株価は大幅下落後。割安に見えるが成長が足りない | https://tickflow.io/stock/FOUR/forecast / https://stockanalysis.com/stocks/FOUR (2026-07〜08) |
+| Doximity | DOCS(NYSE) | 医師向けネットワーク(製薬広告のサブスク) | 約47〜49億ドル(8〜9月) | 約20倍(9月、デンマーク集約サイト)。5月は11.5倍だった | 自社モデルで2027年度 1.27ドル、2028年度 1.39ドル(コンセンサスではなくモデル。約+20%、その次は+8%)。FY2027売上ガイダンス6.71〜6.81億ドル | 約1.0(推定) | 継続課金(製薬のサブスク広告)。ただし景気の影響を受ける広告 | 低〜中。成長が20%に鈍化。CAGR未達 | 株価はピークから大幅下落(1年目標約24.9ドル、Yahoo 8/7) | https://npinvestor.dk/aktier/doximity/ / https://www.vcpscanner.com/valuation/docs/estimates |
+| Waystar | WAY(NASDAQ) | ヘルスケア決済・請求ソフト | 約43〜48億ドル | 約11.5〜12倍(2027年EPS 1.85ドル基準) | 2026年 1.63ドル、2027年 1.85ドル(13名、7月、約+13%)。会社ガイダンス1.61〜1.70ドル(7/29) | 約0.9(推定) | 取引ベース+サブスク。ヘルスケアIT | 低。成長13%でCAGR未達 | 割安に見えるが成長不足 | https://www.marketbeat.com/instant-alerts/keycorp-predicts-waystars-q2-earnings-nasdaqway-2026-07-07/ / https://tickflow.io/stock/WAY/forecast |
+| Payoneer | PAYO(NASDAQ) | 越境決済 | 約24.2億ドル(8月中旬、株価約7.10ドル) | 約28倍(2026年0.25ドル)、約23倍(2027年0.31ドル)。Tickflow(5名、8月) | 2026→27で+約24%。売上は+約11% | 約1.0(推定) | 手数料+預り金の金利収入(後者は金利循環に左右される) | 低。成長不足、金利依存 | EPSは小さく、アナリスト数が少なく信頼性が低い | https://www.tickflow.io/stock/PAYO/forecast |
+| Paymentus | PAY(NYSE) | 請求書決済プラットフォーム | 約33〜43億ドル | 約27〜33倍(出所によりばらつき)。2026年0.78ドルで約37倍(推定) | 2027年 0.87〜0.97ドル。成長約11〜24%(出所不整合) | 1超(推定) | 取引手数料型 | 低〜中。成長とPERが合わない | 評価が高い | https://www.marketbeat.com/instant-alerts/q2-earnings-estimate-for-paymentus-issued-by-wolfe-research-2026-07-21/ |
+| Flywire | FLYW(NASDAQ) | 教育・医療向け越境決済 | 約23.3億ドル(8/26) | 約29.7倍(Yahoo、8/26) | 2027年は未取得。2025年のデータは+78%だが古い | 未確定 | 取引手数料型 | 低〜中。未確認 | 検索結果に最新データなし | https://ca.finance.yahoo.com/quote/FLYW/ (2026-08-26) |
+| Waystar等以外のGrindr | GRND(NASDAQ) | 消費者向けサブスク | 約22〜29億ドル | 約20倍(2027年0.73ドル基準)。3月時点20.8倍 | 2027年EPS 0.45〜0.73ドル(出所で食い違い)。売上は+約15% | 1超(推定) | 継続課金+広告 | 低。成長が15%程度 | 検索結果は混在 | https://tickflow.io/stock/GRND/forecast |
+| Life360 | LIF(NASDAQ) | 家族向け位置情報サブスク | 未取得 | 未確認(出所によりEPSが0.49〜1.65ドルでバラバラ) | 未確定。2027年売上7.7〜8.2億ドル(出所による) | 未確定 | 継続課金 | 未確定 | データ不整合のため判定不能 | https://tickflow.io/stock/LIF/forecast |
+| Duolingo | DUOL(NASDAQ) | 消費者向けサブスク | 未取得 | 約48倍(MarketBeat 7/31、株価134.81ドル)。別出所の16.7倍は信頼性が低い | 次年度EPS 2.81→3.18ドル(+約13%) | 約3.7(推定) | 継続課金 | 低。成長鈍化 | 株価は高いまま | https://www.marketbeat.com/stocks/NASDAQ/DUOL (2026-08-02) |
+| DigitalOcean | DOCN(NYSE) | クラウド/AI推論(従量課金) | 約144億ドル(7月中旬) | 約75〜140倍(5〜7月) | 2026年EPSガイダンス1.35〜1.40ドル。2027年は0.67〜2.26ドル(出所で大きく食い違い) | 1超 | 従量課金だが自前でGPU/サーバー設備を抱える | 低。設備を抱え、PERも高い | 検索で最新株価は確認できず | https://tickflow.io/stock/DOCN/forecast |
+| Royalty Pharma | RPRX(NASDAQ) | 医薬ロイヤリティ取得 | 約244〜251億ドル | 出所不整合(9.3〜49.5倍)。信頼不可 | 2026年Portfolio Receipts 34〜35億ドルに引き上げ(8/5)。2027/28年は未取得。成長は一桁〜低二桁とみられる(推定) | 未確定 | ①の型だが、取得資金に借入(2026年支払利息3.5〜3.6億ドル) | 中。ロイヤリティだがEPS 30%成長は見込みにくい | 大型で成長が緩い | https://www.sec.gov/Archives/edgar/data/0001802768/000180276826000014/rprx-20260630rpplcpressxre.htm (2026-08-05) |
+| Hims & Hers | HIMS(NYSE) | 消費者向け遠隔診療サブスク | 約76億ドル(7月) | 約39〜70倍 | 2026年Q1・Q2は赤字(-0.18、-0.10ドル) | 計算不能 | サブスク+商品販売 | 低。利益が不安定 | 足切り | https://tickflow.io/stock/HIMS/forecast |
+| Tempus AI | TEM(NASDAQ) | AI診断・データ | 約96〜127億ドル | 赤字のため意味なし | 2027年EPSは-1.28〜+0.08ドルで出所が食い違う | 計算不能 | 検査売上が主 | 低 | 足切り | https://finance.yahoo.com/quote/TEM |
+| CEVA(参考) | CEVA(NASDAQ) | 半導体IP | 約7.6億ドル(下限割れ) | 約39倍 | 直近4四半期連続赤字 | 計算不能 | ライセンス約66%、ロイヤリティ約34% | 低 | 時価総額が下限未満のため対象外 | https://stockanalysis.com/stocks/CEVA |
+| Arteris(参考) | AIP(NASDAQ) | 半導体IP(NoC) | 約6〜7億ドル(株価21〜29ドルで変動、推定) | 赤字のため無し | 実績EPS -0.87ドル。ロイヤリティ+50%(2025年Q4) | 計算不能 | ライセンス+ロイヤリティ | 低(現状は赤字) | 時価総額が下限未満の可能性 | https://au.finance.yahoo.com/quote/AIP/ |
+
+注: 上の表のうち「Waystar等以外のGrindr」の会社名欄は誤記。正しくは「Grindr」。
+
+## 2. 二次審査に回すべき上位5社
+実態を言うと、一次ふるい①を公表データで確実に満たす銘柄は今回は見つからなかった。以下は「最も近い順」で、2番目以降は条件未達の可能性が高く、検証対象として挙げる。
+
+1. Halozyme(HALO): 構造A+の型(他社の売上に連動するロイヤリティ、設備なし、切替コスト高)に最も合致し、PERも10倍台前半。EPSは2026年に前年比約2.1倍。確認すべき点は、(a)2027/28/29年のコンセンサスEPSを同一出所で取り、2026年起点の3年CAGRとPEGを出すこと、(b)特許満了(2027〜2029年)とその後のロイヤリティ率、(c)10月以降の株価上昇(約121ドル)で割安度がどこまで残るか。
+2. Ligand(LGND): ロイヤリティ型でEPSが急伸(Q2調整後EPS+48%)、XOMA買収で2027年に約1.50ドル上乗せ。PER約31倍が壁。2027/28年コンセンサスが取れれば判定できる。
+3. InterDigital(IDCC): 2026年EPSガイダンス10.85〜12.81ドルは旧コンセンサスを大幅に上回る。株価と時価総額を取り、キャッチアップ収益を除いた継続収益ベースの利益を見る必要がある。Samsung契約(8年)で収益の見通しは立てやすい。
+4. Rambus(RMBS): PER約24倍、EPS成長約25%(推定)。売上のうちロイヤリティ・ライセンスの比率を確認できれば、構造の判定ができる。製品売上が主なら除外。
+5. Shift4(FOUR): PEGは約0.4と低いが、成長が約20%でCAGR 30%に届かない。条件を満たさない可能性が高く、「PEGだけ見れば最も安い」参考枠。調整後EPSとGAAPの乖離、負債、8/6の下方修正の理由を要確認。
+
+次点: Royal Gold(構造は良いが、金価格依存でEPS成長の持続が未確認)。
+
+## 3. 未調査の候補(検索上限ではなくセッション制限で中断。再調査を推奨)
+決済・フィンテック: Marqeta、Chime、Klarna、Circle、Figure、Dave、Pagaya
+ロイヤリティ・IP: Texas Pacific Land、Arm(大型のため対象外の可能性)、Dolby、Adeia、Xperi
+保険・物流プラットフォーム: Ryan Specialty、Goosehead、Root、Samsara、Descartes
+AI従量課金: Twilio、Fastly、Confluent(買収済みの可能性)、Nebius(設備を持つので不適の可能性)、Astera Labs、Credo
+ヘルスケアIT: Hinge Health、Evolent、Phreesia、HealthEquity
+業界特化ソフト+決済: Procore、Olo、PAR Technology、Lightspeed、Clearwater Analytics、nCino
+
+## 4. 方法上の注意
+- 集約サイト(Tickflow、VCP Scanner、Stockanalysis、MarketBeat等)は日付が混在し、同じ銘柄でも出所間で2倍以上食い違う例が多い。VCP Scannerは「自社モデル」でコンセンサスではない。採用する前にFactSet・Bloombergなどで再確認すること。
+- 「推定」と書いた数値は、取れた数字からの私の概算。
+- 「私の事前知識」と書いた記述は、今回の検索で裏取りしていない。
