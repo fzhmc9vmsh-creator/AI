@@ -122,7 +122,7 @@ AIに関連しない企業のため条件9はN/A。条件4は対象外。評価�
 
 - GenmabのDARZALEXロイヤリティは、IV(静注)とSC(皮下注、DARZALEX FASPRO)の合計売上に課される。SC切替(Halozyme ENHANZE)はGenmabの売上には中立〜やや負: SC特許はJ&J所有で対象外だが、JanssenのHalozymeへの支払の一部をGenmabの支払から相殺される(相殺率は売上の約2.2%、仲裁で確定)。SCの比率が上がるほど相殺は増える方向(推定)。
 - DARZALEX FASPRO / SCの比率: **直接の開示は取得できなかった**。Halozyme側のDARZALEXロイヤリティ152.2百万ドル(Q2-26)と料率4.5%(仮定)から逆算すると、SCは売上の約80%(推定)。
-- 需要の強さ: DARZALEX Q3-26は前年比+15.4%と、H1の+20.6%から減速した。J&Jは1四半期ごとの勢いを維持しているが、前年比は低下傾向(Q1-26は+22%、Q2-26は+19%、Q3-26は+15%。Q1-25 3,237、Q2-25 3,539、Q3-25 3,672から計算)。**率の推移は下がっており、「高水準で維持」とは言えず、「減速」の兆候**(3四半期連続の低下)。ただし母数の効果が含まれる(§3)。
+- 需要の強さ: DARZALEX売上の前年比は Q1-26 +22.5%、Q2-26 +18.9%、Q3-26 +15.4%(Q1-25 3,237〔H1-25 6,776−Q2-25 3,539〕、Q2-25 3,539、Q3-25 3,672から計算)。**率が2回続けて低下しており、「高水準で維持」とは言えず減速の兆候**。ただし母数の効果を含み、純増の前年比は未確認のため、「減速」と断定せず監視KPIに置く(§3の規則)。
 
 ## 7. 示唆(§14)と確認KPI
 
@@ -135,10 +135,187 @@ AIに関連しない企業のため条件9はN/A。条件4は対象外。評価�
 
 - 総合判定は**不通過**で保留ではない。構造A+が平均2.82で、上限試算でも3.18のため、追加調査で覆らない。
 - 成長A+の「③エンジン」を確定する決め手: 米国daratumumab特許の**満了月**。年末なら③は通過(3年CAGR 49%)、年央以前なら不通過。
-- 未確認(検索不能・予算外): 10/16の終値と正確な時価総額、2029年コンセンサス、FY2025 20-Fの特許表、階層ロイヤリティの下位層の境界、CEO・CFOの経歴台帳、DARZALEX SC比率、純有利子負債の現在値(Merus後の現金)、4Q26の第3四半期決算(2026-11-05予定)。
+- 未確認(検索不能・予算外): 10/16の終値と正確な時価総額、2029年コンセンサス、FY2025 20-Fの特許表、階層ロイヤリティの下位層の境界、CEO・CFOの経歴台帳、DARZALEX SC比率、純有利子負債の現在値(Merus後の現金)、第3四半期決算(2026-11-05予定、未確認)。
 - 「規模が小さい」を理由とした対象外は行っていない。
 
 ## 付録: 計算コード(Python)と出力
 
 実行: `python3 -I gmab_calc.py`(出力は上の数値と同じ)
 
+```python
+# Genmab (GMAB) 二次審査計算  2026-10-19  単位: 百万USD(特記なければ)  EPSはADS(=普通株1/10)当たり
+import statistics as st
+
+# ---------- 1. 入力(出所は81_review_GMAB.mdの表に記載) ----------
+SP_PER, SP_G, SP_PEG = 19.1, 0.15, 1.25           # S&P500 (FactSet 2026-10-09 / 指示書)
+H1_NP, H1_EPS_SHARE = 356.0, 5.73                 # H1 2026 純利益、普通株1株当たり希薄化EPS(Interim Report Q2 2026)
+sh_ord = H1_NP / H1_EPS_SHARE                     # 普通株数(百万)
+sh_ads = sh_ord * 10                              # ADS換算(1ADS=1/10株)
+print(f"普通株数 {sh_ord:.1f}M / ADS換算 {sh_ads:.0f}M")
+
+# 株価(10/16終値は未確認。3通りで感応度)
+price_cases = {"低 31.2(Yahoo無日付)": 31.2, "基準 35.7(YTD+15.9%逆算/9月Frankfurt換算)": 35.7, "高 38.25(WealthAwesome無日付)": 38.25}
+# 基準株価の逆算: 2026-06-12 終値25.08でYTD-18.57% → 年初30.80 → 年初来+15.93%なら
+ytd_start = 25.08 / (1 - 0.1857); p_ytd = ytd_start * 1.1593
+print(f"年初価格(逆算) {ytd_start:.2f} → YTD+15.93%なら {p_ytd:.2f}")
+P = 35.7
+print(f"時価総額(基準) ${P*sh_ads/1000:.1f}B")
+
+# ---------- 2. コンセンサス経路 ----------
+cons = {  # ADS当たりEPS
+ "MarketScreener(2026=28.52/24.4,無日付)": {2026: 28.52/24.4, 2027: 28.52/16.9, 2028: None},
+ "Tickflow(2026-08-07, 少数)":             {2026: None, 2027: 1.65, 2028: 3.10},
+ "TheRightTrader(6/3名)":                  {2026: None, 2027: 1.61, 2028: 2.51},
+ "Prior file75(Tickflow 2028)":            {2026: None, 2027: None, 2028: 2.87},
+}
+e26 = 28.52/24.4
+e27 = st.mean([1.65, 1.61, 28.52/16.9]); e28_list = [3.10, 2.51, 2.87]; e28 = st.mean(e28_list)
+print(f"コンセンサス 2026 {e26:.2f}  2027 {e27:.2f}  2028 {e28:.2f} (2028範囲 {min(e28_list)}-{max(e28_list)}; 最低アナリスト値1.66)")
+def cagr(a, b, n):
+    return (b/a)**(1/n) - 1 if b > 0 and a > 0 else float('nan')
+for name, e28x in [("平均", e28), ("低(1.66)", 1.66), ("高(3.21)", 3.21)]:
+    g = cagr(e26, e28x, 2); per = P/e26
+    print(f"  consensus 2028={e28x:.2f}[{name}]: 2年CAGR {g*100:.1f}% PER26 {per:.1f} PEG {per/(g*100):.2f}")
+H1_ads_eps = H1_EPS_SHARE/10
+print(f"H1実績EPS/ADS {H1_ads_eps:.3f} → 年率 {2*H1_ads_eps:.2f}(2026コンセンサス1.17と整合)")
+# 税: H1 実効税率
+pbt_h1 = 555 - 186; print(f"H1 税引前 {pbt_h1}, 純利益 356 → 実効税率 {(pbt_h1-356)/pbt_h1*100:.1f}%  (2025H1: {(548+119-531)/(548+119)*100:.1f}%)")
+
+# ---------- 3. DARZALEXロイヤリティ関数 ----------
+TIERS = [(750,.12),(750,.13),(500,.16),(1000,.18),(float('inf'),.20)]   # FY2023 20-F(検索要約。下位層は要原典確認)
+def gross_roy(S):
+    r, rem = 0.0, S
+    for width, rate in TIERS:
+        x = min(rem, width); r += x*rate; rem -= x
+        if rem <= 0: break
+    return r
+S26 = 3964 + 4207 + 4239 + 4350      # Q1-Q3実績 + Q4推定
+g26 = gross_roy(S26); guided = 2830
+offset_pct = (g26 - guided)/S26
+print(f"2026 DARZALEX売上 {S26:,.0f} / 階層ロイヤリティ(総) {g26:,.0f} / ガイダンス中央値 {guided} → 相殺率 {offset_pct*100:.2f}%")
+h1 = gross_roy(8171) - offset_pct*8171
+print(f"H1検算: Darzalexロイヤリティ推定 {h1:,.0f} + その他約400 ≒ 開示合計1,708")
+
+# ---------- 4. 事業エンジン/会社シナリオ ----------
+def engine(darz_g, oth_roy_g, nonroy_g, new_rina, new_pet, pos_rina, pos_pet, fixed_g, fin, amort, f_us, tax=0.20, us_share=0.60):
+    """f_us = 2029年に米国特許満了で米国ロイヤリティを失う年内割合(0=年末満了, 0.5=年央, 1=年初)"""
+    out = {}
+    S = S26; oth = 860.0; nonroy = 735.0; fixed = 3200 - 0.30*735
+    out[2026] = None
+    rows = {}
+    # 2026
+    rev26 = guided + oth + nonroy
+    adj26 = rev26 - (fixed + 0.30*nonroy)
+    rep26 = adj26 - 190; pbt26 = rep26 - 370
+    rows[2026] = dict(S=S, roy=guided+oth, nonroy=nonroy, rev=rev26, adj_op=adj26, rep_op=rep26, ni=pbt26*(1-tax), eps=pbt26*(1-tax)/sh_ads)
+    for i, y in enumerate([2027, 2028, 2029]):
+        S = S*(1+darz_g[i]); oth *= (1+oth_roy_g[i]); nonroy *= (1+nonroy_g[i])
+        new = new_rina[i]*pos_rina + new_pet[i]*pos_pet
+        bear = S if y < 2029 else S*(1-us_share*f_us)
+        roy_d = gross_roy(bear) - offset_pct*bear
+        fixed *= (1+fixed_g[i])
+        nr = nonroy + new
+        rev = roy_d + oth + nr
+        cost = fixed + 0.30*nr
+        adj = rev - cost; rep = adj - amort[i]; pbt = rep - fin[i]
+        rows[y] = dict(S=S, bearing=bear, roy=roy_d+oth, nonroy=nr, rev=rev, adj_op=adj, rep_op=rep, ni=pbt*(1-tax), eps=pbt*(1-tax)/sh_ads, fixed=fixed)
+    return rows
+
+BASE = dict(darz_g=[.11,.08,.05], oth_roy_g=[.10]*3, nonroy_g=[.30,.28,.25],
+            new_rina=[40,200,450], new_pet=[20,180,450], pos_rina=.65, pos_pet=.55,
+            fixed_g=[.08,.06,.05], fin=[340,290,250], amort=[170,150,150])
+COMP = dict(darz_g=[.13,.10,.07], oth_roy_g=[.12]*3, nonroy_g=[.40,.35,.30],
+            new_rina=[60,350,900], new_pet=[30,300,1000], pos_rina=1.0, pos_pet=1.0,
+            fixed_g=[.05,.04,.04], fin=[330,270,220], amort=[170,150,150])
+def show(name, p, f_us):
+    r = engine(f_us=f_us, **p)
+    e = {y: r[y]['eps'] for y in r}
+    g3 = cagr(e[2026], e[2029], 3); g2 = cagr(e[2026], e[2028], 2)
+    per_mkt = P/e26; per_own = P/e[2026]
+    print(f"[{name}] f_us={f_us}: EPS " + " ".join(f"{y}:{e[y]:.2f}" for y in e) + f" | 調整後営業利益 " + " ".join(f"{y}:{r[y]['adj_op']:,.0f}" for y in r))
+    print(f"    2年CAGR {g2*100:.1f}% (PEG市場PER {per_mkt/(g2*100):.2f}) / 3年CAGR {g3*100:.1f}% (PEG市場PER {per_mkt/(g3*100):.2f}, 自己水準PER {per_own:.1f}→PEG {per_own/(g3*100):.2f})")
+    return r, e, g2, g3
+print()
+for f in [0.0, 0.5, 1.0]:
+    show("エンジン基準", BASE, f)
+print()
+for f in [0.0, 0.5, 1.0]:
+    show("会社シナリオ", COMP, f)
+
+# 2030年(米国ロイヤリティ全消滅・欧州継続)のカット規模
+r_b, e_b, _, _ = show("エンジン基準(参照)", BASE, 0.5)
+S29 = r_b[2029]['S']; row_only = S29*(1-0.60)
+roy30 = gross_roy(row_only) - offset_pct*row_only
+roy29_full = gross_roy(S29) - offset_pct*S29
+print(f"\n2029売上ベース: 米国含む満年ロイヤリティ {roy29_full:,.0f} → 米国消滅後(ROWのみ) {roy30:,.0f} / 差 {roy29_full-roy30:,.0f} = 税後ADS当たり {(roy29_full-roy30)*0.8/sh_ads:.2f}ドル")
+print("(参考)2028コンセンサス2.69 → 2030年は上記差分を新製品が埋められない限りEPS減")
+
+# ---------- 5. 価格感応度(コンセンサス経路) ----------
+print()
+for k, p in price_cases.items():
+    per = p/e26; g = cagr(e26, e28, 2)
+    print(f"価格{k}: PER26 {per:.1f}  PER27 {p/e27:.1f}  PEG(コンセンサス2年) {per/(g*100):.2f}  時価総額 ${p*sh_ads/1000:.1f}B")
+print(f"PEG0.75となる株価(コンセンサス2年): ${0.75*cagr(e26,e28,2)*100*e26:.1f}")
+
+# ---------- 6. 同業PEG(参考。n=4、指示書の5社に未達) ----------
+peers = {"Halozyme(本審査 コンセンサス)": 1.22, "Alteogen(78: 0.6〜1.05の中央)": 0.83, "Genmab(本審査)": 0.59, "Royalty Pharma(MarketBeat 2025,古い)": 2.1}
+print("同業PEG中央値(n=4, 低信頼):", round(st.median(peers.values()), 2))
+
+# ---------- 7. 13条件の点数 ----------
+S5 = {'S':5,'A':4,'B':3,'C':2,'D':1,'E':0}
+scores = {1:2, 2:3, 3:4, 5:3, 6:None, 7:2, 8:3, 10:2, 11:3, 12:3, 13:2}
+for c6 in [3, 4]:
+    sc = dict(scores); sc[6] = c6
+    avg = sum(sc.values())/len(sc); cs = sum(1 for v in sc.values() if v <= 2)
+    print(f"条件6={c6}: 平均 {avg:.2f}  C以下の数 {cs}  → 構造A+ {'通過' if avg>=4.0 and cs<4 else '不通過'}")
+print("満点側の上限試算(条件1,10,13をBに、7をBに引き上げ、条件6=A):", round(sum({1:3,2:3,3:4,5:3,6:4,7:3,8:3,10:3,11:3,12:3,13:3}.values())/11, 2))
+
+# ---------- 8. 皮下注/需要の変数(ロイヤリティ源) ----------
+dz = {"Q1-26":3964,"Q2-26":4207,"Q3-26":4239,"Q3-25":3672}
+print(f"\nDARZALEX Q3-26 前年比 {dz['Q3-26']/dz['Q3-25']*100-100:.1f}%  米国比率 {2528/4239*100:.1f}%  H1前年比 {8171/6776*100-100:.1f}%")
+```
+
+### コード出力(抜粋: 実行結果そのまま)
+```
+普通株数 62.1M / ADS換算 621M
+年初価格(逆算) 30.80 → YTD+15.93%なら 35.71
+時価総額(基準) $22.2B
+コンセンサス 2026 1.17  2027 1.65  2028 2.83 (2028範囲 2.51-3.1; 最低アナリスト値1.66)
+  consensus 2028=2.83[平均]: 2年CAGR 55.5% PER26 30.5 PEG 0.55
+  consensus 2028=1.66[低(1.66)]: 2年CAGR 19.2% PER26 30.5 PEG 1.59
+  consensus 2028=3.21[高(3.21)]: 2年CAGR 65.7% PER26 30.5 PEG 0.46
+H1実績EPS/ADS 0.573 → 年率 1.15(2026コンセンサス1.17と整合)
+H1 税引前 369, 純利益 356 → 実効税率 3.5%  (2025H1: 20.4%)
+2026 DARZALEX売上 16,760 / 階層ロイヤリティ(総) 3,200 / ガイダンス中央値 2830 → 相殺率 2.20%
+H1検算: Darzalexロイヤリティ推定 1,302 + その他約400 ≒ 開示合計1,708
+
+[エンジン基準] f_us=0.0: EPS 2026:0.86 2027:1.38 2028:2.10 2029:2.85 | 調整後営業利益 2026:1,225 2027:1,581 2028:2,069 2029:2,613
+    2年CAGR 56.5% (PEG市場PER 0.54) / 3年CAGR 49.3% (PEG市場PER 0.62, 自己水準PER 41.7→PEG 0.85)
+[エンジン基準] f_us=0.5: EPS 2026:0.86 2027:1.38 2028:2.10 2029:1.40 | 調整後営業利益 2026:1,225 2027:1,581 2028:2,069 2029:1,487
+    2年CAGR 56.5% (PEG市場PER 0.54) / 3年CAGR 17.8% (PEG市場PER 1.72, 自己水準PER 41.7→PEG 2.34)
+[エンジン基準] f_us=1.0: EPS 2026:0.86 2027:1.38 2028:2.10 2029:-0.05 | 調整後営業利益 2026:1,225 2027:1,581 2028:2,069 2029:361
+    2年CAGR 56.5% (PEG市場PER 0.54) / 3年CAGR nan% (PEG市場PER nan, 自己水準PER 41.7→PEG nan)
+
+[会社シナリオ] f_us=0.0: EPS 2026:0.86 2027:1.72 2028:3.07 2029:4.97 | 調整後営業利益 2026:1,225 2027:1,836 2028:2,807 2029:4,233
+    2年CAGR 89.5% (PEG市場PER 0.34) / 3年CAGR 79.8% (PEG市場PER 0.38, 自己水準PER 41.7→PEG 0.52)
+[会社シナリオ] f_us=0.5: EPS 2026:0.86 2027:1.72 2028:3.07 2029:3.44 | 調整後営業利益 2026:1,225 2027:1,836 2028:2,807 2029:3,043
+    2年CAGR 89.5% (PEG市場PER 0.34) / 3年CAGR 59.0% (PEG市場PER 0.52, 自己水準PER 41.7→PEG 0.71)
+[会社シナリオ] f_us=1.0: EPS 2026:0.86 2027:1.72 2028:3.07 2029:1.91 | 調整後営業利益 2026:1,225 2027:1,836 2028:2,807 2029:1,853
+    2年CAGR 89.5% (PEG市場PER 0.34) / 3年CAGR 30.6% (PEG市場PER 1.00, 自己水準PER 41.7→PEG 1.36)
+[エンジン基準(参照)] f_us=0.5: EPS 2026:0.86 2027:1.38 2028:2.10 2029:1.40 | 調整後営業利益 2026:1,225 2027:1,581 2028:2,069 2029:1,487
+    2年CAGR 56.5% (PEG市場PER 0.54) / 3年CAGR 17.8% (PEG市場PER 1.72, 自己水準PER 41.7→PEG 2.34)
+
+2029売上ベース: 米国含む満年ロイヤリティ 3,602 → 米国消滅後(ROWのみ) 1,349 / 差 2,253 = 税後ADS当たり 2.90ドル
+(参考)2028コンセンサス2.69 → 2030年は上記差分を新製品が埋められない限りEPS減
+
+価格低 31.2(Yahoo無日付): PER26 26.7  PER27 18.9  PEG(コンセンサス2年) 0.48  時価総額 $19.4B
+価格基準 35.7(YTD+15.9%逆算/9月Frankfurt換算): PER26 30.5  PER27 21.6  PEG(コンセンサス2年) 0.55  時価総額 $22.2B
+価格高 38.25(WealthAwesome無日付): PER26 32.7  PER27 23.2  PEG(コンセンサス2年) 0.59  時価総額 $23.8B
+PEG0.75となる株価(コンセンサス2年): $48.7
+同業PEG中央値(n=4, 低信頼): 1.02
+条件6=3: 平均 2.73  C以下の数 4  → 構造A+ 不通過
+条件6=4: 平均 2.82  C以下の数 4  → 構造A+ 不通過
+満点側の上限試算(条件1,10,13をBに、7をBに引き上げ、条件6=A): 3.18
+
+DARZALEX Q3-26 前年比 15.4%  米国比率 59.6%  H1前年比 20.6%
+```
