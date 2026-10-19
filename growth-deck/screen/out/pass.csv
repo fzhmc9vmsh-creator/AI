@@ -1,8 +1,210 @@
 ticker,name,market,status,reasons,missing,cyclical_flag,currency,sector,industry,mcap_local_mn,mcap_usd_mn,fx_local_per_usd,eps_trailing_local,eps_0y_avg_local,eps_1y_avg_local,eps_base_yearago_local,g2_eps_cagr_pct,g5y_eps_growth_pct,forward_pe_x,peg_x,analysts_1y_n,revenue_1y_avg_mn_local,fetched_at,data_source
-MOCKC,Mock Energy C,US,pass,,,1,USD,Energy,Oil & Gas E&P,25000.0,25000.0,1.0,5.5,5.8,6.31,3.0,45.03,,6.0,0.133,15.0,,2026-10-19T07:39:02,mock
-9011.T,MockMemory K,JP,pass,,,1,JPY,Technology,Semiconductor Memory,3000000.0,20000.0,150.0,600.0,640.0,700.0,400.0,32.29,9.0,9.0,0.279,12.0,,2026-10-19T07:39:02,mock
-9012.T,MockBank L,JP,pass,,,1,JPY,Financial Services,Banks - Regional,2500000.0,16666.7,150.0,120.0,128.0,140.0,80.0,32.29,5.0,9.0,0.279,10.0,,2026-10-19T07:39:02,mock
-8001.HK,MockTel N,HK,pass,,,0,HKD,Communication Services,Telecom Services,80000.0,10256.4,7.8,46.0,55.0,72.9,40.0,35.0,,16.0,0.457,10.0,,2026-10-19T07:39:02,mock
-9001.T,MockDenki A,JP,pass,,,0,JPY,Technology,Consumer Electronics,2000000.0,13333.3,150.0,110.0,130.0,180.0,100.0,34.16,15.0,20.0,0.585,14.0,10000000.0,2026-10-19T07:39:02,mock
-9003.T,MockAuto C,JP,pass,,,1,JPY,Consumer Cyclical,Auto Manufacturers,5000000.0,33333.3,150.0,400.0,440.0,588.0,300.0,40.0,12.0,24.0,0.6,20.0,,2026-10-19T07:39:02,mock
-MOCKA,Mock Software A,US,pass,,,0,USD,Technology,Software - Application,60000.0,60000.0,1.0,2.2,2.8,3.6,2.0,34.16,14.0,22.0,0.644,25.0,,2026-10-19T07:39:02,mock
+MUX,McEwen Inc.,US,pass,,,1,USD,Basic Materials,Other Precious Metals & Mining,970.2,970.2,1.0,1.26,1.51,3.985,0.59,159.89,,4.0752826,0.025,2.0,354.2,2026-10-19T15:47:03,yfinance
+CENX,Century Aluminum Company,US,pass,,,1,USD,Basic Materials,Aluminum,3407.3,3407.3,1.0,5.79,9.9102,11.39736,2.46,115.25,,3.0199976,0.026,4.0,4136.4,2026-10-19T15:45:42,yfinance
+GGAL,Grupo Financiero Galicia S.A.,US,pass,,,1,USD,Financial Services,Banks - Regional,5981.7,5981.7,1.0,0.89,4.7724,7.06029,0.8668,185.4,,4.9997945,0.027,6.0,9179.2,2026-10-19T15:44:54,yfinance
+SBSW,Sibanye Stillwater Limited,US,pass,,,1,USD,Basic Materials,Other Precious Metals & Mining,7096.3,7096.3,1.0,1.19,39.323,56.818,14.92704,95.1,,2.850388,0.03,1.0,185377.7,2026-10-19T15:44:41,yfinance
+KLIC,"Kulicke and Soffa Industries, Inc.",US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,4300.9,4300.9,1.0,2.18,3.86333,5.90333,0.21,430.2,,13.922651,0.032,3.0,1517.0,2026-10-19T15:45:22,yfinance
+TGB,Trekor Metals Limited,US,pass,,,1,USD,Basic Materials,Copper,2937.3,2937.3,1.0,0.02,0.5575,1.12625,0.07,301.11,,10.089584,0.034,8.0,1596.2,2026-10-19T15:45:53,yfinance
+NEXA,Nexa Resources S.A.,US,pass,,,1,USD,Basic Materials,Other Industrial Metals & Mining,1663.4,1663.4,1.0,2.09,2.81,3.33333,0.85,98.03,,3.768004,0.038,3.0,3686.0,2026-10-19T15:46:33,yfinance
+EQPT,EquipmentShare.com Inc.,US,pass,,,0,USD,Industrials,Rental & Leasing Services,3658.7,3658.7,1.0,0.11,0.43572,0.90952,0.0362,401.25,,15.876507,0.04,6.0,6691.3,2026-10-19T15:45:37,yfinance
+OBE,Obsidian Energy Ltd.,US,pass,,,1,USD,Energy,Oil & Gas E&P,804.0,804.0,1.0,0.3,1.75,2.83,0.557,125.41,,6.0292554,0.048,1.0,798.0,2026-10-19T15:47:14,yfinance
+SNDK,Sandisk Corporation,US,pass,,,0,USD,Technology,Computer Hardware,202038.2,202038.2,1.0,73.76,214.82326,266.2971,70.88,93.83,,5.249482,0.056,21.0,58436.1,2026-10-19T15:42:42,yfinance
+AVAL,Grupo Aval Acciones y Valores S.A.,US,pass,,,1,USD,Financial Services,Banks - Regional,5674.7,5674.7,1.0,0.38,0.52975,0.63535,0.11971,130.38,,7.5234127,0.058,1.0,21440700.6,2026-10-19T15:44:59,yfinance
+DAR,Darling Ingredients Inc.,US,pass,,,0,USD,Consumer Defensive,Packaged Foods,9486.3,9486.3,1.0,3.71,7.04374,6.23888,0.9661,154.12,,9.635544,0.063,8.0,7077.5,2026-10-19T15:44:24,yfinance
+TPG,TPG Inc.,US,pass,,,0,USD,Financial Services,Asset Management,16847.1,16847.1,1.0,0.67,1.97,3.75,0.45,188.68,,12.086356,0.064,1.0,2944.1,2026-10-19T15:44:39,yfinance
+CTOS,"Custom Truck One Source, Inc.",US,pass,,,0,USD,Industrials,Rental & Leasing Services,2078.3,2078.3,1.0,0.09,0.13,0.31,0.0103,448.61,,29.467743,0.066,3.0,2237.2,2026-10-19T15:46:19,yfinance
+MPC,Marathon Petroleum Corporation,US,pass,,,1,USD,Energy,Oil & Gas Refining & Marketing,134683.6,134683.6,1.0,28.88,63.69137,55.93157,10.7,128.63,,8.574764,0.067,19.0,152312.2,2026-10-19T15:42:47,yfinance
+MU,"Micron Technology, Inc.",US,pass,,,0,USD,Technology,Semiconductors,1047007.8,1047007.8,1.0,74.33,176.54659,206.89381,75.52,65.52,,4.4727774,0.068,36.0,318881.8,2026-10-19T15:42:35,yfinance
+PICS,PicS N.V.,US,pass,,,0,USD,Technology,Software - Infrastructure,1731.3,1731.3,1.0,1.95,7.88285,14.75664,5.457,64.44,,4.5902357,0.071,4.0,21172.3,2026-10-19T15:46:27,yfinance
+HIMX,"Himax Technologies, Inc.",US,pass,,,0,USD,Technology,Semiconductors,2124.5,2124.5,1.0,0.21,0.47,1.3,0.252,127.13,,9.369231,0.074,1.0,1230.6,2026-10-19T15:46:17,yfinance
+BMA,Banco Macro S.A.,US,pass,,,1,USD,Financial Services,Banks - Regional,4035.8,4035.8,1.0,4.89,12535.772,17082.11,5443.5234,77.15,,5.764577,0.075,4.0,6524287.5,2026-10-19T15:45:29,yfinance
+LUV,Southwest Airlines Co.,US,pass,,,1,USD,Industrials,Airlines,19345.7,19345.7,1.0,1.6,2.81708,4.3331,0.93,115.85,,9.126261,0.079,24.0,34942.6,2026-10-19T15:43:41,yfinance
+HCC,"Warrior Met Coal, Inc.",US,pass,,,1,USD,Basic Materials,Coking Coal,4623.4,4623.4,1.0,4.16,6.63699,7.01278,1.09,153.65,,12.485775,0.081,4.0,2213.4,2026-10-19T15:45:15,yfinance
+PSX,Phillips 66,US,pass,,,1,USD,Energy,Oil & Gas Refining & Marketing,117311.6,117311.6,1.0,17.5,32.48106,29.9519,6.44,115.66,,9.768829,0.084,19.0,154095.6,2026-10-19T15:42:48,yfinance
+VLO,Valero Energy Corporation,US,pass,,,1,USD,Energy,Oil & Gas Refining & Marketing,126860.8,126860.8,1.0,23.99,52.59104,47.38085,10.61,111.32,,9.299115,0.084,19.0,141557.1,2026-10-19T15:42:47,yfinance
+LOMA,Loma Negra Compañía Industrial Argentina Sociedad Anónima,US,pass,,,1,USD,Basic Materials,Building Materials,1160.0,1160.0,1.0,0.31,0.6066,0.76958,0.12513,148.0,,12.916136,0.087,4.0,1161746.7,2026-10-19T15:46:51,yfinance
+FEIM,"Frequency Electronics, Inc.",US,pass,,,0,USD,Technology,Communication Equipment,753.4,753.4,1.0,0.25,1.23,1.92,0.0884,366.04,,34.807293,0.095,1.0,104.3,2026-10-19T15:47:19,yfinance
+ZIM,ZIM Integrated Shipping Services Ltd.,US,pass,,,1,USD,Industrials,Marine Shipping,3478.2,3478.2,1.0,1.15,8.2,6.7,3.1831,45.08,,4.3074627,0.096,1.0,6829.5,2026-10-19T15:45:40,yfinance
+NESR,National Energy Services Reunited Corp.,US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,1918.2,1918.2,1.0,0.92,1.65936,2.55416,0.83,75.42,,7.4466753,0.099,9.0,2489.2,2026-10-19T15:46:22,yfinance
+EGO,Eldorado Gold Corporation,US,pass,,,1,USD,Basic Materials,Gold,9290.1,9290.1,1.0,2.87,3.15182,5.05182,1.75,69.9,,7.0509243,0.101,11.0,4005.4,2026-10-19T15:44:25,yfinance
+JAZZ,Jazz Pharmaceuticals plc,US,pass,,,0,USD,Healthcare,Biotechnology,13479.5,13479.5,1.0,14.59,21.11581,26.0549,8.38,76.33,,7.9697104,0.104,19.0,4994.5,2026-10-19T15:44:03,yfinance
+ETON,"Eton Pharmaceuticals, Inc.",US,pass,,,0,USD,Healthcare,Drug Manufacturers - Specialty & Generic,1401.1,1401.1,1.0,0.4,1.4,2.55,0.32,182.29,,19.22353,0.105,2.0,220.4,2026-10-19T15:46:44,yfinance
+ALGT,Allegiant Travel Company,US,pass,,,1,USD,Industrials,Airlines,1843.4,1843.4,1.0,1.17,5.50467,9.84593,3.8,60.97,,6.848515,0.112,14.0,4549.9,2026-10-19T15:46:23,yfinance
+HGV,Hilton Grand Vacations Inc.,US,pass,,,0,USD,Consumer Cyclical,Resorts & Casinos,2757.7,2757.7,1.0,1.76,4.76996,5.17519,2.08,57.74,,6.855787,0.119,10.0,5770.9,2026-10-19T15:45:58,yfinance
+ARIS,Aris Mining Corporation,US,pass,,,1,USD,Basic Materials,Gold,3598.1,3598.1,1.0,1.39,2.054,2.888,1.28,50.21,,6.035319,0.12,5.0,2016.5,2026-10-19T15:45:39,yfinance
+VST,Vistra Corp.,US,pass,,,0,USD,Utilities,Utilities - Independent Power Producers,50563.4,50563.4,1.0,5.93,9.57847,10.35614,2.18,117.96,,14.52667,0.123,10.0,24046.0,2026-10-19T15:43:09,yfinance
+DIOD,Diodes Incorporated,US,pass,,,0,USD,Technology,Semiconductors,3956.3,3956.3,1.0,1.87,3.22,5.83,1.22,118.6,,14.73585,0.124,3.0,2267.7,2026-10-19T15:45:32,yfinance
+SIMO,Silicon Motion Technology Corporation,US,pass,,,0,USD,Technology,Semiconductors,7483.9,7483.9,1.0,7.75,11.13541,15.87274,3.55,111.45,,13.904946,0.125,9.0,2430.0,2026-10-19T15:44:36,yfinance
+BTG,B2Gold Corp.,US,pass,,,1,USD,Basic Materials,Gold,6942.2,6942.2,1.0,0.55,0.5475,0.94917,0.46,43.65,,5.536416,0.127,12.0,4267.7,2026-10-19T15:44:43,yfinance
+TPC,Tutor Perini Corporation,US,pass,,,1,USD,Industrials,Engineering & Construction,4142.4,4142.4,1.0,2.32,5.37588,6.06624,1.51,100.43,,12.978386,0.129,3.0,7188.1,2026-10-19T15:45:27,yfinance
+STX,Seagate Technology Holdings plc,US,pass,,,0,USD,Technology,Computer Hardware,152724.0,152724.0,1.0,13.9,36.34032,57.07435,15.58,91.4,,11.767633,0.129,20.0,25678.4,2026-10-19T15:42:45,yfinance
+MEOH,Methanex Corporation,US,pass,,,1,USD,Basic Materials,Chemicals,5037.6,5037.6,1.0,1.01,9.70169,6.34224,2.03,76.76,,10.090108,0.131,9.0,4069.4,2026-10-19T15:45:08,yfinance
+ERO,Ero Copper Corp.,US,pass,,,1,USD,Basic Materials,Copper,3555.7,3555.7,1.0,2.95,4.09583,4.93846,2.12,52.63,,6.9029617,0.131,13.0,1930.2,2026-10-19T15:45:39,yfinance
+ATLC,Atlanticus Holdings Corporation,US,pass,,,0,USD,Financial Services,Credit Services,1401.4,1401.4,1.0,7.7,9.805,13.5975,5.96,51.05,,6.7938957,0.133,4.0,3451.7,2026-10-19T15:46:43,yfinance
+HRMY,"Harmony Biosciences Holdings, Inc.",US,pass,,,0,USD,Healthcare,Biotechnology,2176.3,2176.3,1.0,3.1,5.22166,7.00454,3.6,39.49,,5.335111,0.135,2.0,1166.4,2026-10-19T15:46:15,yfinance
+TFIN,"Triumph Financial, Inc.",US,pass,,,1,USD,Financial Services,Banks - Regional,1486.5,1486.5,1.0,1.48,2.022,3.278,0.5892,135.87,,18.978035,0.14,5.0,522.3,2026-10-19T15:46:39,yfinance
+NXST,"Nexstar Media Group, Inc.",US,pass,,,0,USD,Communication Services,Broadcasting,5102.9,5102.9,1.0,5.28,35.06419,25.98376,12.25323,45.62,,6.374558,0.14,3.0,7588.9,2026-10-19T15:45:07,yfinance
+RERE,ATRenew Inc.,US,pass,,,0,USD,Consumer Cyclical,Internet Retail,864.9,864.9,1.0,0.28,2.8175,3.8286,1.74164,48.27,,6.8250446,0.141,5.0,32705.2,2026-10-19T15:47:09,yfinance
+SVM,Silvercorp Metals Inc.,US,pass,,,1,USD,Basic Materials,Silver,2150.3,2150.3,1.0,0.11,0.802,1.46,0.69,45.46,,6.658014,0.146,5.0,813.2,2026-10-19T15:46:16,yfinance
+WLFC,Willis Lease Finance Corporation,US,pass,,,0,USD,Industrials,Rental & Leasing Services,787.1,787.1,1.0,3.97,7.23,6.87,3.66163,36.97,,5.418486,0.147,1.0,801.9,2026-10-19T15:47:15,yfinance
+AUGO,Aura Minerals Inc.,US,pass,,,1,USD,Basic Materials,Gold,7316.4,7316.4,1.0,3.54,6.15395,7.87656,2.6285,73.11,,11.079709,0.152,3.0,2605.2,2026-10-19T15:44:38,yfinance
+STM,STMicroelectronics N.V.,US,pass,,,0,USD,Technology,Semiconductors,41436.9,41436.9,1.0,0.04,1.33952,2.53433,0.53,118.67,,18.21244,0.153,9.0,17179.5,2026-10-19T15:43:16,yfinance
+ETSY,"Etsy, Inc.",US,pass,,,0,USD,Consumer Cyclical,Internet Retail,7913.0,7913.0,1.0,3.42,3.38511,4.54374,1.39,80.8,,12.499185,0.155,27.0,2982.0,2026-10-19T15:44:32,yfinance
+LOB,"Live Oak Bancshares, Inc.",US,pass,,,1,USD,Financial Services,Banks - Regional,1612.1,1612.1,1.0,2.85,2.958,4.28,1.854,51.94,,8.137851,0.157,5.0,744.4,2026-10-19T15:46:35,yfinance
+MTUS,Metallus Inc.,US,pass,,,1,USD,Basic Materials,Steel,858.4,858.4,1.0,0.19,0.8625,1.3925,0.37,94.0,,14.87253,0.158,4.0,1424.4,2026-10-19T15:47:10,yfinance
+TTMI,"TTM Technologies, Inc.",US,pass,,,0,USD,Technology,Electronic Components,10525.4,10525.4,1.0,2.21,4.81667,7.85667,2.46,78.71,,12.716584,0.162,3.0,6247.0,2026-10-19T15:44:17,yfinance
+CDE,"Coeur Mining, Inc.",US,pass,,,1,USD,Basic Materials,Gold,15886.7,15886.7,1.0,1.17,1.08143,1.8325,0.8,51.35,,8.433834,0.164,8.0,5231.8,2026-10-19T15:43:51,yfinance
+NVDA,NVIDIA Corporation,US,pass,,,0,USD,Technology,Semiconductors,5297849.5,5297849.5,1.0,7.91,9.31242,15.9146,4.77,82.66,,13.786077,0.167,52.0,692206.4,2026-10-19T15:42:32,yfinance
+INDV,"Indivior Pharmaceuticals, Inc.",US,pass,,,0,USD,Healthcare,Drug Manufacturers - Specialty & Generic,3958.8,3958.8,1.0,2.79,4.40867,4.88333,2.5,39.76,,6.8682647,0.173,3.0,1399.5,2026-10-19T15:45:34,yfinance
+UPST,"Upstart Holdings, Inc.",US,pass,,,0,USD,Financial Services,Credit Services,2264.0,2264.0,1.0,0.5,2.2914,3.57421,1.8875,37.61,,6.5091305,0.173,8.0,1859.3,2026-10-19T15:46:13,yfinance
+COMP,"Compass, Inc.",US,pass,,,0,USD,Real Estate,Real Estate Services,6981.7,6981.7,1.0,0.06,0.846,0.82165,0.31025,62.74,,11.06919,0.176,3.0,15365.5,2026-10-19T15:44:42,yfinance
+RNW,ReNew Energy Global Plc,US,pass,,,0,USD,Utilities,Utilities - Renewable,2510.0,2510.0,1.0,0.33,26.23683,66.97644,27.799,55.22,,9.761404,0.177,3.0,185439.6,2026-10-19T15:46:04,yfinance
+EFXT,Enerflex Ltd.,US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,3053.8,3053.8,1.0,0.41,1.35863,2.05732,0.7339,67.43,,12.156591,0.18,2.0,3915.8,2026-10-19T15:45:50,yfinance
+STLD,"Steel Dynamics, Inc.",US,pass,,,1,USD,Basic Materials,Steel,35003.6,35003.6,1.0,11.03,17.10595,21.24397,7.99,63.06,,11.444676,0.181,14.0,24585.9,2026-10-19T15:43:19,yfinance
+MUR,Murphy Oil Corporation,US,pass,,,1,USD,Energy,Oil & Gas E&P,6068.0,6068.0,1.0,2.02,3.95409,3.65237,1.37,63.28,,11.589735,0.183,15.0,3286.3,2026-10-19T15:44:53,yfinance
+FTAI,FTAI Aviation Ltd.,US,pass,,,0,USD,Industrials,Aerospace & Defense,17067.9,17067.9,1.0,4.6,5.72049,13.01076,4.6797,66.74,,12.309629,0.184,2.0,6494.2,2026-10-19T15:43:48,yfinance
+NOV,NOV Inc.,US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,6707.1,6707.1,1.0,0.27,0.89088,1.25391,0.39,79.31,,14.679265,0.185,14.0,9088.0,2026-10-19T15:44:44,yfinance
+PGC,Peapack-Gladstone Financial Corporation,US,pass,,,1,USD,Financial Services,Banks - Regional,768.9,768.9,1.0,2.87,3.5675,4.795,2.1598,49.0,,9.044838,0.185,4.0,396.8,2026-10-19T15:47:17,yfinance
+SW,Smurfit Westrock Plc,US,pass,,,0,USD,Consumer Cyclical,Packaging & Containers,21822.8,21822.8,1.0,0.95,1.71999,3.52792,1.33,62.87,,11.793068,0.188,14.0,34361.4,2026-10-19T15:43:35,yfinance
+EQX,Equinox Gold Corp.,US,pass,,,1,USD,Basic Materials,Gold,12944.3,12944.3,1.0,0.48,1.00556,1.37111,0.67,43.05,,8.086587,0.188,9.0,4991.2,2026-10-19T15:44:05,yfinance
+MTDR,Matador Resources Company,US,pass,,,1,USD,Energy,Oil & Gas E&P,7116.5,7116.5,1.0,5.83,8.01554,9.88481,5.76,31.0,,5.8175116,0.188,16.0,4918.6,2026-10-19T15:44:40,yfinance
+HALO,"Halozyme Therapeutics, Inc.",US,pass,,,0,USD,Healthcare,Biotechnology,13931.9,13931.9,1.0,3.42,8.83734,10.6786,4.15,60.41,,11.494952,0.19,5.0,2100.3,2026-10-19T15:44:00,yfinance
+FLYW,Flywire Corporation,US,pass,,,0,USD,Technology,Software - Infrastructure,2272.5,2272.5,1.0,0.26,1.07561,1.36148,0.4679,70.58,,13.511032,0.191,7.0,877.7,2026-10-19T15:46:13,yfinance
+NUE,Nucor Corporation,US,pass,,,1,USD,Basic Materials,Steel,59328.0,59328.0,1.0,12.54,19.48839,20.95428,7.71,64.86,,12.47955,0.192,11.0,41587.1,2026-10-19T15:43:03,yfinance
+CORT,Corcept Therapeutics Incorporated,US,pass,,,0,USD,Healthcare,Biotechnology,12114.6,12114.6,1.0,0.45,2.12,4.405,0.82,131.77,,25.441542,0.193,4.0,1706.7,2026-10-19T15:44:08,yfinance
+ARW,"Arrow Electronics, Inc.",US,pass,,,0,USD,Technology,Electronics & Computer Distribution,11108.1,11108.1,1.0,15.64,21.635,23.925,11.02,47.34,,9.120585,0.193,4.0,43166.2,2026-10-19T15:44:14,yfinance
+BMRN,BioMarin Pharmaceutical Inc.,US,pass,,,0,USD,Healthcare,Biotechnology,10530.4,10530.4,1.0,0.37,4.4564,6.43975,3.15,42.98,,8.362091,0.195,18.0,4478.6,2026-10-19T15:44:18,yfinance
+CLS,Celestica Inc.,US,pass,,,0,USD,Technology,Electronic Components,39529.5,39529.5,1.0,9.63,11.18019,19.36053,6.05,78.89,,15.934026,0.202,9.0,35448.0,2026-10-19T15:43:17,yfinance
+ASX,"ASE Technology Holding Co., Ltd.",US,pass,,,0,USD,Technology,Semiconductors,91042.4,91042.4,1.0,0.84,1.2301,2.14594,0.571,93.86,,19.294668,0.206,1.0,1050397.3,2026-10-19T15:42:52,yfinance
+KNX,Knight-Swift Transportation Holdings Inc.,US,pass,,,0,USD,Industrials,Trucking,10494.5,10494.5,1.0,0.27,2.31358,4.0013,1.26,78.2,,16.114763,0.206,20.0,8945.4,2026-10-19T15:44:18,yfinance
+PAYS,"Paysign, Inc.",US,pass,,,0,USD,Technology,Software - Infrastructure,857.1,857.1,1.0,0.27,0.49,0.615,0.13,117.5,,24.682438,0.21,2.0,133.7,2026-10-19T15:47:11,yfinance
+AVT,"Avnet, Inc.",US,pass,,,0,USD,Technology,Electronics & Computer Distribution,7634.1,7634.1,1.0,4.01,10.5725,11.04667,5.67,39.58,,8.40389,0.212,3.0,37636.6,2026-10-19T15:44:35,yfinance
+MQ,"Marqeta, Inc.",US,pass,,,0,USD,Technology,Software - Infrastructure,1938.3,1938.3,1.0,0.1,0.27,0.5,0.0664,174.41,,37.24,0.214,2.0,807.5,2026-10-19T15:46:21,yfinance
+HPE,Hewlett Packard Enterprise Company,US,pass,,,0,USD,Technology,Communication Equipment,75512.8,75512.8,1.0,1.94,3.82611,4.70878,1.94,55.79,,12.080624,0.217,20.0,54696.6,2026-10-19T15:42:59,yfinance
+FPS,"Forgent Power Solutions, Inc.",US,pass,,,0,USD,Industrials,Electrical Equipment & Parts,10402.1,10402.1,1.0,0.3,1.35168,2.02193,0.68,72.44,,16.128155,0.223,12.0,3406.7,2026-10-19T15:44:28,yfinance
+SMTC,Semtech Corporation,US,pass,,,0,USD,Technology,Semiconductors,13603.1,13603.1,1.0,1.51,3.65124,6.67364,1.71,97.55,,21.841154,0.224,15.0,2043.3,2026-10-19T15:44:01,yfinance
+CNK,"Cinemark Holdings, Inc.",US,pass,,,0,USD,Communication Services,Entertainment,4500.9,4500.9,1.0,1.8,2.59441,2.79139,1.04,63.83,,14.358084,0.225,9.0,3701.7,2026-10-19T15:45:19,yfinance
+ARCB,ArcBest Corporation,US,pass,,,0,USD,Industrials,Trucking,2931.5,2931.5,1.0,0.69,7.04215,9.56159,3.7,60.75,,13.716861,0.226,13.0,4866.9,2026-10-19T15:45:52,yfinance
+BABA,Alibaba Group Holding Limited,US,pass,,,0,USD,Consumer Cyclical,Internet Retail,272022.5,272022.5,1.0,4.13,44.44059,62.0398,26.8,52.15,,11.793778,0.226,30.0,1262239.7,2026-10-19T15:42:39,yfinance
+GGB,Gerdau S.A.,US,pass,,,1,USD,Basic Materials,Steel,10093.1,10093.1,1.0,0.22,2.87816,3.09393,1.6456,37.12,,8.43123,0.227,3.0,73112.2,2026-10-19T15:44:20,yfinance
+BP,BP p.l.c.,US,pass,,,1,USD,Energy,Oil & Gas Integrated,127247.1,127247.1,1.0,2.05,7.87078,5.49847,2.88,38.17,,8.985227,0.235,16.0,209164.4,2026-10-19T15:42:47,yfinance
+WRLD,World Acceptance Corporation,US,pass,,,0,USD,Financial Services,Credit Services,797.6,797.6,1.0,7.94,13.18,15.14,6.97,47.38,,11.304491,0.239,1.0,654.9,2026-10-19T15:47:14,yfinance
+EVCM,EverCommerce Inc.,US,pass,,,0,USD,Technology,Software - Application,1669.5,1669.5,1.0,0.15,0.75282,0.78948,0.3518,49.8,,11.969905,0.24,4.0,643.4,2026-10-19T15:46:32,yfinance
+PWP,Perella Weinberg Partners,US,pass,,,0,USD,Financial Services,Capital Markets,1261.4,1261.4,1.0,0.26,0.92,1.34,0.68,40.38,,9.671641,0.24,4.0,1008.2,2026-10-19T15:47:02,yfinance
+ECVT,Ecovyst Inc.,US,pass,,,1,USD,Basic Materials,Specialty Chemicals,1133.5,1133.5,1.0,0.23,0.69331,0.86967,0.39,49.33,,11.906816,0.241,6.0,1074.5,2026-10-19T15:46:53,yfinance
+MCHP,Microchip Technology Incorporated,US,pass,,,0,USD,Technology,Semiconductors,40856.0,40856.0,1.0,0.68,3.65293,4.59515,1.64,67.39,,16.373785,0.243,25.0,7444.1,2026-10-19T15:43:17,yfinance
+SANM,Sanmina Corporation,US,pass,,,0,USD,Technology,Electronic Components,9681.8,9681.8,1.0,5.59,12.10696,14.07865,6.04,52.67,,12.830775,0.244,5.0,16705.0,2026-10-19T15:44:22,yfinance
+RDDT,"Reddit, Inc.",US,pass,,,0,USD,Communication Services,Internet Content & Information,29813.8,29813.8,1.0,4.3,5.39359,7.10122,2.62,64.63,,16.005339,0.248,29.0,4473.0,2026-10-19T15:43:25,yfinance
+MT,ArcelorMittal S.A.,US,pass,,,1,USD,Basic Materials,Steel,47695.3,47695.3,1.0,2.37,3.90756,7.09987,3.85,35.8,,8.93398,0.25,7.0,73473.2,2026-10-19T15:43:11,yfinance
+AZN,AstraZeneca PLC,US,pass,,,0,USD,Healthcare,Drug Manufacturers - General,255907.2,255907.2,1.0,6.96,10.05,11.34333,4.58,57.38,,14.546433,0.254,3.0,67369.9,2026-10-19T15:42:39,yfinance
+AVGO,Broadcom Inc.,US,pass,,,0,USD,Technology,Semiconductors,1622891.0,1622891.0,1.0,7.83,11.65797,19.39695,6.82,68.65,,17.526983,0.255,48.0,173968.3,2026-10-19T15:42:32,yfinance
+DELL,Dell Technologies Inc.,US,pass,,,0,USD,Technology,Computer Hardware,297779.7,297779.7,1.0,17.2,25.89655,26.8056,10.3,61.32,,15.650396,0.255,7.0,229120.8,2026-10-19T15:42:38,yfinance
+MKSI,MKS Inc.,US,pass,,,0,USD,Technology,Scientific & Technical Instruments,14940.1,14940.1,1.0,6.29,13.14645,17.54744,7.88,49.23,,12.59158,0.256,13.0,6114.4,2026-10-19T15:43:54,yfinance
+CXW,"CoreCivic, Inc.",US,pass,,,0,USD,Industrials,Security & Protection Services,2971.7,2971.7,1.0,1.25,1.6825,2.4175,1.1,48.25,,12.430196,0.258,4.0,2929.6,2026-10-19T15:45:55,yfinance
+KGS,"Kodiak Gas Services, Inc.",US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,4777.7,4777.7,1.0,0.86,2.54296,3.1723,1.2856,57.08,,14.896132,0.261,6.0,1743.7,2026-10-19T15:45:12,yfinance
+HOPE,"Hope Bancorp, Inc.",US,pass,,,1,USD,Financial Services,Banks - Regional,1713.7,1713.7,1.0,1.03,1.13,1.568,0.89,32.73,,8.555485,0.261,5.0,759.4,2026-10-19T15:46:29,yfinance
+CTRI,"Centuri Holdings, Inc.",US,pass,,,0,USD,Utilities,Utilities - Regulated Gas,2057.6,2057.6,1.0,0.33,0.683,0.96637,0.3,79.48,,21.08923,0.265,5.0,4154.3,2026-10-19T15:46:19,yfinance
+EMBJ,Embraer S.A.,US,pass,,,0,USD,Industrials,Aerospace & Defense,13133.3,13133.3,1.0,2.47,3.2282,3.98692,1.3812,69.9,,18.51053,0.265,5.0,9620.0,2026-10-19T15:44:03,yfinance
+E,Eni S.p.A.,US,pass,,,1,USD,Energy,Oil & Gas Integrated,83903.7,83903.7,1.0,2.87,6.8322,6.5571,3.70205,33.09,,8.936039,0.27,3.0,92442.4,2026-10-19T15:42:55,yfinance
+LXU,"LSB Industries, Inc.",US,pass,,,1,USD,Basic Materials,Chemicals,759.4,759.4,1.0,0.5,0.94942,1.0653,0.5748,36.14,,9.901437,0.274,2.0,652.0,2026-10-19T15:47:18,yfinance
+CRDO,Credo Technology Group Holding Ltd,US,pass,,,0,USD,Technology,Semiconductors,33972.3,33972.3,1.0,2.82,6.30634,9.69063,3.46,67.35,,18.652039,0.277,20.0,3873.2,2026-10-19T15:43:20,yfinance
+FLEX,Flex Ltd.,US,pass,,,0,USD,Technology,Electronic Components,33833.3,33833.3,1.0,2.34,4.70706,7.0802,3.3,46.48,,12.9755945,0.279,11.0,45110.4,2026-10-19T15:43:21,yfinance
+SEI,"Solaris Energy Infrastructure, Inc.",US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,6733.4,6733.4,1.0,0.8,1.42017,3.52459,1.25,67.92,,18.985188,0.28,9.0,1936.7,2026-10-19T15:45:22,yfinance
+SNX,TD SYNNEX Corporation,US,pass,,,0,USD,Technology,Electronics & Computer Distribution,20155.0,20155.0,1.0,16.4,21.23971,24.62611,13.19,36.64,,10.25903,0.28,11.0,89156.4,2026-10-19T15:43:39,yfinance
+FCX,Freeport-McMoRan Inc.,US,pass,,,1,USD,Basic Materials,Copper,99954.0,99954.0,1.0,2.03,3.19439,4.32698,1.77,56.35,,16.086277,0.285,17.0,36478.1,2026-10-19T15:42:50,yfinance
+GEF-B,"Greif, Inc.",US,pass,,,0,USD,Consumer Cyclical,Packaging & Containers,4198.0,4198.0,1.0,3.31,6.375,7.135,2.9875,54.54,,15.524877,0.285,2.0,4440.3,2026-10-19T15:45:26,yfinance
+CART,Maplebear Inc.,US,pass,,,0,USD,Consumer Cyclical,Internet Retail,11683.9,11683.9,1.0,1.83,2.31157,2.91042,1.6,34.87,,10.053135,0.288,31.0,4706.6,2026-10-19T15:44:09,yfinance
+AEIS,"Advanced Energy Industries, Inc.",US,pass,,,0,USD,Industrials,Electrical Equipment & Parts,9973.6,9973.6,1.0,5.4,11.272,15.50723,6.41,55.54,,16.058638,0.289,12.0,3024.5,2026-10-19T15:44:21,yfinance
+SITM,SiTime Corporation,US,pass,,,0,USD,Technology,Semiconductors,15006.2,15006.2,1.0,0.56,11.13519,14.92114,3.2,115.94,,33.573174,0.29,11.0,1353.4,2026-10-19T15:43:53,yfinance
+NE,Noble Corporation plc,US,pass,,,1,USD,Energy,Oil & Gas Drilling,7041.8,7041.8,1.0,0.94,0.50276,2.03899,0.67,74.45,,21.633259,0.291,9.0,3198.2,2026-10-19T15:44:42,yfinance
+COHR,Coherent Corp.,US,pass,,,0,USD,Technology,Scientific & Technical Instruments,47558.9,47558.9,1.0,4.12,9.42042,14.05355,5.61,58.27,,17.18427,0.295,20.0,14766.2,2026-10-19T15:43:12,yfinance
+SNDR,"Schneider National, Inc.",US,pass,,,0,USD,Industrials,Trucking,5499.2,5499.2,1.0,0.63,1.05693,1.67593,0.63,63.1,,18.717966,0.297,16.0,6510.0,2026-10-19T15:45:01,yfinance
+ASM,Avino Silver & Gold Mines Ltd.,US,pass,,,1,USD,Basic Materials,Other Precious Metals & Mining,896.4,896.4,1.0,0.27,0.295,0.52,0.29,33.91,,10.148654,0.299,2.0,283.4,2026-10-19T15:47:07,yfinance
+ALHC,"Alignment Healthcare, Inc.",US,pass,,,0,USD,Healthcare,Healthcare Plans,1714.5,1714.5,1.0,0.19,0.4525,0.65,0.32142,42.21,,12.715385,0.301,4.0,6505.7,2026-10-19T15:46:27,yfinance
+DFIN,"Donnelley Financial Solutions, Inc.",US,pass,,,0,USD,Technology,Software - Application,1276.6,1276.6,1.0,1.46,4.81333,5.45667,3.15,31.62,,9.515877,0.301,3.0,808.5,2026-10-19T15:46:47,yfinance
+BE,Bloom Energy Corporation,US,pass,,,0,USD,Industrials,Electrical Equipment & Parts,67987.2,67987.2,1.0,0.76,2.70788,4.93841,0.76,154.91,,46.742783,0.302,26.0,6815.3,2026-10-19T15:43:01,yfinance
+APP,AppLovin Corporation,US,pass,,,0,USD,Communication Services,Advertising Agencies,89722.7,89722.7,1.0,13.01,15.64747,19.91912,9.75,42.93,,13.012005,0.303,27.0,10195.2,2026-10-19T15:42:54,yfinance
+CIEN,Ciena Corporation,US,pass,,,0,USD,Technology,Communication Equipment,50012.4,50012.4,1.0,4.47,7.16563,10.33093,2.64,97.82,,29.729458,0.304,7.0,8410.7,2026-10-19T15:43:09,yfinance
+GEF,"Greif, Inc.",US,pass,,,0,USD,Consumer Cyclical,Packaging & Containers,4614.9,4614.9,1.0,2.21,4.335,4.81,2.0,55.08,,16.877338,0.306,6.0,4440.3,2026-10-19T15:45:16,yfinance
+SONO,"Sonos, Inc.",US,pass,,,0,USD,Technology,Consumer Electronics,2032.3,2032.3,1.0,0.45,1.22,1.305,0.64,42.8,,13.164752,0.308,2.0,1636.3,2026-10-19T15:46:20,yfinance
+MRTN,"Marten Transport, Ltd.",US,pass,,,0,USD,Industrials,Trucking,1048.9,1048.9,1.0,0.15,0.245,0.6,0.21,69.03,,21.408333,0.31,2.0,981.5,2026-10-19T15:47:00,yfinance
+XYZ,"Block, Inc.",US,pass,,,0,USD,Technology,Software - Infrastructure,46735.8,46735.8,1.0,0.56,4.05218,5.2084,2.37,48.24,,14.93549,0.31,41.0,29025.4,2026-10-19T15:43:12,yfinance
+NBIX,"Neurocrine Biosciences, Inc.",US,pass,,,0,USD,Healthcare,Drug Manufacturers - Specialty & Generic,13832.4,13832.4,1.0,6.82,10.18748,11.95053,6.39,36.75,,11.386943,0.31,15.0,4562.9,2026-10-19T15:44:00,yfinance
+ZG,"Zillow Group, Inc.",US,pass,,,0,USD,Communication Services,Internet Content & Information,7101.6,7101.6,1.0,0.23,2.25871,2.96138,1.64,34.38,,10.663947,0.31,14.0,3287.8,2026-10-19T15:44:40,yfinance
+STRL,"Sterling Infrastructure, Inc.",US,pass,,,1,USD,Industrials,Engineering & Construction,13300.8,13300.8,1.0,13.88,20.0275,25.835,10.88,54.1,,16.831043,0.311,8.0,5022.1,2026-10-19T15:44:03,yfinance
+PAGP,"Plains GP Holdings, L.P.",US,pass,,,1,USD,Energy,Oil & Gas Midstream,6351.1,6351.1,1.0,0.44,2.29917,2.06564,1.0237,42.05,,13.19591,0.314,4.0,57308.7,2026-10-19T15:45:04,yfinance
+EIG,"Employers Holdings, Inc.",US,pass,,,1,USD,Financial Services,Insurance - Specialty,918.3,918.3,1.0,0.75,2.38333,2.51667,0.93,64.5,,20.31653,0.315,3.0,733.0,2026-10-19T15:47:06,yfinance
+ENLT,Enlight Renewable Energy Ltd,US,pass,,,0,USD,Utilities,Utilities - Renewable,9596.0,9596.0,1.0,0.61,1.38,1.03223,0.4221,56.38,,17.908615,0.318,5.0,3492.9,2026-10-19T15:44:23,yfinance
+VECO,Veeco Instruments Inc.,US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,2698.9,2698.9,1.0,0.37,1.51372,2.9058,1.33,47.81,,15.21784,0.318,5.0,1024.8,2026-10-19T15:46:00,yfinance
+PENG,"Penguin Solutions, Inc.",US,pass,,,0,USD,Technology,Information Technology Services,3023.6,3023.6,1.0,2.6,4.5585,5.256,2.87,35.33,,11.226218,0.318,5.0,2754.5,2026-10-19T15:45:50,yfinance
+AMRC,"Ameresco, Inc.",US,pass,,,1,USD,Industrials,Engineering & Construction,997.6,997.6,1.0,0.51,1.22782,1.64995,0.9,35.4,,11.394284,0.322,11.0,2312.6,2026-10-19T15:47:03,yfinance
+NTST,NETSTREIT Corp.,US,pass,,,0,USD,Real Estate,REIT - Retail,1697.1,1697.1,1.0,0.14,0.31571,0.40559,0.08,125.16,,40.609756,0.324,8.0,300.6,2026-10-19T15:46:30,yfinance
+KMX,"CarMax, Inc.",US,pass,,,1,USD,Consumer Cyclical,Auto & Truck Dealerships,7508.8,7508.8,1.0,2.11,3.23055,3.52666,1.68,44.89,,14.82906,0.33,15.0,29391.8,2026-10-19T15:44:35,yfinance
+TIGO,Millicom International Cellular S.A.,US,pass,,,0,USD,Communication Services,Telecom Services,13522.5,13522.5,1.0,3.96,4.5494,7.05187,3.8942,34.57,,11.433846,0.331,5.0,9145.6,2026-10-19T15:44:01,yfinance
+ALNY,"Alnylam Pharmaceuticals, Inc.",US,pass,,,0,USD,Healthcare,Biotechnology,31221.7,31221.7,1.0,5.93,8.93836,12.47744,5.08,56.72,,18.882614,0.333,12.0,6902.1,2026-10-19T15:43:23,yfinance
+AAON,"AAON, Inc.",US,pass,,,0,USD,Industrials,Building Products & Equipment,6188.1,6188.1,1.0,1.9,2.385,3.56833,1.35,62.58,,21.032248,0.336,6.0,2743.5,2026-10-19T15:44:51,yfinance
+ALGM,"Allegro MicroSystems, Inc.",US,pass,,,0,USD,Technology,Semiconductors,6130.8,6130.8,1.0,0.06,1.01892,1.479,0.54,65.5,,22.237999,0.34,12.0,1280.4,2026-10-19T15:44:52,yfinance
+SOLS,"Solstice Advanced Materials, Inc.",US,pass,,,1,USD,Basic Materials,Specialty Chemicals,9664.3,9664.3,1.0,1.32,2.89818,3.42111,1.49,51.53,,17.783703,0.345,10.0,4408.5,2026-10-19T15:44:23,yfinance
+NU,Nu Holdings Ltd.,US,pass,,,1,USD,Financial Services,Banks - Regional,70503.9,70503.9,1.0,0.73,0.85383,1.1063,0.5846,37.56,,12.956174,0.345,16.0,28246.7,2026-10-19T15:43:01,yfinance
+GNRC,Generac Holdings Inc.,US,pass,,,0,USD,Industrials,Specialty Industrial Machinery,11642.8,11642.8,1.0,4.35,9.67918,12.9942,6.34,43.16,,15.170022,0.351,19.0,6513.9,2026-10-19T15:44:10,yfinance
+LNG,"Cheniere Energy, Inc.",US,pass,,,1,USD,Energy,Oil & Gas Midstream,59417.8,59417.8,1.0,13.21,23.16448,20.80105,10.7331,39.21,,13.830552,0.353,6.0,23389.9,2026-10-19T15:43:03,yfinance
+ONC,BeOne Medicines AG,US,pass,,,0,USD,Healthcare,Biotechnology,42134.2,42134.2,1.0,5.59,7.64202,10.25473,2.53,101.33,,36.11504,0.356,17.0,7784.5,2026-10-19T15:43:15,yfinance
+MOD,Modine Manufacturing Company,US,pass,,,1,USD,Consumer Cyclical,Auto Parts,8109.8,8109.8,1.0,2.66,6.51333,10.15667,5.02,42.24,,15.033471,0.356,3.0,4139.2,2026-10-19T15:44:31,yfinance
+BEKE,KE Holdings Inc.,US,pass,,,0,USD,Real Estate,Real Estate Services,19787.8,19787.8,1.0,0.6,7.57384,8.46353,4.34,39.65,,14.243185,0.359,16.0,90085.9,2026-10-19T15:43:41,yfinance
+CX,"CEMEX, S.A.B. de C.V.",US,pass,,,1,USD,Basic Materials,Building Materials,14949.0,14949.0,1.0,0.12,0.81667,0.905,0.52015,31.9,,11.447514,0.359,4.0,18101.9,2026-10-19T15:43:55,yfinance
+CX,"CEMEX, S.A.B. de C.V.",US,pass,,,1,USD,Basic Materials,Building Materials,14949.0,14949.0,1.0,0.12,0.81667,0.905,0.52015,31.9,,11.447514,0.359,4.0,18101.9,2026-10-19T15:43:55,yfinance
+OMDA,"Omada Health, Inc.",US,pass,,,0,USD,Healthcare,Health Information Services,1099.5,1099.5,1.0,0.24,0.436,0.55614,0.15489,89.49,,32.294025,0.361,5.0,407.8,2026-10-19T15:46:55,yfinance
+SARO,"StandardAero, Inc.",US,pass,,,0,USD,Industrials,Aerospace & Defense,6990.7,6990.7,1.0,0.97,1.17972,1.47058,0.83,33.11,,12.02443,0.363,11.0,7058.7,2026-10-19T15:44:42,yfinance
+AAMI,Acadian Asset Management Inc.,US,pass,,,0,USD,Financial Services,Asset Management,3312.5,3312.5,1.0,2.82,5.35667,6.38333,3.25,40.15,,14.621678,0.364,3.0,911.9,2026-10-19T15:45:43,yfinance
+SOFI,"SoFi Technologies, Inc.",US,pass,,,0,USD,Financial Services,Credit Services,18798.8,18798.8,1.0,0.49,0.59225,0.82459,0.3744,48.41,,17.651196,0.365,10.0,6108.7,2026-10-19T15:43:42,yfinance
+ONTO,Onto Innovation Inc.,US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,11376.1,11376.1,1.0,2.66,8.10624,11.6969,4.94,53.88,,19.818499,0.368,12.0,1882.1,2026-10-19T15:44:11,yfinance
+SNEX,StoneX Group Inc.,US,pass,,,0,USD,Financial Services,Capital Markets,6915.0,6915.0,1.0,3.02,4.63,4.73,2.67587,32.95,,12.120508,0.368,1.0,0.0,2026-10-19T15:44:43,yfinance
+CVLG,"Covenant Logistics Group, Inc.",US,pass,,,0,USD,Industrials,Trucking,771.5,771.5,1.0,0.01,1.6175,2.6375,1.53,31.3,,11.526066,0.368,4.0,1437.3,2026-10-19T15:47:17,yfinance
+AAP,"Advance Auto Parts, Inc.",US,pass,,,1,USD,Consumer Cyclical,Auto Parts,2702.0,2702.0,1.0,1.8,2.98923,3.89269,2.26,31.24,,11.492053,0.368,23.0,8716.7,2026-10-19T15:46:00,yfinance
+AMD,"Advanced Micro Devices, Inc.",US,pass,,,0,USD,Technology,Semiconductors,903966.7,903966.7,1.0,3.92,7.5868,15.75529,4.17,94.38,,35.131126,0.372,50.0,89053.9,2026-10-19T15:42:34,yfinance
+WK,Workiva Inc.,US,pass,,,0,USD,Technology,Software - Application,4167.5,4167.5,1.0,0.84,3.3587,4.0498,1.78,50.84,,18.91081,0.372,11.0,1203.1,2026-10-19T15:45:26,yfinance
+VPG,"Vishay Precision Group, Inc.",US,pass,,,0,USD,Technology,Scientific & Technical Instruments,820.4,820.4,1.0,0.3,0.56667,1.79,0.49,91.13,,34.458103,0.378,3.0,370.8,2026-10-19T15:47:13,yfinance
+TSM,Taiwan Semiconductor Manufacturing Company Limited,US,pass,,,0,USD,Technology,Semiconductors,2210552.9,2210552.9,1.0,15.43,17.50426,23.38529,10.65,48.18,,18.225773,0.378,13.0,7647456.6,2026-10-19T15:42:32,yfinance
+PTON,"Peloton Interactive, Inc.",US,pass,,,0,USD,Consumer Cyclical,Leisure,2288.7,2288.7,1.0,0.14,0.31732,0.34986,0.14,58.08,,22.0349,0.379,12.0,2344.0,2026-10-19T15:46:11,yfinance
+DY,"Dycom Industries, Inc.",US,pass,,,1,USD,Industrials,Engineering & Construction,7694.5,7694.5,1.0,10.95,17.0623,20.78224,11.97,31.76,,12.275626,0.386,5.0,8583.1,2026-10-19T15:44:34,yfinance
+FORM,"FormFactor, Inc.",US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,8934.3,8934.3,1.0,1.45,3.05744,3.87276,1.3,72.6,,29.530619,0.407,8.0,1224.3,2026-10-19T15:44:28,yfinance
+ON,ON Semiconductor Corporation,US,pass,,,0,USD,Technology,Semiconductors,28350.2,28350.2,1.0,1.55,3.20627,4.5379,2.35,38.96,,16.04707,0.412,32.0,7423.2,2026-10-19T15:43:25,yfinance
+MTZ,"MasTec, Inc.",US,pass,,,1,USD,Industrials,Engineering & Construction,15427.4,15427.4,1.0,6.27,9.28383,12.38205,6.55,37.49,,15.515202,0.414,19.0,21487.3,2026-10-19T15:43:53,yfinance
+CSGP,"CoStar Group, Inc.",US,pass,,,0,USD,Real Estate,Real Estate Services,12755.6,12755.6,1.0,0.18,1.35978,1.77241,0.87,42.73,,17.761127,0.416,5.0,4210.3,2026-10-19T15:44:06,yfinance
+RSI,"Rush Street Interactive, Inc.",US,pass,,,0,USD,Consumer Cyclical,Gambling,4320.7,4320.7,1.0,0.3,0.61929,0.83607,0.37,50.32,,21.158516,0.42,10.0,1830.0,2026-10-19T15:46:20,yfinance
+TSEM,Tower Semiconductor Ltd.,US,pass,,,0,USD,Technology,Semiconductors,23135.2,23135.2,1.0,2.53,3.89228,6.71082,2.29,71.19,,30.499996,0.428,10.0,2724.5,2026-10-19T15:43:33,yfinance
+TFII,TFI International Inc.,US,pass,,,0,USD,Industrials,Trucking,9272.6,9272.6,1.0,4.06,5.92022,7.81291,4.37,33.71,,14.439563,0.428,17.0,9059.1,2026-10-19T15:44:26,yfinance
+HUBS,"HubSpot, Inc.",US,pass,,,0,USD,Technology,Software - Application,11796.4,11796.4,1.0,2.8,13.30393,16.85309,9.7,31.81,,13.673457,0.43,33.0,4196.5,2026-10-19T15:44:09,yfinance
+VSEC,VSE Corporation,US,pass,,,0,USD,Industrials,Aerospace & Defense,4549.1,4549.1,1.0,3.13,6.79366,8.28179,3.92,45.35,,19.571856,0.432,10.0,2203.5,2026-10-19T15:45:18,yfinance
+INVX,"Innovex International, Inc.",US,pass,,,1,USD,Energy,Oil & Gas Equipment & Services,1952.6,1952.6,1.0,0.89,1.53893,1.87143,1.0554,33.16,,14.919072,0.45,4.0,1106.7,2026-10-19T15:46:20,yfinance
+LSCC,Lattice Semiconductor Corporation,US,pass,,,0,USD,Technology,Semiconductors,15508.3,15508.3,1.0,0.25,2.13437,3.21479,1.05,74.98,,33.964893,0.453,14.0,1334.8,2026-10-19T15:43:52,yfinance
+VRT,Vertiv Holdings Co,US,pass,,,0,USD,Industrials,Electrical Equipment & Parts,81178.6,81178.6,1.0,4.42,6.73516,9.19314,4.2,47.95,,22.936668,0.478,30.0,18268.6,2026-10-19T15:42:57,yfinance
+DASH,"DoorDash, Inc.",US,pass,,,0,USD,Consumer Cyclical,Internet Retail,82179.3,82179.3,1.0,1.9,2.57425,4.50345,2.13,45.41,,22.984562,0.506,36.0,21540.7,2026-10-19T15:42:56,yfinance
+LFST,"LifeStance Health Group, Inc.",US,pass,,,0,USD,Healthcare,Medical Care Facilities,4476.3,4476.3,1.0,0.13,0.35951,0.43075,0.1824,53.67,,27.33604,0.509,5.0,1956.1,2026-10-19T15:45:21,yfinance
+NVT,nVent Electric plc,US,pass,,,0,USD,Industrials,Electrical Equipment & Parts,23262.2,23262.2,1.0,3.61,5.15765,6.73428,3.35,41.78,,21.341555,0.511,6.0,7044.7,2026-10-19T15:43:32,yfinance
+INOD,Innodata Inc.,US,pass,,,0,USD,Technology,Information Technology Services,1899.3,1899.3,1.0,1.29,1.645,2.08767,0.92,50.64,,26.460121,0.523,3.0,460.0,2026-10-19T15:46:22,yfinance
+BTSG,"BrightSpring Health Services, Inc.",US,pass,,,0,USD,Healthcare,Health Information Services,12090.5,12090.5,1.0,1.13,1.82031,2.2786,1.0,50.95,,26.816906,0.526,17.0,17425.0,2026-10-19T15:44:07,yfinance
+ADI,"Analog Devices, Inc.",US,pass,,,0,USD,Technology,Semiconductors,191577.8,191577.8,1.0,8.42,12.88058,16.49391,7.79,45.51,,24.002262,0.527,29.0,18370.2,2026-10-19T15:42:42,yfinance
+ASML,ASML Holding N.V.,US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,647390.0,647390.0,1.0,40.64,41.20963,55.92932,24.71,50.45,,26.7314,0.53,27.0,57215.3,2026-10-19T15:42:35,yfinance
+ALAB,"Astera Labs, Inc.",US,pass,,,0,USD,Technology,Semiconductors,51209.3,51209.3,1.0,2.03,4.03363,6.40305,1.84,86.55,,46.099903,0.533,23.0,2976.2,2026-10-19T15:43:08,yfinance
+HZO,"MarineMax, Inc.",US,pass,,,0,USD,Consumer Cyclical,Specialty Retail,1156.8,1156.8,1.0,0.16,0.71146,1.5744,0.61,60.65,,33.266644,0.548,9.0,2293.2,2026-10-19T15:46:52,yfinance
+GLBE,Global-E Online Ltd.,US,pass,,,0,USD,Consumer Cyclical,Internet Retail,6644.8,6644.8,1.0,0.88,1.57167,1.985,1.0732,36.0,,19.929472,0.554,6.0,1717.3,2026-10-19T15:44:46,yfinance
+MRVL,"Marvell Technology, Inc.",US,pass,,,0,USD,Technology,Semiconductors,221395.9,221395.9,1.0,3.04,4.22026,7.29625,2.84,60.28,,33.76392,0.56,43.0,19699.4,2026-10-19T15:42:42,yfinance
+LRCX,Lam Research Corporation,US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,348834.6,348834.6,1.0,5.76,9.47647,11.76569,5.82,42.18,,23.691769,0.562,26.0,41569.9,2026-10-19T15:42:37,yfinance
+TOST,"Toast, Inc.",US,pass,,,0,USD,Technology,Software - Infrastructure,18279.2,18279.2,1.0,0.79,1.40073,1.7596,1.0129,31.8,,17.972834,0.565,16.0,8849.0,2026-10-19T15:43:44,yfinance
+MTSI,"MACOM Technology Solutions Holdings, Inc.",US,pass,,,0,USD,Technology,Semiconductors,21089.8,21089.8,1.0,3.14,5.51229,8.4902,3.47,56.42,,32.525734,0.576,16.0,1798.9,2026-10-19T15:43:37,yfinance
+AMAT,"Applied Materials, Inc.",US,pass,,,0,USD,Technology,Semiconductor Equipment & Materials,337560.6,337560.6,1.0,11.59,12.78556,18.45665,9.42,39.98,,23.046165,0.577,35.0,46312.5,2026-10-19T15:42:38,yfinance
+WRBY,Warby Parker Inc.,US,pass,,,0,USD,Healthcare,Medical Instruments & Supplies,3077.8,3077.8,1.0,0.06,0.4195,0.61478,0.2127,70.01,,40.502293,0.579,9.0,1136.7,2026-10-19T15:45:49,yfinance
+LSTR,"Landstar System, Inc.",US,pass,,,0,USD,Industrials,Integrated Freight & Logistics,5810.5,5810.5,1.0,3.86,5.9297,7.66242,4.0204,38.05,,22.344769,0.587,18.0,6195.2,2026-10-19T15:44:57,yfinance
+ATRO,Astronics Corporation,US,pass,,,0,USD,Industrials,Aerospace & Defense,2669.8,2669.8,1.0,1.83,2.705,3.03667,1.675,34.65,,20.441801,0.59,3.0,1133.1,2026-10-19T15:46:02,yfinance
+KRMN,Karman Holdings Inc.,US,pass,,,0,USD,Industrials,Aerospace & Defense,4547.2,4547.2,1.0,0.28,0.58619,0.95305,0.37,60.49,,36.00021,0.595,12.0,951.1,2026-10-19T15:45:17,yfinance
+APH,Amphenol Corporation,US,pass,,,0,USD,Technology,Electronic Components,202036.7,202036.7,1.0,2.0,2.68662,3.33307,1.67,41.27,,24.580942,0.596,19.0,42632.8,2026-10-19T15:42:42,yfinance
+NYAX,Nayax Ltd.,US,pass,,,0,USD,Technology,Software - Infrastructure,1763.1,1763.1,1.0,0.21,0.92,1.565,0.69134,50.46,,30.140574,0.597,2.0,644.6,2026-10-19T15:46:26,yfinance
+KEYS,"Keysight Technologies, Inc.",US,pass,,,0,USD,Technology,Scientific & Technical Instruments,58038.1,58038.1,1.0,7.39,11.47402,13.93407,7.16,39.5,,24.465933,0.619,12.0,8210.0,2026-10-19T15:43:04,yfinance
+CDNS,"Cadence Design Systems, Inc.",US,pass,,,0,USD,Technology,Software - Application,90378.5,90378.5,1.0,5.03,4.81101,9.5677,4.06,53.51,,34.300823,0.641,25.0,7175.5,2026-10-19T15:42:53,yfinance
+LLY,Eli Lilly and Company,US,pass,,,0,USD,Healthcare,Drug Manufacturers - General,1112144.3,1112144.3,1.0,29.79,35.01748,47.18872,24.21,39.61,,26.417461,0.667,26.0,102013.6,2026-10-19T15:42:32,yfinance
+P,"Everpure, Inc.",US,pass,,,0,USD,Technology,Computer Hardware,43359.5,43359.5,1.0,0.73,2.78086,4.20663,1.9858,45.55,,30.932121,0.679,19.0,7026.3,2026-10-19T15:43:15,yfinance
+CGNX,Cognex Corporation,US,pass,,,0,USD,Technology,Scientific & Technical Instruments,9450.8,9450.8,1.0,1.04,1.69494,2.02174,1.02,40.79,,27.787945,0.681,18.0,1272.6,2026-10-19T15:44:25,yfinance
+TXN,Texas Instruments Incorporated,US,pass,,,0,USD,Technology,Semiconductors,250723.0,250723.0,1.0,6.57,8.53118,10.22121,5.45,36.95,,25.790876,0.698,28.0,25022.5,2026-10-19T15:42:39,yfinance
+H,Hyatt Hotels Corporation,US,pass,,,0,USD,Consumer Cyclical,Lodging,16208.7,16208.7,1.0,0.81,3.57722,4.83995,2.19,48.66,,35.537556,0.73,24.0,7757.1,2026-10-19T15:43:50,yfinance
+ATI,ATI Inc.,US,pass,,,1,USD,Industrials,Metal Fabrication,25917.3,25917.3,1.0,3.41,5.11692,6.37289,3.24,40.25,,29.865572,0.742,8.0,5651.6,2026-10-19T15:43:28,yfinance
