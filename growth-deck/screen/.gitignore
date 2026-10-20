@@ -1,3 +1,4 @@
 data/cache/
 __pycache__/
 data/fetch_log.txt
+data/fs_cache/

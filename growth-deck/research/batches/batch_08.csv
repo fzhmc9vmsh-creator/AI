@@ -1,0 +1,21 @@
+ticker,name,market,industry,tier
+UPST,"Upstart Holdings, Inc.",US,Credit Services,pass_border
+2290.HK,Lung Fung Group Holdings Limited,HK,Department Stores,wide_g2
+600693.SS,"Fujian Dongbai (Group) Co.,Ltd.",SH,Department Stores,wide_g2
+2268.HK,WuXi XDC Cayman Inc.,HK,Diagnostics & Research,pass_border
+3347.HK,"Hangzhou Tigermed Consulting Co., Ltd",HK,Diagnostics & Research,pass_border
+9860.HK,Adicon Holdings Limited,HK,Diagnostics & Research,pass_border
+141A.T,"TRIAL Holdings, Inc.",JP,Discount Stores,pass_border
+ABBV,AbbVie Inc.,US,Drug Manufacturers - General,wide_g2
+GRFS,"Grifols, S.A.",US,Drug Manufacturers - General,pass_border
+LLY,Eli Lilly and Company,US,Drug Manufacturers - General,pass_border
+600129.SS,"Chongqing Taiji Industry(Group) Co.,Ltd",SH,Drug Manufacturers - Specialty & Generic,pass_border
+600664.SS,"Harbin Pharmaceutical Group Co., Ltd.",SH,Drug Manufacturers - Specialty & Generic,wide_g2
+603520.SS,"Zhejiang Starry Pharmaceutical Co.,Ltd.",SH,Drug Manufacturers - Specialty & Generic,pass_border
+6185.HK,CanSino Biologics Inc.,HK,Drug Manufacturers - Specialty & Generic,pass_border
+ETON,"Eton Pharmaceuticals, Inc.",US,Drug Manufacturers - Specialty & Generic,pass_border
+IRWD,"Ironwood Pharmaceuticals, Inc.",US,Drug Manufacturers - Specialty & Generic,pass_border
+KMDA,Kamada Ltd.,US,Drug Manufacturers - Specialty & Generic,wide_g2
+NBIX,"Neurocrine Biosciences, Inc.",US,Drug Manufacturers - Specialty & Generic,wide_g2
+TEVA,Teva Pharmaceutical Industries Limited,US,Drug Manufacturers - Specialty & Generic,pass_border
+APEI,"American Public Education, Inc.",US,Education & Training Services,pass_border

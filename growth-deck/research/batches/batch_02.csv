@@ -1,0 +1,21 @@
+ticker,name,market,industry,tier
+603885.SS,"Juneyao Airlines Co., Ltd",SH,Airlines,pass_border
+ALGT,Allegiant Travel Company,US,Airlines,pass_border
+LUV,Southwest Airlines Co.,US,Airlines,pass_border
+603876.SS,"Jiangsu Dingsheng New Materials Joint-Stock Co.,Ltd",SH,Aluminum,pass_border
+CENX,Century Aluminum Company,US,Aluminum,wide_g2
+0933.HK,Viva Goods Company Limited,HK,Apparel Manufacturing,wide_g2
+3002.T,Gunze Limited,JP,Apparel Manufacturing,pass_border
+SGC,"Superior Group of Companies, Inc.",US,Apparel Manufacturing,pass_border
+VFC,V.F. Corporation,US,Apparel Manufacturing,pass_border
+603877.SS,"Ningbo Peacebird Fashion Co.,Ltd.",SH,Apparel Retail,pass_border
+REF,Reformation Inc.,US,Apparel Retail,pass_border
+AAMI,Acadian Asset Management Inc.,US,Asset Management,wide_g2
+ARES,Ares Management Corporation,US,Asset Management,pass_border
+FSSL,FS Specialty Lending Fund,US,Asset Management,wide_g2
+TPG,TPG Inc.,US,Asset Management,pass_border
+1211.HK,BYD Company Limited,HK,Auto Manufacturers,pass_border
+2333.HK,Great Wall Motor Company Limited,HK,Auto Manufacturers,pass_border
+2338.HK,"Weichai Power Co., Ltd.",HK,Auto Manufacturers,pass_border
+7261.T,Mazda Motor Corporation,JP,Auto Manufacturers,wide_g2
+7270.T,Subaru Corporation,JP,Auto Manufacturers,wide_g2

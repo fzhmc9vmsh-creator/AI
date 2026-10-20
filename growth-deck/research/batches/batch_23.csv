@@ -1,0 +1,21 @@
+ticker,name,market,industry,tier
+MU,"Micron Technology, Inc.",US,Semiconductors,wide_g2
+NVDA,NVIDIA Corporation,US,Semiconductors,pass_border
+ON,ON Semiconductor Corporation,US,Semiconductors,pass_border
+SIMO,Silicon Motion Technology Corporation,US,Semiconductors,pass_border
+SKHY,SK hynix Inc.,US,Semiconductors,pass_border
+SMTC,Semtech Corporation,US,Semiconductors,pass_border
+STM,STMicroelectronics N.V.,US,Semiconductors,pass_border
+TSEM,Tower Semiconductor Ltd.,US,Semiconductors,pass_border
+TSM,Taiwan Semiconductor Manufacturing Company Limited,US,Semiconductors,pass_border
+TXN,Texas Instruments Incorporated,US,Semiconductors,wide_g2
+SVM,Silvercorp Metals Inc.,US,Silver,pass_border
+0268.HK,Kingdee International Software Group Company Limited,HK,Software - Application,pass_border
+0596.HK,Inspur Digital Enterprise Technology Limited,HK,Software - Application,pass_border
+2556.HK,Marketingforce Management Ltd,HK,Software - Application,pass_border
+3697.T,SHIFT Inc.,JP,Software - Application,wide_g2
+3738.HK,Vobile Group Limited,HK,Software - Application,pass_border
+600845.SS,"Shanghai Baosight Software Co.,Ltd.",SH,Software - Application,pass_border
+603171.SS,"Servyou Software Group Co., Ltd.",SH,Software - Application,pass_border
+688692.SS,Wuhan Dameng Database Company Limited,SH,Software - Application,pass_border
+BSP,Bending Spoons S.p.A.,US,Software - Application,pass_border
