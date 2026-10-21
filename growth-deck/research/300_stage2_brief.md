@@ -2,7 +2,10 @@
 
 ## 対象
 第一段階(research/stage1/)で「深掘り」とした会社。構造が A+ か「近い」で、成長が A+ か境界の会社。
-確定済みの対象: Nu Holdings(NU)、Alnylam(ALNY)、Eli Lilly(LLY)、TSMC(2330.TW / TSM)、CoStar(CSGP)。残りの班で出た会社は追加する。
+確定済みの対象: Nu Holdings(NU)、Alnylam(ALNY)、Eli Lilly(LLY)、TSMC(2330.TW / TSM)、CoStar(CSGP)。
+**対象の基準を全班で統一する(Opus、2026-10-21)**: 第一段階の構造平均 ≥3.45、かつコンセンサス CAGR ≥25%。
+第一段階は1社あたりの調査が浅く、班ごとの採点の振れが ±0.15 程度ある(3条件が半段ずつ動く幅)ため、境目の会社を落とさない。
+この基準で Keysight(KEYS 3.55)、Reddit(RDDT 3.45)、The Bancorp(TBBK 3.50)を追加した。Ares(3.55)は CAGR 22% で対象外。残りの班で出た会社は追加する。
 
 ## 目的
 楽観も悲観もせずに事業構造を徹底的に掘り、構造A+(13条件の平均 4.0以上と、規則の検査)と成長A+(3経路)を確定させる。
