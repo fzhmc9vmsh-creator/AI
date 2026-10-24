@@ -1,0 +1,21 @@
+ticker,name,market,industry,tier
+SDRL,Seadrill Limited,us,Oil & Gas Drilling,rescreen
+BKV,BKV Corporation,us,Oil & Gas E&P,rescreen
+CNX,CNX Resources Corporation,us,Oil & Gas E&P,rescreen
+CRK,"Comstock Resources, Inc.",us,Oil & Gas E&P,rescreen
+GPRK,Geopark Ltd,us,Oil & Gas E&P,rescreen
+GRNT,"Granite Ridge Resources, Inc.",us,Oil & Gas E&P,rescreen
+REPX,"Riley Exploration Permian, Inc.",us,Oil & Gas E&P,rescreen
+TALO,"Talos Energy, Inc.",us,Oil & Gas E&P,rescreen
+TXO,"TXO Partners, L.P.",us,Oil & Gas E&P,rescreen
+VET,Vermilion Energy Inc.,us,Oil & Gas E&P,rescreen
+5141.KL,DAYANG,my,Oil & Gas Equipment & Services,rescreen
+NGS,"Natural Gas Services Group, Inc",us,Oil & Gas Equipment & Services,rescreen
+TDW,Tidewater Inc.,us,Oil & Gas Equipment & Services,rescreen
+DEC,Diversified Energy Company,us,Oil & Gas Integrated,rescreen
+EE,"Excelerate Energy, Inc.",us,Oil & Gas Midstream,rescreen
+KNTK,Kinetik Holdings Inc.,us,Oil & Gas Midstream,rescreen
+ALM,Almonty Industries Inc.,us,Other Industrial Metals & Mining,rescreen
+LAR,Lithium Argentina AG,us,Other Industrial Metals & Mining,rescreen
+SGML,Sigma Lithium Corporation,us,Other Industrial Metals & Mining,rescreen
+USAS,Americas Gold and Silver Corpor,us,Other Industrial Metals & Mining,rescreen

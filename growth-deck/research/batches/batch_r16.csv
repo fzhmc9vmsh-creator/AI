@@ -1,0 +1,19 @@
+ticker,name,market,industry,tier
+GOGO,Gogo Inc.,us,Telecom Services,rescreen
+IRDM,Iridium Communications Inc,us,Telecom Services,rescreen
+TLKM.JK,Telkom Indonesia (Persero) Tbk.,id,Telecom Services,rescreen
+0780.HK,TONGCHENGTRAVEL,hk,Travel Services,rescreen
+9961.HK,TRIP.COM-S,hk,Travel Services,rescreen
+TRIP,"TripAdvisor, Inc.",us,Travel Services,rescreen
+VIK,Viking Holdings Ltd,us,Travel Services,rescreen
+TLN,Talen Energy Corporation,us,Utilities - Independent Power Producers,rescreen
+0579.HK,JNCEC,hk,Utilities - Regulated Electric,rescreen
+SR,Spire Inc.,us,Utilities - Regulated Gas,rescreen
+CWCO,Consolidated Water Co. Ltd.,us,Utilities - Regulated Water,rescreen
+SBS,Companhia de saneamento Basico ,us,Utilities - Regulated Water,rescreen
+0182.HK,CONCORD NE,hk,Utilities - Renewable,rescreen
+0916.HK,CHINA LONGYUAN,hk,Utilities - Renewable,rescreen
+1798.HK,DATANG RENEW,hk,Utilities - Renewable,rescreen
+600905.SS,CHINA THREE GORGES RENEWABLES,cn,Utilities - Renewable,rescreen
+CWEN,"Clearway Energy, Inc.",us,Utilities - Renewable,rescreen
+ENLT,Enlight Renewable Energy Ltd.,us,Utilities - Renewable,rescreen
