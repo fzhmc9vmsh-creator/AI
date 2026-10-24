@@ -1,570 +1,604 @@
-ticker,name,market,tier
-NVDA,NVIDIA Corporation,US,pass_border
-TSM,Taiwan Semiconductor Manufacturing Company Limited,US,pass_border
-AVGO,Broadcom Inc.,US,pass_border
-LLY,Eli Lilly and Company,US,pass_border
-SKHY,SK hynix Inc.,US,pass_border
-AMD,"Advanced Micro Devices, Inc.",US,pass_border
-AMAT,"Applied Materials, Inc.",US,pass_border
-BABA,Alibaba Group Holding Limited,US,pass_border
-MRVL,"Marvell Technology, Inc.",US,pass_border
-SNDK,Sandisk Corporation,US,pass_border
-ADI,"Analog Devices, Inc.",US,pass_border
-STX,Seagate Technology Holdings plc,US,pass_border
-MFG,"Mizuho Financial Group, Inc.",US,pass_border
-FCX,Freeport-McMoRan Inc.,US,pass_border
-ASX,"ASE Technology Holding Co., Ltd.",US,pass_border
-CDNS,"Cadence Design Systems, Inc.",US,pass_border
-APP,AppLovin Corporation,US,pass_border
-VRT,Vertiv Holdings Co,US,pass_border
-HPE,Hewlett Packard Enterprise Company,US,pass_border
-NU,Nu Holdings Ltd.,US,pass_border
-BE,Bloom Energy Corporation,US,pass_border
-SE,Sea Limited,US,pass_border
-HONA,Honeywell Aerospace Inc.,US,pass_border
-ALAB,"Astera Labs, Inc.",US,pass_border
-CIEN,Ciena Corporation,US,pass_border
-TEVA,Teva Pharmaceutical Industries Limited,US,pass_border
-MT,ArcelorMittal S.A.,US,pass_border
-COHR,Coherent Corp.,US,pass_border
-XYZ,"Block, Inc.",US,pass_border
-P,"Everpure, Inc.",US,pass_border
-STM,STMicroelectronics N.V.,US,pass_border
-MCHP,Microchip Technology Incorporated,US,pass_border
-CLS,Celestica Inc.,US,pass_border
-JD,"JD.com, Inc.",US,pass_border
-STLD,"Steel Dynamics, Inc.",US,pass_border
-CRDO,Credo Technology Group Holding Ltd,US,pass_border
-FLEX,Flex Ltd.,US,pass_border
-ALNY,"Alnylam Pharmaceuticals, Inc.",US,pass_border
-JBL,Jabil Inc.,US,pass_border
-BSP,Bending Spoons S.p.A.,US,pass_border
-RDDT,"Reddit, Inc.",US,pass_border
-ON,ON Semiconductor Corporation,US,pass_border
-GFS,GLOBALFOUNDRIES Inc.,US,pass_border
-ARES,Ares Management Corporation,US,pass_border
-LPLA,LPL Financial Holdings Inc.,US,pass_border
-NVT,nVent Electric plc,US,pass_border
-TSEM,Tower Semiconductor Ltd.,US,pass_border
-SW,Smurfit Westrock Plc,US,pass_border
-MTSI,"MACOM Technology Solutions Holdings, Inc.",US,pass_border
-LUV,Southwest Airlines Co.,US,pass_border
-SOFI,"SoFi Technologies, Inc.",US,pass_border
-TOST,"Toast, Inc.",US,pass_border
-AS,"Amer Sports, Inc.",US,pass_border
-FTAI,FTAI Aviation Ltd.,US,pass_border
-HSAI,Hesai Group,US,pass_border
-CDE,"Coeur Mining, Inc.",US,pass_border
-LSCC,Lattice Semiconductor Corporation,US,pass_border
-MTZ,"MasTec, Inc.",US,pass_border
-MKSI,MKS Inc.,US,pass_border
-ARMK,Aramark,US,pass_border
-SMTC,Semtech Corporation,US,pass_border
-TIGO,Millicom International Cellular S.A.,US,pass_border
-JAZZ,Jazz Pharmaceuticals plc,US,pass_border
-STRL,"Sterling Infrastructure, Inc.",US,pass_border
-EMBJ,Embraer S.A.,US,pass_border
-EQX,Equinox Gold Corp.,US,pass_border
-CSGP,"CoStar Group, Inc.",US,pass_border
-INIO,Innio N.V.,US,pass_border
-CORT,Corcept Therapeutics Incorporated,US,pass_border
-HUBS,"HubSpot, Inc.",US,pass_border
-CART,Maplebear Inc.,US,pass_border
-GNRC,Generac Holdings Inc.,US,pass_border
-ONTO,Onto Innovation Inc.,US,pass_border
-UHAL,U-Haul Holding Company,US,pass_border
-TTMI,"TTM Technologies, Inc.",US,pass_border
-KNX,Knight-Swift Transportation Holdings Inc.,US,pass_border
-BMRN,BioMarin Pharmaceutical Inc.,US,pass_border
-AEIS,"Advanced Energy Industries, Inc.",US,pass_border
-UHAL-B,U-Haul Holding Company,US,pass_border
-EGO,Eldorado Gold Corporation,US,pass_border
-VICR,Vicor Corporation,US,pass_border
-TFII,TFI International Inc.,US,pass_border
-FPS,"Forgent Power Solutions, Inc.",US,pass_border
-MOD,Modine Manufacturing Company,US,pass_border
-ETSY,"Etsy, Inc.",US,pass_border
-SIMO,Silicon Motion Technology Corporation,US,pass_border
-AUGO,Aura Minerals Inc.,US,pass_border
-TPG,TPG Inc.,US,pass_border
-MTDR,Matador Resources Company,US,pass_border
-ZG,"Zillow Group, Inc.",US,pass_border
-NE,Noble Corporation plc,US,pass_border
-SARO,"StandardAero, Inc.",US,pass_border
-BTG,B2Gold Corp.,US,pass_border
-Z,"Zillow Group, Inc.",US,pass_border
-VFC,V.F. Corporation,US,pass_border
-NOV,NOV Inc.,US,pass_border
-GLBE,Global-E Online Ltd.,US,pass_border
-AAON,"AAON, Inc.",US,pass_border
-ALGM,"Allegro MicroSystems, Inc.",US,pass_border
-GGAL,Grupo Financiero Galicia S.A.,US,pass_border
-LSTR,"Landstar System, Inc.",US,pass_border
-SNDR,"Schneider National, Inc.",US,pass_border
-GRFS,"Grifols, S.A.",US,pass_border
-KVYO,"Klaviyo, Inc.",US,pass_border
-MWH,"SOLV Energy, Inc.",US,pass_border
-KGS,"Kodiak Gas Services, Inc.",US,pass_border
-YOU,"Clear Secure, Inc.",US,pass_border
-KRMN,Karman Holdings Inc.,US,pass_border
-SEI,"Solaris Energy Infrastructure, Inc.",US,pass_border
-KLIC,"Kulicke and Soffa Industries, Inc.",US,pass_border
-DIOD,Diodes Incorporated,US,pass_border
-EQPT,EquipmentShare.com Inc.,US,pass_border
-ARIS,Aris Mining Corporation,US,pass_border
-EFXT,Enerflex Ltd.,US,pass_border
-CXW,"CoreCivic, Inc.",US,pass_border
-ARCB,ArcBest Corporation,US,pass_border
-KD,"Kyndryl Holdings, Inc.",US,pass_border
-LFTO,"Liftoff Mobile, Inc.",US,pass_border
-VECO,Veeco Instruments Inc.,US,pass_border
-AAP,"Advance Auto Parts, Inc.",US,pass_border
-GRND,Grindr Inc.,US,pass_border
-CALX,"Calix, Inc.",US,pass_border
-FLYW,Flywire Corporation,US,pass_border
-UPST,"Upstart Holdings, Inc.",US,pass_border
-HRMY,"Harmony Biosciences Holdings, Inc.",US,pass_border
-VERX,"Vertex, Inc.",US,pass_border
-SVM,Silvercorp Metals Inc.,US,pass_border
-HIMX,"Himax Technologies, Inc.",US,pass_border
-CTOS,"Custom Truck One Source, Inc.",US,pass_border
-CTRI,"Centuri Holdings, Inc.",US,pass_border
-RSI,"Rush Street Interactive, Inc.",US,pass_border
-TBBK,"The Bancorp, Inc.",US,pass_border
-MQ,"Marqeta, Inc.",US,pass_border
-MAN,ManpowerGroup Inc.,US,pass_border
-NESR,National Energy Services Reunited Corp.,US,pass_border
-ALGT,Allegiant Travel Company,US,pass_border
-NYAX,Nayax Ltd.,US,pass_border
-ALHC,"Alignment Healthcare, Inc.",US,pass_border
-DCOM,"Dime Commercial Bancshares, Inc.",US,pass_border
-HOPE,"Hope Bancorp, Inc.",US,pass_border
-LOB,"Live Oak Bancshares, Inc.",US,pass_border
-FOIL,Londian Wason New Energy Tech Inc.,US,pass_border
-WBI,WaterBridge Infrastructure LLC,US,pass_border
-OCFC,OceanFirst Financial Corp.,US,pass_border
-TFIN,"Triumph Financial, Inc.",US,pass_border
-ATLC,Atlanticus Holdings Corporation,US,pass_border
-ADNT,Adient plc,US,pass_border
-ETON,"Eton Pharmaceuticals, Inc.",US,pass_border
-SHLS,"Shoals Technologies Group, Inc.",US,pass_border
-LOMA,Loma Negra Compañía Industrial Argentina Sociedad Anónima,US,pass_border
-HZO,"MarineMax, Inc.",US,pass_border
-ECVT,Ecovyst Inc.,US,pass_border
-AMTB,Amerant Bancorp Inc.,US,pass_border
-WD,"Walker & Dunlop, Inc.",US,pass_border
-MRTN,"Marten Transport, Ltd.",US,pass_border
-AVEX,AEVEX Corp.,US,pass_border
-PWP,Perella Weinberg Partners,US,pass_border
-AMRC,"Ameresco, Inc.",US,pass_border
-UVV,Universal Corporation,US,pass_border
-MUX,McEwen Inc.,US,pass_border
-OIG,Orion180 Insurance Group Inc.,US,pass_border
-APEI,"American Public Education, Inc.",US,pass_border
-DAKT,"Daktronics, Inc.",US,pass_border
-ASM,Avino Silver & Gold Mines Ltd.,US,pass_border
-RERE,ATRenew Inc.,US,pass_border
-MTUS,Metallus Inc.,US,pass_border
-AEBI,Aebi Schmidt Holding AG,US,pass_border
-FRBT,"Forbright, Inc.",US,pass_border
-REF,Reformation Inc.,US,pass_border
-VPG,"Vishay Precision Group, Inc.",US,pass_border
-CVLG,"Covenant Logistics Group, Inc.",US,pass_border
-PGC,Peapack-Gladstone Financial Corporation,US,pass_border
-FEIM,"Frequency Electronics, Inc.",US,pass_border
-VBNK,VersaBank,US,pass_border
-SWIM,"Latham Group, Inc.",US,pass_border
-DCBO,Docebo Inc.,US,pass_border
-RGR,"Sturm, Ruger & Company, Inc.",US,pass_border
-HDL,Super Hi International Holding Ltd.,US,pass_border
-MAMA,"Mama's Creations, Inc.",US,pass_border
-GAU,Galiano Gold Inc.,US,pass_border
-IRWD,"Ironwood Pharmaceuticals, Inc.",US,pass_border
-KRNY,Kearny Financial Corp.,US,pass_border
-PANL,Pangaea Logistics Solutions Ltd.,US,pass_border
-FBRT,"Franklin BSP Realty Trust, Inc.",US,pass_border
-BWAY,BrainsWay Ltd.,US,pass_border
-ITRG,Integra Resources Corp.,US,pass_border
-BBCP,"Concrete Pumping Holdings, Inc.",US,pass_border
-NRC,NRC Health,US,pass_border
-HVT,"Haverty Furniture Companies, Inc.",US,pass_border
-MBUU,"Malibu Boats, Inc.",US,pass_border
-CDRO,"Codere Online Luxembourg, S.A.",US,pass_border
-FCBM,"First Carolina Financial Services, Inc.",US,pass_border
-RMNI,"Rimini Street, Inc.",US,pass_border
-FSTR,L.B. Foster Company,US,pass_border
-ORN,"Orion Group Holdings, Inc.",US,pass_border
-RNGR,"Ranger Energy Services, Inc.",US,pass_border
-CDNL,Cardinal Infrastructure Group Inc.,US,pass_border
-LWAY,"Lifeway Foods, Inc.",US,pass_border
-JAKK,"JAKKS Pacific, Inc.",US,pass_border
-JMSB,"John Marshall Bancorp, Inc.",US,pass_border
-DBI,Designer Brands Inc.,US,pass_border
-MNTK,"Montauk Renewables, Inc.",US,pass_border
-DSP,Viant Technology Inc.,US,pass_border
-ELVA,Electrovaya Inc.,US,pass_border
-GBFH,GBank Financial Holdings Inc.,US,pass_border
-EVI,"EVI Industries, Inc.",US,pass_border
-ASYS,"Amtech Systems, Inc.",US,pass_border
-BZUN,Baozun Inc.,US,pass_border
-SGC,"Superior Group of Companies, Inc.",US,pass_border
-LOVE,The Lovesac Company,US,pass_border
-6981.T,"Murata Manufacturing Co., Ltd.",JP,pass_border
-6752.T,Panasonic Holdings Corporation,JP,pass_border
-8035.T,Tokyo Electron Limited,JP,pass_border
-5801.T,"Furukawa Electric Co., Ltd.",JP,pass_border
-9147.T,"Nippon Express Holdings, Inc.",JP,pass_border
-6473.T,JTEKT Corporation,JP,pass_border
-9064.T,"Yamato Holdings Co., Ltd.",JP,pass_border
-141A.T,"TRIAL Holdings, Inc.",JP,pass_border
-2810.T,House Foods Group Inc.,JP,pass_border
-6526.T,Socionext Inc.,JP,pass_border
-9418.T,"U-NEXT HOLDINGS Co.,Ltd.",JP,pass_border
-6590.T,Shibaura Mechatronics Corporation,JP,pass_border
-7220.T,"Musashi Seimitsu Industry Co., Ltd.",JP,pass_border
-5232.T,"Sumitomo Osaka Cement Co., Ltd.",JP,pass_border
-7685.T,"BuySell Technologies Co.,Ltd.",JP,pass_border
-6315.T,TOWA Corporation,JP,pass_border
-3778.T,SAKURA Internet Inc.,JP,pass_border
-3002.T,Gunze Limited,JP,pass_border
-9166.T,GENDA Inc.,JP,pass_border
-6254.T,"Nomura Micro Science Co., Ltd.",JP,pass_border
-4819.T,"Digital Garage, Inc.",JP,pass_border
-6104.T,"Shibaura Machine Co.,Ltd.",JP,pass_border
-5726.T,"OSAKA Titanium technologies Co.,Ltd.",JP,pass_border
-6235.T,"Optorun Co.,Ltd.",JP,pass_border
-6627.T,"Tera Probe, Inc.",JP,pass_border
-4413.T,"baudroie,inc.",JP,pass_border
-7943.T,Nichiha Corporation,JP,pass_border
-4480.T,"Medley, Inc.",JP,pass_border
-6779.T,"Nihon Dempa Kogyo Co., Ltd.",JP,pass_border
-2170.T,Link and Motivation Inc.,JP,pass_border
-6266.T,"Tazmo Co., Ltd.",JP,pass_border
-4377.T,ONE CAREER Inc.,JP,pass_border
-6997.T,Nippon Chemi-Con Corporation,JP,pass_border
-3196.T,"HOTLAND HOLDINGS Co., Ltd.",JP,pass_border
-7409.T,"AeroEdge Co., Ltd.",JP,pass_border
-9988.HK,Alibaba Group Holding Limited,HK,pass_border
-3308.HK,"Zhongji Innolight Co., Ltd.",HK,pass_border
-1211.HK,BYD Company Limited,HK,pass_border
-2475.HK,"Luxshare Precision Industry Co., Ltd.",HK,pass_border
-0992.HK,Lenovo Group Limited,HK,pass_border
-6160.HK,BeOne Medicines AG,HK,pass_border
-9618.HK,"JD.com, Inc.",HK,pass_border
-6809.HK,"Montage Technology Co., Ltd.",HK,pass_border
-2338.HK,"Weichai Power Co., Ltd.",HK,pass_border
-6869.HK,Yangtze Optical Fibre And Cable Joint Stock Limited Company,HK,pass_border
-1801.HK,"Innovent Biologics, Inc.",HK,pass_border
-6031.HK,"Sany Heavy Industry Co.,Ltd",HK,pass_border
-2476.HK,"Victory Giant Technology (HuiZhou) Co.,Ltd",HK,pass_border
-1888.HK,Kingboard Laminates Holdings Limited,HK,pass_border
-2268.HK,WuXi XDC Cayman Inc.,HK,pass_border
-6613.HK,"Lens Technology Co., Ltd.",HK,pass_border
-1519.HK,J&T Global Express Limited,HK,pass_border
-1787.HK,"Shandong Gold Mining Co., Ltd.",HK,pass_border
-1377.HK,"Guangdong Dtech Technology Co., Ltd.",HK,pass_border
-1768.HK,"Busy Ming Group Co., Ltd.",HK,pass_border
-1818.HK,Zhaojin Mining Industry Company Limited,HK,pass_border
-2333.HK,Great Wall Motor Company Limited,HK,pass_border
-3939.HK,Wanguo Gold Group Limited,HK,pass_border
-0522.HK,ASMPT Limited,HK,pass_border
-6969.HK,Smoore International Holdings Limited,HK,pass_border
-6656.HK,"Sigenergy Technology Co., Ltd",HK,pass_border
-9863.HK,"Zhejiang Leapmotor Technology Co., Ltd.",HK,pass_border
-9626.HK,Bilibili Inc.,HK,pass_border
-3396.HK,Legend Holdings Corporation,HK,pass_border
-1828.HK,FWD Group Holdings Limited,HK,pass_border
-1989.HK,Delton Technology (Guangzhou) Inc.,HK,pass_border
-1688.HK,Lingyi iTech (Guangdong) Company,HK,pass_border
-7618.HK,"JINGDONG Industrials, Inc.",HK,pass_border
-0470.HK,"Wuxi Lead Intelligent Equipment CO.,LTD.",HK,pass_border
-3347.HK,"Hangzhou Tigermed Consulting Co., Ltd",HK,pass_border
-3200.HK,"Shenzhen Han's CNC Technology Co., Ltd.",HK,pass_border
-2208.HK,"Goldwind Science&Technology Co., Ltd.",HK,pass_border
-0268.HK,Kingdee International Software Group Company Limited,HK,pass_border
-1729.HK,Time Interconnect Technology Limited,HK,pass_border
-6088.HK,FIT Hon Teng Limited,HK,pass_border
-3931.HK,"CALB Group Co., Ltd.",HK,pass_border
-0683.HK,Kerry Properties Limited,HK,pass_border
-0631.HK,Sany Heavy Equipment International Holdings Company Limited,HK,pass_border
-3277.HK,Gpixel Changchun Microelectronics Inc.,HK,pass_border
-6810.HK,"Shanghai Sunmi Technology Co., Ltd.",HK,pass_border
-6680.HK,"JL Mag Rare-Earth Co., Ltd.",HK,pass_border
-1860.HK,Mobvista Inc.,HK,pass_border
-2276.HK,"Shanghai Conant Optical Co., Ltd.",HK,pass_border
-0325.HK,Bloks Group Limited,HK,pass_border
-3858.HK,Jiaxin International Resources Investment Limited,HK,pass_border
-1357.HK,"Meitu, Inc.",HK,pass_border
-1277.HK,Kinetic Development Group Limited,HK,pass_border
-1164.HK,CGN Mining Company Limited,HK,pass_border
-0340.HK,Tongguan Gold Group Limited,HK,pass_border
-2556.HK,Marketingforce Management Ltd,HK,pass_border
-6682.HK,"Phancy Group Co., Ltd.",HK,pass_border
-1866.HK,China XLX Fertiliser Ltd.,HK,pass_border
-6865.HK,"Flat Glass Group Co., Ltd.",HK,pass_border
-1030.HK,Seazen Group Limited,HK,pass_border
-3677.HK,"Jiangsu Zenergy Battery Technologies Group Co., Ltd.",HK,pass_border
-9611.HK,"Shanghai Longcheer Technology Co., Ltd.",HK,pass_border
-6067.HK,"Shenzhen Senior Technology Material Co., Ltd.",HK,pass_border
-1310.HK,HKBN Ltd.,HK,pass_border
-6185.HK,CanSino Biologics Inc.,HK,pass_border
-2586.HK,Dmall Inc.,HK,pass_border
-9699.HK,"Hangzhou SF Intra-city Industrial Co., Ltd.",HK,pass_border
-3738.HK,Vobile Group Limited,HK,pass_border
-2657.HK,"Shanghai Forest Cabin Cosmetics Group Co., Ltd.",HK,pass_border
-0826.HK,Tiangong International Company Limited,HK,pass_border
-1907.HK,China Risun Group Limited,HK,pass_border
-2190.HK,"Zylox-Tonbridge Medical Technology Co., Ltd.",HK,pass_border
-7489.HK,"VOYAH Automotive Technology Co., Ltd.",HK,pass_border
-1951.HK,Jinxin Fertility Group Limited,HK,pass_border
-1921.HK,Dalipal Holdings Limited,HK,pass_border
-1300.HK,Trigiant Group Limited,HK,pass_border
-1405.HK,DPC Dash Ltd,HK,pass_border
-0777.HK,NetDragon Websoft Holdings Limited,HK,pass_border
-1050.HK,Karrie International Holdings Limited,HK,pass_border
-9860.HK,Adicon Holdings Limited,HK,pass_border
-2041.HK,MEDCAPTAIN,HK,pass_border
-2408.HK,"Guangzhou Xiao Noodles Catering Management Co., Ltd.",HK,pass_border
-0710.HK,BOE Varitronix Limited,HK,pass_border
-2235.HK,"MicroTech Medical (Hangzhou) Co., Ltd.",HK,pass_border
-0596.HK,Inspur Digital Enterprise Technology Limited,HK,pass_border
-1747.HK,Home Control International Limited,HK,pass_border
-9930.HK,Horizon Construction Development Limited,HK,pass_border
-1458.HK,Zhou Hei Ya International Holdings Company Limited,HK,pass_border
-2149.HK,"BaTeLab Co., Ltd.",HK,pass_border
-0917.HK,Qunabox Group Limited,HK,pass_border
-688825.SS,CXMT Corporation,SH,pass_border
-688256.SS,Cambricon Technologies Corporation Limited,SH,pass_border
-600183.SS,"Shengyi Technology Co.,Ltd.",SH,pass_border
-601869.SS,Yangtze Optical Fibre And Cable Joint Stock Limited Company,SH,pass_border
-600150.SS,China CSSC Holdings Limited,SH,pass_border
-603268.SS,"Guangdong Songfa Ceramics Co.,Ltd.",SH,pass_border
-600031.SS,"Sany Heavy Industry Co.,Ltd",SH,pass_border
-600176.SS,"China Jushi Co., Ltd.",SH,pass_border
-600487.SS,"Hengtong Optic-Electric Co., Ltd.",SH,pass_border
-601633.SS,Great Wall Motor Company Limited,SH,pass_border
-600584.SS,"JCET Group Co., Ltd.",SH,pass_border
-600522.SS,"Jiangsu Zhongtian Technology Co., Ltd.",SH,pass_border
-605117.SS,"Ningbo Deye Technology Group Co., Ltd.",SH,pass_border
-688183.SS,"Shengyi Electronics Co., Ltd.",SH,pass_border
-688525.SS,"BIWIN Storage Technology Co., Ltd.",SH,pass_border
-600482.SS,"China Shipbuilding Industry Group Power Co., Ltd.",SH,pass_border
-600048.SS,"Poly Developments and Holdings Group Co., Ltd.",SH,pass_border
-688200.SS,"Beijing Huafeng Test & Control Technology Co.,Ltd.",SH,pass_border
-688249.SS,Nexchip Semiconductor Corporation,SH,pass_border
-688729.SS,"Beijing E-Town Semiconductor Technology Co., Ltd.",SH,pass_border
-600845.SS,"Shanghai Baosight Software Co.,Ltd.",SH,pass_border
-688630.SS,"Circuit Fabology Microelectronics Equipment Co., Ltd.",SH,pass_border
-600105.SS,Jiangsu Etern Company Limited,SH,pass_border
-600460.SS,"Hangzhou Silan Microelectronics Co., Ltd.",SH,pass_border
-603129.SS,"Zhejiang Cfmoto Power Co.,Ltd",SH,pass_border
-601058.SS,"Sailun Group Co., Ltd.",SH,pass_border
-600498.SS,"Fiberhome Telecommunication Technologies Co., Ltd.",SH,pass_border
-600985.SS,"Huaibei Mining Holdings Co.,Ltd.",SH,pass_border
-688099.SS,"Amlogic (Shanghai) Co.,Ltd.",SH,pass_border
-600352.SS,"Zhejiang Longsheng Group Co.,Ltd",SH,pass_border
-603806.SS,"Hangzhou First Applied Material Co., Ltd.",SH,pass_border
-600143.SS,"Kingfa Sci. & Tech. Co., Ltd.",SH,pass_border
-600157.SS,"Wintime Energy Group Co.,Ltd.",SH,pass_border
-688472.SS,"CSI Solar Co., Ltd.",SH,pass_border
-601155.SS,"Seazen Holdings Co., Ltd",SH,pass_border
-600141.SS,"Hubei Xingfa Chemicals Group Co., Ltd.",SH,pass_border
-688169.SS,"Beijing Roborock Technology Co., Ltd.",SH,pass_border
-600977.SS,"China Film Industry Group Co., Ltd.",SH,pass_border
-603379.SS,"Zhejiang Sanmei Chemical Industry Co.,Ltd.",SH,pass_border
-688411.SS,"Beijing HyperStrong Technology Co., Ltd.",SH,pass_border
-603179.SS,"Jiangsu Xinquan Automotive Trim Co.,Ltd.",SH,pass_border
-688676.SS,"Hainan Jinpan Smart Technology Co., Ltd.",SH,pass_border
-603929.SS,"L&K Engineering (Suzhou) Co.,Ltd.",SH,pass_border
-603308.SS,"Anhui Yingliu Electromechanical Co., Ltd.",SH,pass_border
-600208.SS,"Quzhou Xin'an Development Co., Ltd.",SH,pass_border
-600575.SS,"Huaihe Energy (Group) Co.,Ltd",SH,pass_border
-688349.SS,"Sany Renewable Energy Co.,Ltd.",SH,pass_border
-688545.SS,"Hubei Sinophorus Electronic Materials Co.,Ltd.",SH,pass_border
-688608.SS,"Bestechnic (Shanghai) Co., Ltd.",SH,pass_border
-603885.SS,"Juneyao Airlines Co., Ltd",SH,pass_border
-601615.SS,Ming Yang Smart Energy Group Limited,SH,pass_border
-603688.SS,"Jiangsu Pacific Quartz Co., Ltd",SH,pass_border
-688692.SS,Wuhan Dameng Database Company Limited,SH,pass_border
-603341.SS,"Shanghai Longcheer Technology Co., Ltd.",SH,pass_border
-688281.SS,"Shaanxi Huaqin Technology Industry Co.,Ltd.",SH,pass_border
-605111.SS,"Wuxi NCE Power Co.,Ltd.",SH,pass_border
-688531.SS,"Unicomp Technology Group Co., Ltd.",SH,pass_border
-603171.SS,"Servyou Software Group Co., Ltd.",SH,pass_border
-688772.SS,"Zhuhai CosMX Battery Co., Ltd.",SH,pass_border
-605196.SS,"Hebei Huatong Wires and Cables Group Co., Ltd.",SH,pass_border
-603997.SS,"Ningbo Jifeng Auto Parts Co., Ltd.",SH,pass_border
-688270.SS,"Great Microwave Technology Co., Ltd.",SH,pass_border
-688392.SS,"SBT Ultrasonic Technology Co., Ltd.",SH,pass_border
-688582.SS,Anhui XDLK Microsystem Corporation Limited,SH,pass_border
-603876.SS,"Jiangsu Dingsheng New Materials Joint-Stock Co.,Ltd",SH,pass_border
-603162.SS,"Fujian Highton Development Co., Ltd.",SH,pass_border
-688372.SS,"Shanghai V-Test Semiconductor Tech. Co., Ltd.",SH,pass_border
-688686.SS,"OPT Machine Vision Tech Co., Ltd.",SH,pass_border
-688800.SS,"Suzhou Recodeal Interconnect System Co.,Ltd",SH,pass_border
-688503.SS,"Changzhou Fusion New Material Co., Ltd.",SH,pass_border
-601222.SS,"Jiangsu Linyang Energy Co., Ltd.",SH,pass_border
-603305.SS,"Ningbo Xusheng Group Co., Ltd.",SH,pass_border
-600409.SS,"Tangshan Sanyou Chemical Industries Co.,Ltd",SH,pass_border
-688233.SS,Thinkon Semiconductor Jinzhou Corp.,SH,pass_border
-688116.SS,"Jiangsu Cnano Technology Co., Ltd.",SH,pass_border
-688006.SS,Zhejiang HangKe Technology Incorporated Company,SH,pass_border
-603992.SS,"Xiamen Solex High-tech Industries Co., Ltd.",SH,pass_border
-600508.SS,"Shanghai Datun Energy Resources Co., Ltd.",SH,pass_border
-600882.SS,"Shanghai Milkground Food Tech Co., Ltd",SH,pass_border
-603218.SS,"Riyue Heavy Industry Co.,Ltd",SH,pass_border
-688239.SS,"Guizhou Aviation Technical Development Co., Ltd",SH,pass_border
-600020.SS,Henan Zhongyuan Expressway Company Limited,SH,pass_border
-688182.SS,"Jiangsu Cai Qin Technology Co., Ltd",SH,pass_border
-603299.SS,"Jiang Su Suyan Jingshen Co.,Ltd",SH,pass_border
-688610.SS,"Hefei I-TEK OptoElectronics Co., Ltd.",SH,pass_border
-605060.SS,"Allied Machinery Co., Ltd.",SH,pass_border
-600389.SS,"Nantong Jiangshan Agrochemical & Chemicals Co.,Ltd.",SH,pass_border
-600129.SS,"Chongqing Taiji Industry(Group) Co.,Ltd",SH,pass_border
-603181.SS,"Zhejiang Huangma Technology Co.,Ltd",SH,pass_border
-603163.SS,"Acter Technology Integration Group Co., Ltd.",SH,pass_border
-688631.SS,"Nanjing LES Information Technology Co., Ltd.",SH,pass_border
-600590.SS,"Tellhow Sci-Tech Co., Ltd.",SH,pass_border
-688696.SS,"XGIMI Technology Co.,Ltd.",SH,pass_border
-688720.SS,"Jiangsu Aisen Semiconductor Material Co.,Ltd.",SH,pass_border
-688518.SS,"Shenzhen United Winners Laser Co., Ltd.",SH,pass_border
-603877.SS,"Ningbo Peacebird Fashion Co.,Ltd.",SH,pass_border
-605555.SS,"Ningbo Dechang Electrical Machinery Made Co., Ltd.",SH,pass_border
-603822.SS,"Zhejiang Jiaao Enprotech Stock Co., Ltd",SH,pass_border
-688196.SS,"Longyan Zhuoyue New Energy Co., Ltd.",SH,pass_border
-603312.SS,"Suzhou West Deane New Power Electric Co.,Ltd.",SH,pass_border
-688181.SS,"Beijing Bayi Space LCD Technology Co.,Ltd.",SH,pass_border
-688768.SS,Anhui Ronds Science & Technology Incorporated Company,SH,pass_border
-605208.SS,"Shanghai Yongmaotai Automotive Technology Co., Ltd.",SH,pass_border
-603916.SS,"Sobute New Materials Co., Ltd",SH,pass_border
-600379.SS,"Shaanxi Baoguang Vacuum Electric Device Co., Ltd.",SH,pass_border
-688386.SS,Pan Asian Microvent Tech (Jiangsu) Corporation,SH,pass_border
-603035.SS,"Jiangsu Changshu Automotive Trim Group Co., Ltd.",SH,pass_border
-603520.SS,"Zhejiang Starry Pharmaceutical Co.,Ltd.",SH,pass_border
-688377.SS,"Nanjing Develop Advanced Manufacturing Co., Ltd.",SH,pass_border
-603600.SS,"UE Furniture Co., Ltd.",SH,pass_border
-688551.SS,"Hefei Kewell Power System Co.,Ltd.",SH,pass_border
-605108.SS,"Tongqinglou Catering Co., Ltd.",SH,pass_border
-688358.SS,"Chison Medical Technologies Co., Ltd.",SH,pass_border
-603214.SS,"Shanghai Aiyingshi Co.,Ltd",SH,pass_border
-RE4.SI,Geo Energy Resources Limited,SG,pass_border
-MZH.SI,Nanofilm Technologies International Limited,SG,pass_border
-HQU.SI,Oiltek International Limited,SG,pass_border
-ADRO.JK,PT Alamtri Resources Indonesia Tbk,ID,pass_border
-INDY.JK,PT. Indika Energy Tbk,ID,pass_border
-SMGR.JK,PT Semen Indonesia (Persero) Tbk,ID,pass_border
-HANA.BK,Hana Microelectronics Public Company Limited,TH,pass_border
-THG.BK,Thonburi Healthcare Group Public Company Limited,TH,pass_border
-COCOCO.BK,Thai Coconut Public Company Limited,TH,pass_border
-5398.KL,Gamuda Berhad,MY,pass_border
-6888.KL,Axiata Group Berhad,MY,pass_border
-5005.KL,Unisem (M) Berhad,MY,pass_border
-0208.KL,Greatech Technology Berhad,MY,pass_border
-1171.KL,MBSB Berhad,MY,pass_border
-0215.KL,Solarvest Holdings Berhad,MY,pass_border
-9822.KL,SAM Engineering & Equipment (M) Berhad,MY,pass_border
-3417.KL,Eastern & Oriental Berhad,MY,pass_border
-0303.KL,Alpha IVF Group Berhad,MY,pass_border
-0351.KL,Lim Seong Hai Capital Berhad,MY,pass_border
-7179.KL,Lagenda Properties Berhad,MY,pass_border
-1287.KL,Exsim Hospitality Berhad,MY,pass_border
-0265.KL,Infomina Berhad,MY,pass_border
-7081.KL,Pharmaniaga Berhad,MY,pass_border
-5317.KL,CPE Technology Berhad,MY,pass_border
-7241.KL,Nextgreen Global Berhad,MY,pass_border
-MU,"Micron Technology, Inc.",US,wide_g2
-ABBV,AbbVie Inc.,US,wide_g2
-TXN,Texas Instruments Incorporated,US,wide_g2
-CMI,Cummins Inc.,US,wide_g2
-KEYS,"Keysight Technologies, Inc.",US,wide_g2
-PCAR,PACCAR Inc,US,wide_g2
-Q,"Qnity Electronics, Inc.",US,wide_g2
-SNX,TD SYNNEX Corporation,US,wide_g2
-PKX,POSCO Holdings Inc.,US,wide_g2
-HALO,"Halozyme Therapeutics, Inc.",US,wide_g2
-NBIX,"Neurocrine Biosciences, Inc.",US,wide_g2
-SANM,Sanmina Corporation,US,wide_g2
-SOLS,"Solstice Advanced Materials, Inc.",US,wide_g2
-CGNX,Cognex Corporation,US,wide_g2
-DY,"Dycom Industries, Inc.",US,wide_g2
-VEON,VEON Ltd.,US,wide_g2
-AVAL,Grupo Aval Acciones y Valores S.A.,US,wide_g2
-VSEC,VSE Corporation,US,wide_g2
-LFST,"LifeStance Health Group, Inc.",US,wide_g2
-ENVA,"Enova International, Inc.",US,wide_g2
-MMYT,MakeMyTrip Limited,US,wide_g2
-WK,Workiva Inc.,US,wide_g2
-ERO,Ero Copper Corp.,US,wide_g2
-CENX,Century Aluminum Company,US,wide_g2
-AAMI,Acadian Asset Management Inc.,US,wide_g2
-PENG,"Penguin Solutions, Inc.",US,wide_g2
-ROG,Rogers Corporation,US,wide_g2
-INVX,"Innovex International, Inc.",US,wide_g2
-CPRI,Capri Holdings Limited,US,wide_g2
-ASTH,"Astrana Health, Inc.",US,wide_g2
-MFP,"Midera Food Processing, Inc.",US,wide_g2
-NEXA,Nexa Resources S.A.,US,wide_g2
-BFC,Bank First Corporation,US,wide_g2
-FSSL,FS Specialty Lending Fund,US,wide_g2
-KMDA,Kamada Ltd.,US,wide_g2
-PMTS,CPI Card Group Inc.,US,wide_g2
-RELL,"Richardson Electronics, Ltd.",US,wide_g2
-AVNW,"Aviat Networks, Inc.",US,wide_g2
-5803.T,Fujikura Ltd.,JP,wide_g2
-7270.T,Subaru Corporation,JP,wide_g2
-4183.T,"Mitsui Chemicals, Inc.",JP,wide_g2
-7276.T,"Koito Manufacturing Co., Ltd.",JP,wide_g2
-7261.T,Mazda Motor Corporation,JP,wide_g2
-2593.T,"Ito En, Ltd.",JP,wide_g2
-6622.T,DAIHEN Corporation,JP,wide_g2
-3697.T,SHIFT Inc.,JP,wide_g2
-5384.T,Fujimi Incorporated,JP,wide_g2
-6516.T,"Sanyo Denki Co., Ltd.",JP,wide_g2
-4216.T,Asahi Yukizai Corporation,JP,wide_g2
-9279.T,Gift Holdings Inc.,JP,wide_g2
-3986.HK,GigaDevice Semiconductor Inc.,HK,wide_g2
-0023.HK,"The Bank of East Asia, Limited",HK,wide_g2
-2357.HK,AviChina Industry & Technology Company Limited,HK,wide_g2
-0189.HK,Dongyue Group Limited,HK,wide_g2
-0817.HK,China Jinmao Holdings Group Limited,HK,wide_g2
-1112.HK,Health and Happiness (H&H) International Holdings Limited,HK,wide_g2
-6699.HK,Angelalign Technology Inc.,HK,wide_g2
-0081.HK,China Overseas Grand Oceans Group Limited,HK,wide_g2
-2465.HK,"Jiangsu Lopal Tech. Group Co., Ltd.",HK,wide_g2
-9676.HK,"Shiyue Daotian Group Co., Ltd.",HK,wide_g2
-2517.HK,"Guoquan Food (Shanghai) Co., Ltd.",HK,wide_g2
-0933.HK,Viva Goods Company Limited,HK,wide_g2
-1848.HK,China Aircraft Leasing Group Holdings Limited,HK,wide_g2
-2290.HK,Lung Fung Group Holdings Limited,HK,wide_g2
-601138.SS,"Foxconn Industrial Internet Co., Ltd.",SH,wide_g2
-603799.SS,"Zhejiang Huayou Cobalt Co., Ltd",SH,wide_g2
-603606.SS,"Ningbo Orient Wires & Cables Co.,Ltd.",SH,wide_g2
-605589.SS,"Jinan Shengquan Group Share Holding Co., Ltd.",SH,wide_g2
-601567.SS,"Ningbo Sanxing Medical Electric Co.,Ltd.",SH,wide_g2
-600057.SS,"Xiamen Xiangyu Co., Ltd.",SH,wide_g2
-688363.SS,Bloomage BioTechnology Corporation Limited,SH,wide_g2
-600664.SS,"Harbin Pharmaceutical Group Co., Ltd.",SH,wide_g2
-601619.SS,Jiaze Renewables Corporation Limited,SH,wide_g2
-603883.SS,LBX Pharmacy Chain Joint Stock Company,SH,wide_g2
-688739.SS,"Liaoning Chengda Biotechnology Co., Ltd.",SH,wide_g2
-688050.SS,"Eyebright Medical Technology (Beijing) Co., Ltd.",SH,wide_g2
-600693.SS,"Fujian Dongbai (Group) Co.,Ltd.",SH,wide_g2
-603809.SS,"Chengdu Haoneng Technology Co., Ltd.",SH,wide_g2
-600251.SS,"Xinjiang Guannong Co.,Ltd.",SH,wide_g2
-603901.SS,"Hangzhou Youngsun Intelligent Equipment Co., Ltd.",SH,wide_g2
-603711.SS,"XIANGPIAOPIAO Food Co.,Ltd",SH,wide_g2
-603566.SS,"Pulike Biological Engineering, Inc.",SH,wide_g2
-603309.SS,"Well Lead Medical Co., Ltd.",SH,wide_g2
-HRUM.JK,PT Harum Energy Tbk,ID,wide_g2
-SINGER.BK,Singer Thailand Public Company Limited,TH,wide_g2
-6742.KL,YTL Power International Berhad,MY,wide_g2
-0166.KL,Inari Amertron Berhad,MY,wide_g2
-8907.KL,EG Industries Berhad,MY,wide_g2
-0045.KL,Southern Score Builders Berhad,MY,wide_g2
-0291.KL,Critical Holdings Berhad,MY,wide_g2
-3529.TWO,eMemory,TW,prior_review
-196170.KQ,Alteogen,KR,prior_review
-GMAB,Genmab,US,prior_review
-MELI,MercadoLibre,US,prior_review
-FUTU,Futu,US,prior_review
-2330.TW,TSMC local,TW,prior_review
+ticker
+ASML
+ORCL
+MRK
+GEV
+UBER
+WDC
+HDB
+DASH
+LITE
+SLB
+DB
+ARGX
+DAL
+HUM
+CVNA
+TTWO
+VIK
+VOD
+BIIB
+UAL
+RKT
+AFRM
+INCY
+SBS
+JBHT
+PKG
+NRG
+CNH
+FSLR
+PAAS
+IP
+U
+BIP
+TLN
+STLA
+CRBG
+EQH
+WY
+AGI
+FLUT
+CG
+ONON
+FMS
+QXO
+MOH
+HBM
+SNAP
+ELPC
+HL
+DKNG
+ENLT
+PCOR
+TGTX
+OSK
+ACM
+MXL
+AGCO
+ALKS
+HIMS
+RIG
+LYFT
+OMF
+FLR
+CAMT
+CVI
+VAL
+CWEN
+BLCO
+FIGR
+BLDR
+TFX
+WFRD
+BIRK
+BBUC
+CPA
+CNX
+PTCT
+LPX
+DPC
+SR
+TVTX
+DAVE
+PSN
+IRDM
+SYNA
+CNR
+KNTK
+VSH
+VSNT
+SEZL
+CGAU
+DLO
+HRI
+CRK
+PRIM
+ARQT
+ACMR
+TDW
+CVCO
+MC
+AXTI
+GEO
+GPGI
+CAR
+SRAD
+LAZ
+ACLS
+CECO
+STEP
+ZGN
+THO
+LGN
+BRZE
+RHI
+ACAD
+SHOO
+BULL
+FSM
+WIX
+DAN
+PFSI
+SDRL
+TALO
+TGB
+DNOW
+CLBK
+IOND
+KNF
+HOG
+ALM
+BCC
+COHU
+POWI
+PURR
+BBAR
+FG
+LIFE
+GPK
+TMDX
+BKV
+EXK
+UCTT
+IOSP
+AERO
+PAYO
+DBD
+SUPN
+RH
+FTRE
+PLGO
+UAA
+BCRX
+PENN
+VET
+NSP
+TIC
+ETOR
+CC
+WERN
+VSTS
+ATS
+WHR
+ACVA
+KMPR
+GENI
+BRSL
+ICHR
+TGLS
+HAPN
+SFL
+NBHC
+FSUN
+ATEC
+GFR
+STC
+MLCO
+ALKT
+HLF
+RYZ
+HE
+COUR
+SCL
+TRS
+DMC
+LSPD
+SLVM
+LYNX
+ELE
+USAS
+REAL
+WBTN
+AMSC
+CCEC
+OMER
+DCH
+APPS
+ROCK
+TNC
+BRBR
+RSKD
+PDS
+CPAC
+REPX
+STAA
+TRIP
+AORT
+GSHD
+AVO
+ODD
+IGIC
+MMI
+EE
+DEC
+SGML
+HIPO
+CMP
+OI
+QDEL
+ACEL
+RIGL
+KRO
+EGBN
+HTLD
+LCLN
+BMBL
+VREX
+TXO
+PUBM
+SMWB
+GPRK
+LAR
+QMCO
+MTA
+LYTS
+GRNT
+TIGR
+SCHL
+PAR
+LINC
+BWMN
+SPT
+BW
+VTEX
+PHR
+GROY
+GRPN
+SUPV
+MFA
+WGO
+CCB
+CGNT
+NRDS
+AGNT
+MATV
+NTGR
+SSYS
+MATW
+WEAV
+MLR
+BXC
+IIIN
+ADTN
+KELYA
+EVH
+OIS
+OPFI
+ABR
+LXFR
+CLB
+CZNC
+CWCO
+CAL
+SUJA
+MNRO
+TATT
+CMCO
+ULH
+CLFD
+CTRN
+AUNA
+NGS
+OXM
+MAGN
+ATNI
+FRST
+MVBF
+SHOE
+CPS
+CTEV
+UWMC
+MEC
+FENC
+VOXR
+NNBR
+BCML
+TRX
+AIOT
+EBS
+XRX
+DSX
+VFF
+TLS
+OEC
+SMTI
+IMXI
+RMR
+LE
+CMRC
+USNA
+FUNC
+GOGO
+TBCH
+ALTI
+CWH
+TRVG
+LTRX
+ITG
+XPER
+NUS
+RBBN
+BLND
+HITI
+ASLE
+INBK
+MRBK
+HDSN
+ONIT
+SVCO
+HMH
+OSG
+KLC
+ASUR
+CZWI
+3750.HK
+2318.HK
+2899.HK
+0300.HK
+1810.HK
+2628.HK
+9999.HK
+2359.HK
+0386.HK
+9633.HK
+3993.HK
+2601.HK
+9888.HK
+2020.HK
+2269.HK
+9961.HK
+9992.HK
+6818.HK
+0175.HK
+2423.HK
+1766.HK
+6936.HK
+6886.HK
+1988.HK
+3606.HK
+9973.HK
+1024.HK
+6618.HK
+2057.HK
+1179.HK
+0316.HK
+0763.HK
+3808.HK
+1209.HK
+1880.HK
+0914.HK
+6066.HK
+3296.HK
+6881.HK
+0390.HK
+0501.HK
+3618.HK
+2319.HK
+9980.HK
+2097.HK
+2618.HK
+0668.HK
+2382.HK
+6806.HK
+1072.HK
+6181.HK
+2313.HK
+1508.HK
+1071.HK
+6862.HK
+1772.HK
+1364.HK
+6821.HK
+3958.HK
+0285.HK
+1099.HK
+0241.HK
+3759.HK
+1157.HK
+0916.HK
+2727.HK
+2018.HK
+6963.HK
+3898.HK
+2039.HK
+2883.HK
+1530.HK
+2331.HK
+1359.HK
+1908.HK
+6979.HK
+1585.HK
+2788.HK
+1882.HK
+2096.HK
+1133.HK
+0696.HK
+0425.HK
+3330.HK
+0867.HK
+2386.HK
+9896.HK
+2689.HK
+0780.HK
+0772.HK
+1318.HK
+6186.HK
+0317.HK
+2400.HK
+0666.HK
+2518.HK
+9899.HK
+0968.HK
+2460.HK
+1081.HK
+9985.HK
+2525.HK
+0699.HK
+9858.HK
+3900.HK
+1066.HK
+1651.HK
+0956.HK
+1579.HK
+3933.HK
+3899.HK
+2590.HK
+0586.HK
+0579.HK
+1681.HK
+2869.HK
+1060.HK
+2580.HK
+0017.HK
+3393.HK
+3339.HK
+9911.HK
+1833.HK
+3306.HK
+1686.HK
+1286.HK
+2675.HK
+1952.HK
+1361.HK
+0546.HK
+1368.HK
+0999.HK
+2128.HK
+2233.HK
+1114.HK
+2145.HK
+0297.HK
+9690.HK
+1798.HK
+2692.HK
+1313.HK
+1187.HK
+0308.HK
+0570.HK
+2555.HK
+0200.HK
+0881.HK
+6078.HK
+2877.HK
+1478.HK
+2273.HK
+6715.HK
+0839.HK
+0604.HK
+1799.HK
+2192.HK
+1789.HK
+6168.HK
+9678.HK
+2291.HK
+1896.HK
+0819.HK
+1666.HK
+9878.HK
+1021.HK
+2598.HK
+1234.HK
+6929.HK
+6090.HK
+2480.HK
+6831.HK
+1837.HK
+2199.HK
+3880.HK
+9669.HK
+0743.HK
+0182.HK
+2549.HK
+3978.HK
+3813.HK
+600905.SS
+603501.SS
+689009.SS
+601231.SS
+601021.SS
+688775.SS
+603260.SS
+600699.SS
+603345.SS
+600153.SS
+688301.SS
+603596.SS
+600563.SS
+603816.SS
+600873.SS
+603529.SS
+600808.SS
+600655.SS
+603290.SS
+688005.SS
+601636.SS
+600596.SS
+603707.SS
+600315.SS
+603556.SS
+688789.SS
+603919.SS
+600305.SS
+603166.SS
+688717.SS
+603609.SS
+688556.SS
+688719.SS
+688408.SS
+601113.SS
+688267.SS
+688348.SS
+688533.SS
+F34.SI
+C6L.SI
+BN4.SI
+C07.SI
+EB5.SI
+VC2.SI
+CC3.SI
+ADN.SI
+G92.SI
+FHH.SI
+544.SI
+DCRU.SI
+QC7.SI
+O10.SI
+A31.SI
+P34.SI
+ZKX.SI
+8AZ.SI
+TLKM.JK
+UNTR.JK
+AMRT.JK
+BSDE.JK
+SIDO.JK
+HEAL.JK
+SSIA.JK
+ACES.JK
+AOT.BK
+THAI.BK
+KCE.BK
+EGCO.BK
+BGRIM.BK
+BANPU.BK
+M.BK
+PTG.BK
+0151.KL
+4715.KL
+3182.KL
+0270.KL
+5323.KL
+5264.KL
+8583.KL
+5255.KL
+0338.KL
+0223.KL
+1619.KL
+4456.KL
+5141.KL
+6963.KL
+5321.KL
+5302.KL
+5099.KL
+WDC

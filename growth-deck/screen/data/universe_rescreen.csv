@@ -1,0 +1,603 @@
+ticker,name,market
+ASML,ASML Holding N.V. - New York Re,us
+ORCL,Oracle Corporation,us
+MRK,"Merck & Company, Inc.",us
+GEV,GE Vernova Inc.,us
+UBER,"Uber Technologies, Inc.",us
+WDC,Western Digital Corporation,us
+HDB,HDFC Bank Limited,us
+DASH,"DoorDash, Inc.",us
+LITE,Lumentum Holdings Inc.,us
+SLB,SLB Limited,us
+DB,Deutsche Bank AG,us
+ARGX,argenx SE,us
+DAL,"Delta Air Lines, Inc.",us
+HUM,Humana Inc.,us
+CVNA,Carvana Co.,us
+TTWO,"Take-Two Interactive Software, ",us
+VIK,Viking Holdings Ltd,us
+VOD,Vodafone Group Plc,us
+BIIB,Biogen Inc.,us
+UAL,"United Airlines Holdings, Inc.",us
+RKT,"Rocket Companies, Inc.",us
+AFRM,"Affirm Holdings, Inc.",us
+INCY,Incyte Corporation,us
+SBS,Companhia de saneamento Basico ,us
+JBHT,"J.B. Hunt Transport Services, I",us
+PKG,Packaging Corporation of Americ,us
+NRG,"NRG Energy, Inc.",us
+CNH,CNH Industrial N.V.,us
+FSLR,"First Solar, Inc.",us
+PAAS,Pan American Silver Corp.,us
+IP,International Paper Company,us
+U,Unity Software Inc.,us
+BIP,Brookfield Infrastructure Partn,us
+TLN,Talen Energy Corporation,us
+STLA,Stellantis N.V.,us
+CRBG,Corebridge Financial Inc.,us
+EQH,"Equitable Holdings, Inc.",us
+WY,Weyerhaeuser Company,us
+AGI,Alamos Gold Inc.,us
+FLUT,Flutter Entertainment plc,us
+CG,The Carlyle Group Inc.,us
+ONON,On Holding AG,us
+FMS,Fresenius Medical Care AG,us
+QXO,"QXO, Inc.",us
+MOH,Molina Healthcare Inc,us
+HBM,Hudbay Minerals Inc.,us
+SNAP,Snap Inc.,us
+ELPC,Companhia Paranaense de Energia,us
+HL,Hecla Mining Company,us
+DKNG,DraftKings Inc.,us
+ENLT,Enlight Renewable Energy Ltd.,us
+PCOR,"Procore Technologies, Inc.",us
+TGTX,"TG Therapeutics, Inc.",us
+OSK,Oshkosh Corporation (Holding Co,us
+ACM,AECOM,us
+MXL,"MaxLinear, Inc",us
+AGCO,AGCO Corporation,us
+ALKS,Alkermes plc,us
+HIMS,"Hims & Hers Health, Inc.",us
+RIG,Transocean Ltd (Switzerland),us
+LYFT,"Lyft, Inc.",us
+OMF,"OneMain Holdings, Inc.",us
+FLR,Fluor Corporation,us
+CAMT,Camtek Ltd.,us
+CVI,CVR Energy Inc.,us
+VAL,Valaris Limited,us
+CWEN,"Clearway Energy, Inc.",us
+BLCO,Bausch + Lomb Corporation,us
+FIGR,"Figure Technology Solutions, In",us
+BLDR,"Builders FirstSource, Inc.",us
+TFX,Teleflex Incorporated,us
+WFRD,Weatherford International plc,us
+BIRK,Birkenstock Holding plc,us
+BBUC,Brookfield Business Corporation,us
+CPA,"Copa Holdings, S.A.",us
+CNX,CNX Resources Corporation,us
+PTCT,"PTC Therapeutics, Inc.",us
+LPX,Louisiana-Pacific Corporation,us
+DPC,DPC Holdings PLC,us
+SR,Spire Inc.,us
+TVTX,"Travere Therapeutics, Inc.",us
+DAVE,Dave Inc.,us
+PSN,Parsons Corporation,us
+IRDM,Iridium Communications Inc,us
+SYNA,Synaptics Incorporated,us
+CNR,"Core Natural Resources, Inc.",us
+KNTK,Kinetik Holdings Inc.,us
+VSH,"Vishay Intertechnology, Inc.",us
+VSNT,"Versant Media Group, Inc.",us
+SEZL,Sezzle Inc.,us
+CGAU,Centerra Gold Inc.,us
+DLO,DLocal Limited,us
+HRI,Herc Holdings Inc.,us
+CRK,"Comstock Resources, Inc.",us
+PRIM,Primoris Services Corporation,us
+ARQT,"Arcutis Biotherapeutics, Inc.",us
+ACMR,"ACM Research, Inc.",us
+TDW,Tidewater Inc.,us
+CVCO,"Cavco Industries, Inc.",us
+MC,Moelis & Company,us
+AXTI,AXT Inc,us
+GEO,Geo Group Inc (The) REIT,us
+GPGI,"GPGI, Inc.",us
+CAR,"Avis Budget Group, Inc.",us
+SRAD,Sportradar Group AG,us
+LAZ,"Lazard, Inc.",us
+ACLS,"Axcelis Technologies, Inc.",us
+CECO,CECO Environmental Corp.,us
+STEP,StepStone Group Inc.,us
+ZGN,Ermenegildo Zegna N.V.,us
+THO,"Thor Industries, Inc.",us
+LGN,Legence Corp.,us
+BRZE,"Braze, Inc.",us
+RHI,Robert Half Inc.,us
+ACAD,ACADIA Pharmaceuticals Inc.,us
+SHOO,"Steven Madden, Ltd.",us
+BULL,Webull Corporation,us
+FSM,Fortuna Mining Corp.,us
+WIX,Wix.com Ltd.,us
+DAN,Dana Incorporated,us
+PFSI,"PennyMac Financial Services, In",us
+SDRL,Seadrill Limited,us
+TALO,"Talos Energy, Inc.",us
+TGB,Trekor Metals Limited,us
+DNOW,DNOW Inc.,us
+CLBK,"Columbia Financial, Inc.",us
+IOND,Ionic Digital Inc.,us
+KNF,Knife Riv Holding Co.,us
+HOG,"Harley-Davidson, Inc.",us
+ALM,Almonty Industries Inc.,us
+BCC,"Boise Cascade, L.L.C.",us
+COHU,"Cohu, Inc.",us
+POWI,"Power Integrations, Inc.",us
+PURR,Hyperliquid Strategies Inc,us
+BBAR,Banco BBVA Argentina S.A.,us
+FG,"F&G Annuities & Life, Inc.",us
+LIFE,Ethos Technologies Inc.,us
+GPK,Graphic Packaging Holding Compa,us
+TMDX,"TransMedics Group, Inc.",us
+BKV,BKV Corporation,us
+EXK,Endeavour Silver Corporation,us
+UCTT,"Ultra Clean Holdings, Inc.",us
+IOSP,Innospec Inc.,us
+AERO,"Grupo Aeromexico, S.A.B. de C.V",us
+PAYO,Payoneer Global Inc.,us
+DBD,Diebold Nixdorf Incorporated,us
+SUPN,"Supernus Pharmaceuticals, Inc.",us
+RH,RH,us
+FTRE,Fortrea Holdings Inc.,us
+PLGO,Pelagos Insurance Capital Limit,us
+UAA,"Under Armour, Inc.",us
+BCRX,"BioCryst Pharmaceuticals, Inc.",us
+PENN,"PENN Entertainment, Inc.",us
+VET,Vermilion Energy Inc.,us
+NSP,"Insperity, Inc.",us
+TIC,"TIC Solutions, Inc.",us
+ETOR,eToro Group Ltd.,us
+CC,Chemours Company (The),us
+WERN,"Werner Enterprises, Inc.",us
+VSTS,Vestis Corporation,us
+ATS,ATS Corporation,us
+WHR,Whirlpool Corporation,us
+ACVA,ACV Auctions Inc.,us
+KMPR,Kemper Corporation,us
+GENI,Genius Sports Limited,us
+BRSL,Brightstar Lottery PLC Trading ,us
+ICHR,Ichor Holdings,us
+TGLS,Tecnoglass Holdings Inc.,us
+HAPN,"Happen, Inc.",us
+SFL,SFL Corporation Ltd,us
+NBHC,National Bank Holdings Corporat,us
+FSUN,FirstSun Capital Bancorp,us
+ATEC,"Alphatec Holdings, Inc.",us
+GFR,Greenfire Resources Ltd.,us
+STC,Stewart Information Services Co,us
+MLCO,Melco Resorts & Entertainment L,us
+ALKT,"Alkami Technology, Inc.",us
+HLF,Herbalife Ltd.,us
+RYZ,Ryerson Holding Corporation,us
+HE,"Hawaiian Electric Industries, I",us
+COUR,"Coursera, Inc.",us
+SCL,Stepan Company,us
+TRS,TriMas Corporation,us
+DMC,Del Monte Corporation,us
+LSPD,Lightspeed Commerce Inc. Subord,us
+SLVM,Sylvamo Corporation,us
+LYNX,Lyntris Inc.,us
+ELE,Elemental Royalty Corporation,us
+USAS,Americas Gold and Silver Corpor,us
+REAL,"The RealReal, Inc.",us
+WBTN,WEBTOON Entertainment Inc.,us
+AMSC,American Superconductor Corpora,us
+CCEC,Capital Clean Energy Carriers C,us
+OMER,Omeros Corporation,us
+DCH,Dauch Corporation,us
+APPS,"Digital Turbine, Inc.",us
+ROCK,"Gibraltar Industries, Inc.",us
+TNC,Tennant Company,us
+BRBR,"BellRing Brands, Inc.",us
+RSKD,Riskified Ltd.,us
+PDS,Precision Drilling Corporation,us
+CPAC,Cementos Pacasmayo S.A.A.,us
+REPX,"Riley Exploration Permian, Inc.",us
+STAA,STAAR Surgical Company,us
+TRIP,"TripAdvisor, Inc.",us
+AORT,"Artivion, Inc.",us
+GSHD,"Goosehead Insurance, Inc.",us
+AVO,"Mission Produce, Inc.",us
+ODD,ODDITY Tech Ltd.,us
+IGIC,International General Insurance,us
+MMI,"Marcus & Millichap, Inc.",us
+EE,"Excelerate Energy, Inc.",us
+DEC,Diversified Energy Company,us
+SGML,Sigma Lithium Corporation,us
+HIPO,Hippo Holdings Inc.,us
+CMP,Compass Minerals Intl Inc,us
+OI,"O-I Glass, Inc.",us
+QDEL,QuidelOrtho Corporation,us
+ACEL,"Accel Entertainment, Inc.",us
+RIGL,"Rigel Pharmaceuticals, Inc.",us
+KRO,Kronos Worldwide Inc,us
+EGBN,"Eagle Bancorp, Inc.",us
+HTLD,"Heartland Express, Inc.",us
+LCLN,"Lincoln International, Inc.",us
+BMBL,Bumble Inc.,us
+VREX,Varex Imaging Corporation,us
+TXO,"TXO Partners, L.P.",us
+PUBM,"PubMatic, Inc.",us
+SMWB,Similarweb Ltd.,us
+GPRK,Geopark Ltd,us
+LAR,Lithium Argentina AG,us
+QMCO,Quantum Corporation,us
+MTA,Metalla Royalty & Streaming Ltd,us
+LYTS,LSI Industries Inc.,us
+GRNT,"Granite Ridge Resources, Inc.",us
+TIGR,UP Fintech Holding Limited,us
+SCHL,Scholastic Corporation,us
+PAR,PAR Technology Corporation,us
+LINC,Lincoln Educational Services Co,us
+BWMN,Bowman Consulting Group Ltd.,us
+SPT,"Sprout Social, Inc",us
+BW,"Babcock & Wilcox Enterprises, I",us
+VTEX,VTEX,us
+PHR,"Phreesia, Inc.",us
+GROY,Gold Royalty Corp.,us
+GRPN,"Groupon, Inc.",us
+SUPV,Grupo Supervielle S.A.,us
+MFA,"MFA Financial, Inc.",us
+WGO,"Winnebago Industries, Inc.",us
+CCB,Coastal Financial Corporation,us
+CGNT,Cognyte Software Ltd.,us
+NRDS,"NerdWallet, Inc.",us
+AGNT,"AGNT, Inc.",us
+MATV,"Mativ Holdings, Inc.",us
+NTGR,"NETGEAR, Inc.",us
+SSYS,"Stratasys, Ltd.",us
+MATW,Matthews International Corporat,us
+WEAV,"Weave Communications, Inc.",us
+MLR,"Miller Industries, Inc.",us
+BXC,Bluelinx Holdings Inc.,us
+IIIN,"Insteel Industries, Inc.",us
+ADTN,"ADTRAN Holdings, Inc.",us
+KELYA,"Kelly Services, Inc.",us
+EVH,"Evolent Health, Inc",us
+OIS,"Oil States International, Inc.",us
+OPFI,OppFi Inc.,us
+ABR,Arbor Realty Trust,us
+LXFR,Luxfer Holdings PLC,us
+CLB,Core Laboratories Inc.,us
+CZNC,Citizens & Northern Corp,us
+CWCO,Consolidated Water Co. Ltd.,us
+CAL,"Caleres, Inc.",us
+SUJA,"Suja Life, Inc.",us
+MNRO,"Monro, Inc.",us
+TATT,TAT Technologies Ltd.,us
+CMCO,Columbus McKinnon Corporation,us
+ULH,"Universal Logistics Holdings, I",us
+CLFD,"Clearfield, Inc.",us
+CTRN,"Citi Trends, Inc.",us
+AUNA,Auna SA,us
+NGS,"Natural Gas Services Group, Inc",us
+OXM,"Oxford Industries, Inc.",us
+MAGN,Magnera Corporation,us
+ATNI,"ATN International, Inc.",us
+FRST,Primis Financial Corp.,us
+MVBF,MVB Financial Corp.,us
+SHOE,"Shoe Station Group, Inc.",us
+CPS,Cooper-Standard Holdings Inc.,us
+CTEV,Claritev Corporation,us
+UWMC,UWM Holdings Corporation,us
+MEC,"Mayville Engineering Company, I",us
+FENC,Fennec Pharmaceuticals Inc.,us
+VOXR,Vox Royalty Corp.,us
+NNBR,"NN, Inc.",us
+BCML,BayCom Corp,us
+TRX,TRX Gold Corporation,us
+AIOT,"PowerFleet, Inc.",us
+EBS,Emergent BioSolutions Inc.,us
+XRX,Xerox Holdings Corporation,us
+DSX,Diana Shipping inc.,us
+VFF,"Village Farms International, In",us
+TLS,Telos Corporation,us
+OEC,Orion S.A.,us
+SMTI,Sanara MedTech Inc.,us
+IMXI,"International Money Express, In",us
+RMR,The RMR Group Inc.,us
+LE,"Lands' End, Inc.",us
+CMRC,"Commerce.com, Inc. - Series 1",us
+USNA,"USANA Health Sciences, Inc.",us
+FUNC,First,us
+GOGO,Gogo Inc.,us
+TBCH,Turtle Beach Corporation,us
+ALTI,"AlTi Global, Inc.",us
+CWH,"Camping World Holdings, Inc.",us
+TRVG,trivago N.V.,us
+LTRX,"Lantronix, Inc.",us
+ITG,"ITG, Inc.",us
+XPER,Xperi Inc.,us
+NUS,"Nu Skin Enterprises, Inc.",us
+RBBN,Ribbon Communications Inc.,us
+BLND,"Blend Labs, Inc.",us
+HITI,High Tide Inc.,us
+ASLE,AerSale Corporation,us
+INBK,First Internet Bancorp,us
+MRBK,Meridian Corporation,us
+HDSN,"Hudson Technologies, Inc.",us
+ONIT,Onity Group Inc.,us
+SVCO,"Silvaco Group, Inc.",us
+HMH,HMH Holding Inc.,us
+OSG,"Octave Specialty Group, Inc.",us
+KLC,"KinderCare Learning Companies, ",us
+ASUR,Asure Software Inc,us
+CZWI,"Citizens Community Bancorp, Inc",us
+3750.HK,CATL,hk
+2318.HK,PING AN,hk
+2899.HK,ZIJIN MINING,hk
+0300.HK,MIDEA GROUP,hk
+1810.HK,XIAOMI-W,hk
+2628.HK,CHINA LIFE,hk
+9999.HK,NTES,hk
+2359.HK,WUXI APPTEC,hk
+0386.HK,SINOPEC CORP,hk
+9633.HK,NONGFU SPRING,hk
+3993.HK,CMOC,hk
+2601.HK,CPIC,hk
+9888.HK,BIDU-W,hk
+2020.HK,ANTA SPORTS,hk
+2269.HK,WUXI BIO,hk
+9961.HK,TRIP.COM-S,hk
+9992.HK,POP MART,hk
+6818.HK,CEB BANK,hk
+0175.HK,GEELY AUTO,hk
+2423.HK,BEKE-W,hk
+1766.HK,CRRC,hk
+6936.HK,SF HOLDING,hk
+6886.HK,HTSC,hk
+1988.HK,MINSHENG BANK,hk
+3606.HK,FUYAO GLASS,hk
+9973.HK,CHERY AUTO,hk
+1024.HK,KUAISHOU-W,hk
+6618.HK,JD HEALTH,hk
+2057.HK,ZTO EXPRESS-W,hk
+1179.HK,HWORLD-S,hk
+0316.HK,OOIL,hk
+0763.HK,ZTE,hk
+3808.HK,SINOTRUK,hk
+1209.HK,CHINA RES MIXC,hk
+1880.HK,CTG DUTY-FREE,hk
+0914.HK,CONCH CEMENT,hk
+6066.HK,CSC,hk
+3296.HK,HUAQIN,hk
+6881.HK,CGS,hk
+0390.HK,CHINA RAILWAY,hk
+0501.HK,OMNIVISION,hk
+3618.HK,CQRC BANK,hk
+2319.HK,MENGNIU DAIRY,hk
+9980.HK,EASTROC,hk
+2097.HK,MIXUE GROUP,hk
+2618.HK,JD LOGISTICS,hk
+0668.HK,ANKER,hk
+2382.HK,SUNNY OPTICAL,hk
+6806.HK,SWHY,hk
+1072.HK,DONGFANG ELEC,hk
+6181.HK,LAOPU GOLD,hk
+2313.HK,SHENZHOU INTL,hk
+1508.HK,CHINA RE,hk
+1071.HK,HUADIAN POWER,hk
+6862.HK,HAIDILAO,hk
+1772.HK,GANFENGLITHIUM,hk
+1364.HK,GUMING,hk
+6821.HK,ASYMCHEM,hk
+3958.HK,DFZQ,hk
+0285.HK,BYD ELECTRONIC,hk
+1099.HK,SINOPHARM,hk
+0241.HK,ALI HEALTH,hk
+3759.HK,PHARMARON,hk
+1157.HK,ZOOMLION,hk
+0916.HK,CHINA LONGYUAN,hk
+2727.HK,SH ELECTRIC,hk
+2018.HK,AAC TECH,hk
+6963.HK,SUNSHINE INS,hk
+3898.HK,TIMES ELECTRIC,hk
+2039.HK,CIMC,hk
+2883.HK,CHINA OILFIELD,hk
+1530.HK,3SBIO,hk
+2331.HK,LI NING,hk
+1359.HK,CHINA CINDA,hk
+1908.HK,C&D INTL GROUP,hk
+6979.HK,ZJLD,hk
+1585.HK,YADEA,hk
+2788.HK,CHUANGXIN IND,hk
+1882.HK,HAITIAN INT'L,hk
+2096.HK,SIMCERE PHARMA,hk
+1133.HK,HARBIN ELECTRIC,hk
+0696.HK,TRAVELSKY TECH,hk
+0425.HK,MINTH GROUP,hk
+3330.HK,LINGBAO GOLD,hk
+0867.HK,CMS,hk
+2386.HK,SINOPEC SEG,hk
+9896.HK,MNSO,hk
+2689.HK,ND PAPER,hk
+0780.HK,TONGCHENGTRAVEL,hk
+0772.HK,CHINA LIT,hk
+1318.HK,MAO GEPING,hk
+6186.HK,CHINA FEIHE,hk
+0317.HK,COMEC,hk
+2400.HK,XD INC,hk
+0666.HK,REPT BATTERO,hk
+2518.HK,AUTOHOME-S,hk
+9899.HK,NETEASE MUSIC,hk
+0968.HK,XINYI SOLAR,hk
+2460.HK,CR BEVERAGE,hk
+1081.HK,DAJIN,hk
+9985.HK,WL DELICIOUS,hk
+2525.HK,HESAI-W,hk
+0699.HK,JOYSON ELEC,hk
+9858.HK,YOURAN DAIRY,hk
+3900.HK,GREENTOWN CHINA,hk
+1066.HK,WEIGAO GROUP,hk
+1651.HK,TSUGAMI CHINA,hk
+0956.HK,CHINA SUNTIEN,hk
+1579.HK,YIHAI INTL,hk
+3933.HK,UNITED LAB,hk
+3899.HK,CIMC ENRIC,hk
+2590.HK,GEEKPLUS-W,hk
+0586.HK,CONCH VENTURE,hk
+0579.HK,JNCEC,hk
+1681.HK,CONSUN PHARMA,hk
+2869.HK,GREENTOWN SER,hk
+1060.HK,DAMAI ENT,hk
+2580.HK,AUX ELECTRIC,hk
+0017.HK,NEW WORLD DEV,hk
+3393.HK,WASION HOLDINGS,hk
+3339.HK,LONKING,hk
+9911.HK,NEWBORNTOWN,hk
+1833.HK,PA GOODDOCTOR,hk
+3306.HK,JNBY,hk
+1686.HK,SUNEVISION,hk
+1286.HK,IMPRO PRECISION,hk
+2675.HK,EDGE MEDICAL-B,hk
+1952.HK,EVEREST MED,hk
+1361.HK,361 DEGREES,hk
+0546.HK,FUFENG GROUP,hk
+1368.HK,XTEP INT'L,hk
+0999.HK,XIAOCAIYUAN,hk
+2128.HK,CHINA LESSO,hk
+2233.HK,WESTCHINACEMENT,hk
+1114.HK,BRILLIANCE CHI,hk
+2145.HK,CHICMAX,hk
+0297.HK,SINOFERT,hk
+9690.HK,TUHU-W,hk
+1798.HK,DATANG RENEW,hk
+2692.HK,ZHAOWEI,hk
+1313.HK,CR BLDG MAT TEC,hk
+1187.HK,COFOE MEDICAL,hk
+0308.HK,CHINA TRAVEL HK,hk
+0570.HK,TRAD CHI MED,hk
+2555.HK,CHABAIDAO,hk
+0200.HK,MELCO INT'L DEV,hk
+0881.HK,ZHONGSHENG HLDG,hk
+6078.HK,HYGEIA HEALTH,hk
+2877.HK,SHINEWAY PHARM,hk
+1478.HK,Q TECH,hk
+2273.HK,GUSHENGTANG,hk
+6715.HK,XUNLONG SCITECH,hk
+0839.HK,CHINA EDU GROUP,hk
+0604.HK,SHENZHEN INVEST,hk
+1799.HK,XINTE ENERGY,hk
+2192.HK,MEDLIVE,hk
+1789.HK,AK MEDICAL,hk
+6168.HK,ZHOU LIU FU,hk
+9678.HK,UNISOUND,hk
+2291.HK,SCIENTECH,hk
+1896.HK,MAOYAN ENT,hk
+0819.HK,TIANNENG POWER,hk
+1666.HK,TONG REN TANG,hk
+9878.HK,HUITONGDA NET,hk
+1021.HK,HUAYAN ROBOTICS,hk
+2598.HK,LIANLIAN,hk
+1234.HK,CHINA LILANG,hk
+6929.HK,ORBUSNEICH,hk
+6090.HK,BUTONG GROUP,hk
+2480.HK,LUZHU BIOTECH-B,hk
+6831.HK,GREEN TEA GROUP,hk
+1837.HK,NATURAL FOOD IH,hk
+2199.HK,REGINA MIRACLE,hk
+3880.HK,MEDTIDE,hk
+9669.HK,BEISEN HOLDING,hk
+0743.HK,ASIA CEMENT CH,hk
+0182.HK,CONCORD NE,hk
+2549.HK,CAROTE LTD,hk
+3978.HK,BESTSTUDY EDU,hk
+3813.HK,POU SHENG INT'L,hk
+600905.SS,CHINA THREE GORGES RENEWABLES,cn
+603501.SS,OMNIVISION INTEGRATED CIRCUITS ,cn
+689009.SS,NINEBOT LIMITED,cn
+601231.SS,UNIVERSAL SCIENTIFIC IND (SHANG,cn
+601021.SS,SPRING AIRLINES CO LTD,cn
+688775.SS,ARASHI VISION INC,cn
+603260.SS,HOSHINE SILICON INDUSTRY CO LTD,cn
+600699.SS,NINGBO JOYSON ELECTRONIC CORP,cn
+603345.SS,ANJOY FOODS GROUP CO LTD,cn
+600153.SS,XIAMEN C&D CORPORATION LIMITED,cn
+688301.SS,IRAY GROUP,cn
+603596.SS,BETHEL AUTOMOTIVE SAFETY SYSTEM,cn
+600563.SS,XIAMEN FARATRONIC CO.LTD.,cn
+603816.SS,JASON FURNITURE (HANGZHOU) CO L,cn
+600873.SS,MEIHUA HOLDINGS GROUP CO LTD,cn
+603529.SS,AIMA TECHNOLOGY GROUP CO LTD,cn
+600808.SS,MAANSHAN IRON & STEEL CO,cn
+600655.SS,SHANGHAI YUYUAN TOURIST MART(GR,cn
+603290.SS,STARPOWER SEMICONDUCTOR LTD,cn
+688005.SS,NINGBO RONBAY NEW ENERGY TECHNO,cn
+601636.SS,ZHUZHOU KIBING GROUP CO LTD,cn
+600596.SS,ZHEJIANG XINAN CHEMICAL INDUSTR,cn
+603707.SS,NANJING KING-FRIEND BIOCHEMICAL,cn
+600315.SS,SHANGHAI JAHWA UNITED CO. LTD.,cn
+603556.SS,HEXING ELECTRICAL CO LTD,cn
+688789.SS,HANGZHOU HONGHUA DIGITAL TECHNO,cn
+603919.SS,JINHUI LIQUOR CO LTD,cn
+600305.SS,JIANGSU HENGSHUN VINEGAR INDUST,cn
+603166.SS,GUILIN FUDA CO LTD,cn
+688717.SS,SOLAX POWER NETWORK TECH (ZHEJI,cn
+603609.SS,WELLHOPE FOODS CO LTD,cn
+688556.SS,QINGDAO GAOCE TECHNOLOGY CO LTD,cn
+688719.SS,XI'AN ACTIONPOWER ELECTRIC CO L,cn
+688408.SS,ARCTECH SOLAR HOLDING CO LTD,cn
+601113.SS,YIWU HUADING NYLON CO LTD,cn
+688267.SS,CHINA CATALYST HOLDING CO LTD,cn
+688348.SS,ALTENERGY POWER SYSTEM INC,cn
+688533.SS,SUZHOU SONAVOX ELECTRONICS CO L,cn
+F34.SI,Wilmar Intl,sg
+C6L.SI,SIA,sg
+BN4.SI,Keppel,sg
+C07.SI,JMSEA,sg
+EB5.SI,First Resources,sg
+VC2.SI,Olam Group,sg
+CC3.SI,StarHub,sg
+ADN.SI,First Sponsor,sg
+G92.SI,China Aviation,sg
+FHH.SI,FoundationHealth,sg
+544.SI,CSE Global,sg
+DCRU.SI,DigiCore Reit USD,sg
+QC7.SI,Q&M Dental,sg
+O10.SI,Far East Orchard,sg
+A31.SI,Addvalue Tech,sg
+P34.SI,Delfi,sg
+ZKX.SI,Ever Glory,sg
+8AZ.SI,Aztech Gbl,sg
+TLKM.JK,Telkom Indonesia (Persero) Tbk.,id
+UNTR.JK,United Tractors Tbk,id
+AMRT.JK,Sumber Alfaria Trijaya Tbk,id
+BSDE.JK,Bumi Serpong Damai Tbk,id
+SIDO.JK,Industri Jamu dan Farmasi Sido ,id
+HEAL.JK,Medikaloka Hermina Tbk.,id
+SSIA.JK,Surya Semesta Internusa Tbk,id
+ACES.JK,Aspirasi Hidup Indonesia Tbk.,id
+AOT.BK,AOT_AIRPORTS OF THAILAND,th
+THAI.BK,THAI_THAI AIRWAYS INTERNATIONAL,th
+KCE.BK,KCE_KCE ELECTRONICS,th
+EGCO.BK,EGCO_ELECTRICITY GENERATING,th
+BGRIM.BK,BGRIM_B.GRIMM POWER,th
+BANPU.BK,BANPU_BANPU,th
+M.BK,M_MK RESTAURANT GROUP,th
+PTG.BK,PTG_PTG ENERGY,th
+0151.KL,KGB,my
+4715.KL,GENM,my
+3182.KL,GENTING,my
+0270.KL,NATGATE,my
+5323.KL,JPG,my
+5264.KL,MALAKOF,my
+8583.KL,MAHSING,my
+5255.KL,LFG,my
+0338.KL,KOPI,my
+0223.KL,SAMAIDEN,my
+1619.KL,DRBHCOM,my
+4456.KL,DNEX,my
+5141.KL,DAYANG,my
+6963.KL,VS,my
+5321.KL,KEYFIELD,my
+5302.KL,ATECH,my
+5099.KL,CAPITALA,my
