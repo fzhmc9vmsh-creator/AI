@@ -1,8 +1,1 @@
 ticker,market,stage,error,at
-TRUE.BK,TH,fetch,YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-PTTGC.BK,TH,fetch,YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-OR.BK,TH,fetch,YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-CCET.BK,TH,fetch,YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-NRDS,US,partial,earnings_estimate:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.; growth_estimates:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.; revenue_estimate:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-KE,US,partial,earnings_estimate:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.; growth_estimates:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.; revenue_estimate:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15
-AOT.BK,TH,partial,growth_estimates:YFRateLimitError: Too Many Requests. Rate limited. Try after a while.,2026-10-19T16:00:15

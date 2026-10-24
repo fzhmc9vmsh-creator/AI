@@ -1,21 +1,20 @@
 ticker,name,market,industry,tier
-ALKT,"Alkami Technology, Inc.",us,Software - Application,rescreen
-APPS,"Digital Turbine, Inc.",us,Software - Application,rescreen
-ASUR,Asure Software Inc,us,Software - Application,rescreen
-BLND,"Blend Labs, Inc.",us,Software - Application,rescreen
-BRZE,"Braze, Inc.",us,Software - Application,rescreen
-BULL,Webull Corporation,us,Software - Application,rescreen
-CMRC,"Commerce.com, Inc. - Series 1",us,Software - Application,rescreen
-DAVE,Dave Inc.,us,Software - Application,rescreen
-LSPD,Lightspeed Commerce Inc. Subord,us,Software - Application,rescreen
-LYFT,"Lyft, Inc.",us,Software - Application,rescreen
-PAR,PAR Technology Corporation,us,Software - Application,rescreen
-PCOR,"Procore Technologies, Inc.",us,Software - Application,rescreen
-PUBM,"PubMatic, Inc.",us,Software - Application,rescreen
-RBBN,Ribbon Communications Inc.,us,Software - Application,rescreen
-RSKD,Riskified Ltd.,us,Software - Application,rescreen
-SMWB,Similarweb Ltd.,us,Software - Application,rescreen
-SPT,"Sprout Social, Inc",us,Software - Application,rescreen
-SVCO,"Silvaco Group, Inc.",us,Software - Application,rescreen
-U,Unity Software Inc.,us,Software - Application,rescreen
-UBER,"Uber Technologies, Inc.",us,Software - Application,rescreen
+1021.HK,HUAYAN ROBOTICS,hk,Specialty Industrial Machinery,rescreen
+1081.HK,DAJIN,hk,Specialty Industrial Machinery,rescreen
+688789.SS,HANGZHOU HONGHUA DIGITAL TECHNO,cn,Specialty Industrial Machinery,rescreen
+TNC,Tennant Company,us,Specialty Industrial Machinery,rescreen
+RH,RH,us,Specialty Retail,rescreen
+RHI,Robert Half Inc.,us,Staffing & Employment Services,rescreen
+ATNI,"ATN International, Inc.",us,Telecom Services,rescreen
+GOGO,Gogo Inc.,us,Telecom Services,rescreen
+TRIP,"TripAdvisor, Inc.",us,Travel Services,rescreen
+VIK,Viking Holdings Ltd,us,Travel Services,rescreen
+TLN,Talen Energy Corporation,us,Utilities - Independent Power Producers,rescreen
+SR,Spire Inc.,us,Utilities - Regulated Gas,rescreen
+CWCO,Consolidated Water Co. Ltd.,us,Utilities - Regulated Water,rescreen
+SBS,Companhia de saneamento Basico ,us,Utilities - Regulated Water,rescreen
+0182.HK,CONCORD NE,hk,Utilities - Renewable,rescreen
+0916.HK,CHINA LONGYUAN,hk,Utilities - Renewable,rescreen
+1798.HK,DATANG RENEW,hk,Utilities - Renewable,rescreen
+600905.SS,CHINA THREE GORGES RENEWABLES,cn,Utilities - Renewable,rescreen
+CWEN,"Clearway Energy, Inc.",us,Utilities - Renewable,rescreen

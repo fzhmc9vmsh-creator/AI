@@ -1,21 +1,21 @@
 ticker,name,market,industry,tier
-SDRL,Seadrill Limited,us,Oil & Gas Drilling,rescreen
-BKV,BKV Corporation,us,Oil & Gas E&P,rescreen
-CNX,CNX Resources Corporation,us,Oil & Gas E&P,rescreen
-CRK,"Comstock Resources, Inc.",us,Oil & Gas E&P,rescreen
-GPRK,Geopark Ltd,us,Oil & Gas E&P,rescreen
-GRNT,"Granite Ridge Resources, Inc.",us,Oil & Gas E&P,rescreen
-REPX,"Riley Exploration Permian, Inc.",us,Oil & Gas E&P,rescreen
-TALO,"Talos Energy, Inc.",us,Oil & Gas E&P,rescreen
-TXO,"TXO Partners, L.P.",us,Oil & Gas E&P,rescreen
-VET,Vermilion Energy Inc.,us,Oil & Gas E&P,rescreen
-5141.KL,DAYANG,my,Oil & Gas Equipment & Services,rescreen
-NGS,"Natural Gas Services Group, Inc",us,Oil & Gas Equipment & Services,rescreen
-TDW,Tidewater Inc.,us,Oil & Gas Equipment & Services,rescreen
-DEC,Diversified Energy Company,us,Oil & Gas Integrated,rescreen
-EE,"Excelerate Energy, Inc.",us,Oil & Gas Midstream,rescreen
-KNTK,Kinetik Holdings Inc.,us,Oil & Gas Midstream,rescreen
-ALM,Almonty Industries Inc.,us,Other Industrial Metals & Mining,rescreen
-LAR,Lithium Argentina AG,us,Other Industrial Metals & Mining,rescreen
-SGML,Sigma Lithium Corporation,us,Other Industrial Metals & Mining,rescreen
-USAS,Americas Gold and Silver Corpor,us,Other Industrial Metals & Mining,rescreen
+MTA,Metalla Royalty & Streaming Ltd,us,Other Precious Metals & Mining,rescreen
+VOXR,Vox Royalty Corp.,us,Other Precious Metals & Mining,rescreen
+HLF,Herbalife Ltd.,us,Packaged Foods,rescreen
+SIDO.JK,Industri Jamu dan Farmasi Sido ,id,Packaged Foods,rescreen
+USNA,"USANA Health Sciences, Inc.",us,Packaged Foods,rescreen
+SCHL,Scholastic Corporation,us,Publishing,rescreen
+ABR,Arbor Realty Trust,us,REIT - Mortgage,rescreen
+MFA,"MFA Financial, Inc.",us,REIT - Mortgage,rescreen
+DCRU.SI,DigiCore Reit USD,sg,REIT - Specialty,rescreen
+ADN.SI,First Sponsor,sg,Real Estate - Development,rescreen
+1686.HK,SUNEVISION,hk,Real Estate Services,rescreen
+MMI,"Marcus & Millichap, Inc.",us,Real Estate Services,rescreen
+RMR,The RMR Group Inc.,us,Real Estate Services,rescreen
+0200.HK,MELCO INT'L DEV,hk,Resorts & Casinos,rescreen
+MLCO,Melco Resorts & Entertainment L,us,Resorts & Casinos,rescreen
+PENN,"PENN Entertainment, Inc.",us,Resorts & Casinos,rescreen
+6831.HK,GREEN TEA GROUP,hk,Restaurants,rescreen
+M.BK,M_MK RESTAURANT GROUP,th,Restaurants,rescreen
+ACLS,"Axcelis Technologies, Inc.",us,Semiconductor Equipment & Materials,rescreen
+ACMR,"ACM Research, Inc.",us,Semiconductor Equipment & Materials,rescreen

@@ -1,21 +1,21 @@
 ticker,name,market,industry,tier
-1789.HK,AK MEDICAL,hk,Medical Devices,rescreen
-2291.HK,SCIENTECH,hk,Medical Devices,rescreen
-2675.HK,EDGE MEDICAL-B,hk,Medical Devices,rescreen
-AORT,"Artivion, Inc.",us,Medical Devices,rescreen
-ATEC,"Alphatec Holdings, Inc.",us,Medical Devices,rescreen
-QDEL,QuidelOrtho Corporation,us,Medical Devices,rescreen
-TMDX,"TransMedics Group, Inc.",us,Medical Devices,rescreen
-1066.HK,WEIGAO GROUP,hk,Medical Instruments & Supplies,rescreen
-688301.SS,IRAY GROUP,cn,Medical Instruments & Supplies,rescreen
-6929.HK,ORBUSNEICH,hk,Medical Instruments & Supplies,rescreen
-BLCO,Bausch + Lomb Corporation,us,Medical Instruments & Supplies,rescreen
-SMTI,Sanara MedTech Inc.,us,Medical Instruments & Supplies,rescreen
-STAA,STAAR Surgical Company,us,Medical Instruments & Supplies,rescreen
-TFX,Teleflex Incorporated,us,Medical Instruments & Supplies,rescreen
-GPGI,"GPGI, Inc.",us,Metal Fabrication,rescreen
-ONIT,Onity Group Inc.,us,Mortgage Finance,rescreen
-PFSI,"PennyMac Financial Services, In",us,Mortgage Finance,rescreen
-RKT,"Rocket Companies, Inc.",us,Mortgage Finance,rescreen
-UWMC,UWM Holdings Corporation,us,Mortgage Finance,rescreen
-RIG,Transocean Ltd (Switzerland),us,Oil & Gas Drilling,rescreen
+SDRL,Seadrill Limited,us,Oil & Gas Drilling,rescreen
+BKV,BKV Corporation,us,Oil & Gas E&P,rescreen
+CNX,CNX Resources Corporation,us,Oil & Gas E&P,rescreen
+CRK,"Comstock Resources, Inc.",us,Oil & Gas E&P,rescreen
+GPRK,Geopark Ltd,us,Oil & Gas E&P,rescreen
+GRNT,"Granite Ridge Resources, Inc.",us,Oil & Gas E&P,rescreen
+REPX,"Riley Exploration Permian, Inc.",us,Oil & Gas E&P,rescreen
+TXO,"TXO Partners, L.P.",us,Oil & Gas E&P,rescreen
+VET,Vermilion Energy Inc.,us,Oil & Gas E&P,rescreen
+5141.KL,DAYANG,my,Oil & Gas Equipment & Services,rescreen
+NGS,"Natural Gas Services Group, Inc",us,Oil & Gas Equipment & Services,rescreen
+TDW,Tidewater Inc.,us,Oil & Gas Equipment & Services,rescreen
+DEC,Diversified Energy Company,us,Oil & Gas Integrated,rescreen
+EE,"Excelerate Energy, Inc.",us,Oil & Gas Midstream,rescreen
+KNTK,Kinetik Holdings Inc.,us,Oil & Gas Midstream,rescreen
+ALM,Almonty Industries Inc.,us,Other Industrial Metals & Mining,rescreen
+LAR,Lithium Argentina AG,us,Other Industrial Metals & Mining,rescreen
+SGML,Sigma Lithium Corporation,us,Other Industrial Metals & Mining,rescreen
+USAS,Americas Gold and Silver Corpor,us,Other Industrial Metals & Mining,rescreen
+HL,Hecla Mining Company,us,Other Precious Metals & Mining,rescreen
