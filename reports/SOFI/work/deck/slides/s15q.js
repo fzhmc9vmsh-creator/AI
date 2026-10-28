@@ -32,7 +32,7 @@ module.exports = function build(pres, L) {
   const row = (cond, now, fut, node, prob, lead, merged) => [cond, g(now), g(fut), node, prob, lead, bold(merged)];
   L.table(s, [
     ['条件', '現在', '将来', '決める節点', '実現確率', '先行指標', '統合'],
-    row('1 競争優位', 'B', 'A', 'N1', '59%', '純増の過去最高・上方修正の記録', 'B(上方の留保)'),
+    row('1 競争優位', 'B', 'A', 'N1', '59%', '純増の過去最高・\n上方修正の記録', 'B(上方の留保)'),
     row('2 コア事業の CF', 'B', 'B', 'N1・N2', '—', 'ROTCE 推定 10% → 13%', 'B'),
     row('3 資産の転用', 'A', 'A', 'N4', '55%', '大口を除き +18%', 'A'),
     row('8 コモディティでない', 'B', 'A', 'N1', '59%', '同上', 'B(上方の留保)'),

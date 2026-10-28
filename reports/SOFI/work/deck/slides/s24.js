@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 借り手 → SoFi の事業 → ローンの買い手 ← 価格の基準。①〜⑤ は右と対応。収益の内訳は Q3 2026。評価は単品でなく束 × 同業との相対で決める',
-    source: '会社開示(Q3 2026 決算)、research_r5/Q3_datasheet.md、research_r2/R9_products_people.md(各社の価格表)、research/R4_scuttlebutt.md(LPB 契約・プライベートクレジット)、research_r4/R16・R17',
+    source: '会社開示(Q3 2026 決算)、research_r5/Q3_datasheet.md、research_r2/R9_products_people.md、research/R4_scuttlebutt.md、research_r4/R16・R17',
     grade: 'B', condNo: 8,
   });
   L.flowMap(s, {
@@ -37,11 +37,11 @@ module.exports = function build(pres, L) {
   L.mechPanel(s, {
     bottom: 6.32,
     mech: [
-      '借り手は FICO 746 の優良層で、金利を比べて選ぶ。APR 帯は LendingClub・LightStream と重なる',
-      '抱えきれないローンは LPB と売却で他社に渡す。LPB 手数料は 1.53 億(売却益は未開示)',
+      '借り手は FICO 746 の優良層で、金利を比べて\n選ぶ。APR 帯は LendingClub・LightStream と重なる',
+      '抱えきれないローンは LPB と売却で\n他社に渡す。LPB 手数料は 1.53 億(売却益は未開示)',
       '買い手はほぼ額面と手数料 4.6% で買う。単品のローンは市場で値の付く商品',
-      'プライベートクレジットは 2025 年の個人ローン組成の約 1/4 に資金を出し(前年 6%)、競合にも同じ資金が回る',
-      '束では差が出る: 製品当たり獲得費 202 ドル(会員当たりの約半分)、純償却は同業より低い。預金の基本金利は同業の中位',
+      'プライベートクレジットは 2025 年の個人ローン\n組成の約 1/4 に資金を出し(前年 6%)、\n競合にも同じ資金が回る',
+      '束では差が出る: 製品当たり獲得費 202 ドル\n(会員当たりの約半分)、純償却は同業より低い。\n預金の基本金利は同業の中位',
     ],
     reason: '単品は商品だが、束では獲得費と貸倒で\n同業より低い。束に値段が付く証拠は\nまだ無く B',
     up: '有料会員と手数料型の比率が上がり、\n束に値段が付けば A',

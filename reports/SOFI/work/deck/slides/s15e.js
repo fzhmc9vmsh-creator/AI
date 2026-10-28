@@ -25,7 +25,7 @@ module.exports = function build(pres, L) {
   L.flow(s, [
     { head: '失注', boxes: [{ text: '大口顧客が\n2025 年末に離脱\n(前年比 −27%)', tone: 'in', h: 0.95, size: 9.5 }] },
     { head: '底打ち(Q1・Q2)', boxes: [{ text: '前期比 +12.5%(Q2)\n大口離脱後の底', tone: 'in', h: 0.95, size: 9.5 }] },
-    { head: '再成長の入口', boxes: [{ text: 'Q3: 大口を除き +18%\n貢献利益率 16%', tone: 'key', h: 0.95, size: 9.5 }] },
+    { head: '再成長の入口', boxes: [{ text: '大口を除き\n+18%(Q3)\n貢献利益率 16%', tone: 'key', h: 0.95, size: 9.5 }] },
     { head: '再成長', boxes: [{ text: '前年比のプラスは\nQ1 2027 の見通し', tone: 'in', h: 0.95, size: 9.5 }] },
   ], { x: 0.5, y: 4.82, w: 6.3, h: 1.37, gap: 0.3 });
   L.text(s, '貢献利益は Q2 1,180 万 → Q3 1,420 万ドル(率 14% → 16%)。\n大口を除く前年比は Q3 +18%(Q2 は +12%)', { x: 0.5, y: 6.3, w: 6.3, h: 0.42, fontSize: 9.5 });

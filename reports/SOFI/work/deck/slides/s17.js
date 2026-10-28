@@ -12,7 +12,7 @@ module.exports = function build(pres, L) {
     nodes: [
       { id: 'dd', c: 0, r: 0, label: '給与振込の会員', sub: '預金の 9 割超\n普通預金 3.30%' },
       { id: 'borrow', c: 0, r: 1, label: '借りる会員', sub: 'FICO 746(Q2)\n金利を比べて選ぶ' },
-      { id: 'inv', c: 0, r: 2, label: '投資・カードの会員', sub: 'Invest 390 万口座(Q2)\nPlus 有料 20.6 万人(Q2)' },
+      { id: 'inv', c: 0, r: 2, label: '投資・カードの会員', sub: 'Invest 390 万(Q2)\nPlus 20.6 万人(Q2)' },
       { id: 'dep', c: 1, r: 0, kind: 'unit', label: 'SoFi Money(預金)', sub: '513 億ドル\n平均 3.07%(Q2)' },
       { id: 'bs', c: 1, r: 1, kind: 'unit', label: 'B/S 貸出', sub: 'APR 6.99〜35.49%\nNIM 6.14%' },
       { id: 'cross', c: 1, r: 2, kind: 'unit', label: 'クロスバイ', sub: '新製品の 51% は\n既存会員\n1 会員 1.56 製品' },
@@ -52,7 +52,7 @@ module.exports = function build(pres, L) {
       '銀行免許で集めた預金は倉庫ラインより 1.45pt 安い。ただし前期の 1.56pt から縮んだ',
       '安い預金が貸出を支え、NIM は 6.14%',
       '個人ローンの APR 6.99〜35.49% は\nLightStream・LendingClub と重なり、\n価格では勝っていない',
-      'ブランド(非助成想起 10.4%、Q2)とクロスバイ 51% で会員当たり 1.56 製品。販促費は四半期 4.44 億ドル(+55%)',
+      'ブランド(非助成想起 10.4%、Q2)とクロスバイ 51% で会員当たり 1.56 製品。\n販促費は四半期 4.44 億ドル(+55%)',
       'Robinhood・Chime も給与振込と会員を取りに来ており、資金の差を縮める圧力が続く',
     ],
     reason: '優位は価格ではなく、給与振込の関係が\n生む安い資金。7〜10 年続くと見るが、\n差は縮小中で圧倒的ではないため B',
