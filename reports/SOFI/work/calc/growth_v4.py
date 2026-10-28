@@ -256,6 +256,25 @@ def run():
                        sm_ratio=Q3["sm"] / Q3["rev"], sm_ratio_q2=Q2["sm"] / Q2["rev"],
                        ppm=Q3["products"] / Q3["members"], dep_per_member=Q3["deposits"] * 1e3 / Q3["members"],
                        dep_per_member_q2=Q2["deposits"] * 1e3 / Q2["members"])
+    # 条件6: 12 か月先 EPS(Q4 2026 の含意 0.19 + 2027 年 × 3/4)の PER ÷ 2026→2028 の EPS CAGR、市場 PEG 1.27、成長の近い同業の中央値 0.52
+    ntm = 0.19 + 0.90 * 0.75
+    c6 = {}
+    for pr in (PRICE, PRICE_ALT):
+        pe = pr / ntm
+        rows = []
+        for k, e in P.items():
+            g = vm.cagr(e[2026], e[2028], 2)
+            peg_ = pe / (g * 100)
+            rows.append(dict(path=k, g=g, peg=peg_, ratio=peg_ / (19.0 / 15), mult=g / 0.15, vs_peer=peg_ / 0.52,
+                             A=peg_ / (19.0 / 15) <= 0.6 and g / 0.15 >= 2 and peg_ <= 0.52))
+        c6[str(pr)] = dict(ntm_eps=ntm, pe=pe, rows=rows, n_A=sum(r["A"] for r in rows))
+    lo, hi = 10.0, 25.0
+    for _ in range(60):          # 3 経路とも A の基準を満たす株価の上限
+        mid = (lo + hi) / 2
+        ok = all((mid / ntm) / (vm.cagr(e[2026], e[2028], 2) * 100) <= 0.52 for e in P.values())
+        lo, hi = (mid, hi) if ok else (lo, mid)
+    c6["price_all_A"] = lo
+    out["cond6"] = c6
     with open(os.path.join(OUT, "growth_v4.json"), "w") as f:
         json.dump(out, f, ensure_ascii=False, indent=1, default=float)
     return out
@@ -283,3 +302,5 @@ if __name__ == "__main__":
     print("entry", {k: (round(v, 2) if isinstance(v, float) else v) for k, v in o["entry"].items()})
     print("gap", {k: {a: round(b * 100, 1) for a, b in v.items()} for k, v in o["gap"].items()})
     print("unit", {k: round(v, 3) for k, v in o["unit"].items()})
+    for k, v in o["cond6"].items():
+        print("cond6", k, v if not isinstance(v, dict) else (round(v["pe"], 2), v["n_A"], [(r["path"], round(r["g"] * 100, 1), round(r["peg"], 3), round(r["ratio"], 2), round(r["mult"], 2), round(r["vs_peer"], 2)) for r in v["rows"]]))
