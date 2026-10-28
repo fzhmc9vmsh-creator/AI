@@ -1,8 +1,8 @@
-// 条件10・11(評価 B・B): 模倣困難性と陳腐化。指示書 spec/ch3.md の s26 節
+// 条件10・11(評価 B・B): 模倣困難性と陳腐化
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 再現に時間がかかる資産 / 陳腐化しうる資産 ← 競合の動き。下: 資産ごとの持ちの長さ。①〜⑤ は右と対応',
-    source: '会社開示(Q2 2026 決算)、research/R4_scuttlebutt.md(Chime の S-1、Robinhood・LendingClub の Q2 2026 決算)、research_r2/R9_products_people.md',
+    source: '会社開示(Q3 2026 決算)、research_r5/Q3_datasheet.md、research/R4_scuttlebutt.md(Chime の S-1、Robinhood・LendingClub の Q2 2026 決算)、research_r2/R9_products_people.md',
     grade: 'B', condNo: '10・11',
   });
   L.flowMap(s, {
@@ -14,14 +14,14 @@ module.exports = function build(pres, L) {
     ],
     nodes: [
       { id: 'charter', c: 0, r: 0, kind: 'ok', label: '銀行免許', sub: '2022 年に銀行を買収\n審査に約 1 年' },
-      { id: 'mem', c: 0, r: 1, kind: 'ok', label: '会員 1,580 万人', sub: '1 会員 1.54 製品' },
-      { id: 'dep', c: 0, r: 2, kind: 'ok', label: '預金 455 億ドル', sub: '給与振込が約 9 割' },
+      { id: 'mem', c: 0, r: 1, kind: 'ok', label: '会員 1,710 万人', sub: '1 会員 1.56 製品' },
+      { id: 'dep', c: 0, r: 2, kind: 'ok', label: '預金 513 億ドル', sub: '給与振込が約 9 割' },
       { id: 'brand', c: 1, r: 0, kind: 'ok', label: 'ブランド', sub: '想起 10.4%\n(販促が必要)' },
       { id: 'data', c: 1, r: 1, kind: 'ok', label: '信用データ', sub: '組成の実績\n(個人ローンの損失履歴)' },
       { id: 'lpbn', c: 1, r: 2, kind: 'unit', label: 'LPB の買い手の網', sub: '100 億ドル超の契約' },
       { id: 'tech', c: 2, r: 0, kind: 'risk', label: '技術基盤', sub: 'Galileo・Technisys\n(買収 約 23 億ドル)' },
       { id: 'app', c: 2, r: 1, kind: 'unit', label: 'アプリ・製品', sub: '機能は真似\nされやすい' },
-      { id: 'gal', c: 2, r: 2, kind: 'risk', label: 'Galileo の外販', sub: '収益 −23%' },
+      { id: 'gal', c: 2, r: 2, kind: 'risk', label: 'Galileo の外販', sub: '収益 −24%\n大口を除き +18%' },
       { id: 'chime', c: 3, r: 0, kind: 'risk', label: 'Chime', sub: '自社基盤 ChimeCore へ\n解約料 1,800 万ドル' },
       { id: 'rh', c: 3, r: 1, kind: 'risk', label: 'Robinhood', sub: '銀行業務 入金\n30 億ドル超\nGold 480 万人' },
       { id: 'lc', c: 3, r: 2, label: 'LendingClub', sub: '預金 102 億ドル\n借り手が新規口座の\n15% 超' },
@@ -51,8 +51,8 @@ module.exports = function build(pres, L) {
       'Chime は自社基盤へ移り、\n解約料 1,800 万ドルを払って Galileo を離れた。\n技術基盤の外販は内製化で陳腐化しうる',
       'Robinhood は銀行業務(入金 30 億ドル超、\n給与振込の設定 約 4 割)を始め、\nアプリの機能は真似されやすい',
       'LendingClub は貸し手と預金を組み合わせた\n同じ型(預金 102 億ドル)。\n型そのものは独占ではない',
-      '銀行免許は買収と審査に約 1 年\n(2021-03 契約 → 2022-02 完了)。\n給与振込の預金 455 億ドルは短期に再現できない',
-      '会員 1,580 万人とブランドは、\n販促を続ける限り積み上がる',
+      '銀行免許は買収と審査に約 1 年\n(2021-03 契約 → 2022-02 完了)。\n給与振込の預金 513 億ドルは短期に再現できない',
+      '会員 1,710 万人とブランドは、\n販促を続ける限り積み上がる',
     ],
     reason: '免許・会員・預金は再現に数年かかる(11 B)。\n技術基盤の外販は内製化で陳腐化しうる(10 B)',
     up: 'Galileo の外販が増収に戻り、\n会員当たりの製品が 1.7 を超えれば A',

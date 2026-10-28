@@ -3,7 +3,7 @@
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
-    kicker: '条件6: EPS 成長 30% 以上かつ PEG<1 を満たせば B(A 寄り)から出発し、市場と同業からの乖離で A まで上げる。PER は 12 か月先 19.1 倍(株価 16.5、EPS 0.865)。14.55 なら 16.8 倍で PEG 0.44〜0.48',
+    kicker: '条件6: 市場・同業との乖離で A。PER は 12 か月先 19.1 倍(株価 16.5、EPS 0.865)。14.55 なら 16.8 倍で PEG 0.44〜0.48',
     source: 'research_r4/R13_peer_growth_peg.md(FactSet・各社コンセンサスの要約)、research_r5/Q3_datasheet.md、calc/out/growth_v4.json の cond6',
     grade: 'A', condNo: 6,
   });

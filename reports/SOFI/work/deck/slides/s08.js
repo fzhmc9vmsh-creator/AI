@@ -3,7 +3,7 @@ module.exports = function build(pres, L) {
   const { C, FONT } = L;
   const s = L.contentSlide(pres, {
     kicker: '左: 事業の積み木(何を、どの資金で売るか)。右: 8 群の 5W1H 台帳。下: この資料で使う用語の注釈',
-    source: '会社開示(Q3 2026 決算の 8-K・説明会の要約)、research_r5/Q3_datasheet.md、research_r2/R9_products_people.md(各社の価格表の第三者集計)。残高は公正価値の額。(Q2)は前期の値',
+    source: '会社開示(Q3 2026 決算の 8-K・説明会の要約)、research_r5/Q3_datasheet.md、research_r2/R9_products_people.md(価格表の第三者集計)。残高は公正価値の額、(Q2)は前期の値',
   });
 
   // ---------- 左: 事業の積み木(層 × 資金の出どころ) ----------

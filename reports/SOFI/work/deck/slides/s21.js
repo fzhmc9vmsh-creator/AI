@@ -2,8 +2,8 @@
 // 箱は 14: 経歴の gs と tw は 1 箱(Goldman・NFL・Twitter)にまとめた
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    kicker: '左から: 経歴(どこで何を築いたか)→ 現職 → 担う事業 → 結果。①〜⑤ は右と対応。経歴は会社発表・報道の要約に基づく',
-    source: 'research/R3b_management.md、research_r2/R9_products_people.md(会社発表・DEF 14A・Form 4 の要約)',
+    kicker: '左から: 経歴(どこで何を築いたか)→ 現職 → 担う事業 → 結果(Q3 2026 まで)。①〜⑤ は右と対応。経歴は会社発表・報道の要約に基づく',
+    source: 'research/R3b_management.md、research_r2/R9_products_people.md(会社発表・DEF 14A・Form 4 の要約)、research_r5/Q3_datasheet.md(Q3 の 8-K・説明会の要約)',
     grade: 'B', condNo: 5,
   });
   L.flowMap(s, {
@@ -22,7 +22,7 @@ module.exports = function build(pres, L) {
       { id: 'lend', c: 2, r: 2, kind: 'unit', label: '個人・学生・\n住宅ローン', sub: '与信と SoFi Bank' },
       { id: 'fsb', c: 2, r: 3, kind: 'unit', label: '預金・投資・保険', sub: 'Spend・Invest・\nProtect・Save' },
       { id: 'res1', c: 3, r: 0, kind: 'ok', label: '銀行免許 2022 年\nGAAP 黒字 Q4 2023', sub: '約束した時期どおり' },
-      { id: 'res2', c: 3, r: 1, kind: 'ok', label: '2025 年は計画超え', sub: 'EPS 計画 0.25〜0.27\n→ 実績 0.39' },
+      { id: 'res2', c: 3, r: 1, kind: 'ok', label: '2025 年に続き Q3 も上振れ', sub: 'Q3: 収益・EPS とも上振れ、\n2026 年見通しを引き上げ、\n2027 年 EPS 0.90 を提示' },
       { id: 'res3', c: 3, r: 2, h: 0.9, kind: 'risk', label: '未達と未検証', sub: '上場時の 2024 年\n予測に収益 −7%\nTechnisys の効果は\n未検証' },
     ],
     edges: [
