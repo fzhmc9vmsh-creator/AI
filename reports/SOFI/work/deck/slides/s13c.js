@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '金利 +100bp の経路ごとの効果(税引前、億ドル。1 年目と 3 年目)と 1 株当たりの価値への効果、市場の反応との比較',
-    source: 'research_r4/R15_rate_two_sided.md(10-Q の NII 感応度・ヘッジ・預金ベータ)、calc/A4_q3_memo.md(金利の両面)、research/R3a_market_hypothesis.md(KBW)、research_r5/Q3_datasheet.md(Q3 の預金)',
+    source: 'research_r4/R15_rate_two_sided.md(10-Q の NII 感応度・ヘッジ・預金ベータ)、calc/A4_q3_memo.md(金利の両面)、research/R3a_market_hypothesis.md(KBW)、research_r5/Q3_datasheet.md',
   });
   const LX = 0.5, LW = 7.7, RX = 8.45, RW = 4.38;
   const pos = { color: L.C.primary, bold: true }, neg = { color: L.C.red, bold: true };

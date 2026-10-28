@@ -20,7 +20,7 @@ module.exports = function build(pres, L) {
     chartColors: [C.red, C.primary, C.amber], lineSize: 2, lineDataSymbolSize: 6,
     valAxisMinVal: 0, valAxisMaxVal: 400, valAxisMajorUnit: 100, valAxisLabelFormatCode: '0',
   }));
-  L.text(s, 'Q3 2026: 会員当たり 370 ドル(前期比 +4%)、製品当たり 202 ドル(前期比 +13%)。新規会員の製品当たりは未開示。\n製品の純増 220 万件の 51% は既存会員が開いた(獲得費がほぼかからない)', { x: 0.5, y: 5.3, w: 6.3, h: 0.5, fontSize: 9, objectName: 'note_q2' });
+  L.text(s, 'Q3 2026: 会員当たり 370 ドル(前期比 +4%)、製品当たり 202 ドル(前期比 +13%)。\n新規会員の製品当たりは Q3 未開示。\n製品の純増 220 万件の 51% は既存会員が開いた(獲得費がほぼかからない)', { x: 0.5, y: 5.3, w: 6.3, h: 0.5, fontSize: 9, objectName: 'note_q2' });
   L.takeaway(s, 0.5, 5.9, 6.3, 0.75, '販促費は攻めのまま増やし、増収で EPS を作った。EPS の調整弁は\n販促費ではなく B/S の伸び(資本)。2027 年は資本の上限が効く');
 
   // 右上: 6 つの検査の表。判定は「攻め」を緑のセル、ほかは太字の文字
@@ -34,7 +34,7 @@ module.exports = function build(pres, L) {
     ['解約・休眠', '非開示', judge('保留')],
     ['価格', '基本金利 3.30% 据え置き、新規は上乗せ +1.10%\n(新規の獲得に金利を使い始めた)', judge('攻め')],
     ['競合', '販促費 +55%\n(Chime +25%、Robinhood の営業費用 +33%)', judge('攻め')],
-    ['経営の運用', '売上計画を上げ、EBITDA 率は 33〜34% → 32.9%(再投資)', judge('攻め')],
+    ['経営の運用', '売上計画を上げ、EBITDA 率は\n33〜34% → 32.9%(再投資)', judge('攻め')],
     ['有機的な獲得', '認知度 10.4%(Q2)、クロスバイ 51%', judge('攻め')],
   ], { x: 7.05, y: 1.98, w: 5.78, colW: [1.35, 3.6, 0.83], fontSize: 10, rowH: 0.36, align: ['left', 'left', 'center'] });
 
@@ -42,7 +42,7 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 7.05, 4.72, 5.78, 'EPS への効き(経営が出し入れできる部分)');
   const eps = [
     ['販促費率 1pt', 'EPS 約 0.028 ドル\n(2026 年の収益 50.4 億)'],
-    ['Q3 の実績', '販促費 +0.52 億ドルでも EPS +0.06(増収で)'],
+    ['Q3 の実績', '販促費 +0.52 億ドルでも\nEPS +0.06(増収で)'],
     ['2027 年見通し', '販促費率を大きく下げずに EPS 0.90'],
   ];
   L.table(s, eps.map((r, i) => r.map((t, j) => ({ text: t, options: { fill: { color: i % 2 === 0 ? C.gray : C.white }, color: C.text, bold: j === 1 } }))),
