@@ -60,13 +60,17 @@ def engine(sh=None, **kw):
         sh_g=0.015, conv_extra=0.03e9,            # SBC 等の年率希薄化、2029 以降の転換社債の追加株(キャップ超)
         spill_conv=0.30,                          # 資本で持てない個人ローンのうち LPB で組成し直す割合(第2版で引数化。既定は第1版と同じ)
         extra_rev=[0.0, 0.0, 0.0, 0.0, 0.0],      # 新しい収益線(SoFiUSD の準備資産の利ざや等)。第2版で追加、既定 0
+        rev26=4.80e9,                             # 2026 年の収益の較正値(第4版で引数化。既定は第1〜3版と同じ)
+        iea_end26=62.0e9,                         # 2026 年末の利付資産(同上)
+        cap_end26=CAP_TOTAL0 + 0.50e9 + 0.13e9,  # 2026 年末の総自己資本(同上)
+        sh_g_list=None,                           # 年ごとの株数の伸び(None なら sh_g を毎年)
     )
     p.update(kw)
     out = {}
     mem = p["mem0"]
     iea_avg = p["iea_avg26"]
-    iea_end_prev = 62.0e9                         # 2026 年末の利付資産(推定)
-    cap = CAP_TOTAL0 + 0.50e9 + 0.13e9            # 2026 年末の資本: H2 純利益 + SBC
+    iea_end_prev = p["iea_end26"]                 # 2026 年末の利付資産(推定)
+    cap = p["cap_end26"]                          # 2026 年末の資本: H2 純利益 + SBC
     lpb, fs, tp, gains = p["lpb"][0], p["fs_fee"][0], p["tp"][0], p["gains"][0]
     shares = sh or SH_DIL_26
     for i, y in enumerate(YEARS):
@@ -91,12 +95,12 @@ def engine(sh=None, **kw):
         credit = -p["credit_shock"] * 0.48 * iea_avg                    # 個人ローン ~48%
         rev = nii + lpb + fs + tp + gains + p["elim"] + p["extra_rev"][i]
         if i == 0:
-            rev_scale = 4.80e9 / rev                                     # 2026 をガイダンス中央に較正
+            rev_scale = p["rev26"] / rev                                 # 2026 をガイダンス中央に較正
         rev *= rev_scale
         pretax = rev * (1 - p["sm"][i] - p["tpd"][i] - p["ops"][i]) + credit
         ni = pretax * (1 - p["tax"][i])
         if i > 0:
-            shares *= 1 + p["sh_g"]
+            shares *= 1 + (p["sh_g_list"][i] if p["sh_g_list"] else p["sh_g"])
             if y >= 2029:
                 shares += p["conv_extra"] if y == 2029 else 0
         cap += ni + 0.27e9 if i > 0 else 0
