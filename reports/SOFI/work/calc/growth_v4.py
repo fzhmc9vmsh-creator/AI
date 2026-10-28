@@ -188,7 +188,8 @@ def run():
     t = tree4()
     out["tree"] = dict(ev=t["ev"], sd=t["sd"], bundles=t["bundles"], p_nodes=t["p_nodes"],
                        combos=[dict(state="".join("○" if c["state"][k] else "×" for k in ["N1", "N2", "N3", "N4"]), p=c["p"], value=c["value"],
-                                    eps2028=c["eps"][2028], letter=c["letter"], peg26=c["peg26"]) for c in t["combos"]])
+                                    eps2028=c["eps"][2028], eps={str(y): v for y, v in c["eps"].items()}, letter=c["letter"], peg26=c["peg26"])
+                               for c in t["combos"]])
     sens = []
     for d1 in (-0.10, 0.0, 0.10):
         row = []
