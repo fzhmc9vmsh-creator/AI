@@ -243,6 +243,22 @@ def run():
     cc["rate_up100"] = v_up
     cc["all_three"] = (v3 * SH26 + 1.0e9) / (SH26 + raise_sh)
     out["credit_capital"] = cc
+    # 金利 +100bp の両面(1 株当たり)。預金・ローンは Q3 の残高、株数は 2027 年のエンジン、資本コストは年度別テーブルの割引で測る
+    sh27, tax = base[2027]["shares"], 0.22
+    dep, pl, sl, cash = Q3["deposits"] * 1e9, 32.1e9, 18.5e9, 6.6e9 * 1.15     # 現金・有価証券は Q2 前の 66 億を B/S の伸びで拡大(推定)
+    yr1 = dict(loans_reprice=pl * 0.55 * 0.01 + sl * 0.15 * 0.01, cash=cash * 0.01,
+               deposits_lo=-dep * 0.60 * 0.01, deposits_hi=-dep * 0.85 * 0.01)
+    nii_co = -77.6e6 * 1.35
+    v_nii = nii_co * (1 - tax) / sh27 / (1 + vm.COE) + nii_co * 0.5 * (1 - tax) / sh27 / (1 + vm.COE) ** 2
+    v_credit = -pl * 0.0010 * (1 - tax) / sh27 * 14.0
+    v_mark = -0.15e9 * (1 - tax) / sh27
+    coe0 = vm.COE
+    vm.COE, vm.FLOOR = coe0 + 0.01, 1 / (coe0 + 0.01)
+    v_coe = g3.fair_path_skill(P["engine"], peg)[1] - out["values"]["engine"]
+    vm.COE, vm.FLOOR = coe0, 1 / coe0
+    out["rates"] = dict(yr1=yr1, nii_company=nii_co, per_share=dict(nii=v_nii, credit=v_credit, mark=v_mark, coe=v_coe,
+                        total=v_nii + v_credit + v_mark + v_coe), dep=dep, sh27=sh27,
+                        value_per_10bp=dep * 0.001 * (1 - tax) / sh27 * 14.0)
     out["cross"] = dict(dcf=dcf4(base), terminal_per=vm.theory_per(vm.G_LR, 0.18))
     a = gr["alpha"]
     B, L, U = out["values"]["engine"], t["bundles"]["bear"]["value"], t["bundles"]["bull"]["value"]
