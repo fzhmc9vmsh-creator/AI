@@ -1,7 +1,8 @@
 #!/usr/bin/env python3
-"""Sankey (P&L flow) for the slide deck, slide 9 (SOFI, Q2 2026).
-Derived from the ORCL deck's make_sankey.py. Drawn at 8.4 x 5.0 in with the deck palette.
-Rendering only: every number comes from data/f19_sankey_*.csv."""
+"""Sankey (P&L flow) for the slide deck, slide 9 (SOFI, Q3 2026).
+Drawn at 8.4 x 5.0 in with the deck palette. Rendering only: every number comes from
+data/f19_sankey_nodes.csv and data/f19_sankey_links.csv. Output: sankey_q3_2026.png.
+Q3 2026 has no interest-income/expense breakdown, so NII is one source node."""
 import csv
 import os
 from decimal import Decimal, ROUND_HALF_UP
@@ -16,6 +17,7 @@ from matplotlib.path import Path
 
 HERE = os.path.dirname(os.path.abspath(__file__))
 DATA = os.path.join(HERE, "data")
+OUT = os.path.join(HERE, "sankey_q3_2026.png")
 
 font_manager.fontManager.addfont("/usr/share/fonts/opentype/ipafont-gothic/ipag.ttf")
 plt.rcParams["font.family"] = "IPAGothic"
@@ -23,6 +25,7 @@ plt.rcParams["axes.unicode_minus"] = False
 
 MINUS = "−"
 INK = "#333333"
+SUB = "#767676"
 RED = "#C0392B"
 
 # deck palette
@@ -55,13 +58,12 @@ def fmt_yoy(y):
 
 # =============================================================== Sankey
 def load_sankey():
-    nodes, order = {}, []
+    nodes = {}
     with open(os.path.join(DATA, "f19_sankey_nodes.csv"), encoding="utf-8") as f:
         for r in csv.DictReader(f):
             nodes[r["node_id"]] = dict(
-                id=r["node_id"], label=r["label_ja"], v=Decimal(r["q2_2026_musd"]),
-                v0=r["q2_2025_musd"], yoy=r["yoy_pct"], share=r["pct_of_revenue_q2_2026"])
-            order.append(r["node_id"])
+                id=r["node_id"], label=r["label_ja"], sub=r["sub_ja"], v=Decimal(r["q3_2026_musd"]),
+                v0=r["q3_2025_musd"], yoy=r["yoy_pct"], share=r["pct_of_revenue_q3_2026"])
     links = []
     with open(os.path.join(DATA, "f19_sankey_links.csv"), encoding="utf-8") as f:
         for r in csv.DictReader(f):
@@ -81,18 +83,14 @@ def make_sankey():
 
     S = 0.0019           # inches per musd (same everywhere)
     BW = 0.07            # bar width (in)
-    PLOT_TOP = 0.60
+    TOP = 0.75           # top of the plot (inches)
     MINH = 0.012
 
-    XS = {0: 1.40, 1: 2.40, 2: 3.40, 3: 4.45, 4: 5.50, 5: 6.55}
-
-    col = dict(ii_loans=0, ii_other=0, interest_income=1,
-               nii=2, int_exp=2, nonint_gains=2, nonint_lpb=2, nonint_other=2, nonint_tech=2,
-               int_dep=3, int_debt=3, revenue=3,
-               pretax=4, opex=4, other_adj=4,
-               net_income=5, tax=5, sm=5, tpd=5, ops_ga=5)
-    GREY_N = {"ii_loans", "ii_other", "interest_income", "nonint_gains", "nonint_lpb",
-              "nonint_other", "nonint_tech", "revenue"}
+    # columns: 0 = NII / 非金利収益, 1 = 総純収益, 2 = 税引前利益, 3 = 純利益・税 / 費用
+    XS = {0: 2.10, 1: 3.55, 2: 5.00, 3: 6.55}
+    col = dict(nii=0, nonint=0, revenue=1, pretax=2,
+               net_income=3, tax=3, sm=3, tpd=3, ops_ga=3, other_adj=3)
+    GREY_N = {"nonint", "revenue"}
     GREEN_N = {"nii", "pretax", "net_income"}
     for k, n in nodes.items():
         n["col"] = col[k]
@@ -103,8 +101,8 @@ def make_sankey():
     BAR = dict(revenue=REV_BAR, profit=PRO_BAR, cost=COST_BAR)
     FLOW = dict(revenue=(REV_FLOW, 1.0), profit=(PRO_FLOW, 1.0), cost=(COST_FLOW, COST_ALPHA))
 
-    HIGHLIGHT = {"sm"}   # grows faster than 総純収益 (+43%)
-    F_NAME, F_VAL = 7.6, 7.0
+    HIGHLIGHT = {"sm"}   # grows faster than 総純収益
+    F_NAME, F_SUB, F_VAL = 7.6, 6.4, 7.0
     LH = lambda sz: sz * 1.40 / 72.0   # line height in inches
 
     # ---- label content: list of (text, size, bold, color)
@@ -112,12 +110,14 @@ def make_sankey():
         hl = k in HIGHLIGHT
         c = RED if hl else INK
         lines = [(n["label"], F_NAME, True, c)]
+        if n["sub"]:
+            lines.append((n["sub"], F_SUB, False, SUB))
         val = fmt_m(n["v"])
         if n["yoy"] != "":
             val += " (%s)" % fmt_yoy(n["yoy"])
         lines.append((val, F_VAL, hl, c))
         if hl:
-            lines.append(("収益の伸び(+43%)を上回る", F_VAL - 0.3, True, RED))
+            lines.append(("収益の伸び(%s)を上回る" % fmt_yoy(nodes["revenue"]["yoy"]), F_VAL - 0.3, True, RED))
         n["lines"] = lines
         n["lab_h"] = sum(LH(sz) for _, sz, _, _ in lines)
 
@@ -136,26 +136,16 @@ def make_sankey():
             y += sh
         return y
 
-    LEAVES = {"ii_loans", "ii_other", "nonint_gains", "nonint_lpb", "nonint_other", "nonint_tech",
-              "int_dep", "int_debt", "other_adj", "net_income", "tax", "sm", "tpd", "ops_ga"}
-    # col0
-    stack(["ii_loans", "ii_other"], 0.62, 0.10, LEAVES)
-    # col1
-    stack(["interest_income"], 0.80, 0, set())
-    # col2: 支払利息 (top) / 純金利収益 / 非金利収益 4 つ(総純収益の左)
-    stack(["int_exp"], PLOT_TOP, 0, set())
-    stack(["nii"], 1.41, 0, set())
-    stack(["nonint_gains", "nonint_lpb", "nonint_other", "nonint_tech"], 3.14, 0.06, LEAVES)
-    # col3
-    stack(["int_dep", "int_debt"], PLOT_TOP, 0.06, LEAVES)
-    stack(["revenue"], 1.80, 0, set())
-    # col4
-    stack(["pretax"], 1.80, 0, set())
-    stack(["opex"], 2.50, 0, set())
-    stack(["other_adj"], 4.50, 0, LEAVES)
-    # col5
-    stack(["net_income", "tax"], 1.60, 0.09, LEAVES)
-    stack(["sm", "tpd", "ops_ga"], 2.50, 0.06, LEAVES)
+    LEAVES = {"nonint", "other_adj", "net_income", "tax", "sm", "tpd", "ops_ga"}
+    # col0: NII above 非金利収益
+    stack(["nii", "nonint"], TOP, 0.10, LEAVES)
+    # col1: 総純収益
+    stack(["revenue"], TOP, 0, set())
+    # col2: 税引前利益(推定)
+    stack(["pretax"], TOP, 0, set())
+    # col3: 純利益・税(税引前から)、続けて費用(総純収益から)
+    stack(["net_income", "tax"], TOP, 0.09, LEAVES)
+    stack(["sm", "tpd", "ops_ga", "other_adj"], 2.35, 0.06, LEAVES)
 
     for n in nodes.values():
         n["f0"] = n["yc"] - n["h"] / 2           # flow region
@@ -222,10 +212,6 @@ def make_sankey():
         H = n["lab_h"]
         if anchor == "center":
             top = n["yc"] - H / 2
-        elif anchor == "top":
-            top = n["b0"]
-        elif anchor == "bottom":
-            top = n["b1"] - H
         elif anchor == "above":
             top = n["b0"] - 0.05 - H
         y = top
@@ -235,20 +221,22 @@ def make_sankey():
                 put(n["x"] + BW / 2 + dx, y + lh / 2, text, sz, color, bold, ha="left")
             elif side == "left":
                 put(n["x"] - BW / 2 - dx, y + lh / 2, text, sz, color, bold, ha="right")
-            else:  # centred above
+            else:  # centred above the bar
                 put(n["x"], y + lh / 2, text, sz, color, bold, ha="center")
             y += lh
 
-    LEFT_LABELS = {"ii_loans", "ii_other", "nonint_gains", "nonint_lpb", "nonint_other", "nonint_tech"}
+    # 左に出すラベル: 源泉の 2 つ / 上に出すラベル: 総純収益・税引前利益(右は流れと重なるため)
+    PLACE = {"nii": ("left", "center"), "nonint": ("left", "center"),
+             "revenue": ("center", "above"), "pretax": ("center", "above")}
     for k in nodes:
-        put_label(k, "left" if k in LEFT_LABELS else "right")
+        side, anchor = PLACE.get(k, ("right", "center"))
+        put_label(k, side, anchor)
 
-    out = os.path.join(HERE, "sankey_q2_2026.png")
     fig.canvas.draw()
     report_overlaps(fig, ax, texts, bar_rects, FW, FH)
-    fig.savefig(out, dpi=200, facecolor="white")
+    fig.savefig(OUT, dpi=200, facecolor="white")
     plt.close(fig)
-    print("wrote", out)
+    print("wrote", OUT)
 
 
 def report_overlaps(fig, ax, texts, bar_rects, FW, FH):

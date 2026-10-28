@@ -1,4 +1,4 @@
-// 条件5 経営者の能力(評価 B): 経歴 → 現職 → 担う事業 → 結果。指示書 spec/ch3.md の s21 節
+// 条件5 経営者の能力(評価 B): 経歴 → 現職 → 担う事業 → 結果。指示書 spec/v4.md の H6 の s21 節
 // 箱は 14: 経歴の gs と tw は 1 箱(Goldman・NFL・Twitter)にまとめた
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
