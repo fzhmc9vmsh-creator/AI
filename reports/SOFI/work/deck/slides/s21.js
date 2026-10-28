@@ -22,7 +22,7 @@ module.exports = function build(pres, L) {
       { id: 'lend', c: 2, r: 2, kind: 'unit', label: '個人・学生・\n住宅ローン', sub: '与信と SoFi Bank' },
       { id: 'fsb', c: 2, r: 3, kind: 'unit', label: '預金・投資・保険', sub: 'Spend・Invest・\nProtect・Save' },
       { id: 'res1', c: 3, r: 0, kind: 'ok', label: '銀行免許 2022 年\nGAAP 黒字 Q4 2023', sub: '約束した時期どおり' },
-      { id: 'res2', c: 3, r: 1, kind: 'ok', label: 'Q3 も上振れ', sub: '収益・EPS 上振れ\n2026 年見通し引き上げ\n2027 年 EPS 0.90 提示' },
+      { id: 'res2', c: 3, r: 1, kind: 'ok', label: 'Q3 も上振れ', sub: '収益・EPS 上振れ\n2026 年見通し増額\n2027 年 EPS 0.90 提示' },
       { id: 'res3', c: 3, r: 2, h: 0.9, kind: 'risk', label: '未達と未検証', sub: '上場時の 2024 年\n予測に収益 −7%\nTechnisys の効果は\n未検証' },
     ],
     edges: [

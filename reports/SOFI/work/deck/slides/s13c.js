@@ -1,8 +1,8 @@
-// 金利の両面(第3版 指示書 spec/v3.md の s13c 節)。左上: 経路ごとの効果の表 / 右上: 1 株当たりの横棒 / 左下: 市場の反応との比較 / 右下: 預金の価格
+// 金利の両面(指示書 spec/v4.md の s13c 節)。左上: 経路ごとの効果の表 / 右上: 1 株当たりの横棒 / 左下: 市場の反応との比較 / 右下: 預金の価格
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '金利 +100bp の経路ごとの効果(税引前、億ドル。1 年目と 3 年目)と 1 株当たりの価値への効果、市場の反応との比較',
-    source: 'research_r4/R15_rate_two_sided.md(10-Q の NII 感応度・ヘッジ・預金ベータ)、calc/out/growth_v3.json の rates、research/R3a(KBW)',
+    source: 'research_r4/R15_rate_two_sided.md(10-Q の NII 感応度・ヘッジ・預金ベータ)、calc/A4_q3_memo.md(金利の両面)、research/R3a_market_hypothesis.md(KBW)、research_r5/Q3_datasheet.md(Q3 の預金)',
   });
   const LX = 0.5, LW = 7.7, RX = 8.45, RW = 4.38;
   const pos = { color: L.C.primary, bold: true }, neg = { color: L.C.red, bold: true };
@@ -31,7 +31,7 @@ module.exports = function build(pres, L) {
   }));
   L.text(s, '資本コストを倍率まで下げてみると −0.54 で、合計 −0.90', { x: RX, y: 3.8, w: RW, h: 0.3, fontSize: 8.5, color: L.C.sub, objectName: 'note_chart' });
 
-  // 左下: 市場の反応との比較
+  // 左下: 市場の反応との比較(Q3 の結果の行を追加)
   L.paneHead(s, LX, 4.22, LW, '市場の反応との比較(1 株当たり、ドル)');
   L.table(s, [
     ['項目', '値'],
@@ -40,17 +40,18 @@ module.exports = function build(pres, L) {
     ['KBW の「ヘッジ前 10 億ドル超」を税引後に', '−0.58'],
     ['ヘッジ後の評価減の推計', '0〜−0.18'],
     ['年初来の下落(25.1 → 14.55)', '−10.55(金利で説明できるのは 5〜9%)'],
-  ], { x: LX, y: 4.56, w: LW, colW: [3.9, 3.8], fontSize: 9, rowH: 0.24, align: ['left', 'center'], name: 'tbl_market' });
+    ['Q3 の結果', '割引率 +59〜82bp でも EPS 0.18 で上振れ、NIM +16bp'],
+  ], { x: LX, y: 4.56, w: LW, colW: [3.6, 4.1], fontSize: 9, rowH: 0.22, align: ['left', 'center'], name: 'tbl_market' });
 
-  // 右下: 預金の価格
+  // 右下: 預金の価格(Q3 の基本金利・上乗せ・同業・前期比)
   L.paneHead(s, RX, 4.22, RW, '預金の価格');
   L.table(s, [
     ['項目', '値'],
-    ['9/16 の利上げ後の基本 APY', '3.30%(据え置き、ベータ 0)'],
-    ['FF 金利(中央)', '3.875%'],
-    ['同業(Chime・Amex)', '3.75%・3.90%'],
-    ['預金の前期比', '+53 億ドル'],
-  ], { x: RX, y: 4.56, w: RW, colW: [2.1, 2.28], fontSize: 9, rowH: 0.26, align: ['left', 'center'], name: 'tbl_deposit' });
+    ['9/16 の利上げ後の基本 APY', '3.30%(据え置き)'],
+    ['新規の上乗せ', '+1.10%(10/20、最大 4.40%)'],
+    ['同業', 'Ally・Amex 3.10%、\nMarcus 3.50%、Chime 最大 4.00%'],
+    ['預金の前期比', '+58 億ドル'],
+  ], { x: RX, y: 4.56, w: RW, colW: [1.9, 2.48], fontSize: 9, rowH: 0.26, align: ['left', 'center'], name: 'tbl_deposit' });
 
   L.takeaway(s, 0.5, 6.2, 12.33, 0.6, '金利の痛みは「評価減の総額」で語られるが、両面の合計は小さく、評価減はヘッジで相殺され保有分は戻る。市場の反応は経済的な影響を上回る');
 };

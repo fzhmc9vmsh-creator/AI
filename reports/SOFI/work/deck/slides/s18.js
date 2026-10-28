@@ -16,7 +16,7 @@ module.exports = function build(pres, L) {
       { id: 'mem', c: 0, r: 2, label: '借りる会員', sub: '組成 169 億ドル\n(四半期、+71%)' },
       { id: 'buyers', c: 0, r: 3, label: 'ローンの買い手', sub: 'LPB 契約\n100 億ドル超' },
       { id: 'cap', c: 1, r: 0, kind: 'key', label: '自己資本', sub: '95.8 億ドル\n総自己資本比率 17.0%' },
-      { id: 'ni', c: 1, r: 1, kind: 'unit', label: '利益', sub: '2026 年 8.4 億ドル\n(エンジン)' },
+      { id: 'ni', c: 1, r: 1, kind: 'unit', label: '利益', sub: '2026 年 8.4 億\n(エンジン)\nQ3 純利益 2.41 億' },
       { id: 'sbc', c: 1, r: 2, kind: 'unit', label: '株式報酬', sub: '年 2.6 億ドル\n(資本に加わる)' },
       { id: 'floor', c: 1, r: 3, kind: 'risk', label: '運用の下限', sub: '比率 14〜15%\n(10% 台前半〜半ば)' },
       { id: 'rwa', c: 2, r: 0, kind: 'risk', label: 'リスク資産(RWA)', sub: '487 → 562 億ドル\n(前期比 +15%)' },
