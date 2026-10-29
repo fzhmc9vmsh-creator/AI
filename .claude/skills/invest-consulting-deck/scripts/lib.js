@@ -23,6 +23,8 @@ const GRID = {
   pg: { x: W - M - 0.6, y: 7.0, w: 0.6, h: 0.25 },
 };
 const MT = require('./meta.js');
+// 数字の台帳: スライドの数字は F('id') で引く(facts.js)。facts_deck.json が無い案件でも部品は動く(F を呼んだ時に止まる)
+const F = require('./facts.js');
 const CHAPTERS = MT.CH.map(c => c.name);
 
 // 組立の文脈(build.js / one.js が setCtx で渡す): ページ番号・章・節・テーマ・なぜ・タイトル
@@ -38,6 +40,8 @@ function estW(str, pt) {
 
 // 図の部品が見つけた重なり(one.js が表示する)
 const warnings = [];
+// 画像で確かめるべき箇所(重なりではないが、描画で崩れやすい所)。one.js が「確認:」として表示する
+const notices = [];
 
 function newDeck() {
   const pres = new pptxgen();
@@ -633,6 +637,14 @@ function mechPanel(s, { mech, reason, up, down, head = '仕組み(図の ①② 
   let fs = fontSize;
   if (!fs) fs = [11, 10.5, 10, 9.5, 9].find(f => Math.max(mechH, mechEst(f)) + reasonH + udH <= avail) || 9;
   const mh = Math.max(mechH, mechEst(fs));
+  // 行幅いっぱいの行は、描画で折り返して空行ができ、下の項目が理由の箱に隠れることがある(監査では見つからない)。ここで止める
+  // 対象は「直後に改行 \n がある行」だけ(項目の最後の行は折り返しても空行にならない)
+  mech.forEach((m, i) => String(CIRC[i + 1] + ' ' + m).split('\n').forEach((ln, j, arr) => {
+    if (j === arr.length - 1) return;
+    const r = estW(ln, fs) * 1.08 / (w - 0.08);
+    const frac = r - Math.floor(r);
+    if (r >= 0.9 && (frac >= 0.93 || frac <= 0.02)) notices.push(`mechPanel: ${CIRC[i + 1]} の行「${ln.slice(0, 16)}…」が行幅に近い。画像で、この項目の下に空行ができて次の項目が理由の箱に隠れていないかを見る(隠れていたら文を短くする)`);
+  }));
   const extra = Math.max(0, avail - mh - reasonH - udH);
   const rBox = reasonH + Math.min(extra, 0.3);
   paneHead(s, x, 1.62, w, head, 'mech_head');
@@ -702,6 +714,6 @@ async function save(pres, fileName) {
   return fixed;
 }
 
-module.exports = { save, dedupePPr, pptxgen, C, GRADE, FONT, W, H, M, GRID, CHAPTERS, MT, newDeck, text, contentSlide, header, badge, takeaway, box, arrow, table, agenda, cover, closing, chartStyle,
+module.exports = { F, save, dedupePPr, pptxgen, C, GRADE, FONT, W, H, M, GRID, CHAPTERS, MT, newDeck, text, contentSlide, header, badge, takeaway, box, arrow, table, agenda, cover, closing, chartStyle,
   paneHead, bullets, kpiTiles, chartPanel, structure, t15Side, twoPane, flow, matrix, T15,
-  flowMap, mechPanel, kpiBand, timeBand, estW, CIRC, setCtx, warnings };
+  flowMap, mechPanel, kpiBand, timeBand, estW, CIRC, setCtx, warnings, notices };
