@@ -10,7 +10,7 @@ module.exports = function build(pres, L) {
     lanes: [{ label: '収益の源', c0: 0, c1: 0 }, { label: 'SoFi の収益', c0: 1, c1: 2, self: true }, { label: '続く条件', c0: 3, c1: 3 }],
     groups: [{ label: '収益の種類', c0: 1, c1: 1, r0: 0, r1: 3 }, { label: '性格', c0: 2, c1: 2, r0: 0, r1: 3 }],
     nodes: [
-      { id: 'loans', c: 0, r: 0, label: 'B/S のローン', sub: '個人 261・学生\n161 億ドル(Q2)' },
+      { id: 'loans', c: 0, r: 0, label: 'B/S のローン', sub: '個人 321・学生\n185 億ドル(Q3)' },
       { id: 'acct', c: 0, r: 1, label: '会員の口座', sub: '預金 513 億ドル\nInvest 390 万(Q2)' },
       { id: 'orig', c: 0, r: 2, label: '新しい組成', sub: '126 億ドル/四半期' },
       { id: 'b2b', c: 0, r: 3, label: 'Galileo の顧客', sub: '口座 1.40 億' },

@@ -12,7 +12,7 @@ module.exports = function build(pres, L) {
     nodes: [
       { id: 'dd', c: 0, r: 0, label: '給与振込の会員', sub: '預金の 9 割超\n普通預金 3.30%' },
       { id: 'borrow', c: 0, r: 1, label: '借りる会員', sub: 'FICO 746(Q4 2025)\n金利を比べて選ぶ' },
-      { id: 'inv', c: 0, r: 2, label: '投資・カードの会員', sub: 'Invest 390 万(Q2)\nPlus 20.6 万人(Q2)' },
+      { id: 'inv', c: 0, r: 2, label: '投資・カードの会員', sub: 'Invest 390 万(Q2)\nPlus は 4 月に有料化' },
       { id: 'dep', c: 1, r: 0, kind: 'unit', label: 'SoFi Money(預金)', sub: '513 億ドル\n平均 3.07%(Q2)' },
       { id: 'bs', c: 1, r: 1, kind: 'unit', label: 'B/S 貸出', sub: 'APR 6.99〜35.49%\nNIM 6.14%' },
       { id: 'cross', c: 1, r: 2, kind: 'unit', label: 'クロスバイ', sub: '新製品の 51% は\n既存会員\n1 会員 1.56 製品' },
