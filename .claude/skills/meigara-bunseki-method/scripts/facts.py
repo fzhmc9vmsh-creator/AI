@@ -17,7 +17,15 @@
 - nd: 表示の小数桁。表示値 disp は value から 1 回だけ丸めて作る(丸めた値をさらに丸めない)。
 - period: いつの値か。"Q3 2026" / "2026" / "FY2026" / "2026-10-16" / "2025→2028" / "2027E" など。空は不可。
 - status: 確認(一次資料・要約で確認)/ 計算(台帳の他の行から計算。note に式)/ 推定(note に方法)/ 未取得。
-- tier: T1(会社開示)〜 T4(未確認の報道・ブログ)。T4 は資料に使わない(検査で止める)。
+- tier: T1(会社開示)〜 T4(未確認の報道・ブログ)。T4 は not_for_deck: true にする(資料に出ていたら lint_deck.py が止める)。
+- 任意: not_for_deck(資料に使わない)・reason(その理由)・stale_check: false(古い四半期の値と同じ数字が別の意味で
+  よく出るときに、古い値の検出から外す)・match_terms(資料の中でこの値の近くに出るはずの語。例: ["SoFiUSD", "流通"]。
+  有効数字 1 桁の値はこれが無いと混入の検出ができない)・disp(表示を手で決める。丸めは value から 1 回だけ)。
+
+台帳に入れる数字(要所だけでよい):
+  1. タイトル・KPI の札・結論の箱・評価の理由に出す数字(資料は F('id') で引く)
+  2. 前の四半期の主要な値(資料に古い値が時点ラベルなしで残っていないかの検出に使う)
+  3. 使わないと決めた未確認の値(not_for_deck。資料への混入の検出に使う)
 """
 import argparse
 import json
@@ -26,7 +34,7 @@ import re
 import sys
 
 ID_RE = re.compile(r"^[a-z0-9_]+(\.[a-z0-9_]+)*$")
-PERIOD_RE = re.compile(r"^(Q[1-4] \d{4}|[1-4]Q\d{2}|H[12] \d{4}|FY ?\d{4}|\d{4}(E|年)?|\d{4}-\d{2}(-\d{2})?|\d{4}→\d{4}|\d{4}〜\d{4}|TTM( \d{4}-\d{2})?|.+時点)$")
+PERIOD_RE = re.compile(r"^(Q[1-4] \d{4}|[1-4]Q\d{2}|H[12] \d{4}|FY ?\d{4}|\d{4}(E|年)?|\d{4}-\d{2}(-\d{2})?|\d{4}→\d{4}|\d{4}〜\d{4}|TTM( \d{4}-\d{2})?|.+時点|計算|評価時点)$")
 STATUS = {"確認", "計算", "推定", "未取得"}
 TIERS = {"T1", "T2", "T3", "T4"}
 REQ = ["id", "label", "value", "unit", "period", "source", "status"]
@@ -114,12 +122,19 @@ def table(facts):
 
 
 def export(facts, valuation, as_of):
-    out = {"as_of": as_of, "facts": {}}
+    out = {"as_of": as_of, "facts": {}, "forbidden": []}
     for f in facts:
         if f.get("not_for_deck"):
+            # 資料に使えない値(未確認の報道など)。lint_deck.py が資料の中に同じ数字が無いかを探す
+            out["forbidden"].append(dict(id=f["id"], disp=disp_of(f), unit=f.get("unit", ""), match_terms=f.get("match_terms", []),
+                                         reason=f.get("reason", f.get("note", "未確認"))))
             continue
         out["facts"][f["id"]] = dict(disp=disp_of(f), value=f.get("value"), unit=f.get("unit", ""), period=f.get("period", ""),
                                      status=f.get("status", ""), label=f.get("label", ""))
+        if f.get("stale_check") is False:
+            out["facts"][f["id"]]["stale_check"] = False
+        if f.get("match_terms"):
+            out["facts"][f["id"]]["match_terms"] = f["match_terms"]
     if valuation:
         for k, v in valuation.get("display", {}).items():
             fid = "val." + k
