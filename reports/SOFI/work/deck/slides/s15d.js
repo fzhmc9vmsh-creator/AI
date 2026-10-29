@@ -18,7 +18,7 @@ module.exports = function build(pres, L) {
   ], { x: 0.5, y: 2.0, w: 6.3, colW: [3.9, 2.4], fontSize: 10, rowH: 0.34, align: ['left', 'left'] });
 
   // 左下: LTV/CAC の表(残存率別の倍率と回収年数)
-  L.paneHead(s, 0.5, 3.95, 6.3, 'LTV/CAC');
+  L.paneHead(s, 0.5, 3.95, 6.3, 'LTV/CAC(計算の基準は Q2 時点)');
   L.table(s, [
     ['CAC の基準', '残存率 85%', '残存率 90%', '残存率 95%', '回収'],
     ['成長分の販促費(6.4 億ドル)', '2.2 倍', '2.6 倍', '3.3 倍', '1.6 年'],

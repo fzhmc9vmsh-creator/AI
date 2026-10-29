@@ -19,11 +19,11 @@ module.exports = function build(pres, L) {
       { id: 'pc', c: 2, r: 1, kind: 'risk', label: 'プライベート\nクレジット', sub: '個人ローン組成の約 1/4\nに資金(前年 6%)', subSize: 8 },
       { id: 'bank', c: 2, r: 2, label: '銀行・ABS の投資家', sub: '全額売却 106.5%\n(Q4 2025)' },
       { id: 'apr', c: 3, r: 0, kind: 'risk', h: 1.0, label: '競合の APR', sub: 'LendingClub\n5.96〜35.99%\nLightStream\n6.49〜25.39%' },
-      { id: 'par', c: 3, r: 1, kind: 'risk', label: '売却の価格', sub: 'ほぼ額面\n+ 手数料 4.6%' },
+      { id: 'par', c: 3, r: 1, kind: 'risk', label: '売却の価格', sub: 'ほぼ額面\n+ 手数料 4.3%' },
       { id: 'brand', c: 3, r: 2, kind: 'ok', label: 'ブランド', sub: '想起 10.4%' },
     ],
     edges: [
-      { from: 'borrow', to: 'nii', label: '利息 13%', kind: 'money', n: 1 },
+      { from: 'borrow', to: 'nii', label: '利息 13%(Q2)', kind: 'money', n: 1 },
       { from: 'apr', to: 'borrow', label: '比べる', kind: 'risk', fs: 't', ts: 't', my: 2.02, below: true, ldx: 2.4 },
       { from: 'nii', to: 'lpb', label: '抱えきれない分', kind: 'goods', n: 2, fo: -0.4, tof: -0.4, ldy: -0.11 },
       { from: 'lpb', to: 'bo', label: '引き渡し', kind: 'goods', lpos: 'v' },
@@ -37,9 +37,9 @@ module.exports = function build(pres, L) {
   L.mechPanel(s, {
     bottom: 6.32,
     mech: [
-      '借り手は FICO 746 の優良層で、金利を比べて\n選ぶ。APR 帯は LendingClub・LightStream と重なる',
+      '借り手は FICO 746(Q4 2025)の優良層で、\n金利を比べて選ぶ。APR 帯は競合の\nLendingClub・LightStream と重なる',
       '抱えきれないローンは LPB と売却で\n他社に渡す。LPB 手数料は 1.53 億(売却益は未開示)',
-      '買い手はほぼ額面と手数料 4.6% で買う。単品のローンは市場で値の付く商品',
+      '買い手はほぼ額面と手数料 4.3% で買う。\n単品のローンは市場で値の付く商品',
       'プライベートクレジットは 2025 年の個人ローン\n組成の約 1/4 に資金を出し(前年 6%)、\n競合にも同じ資金が回る',
       '束では差が出る: 製品当たり獲得費 202 ドル\n(会員当たりの約半分)、純償却は同業より低い。\n預金の基本金利は同業の中位',
     ],

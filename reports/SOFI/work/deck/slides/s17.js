@@ -11,7 +11,7 @@ module.exports = function build(pres, L) {
     groups: [{ label: '事業', c0: 1, c1: 1, r0: 0, r1: 2 }, { label: '優位の源泉', c0: 2, c1: 2, r0: 0, r1: 2 }],
     nodes: [
       { id: 'dd', c: 0, r: 0, label: '給与振込の会員', sub: '預金の 9 割超\n普通預金 3.30%' },
-      { id: 'borrow', c: 0, r: 1, label: '借りる会員', sub: 'FICO 746(Q2)\n金利を比べて選ぶ' },
+      { id: 'borrow', c: 0, r: 1, label: '借りる会員', sub: 'FICO 746(Q4 2025)\n金利を比べて選ぶ' },
       { id: 'inv', c: 0, r: 2, label: '投資・カードの会員', sub: 'Invest 390 万(Q2)\nPlus 20.6 万人(Q2)' },
       { id: 'dep', c: 1, r: 0, kind: 'unit', label: 'SoFi Money(預金)', sub: '513 億ドル\n平均 3.07%(Q2)' },
       { id: 'bs', c: 1, r: 1, kind: 'unit', label: 'B/S 貸出', sub: 'APR 6.99〜35.49%\nNIM 6.14%' },
@@ -27,7 +27,7 @@ module.exports = function build(pres, L) {
       { from: 'dd', to: 'dep', label: '給与振込', kind: 'money', n: 1 },
       { from: 'fund', to: 'dep', label: '安く集める', kind: 'ctrl', n: 2 },
       { from: 'dep', to: 'bs', label: '安い資金', kind: 'money', n: 3 },
-      { from: 'borrow', to: 'bs', label: '利息 13%', kind: 'money' },
+      { from: 'borrow', to: 'bs', label: '利息 13%(Q2)', kind: 'money' },
       { from: 'lenders', to: 'price', label: '同じ価格帯', kind: 'risk', n: 4 },
       { from: 'price', to: 'bs', label: '市場並みの価格', kind: 'ctrl' },
       { from: 'inv', to: 'cross', label: '製品を足す', kind: 'money' },
@@ -48,11 +48,11 @@ module.exports = function build(pres, L) {
   L.mechPanel(s, {
     bottom: 6.66, mechH: 2.0,
     mech: [
-      '給与振込の会員が預金の 9 割超。普通預金 3.30% は同業の中位(Ally・Amex 3.10%、Marcus 3.50%、Chime 最大 4.00%)。預金は +58 億ドル',
+      '給与振込の会員が預金の 9 割超。\n普通預金 3.30% は同業の中位\n(Ally・Amex 3.10%、Marcus 3.50%、\nChime 最大 4.00%)。預金は +58 億ドル',
       '銀行免許で集めた預金は倉庫ラインより 1.45pt 安い。ただし前期の 1.56pt から縮んだ',
       '安い預金が貸出を支え、NIM は 6.14%',
       '個人ローンの APR 6.99〜35.49% は\nLightStream・LendingClub と重なり、\n価格では勝っていない',
-      'ブランド(非助成想起 10.4%、Q2)とクロスバイ 51% で会員当たり 1.56 製品。\n販促費は四半期 4.44 億ドル(+55%)',
+      'ブランド(非助成想起 10.4%、Q2)と\nクロスバイ 51% で会員当たり 1.56 製品。\n販促費は四半期 4.44 億ドル(+55%)',
       'Robinhood・Chime も給与振込と会員を取りに来ており、資金の差を縮める圧力が続く',
     ],
     reason: '優位は価格ではなく、給与振込の関係が\n生む安い資金。7〜10 年続くと見るが、\n差は縮小中で圧倒的ではないため B',

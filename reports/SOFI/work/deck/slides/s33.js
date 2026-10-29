@@ -2,14 +2,14 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '年度別理論株価 = Σ 重み × [ 許容 PEG × 当該年度から 3 年の成長率 × 当該年度の EPS を資本コスト 13.9% で今日へ割引 ]',
-    source: 'calc/growth_v4.py・out/growth_v4.json(rows・values・values_peg10)、銘柄分析メソッド valuation-model §3-3・§3-4(第5.2版)',
+    source: 'calc/growth_v4.py・out/growth_v4.json(rows・values・values_peg10)、銘柄分析メソッド valuation-model §3-3・§3-4',
   });
   L.flow(s, [
     { head: '構造評価', boxes: [{ text: 'B', tone: 'key', size: 28, bold: true, h: 0.8 }, { text: '平均点 3.42・位置 0.92', tone: 'in', h: 0.55 }] },
     { head: '許容 PEG', boxes: [{ text: '1.275 → 1.125', tone: 'on', size: 20, bold: true, h: 0.8 }, { text: '年度で −0.05', tone: 'in', h: 0.55, size: 9 }] },
     { head: '妥当 PER', boxes: [{ text: 'PEG × 3 年の成長率\n(他の方法と平均しない)', tone: 'in', h: 1.4 }] },
     { head: '年度の適正株価', boxes: [{ text: '妥当 PER × 当該年度の EPS', tone: 'in', h: 1.4 }] },
-    { head: '理論株価', boxes: [{ text: '23.9 ドル', tone: 'key', size: 26, bold: true, h: 0.8 }, { text: '期待値 24.2\n株価 14.55〜16.5', tone: 'in', h: 0.55 }] },
+    { head: '理論株価', boxes: [{ text: '23.8 ドル', tone: 'key', size: 26, bold: true, h: 0.8 }, { text: '期待値 24.2\n株価 14.55〜16.5', tone: 'in', h: 0.55 }] },
   ], { y: 1.62, h: 1.6, gap: 0.3 });
   // 構造評価の箱だけ B の色(L.GRADE.B = 薄緑の地に濃緑の字)。flow の tone に B の色が無いので、描いた箱と字の色を差し替える
   const gBox = s._slideObjects.find(o => o.options && o.options.objectName === 'ovl_fbox0_0');
@@ -25,9 +25,9 @@ module.exports = function build(pres, L) {
     ['2027', '0.90', '25.0%', '1.225', '30.6', '27.5', '23.8(30%)'],
     ['2028', '1.15', '22.2%', '1.175', '26.1', '30.1', '22.9(20%)'],
     ['2029', '1.42', '20.1%', '1.125', '22.7', '32.2', '21.5(10%)'],
-    [bo('理論株価'), bo(''), bo(''), bo(''), bo(''), bo(''), bo('23.9')],
+    [bo('理論株価'), bo(''), bo(''), bo(''), bo(''), bo(''), bo('23.8')],
   ], { x: 0.5, y: 3.6, w: 12.33, colW: [1.5, 1.5, 1.7, 1.6, 1.6, 1.7, 2.73], fontSize: 10, rowH: 0.34 });
-  L.text(s, '3 経路: エンジン 23.9・会社の中期目標 22.9・見通し + コンセンサスの伸び 21.4(コンセンサスの伸びの 2029 年は成熟年度の理論式)。PEG 1.0 固定ならそれぞれ 19.5・18.7・17.4', {
+  L.text(s, '3 経路: エンジン 23.8・会社の中期目標 22.9・見通し + コンセンサスの伸び 21.4(コンセンサスの伸びの 2029 年は成熟年度の理論式)。PEG 1.0 固定ならそれぞれ 19.5・18.7・17.4', {
     x: 0.5, y: 5.72, w: 12.33, h: 0.24, fontSize: 8.5, color: L.C.sub, margin: 0, objectName: 'note',
   });
   L.bullets(s, [
