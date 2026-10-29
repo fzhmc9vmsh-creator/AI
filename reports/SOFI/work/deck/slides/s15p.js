@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
-    kicker: 'フェーズの目安: ① 立ち上げ / ② 急成長(収益 +40% 超、赤字〜損益分岐) / ③ スケール(収益 +20〜40%、黒字、販促・開発が収益の 20% 超) / ④ 成熟への移行(+10〜20%) / ⑤ 成熟',
+    kicker: 'フェーズは構造で決め、増収率は目安: ① 立ち上げ / ② 急成長(+40% 超、赤字〜損益分岐) / ③ スケール(黒字・投資回収中・律速が資本。+20〜40% 前後) / ④ 移行(+10〜20%) / ⑤ 成熟',
     source: '会社開示(Q3 2026)、research_r5/Q3_datasheet.md、calc/A4_q3_memo.md の §1 フェーズ、銘柄分析メソッド growth-stage-evaluation §1',
   });
 
@@ -32,6 +32,7 @@ module.exports = function build(pres, L) {
     align: ['left', 'left', 'center', 'left', 'left'],
   });
 
+  L.text(s, '会社全体の収益 +44% は ③ の目安(+20〜40%)を上回るが、判定を決めるのは構造(黒字化済み・獲得投資を回収中・律速が資本)。増収率は目安で、上端は加速中と読む', { x: 0.5, y: 5.55, w: 12.33, h: 0.3, fontSize: 9, color: L.C.sub, valign: 'middle', objectName: 'note_phase' });
   // 下: takeaway
   L.takeaway(s, 0.5, 5.9, 12.33, 0.75, 'フェーズ ③ の ROTCE 約 10%(推定)は、販促費 32% と成長のための資本の使い方の結果。\n水準ではなく傾き(EBITDA +70%、純利益 +73%)で読み、将来の構造と実現確率で補う(次ページ)');
 };

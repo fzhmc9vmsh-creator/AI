@@ -47,7 +47,7 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 9.93, 3.62, 2.9, '欠点', 'pane_bad');
   L.bullets(s, [
     '信用の損失を負う(景気で振れる)',
-    '自己資本を使う(自給率 0.34)',
+    '自己資本を使う\n(自給率 0.34、2026 年上期)',
     '金利で評価が振れる(ヘッジで相殺)',
   ], { x: 9.93, y: 3.98, w: 2.9, h: 1.9, fontSize: 10.5, name: 'bul_bad', gap: 10 });
 

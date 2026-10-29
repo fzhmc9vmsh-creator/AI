@@ -8,7 +8,7 @@ module.exports = function build(pres, L) {
   });
   const key = [
     { y: 2.0, head: '最終判断', value: '買い(分割)', name: 'bg_cover_k1' },
-    { y: 3.3, head: '理論株価(エンジン)', value: '23.9 ドル', name: 'bg_cover_k2' },
+    { y: 3.3, head: '理論株価(エンジン)', value: '23.8 ドル', name: 'bg_cover_k2' },
     { y: 4.6, head: '構造評価', value: 'B', name: 'bg_cover_k3' },
   ];
   key.forEach(k => {

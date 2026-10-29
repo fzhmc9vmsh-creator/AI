@@ -4,7 +4,7 @@ module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
     kicker: '伸びを率で読む: 前期比(年率換算)・前年比・率の推移・純増の前年比。判定の言葉は前年比の率の推移で決める(3 期 ±2pt 以内 = 維持)',
-    source: '会社開示(Q2 2025〜Q3 2026)、research_r5/Q3_datasheet.md、calc/out/growth_v4.json の q2・q3',
+    source: '会社開示(Q2 2025〜Q3 2026)、research_r5/Q3_datasheet.md、calc/out/growth_v4.json の q2・q3。収益の前年比は調整後ベース(Q2 26 は GAAP で +43%)',
   });
 
   // 左上: 四半期の KPI 表。判定の行: 維持は灰、加速・上昇は緑の太字
