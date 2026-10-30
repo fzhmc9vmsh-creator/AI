@@ -1,0 +1,1270 @@
+{
+ "as_of": "Q3 2026",
+ "facts": {
+  "price.last": {
+   "disp": "14.55 ドル",
+   "value": 14.55,
+   "unit": "ドル",
+   "period": "2026-10-16",
+   "status": "確認",
+   "label": "株価(終値)"
+  },
+  "price.alt": {
+   "disp": "16.5 ドル",
+   "value": 16.5,
+   "unit": "ドル",
+   "period": "2026-10-27",
+   "status": "推定",
+   "label": "決算後の株価の目安"
+  },
+  "q3.revenue": {
+   "disp": "13.85 億ドル",
+   "value": 13.85,
+   "unit": "億ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "総純収益"
+  },
+  "q3.revenue_yoy": {
+   "disp": "44%",
+   "value": 44.0,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "総純収益の前年比"
+  },
+  "q3.eps": {
+   "disp": "0.18 ドル",
+   "value": 0.18,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "希薄化後 EPS"
+  },
+  "q3.members": {
+   "disp": "1710 万人",
+   "value": 1710,
+   "unit": "万人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "会員数"
+  },
+  "q3.net_members": {
+   "disp": "120 万人",
+   "value": 120,
+   "unit": "万人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "会員の純増"
+  },
+  "q3.products": {
+   "disp": "2670 万",
+   "value": 2670,
+   "unit": "万",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "製品数"
+  },
+  "q3.deposits": {
+   "disp": "513 億ドル",
+   "value": 513,
+   "unit": "億ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "預金"
+  },
+  "q3.fee_rev": {
+   "disp": "5.71 億ドル",
+   "value": 5.71,
+   "unit": "億ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "手数料型の収益"
+  },
+  "q3.fee_share": {
+   "disp": "42%",
+   "value": 42,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "手数料型の比率",
+   "match_terms": [
+    "手数料"
+   ]
+  },
+  "q3.fee_yoy": {
+   "disp": "40%",
+   "value": 40,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "手数料型の収益の前年比"
+  },
+  "q3.tp_ex_large": {
+   "disp": "18%",
+   "value": 18,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "Tech Platform(大口を除く)の前年比"
+  },
+  "q3.allin": {
+   "disp": "3.4%",
+   "value": 3.4,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "損失率(all-in)"
+  },
+  "q3.nco": {
+   "disp": "2.26%",
+   "value": 2.26,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "個人ローンの純償却率"
+  },
+  "q3.tcr": {
+   "disp": "17.0%",
+   "value": 17.0,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "総自己資本比率"
+  },
+  "q3.sm": {
+   "disp": "444.0 百万ドル",
+   "value": 444.0,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "販促費"
+  },
+  "g27.eps": {
+   "disp": "0.90 ドル",
+   "value": 0.9,
+   "unit": "ドル",
+   "period": "2027E",
+   "status": "確認",
+   "label": "2027 年の EPS 見通し"
+  },
+  "g27.revenue": {
+   "disp": "64 億ドル",
+   "value": 64,
+   "unit": "億ドル",
+   "period": "2027E",
+   "status": "確認",
+   "label": "2027 年の調整後純収益の見通し"
+  },
+  "g26.eps": {
+   "disp": "0.61 ドル",
+   "value": 0.61,
+   "unit": "ドル",
+   "period": "2026E",
+   "status": "確認",
+   "label": "2026 年の EPS 見通し"
+  },
+  "borrower.income": {
+   "disp": "15.8 万ドル",
+   "value": 15.8,
+   "unit": "万ドル",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "借り手の平均年収(個人ローン)"
+  },
+  "borrower.income_2024": {
+   "disp": "16.9 万ドル",
+   "value": 16.9,
+   "unit": "万ドル",
+   "period": "2024",
+   "status": "確認",
+   "label": "借り手の平均年収(2024 年の加重平均)"
+  },
+  "q2.deposits": {
+   "disp": "455 億ドル",
+   "value": 455,
+   "unit": "億ドル",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "預金"
+  },
+  "q2.members": {
+   "disp": "1580 万人",
+   "value": 1580,
+   "unit": "万人",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "会員数"
+  },
+  "q2.allin": {
+   "disp": "3.7%",
+   "value": 3.7,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "損失率(all-in)"
+  },
+  "q2.nco": {
+   "disp": "2.62%",
+   "value": 2.62,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "個人ローンの純償却率"
+  },
+  "q2.tcr": {
+   "disp": "18.8%",
+   "value": 18.8,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "総自己資本比率"
+  },
+  "q2.sm": {
+   "disp": "392.4 百万ドル",
+   "value": 392.4,
+   "unit": "百万ドル",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "販促費"
+  },
+  "q2.fee_share": {
+   "disp": "39%",
+   "value": 39,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "手数料型の比率",
+   "match_terms": [
+    "手数料"
+   ]
+  },
+  "q2.eps": {
+   "disp": "0.12 ドル",
+   "value": 0.12,
+   "unit": "ドル",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "希薄化後 EPS"
+  },
+  "sens.credit_1pt": {
+   "disp": "20.2 ドル",
+   "value": 20.2,
+   "unit": "ドル",
+   "period": "計算",
+   "status": "計算",
+   "label": "理論株価(損失率 +1.0pt)"
+  },
+  "sens.all_three": {
+   "disp": "19.4 ドル",
+   "value": 19.4,
+   "unit": "ドル",
+   "period": "計算",
+   "status": "計算",
+   "label": "理論株価(信用 +1pt・金利 +100bp・増資 10 億ドルを同時)"
+  },
+  "tree.ev_range": {
+   "disp": "22.4〜26.0 ドル",
+   "value": null,
+   "unit": "ドル",
+   "period": "計算",
+   "status": "計算",
+   "label": "期待値の幅(N1・N2 を ±10pt)"
+  },
+  "q3.cross_buy": {
+   "disp": "51%",
+   "value": 51,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "新規製品のうち既存会員が開いた割合"
+  },
+  "q3.rotce": {
+   "disp": "10%",
+   "value": 10,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "ROTCE(年率、概算)"
+  },
+  "eng.rotce_2028": {
+   "disp": "13.1%",
+   "value": 13.1,
+   "unit": "%",
+   "period": "2028E",
+   "status": "計算",
+   "label": "ROTCE(エンジン、2028 年)"
+  },
+  "q3.interchange_yoy": {
+   "disp": "77%",
+   "value": 77,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "交換手数料の前年比"
+  },
+  "q3.deposit_spread": {
+   "disp": "1.45pt",
+   "value": 1.45,
+   "unit": "pt",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "預金と倉庫ラインの金利差"
+  },
+  "q3.lpb": {
+   "disp": "36 億ドル",
+   "value": 36,
+   "unit": "億ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "LPB(資本を使わない組成)"
+  },
+  "q3.hold_ratio": {
+   "disp": "71%",
+   "value": 71,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "個人ローンの保有比率"
+  },
+  "hold.roe": {
+   "disp": "26%",
+   "value": 26,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "保有の配分資本の ROE"
+  },
+  "val.eps_cagr_25_28": {
+   "disp": "44%",
+   "value": 43.5,
+   "unit": "%",
+   "period": "2025→2028",
+   "status": "計算",
+   "label": "EPS の年率(2025→2028、エンジン)"
+  },
+  "peer.allin_range": {
+   "disp": "3.2〜4.2%",
+   "value": null,
+   "unit": "%",
+   "period": "2025",
+   "status": "計算",
+   "label": "同業の損失率の幅"
+  },
+  "ceo.tenure": {
+   "disp": "8 年",
+   "value": 8,
+   "unit": "年",
+   "period": "2026",
+   "status": "確認",
+   "label": "CEO の在任"
+  },
+  "tp.chime_fee": {
+   "disp": "1800 万ドル",
+   "value": 1800,
+   "unit": "万ドル",
+   "period": "2025",
+   "status": "確認",
+   "label": "Chime の解約料"
+  },
+  "val.grade.letter": {
+   "disp": "B",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.avg": {
+   "disp": "3.42",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.pos": {
+   "disp": "0.92",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.distribution": {
+   "disp": "S1・A3・B8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.start": {
+   "disp": "1.275",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2026": {
+   "disp": "1.275",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2027": {
+   "disp": "1.225",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2028": {
+   "disp": "1.175",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2029": {
+   "disp": "1.125",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.alpha": {
+   "disp": "20.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.coe": {
+   "disp": "13.86%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.engine": {
+   "disp": "23.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.engine": {
+   "disp": "19.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.engine.14.55": {
+   "disp": "+64%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.engine.16.5": {
+   "disp": "+45%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.engine.2025-2028": {
+   "disp": "43.5%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.engine.2026-2029": {
+   "disp": "32.5%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.eps": {
+   "disp": "0.61",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.g": {
+   "disp": "32.5%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.per": {
+   "disp": "41.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.price": {
+   "disp": "25.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.pv": {
+   "disp": "25.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.eps": {
+   "disp": "0.90",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.g": {
+   "disp": "25.0%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.per": {
+   "disp": "30.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.price": {
+   "disp": "27.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.pv": {
+   "disp": "23.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.eps": {
+   "disp": "1.15",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.g": {
+   "disp": "22.2%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.per": {
+   "disp": "26.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.price": {
+   "disp": "30.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.pv": {
+   "disp": "22.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.eps": {
+   "disp": "1.42",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.g": {
+   "disp": "20.1%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.per": {
+   "disp": "22.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.price": {
+   "disp": "32.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.pv": {
+   "disp": "21.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.consensus": {
+   "disp": "21.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.consensus": {
+   "disp": "17.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.consensus.14.55": {
+   "disp": "+47%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.consensus.16.5": {
+   "disp": "+30%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.consensus.2025-2028": {
+   "disp": "44.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.consensus.2026-2029": {
+   "disp": "32.9%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.eps": {
+   "disp": "0.61",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.g": {
+   "disp": "32.9%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.per": {
+   "disp": "41.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.price": {
+   "disp": "25.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.pv": {
+   "disp": "25.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.eps": {
+   "disp": "0.90",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.g": {
+   "disp": "23.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.per": {
+   "disp": "28.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.price": {
+   "disp": "25.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.pv": {
+   "disp": "22.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.eps": {
+   "disp": "1.17",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.g": {
+   "disp": "18.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.per": {
+   "disp": "21.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.price": {
+   "disp": "25.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.pv": {
+   "disp": "19.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.eps": {
+   "disp": "1.43",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.g": {
+   "disp": "15.0%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.per": {
+   "disp": "8.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.price": {
+   "disp": "11.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.pv": {
+   "disp": "7.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.company": {
+   "disp": "22.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.company": {
+   "disp": "18.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.company.14.55": {
+   "disp": "+57%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.company.16.5": {
+   "disp": "+39%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.company.2025-2028": {
+   "disp": "42.0%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.company.2026-2029": {
+   "disp": "31.8%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.eps": {
+   "disp": "0.61",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.g": {
+   "disp": "31.8%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.per": {
+   "disp": "40.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.price": {
+   "disp": "24.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.pv": {
+   "disp": "24.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.eps": {
+   "disp": "0.90",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.g": {
+   "disp": "23.7%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.per": {
+   "disp": "29.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.price": {
+   "disp": "26.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.pv": {
+   "disp": "22.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.eps": {
+   "disp": "1.12",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.g": {
+   "disp": "22.0%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.per": {
+   "disp": "25.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.price": {
+   "disp": "28.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.pv": {
+   "disp": "21.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.eps": {
+   "disp": "1.40",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.g": {
+   "disp": "19.0%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.per": {
+   "disp": "21.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.price": {
+   "disp": "29.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.pv": {
+   "disp": "19.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.ev": {
+   "disp": "24.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.sd": {
+   "disp": "7.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.p": {
+   "disp": "26.6%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.value": {
+   "disp": "33.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.peg": {
+   "disp": "1.38〜1.43",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.p": {
+   "disp": "49.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.value": {
+   "disp": "24.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.peg": {
+   "disp": "1.23〜1.33",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.p": {
+   "disp": "24.1%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.value": {
+   "disp": "13.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.peg": {
+   "disp": "1.00",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.Z1": {
+   "disp": "15.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.Z2": {
+   "disp": "21.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.zone.14.55": {
+   "disp": "即時",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.up_down.14.55": {
+   "disp": "30.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.zone.16.5": {
+   "disp": "分割",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.up_down.16.5": {
+   "disp": "6.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.decision.14.55": {
+   "disp": "買い",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.decision.16.5": {
+   "disp": "買い",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.増資 10 億ドル": {
+   "disp": "23.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.増資 10 億ドル.diff": {
+   "disp": "−0.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  }
+ },
+ "forbidden": [
+  {
+   "id": "sofiusd.supply",
+   "disp": "3 億ドル",
+   "unit": "億ドル",
+   "match_terms": [
+    "SoFiUSD",
+    "流通"
+   ],
+   "reason": "出所が確認できない報道の値"
+  },
+  {
+   "id": "plus.paid",
+   "disp": "20.6 万人",
+   "unit": "万人",
+   "match_terms": [],
+   "reason": "時点が不明"
+  }
+ ]
+}

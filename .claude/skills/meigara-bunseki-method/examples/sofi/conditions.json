@@ -1,0 +1,171 @@
+{
+ "ticker": "SOFI",
+ "as_of": "Q3 2026",
+ "growth_company": true,
+ "phase": "③ スケール(上端、加速)",
+ "note": "SOFI(Q3 2026 決算後)の手本。条件の評価は growth-stage-evaluation の二層(現在と将来)",
+ "conditions": [
+  {
+   "no": 1,
+   "grade": "B",
+   "reason": "主口座の関係は深まった(預金 +58 億ドル、交換手数料 +77%)が、ローンと預金の単品は市場並みの価格で、10 年の圧倒的な価格決定力とは言えない",
+   "evidence": [
+    "q3.deposits",
+    "q3.interchange_yoy",
+    "q3.cross_buy"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A",
+   "future_p": 0.59
+  },
+  {
+   "no": 2,
+   "grade": "B",
+   "reason": "今の ROTCE 約 10% はフェーズ ③ の成長投資の結果で、保有の資本 ROE 26% は資本コスト 13.9% を上回る。2028 年は 13% まで",
+   "evidence": [
+    "q3.rotce",
+    "eng.rotce_2028",
+    "hold.roe"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "B"
+  },
+  {
+   "no": 3,
+   "grade": "A",
+   "reason": "会員基盤と組成の能力を手数料型の収益に転用し、比率は 42%(前年比 +40%)。Tech Platform も大口を除き +18% で再成長",
+   "evidence": [
+    "q3.fee_share",
+    "q3.fee_yoy",
+    "q3.tp_ex_large"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A"
+  },
+  {
+   "no": 4,
+   "grade": "S",
+   "reason": "米国株(NASDAQ 上場)で、審査の前提を満たす",
+   "evidence": [
+    "NASDAQ 上場(2021 年 6 月、ティッカー SOFI)"
+   ],
+   "kpi": "",
+   "trigger": ""
+  },
+  {
+   "no": 5,
+   "grade": "B",
+   "reason": "CEO は銀行免許の取得と黒字化を果たした経歴があり、在任 8 年で公約を上回る実績が続く。資本の使い方には留保",
+   "evidence": [
+    "ceo.tenure",
+    "g26.eps",
+    "2026 年の EPS 見通しを Q2 の 0.60 ドルから Q3 で 0.61 ドルに引き上げ"
+   ],
+   "kpi": "",
+   "trigger": ""
+  },
+  {
+   "no": 6,
+   "grade": "A",
+   "reason": "2025→2028 年の EPS は年 44%(エンジン)で、株価が示す PEG は 0.49〜0.54。同業の中央値と並ぶ",
+   "evidence": [
+    "val.eps_cagr_25_28",
+    "price.last",
+    "g27.eps"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A"
+  },
+  {
+   "no": 7,
+   "grade": "A",
+   "reason": "安い理由の信用・資本・金利は実在するが、株価が示す損失率の恒常的な悪化(+2.1〜2.7pt)は同業の最悪期を超える",
+   "evidence": [
+    "q3.allin",
+    "peer.allin_range",
+    "sens.credit_1pt"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A"
+  },
+  {
+   "no": 8,
+   "grade": "B",
+   "reason": "単品は市場の商品だが、会員の束としては獲得費と貸倒で同業より低い",
+   "evidence": [
+    "q3.nco",
+    "q3.cross_buy",
+    "q3.deposit_spread"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A",
+   "future_p": 0.59
+  },
+  {
+   "no": 9,
+   "grade": "N/A",
+   "reason": "AI にかかわる部品・サービスを主に扱う企業ではないため対象外",
+   "evidence": [],
+   "kpi": "",
+   "trigger": ""
+  },
+  {
+   "no": 10,
+   "grade": "B",
+   "reason": "技術基盤は Chime の内製化(解約料 1,800 万ドル)で陳腐化しうることが示されたが、自社コアへの移行で外販の信頼を作り直す段階",
+   "evidence": [
+    "tp.chime_fee",
+    "q3.tp_ex_large"
+   ],
+   "kpi": "",
+   "trigger": ""
+  },
+  {
+   "no": 11,
+   "grade": "B",
+   "reason": "銀行免許・会員・513 億ドルの預金は再現に数年かかるが、アプリの機能は真似されやすい",
+   "evidence": [
+    "q3.deposits",
+    "q3.members",
+    "q3.deposit_spread"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A",
+   "future_p": 0.59
+  },
+  {
+   "no": 12,
+   "grade": "B",
+   "reason": "収益の 7 割超は残高に課金するストック型だが、個人ローンは 2〜3 年で返済され組成を続ける必要がある",
+   "evidence": [
+    "q3.fee_share",
+    "q3.hold_ratio"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A",
+   "future_p": 0.43
+  },
+  {
+   "no": 13,
+   "grade": "B",
+   "reason": "71% の保有は銀行の標準に近く、売却(LPB)の選択肢も持つ。MU 型(陳腐化する設備への投資)ではない",
+   "evidence": [
+    "q3.hold_ratio",
+    "q3.lpb",
+    "hold.roe"
+   ],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "A",
+   "future_p": 0.43
+  }
+ ]
+}

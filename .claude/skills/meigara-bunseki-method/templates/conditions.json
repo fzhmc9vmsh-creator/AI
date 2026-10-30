@@ -1,0 +1,158 @@
+{
+ "_how": [
+  "13 条件の採点表。判定の軸は references/condition-guide.md。検査: python3 scripts/gate.py conditions <作業フォルダ>",
+  "grade: S・A・B・C・D・E・F(条件9 だけ N/A 可)。reason: 決め手の一文(固有性テスト: 社名を替えても成り立つ文は不可)。",
+  "evidence: 2 個以上。台帳の id(facts.json)を 1 つ以上含め、残りは数字と出所を含む文。C 以下は kpi(監視 KPI)と trigger(閾値)が必須。",
+  "成長企業(growth_company: true)は phase を最初に決め、条件 1・2・3・6・7・11・12・13 に future_grade(将来の評価)を書く。現在と違えば future_p(実現確率)。",
+  "迷ったら評価を動かさず、決め手の証拠を追加調査する(最大 2 周)。証拠なしに上げも下げもしない。"
+ ],
+ "ticker": "",
+ "as_of": "",
+ "growth_company": false,
+ "phase": "",
+ "conditions": [
+  {
+   "no": 1,
+   "name": "10年間の価格決定力・競争優位・成長性を圧倒的水準で維持",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 2,
+   "name": "コア事業が潤沢なキャッシュフローを持つ",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 3,
+   "name": "コア技術・データがAI事業に転用され成果が出始めている(AI 非関連企業: コア資産が新しい収益線に転用され成果が出始めている)",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 4,
+   "name": "日本株か米国株",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 5,
+   "name": "CEOが信頼に足り事業拡大の経歴を持つ",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 6,
+   "name": "5年後EPS成長率でPEG<1(EPS CAGR 30%以上)",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 7,
+   "name": "PEGが低い理由がリスクの過大評価であること",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 8,
+   "name": "コモディティではない(AVGO型でない)",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 9,
+   "name": "顧客のAI実装の「停めない運用」に不可欠(AI 関連企業のみ。非該当は N/A)",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 10,
+   "name": "無形資産投資も陳腐化リスクを厳格評価",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 11,
+   "name": "既存CF・設備・技術・VCが不可欠かつ模倣困難・代替不可能",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 12,
+   "name": "従量課金型の収益性格(売り切り・供給過多型でない)",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  },
+  {
+   "no": 13,
+   "name": "(総合)アーキタイプ照合: ORCL型かMU/VRT/AVGO型か",
+   "grade": "",
+   "reason": "",
+   "evidence": [],
+   "kpi": "",
+   "trigger": "",
+   "future_grade": "",
+   "future_p": null
+  }
+ ]
+}

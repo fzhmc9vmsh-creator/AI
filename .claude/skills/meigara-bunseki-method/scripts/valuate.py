@@ -285,6 +285,7 @@ def main():
     with open(a.input, encoding="utf-8") as f:
         x = json.load(f)
     outdir = a.outdir or os.path.dirname(os.path.abspath(a.input))
+    x["_dir"] = os.path.dirname(os.path.abspath(a.input))
     try:
         res = compute(x)
     except InputError as e:
@@ -317,6 +318,14 @@ def compute(x):
     adopted = need(x, "adopted_path", "入力")
     if adopted not in paths:
         raise InputError(f"adopted_path '{adopted}' が eps_paths にありません。")
+    if "grades" not in x and "conditions_file" in x:
+        # 13 条件の採点表(conditions.json)から評価を読む。手で写すと食い違うので、こちらを推奨
+        cpath = x["conditions_file"]
+        if not os.path.isabs(cpath):
+            cpath = os.path.join(x.get("_dir", "."), cpath)
+        with open(cpath, encoding="utf-8") as fh:
+            cj = json.load(fh)
+        x["grades"] = {str(c["no"]): c["grade"] for c in cj["conditions"]}
     grades = need(x, "grades", "入力")
     gr = grade_of(grades, years, cfg["peg_decrement"])
     prices = {k: float(v) for k, v in need(x, "prices", "入力").items()}
@@ -390,8 +399,12 @@ def compute(x):
             eps_s = {k: v * (1 + float(mult.get(k, 0.0))) for k, v in base_eps.items()}
         g_s = grade_of(s["grades"], years, cfg["peg_decrement"]) if "grades" in s else gr
         _, v_s, _ = fair_path(eps_s, g_s["peg"], cfg) if g_s["peg"] else (None, 0.0, None)
-        if "shares_mult" in s:      # 希薄化は株数で数える(倍率で割り引かない)
+        if "shares_mult" in s:      # 希薄化は株数で数える(倍率で割り引かない)。対価のない株数の増加
             v_s = v_s / float(s["shares_mult"])
+        if "equity_raise" in s:     # 増資: {"amount": 調達額, "price": 発行価格, "shares": 発行前の株数}。現金が入り株数が増える
+            er = s["equity_raise"]
+            amt, pr, sh = float(er["amount"]), float(er["price"]), float(er["shares"])
+            v_s = (v_s * sh + amt) / (sh + amt / pr)
         if "add_per_share" in s:    # 一時の効果(評価減など、1 株当たり)
             v_s += float(s["add_per_share"])
         sens.append(dict(name=s["name"], value=v_s, diff=v_s - B))

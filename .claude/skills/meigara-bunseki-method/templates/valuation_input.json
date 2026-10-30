@@ -1,0 +1,155 @@
+{
+ "_how": [
+  "価値評価の入力。計算はすべて scripts/valuate.py が行う(手で計算しない)。手本は examples/sofi/valuation_input.json。",
+  "years: 評価の年度(今の年度から 4 年)。weights: 近い年度ほど重く(合計 1.0)。eps_paths: 3 経路(コンセンサス・会社の計画・事業エンジン)。過去の成長率の外挿は禁止。",
+  "eps_paths には実績の年度(例: 2025)を入れてよい(cagr_windows の計算に使う。評価は years の年度から)。",
+  "conditions_file: 採点表を指定すると評価を自動で読む(grades を手で写さない)。",
+  "シナリオは scenarios(名前・確率 p・bundle(bull/base/bear)・eps・grades か peg_start)か tree(節点ツリー)。固定の 25/50/25 は不可。",
+  "株価は前提を固定(事前登録)した後で prices に入れる。edge: 市場との差分があるか(false なら判断の上限は買い検討)。",
+  "cross_checks は DCF・同業の PER などを並べるだけ(平均に入れない)。"
+ ],
+ "ticker": "",
+ "years": [
+  2026,
+  2027,
+  2028,
+  2029
+ ],
+ "weights": [
+  0.4,
+  0.3,
+  0.2,
+  0.1
+ ],
+ "survival": 1.0,
+ "coe": {
+  "rf": 0.045,
+  "beta": 1.0,
+  "erp": 0.045,
+  "note": "無リスク金利・β・株式リスクプレミアムの根拠"
+ },
+ "maturity": {
+  "g5_threshold": 0.15,
+  "roe": 0.18,
+  "g_long": 0.05
+ },
+ "g_cap": 0.5,
+ "extend_decel": 0.03,
+ "peg_decrement": 0.05,
+ "eps_paths": {
+  "consensus": {
+   "2025": 0,
+   "2026": 0,
+   "2027": 0,
+   "2028": 0,
+   "2029": 0,
+   "2030": 0
+  },
+  "company": {
+   "2025": 0,
+   "2026": 0,
+   "2027": 0,
+   "2028": 0,
+   "2029": 0,
+   "2030": 0
+  },
+  "engine": {
+   "2025": 0,
+   "2026": 0,
+   "2027": 0,
+   "2028": 0,
+   "2029": 0,
+   "2030": 0
+  }
+ },
+ "adopted_path": "engine",
+ "cagr_windows": [
+  [
+   2025,
+   2028
+  ],
+  [
+   2026,
+   2029
+  ]
+ ],
+ "conditions_file": "conditions.json",
+ "prices": {
+  "last": 0
+ },
+ "edge": true,
+ "tree": {
+  "nodes": [
+   {
+    "id": "N1",
+    "label": "節点の名前(例: 獲得効率)",
+    "p": 0.5,
+    "eps_shock": {
+     "2026": 0.03,
+     "2027": 0.06,
+     "2028": 0.08,
+     "2029": 0.08,
+     "2030": 0.08
+    },
+    "links": [
+     1,
+     8,
+     11
+    ]
+   },
+   {
+    "id": "N2",
+    "label": "例: 資本の転換",
+    "given": {
+     "node": "N1",
+     "p_if_success": 0.6,
+     "p_if_fail": 0.4
+    },
+    "eps_shock": {
+     "2027": 0.04,
+     "2028": 0.06,
+     "2029": 0.06,
+     "2030": 0.06
+    },
+    "links": [
+     12,
+     13
+    ]
+   }
+  ],
+  "bundles": {
+   "bull_if_all_success": [
+    "N1",
+    "N2"
+   ],
+   "bear_if_all_fail": [
+    "N1",
+    "N2"
+   ]
+  }
+ },
+ "sensitivities": [
+  {
+   "name": "損失率 +1.0pt",
+   "eps_mult": {
+    "2026": -0.05,
+    "2027": -0.1,
+    "2028": -0.1,
+    "2029": -0.1,
+    "2030": -0.1
+   }
+  },
+  {
+   "name": "増資 10 億ドル",
+   "equity_raise": {
+    "amount": 1000000000.0,
+    "price": 0,
+    "shares": 0
+   }
+  }
+ ],
+ "cross_checks": {
+  "DCF": "",
+  "同業の PER": ""
+ }
+}

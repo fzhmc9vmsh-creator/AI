@@ -32,7 +32,7 @@ BANNED = [
     (re.compile(r"undefined|NaN|\[object Object\]|(?<![A-Za-z])null(?![A-Za-z])"), "計算・参照の失敗"),
 ]
 VAL_KEYS = re.compile(r"理論株価|期待値|標準偏差|適正株価|即時|分割|エントリー")
-PERIOD_NEAR = re.compile(r"Q[1-4]|[1-4]Q|前期|前年|昨年|前四半期|(19|20)\d\d|→|から|時点|当時|比")
+PERIOD_NEAR = re.compile(r"Q[1-4]|[1-4]Q|前期|前年|昨年|前四半期|(19|20)\d\d|→|から|時点|当時")
 STR_RE = re.compile(r"'((?:[^'\\\n]|\\.)*)'|\"((?:[^\"\\\n]|\\.)*)\"|`((?:[^`\\]|\\.)*)`", re.S)
 KEY_CALLS = ("kpiTiles(", "takeaway(")
 
@@ -79,8 +79,12 @@ def paren_delta(code):
     return d
 
 
+FIXED_TERMS = re.compile(r"PEG ?1(\.0)?(?![\d.])|PEG ?< ?1|S&P ?500|ルール・オブ・40|Rule of 40|1 株当たり|第\s?\d+\s?章")
+
+
 def hard_numbers(code):
     code = re.sub(r"\$\{[^}]*\}", "", code)
+    code = FIXED_TERMS.sub("", code)                 # 決まった言い回しの中の数字(PEG 1.0 など)は数えない
     code = re.sub(r"F(\.[nv])?\(\s*'[^']*'[^)]*\)", "", code)
     hits = []
     for m in STR_RE.finditer(code):
@@ -228,7 +232,10 @@ def lint_pptx(path, facts_path):
                 continue
             for i, t in enumerate(texts, 1):
                 for m in rx.finditer(t):
-                    near = t[max(0, m.start() - 20):m.end() + 14]
+                    # 時点のラベルは同じ行(表なら同じセル)の中で探す
+                    ls, le = t.rfind("\n", 0, m.start()) + 1, t.find("\n", m.end())
+                    le = len(t) if le < 0 else le
+                    near = t[max(ls, m.start() - 20):min(le, m.end() + 14)]
                     if terms and not any(w in t[max(0, m.start() - 30):m.end() + 30] for w in terms):
                         continue
                     if not PERIOD_NEAR.search(near):
