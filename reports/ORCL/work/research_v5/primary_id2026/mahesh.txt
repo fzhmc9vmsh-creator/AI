@@ -1,0 +1,480 @@
+Oracle Cloud
+Infrastructure
+
+
+Mahesh Thiagarajan
+President, OCI
+OCI is becoming the growth engine for Oracle,
+accelerating overall revenue growth.
+
+
+
+                                                                                                            +22%
+
+                                                                                                 +17%
+                                                                                 +15%
+                                                            +11%
+                                                 +10%
+                +8%
+
+
+
+
+             FY25 Q4                             FY26 Q1    FY26 Q2               FY26 Q3         FY26 Q4    FY27 Q1
+                                                           Trailing Twelve Month Total Revenue
+1 – Growth rates are year-over-year growth.
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 • Accelerated
+
+                                                 • Scalable
+Our Approach
+                                                 • Fungible
+
+                                                 • Durable
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 Power innovation
+
+Accelerating Power                               Grid-safe interconnection
+Delivery
+                                                 Responsible development
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Turbines
+First to start engineering
+behind-the-meter turbines
+Started in 2024
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Reciprocating
+Engines
+First hyperscaler to engineer a
+differentiated solution for AI workloads
+Started in 2025
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Fuel Cells (GW+)
+First hyperscaler to qualify and
+engineer a scalable fuel cell plan
+Started in 2026
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 • Standardized OCI grid interfaces
+OCI Grid Integration
+Resources (GIR)                                  • Co-Innovation with Grid partners
+
+Started in 2025                                  • Productized grid solutions
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 AI Power Load Testing Simulator
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 POWERing partnerships
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Responsible Data Center Development
+
+
+
+
+1                                                2             3             4             5
+JOBS                                             ENVIRONMENT   COMMUNITY     FUTURE        ACCOUNTABILITY
+
+Create                                           Protect       Invest        Empower       Deliver
+good-paying                                      land, water   and engage    future        on our
+jobs                                             and air       local         generations   commitments
+                                                               communities
+
+
+
+                            OCI is committed to being a good neighbor within the
+                                    communities we operate Data Centers
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerating DC Delivery
+Modular Data Center design enables phased delivery
+Integrated fit-out for data halls, power, cooling and networks
+
+
+
+                                                 Modular
+                                                 Reuse established designs
+                                                 across deployments.
+
+                                                 Flexible
+                                                 Configure power and cooling for
+                                                 different hardware densities.
+
+                                                 Phased
+                                                 Bring buildings and capacity
+                                                 online in phases.
+
+Copyright © 2026, Oracle and/or its affiliates
+Supply chain and manufacturing at scale
+
+
+Supply chain                                               Manufacturing capacity
+
+172 Hardware suppliers                                     2×
+                       Qualified manufacturers supplying   Compared to prior-year
+159                    components and assemblies
+                                                           GPU rack shipments
+68
+                                                           ~3×
+                       Data center suppliers
+
+65                     MEP suppliers
+                                                           Compared to prior-year
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Q1 FY27: Data center capacity delivery
+Projects we worked to deliver to customers during the quarter
+
+
+
+
+                 38                              11                       1
+        Data center                              Countries        Gigawatt-scale
+      capacity projects                                         data center project
+                                                                 4 additional in construction
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerated Delivery Sample
+From customer contract signing to revenue generation
+
+
+
+
+        Oct 11, 2025                                       Dec 22, 2025              Jun 1, 2026             Jun 22, 2026
+
+                                                 72 days                  161 days                 21 days
+
+Customer contract                                          DC contract               DC power           Revenue generation
+     signed                                                  signed                  available               started
+
+
+
+
+          21 days from DC power availability to revenue generation
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerated Revenue Delivery
+
+
+
+
+8.5 MW                                           4.0x
+Delivered per day                                Compared to prior-year
+Q1 FY27
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Scale Only Matters When Quality Keeps Pace
+At our gigawatt-scale Abilene data center
+
+
+
+
+<24 hrs                                          ~99%
+Customer acceptance                              Availability
+Most Recent Data Hall
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Fungible
+Infrastructure
+OCI SuperCluster Multi-Tenancy
+OCI allocates a single SuperCluster across multiple customers,
+with security innovation on the RDMA network.
+
+
+512-GPU cluster
+
+ 16 GPUs             16 GPUs            16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs
+                                                                                                    512 ÷ 16 =
+
+
+                                                                                                     32
+ 16 GPUs             16 GPUs            16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs
+
+
+ 16 GPUs             16 GPUs            16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs
+
+
+ 16 GPUs             16 GPUs            16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs   16 GPUs
+                                                                                                    customers
+Each block represents one customer
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Fungibility in action
+OCI can reallocate GPUs between customers at any time at speed
+
+
+
+
+Recent customer reallocation                      AI infra customers
+
+
+8k GPUs                                          ~1,000
+Reallocated in a matter of hours                 customers
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Fungible Hardware & DC Design
+Differentiated designs makes data centers fungible during its entire lifetime
+
+
+OCI L2ARC *Launched in 2025*
+Fungible AC DCs for LC Racks
+
+                                                                                Liquid cool racks
+
+Liquid-cooled hardware *Announcing*                                                    Compute racks
+
+CPU and network racks
+
+
+Continued air-cooled support
+CPU, GPU and network racks
+                                                  Existing air-                   With OCI
+                                                 cooled facility                   L2ARC
+
+Copyright © 2026, Oracle and/or its affiliates
+Durable
+Infrastructure
+                                                         Host accelerators
+                                                         Converged NIC · ZPR
+                                                                                        2×
+                                                                                        Packet processing
+                                                                                        performance
+                                                         Fabric architecture
+                                                         Front-end RDMA · Multiplanar
+            Oracle
+            Acceleron                                    Fabric accelerators
+                                                         Disintermediation
+                                                                                        3×
+                                                                                        Storage IOPS
+                                                                                        improvement
+
+
+        Copyright © 2026, Oracle and/or its affiliates
+
+Copyright © 2026, Oracle and/or its affiliates
+OCI Acceleron 2026 – Next wave of innovation
+OCI differentiation offers better workload economics
+
+
+
+
+Front-end RDMA                                   NVMe block storage            OCCL resilience
+Congestion control and                           Storage acceleration across   Multiplanar resilience,
+connectivity for selected                        supported VM and bare         load balancing and
+inference, storage and                           metal shapes through          automatic failover help
+HPC workloads.                                   standard interfaces.          AI workloads recover.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Older CPU (OCPU) generations still win new business
+Sample customer commitment: 1.0M OCPUs
+
+
+
+
+  99%                                            2017–2021
+                                                 OCI platform launch years
+
+
+
+  of committed OCPUs are on
+  prior-generation hardware
+                                                 18–48
+                                                 Months of 100% committed
+                                                 consumption
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Durable
+Innovation to reduce Capital demands
+Accelerator
+Partners                                               Broadcom
+Broadest portfolio
+                                                 TPU
+in the industry                                          Jalapeno
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Bring Your Own hardware, powered by OCI
+OCI or Industry Standard designs while OCI Value remains
+
+
+
+                                                 OCI Leanguard
+                                                 Off Box Network Virtualization that
+                                                 integrates with OCI seamlessly
+
+                                                 Industry Standard Design
+                                                 ORV3 & Hardware Partner Reference
+                                                 Design
+
+                                                 Access to all OCI Services
+                                                 Integration enables access to all OCI
+                                                 services just like Oracle Hardware
+
+
+Copyright © 2026, Oracle and/or its affiliates
+AI growth extends beyond GPUs
+
+
+
+Average non-GPU share                            OCI service adoption
+
+
+
+13%                                              40+
+Average share of customer revenue                Additional OCI services used
+from non-GPU services from TCV                   on average per AI infrastructure
+                                                 customer
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Durable
+
+Oracle Enterprise Data Platform
+OCI’s Enterprise AI strategy starts with data
+Bringing AI to proprietary, mission critical enterprise data
+
+
+
+
+Enterprise data                                  Models and agents              Security at each layer
+
+SQL and vector search                            Model choice and managed       Identity, network and
+together in Oracle AI                            agents on OCI                  application controls
+Database
+Proprietary data gives AI                        Retrieve enterprise data and   Deep Data Security enforces
+business context                                 connect tools to business      configured data access before
+                                                 workflows                      results reach the model
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Oracle AI Database
+
+
+Oracle's Deep Trust
+AI Architecture
+uniquely embeds trust deeply
+inside the underlying                            App Dev   Data Access
+infrastructure layers
+
+
+Delivering faster AI-driven                       Data     Software
+                                                           Platform
+productivity and innovation
+with less risk
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Oracle AI Data Platform
+Turn business context into AI outcomes at enterprise scale
+
+
+
+
+                          Ground                 Build       Deliver
+
+
+
+
+                                                 Govern
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Multicloud expands the enterprise AI opportunity
+
+
+
+
+71
+ Live Multicloud regions
+                                                 Oracle AI Database in
+                                                 customers’ chosen cloud
+                                                 Runs inside AWS, Microsoft Azure and
+ FY27 Q2 to date                                 Google Cloud, as well as OCI
+
+ +209%                                           Use Oracle Database alongside each cloud’s
+ From 23 regions at FY25 year-end
+                                                 AI, applications and services
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Multicloud success in weeks
+
+
+
+
+Oracle Database@AWS                              Oracle Database@Azure
+
+
+4 weeks                                          Within weeks
+410 TB database migrated                         Integration and engineering
+with no downtime                                 validations completed
+Enterprise data on AWS with                      7M billing transactions daily
+Amazon Bedrock for AI                            in Azure roadside tolling
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 is a durable, scalable business that is
+                                                 accelerating revenue at industry
+                                                 leading pace
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+
