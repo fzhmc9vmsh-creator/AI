@@ -1,0 +1,803 @@
+{
+ "rows": [
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / Who",
+   "value": "全業種(Java は従業員数で課金)",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も同内容(research2/R2_products_5w1h.md:69)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / What",
+   "value": "Java サブスク、MySQL HeatWave、DB ライセンス+保守",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / When",
+   "value": "Java・DB サポートは年次。MySQL は従量",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "契約期間の年数は欠損(R2 も「Java は年次サブスク(欠損)」: research2/R2_products_5w1h.md:69)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / Where",
+   "value": "顧客環境、OCI/AWS/Azure(HeatWave)",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / Why",
+   "value": "Java は OpenJDK 系 ※ が代替。DB は既存顧客の基盤",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "※ は一般的な業界認識で今回未確認。DB の乗換コストは定量欠損"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / How",
+   "value": "Java=従業員数×月額。DB=プロセッサー+年 22% サポート",
+   "source": "report/r3_sections_5w1h_f20.md:52",
+   "source_note": "T4(価格は第三者の見積り)",
+   "note": "DB EE 約 $47,500/プロセッサー、Standard Edition 2 $17,500(T4、r3:70 N12)。年 22% サポートの定価ベース約 $10,450/年(算出: 47,500×0.22)。Java 1〜999 人で $15.00/人月(T4)。MySQL HeatWave 小構成 200GB で月 $127.93(T1*、research2/R2_products_5w1h.md:69)。ライセンスとサポートの内訳、サポート更新率は欠損(r3:70)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑫ Java SE・MySQL HeatWave・DB ライセンス / 売上・伸び",
+   "value": "Software 区分 FY26 $24.5B(-1%)。Q1 FY27 $5.55B(-3%)",
+   "source": "report/r3_sections_5w1h_f20.md:17",
+   "source_note": "[W36] T3、[既S4] T1*、R4 T3",
+   "note": "区分表の値(r3:17)。Q1 FY27 構成比 28.7%(算出: 5.55÷19.345)。⑫ 単独の売上は欠損(r3:70 N12)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / Who",
+   "value": "既存の大企業・官公庁(顧客名は欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "DB 名の群だが Software 区分の保守のため併記(r3:69 N13)。R2 に行なし"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / What",
+   "value": "業務アプリの保守・更新",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / When",
+   "value": "年次の保守契約",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "契約期間の年数は台帳に記載なし(欠損扱い)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / Where",
+   "value": "顧客環境",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / Why",
+   "value": "業務の継続。Fusion への移行が代替(移行は大工事)",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "競合の SAP・Workday(移行先として)は ※ 一般的な認識で今回未確認"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / How",
+   "value": "ライセンス+年次サポート",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "価格は台帳に記載なし(欠損)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑬ 旧来の業務アプリ(E-Business Suite・PeopleSoft・JD Edwards 等)のオンプレ保守 / 売上・伸び",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:53",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "Software 区分 FY26 $24.5B(-1%)(r3:17)の一部。⑬ 単独の売上は非開示(r3:69 N13)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / Who",
+   "value": "既存 Oracle DB 顧客(23ai 利用者を含む)",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "群名に明示なし。区分表で DB に内包と記載のため群1 に配置(r3:17)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / What",
+   "value": "ベクトル検索・AI エージェント(Select AI Agent・MCP)",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / When",
+   "value": "2025-10 のリリース更新で 23ai から 26ai",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も「23ai からリリース更新(2025-10 RU)で移行」(research2/R2_products_5w1h.md:64)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / Where",
+   "value": "オンプレ・OCI・マルチクラウド(範囲未確認)",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / Why",
+   "value": "別のベクトル DB を立てず既存データに AI を直結",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "専用ベクトル DB 等の代替は ※ 一般的認識で未確認"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / How",
+   "value": "高度な AI 機能は追加費用なし(会社説明)",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "T1(会社説明)",
+   "note": "個別価格なし(T1、r3:47)。DB 本体(ECPU 課金やライセンス)に内包されるとの解釈(r3:81、R4 の解釈で判定不能)"
+  },
+  {
+   "group": "1 DB ライセンス・保守(Software 区分)",
+   "item": "⑦ Oracle AI Database 26ai / 売上・伸び",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:47",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "区分表で DB に内包(r3:17)。N7(r3:64)の「2,300 超の AI エージェントが本番稼働、前四半期比 +90%」は 1 系統のみで裏取りなし(T3)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / Who",
+   "value": "企業全般・スタートアップ(顧客名欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も「顧客名は欠損」(research2/R2_products_5w1h.md:59)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / What",
+   "value": "VM・ベアメタル・オブジェクト保存・ネットワーク",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / When",
+   "value": "従量またはユニバーサル・クレジット(期間・割引率欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "割引率は R2 でも非公表(research2/R2_products_5w1h.md:59)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / Where",
+   "value": "OCI パブリックリージョン(総数欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / Why",
+   "value": "低い出口料金が誘因。代替は AWS・Azure・Google",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「10 TB/月無料」を記載(research2/R2_products_5w1h.md:59)。台帳は転送料金の他社比較値を欠損としている"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / How",
+   "value": "OCPU 時・GB 月・GB 転送",
+   "source": "report/r3_sections_5w1h_f20.md:42",
+   "source_note": "T4(価格)",
+   "note": "価格: Arm A1 $0.01/OCPU 時、出口 約 $0.0085/GB(T4、r3:42)。標準保存 約 $0.0255/GB 月(T4、research2/R2_products_5w1h.md:114)。E4.Flex は $0.025 と約 $0.048 に割れる(T4、r3:59 N2)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "② OCI 一般計算・保存・ネットワーク / 売上・伸び",
+   "value": "IaaS 区分 FY26 $18.1B(+77%)。Q1 FY27 $7.4B(+121%)",
+   "source": "report/r3_sections_5w1h_f20.md:14",
+   "source_note": "[W36][W33] T1*/T3、[既H1] T3",
+   "note": "②単独の売上は欠損。IaaS は ①②③ と DB クラウドを含む(r3:14)。Q1 FY27 IaaS 構成比 38.3%(算出: 7.4÷19.345)。参考 N2(r3:59): 7.4÷Synergy 市場 $143B=5.2%(算出)、定義が一致せず目安にならない"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / Who",
+   "value": "NRI・Fujitsu・Team IM・stc・du・Ooredoo(T1/T3)",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "T1/T3",
+   "note": "群名に明示なし。OCI 系の近接群として群2 に配置(要判断)。詳細は research2/R2_products_5w1h.md:129"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / What",
+   "value": "顧客・パートナー DC 内の OCI、EU・政府向け",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / When",
+   "value": "最低 5 年・年次コミット(T1*)",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "T1*",
+   "note": "最低コミットの出典別比較: 2022 年に年約 $1M(T3)、年 $3M・最短 3 年(T4)、月約 $1M×36 か月(T4)、最低 5 年(T1*)(r3:60 N3、R2:136)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / Where",
+   "value": "顧客・パートナー DC、EU 内、政府専用",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / Why",
+   "value": "データ主権・規制対応。5 年固定+サイト準備費が壁",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "代替の ※ 他社の主権クラウド施策は今回未検索"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / How",
+   "value": "年次の消費コミット。最低コミットは年 $1M〜$3M で割れる",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "T3/T4(最低コミット)",
+   "note": "年 $1M〜$3M は出典で割れる(r3:43)。R2 は価格を公開リージョンと同水準の方針と記載(research2/R2_products_5w1h.md:60)"
+  },
+  {
+   "group": "2 OCI 一般(計算・保存・通信)",
+   "item": "③ 専用・主権クラウド(Dedicated Region・Alloy 等) / 売上・伸び",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:43",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "売上は台帳・R2 とも個別開示なし。IaaS 区分(r3:14)に含まれる可能性"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / Who",
+   "value": "OpenAI・xAI・Meta・NVIDIA・AMD(T1*/T3)",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "T1*/T3",
+   "note": "Q4 FY26 更新対象 59 顧客・35,000 GPU(r3:58 N1、T1*/T3。R2:84 も同値)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / What",
+   "value": "GPU ベアメタル・クラスタ。BYOH・前払い型あり",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "Zettascale10 は最大 80 万 GPU、2026 年後半提供予定(GA 未確認、r3:58 N1、R2:85)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / When",
+   "value": "長期。例: 6 年 $60B・通算粗利 35%(T1*)。更新は従来比 +20%(T1*/T3)",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "T1*/T3",
+   "note": "OpenAI は約 5 年・約 $300B(WSJ 報道、T3)。OpenAI は 4.5GW を確認、総額は非開示(R2:86)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / Where",
+   "value": "OCI(Abilene 等。Crusoe 開発)",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "Abilene(TX)は 1.2GW、Crusoe が開発(R2:87)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / Why",
+   "value": "電力・DC・GPU の確保代行。代替は自前 DC・ネオクラウド",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "GPU 稼働率 97.9%(Q1 FY27、r3:143)。Q4 FY26 は顧客の 49% が GPU の 92% を更新(R2:86)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / How",
+   "value": "GPU 時間(定価 H100 $10.00〜10.75/GPU 時)。大口単位は非開示",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "T4(定価)",
+   "note": "定価は第三者の集計で、顧客の実支払額ではない(r3:7)。H100 定価はハイパースケーラー中央値 $7.19 の 1.39〜1.50 倍、ネオクラウド指数 $2.80 の 3.6〜3.8 倍(算出: 10.00÷7.19、10.75÷7.19、10.00÷2.80、10.75÷2.80、r3:58 N1)。前払い・BYOH 部分は累計 $75B(R2:90)。take-or-pay の有無は非開示(R2:91)"
+  },
+  {
+   "group": "3 AI 容量(GPU・Supercluster)",
+   "item": "① OCI AI インフラ(GPU) / 売上・伸び",
+   "value": "IaaS 区分 Q1 FY27 $7.4B(+121%)。①単独は非開示",
+   "source": "report/r3_sections_5w1h_f20.md:41",
+   "source_note": "T1*",
+   "note": "IaaS FY26 $18.1B(+77%)(r3:14)。AI 単独の伸びは Q3 FY26 で +243%(R2:92)。粗利率: 契約通算 30〜40%(会社、T1*)、Q3 FY26 の AI 容量 32%、報道 14%(r3:58 N1)"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / Who",
+   "value": "他社クラウド中心で Oracle DB を使う企業。顧客数 +180%",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "T3",
+   "note": "顧客名は欠損(R2:63 も同じ)"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / What",
+   "value": "他社 DC 内で Exadata・Autonomous を稼働",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / When",
+   "value": "マーケットプレイス契約。Azure は MACC に充当可",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "T1*",
+   "note": "契約期間は欠損(r3:92)"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / Where",
+   "value": "Azure 33・Google 14・AWS 20 リージョン(時点差あり)",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "台帳は注 N6 を参照(r3:63)",
+   "note": "R2 は Azure 28・AWS 20・Google 約 15(research2/R2_products_5w1h.md:63)。r3:63 N6 は Azure 33・Google 14 を Oracle CEO ブログ(2026-03、T1*)、AWS 20 を AWS 発表(2026-05-29)とし、R2 の値は古いと見る(R4 の見方)。説明会要約の「70 リージョン」は 33+14+20=67(算出)で不一致"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / Why",
+   "value": "移設せず低遅延で利用。代替は DB 移設・他社 DB",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "代替の ※ 他社マネージド DB・OCI への移設は今回未確認"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / How",
+   "value": "ECPU 時間(Oracle 課金)。請求は他社経由",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "T1*/T4",
+   "note": "他社の確約支出に充当(r3:74)。R2 はマーケットプレイス契約と記載(research2/R2_products_5w1h.md:63)"
+  },
+  {
+   "group": "4 Database@(マルチクラウド DB)",
+   "item": "⑥ Oracle Database@Azure/AWS/Google Cloud / 売上・伸び",
+   "value": "売上 +353%(Q1 FY27、T3)。絶対額は欠損",
+   "source": "report/r3_sections_5w1h_f20.md:46",
+   "source_note": "T3",
+   "note": "成長率推移: Q1 FY26 +1,529% → Q2 +817% → Q3 +531% → Q4 +404% → Q1 FY27 +353%(r3:63 N6、Oracle 決算は T1*、Q1 FY27 は説明会要約 T3)。FY30 の DB 目標 $20B(報道、T3、範囲の定義は出典で割れる、r3:63)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / Who",
+   "value": "Oracle DB 既存顧客が中心(顧客名欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も顧客名・件数は欠損(research2/R2_products_5w1h.md:151)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / What",
+   "value": "運用自動化 DB(ADW・ATP・JSON・APEX)",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / When",
+   "value": "従量(時間)またはユニバーサル・クレジット",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "契約期間は欠損(r3:92、R2:153)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / Where",
+   "value": "OCI(他は未確認)",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "Cloud@Customer・マルチクラウドの提供範囲は未確認(R2:154)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / Why",
+   "value": "DB 運用の自動化。代替は自社運用・他社 DBaaS ※",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "※ は一般的認識で未確認。代替の費用比較は欠損(R2:155)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / How",
+   "value": "ECPU 時間+ストレージ GB。ADW/ATP $0.336/ECPU 時(T1*)",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "T1*",
+   "note": "最小 2 ECPU(R2:156)。JSON・APEX $0.0807/ECPU 時(T1*、R2:157)。2 ECPU を 730 時間/月使う計算分のみ約 $490.6(算出: 0.336×2×730、r3:61 N4)。$0.0807/ECPU 時の帰属は出典で割れ、未解決(r3:61 N4)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "④ Autonomous Database / 売上・伸び",
+   "value": "Cloud Database +35%(T3、時点不明)。売上は欠損",
+   "source": "report/r3_sections_5w1h_f20.md:44",
+   "source_note": "T3",
+   "note": "消費課金型(②④⑥)が売上に占める割合は区分内の内訳が欠損のため算出不能(r3:82)。+35% の時点は R2 §4 の 10 番でも割れている"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / Who",
+   "value": "大規模 DB 利用企業(顧客名欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も顧客名は欠損(銀行・通信を狙った検索で該当なし、research2/R2_products_5w1h.md:172)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / What",
+   "value": "DB 専用エンジニアド・システム(X11M)",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "X11M(AMD CPU 採用)の詳細は research2/R2_products_5w1h.md:173"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / When",
+   "value": "C@C のインフラは 4 年サブスク(T1*)",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "T1*",
+   "note": "ECPU は別購入(research2/R2_products_5w1h.md:174)。4 年契約は ⑤ の Cloud@Customer のみ(r3:92)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / Where",
+   "value": "顧客 DC・OCI・他社クラウド内",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は Azure・Google 内も記載(research2/R2_products_5w1h.md:175)。オンプレの提供範囲は台帳の「オンプレ・Cloud@Customer」に対応"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / Why",
+   "value": "性能・可用性。DB 依存で乗換は高い(定量欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "乗換の定量データは欠損(research2/R2_products_5w1h.md:175)"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / How",
+   "value": "インフラ月額+ECPU 別売(最小 8 ECPU/ノード)。C@C 月額 $3,200〜$9,000",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "T1*(月額は単位要確認)",
+   "note": "C@C X11M 月額 Base $3,200、Rack $4,320、Rack-L $5,760、Rack-XL $9,000(T1*、r3:62 N5)。ラック全体か構成要素かは要約から不明。オンプレ価格は欠損"
+  },
+  {
+   "group": "5 Autonomous・Exadata クラウド",
+   "item": "⑤ Exadata(オンプレ・Cloud@Customer) / 売上・伸び",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:45",
+   "source_note": "T3(Hardware 区分の記載元)",
+   "note": "Hardware 区分 FY26 $3.1B(+5%)は群8 に記載(r3:18)。⑤ 単独の売上・比率は欠損"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / Who",
+   "value": "大企業・中堅(顧客数・名欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も顧客名は欠損(research2/R2_products_5w1h.md:65)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / What",
+   "value": "業務アプリ+AI エージェント(26B〜)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "「26B〜」は台帳の表記のまま"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / When",
+   "value": "サブスク(期間欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / Where",
+   "value": "Oracle Cloud(EU 主権版あり)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / Why",
+   "value": "業務の一元化・自動化。乗換は大工事(定量欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "競合は SAP・Workday(R2:65 では W37・W39 を出典)。代替の定量比較は欠損"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / How",
+   "value": "HCM=従業員数×月額、ERP=ユーザー×月額。HCM 定価 $54〜100/人月",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "T4(HCM 定価)",
+   "note": "HCM 実勢 $22〜50/人月は助言会社の主張(T4)。別資料は $13〜34、$20〜35。ERP $625/ユーザー月(別資料 $175〜625)(r3:65 N8)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑧ Fusion Cloud Apps(ERP・HCM・SCM・CX) / 売上・伸び",
+   "value": "SaaS 区分 Q1 FY27 $4.2B(+10%)。Fusion +14%(T3)",
+   "source": "report/r3_sections_5w1h_f20.md:48",
+   "source_note": "T1*/T3(SaaS)、T3(Fusion)",
+   "note": "SaaS 区分 FY26 $15.9B(+11%)(r3:15)。Fusion ERP Q1 FY26 約 $1.0B(+17%)(T1*、r3:65 N8)。Q1 FY27 の Fusion +14% は既存データ「$1.1B(+17%)」と不一致(r3:65、R2 §4 の 2 番で未解決)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / Who",
+   "value": "中堅・成長企業(顧客数は出典不確か)",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「中堅・成長企業」のみ(research2/R2_products_5w1h.md:66)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / What",
+   "value": "クラウド ERP(会計・在庫・EC)",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / When",
+   "value": "サブスク(期間欠損)",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「多くは年契約。期間は欠損」(research2/R2_products_5w1h.md:66)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / Where",
+   "value": "Oracle Cloud",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / Why",
+   "value": "中堅の基幹業務を一体で運用",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "代替の ※ Dynamics 365・Sage・SAP 中堅向けは一般的認識で未確認"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / How",
+   "value": "ユーザー×月額+基本料+モジュール。フルユーザー $129/月",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "T4",
+   "note": "従来 $99 から約 30% 値上げとする資料(レンジ $99〜199)、基本料 $999〜2,499/月(T4、r3:66 N9)"
+  },
+  {
+   "group": "6 SaaS(Fusion ERP・HCM・NetSuite)",
+   "item": "⑨ NetSuite / 売上・伸び",
+   "value": "Q3 FY26 $1.1B(+14%、定率 +11%)(T3)。Q1 FY27 は未確認",
+   "source": "report/r3_sections_5w1h_f20.md:49",
+   "source_note": "T3",
+   "note": "Q1 FY26 約 $1.0B(+16%)(T1*、r3:66 N9)。単純 4 倍で約 $4.4B(算出: 1.1×4、r3:35)、総売上の 6.5%(算出: 4.4÷67.4)。既存データの Q1 FY27「$1.1B(+14%)」は Q3 FY26 の誤帰属の可能性(r3:66、R2 §4 の 3 番)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / Who",
+   "value": "米国の病院・退役軍人省(VA)",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「病院・政府(米 VA 等)」(research2/R2_products_5w1h.md:67)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / What",
+   "value": "電子カルテ(EHR)、AI 搭載の新基盤",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / When",
+   "value": "VA は 2018 年契約の長期導入(2026-07 で 14 拠点)",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「VA は 2018 年契約(長期)」(research2/R2_products_5w1h.md:67)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / Where",
+   "value": "病院側環境・Oracle クラウド",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / Why",
+   "value": "診療記録の基幹。乗換は極めて高い",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "競合は Epic 43.7%・MEDITECH 14.7%(T3、r3:50)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / How",
+   "value": "契約ごと。VA は上限額方式",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「契約ごと(大型は上限額方式)」(research2/R2_products_5w1h.md:67)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑩ Oracle Health(旧 Cerner) / 売上・伸び",
+   "value": "欠損(VA 契約額は $10B→$16B 超、T3、食い違い)",
+   "source": "report/r3_sections_5w1h_f20.md:50",
+   "source_note": "T3",
+   "note": "VA 契約額は出典で割れる: 約 $10B(2018)、$16B 超(費用、Becker's)、$16.9B の増額、約 $27B(r3:67 N10、R2 §4 の 7 番)。KLAS 2026 の急性期シェア 21.9%(T3、r3:50)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / Who",
+   "value": "ホテル(IHG が承認)・銀行・小売(T3)",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "T3",
+   "note": "IHG が 2026-01 に OPERA Cloud を承認(導入数ではない、T3、r3:68 N11)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / What",
+   "value": "OPERA Cloud・Simphony・FLEXCUBE",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / When",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 は「サブスク/ライセンス(欠損)」(research2/R2_products_5w1h.md:68)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / Where",
+   "value": "Oracle クラウド・顧客環境",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / Why",
+   "value": "業種特化機能。Fusion と相互に案件を牽引(会社説明)",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "銀行向け TCO が現行オンプレ比で約 50% 低いと Oracle が主張(日付不明の販促ブログ、T1/T4、r3:68 N11)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / How",
+   "value": "欠損",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 も課金方式は欠損(research2/R2_products_5w1h.md:68)"
+  },
+  {
+   "group": "7 業種別・Oracle Health",
+   "item": "⑪ 業種別アプリ(OPERA・FLEXCUBE 等) / 売上・伸び",
+   "value": "成長 +20% 超(Q1 FY27、T3 要約)。金額は欠損",
+   "source": "report/r3_sections_5w1h_f20.md:51",
+   "source_note": "T3 要約",
+   "note": "競合は Amadeus・Agilysys(ホテル、R2:68 では [W42])"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / Who",
+   "value": "Fusion・OCI・Health の導入顧客",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "R2 に行なし。台帳で追加(r3:69 N13)"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / What",
+   "value": "導入・移行・運用支援",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / When",
+   "value": "案件ごと",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "契約期間の概念なし(案件単位)"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / Where",
+   "value": "顧客側",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "-"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / Why",
+   "value": "導入の実行力。代替は SI 各社 ※",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "※ は一般的認識で未確認(例: Accenture・Deloitte 等)"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / How",
+   "value": "工数・固定額",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "台帳セル内に出典表記なし",
+   "note": "価格の数値は台帳に記載なし(欠損)"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "⑭ サービス(コンサル・導入支援・教育) / 売上・伸び",
+   "value": "FY26 $5.7B(+10%)。Q1 FY27 $1.41B(+4.8%)",
+   "source": "report/r3_sections_5w1h_f20.md:54",
+   "source_note": "T1*",
+   "note": "区分表(r3:19): FY26 $5.7B(+10%)、構成比 8.5%(算出: 5.7÷67.4)、Q1 FY27 $1.4B(+5%)、構成比 7.2%(算出: 1.4÷19.345)。Q1 FY27 粗利率 25.6%(算出: (1,414−1,052)÷1,414、T1*、r3:54)"
+  },
+  {
+   "group": "8 ハードウェア・サービス",
+   "item": "Hardware 区分(⑤ Exadata を含む) / 売上・伸び",
+   "value": "FY26 $3.1B(+5%)。Q1 FY27 約 $0.8B(+15%)",
+   "source": "report/r3_sections_5w1h_f20.md:18",
+   "source_note": "[W36] T3、[既S4]、[既H1] T3",
+   "note": "既存データは Q1 FY27 $0.774B(r3:18)。Q1 FY27 構成比 4.0%(算出: 0.774÷19.345)。⑤ の 5W1H は群5 に記載。⑤ の比率は欠損(r3:18)"
+  }
+ ],
+ "missing": [
+  "群5「Exadata クラウド」(OCI 上の Exadata Database Service)の独立行は台帳にない。⑤ は「オンプレ・Cloud@Customer」のみで(r3:45)、OCI 内の Exadata は r3:74 の分類で言及されるだけ。",
+  "群8「ハードウェア」の独立行は台帳にない。Hardware 区分の売上を 1 行で記載し、⑤ の行と対応させた(r3:18、r3:45)。",
+  "群1 の保守の内訳(ライセンスとサポートの内訳、サポート更新率)は台帳で欠損(r3:70)。",
+  "③ 専用・主権クラウドと ⑦ 26ai は群名に明示されない。③ は群2、⑦ は群1 に便宜的に配置した(要判断)。",
+  "⑬ と ⑭ は R2 に行がない(research2/R2_products_5w1h.md:58-69 は ①〜⑫ のみ)。⑬ の単独売上・契約期間・価格は欠損(r3:53)。"
+ ]
+}

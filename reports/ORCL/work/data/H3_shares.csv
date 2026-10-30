@@ -1,0 +1,27 @@
+period,metric,value,unit,source_ids,tier,note
+FY2024,weighted avg shares (basic or diluted not confirmed),2823,million shares,S47,4,"type unclear"
+FY2025,weighted avg shares (diluted),2866,million shares,"S47;S46",4,NA
+FY2026,weighted avg shares (basic),2860,million shares,"S47;S46",4,NA
+FY2026,weighted avg shares (diluted),2914,million shares,"S47;S46",4,NA
+FY2026 Q1 (2025-08-31),diluted shares (calc),2901,million shares,S42,3,"calc = net income to common 2930 / diluted EPS 1.01; rounding effect"
+FY2027 Q1 (2026-08-31),diluted shares (calc),3000,million shares,"S42;S07",3,"calc = net income to common 4680 / diluted EPS 1.56; rounding effect"
+FY2024,stock-based compensation (cash flow add-back),3974,million USD,"S47;S46",4,NA
+FY2025,stock-based compensation (cash flow add-back),4674,million USD,"S47;S46",4,NA
+FY2026,stock-based compensation (cash flow add-back),4811,million USD,"S47;S46",4,NA
+FY2026 Q4 (paid 2026-04-24; record 2026-04-09),common dividend per share,0.50,USD,S45,4,"declared 2026-03-10"
+FY2027 Q1 (paid 2026-07-24; record 2026-07-10),common dividend per share,0.50,USD,S46,4,NA
+FY2027 Q2 (payable 2026-10-23; record 2026-10-09),common dividend per share (declared),0.50,USD,S01,1,NA
+FY2026 full year,total common dividends paid,NA,million USD,NA,NA,"not retrieved"
+2026 each quarter,dividend per mandatory convertible preferred share,1625,USD per preferred share,S01,1,"6.50% x 100000 / 4 (calc consistent)"
+FY2027 Q1 (2026-06 to 08),repurchased shares,0,million shares,S01,1,"no repurchases in quarter"
+FY2026 Q1 (prior year comparative),repurchased shares,0.4,million shares,S01,1,"amount USD93 million"
+FY2026 Q1 (prior year comparative),repurchase amount,93,million USD,S01,1,NA
+2026-08-31,remaining buyback authorization,6300,million USD,S01,1,"approximately; no expiration"
+FY2026 full year,total repurchase amount,NA,million USD,NA,NA,"not retrieved"
+FY2027 Q1 (agreement 2026-02-02),common stock ATM issuance (gross before commissions),20000,million USD,"S12;S58;S01",1,"completed per secondary; equity statement shows 19909"
+FY2027 Q1,ATM shares issued,NA,million shares,NA,NA,"not retrieved"
+2026-02,mandatory convertible preferred issued,50000,preferred shares,"S02;S11",1,"100000000 depositary shares at USD50 = USD5bn gross"
+conversion (calc),common shares on conversion (low),24.99,million shares,S11,1,"50000 x 499.8126; calc"
+conversion (calc),common shares on conversion (high),31.24,million shares,S11,1,"50000 x 624.7657; calc; conversion date NA"
+period-end,shares outstanding (period-end),NA,million shares,NA,NA,"not retrieved"
+2025-Q1 to 2027-Q1,quarterly basic/diluted shares,NA,million shares,NA,NA,"not retrieved except implied values"

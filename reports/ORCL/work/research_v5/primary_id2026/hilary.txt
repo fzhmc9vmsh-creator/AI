@@ -1,0 +1,667 @@
+Safe Harbor Statement
+
+Statements in this presentation relating to Oracle’s future plans, expectations, beliefs,
+intentions and prospects are “forward-looking statements” and are subject to material risks
+and uncertainties. Many factors could affect our current expectations and our actual
+results, and could cause actual results to differ materially. A detailed discussion of these
+factors and other risks that affect our business is contained in our U.S. Securities and
+Exchange Commission (SEC) filings, including our most recent reports on Form 10-K and
+Form 10-Q, particularly under the heading “Risk Factors.” Copies of these filings are
+available online from the SEC or by contacting Oracle’s Investor Relations Department at
+(650) 506-4073 or by clicking on SEC Filings on Oracle’s Investor Relations website at
+https://www.oracle.com/investor. All information set forth in this presentation is current as
+of October 28, 2026. Oracle undertakes no duty to update any statement in light of new
+information or future events.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Non-GAAP Financial Measures
+
+To supplement our financial results presented on a GAAP basis, we use the non-GAAP
+measures indicated in the tables, which exclude certain significant expenses including
+stock-based compensation, expenses related to acquisitions, restructuring and certain
+other operating expenses, that we believe are helpful in understanding our past financial
+performance and our future results. Our non-GAAP financial measures are not meant to be
+considered in isolation or as a substitute for comparable GAAP measures and should be
+read only in conjunction with our consolidated financial statements prepared in accordance
+with GAAP.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerating Shareholder
+Value through Intelligence
+Hilary Maxson
+Chief Financial Officer
+ Accelerating Shareholder Value throughout the FY27-FY30 Investment Cycle
+
+                                                  FY27                                  FY28                                       FY29                                               FY30
+
+
+
+Differentiated
+                                              $90B+                                                                                                                            $225B+
+Growth                                     Total Revenues                                                                                                                      Total Revenue
+                                          +34% y/y in constant                                                                                                               35%+ FY26-30 CAGR
+                                               currency
+
+
+
+
+Strong                                            $8.10                              FCF +                                   $30B+                                 40%+ $21.00+
+Profitability                                                                                                                                                      Non-GAAP                   Non-GAAP
+                                          Non-GAAP EPS                            During H2 28                            Free Cash Flow
+                                                                                                                                                                   Op Margin                     EPS
+
+
+                                                                                                                               <3.5x
+Disciplined                                       $20B                                                                   Net Debt-to-                                        Self-Funded
+Capital                                 Additional Capital                    Fully Funded                                            (1)
+                                                                                                                       Adjusted EBITDA
+Allocation                            $10B equity & $10B debt
+                                                                                                                          Self-Funded
+ Note: All figures presented are on a non-GAAP basis. (1) Net debt includes borrowings, vendor financing, and operating and finance lease liabilities, less cash and marketable securities. Adjusted EBITDA is based on
+ Oracle’s reported non-GAAP results, with depreciation and operating lease expense added back.
+
+
+ Copyright © 2026, Oracle and/or its affiliates
+Accelerating Value:
+Differentiated Growth
+Differentiated Growth in Oracle Applications and Database
+
+                  Infrastructure                                             Applications                                                  Database
+
+                    $664B                                                      ~11%                                                        ~12%
+                 RPO (Q1’FY27)(1)                                               CY26E-30E                                                   CY26E-30E
+                                                                               TAM(2) CAGR                                                 TAM(2) CAGR
+
+     AI demand outpacing available capacity                      Complete horizontal application suite                         Integrated data platform combining
+     supply; added $30B+ in RPO in Q1’FY27                       spanning core business functions                              transactions, analytics, and AI
+
+
+
+      Increasing customer diversification in                     Broad portfolio of industry-specific                          Advanced capabilities offered across
+      each of the past four quarters                             applications across major sectors                             OCI and major hyperscaler clouds
+
+
+     Increasing sovereign cloud demand,
+     adoption across 34 countries in the                          Continued conversion of Oracle’s large                        Leading autonomous database
+     EU and partnerships in Asia and                              installed base from on-prem to cloud                          management powered by AI
+     Middle East
+
+Source: IDC. Note: CAGR estimates based on market segments relevant to Oracle’s business. Figures are rounded.
+(1) Represents total Oracle remaining performance obligations (RPO), of which approximately 90% is attributable to cloud infrastructure.
+(2) TAM = Total Addressable Market.
+
+Copyright © 2026, Oracle and/or its affiliates
+AI Demand Has Become Oracle’s Growth Engine
+AI delivers business value when it connects trusted enterprise data with business-critical applications
+
+
+                                                                        AI Everywhere
+                                        Enterprise
+                                       Applications
+                                                                        Intelligent Business Applications + Agents
+                                                                        Intelligence in critical business workflows with Enterprise Control
+
+                                                                        Enterprise Data Intelligence
+      Governance
+           and                     BUSINESS            Database         Give AI governed access to business data and context
+                                                        & Data
+     Orchestration                OUTCOMES             Platform
+     of AI + Agents
+                                                                        Most Performant AI infrastructure
+                                                                        In Your Chosen Environment
+                                                                        Run AI and enterprise workloads at scale
+
+                                      AI / Cloud
+                                    Infrastructure                      Enterprise Governance and Orchestration of AI + Agents
+                                                                        Trust at runtime
+
+
+                                            Measurable customer outcomes encourage broader adoption across the portfolio.
+                                       More AI adoption across business workflows expands demand for data services and compute.
+
+
+Copyright © 2026, Oracle and/or its affiliates
+     Contracted Demand Driving Differentiated Growth in AI Infrastructure
+
+
+
+$138B                                   $638B
+    RPO                                         RPO                                             Large Contract RPO Conversion to Revenue
+    FY25                                     FY26                           FY27                         FY28             FY29                 FY30
+
+~1GW                                    ~3GW                                                         ~10GW
+Total Capacity                          Total Capacity                                                Total Capacity
+ 109 Regions                                                                                           230 Regions
+                                                                                                       (estimated)
+
+                                                                             Peak Capex Years,                              Positive Free Cash Flow,
+                                                                    Adding ~7GW Incremental Capacity (1)                          Self-Funded
+
+
+
+
+    (1) Of the ~7GW incremental capacity, 850MW is already disclosed as completed in Q1’FY27.
+
+
+
+
+    Copyright © 2026, Oracle and/or its affiliates
+     Contracted Demand Driving Differentiated Growth in AI Infrastructure
+
+
+
+$138B                                   $638B
+    RPO                                         RPO                                             Large Contract RPO Conversion to Revenue
+    FY25                                     FY26                           FY27                         FY28             FY29                 FY30
+
+~1GW                                    ~3GW                                                         ~10GW
+Total Capacity                          Total Capacity                                                Total Capacity
+ 109 Regions                                                                                           230 Regions
+                                                                                                       (estimated)
+
+                                                                             Peak Capex Years,                              Positive Free Cash Flow,
+                                                                    Adding ~7GW Incremental Capacity (1)                          Self-Funded
+
+
+                           Upon completion, Large-Scale AI Sites (Abilene, Shackleford, New Mexico, Michigan, Wisconsin)
+                                            are expected to comprise ~5GW in Total Delivered Capacity
+    (1) Of the ~7GW incremental capacity, 850MW is already disclosed as completed in Q1’FY27.
+
+
+
+
+    Copyright © 2026, Oracle and/or its affiliates
+Recurring Business and Strong RPO Support Our FY30 Revenue Guidance
+
+
+                                FY27                             FY30
+
+
+
+
+                   $90B+                         $225B+                 35%+
+                                                                        FY26-FY30
+                   Total Revenue                 Total Revenue
+                                                                          CAGR
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerating Value:
+Profitability, Cash Flows
+and ROI
+Complementary Business Models Driving Profitable Growth
+
+                                                           Cloud Applications                                  Cloud Database                                     Infrastructure
+                                                                        (SaaS)                                                                                      (CPU & GPU)
+
+
+
+    Growth                                                   Double-Digit                                         Very High                                       Hypergrowth
+
+
+    Capital Intensity                                                   Low                                       Moderate                                            High
+
+
+    Gross Margin                                                 Very High                                        Very High                                          Lower
+
+    Operating Expense (1)
+    (as % of Revenue)                                                              Opex Intensive                                                                   Minimal
+
+    Operating Margin (2)                                                    Long-Term Corporate Target Margin 40%+
+
+Note: All metrics presented are on a non-GAAP basis; exclude stock-based compensation, amortization of intangible assets, and restructuring and other expenses.
+(1) Non-GAAP operating expense includes R&D, S&M, and G&A.
+(2) (2) Non-GAAP operating margin is calculated based on non-GAAP operating income divided by revenue.
+
+Copyright © 2026, Oracle and/or its affiliates
+Clear Path to 40%+ Long-Term Operating Margin
+
+
+       43%
+                                                           40%+     Mix Shift Driving Some
+                                                                    Near-Term Margin Pressure
+                                                           $90B+
+
+                                                                    Infrastructure Margin Improves
+                                              GR
+                                            CA                      as Committed Projects Become Fully Ramped
+                                      %
+                                33
+                                                                    Continued Strong Margin Contribution
+                                                                    by Apps and Database
+      $29B
+
+                                                                    Focused Cost Management
+         FY26             FY27E            FY28E   FY29E    FY30E
+                                                                    to Drive Leverage
+                Non-GAAP Operating Margin
+
+
+Copyright © 2026, Oracle and/or its affiliates
+High-Margin Applications and Database Strengthen the Path to 40%+
+
+                                Cloud Applications              Cloud Database
+
+        Cloud Migration: ~4x Pricing Uplift vs.      Cloud Migration: AI Accelerates Shift to
+        On-Premise                                   Higher-Value Cloud Database Services
+
+
+
+        Pricing: Evolution in monetization models    Multi-Cloud: Improve Economics with
+        with subscription plus consumption           Deployment Scale
+
+
+
+        Embedded finance and high-margin             AI Data Platform: Expand monetization
+        value add opportunities                      across Data, Analytics & AI Workloads
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Large-Scale AI Infrastructure Sites Shape our P&L in the Near-Term
+Contract Economics and RPO Conversion to Revenue: 1GW Example
+
+                                                 Quarterly Revenue and Capex
+
+
+     T0                     T + 2Q                   T + 4Q                                          T + 8Q
+     Contracted             Capex                    First Service                                   Fully
+     Demand                 Starts                   Delivery                                        Ramped
+                                           T + 3Q
+                                           Lease Ramp-up
+                                           Begins
+Revenue
+
+Capex                                                                                                      …Quarterly Revenue
+                                                                                                           Continues Over the
+                                                                                                             Contract Term
+
+
+
+        Q1             Q2             Q3            Q4      Q5          Q6           Q7           Q8
+
+
+                           Quarters Measured from Contract Signing
+Note: All figures presented are on a non-GAAP basis. Capex is primarily spent on equipment for chips, memory, and network. Oracle does not purchase land and buildings for datacenters. (1) Gross margin is
+calculated based on gross profit divided by revenue. Operating margin is calculated based on operating income (gross profit less R&D and S&M expenses), divided by revenue. (2) Free Cash Flow Conversion
+calculated as free cash flow, divided by NOPAT plus depreciation. (3) Return on investment (ROI) calculated as annual NOPAT plus depreciation, divided by cumulative capex. Maintenance capex is limited and/or
+tied to re-contracting.
+
+Copyright © 2026, Oracle and/or its affiliates
+Large-Scale AI Infrastructure Sites Shape our P&L in the Near-Term
+Contract Economics and RPO Conversion to Revenue: 1GW Example
+
+                                                 Quarterly Revenue and Capex                                                                                 Contract                         Fully Ramped
+                                                                                                                                                             Totals(1)
+     T0
+     Contracted
+                            T + 2Q
+                            Capex
+                                                     T + 4Q
+                                                     First Service
+                                                                                                        T + 8Q
+                                                                                                        Fully
+                                                                                                                                                            ~$80B                                  ~35%
+     Demand                 Starts                   Delivery                                           Ramped                                                 Total RPO                         Gross Margin (2)
+                                           T + 3Q
+                                           Lease Ramp-up
+                                           Begins                                                                                                           ~$37B                                  ~34%
+                                                                                                                                                                                                     Operating
+Revenue                                                                                                                                                      Total Capex
+                                                                                                                                                                                                     Margin (2)
+
+Capex                                                                                                         …Quarterly Revenue
+                                                                                                              Continues Over the                            ~$16B                                  100%
+                                                                                                                                                                                                 Free Cash Flow
+                                                                                                                Contract Term                          Annualized Revenue                         Conversion (3)
+
+
+
+        Q1             Q2             Q3            Q4       Q5           Q6            Q7           Q8
+                                                                                                                                                           5 Years                                 ~28%
+                                                                                                                                                      Avg. Contract Duration                            ROI (4)
+                           Quarters Measured from Contract Signing
+Note: All figures presented are on a non-GAAP basis. Capex is primarily spent on equipment for chips, memory, and network. Oracle does not purchase land and buildings for datacenters.
+(1) Large-scale AI infrastructure contracts are structured on a cost-plus basis; therefore, total contract value, total costs, and annualized revenue may. (2) Gross margin is calculated based on gross profit divided by
+revenue. Operating margin is calculated based on operating income (gross profit less R&D and S&M expenses), divided by revenue. (3) Free Cash Flow Conversion calculated as free cash flow, divided by NOPAT plus
+depreciation. (3) Return on investment (ROI) calculated as annual NOPAT plus depreciation, divided by cumulative capex. Maintenance capex is limited and/or tied to re-contracting.
+
+Copyright © 2026, Oracle and/or its affiliates
+Scenario 1 of 3 | Self-Funded
+Self-Funding Provides Maximum Control but Requires the Most Upfront Capital
+
+                                                        Quarterly Revenue and Capex                                                                  Initial 2-Year Totals
+
+
+     T0                          T + 2Q                         T + 4Q                                                               T + 8Q
+     Contracted                  Capex                          First Service                                                        Fully
+     Demand                      Starts                         Delivery                                                             Ramped
+                                                      T + 3Q                                                                                             ~$37B
+                                                      Lease Ramp-up
+                                                      Begins
+                                                                                                                                                            Capex
+Revenue
+
+Capex
+                                                                                                                                                         ~$16B
+                                                                                                                                …Quarterly Revenue
+                                                                                                                                Continues Over the
+                                                                                                                                  Contract Term
+                                                                                                                                                         Annualized
+                                                                                                                                                        Revenue Once
+                                                                                                                                                        Fully Ramped
+           Q1                  Q2                Q3           Q4             Q5               Q6               Q7               Q8
+
+
+                                          Quarters Measured from Contract Signing
+
+Note: Capex is primarily spent on hardware for chips, memory, and network. Oracle does not purchase land and buildings for datacenters.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Scenario 2 of 3 | Vendor Financing
+Vendor Financing Materially Reduces Oracle’s Initial Funding Requirement
+
+                                                        Quarterly Revenue and Capex                                                                                           Initial 2-Year Totals
+
+
+     T0                          T + 2Q                         T + 4Q                                                                T + 8Q
+     Contracted
+     Demand
+                                 Capex
+                                 Starts
+                                                                First Service
+                                                                Delivery
+                                                                                                                                      Fully
+                                                                                                                                      Ramped                                      ~$18B
+                                                      T + 3Q                                                                                                                      Capex and
+                                                      Lease Ramp-up
+                                                      Begins
+                                                                                                                                                                               Vendor Financing
+                                                                                                                                                                              Payment for Capex
+Revenue
+
+Capex
+Vendor
+                                                                                                                           …Quarterly Revenue and
+                                                                                                                          Vendor Financing Payment                                ~$16B
+Financing                                                                                                                  for Capex Continue Over                                Annualized
+Payment for                                  Assumes Vendor Finances                                                          the Contract Term
+Capex                                       70% of Hardware Acquisition                                                                                                          Revenue Once
+                                                                                                                                                                                 Fully Ramped
+           Q1                  Q2                Q3           Q4              Q5               Q6               Q7               Q8
+
+
+                                          Quarters Measured from Contract Signing
+
+Note: Capex is primarily spent on hardware for chips, memory, and network. Oracle does not purchase land and buildings for datacenters.
+Vendor financing payment for Capex represents principal payment only. The financing portion will be recorded under interest expense and is included in operating cash flow.
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Scenario 3 of 3 | Bring-Your-Own-Hardware
+Customer-Supplied Hardware Minimizes Oracle’s Equipment Capital Needs
+
+                                                        Quarterly Revenue and Capex                                                         Initial 2-Year Totals
+
+
+     T0                          T + 2Q                         T + 4Q                                                      T + 8Q
+     Contracted                  Capex                          First Service                                               Fully
+     Demand                      Starts                         Delivery                                                    Ramped
+                                                      T + 3Q                                                                                     ~$6B
+                                                      Lease Ramp-up
+                                                      Begins
+                                                                                                                                                   Capex
+Revenue
+
+Capex
+                                                                                                                                                ~$11B
+                                                                                                                       …Quarterly Revenue
+                                                                                                                       Continues Over the
+                                 Vast Majority of Hardware is                                                            Contract Term
+                                   Supplied by Customers                                                                                       Annualized
+                                                                                                                                            Revenue Once Fully
+                                                                                                                                                 Ramped
+           Q1                  Q2                Q3           Q4              Q5               Q6               Q7     Q8
+
+
+                                          Quarters Measured from Contract Signing
+
+Note: Capex is primarily spent on hardware for network. Oracle does not purchase land and buildings for datacenters.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Comparing Contract Economics Across Models
+Illustrative 1GW Scenario for Average 5-Year Contract Duration
+
+                                                                Self-Funded                                  Vendor Financing                                   Bring-Your-Own-
+                                                                                                                                                                    Hardware
+   Annualized Revenue                                                ~$16B                                             ~$16B                                           ~$11B
+
+                                                                                                                                   (2)
+   Initial 2-Year Capex                                              ~$37B                                           ~$18B                                              ~$6B
+
+   Capital Intensity                                         Concentrated                                         Distributed                                          Minimal
+
+   Gross Margin                                                      ~35%                                               ~35%                                            35% +
+
+   Operating Margin                                                  ~34%                                               ~34%                                           34% +
+
+   ROI
+            (1)
+                                                                     ~28%                                               ~28%                                           28% +
+(1) Return on investment (ROI) calculated as annual NOPAT plus depreciation, divided by cumulative Capex. Maintenance capex is limited and/or tied to recontracting.
+(2) Includes vendor financing payment for Capex.
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Our Ongoing Business Transformation Supports Our Profitability
+Guidance and Solidifies Our Path to Positive Free Cash Flow
+
+
+                                        FY29                        FY30
+
+
+
+
+                            $30B+                 40%+                     $21+
+                                                   Non-GAAP                Non-GAAP
+                             Free Cash Flow
+                                                 Operating Margin             EPS
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+GPU Renewals Can Improve Lifetime Returns
+Four-year old GPUs continue to earn customer commitments
+
+
+
+                                   Q1’FY27       Upside Potential
+
+                                                 More Lifetime Revenue
+                                                 Further contracts on deployed assets
+
+                                20%              Margin Expansion
+                                                 Renewal pricing on highly utilized,
+         Premium on Capacity Renewed             largely depreciated assets
+         or Sold for Four-Year Old GPUs
+                                                 Higher ROI
+                                                 More cash flow from the original investment
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Accelerating Value:
+Disciplined Capital
+Allocation
+Balance Sheet and Capital Allocation Priorities
+
+
+
+    1           Maintain Investment-Grade Rating
+
+
+
+    2           Return Cash to Shareholders through Dividend
+
+
+
+    3           Continued Investment for Business Growth
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Flexible Models Are Reducing Oracle’s Upfront Capital Needs
+
+
+                Vendor Financing
+    1
+                Payment timing is aligned more closely with customer revenue
+
+
+                Bring-Your-Own-Hardware
+    2
+                Customers purchase GPUs; Oracle deploys and operates
+
+
+                Prepayments
+    3
+                Upfront payments fund hardware procurement before deployment
+
+Note: Capex is primarily spent on equipment for chips, memory, and network. Oracle does not purchase land and buildings for datacenters.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+  Allowing Us to Size a Final Capital Raise to Positive Free Cash Flow
+  (2H FY28)
+
+
+
+                ~6GW (1)
+                ~$220B
+                 Total
+                Capex (2)
+
+
+
+
+                                                                 ~50% Reduction in
+                                                             Upfront Cash Requirements
+                                                                                                                             $20B
+ Q2                                                                                                                                         Q4
+FY27           Remaining                            Vendor                        BYOH   Prepayments   Other Cash Flows     Remaining      FY28
+              Investment                           Financing                                            (OCF less Other   Capital Needed
+             (Self-Funded)                                                                                Cash Needs)
+
+  (1) Reflects remaining GW buildout after accounting for 850MW delivered in Q1’FY27.
+  (2) Calculated based on illustrative 1GW example.
+
+
+
+  Copyright © 2026, Oracle and/or its affiliates
+$20B Financing Completes the Funding for FY27-FY30 Investment Cycle
+
+
+
+
+                                $20B
+                                                                                    Balanced Funding Mix
+
+
+
+                         Incremental                                            $10B              $10B
+                                                                                New Equity        New Debt (1)
+                        Capital Needs
+
+
+
+
+(1) Excludes any refinancing of existing debt in ordinary course of business.
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Strengthened Balance Sheet in the Near-Term
+
+
+
+
+                              <3.5x                                                              Following $10B in new debt,
+                    Net Debt-to-                                                                 gross debt to remain flat as
+                  Adjusted EBITDA                                                                  we refinance maturities
+                      by FY29
+
+
+
+Note: Net debt includes borrowings, vendor financing, and operating and finance lease liabilities, less cash and marketable securities. Adjusted EBITDA is based on Oracle’s reported non-GAAP results,
+with depreciation and operating lease expense added back.
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Key Messages
+ Accelerating Shareholder Value throughout the FY27-FY30 Investment Cycle
+
+                                                  FY27                                  FY28                                       FY29                                               FY30
+
+
+
+Differentiated
+                                              $90B+                                                                                                                            $225B+
+Growth                                     Total Revenues                                                                                                                      Total Revenue
+                                          +34% y/y in constant                                                                                                               35%+ FY26-30 CAGR
+                                               currency
+
+
+
+
+Strong                                            $8.10                              FCF +                                   $30B+                                 40%+ $21.00+
+Profitability                                                                                                                                                      Non-GAAP                   Non-GAAP
+                                          Non-GAAP EPS                            During H2 28                            Free Cash Flow
+                                                                                                                                                                   Op Margin                     EPS
+
+
+                                                                                                                               <3.5x
+Disciplined                                       $20B                                                                   Net Debt-to-                                        Self-Funded
+Capital                                 Additional Capital                    Fully Funded                                            (1)
+                                                                                                                       Adjusted EBITDA
+Allocation                            $10B equity & $10B debt
+                                                                                                                          Self-Funded
+ Note: All figures presented are on a non-GAAP basis. (1) Net debt includes borrowings, vendor financing, and operating and finance lease liabilities, less cash and marketable securities. Adjusted EBITDA is based on
+ Oracle’s reported non-GAAP results, with depreciation and operating lease expense added back.
+
+
+ Copyright © 2026, Oracle and/or its affiliates
+Executive Q&A
+
+
+Mike Sicilia
+Clay Magouyrk
+Executive Q&A
+
+
+Hilary Maxson
+Mike Sicilia
+Clay Magouyrk
+

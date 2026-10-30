@@ -1,0 +1,316 @@
+{
+ "rows": [
+  {
+   "group": "リスク",
+   "item": "OpenAI の支払能力（不払い・契約縮小）",
+   "value": "発生確率 20%、Δ1株価値 −$16〜−25（FY29〜31）",
+   "source": "report/ORCL_report.md:904",
+   "source_note": "報告書 12-1 機構台帳 M5。市場の織り込みは「大部分（株価 −59%）」",
+   "note": "兆候・トリガー: OpenAI の資金調達失敗・支払遅延・契約の縮小や条件変更（7-2 R3、売却トリガー。report/ORCL_report.md:612, 960）。K4 弱気側は支払遅延・契約変更・ダウンラウンド（report/ORCL_report.md:623）。RPO の約45% が OpenAI（wf_result.json:892 の条件7 KPI）。"
+  },
+  {
+   "group": "リスク",
+   "item": "FCF 黒字化の遅れ（FY29）",
+   "value": "発生確率は欠損。黒字化で PEG 0.85→1.0（+$23/株）",
+   "source": "report/ORCL_report.md:888",
+   "source_note": "報告書 11-1 の PEG 再評価トリガー（S&P は 2029 年を想定）。発生確率は報告書に記載なし",
+   "note": "兆候・トリガー: 会社または S&P の見通しで FY29 までに FCF が黒字化しない、調整後レバレッジ 4.5倍超が2年続く（calc/audit_tmp/wf_result.json:764、条件2 下げ(C)）。K5 弱気側: 総額 capex の見通しが $1,000億超へ上方修正、または $130 未満での追加増資 $100億超（report/ORCL_report.md:624）。"
+  },
+  {
+   "group": "リスク",
+   "item": "格下げ（投資不適格への転落）",
+   "value": "発生確率 15%、−$8/株（FY27〜28）",
+   "source": "report/ORCL_report.md:1255",
+   "source_note": "報告書 Appendix E 機構 M17（12-1 表には非掲載）。11-1 は「低〜中」・−$8/株（report/ORCL_report.md:885）",
+   "note": "兆候・トリガー: レバレッジ >4.5倍（S&P 閾値 4.5倍、FY27 の予測 約4.4倍）。現状は S&P BBB-（安定）、Moody's ネガティブ（report/ORCL_report.md:610）。wf_result.json:892 の条件7 KPI: FY29 より前に S&P が BB+ へ格下げで D 候補。"
+  },
+  {
+   "group": "リスク",
+   "item": "電力・拠点の遅延（電力の解放の遅れ）",
+   "value": "発生確率 50%、−$3（FY29 EPS −$1.2）、FY28〜29",
+   "source": "report/ORCL_report.md:907",
+   "source_note": "報告書 12-1 機構台帳 M9。市場の織り込みは「一部」。Jupiter 行の出典は T2 の Tier 3*（検索要約経由）",
+   "note": "兆候・トリガー: 納入が 600MW/四半期未満（K2 弱気、report/ORCL_report.md:621）、0.8GW/四半期未満で2期続く（wf_result.json:996）。実例: Project Jupiter（NM、2.45GW）に 2026-09-24 に force majeure 通知。会社は FY27 に影響なしと説明。ガスパイプラインは 2026-08-15 から 2027-02-01 に延期（research4/T2_company_rpo_capacity.md:175）。"
+  },
+  {
+   "group": "リスク",
+   "item": "電力規制ショック（データセンター電力の制限）",
+   "value": "発生確率 5〜10%（3年）、影響 大（納期 2年以上の遅延）",
+   "source": "report/ORCL_report.md:924",
+   "source_note": "報告書 12-2 テールリスク T2",
+   "note": "兆候・トリガー: 州法・FERC の規則変更、送電の優先順位の変更。可能性分析: 住民訴訟（ニューメキシコ）、電力料金の転嫁問題（ウィスコンシン）。"
+  },
+  {
+   "group": "リスク",
+   "item": "GPU の陳腐化（旧世代の貸出単価の崩れ）",
+   "value": "発生確率 25%、−$19（FY31〜）",
+   "source": "report/ORCL_report.md:901",
+   "source_note": "報告書 12-1 機構台帳 M2。市場の織り込みは「一部」",
+   "note": "兆候・トリガー: H100 指数 $2.00 未満（wf_result.json:920 の条件8 KPI は $2.65 から $2.00 未満で D 候補。報告書の合格ラインは ≥$2.0、report/ORCL_report.md:886）。更新プレミアム <0% または 更新率 <70%（K3 弱気、report/ORCL_report.md:622）。テール側は H100 指数 <$1.5（report/ORCL_report.md:923）。残存価格比 ±0.3 → ±$8/株（report/ORCL_report.md:886）。"
+  },
+  {
+   "group": "リスク",
+   "item": "AI 投資の逆回転（AI 需要の循環）",
+   "value": "発生確率 10%（3年）、1株 $50〜70（極大）",
+   "source": "report/ORCL_report.md:923",
+   "source_note": "報告書 12-2 テールリスク T1",
+   "note": "兆候・トリガー: OpenAI のダウンラウンド、ハイパースケーラーの capex ガイダンス引下げ、GPU 貸出単価の急落（H100 指数 <$1.5）。背景: OpenAI の FCF −$2,780億（2026〜30年）、リース $2,880億が固定費化。代替需要も同時に消える。ハイパースケーラーの受注残は拡大中。"
+  },
+  {
+   "group": "リスク",
+   "item": "資金調達・希薄化（低株価での増資）",
+   "value": "発生確率 40%、−$4〜−12（FY27〜28）",
+   "source": "report/ORCL_report.md:909",
+   "source_note": "報告書 12-1 機構台帳 M13。市場の織り込みは「一部」",
+   "note": "兆候・トリガー: 株価 $130 未満での追加増資 $100億超（K5 弱気、report/ORCL_report.md:624）。FY27 の残り資金調達は約$200億（債券か株式か。report/ORCL_report.md:880）。T2 の調達計画約$40B から ATM 完了の$20B を引くと残り約$20B（算出: 40 − 20 = 20、報告書と一致。research4/T2_company_rpo_capacity.md:209）。株式なら株数 +3%（−$4/株）。"
+  },
+  {
+   "group": "リスク",
+   "item": "AI 容量の利益率の低迷（価格競争・部材高）",
+   "value": "発生確率 25%、−$13（FY28〜）",
+   "source": "report/ORCL_report.md:903",
+   "source_note": "報告書 12-1 機構台帳 M4。市場の織り込みは「一部」",
+   "note": "兆候・トリガー: AI 粗利率 ≤25%（K1 弱気、report/ORCL_report.md:620）。R1（規模を伴っても 25% 未満、report/ORCL_report.md:612）。最後の開示は Q3 FY26 の 32%（wf_result.json:920）。"
+  },
+  {
+   "group": "リスク",
+   "item": "OpenAI の単価再交渉（−20%）",
+   "value": "発生確率 30%、−$6.5（FY28〜）",
+   "source": "report/ORCL_report.md:905",
+   "source_note": "報告書 12-1 機構台帳 M6。市場の織り込みは「一部」",
+   "note": "兆候・トリガー: 契約条件の変更・縮小の報道（7-2 R3、report/ORCL_report.md:612）。Bloomberg の Abilene 600MW 拡張中止報道があり、Oracle は否定（research4/T2_company_rpo_capacity.md:181）。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "AI World 2026（Las Vegas）",
+   "value": "2026-10-25〜28（公式）／10-26〜29（第三者掲載）",
+   "source": "calc/audit_tmp/wf_result.json:658",
+   "source_note": "Oracle AI World 公式ページ（検索スニペット）。二次: CMSWire・VKTR の掲載（wf_result.json:659）",
+   "note": "何が分かるか: AI イノベーションの発表。FY30 目標・capex・容量・資金調達の更新がありうる（前回 2025-10-16 の AI World で FY30 目標 売上 $2,250億・EPS $21）。2026 年の Financial Analyst Meeting は未告知（wf_result.json:691）。前回の告知は開催の2日前だったため、未告知は結論にならない。T1b は 2026-10-16 の Analyst Day を Tier 4 で言及するが公式確認なし（research4/T1b_tradingview.md:112）。wf の検索時点では告知なし。確度: 日程は公式掲載で高、説明会は低。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "Q2 FY27 決算（ガイダンス: 売上+30〜34%、EPS $1.85〜1.93）",
+   "value": "2026-12-09（予定）。報告書は「2026-12 中旬」",
+   "source": "report/ORCL_report.md:879",
+   "source_note": "日付の出典は TradingView 分析の要約（Tier 3-4、research4/T1b_tradingview.md:73）。報告書の実現可能性は「高」",
+   "note": "何が分かるか: 納入 MW（合格 ≥800MW）、AI 粗利率（≥28%、開示時）、更新（≥0%）、RPO 純増、EPS（ΔEPS ±$0.05）。日付の確度は未確定（TradingView 要約のみ）。過去の同期は Q2 FY26 が 2025-12-10（research4/T2_company_rpo_capacity.md:90）。「中旬」と 12/9 は旬の区分が一致しない（12/9 は上旬）。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "Green Chile ガス管（NM）の稼働予定",
+   "value": "2027-02-01（予定どおり稼働が合格ライン）",
+   "source": "report/ORCL_report.md:881",
+   "source_note": "報告書 11-1 の出所は報告書のみ。T2 の Jupiter 行にも同日の延期記録（FERC 提出書類、Tier 3*、research4/T2_company_rpo_capacity.md:175。同一物かは未確認）",
+   "note": "何が分かるか: 電力の解放（W2 の「ガス管 2027-02 の稼働」と同日、report/ORCL_report.md:607）。FY28 EPS ±$0.3。実現可能性 中。効く収益ライン E4、機構 M9。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "FY27 の残り資金調達（約$200億）",
+   "value": "2026 年内〜2027 前半。株式なら株数 +3%（−$4/株）",
+   "source": "report/ORCL_report.md:880",
+   "source_note": "報告書 11-1（F5）。T2 の調達計画 約$40B・ATM $20B 完了（research4/T2_company_rpo_capacity.md:209）",
+   "note": "何が分かるか: 債券か株式か。合格ライン: 追加の普通株 ≤$100億。実現可能性 中。機構 M13。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "OpenAI の大型資金調達（評価額 $1.2兆の協議報道）",
+   "value": "2027 年前半。成功 +$2/株、失敗 −$5/株",
+   "source": "report/ORCL_report.md:882",
+   "source_note": "報告書 11-1 の出所は「報道」（K4 の出所は「報道・プレス」、report/ORCL_report.md:623）",
+   "note": "何が分かるか: OpenAI の支払能力。成功なら不払い確率 20%→12%、失敗なら 20%→40%。合格ライン: 評価額 $1兆以上でクローズ。実現可能性 中。W3 は「2027年半ばまで」（report/ORCL_report.md:608）。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "OpenAI 契約（約$3,000億）の本格開始",
+   "value": "2027 年中。FY28 AI 売上 +$100億規模",
+   "source": "report/ORCL_report.md:883",
+   "source_note": "報告書 11-1（F5）。契約規模は WSJ 報道の約$300B（会社は非開示、research4/T2_company_rpo_capacity.md:138）",
+   "note": "何が分かるか: 契約どおりの課金開始か（合格ライン）。実現可能性 中〜高。効く機構 M5・M6。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "FY27 決算と FY28 ガイダンス",
+   "value": "2027-06 中旬。FY28 売上 ≥$1,250億が合格ライン",
+   "source": "report/ORCL_report.md:884",
+   "source_note": "報告書 11-1（F5）。コンセンサス $10.78 は報告書の値",
+   "note": "何が分かるか: FY28 EPS ガイダンスがコンセンサス $10.78 を上回れば +$5〜10/株。効く収益ライン: 全ライン。機構 M3・M9。実現可能性 中。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "S&P・Moody's の格付け見直し",
+   "value": "随時。BBB- 維持が合格ライン（ジャンク転落 −$8/株）",
+   "source": "report/ORCL_report.md:885",
+   "source_note": "報告書 11-1（F5）。現状の格付けは 7-2 W5（report/ORCL_report.md:610）",
+   "note": "何が分かるか: 投資適格の維持（M17）。実現可能性 低〜中。wf_result.json:892 の監視 KPI: FY29 より前に S&P が BB+ へ格下げで D 候補。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "次世代 GPU（NVIDIA Rubin 等）の出荷と旧世代の貸出単価",
+   "value": "2026〜2027。H100 指数 ≥$2.0 が合格ライン",
+   "source": "report/ORCL_report.md:886",
+   "source_note": "報告書 11-1（F5）。芯①（PEG 再評価トリガー）",
+   "note": "何が分かるか: 旧世代の単価（残存価格比）。残存価格比 ±0.3 → ±$8/株。効く収益ライン E4、機構 M1・M2、実現可能性 中。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "共同CEO の PSO 測定（FY28 総売上）",
+   "value": "2028-05。閾値 $1,000億 / $1,250億",
+   "source": "report/ORCL_report.md:887",
+   "source_note": "報告書 11-1（F5）。確度欄は「—」",
+   "note": "何が分かるか: 経営陣のインセンティブの確認（分類はその他）。合格ライン ≥$1,000億。"
+  },
+  {
+   "group": "カタリスト",
+   "item": "FCF（純）の黒字化（S&P は 2029 年を想定）",
+   "value": "FY29（2028-06〜）。FCF ≥0 が合格ライン",
+   "source": "report/ORCL_report.md:888",
+   "source_note": "報告書 11-1（F5）。PEG 再評価トリガー",
+   "note": "何が分かるか: PEG 0.85→1.0（FY27 基準で +$23/株）。実現可能性 中。機構 M3・M8。会社は黒字化の時期を示していない（research4/T2_company_rpo_capacity.md:208）。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K1 AI 容量の粗利率",
+   "value": "合格 ≥30%（2四半期連続）／不合格 ≤25%",
+   "source": "report/ORCL_report.md:620",
+   "source_note": "報告書 7-3 判別 KPI 計器盤（F4）。強気側の閾値を合格、弱気側の閾値を不合格に対応させた",
+   "note": "時期（合格パス）: Q2 FY27 ≥28%（開示があれば）→ Q4 FY27 ≥30% → FY28 ≥31%。頻度: 四半期（開示しだい）。≥30% で事業エンジン→コンセンサス経路の確率 +10pt、<25% で弱気 +15pt。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K2 四半期の納入容量",
+   "value": "合格 ≥1,000MW／不合格 ≤600MW",
+   "source": "report/ORCL_report.md:621",
+   "source_note": "報告書 7-3（F4）",
+   "note": "時期（合格パス）: Q2 ≥800 → Q3 ≥900 → Q4 ≥1,000 → FY28 計 ≥3GW。頻度: 四半期。注: 7-2 W2 は「≥800MW/四半期」、R2 は「600MW/四半期未満が2四半期」（report/ORCL_report.md:607, 612）で、閾値の時期差がある。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K3 GPU の更新プレミアム・更新率",
+   "value": "合格 ≥+10% かつ ≥90%／不合格 <0% または <70%",
+   "source": "report/ORCL_report.md:622",
+   "source_note": "報告書 7-3（F4）",
+   "note": "時期（合格パス）: 毎四半期 ≥0%・≥85%。頻度: 四半期。強気側なら残存価格比 0.6→0.75（+$8/株）、弱気側は 0.6→0.3（−$8/株）。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K4 OpenAI の依存度と支払能力",
+   "value": "合格 比率<40%・$1兆以上で調達／不合格 支払遅延・契約変更",
+   "source": "report/ORCL_report.md:623",
+   "source_note": "報告書 7-3（F4）。出所は「報道・プレス」",
+   "note": "時期（合格パス）: 2027年半ばまでに資金調達を完了。頻度: 随時。強気側は OpenAI 不払い確率 20%→12%、弱気側は 20%→40%。不合格にはダウンラウンドも含む。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K5 純現金 capex と FCF（前払い控除後）",
+   "value": "合格 FY27 純capex ≤$700億／不合格 総額capex >$1,000億",
+   "source": "report/ORCL_report.md:624",
+   "source_note": "報告書 7-3（F4）。出所は 10-Q",
+   "note": "時期（合格パス）: FY27 純 ≤$700億 → FY28 ≤$600億 → FY29 FCF ≥0。FY28 の FCF（純）> −$100億 も合格側。不合格側は $130 未満での追加増資 $100億超も含む。頻度: 四半期。強気 AI 資本コスト −0.5pt（+$1.8/株）、弱気 株数 +3%（−$4/株）。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "K6 RPO の四半期純増",
+   "value": "合格 ≥$400億／不合格 <$100億",
+   "source": "report/ORCL_report.md:625",
+   "source_note": "報告書 7-3（F4）。出所は「プレス」",
+   "note": "時期（合格パス）: 毎四半期 ≥$200億。頻度: 四半期。強気側なら未契約の成長 +1GW/年、弱気側は 0。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "買い引き上げ条件（wf_result 判定）",
+   "value": "①〜④のうち2つ以上で差分が確立",
+   "source": "calc/audit_tmp/wf_result.json:1095",
+   "source_note": "wf_result.json の judgment.triggers。報告書（監視）とは版が異なる（missing 参照）",
+   "note": "① Q2 FY27〜Q3 FY27（2026-12-09〜2027-03）で納入 ≥1GW/四半期、かつ RPO の36か月以内比率 ≥50%。② OpenAI 以外の受注で OpenAI 比率 <40%（RPO 開示）、または OpenAI の資金調達・年換算売上 $70B 以上の確認。③ CDS 5年 <200bp（現在 227bp）かつ S&P の見通しがネガティブでない。④ FY30〜32 の電力・建屋の確保（年3GW 以上）の開示。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "監視・見送りへの引き下げ条件（wf_result 判定）",
+   "value": "株価 241.8 超（見送り圏）、CDS 300bp 超 など",
+   "source": "calc/audit_tmp/wf_result.json:1095",
+   "source_note": "wf_result.json の judgment.triggers（入口 Z2 は同 :1094）。報告書の入口は $119（report/ORCL_report.md:958）",
+   "note": "引き下げ: 株価 241.8 超、FY29 より前に S&P が BB+ へ格下げ、CDS 300bp 超、OpenAI の契約変更・支払遅延、AI 粗利率 25% 未満、納入 0.8GW/四半期未満で2期連続、コンセンサス FY28 EPS 9.9 未満、条件5 の C 確定（C が4件）。wf の判定は「買い検討」（目標 276.4、同 :1093-1094）で、報告書の「監視」（目標 $134、report/ORCL_report.md:748）と一致しない。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "条件2 FCF（下げ(C)の判定）",
+   "value": "FY29 までに FCF 黒字化せず、または レバレッジ >4.5倍が2年",
+   "source": "calc/audit_tmp/wf_result.json:764",
+   "source_note": "wf_result.json 条件2 の kpi_trigger（現在 B）",
+   "note": "上げ(A): 会社が FCF 黒字化の時期を明示し、四半期 FCF がモデル経路（FY27 −$41B）より良い。下げ(C) には株価 $141 未満で $20B 超の追加増資も含む。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "条件5 CEO（下げ(C)の決め手）",
+   "value": "(a)FY27 EPS目標$10.65の原典確認 (b)FY28売上<$100B (c)capex>$95B",
+   "source": "calc/audit_tmp/wf_result.json:836",
+   "source_note": "wf_result.json 条件5 の kpi_trigger（現在 B。C 確定で C が4件になり C×4 規則が発動）",
+   "note": "(a) は非GAAPの同じ基準での原典確認。(b) の $100B は PSO 閾値（FY28 総売上）。上げ: 1株指標を報酬 KPI に加える、または FCF 黒字化の時期を示して守る。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "条件6 PEG（EPS CAGR 30%以上）の監視KPI",
+   "value": "FY30 EPS ≥21 で B 候補、<18.5 で D 候補",
+   "source": "calc/audit_tmp/wf_result.json:864",
+   "source_note": "wf_result.json 条件6（現在 C）の kpi_trigger",
+   "note": "① FY30〜32 の電力・建屋の確保（年3GW 以上なら5年 CAGR 約30% に届き B 候補）。② コンセンサス FY30 EPS（現在 20.53、7名）。③ Q2 FY27 の EPS がガイダンス中点 1.89 以上、かつ RPO の36か月以内比率 ≥50% で確度を上げる。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "条件7 過大評価の検証の監視KPI",
+   "value": "CDS 200bp 未満で確度↑、300bp 超で D 候補",
+   "source": "calc/audit_tmp/wf_result.json:892",
+   "source_note": "wf_result.json 条件7（現在 C）の kpi_trigger",
+   "note": "① CDS 5年は現在 227bp。② S&P が FY29 より前に BB+ へ格下げで D 候補。③ OpenAI 比率（RPO の約45%）<40% で確度↑、契約変更・支払遅延の報道で E 候補。④ 四半期 FCF がモデル経路（FY27 −$41B）より悪化。⑤ 株価 184 以上（+30%）で市場が差分を織り込み始めたとみなす。"
+  },
+  {
+   "group": "判別KPI",
+   "item": "条件8 コモディティ性の監視KPI",
+   "value": "AI 粗利率 <25% で D 候補、≥35% で B 候補",
+   "source": "calc/audit_tmp/wf_result.json:920",
+   "source_note": "wf_result.json 条件8（現在 C）の kpi_trigger",
+   "note": "① AI 粗利率の最後の開示は Q3 FY26 の 32%。② 更新プレミアム（+20%）0%以下で D 候補。③ SemiAnalysis H100 1年契約指数（$2.65）が $2.00 未満。④ マルチクラウド DB・AI Database の売上額の開示（FY30 目標 $20B）。"
+  },
+  {
+   "group": "4フェーズ",
+   "item": "エントリー期",
+   "value": "条件成立から1〜2四半期。$119 以下で3分割",
+   "source": "report/ORCL_report.md:951",
+   "source_note": "報告書 12-4 時系列投資戦略（F8）。0. 監視期（現在）は株価 ≤$119 等まで保有しない（report/ORCL_report.md:950）",
+   "note": "行動: $119 以下で3回に分けて建てる（1回は目標の 1/3）。目標は T1 で −50% でも全体の許容損失に収まる大きさ。確認 KPI: K2（納入）、K4（OpenAI）。撤退: R3 または R5、あるいは R1 と R4 の同時発生（7-2、report/ORCL_report.md:612）。wf_result.json:1095 は「Q2 FY27 の納入・RPO・FCF で初期確認」とし、入口は株価 241.8 以下（:1094）で、報告書と異なる。"
+  },
+  {
+   "group": "4フェーズ",
+   "item": "検証期",
+   "value": "2〜4四半期。確度を四半期ごとに更新",
+   "source": "report/ORCL_report.md:952",
+   "source_note": "報告書 12-4 時系列投資戦略（F8）",
+   "note": "行動: 差分（経済的寿命・利益率）の進捗を見る。確認 KPI: K1 の合格ライン（Q4 FY27 ≥30%）、K3。撤退: 合格ラインを2四半期続けて下回り、一時要因で説明できない。wf_result.json:1095 も同じ期間と撤退条件。"
+  },
+  {
+   "group": "4フェーズ",
+   "item": "本格保有期",
+   "value": "FCF（純）の改善が数字に表れてから（FY28 後半〜）",
+   "source": "report/ORCL_report.md:953",
+   "source_note": "報告書 12-4 時系列投資戦略（F8）",
+   "note": "行動: 確度に応じて保有を増やす。確認 KPI: K5、根幹 KPI の加速度（OCI 前年比の2階差分）。撤退: ループ R1（成長、report/ORCL_report.md:226）の最も弱いリンク（OpenAI の支払）の破綻。ただし 5章（report/ORCL_report.md:515）は同じ最弱リンクを「契約後の価値」とし、報告書内で不一致。wf_result.json:1095 は「FY29 の BB+ 通過と FY30 の FCF 反転の確認後」とし、時期が異なる。"
+  },
+  {
+   "group": "4フェーズ",
+   "item": "再評価期",
+   "value": "差分が市場に織り込まれた後（PEG ≥1.0）",
+   "source": "report/ORCL_report.md:954",
+   "source_note": "報告書 12-4 時系列投資戦略（F8）",
+   "note": "行動: 新しい差分があるか再分析し、なければ縮小する。確認 KPI: 成長の値段、コンセンサスとの差。撤退: エッジの消失。wf_result.json:1095 は「株価が理論株価（276）に近づき新しい差分がなければ縮小」とし、判断基準が異なる。"
+  }
+ ],
+ "missing": [
+  "FCF 黒字化が遅れる場合の発生確率（報告書に記載なし。12-1 表にも 11-1 表にも無い）",
+  "Q2 FY27 決算日（2026-12-09）は未確定。出典は TradingView 分析の要約（Tier 3-4）のみ",
+  "AI World 2026 の Financial Analyst Meeting（説明会）は未告知（wf_result.json:691）。T1b の Analyst Day 2026-10-16 は Tier 4 の言及のみで公式確認なし",
+  "版の不一致: 報告書（2026-10-11 版）は「監視」・目標 $134・入口 $119。wf_result.json（2026-10-16 版、judgment は 1093-1095 行）は「買い検討」・B $276.4・入口 Z2 $241.8。wf_v42.json（2026-10-17 版）の監査も最終判断に「買い検討」を用いる。どちらが最新かは判定していない",
+  "報告書内の不一致: 「ループ R1」の最弱リンクが 12-4（report/ORCL_report.md:953）では OpenAI の支払、5章（report/ORCL_report.md:515）では契約後の価値",
+  "12-4 の本格保有期・再評価期の判断基準（報告書: FCF 改善・PEG ≥1.0）と wf_result.json:1095（FY29 BB+ 通過・FY30 FCF 反転、理論株価 276 接近）が異なる"
+ ]
+}

@@ -1,0 +1,14 @@
+quarter,period_end,announce_date,ocf_q_busd,ocf_ttm_busd,capex_q_busd,capex_ttm_busd,fcf_ttm_busd,fcf_q_busd,sbc_busd,depreciation_busd,dividends_busd,buybacks_busd,source_ids,source_url_primary,note
+Q1 FY24,2023-08-31,2023-09-11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q2 FY24,2023-11-30,2023-12-11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q3 FY24,2024-02-29,2024-03-11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q4 FY24,2024-05-31,2024-06-11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q1 FY25,2024-08-31,2024-09-09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q2 FY25,2024-11-30,2024-12-09,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q3 FY25,2025-02-28,2025-03-10,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q4 FY25,2025-05-31,2025-06-11,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,NA,キャッシュフロー未取得
+Q1 FY26,2025-08-31,2025-09-09,8.140,NA,8.502,NA,NA,-0.362,1.124,1.351,NA,NA,G09;G14,https://www.oracle.com/news/announcement/q1fy26-earnings-release-2025-09-09/,OCF 8.140・Capex 8.502・SBC 1.124・dep 1.351 は FY27 10-Q(G09 T1)の Q1 FY26 比較列。FCF は OCF−Capex の計算値。TTM は FY25 四半期未取得のため NA。
+Q2 FY26,2025-11-30,2025-12-10,2.1,NA,12,NA,NA,-10,1.156,1.704,NA,NA,R15;G10;G09,https://www.oracle.com/news/announcement/q2fy26-earnings-release-2025-12-10/,[H5追記] 10-Q(G10 T1)の6か月累計 OCF 10.206・Capex 20.535・SBC 2.280・dep 3.055 から Q1 比較値(G09)を差し引いた計算値は OCF 2.066・Capex 12.033・FCF −9.967・SBC 1.156・dep 1.704 で、既存の丸め値(2.1・12・-10)と整合。従来の [T3] 注記は T1 派生で置き換えず併記。TTM は NA。
+Q3 FY26,2026-02-28,2026-03-10,7.151,NA,18.635,NA,NA,-11.484,NA,NA,NA,NA,G11;G10;G22,https://www.sec.gov/Archives/edgar/data/1341439/000119312526100148/orcl-ex99_1.htm,OCF 7.151 は 9か月累計 17.357(G11 T1、Q3 決算 8-K の CF 表)から 6か月累計 10.206(G10 T1)を差し引いた計算値。Capex 18.635 は 9か月累計 39.170(G11 T1)から 6か月累計 20.535(G10 T1)を差し引いた計算値で、TTM Capex 75.7 と整合(G09)。OCF 7.15 は vcpscanner(G22 T3)と一致。SBC・dep の Q3 は未取得。TTM は NA。
+Q4 FY26,2026-05-31,2026-06-10,14.620,31.977,16.493,55.663,-23.686,-1.873,NA,NA,NA,NA,G01;G11;G18;G21;G02,https://www.oracle.com/ae/news/announcement/q4fy26-earnings-release-2026-06-10/,OCF 14.620 は FY26 OCF 31.977(G01 T1)から 9か月累計 17.357(G11 T1)を差し引いた計算値。Capex 16.493 は FY26 Capex 55.663(G18 T3、10-K 本文 55.7 と整合)から 9か月累計 39.170(G11 T1)を差し引いた計算値で、TMGM の Q4 Capex 約16.5(G21 T3)と整合。TTM 欄は FY26 通期値(OCF 31.977・Capex 55.663)。FCF TTM −23.686 は計算値で会社発表 −23.7(G02 T1)と整合。SBC・dep の Q4 は未取得。
+Q1 FY27,2026-08-31,2026-09-10,23,46.940,28.5,75.7,-28.7,-5,1.127,3.156,NA,NA,R01;R06;R07;R08;R09;G09,https://www.oracle.com/news/announcement/q1fy27-earnings-release-2026-09-10/,OCF 約23(+184%、一次)。FCF 約-5(一次。二次では -5.4)。Capex・TTM 値は二次 [T3](R07)。ネット Capex 17.96 [T3](R09)。[H5追記] 10-Q(G09 T1)で OCF 23.103・Capex 28.499・FCF 計算値 -5.396 を確認し既存の丸め値と整合。TTM OCF 46.940 は Q2〜Q1 の四半期合計の計算値で、TTM Capex 75.66 と TTM FCF −28.72 も計算値(既存 75.7・−28.7 と整合)。SBC 1.127 と dep 3.156(amort 0.202)は 10-Q(G09 T1)。ATM 増資は総額 US$20B、純額 US$19.9B(約141百万株)で、自社株買いの記載はなし。顧客前払い 11.363 の分類は H5 の md を参照。

@@ -1,0 +1,33 @@
+source,date,fiscal_year,metric,value
+Oracle company guidance (Q1 FY27 release via Benzinga),2026-09-10,FY2027,revenue_guidance_USD_bn,>=90
+Oracle company guidance (Q1 FY27 release via Benzinga),2026-09-10,FY2027,non-GAAP EPS guidance_USD,8.05 (raised)
+Oracle Investor Day summary (secondary; conflicts with 8.05),2026-10-28,FY2027,non-GAAP EPS guidance_USD,8.10
+Oracle Investor Day (PRNewswire/8-K),2026-10-28,FY2030,revenue_target_USD_bn,>=225
+Oracle Investor Day (PRNewswire/8-K),2026-10-28,FY2030,non-GAAP EPS target_USD,>=21
+Oracle Investor Day (PRNewswire/8-K),2026-10-28,FY2030,non-GAAP operating margin target,>=40%
+Chartmill (45 analysts; basis unclear),2026-10-24,FY2027,EPS_USD,8.31
+Zacks (via Yahoo; about 15 days before search; around mid-Oct),2026-10-15 (approx),FY2027,EPS_USD,8.13
+Zacks (via Yahoo; about 72 days before search),2026-08-19 (approx),FY2027,EPS_USD,8.03
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2027,EPS_normalized_USD,8.14
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2028,EPS_normalized_USD,10.99
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2029,EPS_normalized_USD,15.77
+TIKR (three months earlier),2026-07 (approx),FY2027,EPS_normalized_USD,8.05
+TIKR (three months earlier),2026-07 (approx),FY2028,EPS_normalized_USD,10.89
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2027,revenue_USD_bn,90.42
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2028,revenue_USD_bn,131.79
+TIKR (pre-Investor Day; exact date not shown),2026-10 (pre-10-28),FY2029,revenue_USD_bn,183.81
+StockAnalysis (excerpt; FY28/FY29 cells blank),2026-10 (undated),FY2027,EPS_USD,8.14
+StockAnalysis (excerpt; labelled next-year),2026-10 (undated),FY2028,EPS_USD,10.99
+TickFlow,2026-08-01,FY2027,EPS_USD avg (range 7.33-8.32; 23 analysts),7.98
+TickFlow,2026-08-01,FY2028,EPS_USD avg (range 7.36-14.05; 16 analysts),10.78
+TickFlow,2026-08-01,FY2027,revenue_USD_bn avg (range 85.49-89.84; 29 analysts),88.61
+Barchart (date not shown; basis unclear - mismatch with others),undated,FY2027,EPS_USD,6.47
+Barchart (date not shown; basis unclear - mismatch with others),undated,FY2028,EPS_USD,8.78
+Barchart/other (date not shown),undated,FY2028,revenue_USD_bn,130.2
+Unnamed sources (as reported in Zacks-related search),undated,FY2027,revenue_USD_bn,89.66 / 89.789
+Melius Research (single analyst; via secondary),2026-10-29,FY2029,EPS_USD (analyst estimate not consensus),16.76
+Yahoo Finance,not found,FY2027-FY2030,revenue and EPS,not found
+MarketScreener,not found,FY2027-FY2030,revenue and EPS,not found
+TradingView consensus page,not found,FY2027-FY2030,revenue and EPS,not found
+FactSet summary,not found,FY2027-FY2030,revenue and EPS,not found
+Any source,not found,FY2030,consensus revenue and EPS,not found

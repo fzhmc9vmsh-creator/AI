@@ -1,0 +1,639 @@
+{
+ "rows": [
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 Q1 FY26（直近 5 四半期の 1 つ目）",
+   "value": "$3.8B（+11%）",
+   "source": "research4/T3_saas_products.md:39",
+   "source_note": "[T3-01] Tier 1*（会社開示の検索要約経由、原本未読）",
+   "note": "前年同期比。四半期売上は毎期約 $0.1B ずつ増（(算出) 3.8→3.9→4.0→4.1→4.2、T3:47）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 Q2 FY26",
+   "value": "$3.9B（+11%、定率 +11%）",
+   "source": "research4/T3_saas_products.md:40",
+   "source_note": "[T3-06] Tier 1*",
+   "note": "2025-12-10 発表。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 Q3 FY26",
+   "value": "$4.0B（+13%）",
+   "source": "research4/T3_saas_products.md:41",
+   "source_note": "[T3-02] Tier 1*",
+   "note": "定率の記載なし。直近 5 四半期で成長率が最も高い（T3:188）。2026-03-10 発表。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 Q4 FY26",
+   "value": "$4.1B（+10%、定率 +9%）",
+   "source": "research4/T3_saas_products.md:42",
+   "source_note": "[T3-03][T3-05][T3-24] Tier 1*",
+   "note": "為替差 1pt（(算出) USD +10% − 定率 +9%）。2026-06-10 発表。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 Q1 FY27（最新四半期）",
+   "value": "$4.2B（+10%、定率 +10%）",
+   "source": "research4/T3_saas_products.md:43",
+   "source_note": "[T3-04][T3-07] Tier 1*, 3*",
+   "note": "2026-09-10 発表。直近 5 四半期で加速は数値に出ていない（T3:15）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 売上 FY26 通期",
+   "value": "$15.9B（+11%、定率 +10%）",
+   "source": "research4/T3_saas_products.md:45",
+   "source_note": "[T3-03] Tier 1*（Q4 FY26 発表、2026-06-10）",
+   "note": "四半期 4 つの合計は (算出) 3.8+3.9+4.0+4.1 = 15.8。丸めによる 0.1 の差（T3:47）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "Fusion ERP の伸び（USD ベース、Q4 FY25→Q3 FY26）",
+   "value": "+22%→+17%→+18%→+17%（Q4 FY25〜Q3 FY26）",
+   "source": "research4/T3_saas_products.md:38-41",
+   "source_note": "[T3-22][T3-01][T3-06][T3-02] Tier 1*",
+   "note": "Q4 FY25 +22%、Q1 FY26 +17%、Q2 FY26 +18%、Q3 FY26 +17%（cc +14%）。Q3 FY25 は +16%（T3:37）。Q1 FY27 は欠損（T3:43）。既存 H1 の Q1 FY27 値 $1.1B（+17%）は Q3 FY26 の値と一致（T3:202）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "Fusion Back-Office（Q4 FY26、区分変更の可能性）",
+   "value": "$1.5B、+12%（スライド文字列）",
+   "source": "research4/T3_saas_products.md:42",
+   "source_note": "[T3-03][T3-05][T3-24] Tier 1*（Q4 スライドは文字化け）",
+   "note": "以前の Fusion Cloud ERP（$1.0〜1.1B）と区分が違う可能性（食い違い 2、T3:203）。文字化けのため未確認。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "Fusion ERP（Q1 FY27）",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:43",
+   "source_note": "[T3-04][T3-07] Tier 1*, 3*",
+   "note": "説明会要約の『Fusion +14%』は既存 R2 の再掲で未確認（T3:43）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "NetSuite の伸び（Q4 FY25→Q3 FY26、Q4 FY26 はスライド）",
+   "value": "+18%→+16%→+13%→+14%→+9%（Q4 FY26）",
+   "source": "research4/T3_saas_products.md:38-42",
+   "source_note": "[T3-22][T3-01][T3-06][T3-02][T3-03] Tier 1*（Q4 FY26 の +9% はスライド文字列）",
+   "note": "各期 USD ベース。Q3 FY26 の cc は +11%（T3:41）。Q1 FY27 は欠損（説明会で『他の SaaS より成長が鈍い』との言及のみ、T3:43）。Q4 FY26 の事前予想は『ミドル〜ハイティーン』（Tier 4、T3:204）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "SaaS 繰延収益の伸び（Q4 FY26）",
+   "value": "+16%（前年比、売上 +10% より高い）",
+   "source": "research4/T3_saas_products.md:59",
+   "source_note": "[T3-05] Tier 1*（Yahoo / Investing.com の書き起こし要約）",
+   "note": "説明会の要約 1 件のみ。第二の確認は取れず（T3:60）。アプリ別の RPO・受注は欠損（T3:62）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "FAM（2025-10-16）FY30 総売上目標",
+   "value": "$225B",
+   "source": "research4/T3_saas_products.md:110",
+   "source_note": "[T3-13] Tier 3*（Reuters 配信、CreditSights）",
+   "note": "経営陣の FY30 目標。非 GAAP EPS $21 の記載は research2/R4_database_at.md:124、同行にアナリスト予想は売上 $198.4B。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "FAM FY30 OCI（クラウドインフラ）売上目標",
+   "value": "$166B（報道では総売上の約 75%）",
+   "source": "research4/T3_saas_products.md:110",
+   "source_note": "[T3-13] Tier 3*",
+   "note": "(算出) OCI 以外 = 225 − 166 = $59B。OCI の割合 = 166 ÷ 225 = 約 74%（T3:111）。報道の 75% と算出の 74% は差がある。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "FAM FY30 EPS 目標",
+   "value": "$21",
+   "source": "research4/T3_saas_products.md:110",
+   "source_note": "[T3-13] Tier 3*",
+   "note": "T3 は GAAP・非 GAAP の区別を明記せず。research2/R4_database_at.md:124 は『非 GAAP EPS $21』と記載。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "FAM FY30 SaaS（アプリ）売上目標",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:112",
+   "source_note": "[T3-13][T3-14] Tier 3*",
+   "note": "CreditSights 要約は『アプリのスイートが競争力を支える』とのみ。数値なし（T3:112）。"
+  },
+  {
+   "group": "SaaS 実績",
+   "item": "FY27 ガイダンス（SaaS 単独）",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:116",
+   "source_note": "[T3-04][T3-23] Tier 1*, 3*",
+   "note": "総売上は $90B 以上（+34% 超）、非 GAAP EPS $8.10、設備投資 $90〜95B（同行）。SaaS 単独の数字は取れず。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "旧来 ERP 購入顧客数（EBS・JD Edwards・PeopleSoft）",
+   "value": "8,500 社",
+   "source": "research4/T3_saas_products.md:124",
+   "source_note": "[T3-15] Tier 3*（時点不明のため 3* の扱い）",
+   "note": "発言者: 『CEO』とのみ（決算説明会での発言とされるが個人名は要約に無し）。時点: 不明、古い可能性（T3:211 は『時点は欠損』）。出典の確度: 検索要約のみ、逐語未確認。同じ検索結果に diginomica 2018-06-07 の記事があるが引用元かは未確認（T3:266）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Fusion ERP へ移行済みの顧客数（旧来 ERP から）",
+   "value": "約 1,000 社",
+   "source": "research4/T3_saas_products.md:124",
+   "source_note": "[T3-15] Tier 3*（時点不明）",
+   "note": "発言者・時点・確度は上の行と同じ（T3:21 も『CEO 発言、時点不明』）。(算出) 移行済み比 1,000 ÷ 8,500 = 約 11.8%（時点が揃わないため参考値）。現在値としては使えない（T3:211）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "旧来 ERP の見込み客（残り）",
+   "value": "7,500 社（有力な見込み客）",
+   "source": "research4/T3_saas_products.md:124",
+   "source_note": "[T3-15] Tier 3*",
+   "note": "原文の記載（(算出) 8,500 − 1,000 = 7,500 と一致）。時点は上と同じく不明。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Fusion の本番稼働（go-live）顧客（Q4 FY26）",
+   "value": "300 超の顧客が稼働開始",
+   "source": "research4/T3_saas_products.md:61",
+   "source_note": "[T3-05] Tier 1*（要約、文面が崩れている）",
+   "note": "Fusion 単独の数字とされる。旧来 ERP からの移行社数かどうかは未確認。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Software 売上（オンプレ系、会社は『クラウド移行』と説明）",
+   "value": "Q4 FY26 $6.8B（−2%）、Q1 FY27 $5.55B（−3%）",
+   "source": "research4/T3_saas_products.md:127",
+   "source_note": "[T3-03] Tier 1*、[T3-04] Tier 3*（Verdict）",
+   "note": "会社は『顧客がオンプレソフトからクラウドへ移行しているため』と説明（T3:127）。Q1 FY27 は T3:128。FY26 の Software は $24,541M で小幅減（T3:129、Tier 3*）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "AI Agent Studio（2025-03-20 発表）の課金",
+   "value": "追加費用なし（会社の説明）",
+   "source": "research4/T3_saas_products.md:73",
+   "source_note": "[T3-08] Tier 1*",
+   "note": "Fusion に組込みのエージェント 50 超（発表時）、複数の LLM を選べる（T3:73）。AI World（2025 年、日付未確認）では組込みエージェント 600 超（Fusion 400、業種別 200、T3:74）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "供給網エージェント（2026-02-10 発表）の課金",
+   "value": "既存顧客に追加費用なし",
+   "source": "research4/T3_saas_products.md:75",
+   "source_note": "[T3-11] Tier 1*",
+   "note": "Oracle AI Agent Studio で構築、OCI 上で稼働（T3:75）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Fusion AI の課金（第三者の解説）",
+   "value": "プール残高から 1 単位 1 セントの従量（席課金なし）",
+   "source": "research4/T3_saas_products.md:87",
+   "source_note": "[T3-21] Redress Compliance 解説記事 Tier 4*",
+   "note": "Oracle の『追加費用なし』（T3:73、T3:75）と食い違う。対象エージェントや時期の違いの可能性（食い違い 4、T3:205）、未解決。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Fusion Agentic Applications（2026-03〜04 発表）の価格・課金",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:88",
+   "source_note": "[T3-11] Tier 1*",
+   "note": "発表日は 2026-03-24、CX 版は 2026-04-09（T3:76-77）。発表要約に価格の記載なし。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "AI エージェントの本番稼働数『2,300 超』",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:80",
+   "source_note": "[T3-08][T3-10] 検索 2 回、出典なし",
+   "note": "T3 では出典を特定できず。別の検索（research3/W6_database_at.md:154）では『本番稼働 2,300 超、前期比 +90%』が Q1 FY27 説明会の複数の本文サイトで一致（Tier 3*）。エージェントの種類（DB 内かアプリか）は未確認。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Gartner: エージェント型 AI ソフトの支出（2030 年）",
+   "value": "$985B（2030 年）、CAGR 62.7%（2025〜30 年）",
+   "source": "research4/T3_saas_products.md:154",
+   "source_note": "[T3-18] Tier 1*（Gartner 文書 7455226、2026-02-17 公開の抄録）",
+   "note": "抄録のみ。本文は有料で未読（T3:154）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "同 2025 年の水準（算出）",
+   "value": "約 $86B（算出）",
+   "source": "research4/T3_saas_products.md:155",
+   "source_note": "[T3-18] Tier 1*（元の計算、T3:155）",
+   "note": "式: 985 ÷ 1.627^5 ≈ 86.4（算出）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "同 2026 年の推定（算出）",
+   "value": "約 $141B（算出）",
+   "source": "research4/T3_saas_products.md:155",
+   "source_note": "[T3-18] Tier 1*（元の計算、T3:155）",
+   "note": "式: 86.4 × 1.627 ≈ 140.6（算出）。ブログの『2026 年 $201.9B』（T3:157）とは合わず未解決（T3:208）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Gartner: 供給網管理ソフト（エージェント AI 付き）",
+   "value": "2025 年 $2B 未満 → 2030 年 $53B",
+   "source": "research4/T3_saas_products.md:156",
+   "source_note": "[T3-18] Tier 1*（Gartner プレスリリース 2026-04-07）",
+   "note": "(算出) 年平均成長率 = (53 ÷ 2)^(1/5) − 1 ≈ 93%。2025 年を $2B と置いた上限的な値（T3:156）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "ブログ記載の 2026 年支出（企業ソフト組込み含む）",
+   "value": "$201.9B（Gartner 本体では未確認）",
+   "source": "research4/T3_saas_products.md:157",
+   "source_note": "[T3-18] Tier 4*（Software Strategies Blog）",
+   "note": "スタンドアロン市場は約 $7〜8.5B との別の推計（同行）。Gartner の成長率からの逆算（約 $141B）と合わない（T3:208）。別のブログは 2030 年 $1T 超（T3:208）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "IDC・Forrester・McKinsey のエージェント型ソフト支出予測",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:159",
+   "source_note": "検索で未取得（該当 Tier なし）",
+   "note": "IDC は検索数の上限のため未着手（T3:159、T3:239）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "SAP（2026 Q2、2026-07-23 発表）",
+   "value": "クラウド売上 +22%（cc +24%）、クラウド受注残 €22.9B（+27%）",
+   "source": "research4/T3_saas_products.md:141",
+   "source_note": "[T3-16] Tier 1*, 3*（SAP 発表、検索要約経由）",
+   "note": "Cloud ERP Suite +25%（cc +27%）。受注残の伸びとクラウド売上の伸びの差は 5pt（(算出) 27 − 22、T3:186）。定義・対象範囲は会社ごとに違う（T3:146）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "ServiceNow（2026 Q2、2026-07-22 発表）",
+   "value": "購読売上 +24.5%（cc +23%）、cRPO $13.20B（+21%）",
+   "source": "research4/T3_saas_products.md:143",
+   "source_note": "[T3-19] Tier 1*, 3*（SEC 8-K、247wallst）",
+   "note": "別の報道では総売上 $3.99B（+24%）。株価は 2026 年初来 −38%（247wallst の見出し、T3:143、T3:148）。cRPO の伸びは購読売上より小さい（(算出) cc 21.5 対 23、T3:143）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Workday（FY27 Q2、2026-08-27 発表）",
+   "value": "購読売上 +13.9%（総売上 +12.8%）",
+   "source": "research4/T3_saas_products.md:142",
+   "source_note": "[T3-17] Tier 1*, 3*（Workday 発表）",
+   "note": "FY27 購読売上ガイダンス $9.940〜9.950B（約 +13%）。席課金の変更への言及は見つからず（T3:142）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Salesforce（FY27 Q2、2026-08-26 発表）",
+   "value": "売上 +11%（USD・cc とも）、cRPO +14%（cc）",
+   "source": "research4/T3_saas_products.md:144",
+   "source_note": "[T3-20] Tier 1*, 3*（Salesforce 発表）",
+   "note": "売上 $11.3B は Informatica の寄与 $456M を含む。有機成長率は前年同期の売上が取れず算出不能（T3:144）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Oracle SaaS（比較用、Q1 FY27）",
+   "value": "+10%（cc +10%）",
+   "source": "research4/T3_saas_products.md:43",
+   "source_note": "[T3-04] Tier 1*",
+   "note": "T3:146 は『Oracle SaaS +10% は SAP・ServiceNow・Workday より低く、Salesforce（+11%）とほぼ同水準』と並置。対象範囲の違いで同条件ではない（T3:146）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "反証: SaaSpocalypse（2026-02 初め、席課金への懸念）",
+   "value": "2026-02 初め、software 株が急落",
+   "source": "research4/T3_saas_products.md:167",
+   "source_note": "[T3-21] Tier 3*, 4*（Forbes 2026-02-06 ほか）",
+   "note": "ある出典は 2026-02-03 に 1 日でセクターが 13% 下落と記述。下落額は $285B と約 $1T、IGV 年初来 −23% と出典により食い違い（未検証、T3:209）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "反証（懸念側の論拠）: 席の購入数の減少",
+   "value": "AI で 1 人が複数人分を処理し、席の購入数が減る",
+   "source": "research4/T3_saas_products.md:168",
+   "source_note": "[T3-21] Tier 3*（Forbes）",
+   "note": "懸念側の論拠として記載された内容（T3:168）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "反証（反論）: BofA・Goldman の見方",
+   "value": "BofA『売り込みは過剰』、Goldman『センチメントの急変』",
+   "source": "research4/T3_saas_products.md:169",
+   "source_note": "[T3-21] Tier 3*",
+   "note": "席の価値は残る（Salesforce・Slack・Microsoft 365 等のツール経由で動くため。Dave Michels、T3:169）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "反証: 席課金の採用率（Forrester 調査、ブログ経由）",
+   "value": "席課金の採用率 21%→15%（12 か月）",
+   "source": "research4/T3_saas_products.md:170",
+   "source_note": "[T3-21] Tier 4*（ブログ経由、出典未検証）",
+   "note": "Goldman はこの移行を『Results-as-a-Service』と呼ぶ（T3:170）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Oracle の収益のうち席連動の割合",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:172",
+   "source_note": "既存 R2（research2/R2_products_5w1h.md）、Tier 4",
+   "note": "HCM は従業員数×月額、ERP はユーザー×月額の価格体系（既存 R2、助言会社のブログ）。会社の開示で席連動の割合は取れず（T3:172）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "Oracle のアプリへの席圧縮の影響を分析した調査",
+   "value": "欠損",
+   "source": "research4/T3_saas_products.md:173",
+   "source_note": "[T3-21] 検索 1 回、Tier 該当なし",
+   "note": "見つからず（T3:173、T3:240）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "反証: SaaS の YoY 成長の推移（直近 5 四半期）",
+   "value": "+11%→+11%→+13%→+10%→+10%（加速していない）",
+   "source": "research4/T3_saas_products.md:188",
+   "source_note": "[T3-01]〜[T3-07] Tier 1*（T3:39-43 の再掲）",
+   "note": "T3 は『加速していない』と整理（T3:188）。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "経営陣の発言（Q4 FY26、アプリの成長）",
+   "value": "『$4.1B の四半期で 2 桁成長はアプリとして悪くない』",
+   "source": "research4/T3_saas_products.md:105",
+   "source_note": "[T3-05] Tier 3*（erp.today、Sicilia の要約）",
+   "note": "アプリの加速を明示した発言は見つからず（T3:109、T3:190）。Q1 FY27 の『Fusion と業種別アプリは 10% を大きく上回る』（説明会要約、T3:106、Tier 3*）も逐語未確認。"
+  },
+  {
+   "group": "SaaS 製品特性",
+   "item": "2024 年の見通し（SaaS 成長）",
+   "value": "『low-to-mid teens の SaaS 成長』（古い見通し）",
+   "source": "research4/T3_saas_products.md:108",
+   "source_note": "[T3-14] Tier 3*（出典特定は未確認）",
+   "note": "実績は 10% 前後（T3:192）。古い見通しとして扱う。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q1 FY26、前年同期比）",
+   "value": "+1,529%（前年同期比）",
+   "source": "research2/R4_database_at.md:29",
+   "source_note": "[R4-01] Oracle Q1 FY26 決算プレスリリース T1*（検索要約経由）",
+   "note": "倍率 16.29 は (算出) 1 + 15.29（R4:29）。FAM 資料は『MultiCloud Consumption Growth』と表記し、売上か消費量か不明（R4:157、research3/W6_database_at.md:72）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q2 FY26）",
+   "value": "+817%（前年同期比）",
+   "source": "research2/R4_database_at.md:30",
+   "source_note": "[R4-02] Oracle Q2 FY26 決算プレスリリース T1*",
+   "note": "W6 の要約は『consumption（消費量）+817%』と表記（research3/W6_database_at.md:73）。売上か消費量かは未確定。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q3 FY26）",
+   "value": "+531%（前年同期比）",
+   "source": "research2/R4_database_at.md:31",
+   "source_note": "[R4-03] Oracle Q3 FY26 決算プレスリリース・8-K T1*",
+   "note": "同四半期の Oracle Cloud Database（IaaS）は +35%（R4:31）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q4 FY26）",
+   "value": "+404%（前年同期比）",
+   "source": "research2/R4_database_at.md:32",
+   "source_note": "[R4-05] Oracle Q4 FY26 決算プレスリリース T1*",
+   "note": "指標名は『Multicloud AI Database』に変わっている（R4:32）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q1 FY27、最新）",
+   "value": "+353%（前年同期比）",
+   "source": "research2/R4_database_at.md:33",
+   "source_note": "[R4-06] 説明会要約 Tier 3（複数サイトで一致、逐語未読）",
+   "note": "同じ要約に顧客数 +180%（R4:33）。直近 4 四半期の逓減: +1,529 → +817 → +531 → +404 → +353（R4:36）。既存 H1 の +531% は Q3 FY26 の値（R4:150）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB 売上の伸び（Q4 FY25、前期比）",
+   "value": "+115%（前期比、Q3→Q4）",
+   "source": "research3/W6_database_at.md:71",
+   "source_note": "[W6-07] Tier 3*（Constellation、Futurum、Barchart、Nasdaq、Zacks の要約で一致）",
+   "note": "前年比ではなく前期比。R4 では出典不明で未採用（R4:189）だったが、W6 で 5 本の要約が一致（W6:284）。稼働 23 DC と今後 12 か月で 47 追加（W6:71）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド顧客数の伸び（Q1 FY27、前年同期比）",
+   "value": "+180%",
+   "source": "research2/R4_database_at.md:33",
+   "source_note": "[R4-06] 説明会要約 Tier 3*",
+   "note": "W6 でも複数の説明会本文サイトで一致（research3/W6_database_at.md:76）。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド顧客数の絶対数",
+   "value": "欠損",
+   "source": "research2/R4_database_at.md:38",
+   "source_note": "[R4-06] Tier 3*（伸びのみ）",
+   "note": "顧客名の開示も確認できず（R4:38）。W6 でも絶対数は欠損（research3/W6_database_at.md:130）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Database@Azure の稼働リージョン",
+   "value": "33（2026-02 末）、2025 年末レビューでは 34",
+   "source": "research2/R4_database_at.md:48",
+   "source_note": "[R4-04] Oracle CEO ブログ（Q3 FY26）T1*",
+   "note": "Microsoft 側（2026-01）は 31 または『30 超』（R4:46）。Oracle の一覧は 33 件（R4:47、(算出) researcher の数え上げ）。2025 年末レビューは 14→34（research3/W6_database_at.md:93）。33 と 34 が併存（W6:98）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Database@Google Cloud の稼働リージョン",
+   "value": "14（2026-02 末）",
+   "source": "research2/R4_database_at.md:48",
+   "source_note": "[R4-04] Oracle CEO ブログ T1*",
+   "note": "DCD（日付不明）は約 15（+2 予定、R4:50）。2026 年前半に Osaka・Delhi・London・Milan を追加（research3/W6_database_at.md:94）。GA 時（2024-09）は 4 リージョン（R4:52）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Database@AWS の稼働リージョン（推移）",
+   "value": "8（2026-02 末）→20（2026-05-29）→22（2026-08-13）",
+   "source": "research2/R4_database_at.md:48",
+   "source_note": "[R4-04] Oracle CEO ブログ T1*（2026-02 末）、既存 R2 [W24] AWS 発表 T1*（2026-05-29）、[W6-03] Oracle・AWS 共同発表 T1*（2026-08-13）",
+   "note": "Q4 末の目標は 22（R4:48）。AWS 発表では 2026-02 に 7、2026-04 に 12（R4:49）。2026-08-13 の共同発表で 22 リージョン（research3/W6_database_at.md:96）。"
+  },
+  {
+   "group": "Database@",
+   "item": "3 社合計リージョン（Q3 FY26 末）",
+   "value": "55（算出）",
+   "source": "research2/R4_database_at.md:48",
+   "source_note": "R4 の計算を写す（Tier 該当なし）",
+   "note": "(算出) 33 + 14 + 8 = 55（R4:48）。Q2 FY26 はライブ 45＋計画 27（R4:45、1 社の要約）。(算出) Q3 末 55 → Q1 FY27 70 で +27%（R4:54）。"
+  },
+  {
+   "group": "Database@",
+   "item": "合計リージョン（Q1 FY27 時点）",
+   "value": "70 リージョン・119 AZ",
+   "source": "research2/R4_database_at.md:51",
+   "source_note": "[R4-06] 説明会要約 Tier 3（単一系統）",
+   "note": "Azure と AWS の計画拡張は完了（R4:51）。内訳は未確認。突き合わせ: 34+14+22=70、33+15+22=70、33+14+22=69（research3/W6_database_at.md:98）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Database@Azure の価格・請求（MACC 充当）",
+   "value": "Azure 経由で請求、MACC に算入可。価格は OCI と同じ",
+   "source": "research2/R4_database_at.md:75",
+   "source_note": "[R4-18] Microsoft Learn T1*（提携先）、[R4-19] Oracle ドキュメント T1*",
+   "note": "Oracle が Azure Marketplace に Private Offer を作成して提示（R4:73）。『価格は OCI 上の Exadata Database Service と同じ』（R4:73）。MACC の適格性は顧客ごとに確認が必要（R4:75）。Google Cloud 側の確約支出への算入は未確認（R4:75）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Database@AWS の価格・請求（AWS コミット充当）",
+   "value": "AWS 経由で請求、AWS コミットに算入。価格は契約期間・支出コミット・配備台数で決まる",
+   "source": "research2/R4_database_at.md:74",
+   "source_note": "[R4-20] Oracle ドキュメント T1*、[R4-21] AWS ドキュメント T1*（提携先）",
+   "note": "AWS Marketplace の単一請求書。顧客が Private Offer を承諾（R4:74）。AWS のコミットと Oracle Support Rewards に算入（research3/W6_database_at.md:114）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Oracle と各ハイパースケーラーの収益配分",
+   "value": "欠損",
+   "source": "research2/R4_database_at.md:76",
+   "source_note": "検索 2 回で未取得（Tier 該当なし）",
+   "note": "総額計上か純額計上か、ハイパースケーラーへの手数料やコロケーション費用の有無は未確認（R4:76）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Exadata の運用・設置場所",
+   "value": "運用は OCI。ハイパースケーラーの DC 内に置かれる",
+   "source": "research2/R4_database_at.md:77",
+   "source_note": "[R4-21] AWS T1*、[R4-19] Oracle T1*",
+   "note": "機器の会計上の所有者、土地・建物・電力・冷却の負担は未確認（R4:77）。『Oracle が機器を調達・設置』は Ellison の発言からの解釈（R4:77）。"
+  },
+  {
+   "group": "Database@",
+   "item": "AWS との長期協業契約の拡大（2026-08-13）",
+   "value": "拡大した長期の戦略的協業契約。財務条件は非開示",
+   "source": "research3/W6_database_at.md:113",
+   "source_note": "[W6-03] Oracle・Amazon 共同発表 T1*、T3*",
+   "note": "Exadata Database Service on Exascale Infrastructure が一般提供（従量課金）（W6:113）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Oracle Support Rewards（移行時の値引き）",
+   "value": "OCI 利用 $1 につき 25 セント以上を保守料から値引き",
+   "source": "research2/R4_database_at.md:82",
+   "source_note": "[R4-23] TechTarget T3（日付不明）、[W6-11] Oracle 移行ページ T1*",
+   "note": "年間保守料は基本ライセンス費用の 22%（R4:82）。W6 は『$1 使うごとに保守料が $0.25 減り、ゼロまで下がり得る』（research3/W6_database_at.md:40）。2026 年の現行条件は未確認。"
+  },
+  {
+   "group": "Database@",
+   "item": "マルチクラウド DB の年換算売上",
+   "value": "欠損",
+   "source": "research2/R4_database_at.md:61",
+   "source_note": "会社は未開示（Tier 該当なし）",
+   "note": "会社は成長率と顧客数の伸びだけ開示（R4:61）。Ellison は成長の大半が Azure だと述べた（R4:62）。内訳（Azure・Google・AWS）も欠損（R4:62）。"
+  },
+  {
+   "group": "Database@",
+   "item": "クラウド DB 全体の年換算売上（参考）",
+   "value": "約 $2.6B（クラウド DB 全体、マルチクラウド単独ではない）",
+   "source": "research2/R4_database_at.md:63",
+   "source_note": "[R4-08] io-fund T3（日付不明）、既存 S4",
+   "note": "どの Q4 かは要約に出ず（R4:63）。既存 S4 の Q1 FY26 クラウド・データベース・サービスは +32%、年換算 約 $2.8B（R4:63、research3/W6_database_at.md:83）。"
+  },
+  {
+   "group": "Database@",
+   "item": "FAM の DB 売上の基数（FY25 と FY26）",
+   "value": "FY25 $2.4B、FY26 $3B",
+   "source": "research2/R4_database_at.md:64",
+   "source_note": "[R4-09] Cloud Computing News T3",
+   "note": "『AI データベースと AI データ・プラットフォーム』の売上と報じられる。マルチクラウドを含むか未確認。FY26 の $3B は 1 社のみで、会社目標か推定か不明（R4:64）。"
+  },
+  {
+   "group": "Database@",
+   "item": "FAM の FY30 DB 売上目標",
+   "value": "$20B（FY25 $2.4B 起点、年平均 約 53%（算出））",
+   "source": "research2/R4_database_at.md:65",
+   "source_note": "[R4-12] CreditSights T3、[R4-09] T3",
+   "note": "(算出) (20 ÷ 2.4)^(1/5) − 1 = 52.8%（R4:65）。FY26 の $3B を起点にすると (20 ÷ 3)^(1/4) − 1 = 60.7%（算出）。内訳は欠損（research3/W6_database_at.md:163）。範囲（DB 事業か AI DB と AI データ・プラットフォームか）は未確認（R4:158）。"
+  },
+  {
+   "group": "Database@",
+   "item": "移行倍率: Q2 FY24 の発言（Ellison とされる）",
+   "value": "オンプレ DB を OCI へ移すと売上 3 倍（未確認）",
+   "source": "research3/W6_database_at.md:36",
+   "source_note": "[W6-09] Tier 3*（要約。逐語は T1* の候補）",
+   "note": "要約は『将来の見込み』と表記（W6:36）。別の検索（本文抜粋）では確認できず、extended 検索 1 件のみ（W6:36、W6:214）。逐語未確認のため採用不可（W6:214）。"
+  },
+  {
+   "group": "Database@",
+   "item": "移行倍率: Q2 FY26 の発言（経営陣、話者不明）",
+   "value": "サポート売上比 年間売上 3〜5 倍（未確認）",
+   "source": "research3/W6_database_at.md:37",
+   "source_note": "[W6-10] Tier 3*（extended 検索 1 件のみ）",
+   "note": "話者の特定なし。同じ語の再検索で再現できず（W6:37）。対象（DB のみか全製品か）、総額か純増かも不明（W6:60）。"
+  },
+  {
+   "group": "Database@",
+   "item": "移行後の顧客 1 社あたり売上の倍率（確定値）",
+   "value": "欠損",
+   "source": "research2/R4_database_at.md:81",
+   "source_note": "R4 の検索 2 回、Tier 該当なし",
+   "note": "上の 3 倍・3〜5 倍は未確認の候補（research3/W6_database_at.md:214）。R4 の欠損は W6 で『候補あり・逐語未確認』に変わった（W6:288）。"
+  },
+  {
+   "group": "Database@",
+   "item": "10-K: 移行による年換算クラウド売上の増加（FY25 10-K、FY23〜FY25）",
+   "value": "+$4.3B",
+   "source": "research3/W6_database_at.md:48",
+   "source_note": "[W6-11] / [R4-30] FY2025 10-K T1*（検索要約経由）",
+   "note": "対象はライセンス・サポート契約顧客のクラウド移行（W6:48）。置き換わったサポート売上は含まない（R4:96）。"
+  },
+  {
+   "group": "Database@",
+   "item": "10-K: 移行による年換算クラウド売上の増加（FY26 10-K、FY24〜FY26）",
+   "value": "+$5.4B",
+   "source": "research3/W6_database_at.md:49",
+   "source_note": "[W6-11] FY2026 10-K T1*（検索要約経由、本文未読）",
+   "note": "対象は『ソフトウェア・サポート』契約顧客（W6:49）。FY25 比で +$1.1B、+25.6%（(算出) 5.4 − 4.3、5.4 ÷ 4.3 − 1、W6:50）。窓が 1 年ずれ、用語も異なる（W6:216）。"
+  },
+  {
+   "group": "Database@",
+   "item": "移行元サポート売上の逆算（算出・仮定）",
+   "value": "$1.8B（m=3 と仮定）／$1.08B（m=5 と仮定）（算出）",
+   "source": "research3/W6_database_at.md:58",
+   "source_note": "W6 の計算を写す（Tier 該当なし）",
+   "note": "式: 5.4 ÷ m（m は倍率、未確認の仮定値）（W6:58-59）。$5.4B は DB 以外のソフトの移行を含む可能性（W6:60）。"
+  },
+  {
+   "group": "Database@",
+   "item": "Support Rewards 込みの支払い合計（算出・仮定）",
+   "value": "m=3 で 3.25S、m=4 で 4.00S、m=5 で 5.00S（算出）",
+   "source": "research3/W6_database_at.md:61",
+   "source_note": "W6 の式を写す（Tier 該当なし）",
+   "note": "S = 年間サポート料、m = OCI 支出 ÷ S。式: m×S + max(0, S − 0.25×m×S)（W6:61）。控除の上限と 2026 年の現行条件は未確認（W6:61）。"
+  }
+ ],
+ "missing": [
+  "SaaS: Q1 FY27 の Fusion ERP・NetSuite の公式値（T3:43）",
+  "SaaS: Fusion HCM・SCM・CX の四半期別成長（T3:55）",
+  "SaaS: アプリ別の RPO・受注（T3:62）",
+  "SaaS: Oracle Health の売上・成長率（T3:57）",
+  "SaaS: FAM のアプリ（SaaS）売上目標（T3:112）",
+  "SaaS: SaaS 単独の FY27 ガイダンス（T3:116）",
+  "SaaS: 「アプリの成長が加速する」旨の経営陣の逐語発言（T3:109）",
+  "SaaS: 旧来 ERP 顧客数（8,500 社・1,000 社）の時点と発言者の特定（T3:211）",
+  "SaaS: 移行後の顧客 1 社あたり売上の倍率（T3:130）",
+  "SaaS: Fusion Agentic Applications の価格・課金方式（T3:88）",
+  "SaaS: 本番稼働 2,300 超のエージェントの出典（T3 では未確認、T3:80）",
+  "SaaS: IDC・Forrester・McKinsey のエージェント型ソフト支出予測（T3:159）",
+  "SaaS: Oracle のアプリへの席圧縮の影響分析（T3:173）",
+  "SaaS: Oracle の収益のうち席連動の割合（T3:172）",
+  "SaaS: AI Data Platform（Enterprise Ontology）の顧客・稼働（T3:95）",
+  "Database@: マルチクラウド DB の売上の絶対額・年換算額（R4:61）",
+  "Database@: マルチクラウド DB 売上の Azure・Google・AWS の内訳（R4:62）",
+  "Database@: マルチクラウド顧客数の絶対数（R4:38）",
+  "Database@: Oracle と各ハイパースケーラーの収益配分・総額/純額計上（R4:76）",
+  "Database@: 移行倍率（3 倍・3〜5 倍）の逐語確認（W6:214）",
+  "Database@: 移行後の顧客 1 社あたり売上の確定倍率（R4:81）",
+  "Database@: Google Cloud の確約支出への算入（R4:75）",
+  "Database@: DB 顧客総数・Exadata 台数・クラウド移行率（R4:92、R4:93）",
+  "Database@: FAM の FY30 DB 目標（$20B）の内訳（W6:163）",
+  "Database@: マルチクラウド DB の TAM（R4:127）"
+ ]
+}

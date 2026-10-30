@@ -1,0 +1,144 @@
+name,metric,value,date,source
+S&P 500,予想PER(12か月先) 2026-09-30時点,19,2026-09-30,Tier3 | FT Portfolios 'Market Minute - October 2026' | https://www.ftportfolios.com/Commentary/Insights/2026/10/5/market-minute---october-2026 | 掲載2026-10-05 | 'almost 19x' との表現 | FactSet帰属は記事に明記なし(検索要約)
+S&P 500,予想PER(12か月先) FactSet,22.1,2026-01(データ時点),Tier3 | Yahoo Finance 'stock market crash 2026 fed' (FactSet引用) | https://finance.yahoo.com/news/stock-market-crash-2026-fed-090000556.html | 掲載日不明 | 9月以前の値のため参考
+S&P 500,予想PER 10年平均 FactSet,18.8,2026-01(データ時点),同上 Yahoo Finance (FactSet引用) | 掲載日不明
+S&P 500,予想PER 10年平均 FactSet(旧版),17.8,2024(掲載),Tier3 | Motley Fool (FactSet引用) | URL特定不可(検索要約) | 古いため参考のみ
+S&P 500,年末2026 予想PER(Yardeni前提),18.6,2026-09-16,Tier3 | Advisor Perspectives (Yardeni Research引用) | https://www.advisorperspectives.com/articles/2026/09/16/stocks-bull-yardeni-cuts-s-p-500-7-900-downturn-risks | 前回19.8から引下げ | 目標値の前提であり実績ではない
+S&P 500,2027年EPS推計(Yardeni),425,2026-09-16,同上 Advisor Perspectives | 据え置き
+S&P 500,"年末目標7,900 / 2027EPS 425 による検算",18.6,2026-09-16,(算出) 7900/425 = 18.59 | 上記Yardeni記事の数値から検算。Yardeni記載の18.6と一致
+S&P 500,"EPS成長 2026年上期 累計(YoY, %)",39,2026-10-05(記事),Tier3 | FT Portfolios 同上 | 原文 'earnings grew a combined 39% year-over-year over the first two quarters'(検索要約) | 単一出典・定義要確認
+S&P 500,"EPS成長 2026年下期 見込み(YoY, %)",26,2026-10-05(記事),Tier3 | FT Portfolios 同上 | 原文 '26% growth expected for the second half'(検索要約) | 単一出典・定義要確認
+S&P 500,予想EPS成長率 今期・来期・3-5年,NA,未取得,2027年EPS $425(Yardeni)のみ。2026年EPSの基準値なし、3-5年CAGR未取得
+Nasdaq-100,予想PER(NTM) 2026-01-01,27.44,2026-01-01,Tier3 | Siblis Research 'nasdaq 100 pe ratio' | https://siblisresearch.com/data/nasdaq-100-pe-ratio/ | 掲載日不明(データ日付2026-01-01) | 2026-09の値は未取得
+Nasdaq-100,予想PER(NTM) 2025-09-30,28.09,2025-09-30,同上 Siblis Research
+Nasdaq-100,予想EPS(NTM) 2026-01-01,214.27,2026-01-01,同上 Siblis Research | 2025年末 trailing EPS 181.93
+Nasdaq-100,"EPS成長 trailing(2025末)→予想(NTM) (算出, %)",17.8,2026-01-01,(算出) 214.27/181.93-1 = 17.8% | 同上 Siblis | 一般的な成長率予想ではなく trailing との比較
+Nasdaq-100,予想PER 保有銘柄加重(QQQM 参考),21.5,掲載日不明,Tier3 | Trefis QQQM | https://www.trefis.com/data/etfs/qqqm | 別手法(12か月 to 2027-08-31 基準) | 同ページ別値 22.1
+Nasdaq-100,"予想EPS成長 保有銘柄加重(QQQM 参考, %)",13.0,掲載日不明,同上 Trefis | 同ページ別値 23.7% | 2つの値が混在し定義不統一
+Nasdaq-100,予想PER 2026-09 / 10年平均,NA,未取得,2026-09の予想PER、10年平均ともに未取得(検索 'Nasdaq-100 forward P/E September 2026' 等)
+TOPIX,予想PER(12か月先) 2026-07-31頃,17台(数値は記事に未記載),2026-07-31,"Tier3 | 野村証券 市場戦略レポート(検索要約) | URL特定不可(候補 https://www.nomura.co.jp/wealthstyle/article/0833/) | 過去レンジ上方 | 16倍前後で4,800前後が視野(同レポート)"
+TOPIX,予想PER 2026-08-12頃,17台(数値は記事に未記載),2026-08-12,Tier3 | 野村証券 解説(検索要約) | URL特定不可 | EPS見通し上方修正(2026-08-10)が主因
+TOPIX,12か月先予想EPS 2026年末想定,240,2026-02-20,Tier3 | 三井住友DSアセットマネジメント 2026-02 | https://www.smd-am.co.jp/market/ichikawa/2026/02/irepo260220/ | 想定値(市場実績ではない) | 同資料は2026年末PER約17倍も想定
+TOPIX,予想EPS成長率 今期・来期・3-5年,NA,未取得,TOPIX単体の予想EPS成長率は未取得
+TOPIX,予想PER 10年平均,NA,未取得,未取得
+日経平均,"予想PER(予想EPS 3,723.78円基準)",18.33,2026-07-07,Tier3(2次集計) | 出典URL特定不可 | 候補 https://media.moneyforward.com/articles/10408 ; https://www.radionikkei.jp/marketreview/docs/guest_260708.pdf | 検索要約 | 2026-09の値は未取得
+日経平均,予想PER 加重平均ベース,17.93,2026-07-21,同上(検索要約)
+日経平均,予想PER 指数ベース,23.75,2026-07-21,同上(検索要約) | 算出方法で大差(加重平均ベースとの差に注意)
+日経平均,"予想PER(野村AM, 2026年度予想EPS基準)",19.3,2026-07,Tier3 | 野村アセットマネジメント 2026年7月資料 | 候補 https://www.nomura-am.co.jp/news/20260717VJXQDV0U.pdf (URL未確定)
+日経平均,過去30年の年平均EPS成長率,7.7,2026-07,同上 野村アセットマネジメント(URL未確定)
+日経平均,予想EPS 2025年末,2650.84,2025-12-31,同上(検索要約、出典URL特定不可)
+日経平均,予想EPS 2026-07-07,3723.78,2026-07-07,同上(検索要約)
+日経平均,"予想EPS 変化率 2025末→2026-07-07 (算出, %)",40.5,2025-12-31〜2026-07-07,(算出) 3723.78/2650.84-1 = 40.5% | 年内の予想EPS変化であり年間成長率予想ではない
+日経平均,予想EPS(大和総研 2026-06 参考),2925,2026-06,Tier3 | 大和総研 2026-06(検索要約、URL特定不可) | 年初 2190 から 2925 へ上方修正と記載 | 2025末 2650.84 とEPS基準が不一致(要確認)
+日経平均,予想PER 10年平均,NA,未取得,未取得
+日経平均,予想EPS成長率 今期・来期,NA,未取得,未取得
+東証プライム,"平均PER(加重/単純, 予想)",NA,未取得,3検索で市場全体の平均PERは未発見。JPX統計へのアクセス不可
+東証プライム,予想EPS成長率 平均,NA,未取得,未取得
+日本上場企業全体,"2027年3月期 純利益 増益率(SMBC日興集計, 8月時点, %)",11.7,2026-08-06,Tier3 | SMBC日興証券集計(OANDA Japan記事) | https://www.oanda.jp/lab-education/market_news/kn_2026080601002281/ | 555社(集計対象の49.9%)の実績+推計 | 純利益合計 64兆6185億円 | EPS平均ではない
+日本上場企業全体,"2027年3月期 純利益 増益率(同集計, 5月時点, %)",7.7,2026-05-22,Tier3 | さきがけ 'Listed companies 7th year record' | https://www.sakigake.jp/news/article/20260522CO0113/ | 1046社 | 純利益合計 52兆3419億円 | 8月時点と対象・方法が異なり直接比較不可
+MS-Japan(6539),予想PER(個別・市場平均ではない),22.6,2026-09-30,Tier3 | マネックス証券 銘柄スカウター | https://scouter.monex.co.jp/report/theoryDps/6539 | 株価985.0円
+TKC(9746),予想PER(個別・市場平均ではない),15.8,2026-10-07,"Tier3 | 同上 | https://scouter.monex.co.jp/report/theoryDps/9746 | 株価4,025円(10/07)"
+トクヤマ(4043),予想PER(個別・市場平均ではない),11.3,掲載日不明,Tier3 | 同上 | https://scouter.monex.co.jp/report/theoryDps/4043 | 同ページの予想PER1年平均 10.3
+MSCI World,予想PER,NA,未取得,未取得(2026年9月の指数値なし)。MSCI Inc.社株のPER(25.7〜29.8)は別物のため不採用
+MSCI World,予想PER 10年平均,NA,未取得,未取得
+MSCI Europe,予想PER(参考・古い),12.7,2023-12下旬,Tier3 | Yardeni Research チャート | 候補 https://archive.yardeni.com/pub/mscipe.pdf (検索要約) | 2026年の値ではない
+MSCI ACWI,予想PER(参考・古い),16.5,2023-12下旬,同上 Yardeni Research
+米国(Yardeni指数),予想PER(参考・古い),19.8,2023-12下旬,同上 Yardeni Research
+Oracle(ORCL),予想PER 現在(LSEG),16.9,2026-08-31,Tier3 | Capital.com 'Oracle ORCL stock forecast'(LSEG data) | https://capital.com/en-eu/analysis/oracle-orcl-stock-forecast | 既存 data/H2 でも同URL参照
+Oracle(ORCL),"予想PER 過去5年 中央値(LSEG, 2021-08〜2026-08)",19.2,2021-08〜2026-08,同上 Capital.com (LSEG)
+Oracle(ORCL),"予想PER 過去5年 平均(LSEG, 2021-08〜2026-08)",20.7,2021-08〜2026-08,同上 Capital.com (LSEG)
+Oracle(ORCL),予想PER 過去10年 平均・中央値,NA,未取得,"未取得。10年の予想PER履歴は未発見(検索 'Oracle ORCL forward P/E 5-year average 10-year average', 'gurufocus median 5 year 10 year')"
+Oracle(ORCL),"現在予想PER 対 5年中央値 (算出, %)",-12.0,2026-08-31,(算出) 16.9/19.2-1 = -12.0% | 同一基準(LSEG)同士の比較
+Oracle(ORCL),"現在予想PER 対 5年平均 (算出, %)",-18.4,2026-08-31,(算出) 16.9/20.7-1 = -18.4% | 同上
+Oracle(ORCL),予想PER GuruFocus(2026-08中旬),18.7,2026-08中旬,Tier3 | GuruFocus 'Oracle Corp shares fall 3.6%' | https://www.gurufocus.com/news/9035678/oracle-corp-orcl-shares-fall-36-what-gf-score-of-90-tells-investors | 掲載日は検索要約からの推定 | 同記事の実績PER 25.8 vs 5年中央値 32.3 は実績ベース
+Oracle(ORCL),予想PER dividend.watch,16.08,2026-08-04,Tier4 | dividend.watch | https://dividend.watch/symbol/ORCL-NYSE
+Oracle(ORCL),予想PER Yahoo key-statistics(既存転記),17.64,2026-08下旬,Tier3 | https://finance.yahoo.com/quote/ORCL/key-statistics/ | 既存 data/H2_market.csv 転記 | 列対応は推定
+Oracle(ORCL),実績PER(トレーリング) 5年平均 参考,34.43,掲載日不明,Tier4 | Wisesheets | https://www.wisesheets.io/pe-ratio/ORCL | 実績PERであり予想PERではない
+Oracle(ORCL),実績PER(トレーリング) 10年平均 参考,29.63,掲載日不明,同上 Wisesheets | 実績PER
+Oracle(ORCL),実績PER(トレーリング) 5年平均 参考(別出典),31.5,2026-06-05頃,Tier4 | Tickerleague | https://tickerleague.com/companies/ORCL/financials/pe-ratio | 実績PER
+Microsoft(MSFT),予想PER FY2027(6月期) (算出),25.4,2026-09-04,"(算出) 499.70/19.64 = 25.4 | 株価 499.70 (2026-09-04, 既存 data/H2_peers.csv 転記, 出典間で株価不一致あり) | EPS 19.64 は既存 MarketBeat 2026-07-30 掲載"
+Microsoft(MSFT),予想PER FY2028 (算出),21.6,2026-09-04,(算出) 499.70/23.18 = 21.6 | EPS 23.18 は MarketBeat 2026-09-04 掲載(既存転記) | Tier4(自動生成)
+Microsoft(MSFT),予想PER 集計サイト(参考),21.2,2026-08頃(URLから推定),Tier4 | 集計サイト(スペイン語記事、URL特定不可) | PEG 1.52 | 1年EPS成長 +19.3%
+Microsoft(MSFT),予想PER Yahoo key-statistics(参考),24.94,掲載日不明,Tier3 | Yahoo Finance key-statistics(既存転記)
+Microsoft(MSFT),"EPS成長率 5年 (PER/PEG逆算, 算出, %)",15.6,掲載日不明,(算出) 24.94/1.60 = 15.6 | 5年 expected PEG 1.60 (Yahoo 既存) | 参考値(コンセンサス長期成長ではない)
+Microsoft(MSFT),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得(検索 'Microsoft Alphabet Amazon Meta long-term EPS growth...' で未発見)
+Alphabet(GOOGL),予想PER 今期 GuruFocus,21.87,2026-09-04,Tier3 | GuruFocus https://www.gurufocus.com/term/forward-pe-ratio/MIC:GOOGL | 既存 data/H2_peers.csv 転記 | 株価343.50(2026-10-02)と日付差あり
+Alphabet(GOOGL),予想PER 2026年EPS基準(2026-09-30),29,2026-09-30,Tier3/4 | 投資記事(URL特定不可) | 'forward P/E is 29 based on 2026 earnings estimates as of Sept. 30'(検索要約) | GuruFocus 21.87 と基準不一致(要確認)
+Alphabet(GOOGL),"EPS成長率 PER/PEG逆算 Stockopedia(参考, %)",10.8,掲載日不明,"(算出) 24.08/2.23 = 10.8 | Stockopedia PER 24.08, PEG 2.23 (既存転記)"
+Alphabet(GOOGL),"EPS成長率 FullRatio(参考, %)",46.1,2026-06-10,Tier4 | FullRatio https://fullratio.com/stocks/nasdaq-googl/peg-ratio | 既存転記 (PE 26.92 / 成長 46.1 = PEG 0.58) | 成長率基準不明、Stockopedia と不一致
+Alphabet(GOOGL),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+Amazon(AMZN),予想PER 2027年(算出),24.3,2026-09-24,(算出) 254.46/10.47 = 24.3 | 株価 254.46 は 247wallst 2026-09-24 | 2027 EPS 10.47 は出典URL特定不可(既存転記)
+Amazon(AMZN),"予想PER 2026年(一時益を除く, 参考)",30,2026-09-30,Tier3 | 'late-September analysis'(URL特定不可、検索要約) | 'about 30 excluding that gain' | 一時益(Anthropic関連)除外
+Amazon(AMZN),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+Meta(META),予想PER 今期 GuruFocus(FRA:FB2A),16.84,2026-08-21,Tier3 | GuruFocus https://www.gurufocus.com/term/forward-pe-ratio/FRA:FB2A | 既存転記 | ドイツ上場銘柄の値(要確認) | 他出典と乖離
+Meta(META),予想PER Stockopedia(参考),22.02,掲載日不明,Tier3 | Stockopedia https://www.stockopedia.com/permalink/stock-report/26733 | 既存転記 | EPS成長 21.51%
+Meta(META),予想PER 2026-04 Bloomberg引用(参考),23,2026-04(記事),Tier3 | 記事(Bloomberg引用、URL特定不可) | 'lowest multiple among big tech' | trailing/forward の別不明
+Meta(META),"EPS成長率 2026年(Stockopedia, %)",21.72,掲載日不明,Tier3 | Stockopedia 既存転記 | 予想か実績か要確認
+Meta(META),"EPS成長率 PER/PEG逆算 (算出, %)",17.8,掲載日不明,(算出) 22.02/1.24 = 17.8 | Stockopedia PEG 1.24(既存転記)
+Meta(META),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+NVIDIA(NVDA),予想PER 2026-07-11(Motley Fool),23.2,2026-07-11,Tier3 | Motley Fool https://www.fool.com/investing/2026/07/11/nvidias-forward-pe-has-actually-fallen-as-its-stoc/ | 検索要約
+NVIDIA(NVDA),予想PER 2026-08-05(参考),35,2026-08-05,Tier4 | 集計サイト(URL候補 https://ycharts.com/companies/NVDA/forward_pe_ratio_1y ) | 前年同時点57.58 | Q2決算(8/26)前の値
+NVIDIA(NVDA),"FY2027 EPS 平均(MarketBeat表, 参考)",6.52,掲載日不明(表が古い),Tier4 | MarketBeat https://www.marketbeat.com/stocks/nasdaq/nvda/earnings/ | 15名 レンジ6.00-7.29 | 表のQ1平均1.51は実績1.87より前の値と思われる
+NVIDIA(NVDA),"EPS 8.69→11.67 の成長率 (算出, %)",34.3,掲載日不明,(算出) 11.67/8.69-1 = 34.3 | MarketBeat 同ページ | 年度不明・上の6.52とは基準が異なる
+NVIDIA(NVDA),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+SAP,予想PER 今期 Yahoo(既存転記),21.1,掲載日不明(株価216.43は2026-08-19),Tier3 | Yahoo key-statistics https://finance.yahoo.com/quote/sap/key-statistics | 既存転記 | 株価 GuruFocus https://www.gurufocus.com/term/pe-ratio/SAP
+SAP,"EPS成長率 5年 (PER/PEG逆算, 算出, %)",13.6,掲載日不明,(算出) 21.10/1.55 = 13.6 | 5年 expected PEG 1.55 (Yahoo 既存)
+SAP,EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+Salesforce(CRM),"予想PER TIKR(候補・日付不明, 採用見送り)",13.9,掲載日不明,Tier4 | TIKR ブログ(ドイツ語) https://www.tikr.com/de/blog/salesforce-vs-servicenow-which-enterprise-software-stock-wins-over-the-next-5-years | 5年平均 33.29 | 日付なし
+Salesforce(CRM),"予想PER valueinvesting.io(候補・日付不明, 採用見送り)",24.88,掲載日不明,Tier4 | https://valueinvesting.io/CRM/metric/forward-pe | 日付なし。同サイトの他値 28.24 / 57.14 / 63.7 / 14.23 も日付なし
+Salesforce(CRM),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+ServiceNow(NOW),予想PER 株価132.53 / EPS 8.93 (算出),14.8,株価2026-09-12 / EPS基準日不明,(算出) 132.53/8.93 = 14.8 | 株価 investsmart https://www.investsmart.com.au/security/nyse/now/servicenow-inc/share-price (既存転記) | EPSの年度不明
+ServiceNow(NOW),予想PER 株価132.53 / EPS 11.49 (算出),11.5,株価2026-09-12 / EPS基準日不明,(算出) 132.53/11.49 = 11.5 | 同上 | MarketBeat 'expected to grow 28.67%' の後年 EPS
+ServiceNow(NOW),予想PER TIKR(候補・日付不明),21.05,掲載日不明,Tier4 | TIKR 上記ブログ | 5年平均 59.51
+ServiceNow(NOW),予想PER GuruFocus(候補・日付不明),53.63,掲載日不明,Tier3 | GuruFocus https://m.gurufocus.com/term/forwardPE/NOW | 'for today' 表記のみ
+ServiceNow(NOW),予想PER valueinvesting.io(候補・日付不明),61.86,掲載日不明,Tier4 | https://valueinvesting.io/NOW/metric/forward-pe
+ServiceNow(NOW),予想PER MarketBeat(2025末基準・古い版),107.86,2025-12-31基準の古い版,Tier4 | MarketBeat https://www.marketbeat.com/stocks/NYSE/NOW | 古い版のため不採用
+ServiceNow(NOW),次期EPS成長率 MarketBeat(%),28.67,掲載日不明,Tier4 | MarketBeat 同ページ | EPS 8.93→11.49 (算出 11.49/8.93-1 = 28.7%) | 年度不明
+ServiceNow(NOW),EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+Adobe(ADBE),予想PER 2025-12 スナップショット(古い),16.8,2025-12(株価約344基準),Tier4 | 集計ページ(URL特定不可、検索要約) | 予想EPS 20.55(35名)
+Adobe(ADBE),予想PER 2025-09 決算後(古い),20.02,2025-09,Tier4 | MarketBeat系ページ(検索要約) | 古いため参考のみ
+Adobe(ADBE),予想PER 2026-09/10 / EPS成長率 3-5年,NA,未取得,2026年9-10月の値・3-5年成長率とも未取得(検索 'Adobe ADBE forward P/E 2026 consensus EPS growth long-term September 2026')
+IBM,予想PER 2026-09,NA,未取得,"既存 data/H2_peers.csv: 株価233.87(2026-09-01, GuruFocus)。Zacks予想PER 20.12-24.83は日付不明で採用せず。実績PER 20.75は予想ではない"
+IBM,"PEG(GuruFocus, 5年EBITDA成長基準, 参考)",2.42,2026-08-22,Tier3 | GuruFocus https://www.gurufocus.com/term/peg-ratio/IBM | 既存転記 | 基準はEPSではなく5年EBITDA成長8.10%(要確認)
+IBM,EPS成長率 3-5年 コンセンサス,NA,未取得,未取得
+Equinix(EQIX),AFFO/株 2026年 ガイダンス 下限(USD),42.69,2026-07-29,Tier1 | Equinix Q2 2026 決算プレスリリース https://investor.equinix.com/news-events/press-releases/detail/1114/equinix-reports-second-quarter-results-raises-2026 | 検索要約経由(原文未確認) | 2026年2回目の上方修正
+Equinix(EQIX),AFFO/株 2026年 ガイダンス 上限(USD),43.29,2026-07-29,同上 Tier1 | 同上(検索要約経由)
+Equinix(EQIX),"AFFO/株 2026年 ガイダンス 中央値(算出, USD)",42.99,2026-07-29,(算出) (42.69+43.29)/2 = 42.99
+Equinix(EQIX),"AFFO/株 成長率 2026年(正常化・恒常為替, %)",10-12,2026-07-29,Tier1 | 同上 企業ガイダンス | Quartr 要約は 11-13%(Tier4) と不一致
+Equinix(EQIX),AFFO/株 成長率 2026-2029 年平均(%),9-12,2026-07-29,Tier1 | 同上 企業の長期見通し
+Equinix(EQIX),株価 2026-09-11 終値(USD),1037.72,2026-09-11,"Tier3 | Yahoo Finance EQIX(検索要約、候補 https://finance.yahoo.com/quote/EQIX/holders/ ) | 'closed at 1,037.72'"
+Equinix(EQIX),P/AFFO 2026E (算出),24.1,2026-09-11,(算出) 1037.72/42.99 = 24.14 | 分母=2026年 AFFO/株 ガイダンス中央値 | ガイダンス下限/上限で 24.3/24.0
+Equinix(EQIX),P/AFFO 2026E 9/28 近似 (算出),23.5,2026-09-28(近似),(算出) 1011.07/42.99 = 23.5 | 株価は Trade Ideas 掲載(日中・近似)
+Equinix(EQIX),"P/AFFO 参考(2026-04 記事, 種別不明)",28.7,2026-04-22,"Tier4 | 同一文が多数ドメインに重複掲載(URL特定不可) | 'roughly 28.7x price-to-AFFO, peer avg 17.7x' | trailing か forward か不明"
+Equinix(EQIX),P/AFFO 2027E,NA,未取得,2027年AFFO/株コンセンサス未取得
+Digital Realty(DLR),P/AFFO 2026E 予想(参考・シンジケート記事),26.3,掲載日不明(2026年春と推定),Tier4 | 複数ドメインの同一文(URL特定不可) | 5年平均 22.3 の18%上 | 原文要確認
+Digital Realty(DLR),P/AFFO 5年平均(同記事),22.3,掲載日不明,同上
+Digital Realty(DLR),"予想 Core FFO 2026E 倍率(P/FFO, 参考)",17.8,2026-05(株価150.42は2026-04-30),Tier4 | 2026-05 のノート(検索要約、URL特定不可) | FFO基準のため P/AFFO ではない
+Digital Realty(DLR),"AFFO/株 2026E(独自モデル, 不採用推奨)",10.02,掲載日不明,Tier4 | https://www.vcpscanner.com/valuation/dlr/estimates | 信頼度65/100 | 2026上期実績 4.39 の年換算 8.8 と乖離
+Digital Realty(DLR),"AFFO/株 2027E(独自モデル, 不採用推奨)",10.81,掲載日不明,同上
+Digital Realty(DLR),"AFFO/株 2026年上期(6か月, diluted non-GAAP)",4.39,2026-06-30(6か月),出典URL特定不可(検索要約) | 'AFFO per share - diluted non-GAAP $4.39 Six Months Ended 30-Jun-26'
+Digital Realty(DLR),"P/AFFO 2027E 参考 (算出, モデル値)",16.2,掲載日不明,(算出) 174.90/10.81 = 16.2 | 株価174.90は同モデルページの掲載値(日付不明) | モデルAFFOは不採用推奨の参考値
+Digital Realty(DLR),P/AFFO 2026上期年換算 参考 (算出),19.9,掲載日不明,(算出) 174.90/(4.39×2) = 19.9 | 単純年換算 | 参考のみ
+Digital Realty(DLR),株価 2026-09,NA,未取得,2026年9月の株価は未取得(Yahoo オプションページ 164.45 は2026-02期限で古い)
+CoreWeave(CRWV),株価 2026-09-15 終値(USD),80.92,2026-09-15,"Tier4 | npinvestor.dk https://npinvestor.dk/aktier/coreweave/ (AI補助作成と明記、誤りの可能性) | 既存 H2_peers に 9/8 99.83, 9/16 83.35, 9/17 79.88, 9/23 86.90 (検索要約)"
+CoreWeave(CRWV),EV 2026-09-15(USD bn),95.2,2026-09-15,Tier4 | 同上 npinvestor | 負債・株数の内訳は未確認(単一出典)
+CoreWeave(CRWV),EV/売上 トレーリング(npinvestor),12.54,2026-09-15,Tier4 | 同上 | 実績ベース
+CoreWeave(CRWV),EV/EBITDA トレーリング(npinvestor),24.14,2026-09-15,Tier4 | 同上 | 実績ベース
+CoreWeave(CRWV),EV/EBITDA トレーリング(24/7 Wall St),23.94,2026-08-03,Tier3 | 24/7 Wall St https://247wallst.com/investing/2026/08/03/price-prediction-coreweave-will-trade-at-this-price-in-2027/ | 同記事 P/S 6.29x(EV/売上ではない)
+CoreWeave(CRWV),EV/売上 トレーリング(DefiLlama 参考),13.7,掲載日不明,Tier4 | DefiLlama dashboard https://defillama.com/pro/crwv-revenue-streams-and-p-e-ennlo2 | EV/EBITDA 28.3 も同ページ
+CoreWeave(CRWV),売上 2026E コンセンサス(USD bn),12.045,掲載日不明,Tier3 | MarketScreener https://www.marketscreener.com/quote/stock/COREWEAVE-INC-185380761/valuation/ | 列対応は推定 | 別ページ(ae.marketscreener)では 12.46
+CoreWeave(CRWV),売上 2027E コンセンサス(USD bn),19.523,掲載日不明,同上 | 別ページでは 23.17 | SA(2026-04)は2027年売上 30億ドル超の見方を記載
+CoreWeave(CRWV),EBITDA 2026E コンセンサス(USD bn),8.204,掲載日不明,同上 MarketScreener
+CoreWeave(CRWV),EBITDA 2027E コンセンサス(USD bn),13.711,掲載日不明,同上 MarketScreener
+CoreWeave(CRWV),EV/売上 2026E (算出),7.9,2026-09-15 EV / 掲載日不明の売上,(算出) 95.2/12.045 = 7.90 | 別売上 12.46 では 7.6
+CoreWeave(CRWV),EV/売上 2027E (算出),4.9,2026-09-15 EV / 掲載日不明の売上,(算出) 95.2/19.523 = 4.88 | 別売上 23.17 では 4.1
+CoreWeave(CRWV),EV/EBITDA 2026E (算出),11.6,2026-09-15 EV / 掲載日不明のEBITDA,(算出) 95.2/8.204 = 11.60
+CoreWeave(CRWV),EV/EBITDA 2027E (算出),6.9,2026-09-15 EV / 掲載日不明のEBITDA,(算出) 95.2/13.711 = 6.94
+Nebius(NBIS),"EV/売上 2026E(MarketScreener, 参考・古い)",7.3,掲載日不明(株価87.69は他出典より低い),Tier3 | MarketScreener https://in.marketscreener.com/quote/stock/NEBIUS-GROUP-8037501/valuation/ | EV 25.2B | 古い可能性
+Nebius(NBIS),"EV/売上 2027E(MarketScreener, 参考・古い)",4.76,掲載日不明,同上 | EV 37.1B | 同表の売上 37.1/4.76=7.8B は TIKR 2027E 11B と不一致
+Nebius(NBIS),EV/売上 2027E(Seeking Alpha 記事),6.2,掲載日不明,Tier4 | Seeking Alpha 記事(URL特定不可) | 'EV/ARR 8.5x' も記載
+Nebius(NBIS),"EV/売上 2026E (算出, 6月時価総額基準)",19,2026-06-28頃(時価総額61.5〜64B),(算出) (61.5〜64.0 + 0.4)/3.4 = 18.2〜18.9 | 売上 3.4 は TIKR | 純負債 0.4B は検索ツールの仮定(要確認)
+Nebius(NBIS),"EV/売上 2027E (算出, 6月時価総額基準)",5.8,2026-06-28頃,(算出) (61.5〜64.0 + 0.4)/11.0 = 5.6〜5.9 | 売上 11.0 は TIKR
+Nebius(NBIS),"売上 2026E / 2027E コンセンサス(USD bn, 参考)",3.4 / 11.0,2026-06-28,Tier4 | TIKR ブログ https://www.tikr.com/blog/nbis-has-gained-167-in-2026-the-revenue-chart-explains-why | 同日 時価総額 61.5B
+Nebius(NBIS),EV/EBITDA 2026E・2027E,NA,未取得,未取得
+Nebius(NBIS),株価・EV 2026-09,NA,未取得,2026年9月の株価・EVは未取得(既存 H2_peers の 286.69 / 53.25B は掲載日不明のため不採用)

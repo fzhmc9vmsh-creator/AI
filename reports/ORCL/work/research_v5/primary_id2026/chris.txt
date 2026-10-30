@@ -1,0 +1,318 @@
+Redefining Enterprise
+Applications for the Age of AI
+
+Chris Leone
+Executive Vice President, Development
+Oracle Applications & AI
+The Oracle advantage: complete stack for enterprise AI
+                                                 One platform. Across the business. Real outcomes.
+
+
+                                                              Fusion AI                                                      Industry
+                                                                                                                            Applications
+
+
+
+          Fusion Agentic                                                                           Fusion
+                                                   Fusion Claw          AI Agent Studio                                          Industry
+           Applications                                                                          Applications
+                                                                                                                            systems of record
+                 System of                       Governed agentic            Build             System of record                & AI agents
+                 outcomes                        execution runtime         and extend          (ERP, SCM, HCM, CX)
+
+
+
+
+         Enterprise AI foundation                                OCI                                    AI Data Platform
+          Secure, scalable, & open                               Model choice & dedicated capacity      Enterprise data, context, & orchestration
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+       Fusion AI changes how enterprise applications work
+                                                         Announcing…
+                                                 NEW                              NEW                              NEW
+
+        Fusion Agentic Apps                            Fusion Companion with               Fusion Setup &
+          with Fusion Claw                              Fusion Agentic Home             Configuration Registry
+
+             You define the outcome.                       You define the goal.         You define the requirements.
+                AI does the work.                            AI gets it done.           AI configures Fusion for you.
+
+
+                    Consumption                                                           Accelerating on-prem
+                  revenue/AI Units                            Consumption                 to cloud conversions
+
+                  Third-party tools                         revenue/AI Units                EBS, PeopleSoft,
+                    replacement                                                              JDE to Fusion
+
+
+                                                       You define. AI delivers.
+Copyright © 2026, Oracle and/or its affiliates
+  Evolving our business model as AI does more of the work
+
+
+
+                                                          Today                            Tomorrow
+                                                   Seat-based subscription         Subscription plus consumption
+
+
+                                                       Price per user               Price per outcome (AI Units*)
+                                                      Access to software           Work completed by teams of agents
+
+
+
+                                                 Revenue tied to more users        Revenue tied to value delivered
+                                        More users = more subscription revenue     Growth through AI Unit consumption
+
+
+
+                                                                                   Monetizing value through
+                                         Monetizing software access
+                                                                                 AI-enabled business outcomes
+             *1 AI Unit = 1 cent
+
+Copyright © 2026, Oracle and/or its affiliates
+                                       The evolution of enterprise software
+                            Fusion delivers system of record and system of outcomes all-in-one
+
+
+
+
+                                       System of record
+                                    documents the business
+                                                  Follow fixed rules                                 Work toward objectives
+                                                 Record what happens                                  Make things happen
+                                                 Retrieve information                                     Solve problems
+                                                   Complete tasks                                      Achieve outcomes
+
+
+
+                                                            One source of truth for transactions
+                                   Enterprise data                      Policies            Permissions               Processes
+                                  Business objects             Approval hierarchies   Role-based access control            History
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                   System of outcomes extends system of record
+
+                                                    Oracle Fusion
+                                                 Fusion Agentic Applications
+                        Sales Command Center                 Shipment Load Planning Workspace
+
+                 Collector Workspace                   Workforce Operations Command Center           …   System of outcomes
+                                                                                                         coordinates work
+                                                       AI Agent Studio
+                      AI Agents                       Agentic App Builder          AI Studio Skill
+
+                                                     Fusion Applications
+                              ERP                     SCM             HCM               CX               System of record
+                                                                                                         remains authoritative source
+                Enterprise data                    Business objects     Policies        Approvals
+          Permissions                 Processes             Context         History             …
+
+
+                                OCI                                            AI Models
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                           Introducing Fusion Claw
+                                                            Governed agentic execution runtime
+
+
+                                                    Oracle Fusion
+                                                 Fusion Agentic Applications
+
+
+                                                       AI Agent Studio
+
+                                                                                                NEW
+                                                                                                      Directed execution
+                                                                                                      engine for complex,
+                                                                                                       high-value work
+                                                    Fusion Applications
+                      Enterprise data               Business objects   Policies     Approvals
+
+               Permissions                 Processes         Context      History         …
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                         Fusion Claw takes on complex work at scale
+                                                     HCM                              SCM                             CX                               ERP
+
+                                                 Workforce                     Supply chain                        Sales                           Finance
+  Specialist work                          Recommend                            Plan complex                 Optimize account                      Reconcile
+       examples                       scheduling optimization                 shipping logistics              territory plans                 financials and close
+
+
+
+
+       What Fusion
+                                                 Analyze           Reconcile              Simulate          Optimize               Predict              Execute
+        Claw does
+                                            Understand                  Find                Evaluate        Recommend          Anticipate what’s      Turn decisions
+                                          what’s happening          and resolve           alternatives    outcomes across      likely to happen       into governed
+                                              and why              discrepancies         before acting       constraints              next                action
+
+
+                                                 Better coverage                Faster replanning           Shorter planning cycles                Faster close
+    Fusion Claw                          Fewer scheduling errors            Better capacity utilization      Fewer allocation errors               Fewer errors
+target outcomes
+                                      Less overtime/contract labor       Lower freight/inventory costs       Better sales coverage                 Less research
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+Fusion Claw:
+Shipment Load Planning
+
+Demo
+                                     75 agentic applications.
+                             One governed agentic execution runtime.
+                                                                                                                                                              NEW
+
+
+
+
+Customer Insights Advisor                        Workforce Compensation Assistant       Ledger       Service Operations Workspace      Recruiting Command Center
+
+    Cost Accounting Close Workspace                       Cross-Sell Program Workspace       Payroll Command Center         Hiring Workspace for Store Managers
+
+Marketing Program Tactic Workspace                         Positions Command Center       Self-Service Command Center         Procurement Spend Command Center
+
+      Sourcing Command Center                        Sales Command Center       Candidate Sourcing Workspace         Workforce Orchestration Command Center
+
+Renewal Program Workspace                          Collector Workspace      Strategic Field Demand Planning Workspace        Opportunity Orchestration Workspace
+
+    Shipment Load Planning Workspace                        Product Readiness Workspace          Marketing Command Center       Contract Compliance Workspace
+
+Payroll Activity Workspace                       Supply Planning Allocation Workspace      Workforce Operations Command Center         Quoting Workspace          …
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 Introducing Fusion Companion NEW
+
+                                                             One intelligent layer
+
+ Many ways to engage                                                                           Fusion Applications
+                                                          Fusion Companion
+              Agentic Home                                                                       Agentic Applications
+      Fusion-native experience                                                                    with Fusion Claw
+                                                                                              Complex, outcome-driven work
+
+
+    External AI experiences
+     ChatGPT & other platforms
+                                                                                                      AI agents
+                                                                                                    Specialized tasks
+                                                              Understands context
+
+       Other AI experiences                                   Determines the work                 Fusion Applications
+ Partners & custom experiences                                                                 Business actions & processes
+                                                        Selects the right Fusion capability
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+                                                 Introducing Fusion Agentic Home NEW
+                               The Fusion-native experience for every worker to get work done
+
+                                                                                                Work
+
+
+                                                                                           “Help me get it done.”
+
+
+                                                                                     Research
+
+
+                                                                                    “Build me a trusted
+                                                                                    point of view.”
+
+                                                                                                Full Auto
+
+
+                                                                                           “Do it for me.”
+
+
+                                                          with Fusion Companion
+
+                                                          and Fusion Applications
+Copyright © 2026, Oracle and/or its affiliates
+ Introducing Fusion Setup & Configuration Registry (FSCR)
+                                                 Implement and expand Fusion faster, at lower cost
+
+
+                                                               One authoritative source
+          Open-source                                      of Fusion setup & configuration                               Accelerate
+       registry on GitHub                                                                                              time to value
+                                                         Built and maintained by Fusion Development
+                                                                                                                        Customers
+                                                         Product knowledge         Industry-leading practices
+
+                                                          Machine-readable           Updated every release
+                                                                                                                          System
+                                                                        Example of what’s inside:                       integrators
+
+                                                        Setup object                        Recommended value
+                                                        Accounting calendar                   12-period monthly          AI agents
+
+                                                        Dependency                                   Validation rule
+                                                        Setup context                               Valid date range
+
+
+
+
+Copyright © 2026, Oracle and/or its affiliates
+ Fusion AI adoption is moving from pilots to production
+
+
+              agent runs                          certified builders        customers using AI/agents           production agents
+
+
+  “When AI removes friction and                            “We automated more than 400,000             “AI is more than an opportunity
+ administrative work, it gives our                            actions in the recruiting cycle,       to automate repetitive work. Even in
+ caregivers back the gift of time.”                        from background checks to offers.”          our early use cases, we’re seeing
+                                                                                                    improvements in quality, consistency,
+                                                                                                         timeliness, and compliance.”
+
+
+
+
+“That vision also aligns with Oracle’s commercial interests.                   “Fusion Claw’s separation of reasoning from deterministic
+If closer integration allows agents to complete more work,                     execution could be “critically important” in moving agentic
+customers may have a stronger reason to consolidate their                      applications from prototype to production; its controls can
+operations around Fusion.”                                                     give enterprises a measure of “safe autonomy.”
+
+Victor Dey                                                                     Scott Bickley
+
+ Copyright © 2026, Oracle and/or its affiliates
+                                  Fusion AI creates growth opportunities
+
+                           1                                 2                         3                         4
+
+             Grow AI                                Expand Fusion                Accelerate                 Deliver
+           consumption                               addressable                subscription               attractive
+             revenue                                   market                     growth                 AI economics
+
+   AI Units enable                               Replace
+   consumption revenue                                                            with FSCR, making            by separating
+   to                                                              with     setup, configuration,     AI reasoning (AI units)
+                   , as AI                       Fusion Claw-powered        validation, and best      from deterministic
+   completes more work                           specialist applications.   practices executable      execution (no AI units)
+   without requiring                                                        by AI.                    and learning across
+   additional users.                                                                                  executions to
+                                                                                                      continuously improve
+                                                                                                      efficiency and reduce
+                                                                                                      token consumption.
+
+
+Copyright © 2026, Oracle and/or its affiliates
+

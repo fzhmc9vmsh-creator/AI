@@ -1,0 +1,418 @@
+{
+ "rows": [
+  {
+   "group": "競合表",
+   "item": "AI GPU 容量(H100)/価格",
+   "value": "OCI $10.00/GPU時。AWS の 1.45 倍、CoreWeave の 1.62 倍(算出)",
+   "source": "report/r3_sections_5w1h_f20.md:106",
+   "source_note": "定価は米国リージョンのオンデマンド。第三者集計(T4)。契約単価は非開示(F20:100)",
+   "note": "AWS $6.88 は 10.00÷6.88=1.45、CoreWeave $6.16 は 10.00÷6.16=1.62(算出、F20:121)。Azure $6.98(1.43 倍)、Google $11.06(0.90 倍)、Nebius $2.00〜3.85(2.6〜5.0 倍)も算出値。"
+  },
+  {
+   "group": "競合表",
+   "item": "AI GPU 容量(H100)/品質",
+   "value": "ClusterMAX v3.0 で Gold(Platinum は CoreWeave・Nebius)",
+   "source": "report/r3_sections_5w1h_f20.md:106",
+   "source_note": "第三者評価(T3/T4)。最大 131,072 GPU は Oracle 発表(T1)",
+   "note": "MLPerf 提出は最大 128 GPU(research2/R3_competition.md:156)。GPU 稼働率 97.9%(Q1 FY27、既S4)は会社の数字。独立のベンチマークは無い。"
+  },
+  {
+   "group": "競合表",
+   "item": "AI GPU 容量(H100)/位置",
+   "value": "高くて並(AWS・Azure・CoreWeave・Nebius 比)。暫定",
+   "source": "report/r3_sections_5w1h_f20.md:106",
+   "source_note": "F20 の位置定義(F20:100-102)。SLA・評価・シェアで判断した暫定",
+   "note": "対 Google は安くて並。競合の契約単価が無いため判定は暫定。"
+  },
+  {
+   "group": "競合表",
+   "item": "AI GPU 容量(H100)/差を生む活動",
+   "value": "V5・V6(資金・DC 保有)、V7・V8(建設・電力)",
+   "source": "report/r3_sections_5w1h_f20.md:106",
+   "source_note": "V 表(F20:141-144)。構造は強さ A",
+   "note": "V1・V2(設計)の効果は GPU の価格に現れていない(F20:106)。"
+  },
+  {
+   "group": "競合表",
+   "item": "AI GPU 容量(H100)/証拠の強さ",
+   "value": "定価差 C(T4)。構造 A、価格への効果 D",
+   "source": "report/r3_sections_5w1h_f20.md:106",
+   "source_note": "R3 の強さ定義(F20:102)。行ごとの判定は調査者による",
+   "note": "欠損: 1MW あたり建設費、リース料率、電力単価、契約単価。リース 15〜19 年と顧客契約 5〜6 年の期間差は 9〜14 年(算出、F20:129)。"
+  },
+  {
+   "group": "競合表",
+   "item": "汎用計算(VM)/価格",
+   "value": "2vCPU・8GB 月額 OCI $38.69。AWS・Azure より 44.8% 安い(算出)",
+   "source": "report/r3_sections_5w1h_f20.md:108",
+   "source_note": "T4(型名・世代不明)",
+   "note": "1−38.69÷70.08=44.8%(AWS・Azure $70.08)、1−38.69÷71.90=46.2%(Google)(算出、F20:123)。vCPU 時 E5 $0.015 は AWS 級 $0.048 の 3.2 倍(算出)。"
+  },
+  {
+   "group": "競合表",
+   "item": "汎用計算(VM)/品質",
+   "value": "SLA 99.99%。OCI・AWS・Azure とも紙面上は同水準",
+   "source": "report/r3_sections_5w1h_f20.md:108",
+   "source_note": "SLA は契約上の保証(T1*/T4)",
+   "note": "実績ではない。Gartner IaaS 2024 で Oracle は上位 5 社外(4.1% 未満、算出)。2026 年の地域全体障害は未確認、障害比較は未実施。"
+  },
+  {
+   "group": "競合表",
+   "item": "汎用計算(VM)/位置",
+   "value": "安くて並。暫定",
+   "source": "report/r3_sections_5w1h_f20.md:108",
+   "source_note": "F20 の位置定義(F20:100-102)",
+   "note": "品質は SLA 上の並であり、実績による比較はできていない。"
+  },
+  {
+   "group": "競合表",
+   "item": "汎用計算(VM)/差を生む活動",
+   "value": "V1(off-box 仮想化)、V10(価格設計)",
+   "source": "report/r3_sections_5w1h_f20.md:108",
+   "source_note": "V 表(F20:137、F20:146)",
+   "note": "価格差の原因を示す原価の数字は無い(F20:137)。仮想化で増える売れる計算量の数字は欠損。"
+  },
+  {
+   "group": "競合表",
+   "item": "汎用計算(VM)/証拠の強さ",
+   "value": "C(Finout の $38.69 は単価算出 $33.58 と不一致)",
+   "source": "report/r3_sections_5w1h_f20.md:108",
+   "source_note": "R3 の強さ定義(F20:102)",
+   "note": "世代差を除けない。再現の費用・年数は欠損。"
+  },
+  {
+   "group": "競合表",
+   "item": "外向き通信(egress)/価格",
+   "value": "月 50TB: OCI $340 に対し AWS $4,300(12.6 倍、算出)",
+   "source": "report/r3_sections_5w1h_f20.md:110",
+   "source_note": "T4(公式価格表と未照合)",
+   "note": "OCI は月 10TB 無料+$0.0085/GB。AWS は 10,000×0.09+40,000×0.085=$4,300、(50,000−10,000)×0.0085=$340、4,300÷340=12.6(算出、F20:125)。"
+  },
+  {
+   "group": "競合表",
+   "item": "外向き通信(egress)/品質",
+   "value": "転送速度・遅延の比較は未取得",
+   "source": "report/r3_sections_5w1h_f20.md:110",
+   "source_note": "F20 の品質欄",
+   "note": "品質は比較なし。非ブロッキング設計(V2)の独立検証も無い(F20:138)。"
+  },
+  {
+   "group": "競合表",
+   "item": "外向き通信(egress)/位置",
+   "value": "安い(品質は比較なし)",
+   "source": "report/r3_sections_5w1h_f20.md:110",
+   "source_note": "F20 の位置欄",
+   "note": "10TB 無料が全サービスに及ぶかは未確認(F20:110)。"
+  },
+  {
+   "group": "競合表",
+   "item": "外向き通信(egress)/差を生む活動",
+   "value": "V2(ネットワーク設計)、V10(価格設計)",
+   "source": "report/r3_sections_5w1h_f20.md:110",
+   "source_note": "V 表(F20:138、F20:146)",
+   "note": "V2 の品質への因果は強さ C(F20:138)。"
+  },
+  {
+   "group": "競合表",
+   "item": "外向き通信(egress)/証拠の強さ",
+   "value": "C(公式価格表と未照合。無料枠の適用範囲も未確認)",
+   "source": "report/r3_sections_5w1h_f20.md:110",
+   "source_note": "R3 の強さ定義(F20:102)",
+   "note": "再現の費用・年数は欠損(F20:110)。"
+  },
+  {
+   "group": "競合表",
+   "item": "DB ライセンス(BYOL)/価格",
+   "value": "同一コアの必要ライセンス OCI 0.5 枚、AWS・Azure 1.0 枚",
+   "source": "report/r3_sections_5w1h_f20.md:111",
+   "source_note": "規則は Oracle 文書(T1*)。原文未読。AWS・Azure 側は方針の要約",
+   "note": "OCI は 1 Processor=2 コア、AWS・Azure は 2 vCPU=1 コアから算出(F20:126)。定価 $47,500/プロセッサー(T4)なら定価差 $47,500、年間サポート差は約 $10,450(算出、47,500×0.22)。実際の割引は 40〜70%(主張、T4)。"
+  },
+  {
+   "group": "競合表",
+   "item": "DB ライセンス(BYOL)/品質",
+   "value": "DB 本体は同一ソフトで品質差なし",
+   "source": "report/r3_sections_5w1h_f20.md:111",
+   "source_note": "F20 の品質欄",
+   "note": "RDS for Oracle 等との品質比較は未取得。"
+  },
+  {
+   "group": "競合表",
+   "item": "DB ライセンス(BYOL)/位置",
+   "value": "安くて並(BYOL 顧客に限る)",
+   "source": "report/r3_sections_5w1h_f20.md:111",
+   "source_note": "F20 の位置欄",
+   "note": "BYOL を持つ顧客に限られる。"
+  },
+  {
+   "group": "競合表",
+   "item": "DB ライセンス(BYOL)/差を生む活動",
+   "value": "ライセンス規則(V リスト外)。V10 に近い",
+   "source": "report/r3_sections_5w1h_f20.md:111",
+   "source_note": "F20:148 に BYOL のライセンス規則は V リストに含まれないとの記載",
+   "note": "数え方は Oracle が決める契約規則。"
+  },
+  {
+   "group": "競合表",
+   "item": "DB ライセンス(BYOL)/証拠の強さ",
+   "value": "A(規則は Oracle 文書、T1*・原文未読)",
+   "source": "report/r3_sections_5w1h_f20.md:111",
+   "source_note": "Oracle 文書(T1*)",
+   "note": "競合の再現は不可(推論、F20:111)。Oracle の改定で変わり得る。費用・年数は欠損。"
+  },
+  {
+   "group": "競合表",
+   "item": "Database@/価格",
+   "value": "OCI の Exadata DB Service と同一価格(Oracle 説明)",
+   "source": "report/r3_sections_5w1h_f20.md:114",
+   "source_note": "Oracle の説明(T1*・原本未読)",
+   "note": "Azure は MACC、AWS はコミットに充当可(T1*)。競合 DBaaS(Aurora・RDS 等)との価格比較は未取得。"
+  },
+  {
+   "group": "競合表",
+   "item": "Database@/品質",
+   "value": "他社 DC 内で稼働し移設不要(会社説明)",
+   "source": "report/r3_sections_5w1h_f20.md:114",
+   "source_note": "会社説明(T1*)。売上・顧客数は T3",
+   "note": "差は価格や性能ではなく提供場所と請求経路(F20:114)。リージョン数は Azure 33・Google 14・AWS 20(F20:114、出典 R4)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Database@/位置",
+   "value": "判定不能(価格・品質の比較なし)",
+   "source": "report/r3_sections_5w1h_f20.md:114",
+   "source_note": "F20 の位置欄",
+   "note": "競合の価格・品質の比較が無いため判定できない。"
+  },
+  {
+   "group": "競合表",
+   "item": "Database@/差を生む活動",
+   "value": "V9(マルチクラウド)",
+   "source": "report/r3_sections_5w1h_f20.md:114",
+   "source_note": "V 表(F20:145)",
+   "note": "場所・電力・ネットワークの費用分担は未確認(F20:114)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Database@/証拠の強さ",
+   "value": "B(成長・拠点)、D(価格優位)。売上 +353%(Q1 FY27)",
+   "source": "report/r3_sections_5w1h_f20.md:145",
+   "source_note": "T3(Q1 FY27)。成長率は T1*/T3",
+   "note": "成長率は 5 四半期連続で逓減(+1,529%→+817%→+531%→+404%→+353%、F20:145)。絶対額は非開示。粗利率 60〜80% は二次媒体の報道で原文未確認(F20:149)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Fusion ERP・HCM/価格",
+   "value": "HCM 定価 $54〜100/人月、実勢 $22〜50",
+   "source": "report/r3_sections_5w1h_f20.md:115",
+   "source_note": "助言会社の主張(T4)",
+   "note": "ERP $625/ユーザー月(別資料 $175〜625、T4)。SAP・Workday の価格は未取得。"
+  },
+  {
+   "group": "競合表",
+   "item": "Fusion ERP・HCM/品質",
+   "value": "クラウド ERP シェア 2024: Oracle 21.7%、SAP 15.0%",
+   "source": "report/r3_sections_5w1h_f20.md:115",
+   "source_note": "Apps Run The World の推計(T3)",
+   "note": "品質の独立指標は無い。成長は Fusion +14%、SaaS +10%(Q1 FY27、T3/T1*)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Fusion ERP・HCM/位置",
+   "value": "判定不能(競合価格なし)",
+   "source": "report/r3_sections_5w1h_f20.md:115",
+   "source_note": "F20 の位置欄",
+   "note": "NetSuite・Oracle Health も判定不能(F20:116-117)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Fusion ERP・HCM/差を生む活動",
+   "value": "V1〜V10 に該当なし(アプリ側の活動は未調査)",
+   "source": "report/r3_sections_5w1h_f20.md:115",
+   "source_note": "F20:148",
+   "note": "開発体制、導入、サポート、販売経路は今回の調査にない(F20:148)。"
+  },
+  {
+   "group": "競合表",
+   "item": "Fusion ERP・HCM/証拠の強さ",
+   "value": "価格は D(比較なし)。シェアは B(T3)",
+   "source": "report/r3_sections_5w1h_f20.md:115",
+   "source_note": "R3 の強さ定義(F20:102)",
+   "note": "欠損: 競合価格。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "新規参入",
+   "value": "ガスタービン: GE Vernova 受注残+枠予約 116GW、納期約3年",
+   "source": "research3/W3_industry_structure.md:96",
+   "source_note": "Tier 1*/3*(検索要約経由、原本未読)。[W3-5]",
+   "note": "Siemens Energy 確定受注残 69GW・納期 3 年以上(W3:97)。受注残の滞留は Siemens 約 2.9 年(69÷(6×4)、算出)、GE Vernova 約 5.8 年(116÷20、算出、W3:99)。3 社合計 220GW は全用途で DC 専用ではない(W3:100)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "新規参入",
+   "value": "大型変圧器 128 週(約 2.5 年)、GSU 160 週超(2026 年)",
+   "source": "research3/W3_industry_structure.md:102",
+   "source_note": "Tier 3*(WoodMac 2025 Q2)。2026 年の値は Tier 3*/4([W3-9])",
+   "note": "128÷52=約 2.5 年(算出)。GSU は 144 週(2025 Q2)から 160 週超へ(W3:103)。電力用変圧器の単価は 2019 年比 +77%、GSU は +45%(W3:104)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "新規参入",
+   "value": "系統連系: PJM 平均 約 40 か月(データセンター地域 36〜48 か月)",
+   "source": "research3/W3_industry_structure.md:84",
+   "source_note": "Tier 3*/4(Carbon Direct 2026-05 ほか)。[W3-11]",
+   "note": "別資料は PJM 5〜7 年、ERCOT 大口負荷待ち 427GW(別資料 474GW、W3:85)。全米平均の待ち年数は欠損(W3:88)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "新規参入",
+   "value": "DC の着工から 1GW まで 約 12〜43 か月",
+   "source": "research3/W3_industry_structure.md:111",
+   "source_note": "Tier 3(Epoch 経由、[R7][W3-2])",
+   "note": "Abilene は 2024-06 着工から 2026-07 に 421MW、25 か月(算出、W3:112)。計画の 3 分の 1〜半分が遅延・中止の見込み(Bloomberg 引用、W3:113)。2026 年の計画約 12GW に対し建設中は約 5GW(Sightline、W3:113)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "供給者",
+   "value": "欠損",
+   "source": "research3/W3_industry_structure.md:204",
+   "source_note": "Tier 3*/4(Nvidia のシェア行、W3-13)",
+   "note": "NVIDIA の粗利率・取り分の数字は、F20 節・R3・W3・W8 の 4 ファイルのいずれにも無い。推定で埋めない。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "供給者",
+   "value": "NVIDIA は AI 計算の約 80%(出典なし、近似)",
+   "source": "research3/W3_industry_structure.md:204",
+   "source_note": "Tier 3*/4(出典の記載なし)",
+   "note": "Google の TPU 売却報道で NVIDIA 株が 3〜4% 下落(2025-11 報道とする記述、W3:204)。CoreWeave は NVIDIA GPU を購入(W8:232)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "供給者",
+   "value": "NVIDIA の投資 $100B。10GW 導入で最大 $350B(別資料)",
+   "source": "research3/W3_industry_structure.md:167",
+   "source_note": "Tier 3*(トラッカー推計、[W3-18])",
+   "note": "OpenAI 計算契約の内訳で、会社非確認の推計。NVIDIA は Nscale の出資者(評価 $14.6B、W3:223)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "供給者",
+   "value": "メモリ: Amazon capex $200B→$220B、主因はメモリ価格上昇",
+   "source": "research3/W3_industry_structure.md:34",
+   "source_note": "Tier 1*/3*(Amazon 2026 Q2 決算の要約)。[W3-1]",
+   "note": "+10%(算出: 220÷200−1、W3:43)。DRAM・HBM の価格や供給量の数値は欠損。AWS の利益率圧迫要因としてのメモリ価格上昇(アナリスト、Tier 3*)は research3/W8_aws_vs_commodity.md:113。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "買い手",
+   "value": "OpenAI の計算契約 $1.15T ÷ 2026 年売上見通し $36B = 約 32 倍(算出)",
+   "source": "research3/W3_industry_structure.md:158",
+   "source_note": "Tier 3*(トラッカー推計。会社確認なし)。[W3-18]",
+   "note": "契約総額は $1.15T〜$1.5T(集計で幅、W3:158)。2026 年売上見通し $36B(W3:153、FT 報道の会社資料)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "買い手",
+   "value": "Oracle RPO のうち OpenAI 約 45%($300B ÷ $664B、算出)",
+   "source": "research3/W3_industry_structure.md:182",
+   "source_note": "Tier 3(R7 の再掲、2026-08-31)",
+   "note": "CoreWeave の最大顧客は 36%(2026 Q2、匿名、W3:183)。Microsoft 商用 RPO $678B のうち OpenAI は 32%(下限)〜45%(W3:178)。上位 1 社が受注残の 3 割超〜半分(W3:195)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "買い手",
+   "value": "OpenAI の FCF 2026〜30 年累計 −$278B、調達 $122B",
+   "source": "research3/W3_industry_structure.md:154",
+   "source_note": "Tier 3*(W3-6 の要約)",
+   "note": "調達÷燃焼 122÷278=44%(算出、W3:157)。新ラウンドの協議は評価 約 $1.2T(W3:156)。2026 年の損失 約 $14B は流出資料の見出し(W3:155)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "買い手",
+   "value": "Meta: Hyperion リースを 4 年ごとに更新可(Blue Owl 80% 出資)",
+   "source": "research3/W3_industry_structure.md:193",
+   "source_note": "Tier 3(NPR 経由、[W3-14])",
+   "note": "Hyperion は $27B の民間債(W3:234、Tier 3)。債権者は資産への直接の遡及権なしとする分析(W3:234)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "代替",
+   "value": "Google TPU: Anthropic 2026 年 約 1GW、2027 年から約 3.5GW",
+   "source": "research3/W3_industry_structure.md:191",
+   "source_note": "Tier 1*/3*(Broadcom の SEC 提出書類の要約、[W3-7])",
+   "note": "Meta は Google TPU を複数年レンタル、2027 年から購入を協議(W3:192、Tier 3*)。金額は非開示。Anthropic の従来の米国計算コミットは $50B(W3:191)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "代替",
+   "value": "AWS の自社チップ事業 年換算 $25B 超(2026 Q2 説明会)",
+   "source": "research3/W8_aws_vs_commodity.md:87",
+   "source_note": "Tier 3*(説明会・株主資料の要約、[W8-06])",
+   "note": "Q1 2026 は $20B 超(W8:87)。Trainium は推論で数百 bp の営業利益率優位をもたらす見込み(将来の見込み、W8:88)。Oracle の自社設計 GPU・チップは欠損(W8:232)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "代替",
+   "value": "AI をクラウドから戻した組織 66%(過去 12 か月)",
+   "source": "research3/W3_industry_structure.md:206",
+   "source_note": "Tier 4(Cloudera のベンダー調査、[W3-28])",
+   "note": "推論の実行場所はハイブリッド 31%、公共クラウド 30%、プライベート 22%、オンプレ 8%(W3:206)。Cloudian は 93% が回帰済み・進行中・検討中(W3:207)。3 調査は定義が違い横比較できない(W3:211)。オンプレ向け GPU 購入量は欠損(W3:209)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "代替",
+   "value": "本番 AI 推論をプライベートで実行・計画 56%、公共 41%",
+   "source": "research3/W3_industry_structure.md:208",
+   "source_note": "Tier 4(Broadcom Private Cloud Outlook、ベンダー調査)",
+   "note": "83% が回帰を検討、半数が一部完了(W3:208)。原文の「前年は 56%」の対象は文中で曖昧。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "競争",
+   "value": "実勢指数: ハイパースケーラー中央値 $7.19、ネオクラウド $2.80",
+   "source": "research2/R3_competition.md:55",
+   "source_note": "既S3 の再掲(Tier 3)",
+   "note": "OCI の H100 定価 $10.00 は両方より高い(R3:77)。両者の比は約 2.6 倍(7.19÷2.80、算出)。GPU 貸しの粗利率は 14〜16%(McKinsey、一部報告、research3/W8_aws_vs_commodity.md:149)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "競争",
+   "value": "H100 オンデマンド: Vast.ai $1.49〜、ハイパースケーラー最大 $6.98",
+   "source": "research3/W3_industry_structure.md:249",
+   "source_note": "Tier 3*/4(W3-10 の検索要約)",
+   "note": "Lambda $3.99、CoreWeave $4.25、RunPod $1.99〜(W3:249)。AWS は 2025-06 に p5.48xlarge $98.32→$55.04/時、−44.0%(算出、W3:249)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "競争",
+   "value": "H100 1 年契約 $1.70→$2.35(2025-10→2026-03)、+38%(算出)",
+   "source": "research3/W3_industry_structure.md:246",
+   "source_note": "Tier 3*(SemiAnalysis 指数、[W3-17])",
+   "note": "算出: 2.35÷1.70−1=38.2%(W3:246)。オンデマンドは全 GPU 種で売り切れ、短期は上昇見込みでネオクラウドの価格決定力が上がる(W3:247)。2026-04 以降は欠損(W3:248)。反対方向の記述(ピークから 60〜75% 下落、ブログ)もある(research3/W8_aws_vs_commodity.md:154)。"
+  },
+  {
+   "group": "ファイブフォース",
+   "item": "競争",
+   "value": "ClusterMAX v3.0: Oracle Gold、Platinum は CoreWeave・Nebius",
+   "source": "research2/R3_competition.md:161",
+   "source_note": "T3/T4(イタリア語要約。本文はペイウォール)",
+   "note": "v2.0(2025-11)も Oracle は Gold、Platinum は CoreWeave のみ(R3:160)。v3.0 の Oracle Gold は 1 社の要約のみ(R3:336)。Azure は Silver、Crusoe は Bronze(R3:161)。"
+  }
+ ],
+ "missing": [
+  "NVIDIA の粗利率・GPU 取り分(4 ファイルに数値なし)",
+  "メモリ(DRAM・HBM)の価格・供給量の数値(research3/W3_industry_structure.md:34 は capex の主因の記述のみ)",
+  "全米の系統連系の平均待ち年数(research3/W3_industry_structure.md:88)",
+  "AWS Trainium・Meta MTIA の数量・GW・契約(research3/W3_industry_structure.md:205)",
+  "1MW あたりの建設費・リース料率・電力単価(report/r3_sections_5w1h_f20.md:106、research3/W3_industry_structure.md:140)",
+  "競合 DBaaS(Aurora・RDS・Azure SQL・Cloud SQL)の価格とSLA(report/r3_sections_5w1h_f20.md:112)",
+  "SAP・Workday の価格(report/r3_sections_5w1h_f20.md:115)",
+  "2026-04 以降の H100 1 年契約料(research3/W3_industry_structure.md:248)",
+  "OCI と競合の GPU 契約単価(非開示、research2/R3_competition.md:76)",
+  "Oracle の自社設計 GPU・チップ(research3/W8_aws_vs_commodity.md:232)",
+  "Fusion・NetSuite・Oracle Health の品質・独立ベンチマーク(report/r3_sections_5w1h_f20.md:149-150)",
+  "2026 年の地域全体障害の競合比較(report/r3_sections_5w1h_f20.md:108)"
+ ]
+}
