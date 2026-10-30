@@ -60,6 +60,26 @@ def main():
     json.dump(vi, open(os.path.join(tmp, "bad.json"), "w", encoding="utf-8"), ensure_ascii=False)
     rc, out = run([os.path.join(HERE, "valuate.py"), "bad.json", "-o", os.path.join(tmp, "bad")], tmp)
     check("重みの合計の誤りを止める", rc == 2)
+    vi2 = json.load(open(os.path.join(tmp, "valuation_input.json"), encoding="utf-8"))
+    vi2["sensitivities"] = [{"name": "EPS −10%(2030 年の書き漏らし)", "eps_mult": {"2026": -0.1, "2027": -0.1, "2028": -0.1, "2029": -0.1}}]
+    json.dump(vi2, open(os.path.join(tmp, "bad2.json"), "w", encoding="utf-8"), ensure_ascii=False)
+    rc, out = run([os.path.join(HERE, "valuate.py"), "bad2.json", "-o", os.path.join(tmp, "bad2")], tmp)
+    check("感応度の年度の書き漏らしを止める(符号の逆転を防ぐ)", rc == 2 and "eps_mult" in out)
+    vi3 = json.load(open(os.path.join(tmp, "valuation_input.json"), encoding="utf-8"))
+    vi3.pop("edge", None)
+    json.dump(vi3, open(os.path.join(tmp, "bad3.json"), "w", encoding="utf-8"), ensure_ascii=False)
+    rc, out = run([os.path.join(HERE, "valuate.py"), "bad3.json", "-o", os.path.join(tmp, "bad3")], tmp)
+    check("edge(市場との差分)の書き忘れを止める", rc == 2 and "edge" in out)
+    cjp = json.load(open(os.path.join(tmp, "conditions.json"), encoding="utf-8"))
+    vi4 = json.load(open(os.path.join(tmp, "valuation_input.json"), encoding="utf-8"))
+    vi4.pop("conditions_file", None)
+    vi4["grades"] = {str(c["no"]): c["grade"] for c in cjp["conditions"]}
+    vi4["grades"]["10"] = "保留"
+    json.dump(vi4, open(os.path.join(tmp, "pend.json"), "w", encoding="utf-8"), ensure_ascii=False)
+    rc, out = run([os.path.join(HERE, "valuate.py"), "pend.json", "-o", os.path.join(tmp, "pend")], tmp)
+    vp = json.load(open(os.path.join(tmp, "pend", "valuation.json"), encoding="utf-8")) if rc == 0 else {}
+    check("評価保留を B と同じ点で数え、「保留をすべて C」の感応度を出す",
+          rc == 0 and vp["display"]["value.engine"] == "23.8" and any(s["name"] == "保留をすべて C" for s in vp.get("sensitivities", [])))
     cj = json.load(open(os.path.join(tmp, "conditions.json"), encoding="utf-8"))
     cj["conditions"][1]["evidence"] = ["根拠に数字がない文"]
     cj["conditions"][2]["grade"] = "C"

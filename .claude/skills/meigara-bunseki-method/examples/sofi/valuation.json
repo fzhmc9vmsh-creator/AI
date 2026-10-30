@@ -48,6 +48,7 @@
    "12": "B",
    "13": "B"
   },
+  "pending": [],
   "letter": "B",
   "pos": 0.9166666666666665,
   "peg": {
@@ -307,6 +308,7 @@
   "grade.avg": "3.42",
   "grade.pos": "0.92",
   "grade.distribution": "S1・A3・B8",
+  "grade.pending": "0",
   "peg.start": "1.275",
   "peg.2026": "1.275",
   "peg.2027": "1.225",

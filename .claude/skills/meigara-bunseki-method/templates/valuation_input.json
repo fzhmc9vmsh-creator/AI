@@ -6,7 +6,10 @@
   "conditions_file: 採点表を指定すると評価を自動で読む(grades を手で写さない)。",
   "シナリオは scenarios(名前・確率 p・bundle(bull/base/bear)・eps・grades か peg_start)か tree(節点ツリー)。固定の 25/50/25 は不可。",
   "株価は前提を固定(事前登録)した後で prices に入れる。edge: 市場との差分があるか(false なら判断の上限は買い検討)。",
-  "cross_checks は DCF・同業の PER などを並べるだけ(平均に入れない)。"
+  "cross_checks は DCF・同業の PER などを並べるだけ(平均に入れない)。",
+  "edge: 工程 2 の市場の仮説から true/false を決めて書く(空のままだと計算機が止まる)。工程 2 を行っていなければ false。",
+  "adopted_path: 事業エンジンが報告売上を ±5% で再現でき根拠を書けるなら engine、そうでなければ consensus(空のままだと止まる)。",
+  "sensitivities の eps_mult は数 1 つ(全年度に同じ率)か、全年度を書いた {年度: 率}。年度を書き漏らすと止まる。"
  ],
  "ticker": "",
  "years": [
@@ -31,7 +34,8 @@
  "maturity": {
   "g5_threshold": 0.15,
   "roe": 0.18,
-  "g_long": 0.05
+  "g_long": 0.05,
+  "note": ""
  },
  "g_cap": 0.5,
  "extend_decel": 0.03,
@@ -62,7 +66,7 @@
    "2030": 0
   }
  },
- "adopted_path": "engine",
+ "adopted_path": "",
  "cagr_windows": [
   [
    2025,
@@ -77,7 +81,7 @@
  "prices": {
   "last": 0
  },
- "edge": true,
+ "edge": null,
  "tree": {
   "nodes": [
    {
@@ -130,14 +134,12 @@
  },
  "sensitivities": [
   {
-   "name": "損失率 +1.0pt",
-   "eps_mult": {
-    "2026": -0.05,
-    "2027": -0.1,
-    "2028": -0.1,
-    "2029": -0.1,
-    "2030": -0.1
-   }
+   "name": "EPS −10%(全年度)",
+   "eps_mult": -0.1
+  },
+  {
+   "name": "EPS +10%(全年度)",
+   "eps_mult": 0.1
   },
   {
    "name": "増資 10 億ドル",
@@ -151,5 +153,6 @@
  "cross_checks": {
   "DCF": "",
   "同業の PER": ""
- }
+ },
+ "survival_note": ""
 }

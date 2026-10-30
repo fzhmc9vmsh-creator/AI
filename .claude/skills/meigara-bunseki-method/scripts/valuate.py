@@ -21,7 +21,7 @@ valuation.json の "display"(1 回だけ丸めた表示値)を写す。標準ラ
   prices                 {名前: 株価}。前提を固定した後で入れる
   edge                   市場との差分があるか(工程 2 の市場の仮説から。決められなければ false)
   tree                   節点ツリー(下)か scenarios(名前・確率 p・bundle・eps・grades か peg_start の一覧)
-  sensitivities          [{"name", "eps_mult": {年度: 変化率}} | {"name", "eps": {...}} | {"name", "equity_raise": {"amount", "price", "shares"}}]
+  sensitivities          [{"name", "eps_mult": 変化率(全年度)か {年度: 変化率}(全年度を書く)} | {"name", "eps": {...}} | {"name", "equity_raise": {"amount", "price", "shares"}}]
   cross_checks           DCF・同業の PER など(並べるだけ。平均に入れない)
 
 節点ツリー(tree)の意味:
@@ -85,8 +85,13 @@ def grade_of(grades, years, decrement):
     notes = []
     g = {str(k): str(v).strip().upper() for k, v in grades.items()}
     for k, v in g.items():
-        if v not in SCORE and v != "N/A":
-            raise InputError(f"条件{k} の評価 '{v}' は S・A・B・C・D・E・F・N/A のどれでもありません。")
+        if v not in SCORE and v not in ("N/A", "保留"):
+            raise InputError(f"条件{k} の評価 '{v}' は S・A・B・C・D・E・F・保留・N/A のどれでもありません。")
+    pending = [k for k, v in g.items() if v == "保留"]
+    if pending:
+        # 評価保留は「証拠なしに上げも下げもしない」ための印。点数は中立の B(3 点)で数え、C の数には入れない
+        notes.append(f"評価保留 {len(pending)} 件(条件 {', '.join(pending)})は B と同じ 3 点で数えた。保留をすべて C にした場合は感応度に出す")
+        g = {k: ("B" if v == "保留" else v) for k, v in g.items()}
     # 条件6 と条件7 の対評価: 安い理由の構造が悪い(条件7 が C 以下)なら条件6 の S は無効(A まで)
     if g.get("6") == "S" and g.get("7") in ("C", "D", "E", "F"):
         g["6"] = "A"
@@ -99,7 +104,7 @@ def grade_of(grades, years, decrement):
     n_c = sum(1 for v in vals if SCORE[v] <= 2 and v != "F" and v != "E")
     worst = max(vals, key=lambda v: ORDER.index(v))
     dist = {k: sum(1 for v in vals if v == k) for k in ORDER if any(v == k for v in vals)}
-    base = dict(avg=avg, n_used=len(vals), distribution=dist, grades_used=used)
+    base = dict(avg=avg, n_used=len(vals), distribution=dist, grades_used=used, pending=pending)
     if worst in ("E", "F"):
         notes.append(f"拒否権: {worst} の条件があるため総合は {worst}(許容 PEG を設定しない)")
         return dict(base, letter=worst, pos=None, peg=None, peg_start=None, alpha=None, rules=notes)
@@ -197,6 +202,8 @@ def decide(letter, gap, edge):
 def step(grade, k):
     if grade == "N/A":
         return grade
+    if grade == "保留":
+        grade = "B"
     i = ORDER.index(grade) - k
     return ORDER[min(max(i, 0), len(ORDER) - 1)]
 
@@ -338,7 +345,8 @@ def compute(x):
     paths = need(x, "eps_paths", "入力")
     adopted = need(x, "adopted_path", "入力")
     if adopted not in paths:
-        raise InputError(f"adopted_path '{adopted}' が eps_paths にありません。")
+        raise InputError(f"adopted_path '{adopted}' が eps_paths にありません。事業エンジンが報告売上を ±5% で再現でき根拠を書けるなら"
+                         " engine、そうでなければ consensus を書く。")
     if "grades" not in x and "conditions_file" in x:
         # 13 条件の採点表(conditions.json)から評価を読む。手で写すと食い違うので、こちらを推奨
         cpath = x["conditions_file"]
@@ -350,7 +358,9 @@ def compute(x):
     grades = need(x, "grades", "入力")
     gr = grade_of(grades, years, cfg["peg_decrement"])
     prices = {k: float(v) for k, v in need(x, "prices", "入力").items()}
-    edge = bool(x.get("edge", True))
+    if x.get("edge") is None:
+        raise InputError("edge(市場との差分があるか)を true か false で決めて書く。工程 2 の市場の仮説から決め、決められなければ false。")
+    edge = bool(x["edge"])
     res = dict(ticker=x.get("ticker", ""), cfg=cfg, coe=coe, grade=gr, paths={}, checks=[], display={})
     checks = res["checks"]
 
@@ -416,9 +426,17 @@ def compute(x):
     for s in x.get("sensitivities", []):
         if "eps" in s:
             eps_s = {k: float(v) for k, v in s["eps"].items() if int(k) >= years[0]}
+        elif "eps_mult" not in s:
+            eps_s = dict(base_eps)                            # 増資・株数だけの感応度は EPS 経路を変えない
         else:
             mult = s.get("eps_mult", {})
-            eps_s = {k: v * (1 + float(mult.get(k, 0.0))) for k, v in base_eps.items()}
+            if isinstance(mult, (int, float)):
+                mult = {k: float(mult) for k in base_eps}     # 数 1 つなら全年度に同じ変化率
+            missing = [k for k in base_eps if k not in mult]
+            if missing:
+                raise InputError(f"感応度「{s['name']}」の eps_mult に年度 {', '.join(missing)} がない。全年度を書くか、"
+                                 "数 1 つ(例: -0.10)で全年度に当てる(書き漏らすと成長率が変わり、符号が逆になる)。")
+            eps_s = {k: v * (1 + float(mult[k])) for k, v in base_eps.items()}
         g_s = grade_of(s["grades"], years, cfg["peg_decrement"]) if "grades" in s else gr
         _, v_s, _ = fair_path(eps_s, g_s["peg"], cfg) if g_s["peg"] else (None, 0.0, None)
         if "shares_mult" in s:      # 希薄化は株数で数える(倍率で割り引かない)。対価のない株数の増加
@@ -430,6 +448,10 @@ def compute(x):
         if "add_per_share" in s:    # 一時の効果(評価減など、1 株当たり)
             v_s += float(s["add_per_share"])
         sens.append(dict(name=s["name"], value=v_s, diff=v_s - B))
+    if gr.get("pending"):
+        g_c = grade_of({k: ("C" if str(v).upper() == "保留" else v) for k, v in grades.items()}, years, cfg["peg_decrement"])
+        v_c = fair_path(base_eps, g_c["peg"], cfg)[1] if g_c["peg"] else 0.0
+        sens.append(dict(name="保留をすべて C", value=v_c, diff=v_c - B, grade=g_c["letter"]))
     res["sensitivities"] = sens
 
     # 検査
@@ -449,6 +471,7 @@ def display(res, adopted, prices):
     d["grade.avg"] = rnd(g["avg"], 2)
     d["grade.pos"] = rnd(g["pos"], 2)
     d["grade.distribution"] = "・".join(f"{k}{v}" for k, v in g["distribution"].items())
+    d["grade.pending"] = str(len(g.get("pending", [])))
     d["peg.start"] = rnd(g["peg_start"], 3)
     for y, v in g["peg"].items():
         d[f"peg.{y}"] = rnd(v, 3)

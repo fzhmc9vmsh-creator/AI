@@ -8,7 +8,8 @@
     report.md             報告書(docx に変換する前の原稿)
 
     python3 gate.py facts       [作業フォルダ]   # 台帳の検査
-    python3 gate.py conditions  [作業フォルダ]   # 採点表の検査(根拠・監視 KPI・二層の評価)
+    python3 gate.py conditions  [作業フォルダ]   # 採点表の検査(根拠・監視 KPI・二層の評価・評価保留)
+    python3 gate.py conditions --before-price [作業フォルダ]   # 工程 4 の終わり: 条件6・7 が空でも止めない
     python3 gate.py valuation   [作業フォルダ]   # 計算機を通したか・採点表と評価が一致するか
     python3 gate.py report      [作業フォルダ]   # 報告書の章・数字の一致・版の言葉
     python3 gate.py all         [作業フォルダ]   # 上の 4 つを順に
@@ -20,7 +21,7 @@ import subprocess
 import sys
 
 HERE = os.path.dirname(os.path.abspath(__file__))
-GRADES = {"S", "A", "B", "C", "D", "E", "F", "N/A"}
+GRADES = {"S", "A", "B", "C", "D", "E", "F", "N/A", "保留"}
 LOW = {"C", "D", "E", "F"}
 GROWTH_CONDS = {1, 2, 3, 6, 7, 11, 12, 13}     # 成長企業で二層(現在と将来)の評価が要る条件
 REPORT_HEADINGS = ["エグゼクティブサマリ", "事業本体", "収益構造", "シナリオ", "13条件", "PEG", "バリュエーション",
@@ -78,8 +79,8 @@ def g_facts(d):
     return g.done()
 
 
-def g_conditions(d):
-    g = Gate("13 条件")
+def g_conditions(d, before_price=False):
+    g = Gate("13 条件" + ("(条件6・7 を除く)" if before_price else ""))
     p = os.path.join(d, "conditions.json")
     if not os.path.exists(p):
         g.e("conditions.json がない(templates/conditions.json を写して作る)")
@@ -98,12 +99,22 @@ def g_conditions(d):
         g.e(f"条件は 1〜13 を 1 つずつ(今は {nos})")
     growth = bool(cj.get("growth_company"))
     if growth and not str(cj.get("phase", "")).strip():
-        g.e("成長企業(growth_company: true)は phase(フェーズ ①〜④)を最初に決めて書く")
+        g.e("成長企業(growth_company: true)は phase(フェーズ ①〜⑤)を最初に決めて書く")
+    n_pending = 0
     for c in conds:
-        no, gr = c.get("no"), str(c.get("grade", "")).upper()
+        no, gr = c.get("no"), str(c.get("grade", "")).strip().upper()
         tag = f"条件{no}"
+        if before_price and no in (6, 7) and not gr:
+            continue                     # 条件6・7 は株価を入れた後(工程 5 の 3)で採点する
+        if gr == "保留":
+            n_pending += 1
+            if not (str(c.get("kpi", "")).strip() and str(c.get("trigger", "")).strip()):
+                g.e(f"{tag}: 評価保留は、決め手になる確認 KPI(kpi)と閾値(trigger)が必須")
+            if len(str(c.get("reason", "")).strip()) < 15:
+                g.e(f"{tag}: 評価保留は reason に「何が分かれば決まるか」を書く")
+            continue
         if gr not in GRADES:
-            g.e(f"{tag}: grade '{c.get('grade')}' は S・A・B・C・D・E・F・N/A のどれか")
+            g.e(f"{tag}: grade '{c.get('grade')}' は S・A・B・C・D・E・F・保留・N/A のどれか(空なら採点する)")
             continue
         reason = str(c.get("reason", "")).strip()
         if len(reason) < 15:
@@ -123,8 +134,8 @@ def g_conditions(d):
                 n_id += 1
             elif re.fullmatch(r"[a-z0-9_]+(\.[a-z0-9_]+)+", x):
                 g.e(f"{tag}: 根拠の id '{x}' が台帳にない")
-            elif not re.search(r"\d", x):
-                g.e(f"{tag}: 根拠「{x[:20]}…」に数字がない(定量の根拠にする)")
+            elif not re.search(r"\d", x) and no not in (4, 9):
+                g.e(f"{tag}: 根拠「{x[:20]}…」に数字がない(定量の根拠にする。例:「交換手数料は前年比 +77%(8-K)」)")
         if ids and no != 4 and n_id == 0:
             g.e(f"{tag}: 根拠に台帳の id が 1 つもない(少なくとも 1 つは台帳の数字で示す)")
         if gr in LOW and not (str(c.get("kpi", "")).strip() and str(c.get("trigger", "")).strip()):
@@ -135,6 +146,8 @@ def g_conditions(d):
                 g.e(f"{tag}: 成長企業は将来(実現性を加味)の評価 future_grade が必須(二層の構造評価)")
             elif fg != gr and not isinstance(c.get("future_p"), (int, float)):
                 g.e(f"{tag}: 将来の評価が現在と違うときは実現確率 future_p(0〜1)を書く")
+    if n_pending > 3:
+        g.e(f"評価保留が {n_pending} 件。3 件以内にする(決め手の証拠を追加調査する。最大 2 周)")
     if str(next((c.get("grade") for c in conds if c.get("no") == 4), "")).upper() not in ("S", "A"):
         g.w("条件4(日本株か米国株)が S・A でない。ゲート審査で止めるべきかを確かめる")
     return g.done()
@@ -231,11 +244,14 @@ def g_report(d):
 
 
 def main():
-    if len(sys.argv) < 2 or sys.argv[1] not in ("facts", "conditions", "valuation", "report", "all"):
+    args = [a for a in sys.argv[1:] if a != "--before-price"]
+    before = "--before-price" in sys.argv
+    if not args or args[0] not in ("facts", "conditions", "valuation", "report", "all"):
         print(__doc__)
         sys.exit(2)
+    sys.argv = [sys.argv[0]] + args
     d = sys.argv[2] if len(sys.argv) > 2 else "."
-    fns = {"facts": g_facts, "conditions": g_conditions, "valuation": g_valuation, "report": g_report}
+    fns = {"facts": g_facts, "conditions": (lambda x: g_conditions(x, before)), "valuation": g_valuation, "report": g_report}
     order = ["facts", "conditions", "valuation", "report"] if sys.argv[1] == "all" else [sys.argv[1]]
     ok = True
     for k in order:

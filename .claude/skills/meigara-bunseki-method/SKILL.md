@@ -25,7 +25,7 @@ description: スキル和名は「銘柄分析メソッド」。目的は割安�
 S=<このスキルのフォルダ>            # 例: /mnt/skills/user/meigara-bunseki-method
 W=<作業フォルダ>                    # 例: ./work/TICKER
 mkdir -p $W && cp $S/templates/*.json $S/templates/report_outline.md $W/
-python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作業を始めない
+python3 $S/scripts/selftest.py      # 道具の自己テスト(一時フォルダで動き、終われば消す)。FAIL なら作業を始めない
 ```
 
 作業フォルダの標準のファイル: `facts.json`(台帳)・`conditions.json`(13 条件)・`valuation_input.json`(計算の入力)
@@ -34,9 +34,10 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作�
 ## 工程 0: ゲート審査と型の判定
 
 - 読む: `references/method-detail.md` の「Phase 0」。
-- 決める: ① 日本株か米国株か(違えば短い報告で終了)、② 会計不正が進行中でないか、③ AI 関連か(違えば条件9 は N/A)、
+- 決める: ① 日本株か米国株か(違えば短い報告で終了)、② 会計不正が進行中でないか(検索できないときは利用者の資料の記載で判断し、
+  既知の制約に書く)、③ AI 関連か(違えば条件9 は N/A)、
   ④ **成長企業か**(`references/growth-stage-evaluation.md` §0 の適用条件)。成長企業なら `conditions.json` の
-  `growth_company` を true にし、**フェーズ(①〜⑤)を最初に決めて** `phase` に書く(§1)。
+  `growth_company` を true にし、**フェーズ(①〜⑤)を最初に決めて** `phase` に書く(§1。次のフェーズへの移行条件は工程 3 で書く)。
 - 決算の更新のときは、下の「決算の更新」を先に読む。
 
 ## 工程 1: 調査 → 台帳(facts.json)
@@ -79,15 +80,19 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作�
 - **条件6・7 はここでは採点しない**(株価を使うため)。工程 5 の 3 で採点する。ここでは残りの 11 条件を埋める。
 - 作る: `conditions.json`。条件ごとに `grade`・決め手の一文 `reason`・根拠 `evidence`(2 個以上、台帳の id を 1 つ以上)。
   C 以下は `kpi` と `trigger`。成長企業は条件 1・2・3・6・7・11・12・13 に将来の評価 `future_grade` と実現確率 `future_p`。
-- 規則: 迷ったら評価を動かさず、決め手の証拠を追加調査する(最大 2 周)。証拠なしに上げも下げもしない。
+- 規則: 迷ったら評価を動かさず、決め手の証拠を追加調査する(最大 2 周)。証拠なしに上げも下げもしない。2 周で決まらなければ
+  grade を「保留」にする(reason に何が分かれば決まるか、kpi と trigger。3 件まで)。根拠が足りないことを理由に C にしない。
+  工程 3 を行わないときは future_grade を grade と同じにし、既知の制約に書く。
   「規模が小さいから対象外」にしない。条件6 は閾値を満たせば B(A 寄り)から出発し、市場・同業との乖離で A まで。
-- 検査: 条件6・7 を埋めた後(工程 5 の 3)で `python3 $S/scripts/gate.py conditions $W` → PASS。
+- 検査: 工程 4 の終わりは `python3 $S/scripts/gate.py conditions --before-price $W` → PASS(条件6・7 の空欄は止めない)。
+  条件6・7 を埋めた後(工程 5 の 3)で `--before-price` なしの `gate.py conditions` → PASS。
 - 利用者や前工程の見立てがあっても、根拠(台帳の数字)と合わなければ採点を直し、報告に理由を書く(見立てをそのまま写さない)。
 
 ## 工程 5: 価値評価(valuation_input.json → valuate.py)
 
 - 読む: `references/valuation-model.md` §3-0〜§3-4(EPS の品質・3 経路・許容 PEG・年度別の表)、
-  `references/intrinsic-valuation-credit.md` §1〜§3、`references/scenario-strategy.md` §6。
+  `references/intrinsic-valuation-credit.md` §1〜§3(借入で成長する企業は §4 も)、`references/scenario-strategy.md` §6。
+- 採用経路(`adopted_path`): 事業エンジンが報告売上を ±5% で再現でき(工程 2)、根拠を書けるなら engine、そうでなければ consensus。
 - 順番(事前登録):
   1. 株価を見る前に、資本コスト(`coe`)・3 経路の EPS(`eps_paths`。過去の伸びの外挿は禁止)・シナリオ(`tree` か
      `scenarios`)・感応度(`sensitivities`。最低でも EPS ±10%、株数が分かれば増資)・成熟年度の ROE(`maturity.roe` と `note`)・
