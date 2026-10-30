@@ -1,9 +1,9 @@
 // 市場の見方・波及・カタリスト(指示書 spec/ch4b.md の s31 節)
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    title: '株価は事業実態 EPS の 13.3 倍で、説明会の後も弱気シナリオの値に近い。市場は EPS ではなく現金化を疑い、次の試金石は 12 月の Q2 決算',
+    title: '株価は事業実態 EPS の 13.9 倍で、説明会の後も弱気シナリオの値に近い。市場は EPS ではなく現金化を疑い、次の試金石は 12 月の Q2 決算',
     kicker: '左: 市場が付ける倍率と、株価が示す弱気の確率。右: 構造の変化が数字に及ぶ道筋と、カタリストの日程',
-    source: '需給エンジン第4.4版(calc/out/m9_fair.json)、Investor Day 2026-10-28、会社開示、report/ORCL_report.md §11',
+    source: '需給エンジン第4.5版(calc/out/m10_*.json)、Investor Day 2026-10-28、会社開示、report/ORCL_report.md §11',
     page: 31,
   });
 
@@ -14,8 +14,8 @@ module.exports = function build(pres, L) {
   // 左上: 市場の倍率(横棒。市場だけアンバー、他は緑系)
   L.paneHead(s, 0.5, 1.62, 6.05, '市場の倍率(FY27 末、翌年度の事業実態 EPS 比)');
   s.addChart(pres.charts.BAR, [
-    { name: '市場', labels: ['弱気', '市場(株価 139.56)', 'ベース', '強気'], values: [0, 13.3, 0, 0] },
-    { name: 'シナリオ', labels: ['弱気', '市場(株価 139.56)', 'ベース', '強気'], values: [13.4, 0, 22.0, 28.0] },
+    { name: '市場', labels: ['弱気', '市場(株価 139.56)', 'ベース', '強気'], values: [0, 13.9, 0, 0] },
+    { name: 'シナリオ', labels: ['弱気', '市場(株価 139.56)', 'ベース', '強気'], values: [13.8, 0, 24.0, 31.0] },
   ], L.chartStyle({
     x: 0.5, y: 1.98, w: 6.05, h: 2.1, barDir: 'bar', barGrouping: 'stacked', chartColors: [L.C.amber, L.C.primary],
     dataLabelFormatCode: '0.0"倍";;;', dataLabelPosition: 'ctr', dataLabelColor: L.C.white, showLegend: false, objectName: 'chart',
@@ -24,11 +24,11 @@ module.exports = function build(pres, L) {
   // 左下: 株価が示す弱気の確率
   L.table(s, [
     ['株価が示す弱気の確率(定義)', '株価 139.56'],
-    ['強気:ベース = 1:2 を固定して弱気の確率を逆算', '98%'],
-    ['ベースと弱気の 2 点', '98%'],
-    ['DCF の値で定義1 と同じ計算', '71%'],
+    ['強気:ベース = 1:2 を固定して弱気の確率を逆算', '96%'],
+    ['ベースと弱気の 2 点', '95%'],
+    ['DCF の値で定義1 と同じ計算', '77%'],
   ], { x: 0.5, y: 4.25, w: 6.05, colW: [4.25, 1.8], fontSize: 9.5, rowH: 0.36 });
-  L.text(s, '市場は説明会の後も、株価を弱気シナリオの値(138 ドル)に置く。\n疑っているのは EPS ではなく、EPS が現金になるか(更新の山・格付け・OpenAI)', {
+  L.text(s, '市場は説明会の後も、株価を弱気シナリオの値(134 ドル)に置く。\n疑っているのは EPS ではなく、EPS が現金になるか(資金・格付け・OpenAI)。\nCDS・社債は市場の評価で、本当のリスクは数字で別に判断する', {
     x: 0.5, y: 5.75, w: 6.05, h: 0.9, fontSize: 9.5, objectName: 'note',
   });
 

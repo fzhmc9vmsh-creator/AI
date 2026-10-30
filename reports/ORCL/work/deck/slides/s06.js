@@ -2,9 +2,9 @@
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
-    title: 'DB の切替コストと前払い・長期リースの資金構造が評価を押し上げ、AI 容量の商品性と OpenAI 集中が押し下げる',
+    title: 'DB の切替コストと前払い・長期リースの資金構造が評価を押し上げ、OpenAI 集中と学習向け容量のコモディティ性が押し下げる',
     kicker: '構造的要因サマリー: 構造(だから)→ 条件の評価(となり)→ 構造評価への効き(を動かした)',
-    source: '本資料 第3章、需給エンジン第4.4版(calc/out/m9_fair.json)',
+    source: '本資料 第3章、需給エンジン第4.5版(calc/out/m10_*.json)',
     page: 6,
   });
 
@@ -14,8 +14,8 @@ module.exports = function build(pres, L) {
     { conds: [['3', 'A']], head: 'DB の AI 転用', body: 'OCI と Database@ が増収の主因になり、転用の成果として評価を上げた' },
   ];
   const down = [
-    { conds: [['8', 'C']], head: 'AI 容量の商品性', body: '価値の 41% が需給緩和後に限界供給者の損益分岐で値決めされ、評価を下げた' },
-    { conds: [['7', 'C']], head: 'OpenAI 集中と信用リスク', body: '受注残の約 45% が1社に集中し、\nCDS 277bp(10 月中旬に 300bp 前後)が示す信用リスクが安さの主因' },
+    { conds: [['8', 'B']], head: 'AI 容量のコモディティ性', body: '学習向けの大型容量はコストプラスで\n原価で値が決まる(推論は除く)' },
+    { conds: [['7', 'A']], head: 'OpenAI 集中(条件7 A。S に届かず)', body: '受注残の約 45% は OpenAI。\n信用リスクは市場の評価ほど高くなく、\n倒産の道はない(レバレッジ最大 4.4 倍)' },
     { conds: [['2', 'B'], ['11', 'B']], head: '長期リースの固定費', body: '需要が鈍れば 15〜19 年の賃料が\n空室のまま残り、資金構造の利点の\n裏返しとして評価を抑えた' },
   ];
 

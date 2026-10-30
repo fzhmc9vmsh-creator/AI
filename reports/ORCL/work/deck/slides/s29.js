@@ -15,7 +15,7 @@ module.exports = function build(pres, L) {
     ['課金', '継続課金・従量・確約', '—'],
     ['陳腐化リスク', '前払い・持ち込みで顧客へ移す', '自社調達 GPU は Oracle が負う'],
     ['capex(FY27)', '純現金 capex 700 億ドル以下(ガイダンス)', 'エンジン 942 億ドル・純現金 733 億ドル'],
-    ['価値の比率', '保守・SaaS・OCI 一般 約 50%', 'AI 容量 45%'],
+    ['価値の比率', '保守・SaaS・OCI 一般 約 50%', 'AI 容量 44%'],
   ], { x: 0.5, y: 3.55, w: 8.3, colW: [2.3, 3.0, 3.0], fontSize: 10, rowH: 0.4 });
   L.t15Side(s, {
     evidence: ['前払い・持ち込み累計 750 億ドル', '10GW の 90% 超はパートナーが資金負担', [{ text: 'FY27 の総 capex 900〜950 億ドルのうち、', options: { breakLine: true, paraSpaceAfter: 0 } }, { text: '顧客の前払いが約 24%', options: CONT }]],
