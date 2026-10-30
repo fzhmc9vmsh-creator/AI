@@ -2,9 +2,9 @@
 module.exports = function build(pres, L) {
   const { C } = L;
   const s = L.contentSlide(pres, {
-    title: '上積みの2つ: SaaS は旧 ERP 顧客の移行で 10% → 14% に加速すると見て、Database@ は FY30 に 46 億ドル・1株 5 ドルの純増と置く',
+    title: 'SaaS は旧 ERP 顧客の移行で 10% → 14% に加速すると見て、Database@ は FY30 に 46 億ドル・1 株 5 ドルの純増と置く',
     kicker: '左: SaaS の先行指標・製品特性・反証と前提。右: Database@ の伸び(前年同期比)と前提',
-    source: 'research4/T3_saas_products.md、research2/R4_database_at.md、research3/W6_database_at.md、需給エンジン第4.3版(calc/model8.py)',
+    source: 'research4/T3_saas_products.md、research2/R4_database_at.md、research3/W6_database_at.md、需給エンジン第4.4版(calc/model9.py)',
     page: 14,
   });
 

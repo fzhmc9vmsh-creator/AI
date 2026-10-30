@@ -16,6 +16,6 @@ L.save(pres, out).then(() => {
   const fs = require('fs'), glob = (d) => { try { return fs.readdirSync(d).map(x => d + '/' + x + '/pptx/scripts/office/soffice.py').find(f => fs.existsSync(f)); } catch (e) { return null; } };
   const sp = process.env.SOFFICE_PY || glob('/root/.claude/skills/synced');
   const conv = sp ? `python3 ${sp}` : 'soffice';
-  execSync(`cd tmp && ${conv} --headless --convert-to pdf ${id}.pptx >/dev/null 2>&1 && pdftoppm -jpeg -r ${process.env.DPI || 80} -singlefile ${id}.pdf ${id}`);
+  execSync(`cd tmp && ${conv} --headless -env:UserInstallation=file:///tmp/lo_${id} --convert-to pdf ${id}.pptx >/dev/null 2>&1 && pdftoppm -jpeg -r ${process.env.DPI || 80} -singlefile ${id}.pdf ${id}`);
   console.log('image:', require('path').resolve(`tmp/${id}.jpg`));
 });

@@ -2,7 +2,7 @@
 // 箇条書きの続きの行: 記号を出さず(空白の記号)、字下げだけ先頭行にそろえる
 const CONT = { bullet: { characterCode: '00A0', indent: 12 } };
 module.exports = function build(pres, L) {
-  const s = L.contentSlide(pres, { title: '保守・SaaS・Database@ は ORCL 型だが、自社で GPU を買う大型 AI 契約の部分が MU 型に寄る', kicker: '条件13(総合)アーキタイプ照合: ORCL 型か MU/VRT/AVGO 型か', source: '需給エンジン第4.3版、会社開示(FY27 capex ガイダンス)、research4/T2_company_rpo_capacity.md', page: 29, grade: 'B', condNo: 13 });
+  const s = L.contentSlide(pres, { title: '保守・SaaS・Database@ は ORCL 型だが、自社で GPU を買う大型 AI 契約の部分が MU 型に寄る', kicker: '条件13(総合)アーキタイプ照合: ORCL 型か MU/VRT/AVGO 型か', source: '需給エンジン第4.4版、会社開示(FY27 capex ガイダンス)、research4/T2_company_rpo_capacity.md', page: 29, grade: 'B', condNo: 13 });
   L.flow(s, [
     { head: '原型', boxes: [{ text: 'ORCL 型', tone: 'key', h: 0.9 }] },
     { head: 'A', boxes: [{ text: '保守・SaaS', tone: 'on', h: 0.9 }] },

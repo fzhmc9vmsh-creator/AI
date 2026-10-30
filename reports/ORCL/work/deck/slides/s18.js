@@ -1,8 +1,8 @@
 // 条件2 コア事業の現金創出(評価 B)。指示書 spec/r6_cond.md の s18 節
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    kicker: '左から: 資金の出し手 → Oracle の資金の源 → 使い道 → 結果。①〜⑤ は右と対応。金額は FY27(需給エンジン第4.3版・会社開示)',
-    source: '会社開示(Q1 FY27、10-Q)、需給エンジン第4.3版(calc/out/m8_all.json)、research2/R7_capital_power.md、S&P(2026-07)',
+    kicker: '左から: 資金の出し手 → Oracle の資金の源 → 使い道 → 結果。①〜⑤ は右と対応。金額は FY27(需給エンジン第4.4版・会社開示)',
+    source: '会社開示(Q1 FY27、10-Q)、需給エンジン第4.4版(calc/out/m9_all.json)、research2/R7_capital_power.md、S&P(2026-07)',
     grade: 'B', condNo: 2,
   });
   L.flowMap(s, {
@@ -20,7 +20,7 @@ module.exports = function build(pres, L) {
       { id: 'debt', c: 1, r: 3, kind: 'risk', label: '借入・株式', sub: 'BBB−(S&P)' },
       { id: 'capex', c: 2, r: 0, rs: 2, kind: 'key', label: 'capex(FY27)', sub: '総額 900〜950 億ドル\n\n\n前払いが\n約 24% を賄う\n\n\n純現金 700 億ドル以下\n(会社の見通し)' },
       { id: 'rent', c: 2, r: 2, kind: 'risk', label: '賃料', sub: '固定費として\n15〜19 年続く' },
-      { id: 'fcf', c: 2, r: 3, kind: 'risk', label: '全社 FCF\n(エンジン)', sub: 'FY27 −342 億\nFY29 −135 億ドル' },
+      { id: 'fcf', c: 2, r: 3, kind: 'risk', label: '全社 FCF\n(エンジン)', sub: 'FY27 −499 億\nFY29 +721 億ドル' },
       { id: 'nv', c: 3, r: 0, label: 'NVIDIA・部材', sub: 'GPU・網・メモリ' },
       { id: 'sp', c: 3, r: 3, label: 'S&P', sub: 'FY29 までの\nFOCF 黒字を要求' },
     ],
@@ -43,11 +43,11 @@ module.exports = function build(pres, L) {
       'コアの利益(税引後 230 億ドル)が capex の自己資金の柱になる',
       'AI 研究所が GPU 代の約 24% を前払いし、前受収益は 1 年で倍増(154 → 308 億ドル)',
       '建屋と電力は開発事業者が資金を出し、Oracle は 15〜19 年の賃料で借りる(未開始 2,880 億ドル)',
-      '残りは社債・優先株・ATM で調達。\n全社 FCF はエンジンで FY29 まで赤字(FY29 −135 億ドル)',
-      'S&P は FY29 までの FOCF 黒字化を、格付け維持の条件にする。S&P とコンセンサスは FY29 に黒字',
+      '残りは社債・優先株・ATM で調達(ATM 200 億ドルは Q1 で完了)。\n追加は 200 億ドルが上限。\n全社 FCF はエンジンで FY28 にほぼ均衡、\nFY29 に 721 億ドル',
+      'S&P は FY29 までの FOCF 黒字化を、格付け維持の条件にする。\nS&P とコンセンサスは FY29 に黒字',
     ],
     reason: 'コアの現金は潤沢で、投資の多くは\n外部化されている。ただし自己資金で\n賄えない期間が FY29 まで続くため B',
-    up: '前払いの比率が 30% を超え、FCF の黒字化が FY28 に早まれば A',
+    up: '前払いの比率が 30% を超え、FCF の黒字化が FY28 下期に確認されれば A',
     down: 'FY29 の FCF が赤字のまま\nBB+ に格下げされれば C',
   });
   return s;

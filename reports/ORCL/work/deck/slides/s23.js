@@ -1,8 +1,8 @@
 // 条件7(評価 C): 安い理由の検証。指示書 spec/r6_cond.md の s23 節
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
-    kicker: '左から: 市場の疑い → 疑いの対象 → 証拠 → 判定。①〜④ は右と対応。株価は事業実態 EPS の 15.7 倍(弱気シナリオ 13.6 倍寄り)',
-    source: 'research2/R5_credit.md、research4/T2_company_rpo_capacity.md、research3/W2_gpu_economic_life.md、Bloomberg(2026-10-08)、S&P(2026-07)',
+    kicker: '左から: 市場の疑い → 疑いの対象 → 証拠 → 判定。①〜④ は右と対応。株価は事業実態 EPS の 13.3 倍(弱気シナリオの値とほぼ同じ)',
+    source: 'Investor Day 2026-10-28、需給エンジン第4.4版(calc/out/m9_all.json)、research2/R5_credit.md、research4/T2_company_rpo_capacity.md、research3/W2_gpu_economic_life.md、Bloomberg(2026-10-08)、S&P(2026-07)',
     grade: 'C', condNo: 7,
   });
   L.flowMap(s, {
@@ -12,13 +12,13 @@ module.exports = function build(pres, L) {
       { id: 'd1', c: 0, r: 0, label: 'GPU 寿命の悲観', sub: '「2〜3 年で陳腐化」' },
       { id: 'd2', c: 0, r: 1, label: 'FCF の J カーブ', sub: 'FY29 まで赤字' },
       { id: 'd3', c: 0, r: 2, kind: 'risk', label: 'OpenAI への集中', sub: '受注残の約 45%' },
-      { id: 'd4', c: 0, r: 3, kind: 'risk', label: '信用リスク', sub: 'CDS 227bp\n2056 年債 8% 超' },
+      { id: 'd4', c: 0, r: 3, kind: 'risk', label: '信用リスク', sub: 'CDS 277bp\n(10 月中旬 300bp 前後)' },
       { id: 'o1', c: 1, r: 0, kind: 'unit', label: 'GPU(自社調達)', sub: '6 年償却' },
       { id: 'o2', c: 1, r: 1, kind: 'unit', label: 'capex', sub: 'FY27\n900〜950 億ドル' },
       { id: 'o3', c: 1, r: 2, kind: 'unit', label: '受注残', sub: '6,640 億ドル' },
       { id: 'o4', c: 1, r: 3, kind: 'unit', label: '借入と格付け', sub: 'BBB−(S&P)' },
       { id: 'e1', c: 2, r: 0, kind: 'ok', label: '更新・再販 +20%', sub: 'H100 を元の 95% で\n再契約した例' },
-      { id: 'e2', c: 2, r: 1, label: 'S&P・コンセンサス', sub: 'FY29 に FCF 黒字\n(エンジンは −135 億)' },
+      { id: 'e2', c: 2, r: 1, label: '会社の資金計画', sub: 'FY29 FCF 300 億以上\n追加調達 200 億が上限' },
       { id: 'e3', c: 2, r: 2, kind: 'risk', label: 'OpenAI の資金', sub: '2026〜30 年の FCF\n累計 −2,780 億ドル' },
       { id: 'e4', c: 2, r: 3, kind: 'risk', label: 'S&P の条件', sub: 'FY29 までに FOCF\n黒字でなければ\n再格下げ' },
       { id: 'v1', c: 3, r: 0, kind: 'ok', label: '見落とし', sub: '機会' },
@@ -45,14 +45,14 @@ module.exports = function build(pres, L) {
     bottom: 6.32,
     mech: [
       'GPU 寿命の悲観は、更新・再販 +20% と H100 の再契約(元の 95%)が反証する。\n市場の見落とし',
-      'FCF の赤字は契約済み需要への先行投資(J カーブ)。ただし黒字化は FY29 で、時期の不確かさは実在',
+      'FCF の赤字は契約済み需要への\n先行投資(J カーブ)。会社は FY28 下期の黒字化と追加調達の上限を約束し、\nエンジンでも成り立つ',
       '受注残の約 45% は OpenAI。\nOpenAI の FCF は 2026〜30 年累計 −2,780 億ドルで、支払いは資金調達頼み',
-      'CDS 227bp と S&P の条件は、債券市場も同じリスクを価格に入れている証拠',
+      'CDS 277bp(5 年で 21% の倒産を織り込む)と\nS&P の条件は、債券市場がまだリスクを価格に入れている証拠',
     ],
-    reason: '安さの主因は実在のリスク(OpenAI 集中と信用)で、見落としで説明できるのは GPU 寿命と J カーブの一部に限られるため C',
+    reason: '資金繰りの疑いには会社の数字の道筋が出た\n(B に近づく)。ただし事前の条件(CDS 200bp 未満・OpenAI 比率 40% 未満)は未達で、OpenAI 集中は実在のため C',
     up: 'OpenAI の比率が 40% 未満に下がり、CDS が 200bp 未満に戻れば B',
     down: 'CDS が 300bp を超えるか、FY29 より前に BB+ になれば D 候補',
   });
-  L.kpiBand(s, 'CDS 5年 200bp 未満で確度を上げ、300bp 超で D 候補 / FY29 より前の BB+ で D 候補 / OpenAI の比率 40% 未満で確度を上げ、契約変更・支払遅延の報道で E 候補');
+  L.kpiBand(s, 'CDS 5年 200bp 未満で B(現在 277bp)、300bp 超で D 候補 / FY29 より前の BB+ で D 候補 / OpenAI の比率 40% 未満で確度を上げ、契約変更・支払遅延の報道で E 候補');
   return s;
 };

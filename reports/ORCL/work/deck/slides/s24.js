@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, {
     kicker: '左から: 供給者 → Oracle の事業(1 株価値の内訳)→ 買い手 ← 代替と価格の基準。①〜⑤ は右と対応',
-    source: '需給エンジン第4.3版(セグメント価値)、research3/W3_industry_structure.md、ICE・CME の発表(2026-05)、Epoch AI、SemiAnalysis ClusterMAX v3.0',
+    source: '需給エンジン第4.4版(セグメント価値)、research3/W3_industry_structure.md、ICE・CME の発表(2026-05)、Epoch AI、SemiAnalysis ClusterMAX v3.0',
     grade: 'C', condNo: 8,
   });
   L.flowMap(s, {
@@ -13,7 +13,7 @@ module.exports = function build(pres, L) {
       { id: 'nv', c: 0, r: 1, label: 'NVIDIA', sub: 'AI 計算の約 8 割' },
       { id: 'mem', c: 0, r: 2, kind: 'risk', label: 'メモリ・電力', sub: '逼迫は\n2028 年まで' },
       { id: 'diff', c: 1, r: 0, kind: 'unit', label: 'DB 保守・SaaS・\nOCI 一般', sub: '1 株 120 ドル\n(45 + 44 + 31)', tag: { text: '差別化', tone: 'green', above: true } },
-      { id: 'ai', c: 1, r: 1, rs: 2, kind: 'unit', label: 'AI 容量', sub: '1 株 117 ドル\n(価値の 45%)\n\n差: 電力の確保・\nRDMA 網・品質 Gold', tag: { text: '緩和後は商品', tone: 'red', above: true } },
+      { id: 'ai', c: 1, r: 1, rs: 2, kind: 'unit', label: 'AI 容量', sub: '1 株 97 ドル\n(価値の 41%)\n\n差: 電力の確保・\nRDMA 網・品質 Gold', tag: { text: '緩和後は商品', tone: 'red', above: true } },
       { id: 'ent', c: 2, r: 0, label: '企業', sub: 'データの近くで推論' },
       { id: 'lab', c: 2, r: 1, label: 'AI 研究所', sub: '最も安い容量を選ぶ' },
       { id: 'hyper', c: 3, r: 0, label: '大手クラウド', sub: 'H100 実勢\n7.19 ドル/時' },
@@ -41,7 +41,7 @@ module.exports = function build(pres, L) {
       '価格指数と現金決済の先物(ICE・CME)が整い、GPU 時間の価格が標準化しつつある',
       '推論トークンの価格は、同じ性能で\n年 9〜900 倍の速さで下がっている(Epoch)',
     ],
-    reason: '価値の 45% を占める AI 容量が、逼迫の緩和後に商品として値決めされる層にあるため C',
+    reason: '価値の 41% を占める AI 容量が、逼迫の緩和後に商品として値決めされる層にあるため C',
     up: 'AI 粗利率 35% 以上が続き、緩和期に入っても更新プレミアムが正なら B',
     down: 'AI 粗利率が 25% 未満か、更新プレミアムが 0% 以下なら D 候補',
   });
