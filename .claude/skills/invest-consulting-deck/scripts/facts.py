@@ -44,7 +44,7 @@ def rnd(x, nd):
     q = 10 ** nd
     v = math.floor(abs(x) * q + 0.5) / q
     v = -v if x < 0 else v
-    return f"{v:,.{nd}f}" if abs(v) >= 10000 else f"{v:.{nd}f}"
+    return f"{v:,.{nd}f}" if abs(v) >= 1000 else f"{v:.{nd}f}"     # 1,000 以上は 3 桁区切り(1,710 万人)
 
 
 def disp_of(f):

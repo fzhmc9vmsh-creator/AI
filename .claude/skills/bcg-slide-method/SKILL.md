@@ -4,9 +4,9 @@ description: スキル和名は「BCGスライド級スライド作成メソッ�
 ---
 
 > **注記(2026-10-17)**
-> - `references/` の 6 文書は、原本が手元になかったため invest-consulting-deck の `scripts/`(lib.js・audit_deck.py)と `references/deck-rules-v2.md` から再構成した**代替版**である。本文中の R1〜R11・P-1〜P-19・C-1〜C-5 の番号は、代替版では lib.js の部品名に読み替える(`references/pattern-library.md`)。
+> - `references/` の 6 文書は、原本が手元になかったため invest-consulting-deck の `scripts/`(lib.js・audit_deck.py)と `invest-consulting-deck/references/deck-rules-v2.md` から再構成した**代替版**である。本文中の R1〜R11・P-1〜P-19・C-1〜C-5 の番号は、代替版では lib.js の部品名に読み替える(`references/pattern-library.md`)。
 > - 実装の部品(座標・チャート・関係図・機械監査)は invest-consulting-deck の `scripts/` を使う(lib.js は pptxgenjs。本文の python-pptx は読み替える)。
-> - 最新の必須事項は invest-consulting-deck の `references/deck-rules-v2.md` が優先する。本文や references と矛盾したら、そちらに従う。
+> - 最新の必須事項は `invest-consulting-deck/references/deck-rules-v2.md` が優先する。本文や references と矛盾したら、そちらに従う。
 
 # BCGスライド級スライド作成メソッド(bcg-slide-method)
 
@@ -52,13 +52,22 @@ Phase 4: 3層監査ループ(構造→仕様→視覚、最大3周) → audit-lo
 Phase 5: 納品(pptx+スライド設計書+監査記録)
 ```
 
-参照ファイルは6つ。**Phase 1の前にすべて読む**:
-- `references/message-storyline.md` — 文章→メッセージ抽出→ストーリーライン→スライド分割、数字の見せ方
-- `references/pattern-library.md` — 基準スライドR1〜R11の意味と使い分け、表現パターン19型、選択決定木
-- `references/density-composition.md` — 情報密度の定量基準、視覚エンコーディング義務、複合構成C-1〜C-5、データ→切り口設計
-- `references/blueprints.md` — **実装の正**。R1〜R11のshape単位設計図(座標・寸法・スロット上限)、再掲オーバーレイ、写経ルール
-- `references/design-system.md` — 配色パレット(hex)、タイポグラフィ(pt)、共通部品、比例描画チャートの幾何式、python-pptx実装規約
-- `references/audit-loop.md` — 3層監査、**実行必須の機械監査スクリプト仕様**、差し戻し基準、完成宣言の条件
+参照ファイルは6つ。**各 Phase で、その Phase に書いたファイルだけを読む**(最初に全部を読まない。読む量を減らして規則の取りこぼしを防ぐ):
+- `references/message-storyline.md` — (Phase 1)文章→メッセージ抽出→ストーリーライン→スライド分割、数字の見せ方
+- `references/pattern-library.md` — (Phase 2)基準スライドR1〜R11の意味と使い分け、表現パターン19型、選択決定木
+- `references/density-composition.md` — (Phase 2)情報密度の定量基準、視覚エンコーディング義務、複合構成C-1〜C-5、データ→切り口設計
+- `references/blueprints.md` — (Phase 3)**実装の正**。R1〜R11のshape単位設計図(座標・寸法・スロット上限)、再掲オーバーレイ、写経ルール
+- `references/design-system.md` — (Phase 3)配色パレット(hex)、タイポグラフィ(pt)、共通部品、比例描画チャートの幾何式、python-pptx実装規約
+- `references/audit-loop.md` — (Phase 3.5・4)3層監査、**実行必須の機械監査スクリプト仕様**、差し戻し基準、完成宣言の条件
+
+## 低予算のモデルで動かすとき(どのモデルでも守る)
+
+- **部品と検査は invest-consulting-deck の `scripts/` を使う**(lib.js・one.js・build.js・audit_deck.py・lint_deck.py・selftest_deck.py)。
+  準備と手順は invest-consulting-deck の SKILL.md(手順書)のとおり。座標・色・文字の大きさを独自に作らない。
+- **1 枚ずつ**、手本を写して直し、`node one.js <id>` で「図の重なり 0 件」「RESULT: PASS」「文言の検査 PASS」を確かめ、
+  画像を目で見てから次へ。検査の道具を書き換えて通すことは禁止。
+- **要所の数字(タイトル・KPI の札・結論の箱)は台帳から `F('id')` で引く。** 組み上がった資料は `lint_deck.py pptx` で照合する。
+- 検査が 2 回直しても通らないときは、座標を動かさずに文を短くする・表を分ける・Phase 2 に戻って構成を変える。
 
 ## Phase 0: 入力受領+ヒアリング
 

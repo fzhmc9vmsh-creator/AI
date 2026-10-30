@@ -18,8 +18,11 @@ L.save(pres, out).then(() => {
     try { console.log(execSync(`python3 lint_deck.py src . --only ${id}`).toString()); } catch (e) { console.log(e.stdout.toString()); }
   }
   // 画像化: pptx スキルの soffice.py(サンドボックス向けの起動)があれば使い、なければ soffice を直接呼ぶ
-  const fs = require('fs'), glob = (d) => { try { return fs.readdirSync(d).map(x => d + '/' + x + '/pptx/scripts/office/soffice.py').find(f => fs.existsSync(f)); } catch (e) { return null; } };
-  const sp = process.env.SOFFICE_PY || glob('/root/.claude/skills/synced');
+  // 探す順: 環境変数 SOFFICE_PY → claude.ai の pptx スキル → ホームの同期済みスキル。無ければ soffice を直接呼ぶ
+  const fs = require('fs'), path = require('path'), os = require('os');
+  const glob = (d) => { try { return fs.readdirSync(d).map(x => path.join(d, x, 'pptx/scripts/office/soffice.py')).find(f => fs.existsSync(f)); } catch (e) { return null; } };
+  const cands = [process.env.SOFFICE_PY, '/mnt/skills/public/pptx/scripts/office/soffice.py'].filter(Boolean);
+  const sp = cands.find(f => fs.existsSync(f)) || glob(path.join(os.homedir(), '.claude', 'skills', 'synced'));
   const conv = sp ? `python3 ${sp}` : 'soffice';
   execSync(`cd tmp && ${conv} --headless --convert-to pdf ${id}.pptx >/dev/null 2>&1 && pdftoppm -jpeg -r ${process.env.DPI || 80} -singlefile ${id}.pdf ${id}`);
   console.log('image:', require('path').resolve(`tmp/${id}.jpg`));

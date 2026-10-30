@@ -5,7 +5,8 @@
   - `.claude/skills/meigara-bunseki-method/` 銘柄分析メソッド(分析と報告書)
   - `.claude/skills/invest-consulting-deck/` 投資資料のパワポ(最新の必須事項は `references/deck-rules-v2.md`、部品は `scripts/`)
   - `.claude/skills/bcg-slide-method/` スライドの作り方の一般規範(references は代替版)
-- アカウントにアップロードする版は `skills/*.skill`(zip)。プロジェクト版を直したら作り直す。
+- アカウントにアップロードする版は `skills/*.skill`(zip)。プロジェクト版を直したら `python3 skills/build_skills.py --node-modules <node_modules>` で作り直す(検査と自己テストを通ったときだけ zip ができる)。
+- 計算は `meigara-bunseki-method/scripts/valuate.py`、数字は台帳 `facts.json`、工程の合否は `gate.py`。資料の要所の数字は `F('id')` で台帳から引き、組み上がった資料は `lint_deck.py pptx` で照合する。手で計算した数字・手で丸め直した数字を資料に書かない。
 
 ## 資料の必須事項(要約。詳細は deck-rules-v2.md)
 - 全スライドの左上に現在地(章 › 節)、その下に「テーマ: …」と「なぜ見るか」。

@@ -42,7 +42,7 @@
    "label": "希薄化後 EPS"
   },
   "q3.members": {
-   "disp": "1710 万人",
+   "disp": "1,710 万人",
    "value": 1710,
    "unit": "万人",
    "period": "Q3 2026",
@@ -58,7 +58,7 @@
    "label": "会員の純増"
   },
   "q3.products": {
-   "disp": "2670 万",
+   "disp": "2,670 万",
    "value": 2670,
    "unit": "万",
    "period": "Q3 2026",
@@ -189,7 +189,7 @@
    "label": "預金"
   },
   "q2.members": {
-   "disp": "1580 万人",
+   "disp": "1,580 万人",
    "value": 1580,
    "unit": "万人",
    "period": "Q2 2026",
@@ -270,6 +270,102 @@
    "period": "計算",
    "status": "計算",
    "label": "期待値の幅(N1・N2 を ±10pt)"
+  },
+  "q3.cross_buy": {
+   "disp": "51%",
+   "value": 51,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "新規製品のうち既存会員が開いた割合"
+  },
+  "q3.rotce": {
+   "disp": "10%",
+   "value": 10,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "ROTCE(年率、概算)"
+  },
+  "eng.rotce_2028": {
+   "disp": "13.1%",
+   "value": 13.1,
+   "unit": "%",
+   "period": "2028E",
+   "status": "計算",
+   "label": "ROTCE(エンジン、2028 年)"
+  },
+  "q3.interchange_yoy": {
+   "disp": "77%",
+   "value": 77,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "交換手数料の前年比"
+  },
+  "q3.deposit_spread": {
+   "disp": "1.45pt",
+   "value": 1.45,
+   "unit": "pt",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "預金と倉庫ラインの金利差"
+  },
+  "q3.lpb": {
+   "disp": "36 億ドル",
+   "value": 36,
+   "unit": "億ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "LPB(資本を使わない組成)"
+  },
+  "q3.hold_ratio": {
+   "disp": "71%",
+   "value": 71,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "個人ローンの保有比率"
+  },
+  "hold.roe": {
+   "disp": "26%",
+   "value": 26,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "保有の配分資本の ROE"
+  },
+  "val.eps_cagr_25_28": {
+   "disp": "44%",
+   "value": 43.5,
+   "unit": "%",
+   "period": "2025→2028",
+   "status": "計算",
+   "label": "EPS の年率(2025→2028、エンジン)"
+  },
+  "peer.allin_range": {
+   "disp": "3.2〜4.2%",
+   "value": null,
+   "unit": "%",
+   "period": "2025",
+   "status": "計算",
+   "label": "同業の損失率の幅"
+  },
+  "ceo.tenure": {
+   "disp": "8 年",
+   "value": 8,
+   "unit": "年",
+   "period": "2026",
+   "status": "確認",
+   "label": "CEO の在任"
+  },
+  "tp.chime_fee": {
+   "disp": "1,800 万ドル",
+   "value": 1800,
+   "unit": "万ドル",
+   "period": "2025",
+   "status": "確認",
+   "label": "Chime の解約料"
   },
   "val.grade.letter": {
    "disp": "B",
@@ -1129,6 +1225,22 @@
   },
   "val.decision.16.5": {
    "disp": "買い",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.増資 10 億ドル": {
+   "disp": "23.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.増資 10 億ドル.diff": {
+   "disp": "−0.4",
    "value": null,
    "unit": "",
    "period": "計算",

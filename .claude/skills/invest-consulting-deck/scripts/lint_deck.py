@@ -32,7 +32,6 @@ BANNED = [
     (re.compile(r"undefined|NaN|\[object Object\]|(?<![A-Za-z])null(?![A-Za-z])"), "計算・参照の失敗"),
 ]
 VAL_KEYS = re.compile(r"理論株価|期待値|標準偏差|適正株価|即時|分割|エントリー")
-PERIOD_NEAR = re.compile(r"Q[1-4]|[1-4]Q|前期|前年|昨年|前四半期|(19|20)\d\d|→|から|時点|当時")
 STR_RE = re.compile(r"'((?:[^'\\\n]|\\.)*)'|\"((?:[^\"\\\n]|\\.)*)\"|`((?:[^`\\]|\\.)*)`", re.S)
 KEY_CALLS = ("kpiTiles(", "takeaway(")
 
@@ -146,7 +145,8 @@ def lint_src(root, only=None):
 
 
 # ---------------------------------------------------------------- 組み上がった資料
-def slide_texts(path):
+def slide_texts(path, context=False):
+    """スライドごとの文字。context=True のときは、表のセルの前に列と行の見出しを付ける(古い時点の検出だけに使う)。"""
     from pptx import Presentation
     prs = Presentation(path)
     out = []
@@ -156,7 +156,16 @@ def slide_texts(path):
             if sh.has_text_frame:
                 t.append(sh.text_frame.text)
             if getattr(sh, "has_table", False) and sh.has_table:
-                t += [c.text for r in sh.table.rows for c in r.cells]
+                # 表のセルは「列の見出し・行の見出し」を前に付けて 1 行にする(列の見出しの Q2 なども時点のラベルとして読む)
+                rows = list(sh.table.rows)
+                heads = [c.text.replace("\n", " ") for c in rows[0].cells] if rows else []
+                for ri, r in enumerate(rows):
+                    cells = list(r.cells)
+                    for ci, c in enumerate(cells):
+                        body = c.text.replace("\n", " ")
+                        if context and ri > 0 and ci > 0:
+                            body = f"‹{heads[ci] if ci < len(heads) else ''}›‹{cells[0].text.replace(chr(10), ' ')}› " + body
+                        t.append(body)
         out.append("\n".join(t))
     return out
 
@@ -189,6 +198,7 @@ def value_rx(f):
 
 def lint_pptx(path, facts_path):
     texts = slide_texts(path)
+    ctexts = slide_texts(path, context=True)
     errs, notes = [], []
     for i, t in enumerate(texts, 1):
         for rx, what in BANNED:
@@ -230,15 +240,16 @@ def lint_pptx(path, facts_path):
             rx, terms = value_rx(f)
             if not rx or tok in current:
                 continue
-            for i, t in enumerate(texts, 1):
+            own = re.compile(r"Q%d(?!\d)|%dQ|前期|前四半期|前年|昨年|→|から|時点|当時" % (k[1], k[1]))
+            for i, t in enumerate(ctexts, 1):
                 for m in rx.finditer(t):
-                    # 時点のラベルは同じ行(表なら同じセル)の中で探す
+                    # 時点のラベル(その値自身の四半期・前期・→ など)は同じ行(表なら同じセルと、その列・行の見出し)の中で探す
                     ls, le = t.rfind("\n", 0, m.start()) + 1, t.find("\n", m.end())
                     le = len(t) if le < 0 else le
                     near = t[max(ls, m.start() - 20):min(le, m.end() + 14)]
                     if terms and not any(w in t[max(0, m.start() - 30):m.end() + 30] for w in terms):
                         continue
-                    if not PERIOD_NEAR.search(near):
+                    if not own.search(near):
                         errs.append(f"p.{i}: 古い時点({f.get('period')})の値 {tok}({fid})が時点ラベルなしで出ている … {near!r}")
     # 3. 未確認の値
     for f in db.get("forbidden", []):

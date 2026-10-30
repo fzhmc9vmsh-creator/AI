@@ -1,12 +1,33 @@
 # アップロード用のスキル
 
-このフォルダの `*.skill`(zip)は、claude.ai のアカウントにアップロードするための配布版です。
+このフォルダの `*.skill`(zip)は、claude.ai のアカウントにアップロードするための配布版。
 編集の正はリポジトリの `.claude/skills/`(このリポジトリを開いたセッションでは自動で読み込まれる)。
 
 | ファイル | 中身 |
 |---|---|
-| meigara-bunseki-method.skill | 銘柄分析メソッド |
-| invest-consulting-deck.skill | 投資資料のパワポ(第2版の必須事項と部品 scripts/ を含む) |
-| bcg-slide-method.skill | スライドの一般規範(references は代替版) |
+| meigara-bunseki-method.skill | 銘柄分析メソッド(手順書・計算機 valuate.py・数字の台帳 facts.py・工程の検査 gate.py・自己テスト・ひな形・SOFI の手本) |
+| invest-consulting-deck.skill | 投資資料のパワポ(手順書・部品 lib.js・台帳を引く F()・配置の監査・文言の照合 lint_deck.py・自己テスト・手本) |
+| bcg-slide-method.skill | スライドの一般規範(部品と検査は invest-consulting-deck の scripts/ を使う) |
 
-アカウントの同名スキルを置き換えるには、claude.ai の設定 → Skills から各 .skill をアップロードする(セッションの中からは書き換えられない)。
+## アップロード
+
+claude.ai の設定 → Skills(または Capabilities)から、3 つの .skill をそれぞれアップロードする。同名のスキルがあれば置き換える
+(セッションの中からは書き換えられない)。3 つは互いを名前で参照するので、まとめて入れる。
+
+## 低予算のモデルで使うときの考え方
+
+- 計算(許容 PEG・妥当 PER・理論株価・エントリー圏・シナリオの期待値)は `valuate.py` がする。モデルは手で計算しない。
+- 要所の数字(タイトル・KPI の札・結論の箱)は台帳から `F('id')` で引く。その他の数字は手で書いてよいが、組み上がった資料を
+  `lint_deck.py pptx` で照合する(価値評価の数字の一致・古い四半期の値・未確認の値・版の言葉)。
+- 各工程の終わりに `gate.py`(分析)、各スライドで `one.js`(資料)を通し、PASS してから次へ進む。
+- 道具で保証できるのは、計算・数字の一貫性・レイアウト。条件の採点や示唆の深さは、決定表と「根拠を台帳の id で示す」規則で
+  底上げするが、判断の質までは保証しない。上位のモデルを使えるなら、条件の見直しと最終確認だけ任せると釣り合いが良い。
+
+## 作り直し(スキルを直したとき)
+
+```bash
+python3 skills/build_skills.py --node-modules <pptxgenjs の入った node_modules>
+```
+
+書式(name・description)・指しているファイルの実在・共有ファイルの一致(facts.py)・環境に依存するパスの混入・
+自己テスト(分析と資料)を検査し、すべて PASS したときだけ zip を作る。

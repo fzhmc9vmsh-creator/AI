@@ -42,7 +42,7 @@
    "label": "希薄化後 EPS"
   },
   "q3.members": {
-   "disp": "1710 万人",
+   "disp": "1,710 万人",
    "value": 1710,
    "unit": "万人",
    "period": "Q3 2026",
@@ -58,7 +58,7 @@
    "label": "会員の純増"
   },
   "q3.products": {
-   "disp": "2670 万",
+   "disp": "2,670 万",
    "value": 2670,
    "unit": "万",
    "period": "Q3 2026",
@@ -189,7 +189,7 @@
    "label": "預金"
   },
   "q2.members": {
-   "disp": "1580 万人",
+   "disp": "1,580 万人",
    "value": 1580,
    "unit": "万人",
    "period": "Q2 2026",
@@ -360,7 +360,7 @@
    "label": "CEO の在任"
   },
   "tp.chime_fee": {
-   "disp": "1800 万ドル",
+   "disp": "1,800 万ドル",
    "value": 1800,
    "unit": "万ドル",
    "period": "2025",
