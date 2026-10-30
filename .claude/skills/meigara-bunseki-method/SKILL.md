@@ -48,6 +48,9 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作�
   - 使わないと決めた未確認の値(`not_for_deck: true` と `reason`)
 - 規則: 最新の決算・株価・ガイダンスは必ず検索で取る(記憶で書かない)。会社が開示する指標は自分で計算し直さない。
   計算した値は `status: 計算` と `note` に式。基準(GAAP・調整後)を `basis` に書く。
+- 利用者の資料(メモ・表)だけで作るときは検索しない。資料に無い項目は `status: 未取得` で登録し、報告書の「既知の制約」に書く
+  (8 四半期の系列が無い、など)。資料の中の数字どうしの食い違いも「既知の制約」に書き、どちらを使ったかを残す。
+- 株価は台帳に入れてよいが、工程 5 の 1(前提の固定)が終わるまで、価値の計算と条件6・7 の採点には使わない。
 - 検査: `python3 $S/scripts/gate.py facts $W` → PASS。
 
 ## 工程 2: 事業本体と収益構造(報告書 2〜3 章の原稿)
@@ -73,11 +76,13 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作�
 ## 工程 4: 13 条件の採点(conditions.json)
 
 - 読む: `references/condition-guide.md`(判定の軸・目安・落とし穴)。条件5 は「経歴 → 現職 → 担う事業 → 結果」。
+- **条件6・7 はここでは採点しない**(株価を使うため)。工程 5 の 3 で採点する。ここでは残りの 11 条件を埋める。
 - 作る: `conditions.json`。条件ごとに `grade`・決め手の一文 `reason`・根拠 `evidence`(2 個以上、台帳の id を 1 つ以上)。
   C 以下は `kpi` と `trigger`。成長企業は条件 1・2・3・6・7・11・12・13 に将来の評価 `future_grade` と実現確率 `future_p`。
 - 規則: 迷ったら評価を動かさず、決め手の証拠を追加調査する(最大 2 周)。証拠なしに上げも下げもしない。
   「規模が小さいから対象外」にしない。条件6 は閾値を満たせば B(A 寄り)から出発し、市場・同業との乖離で A まで。
-- 検査: `python3 $S/scripts/gate.py conditions $W` → PASS。
+- 検査: 条件6・7 を埋めた後(工程 5 の 3)で `python3 $S/scripts/gate.py conditions $W` → PASS。
+- 利用者や前工程の見立てがあっても、根拠(台帳の数字)と合わなければ採点を直し、報告に理由を書く(見立てをそのまま写さない)。
 
 ## 工程 5: 価値評価(valuation_input.json → valuate.py)
 
@@ -85,9 +90,15 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト。FAIL なら作�
   `references/intrinsic-valuation-credit.md` §1〜§3、`references/scenario-strategy.md` §6。
 - 順番(事前登録):
   1. 株価を見る前に、資本コスト(`coe`)・3 経路の EPS(`eps_paths`。過去の伸びの外挿は禁止)・シナリオ(`tree` か
-     `scenarios`)・感応度(`sensitivities`)を書く。評価は `conditions_file` で採点表から読む(手で写さない)。
-  2. その後で `prices`(株価)と `edge`(市場との差分があるか)を入れる。前提を後から変えたら、理由を報告書の付録 B に残す。
-  3. `python3 $S/scripts/valuate.py $W/valuation_input.json` → `valuation.json`・`valuation.md`。検査 NG があれば入力を直す。
+     `scenarios`)・感応度(`sensitivities`。最低でも EPS ±10%、株数が分かれば増資)・成熟年度の ROE(`maturity.roe` と `note`)・
+     生存確率(`survival`。借入で成長する企業は倒産確率から。そうでなければ 1.0 と `survival_note` に理由)を書く。
+     評価は `conditions_file` で採点表から読む(手で写さない)。項目の意味は `scripts/valuate.py` の冒頭、式は valuation-model §3-4-2。
+  2. その後で `prices`(株価)と `edge`(市場との差分があるか)を入れる。`edge` は工程 2 の市場の仮説から決める。
+     工程 2 を行っていない・差分が書けないときは false(判断の上限は「買い検討」、即時圏なし)。前提を後から変えたら、理由を付録 B に残す。
+  3. 条件6・7 を採点する(condition-guide の定義どおり、現在 PER = 株価 ÷ 12 か月先の EPS)。`gate.py conditions` を通す。
+  4. `python3 $S/scripts/valuate.py $W/valuation_input.json` → `valuation.json`・`valuation.md`。検査 NG があれば入力を直す。
+  5. 成長企業の将来の評価(`future_grade`)は、節点ツリーの `links` を通じて価値に入る。将来の評価が現在と違う条件は、
+     どれかの節点の `links` に入れる(gate valuation が抜けを知らせる)。
 - 規則: 妥当 PER は許容 PEG × g だけ(同業の PER・DCF は `cross_checks` に並べるだけで平均しない)。
   信用・資本・希薄化は EPS 経路・確率・株数で数える。比べる期間は `cagr_windows` で揃える。
 - 検査: `python3 $S/scripts/gate.py valuation $W` → PASS。確かめる: `must-rules.md` の A 群。

@@ -1175,6 +1175,14 @@
    "status": "計算",
    "label": "valuate.py の表示値"
   },
+  "val.entry.immediate": {
+   "disp": "≤ 15.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
   "val.entry.Z2": {
    "disp": "21.4",
    "value": null,
@@ -1225,6 +1233,38 @@
   },
   "val.decision.16.5": {
    "disp": "買い",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS −10%(全年)": {
+   "disp": "21.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS −10%(全年).diff": {
+   "disp": "−2.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS +10%(全年)": {
+   "disp": "26.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS +10%(全年).diff": {
+   "disp": "+2.4",
    "value": null,
    "unit": "",
    "period": "計算",

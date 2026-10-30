@@ -173,6 +173,19 @@ def g_valuation(d):
         ps = sorted({round(s["p"], 4) for s in sc.get("items", [])})
         if len(sc.get("items", [])) == 3 and ps in ([0.25, 0.5], [0.25, 0.25, 0.5]):
             g.e("シナリオ確率が固定の 25/50/25 になっている。節点ツリーか証拠で出す")
+    mat = vi.get("maturity", {})
+    if float(mat.get("roe", 0.18)) == 0.18 and not str(mat.get("note", "")).strip():
+        g.w("maturity.roe が既定の 18% のまま。会社の定常の ROE(株主資本ベース)を根拠つきで入れ、maturity.note に書く")
+    if float(vi.get("survival", 1.0)) >= 1.0 and not str(vi.get("survival_note", "")).strip():
+        g.w("survival(生存確率)が 1.0。借入に頼らない企業ならその理由を survival_note に書く(借入で成長する企業は倒産確率から置く)")
+    if len(vi.get("sensitivities", [])) < 2:
+        g.w("感応度が 2 つ未満。最低でも EPS ±10%(株数が分かれば増資)を入れる")
+    if os.path.exists(cp):
+        linked = {str(c) for n in vi.get("tree", {}).get("nodes", []) for c in n.get("links", [])}
+        for c in load(cp)["conditions"]:
+            fg = str(c.get("future_grade") or "").upper()
+            if fg and fg != str(c.get("grade", "")).upper() and str(c["no"]) not in linked and "scenarios" not in vi:
+                g.w(f"条件{c['no']}: 将来の評価 {fg} が現在と違うのに、節点ツリーの links に入っていない(将来の構造が価値に入らない)")
     if not vi.get("cross_checks"):
         g.w("交差確認(DCF・同業の PER・TBV×ROTCE など)が無い。平均には入れないが並べて理由を書く")
     if vi.get("averaged") or vi.get("fair_per_mode") == "average":

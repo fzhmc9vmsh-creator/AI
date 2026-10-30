@@ -25,6 +25,15 @@
 | s21_condition5_career.js | 条件5(経営者)を経歴 → 現職 → 担う事業 → 結果で描いた例 |
 | meta_orcl_40slides.js | 40 枚の資料の章立ての例(章・節・テーマ・なぜの書き方の参考。数字は手書きなので写すときは F に直す) |
 
+## 手本を写すときに書き換える所(examples/mini は SoFi の台帳の id を使っている)
+
+1. `meta.js`: `DOC_TITLE`・`DOC_AUTHOR`、章(`CH`)・順番(`ORDER`)・各スライドの `theme`・`why`・`title`。
+2. `F('id')` の id: 自分の `facts_deck.json` にある id に置き換える(無い id は組み立てが「台帳に無い id」で止まる。
+   台帳に足して `facts.py export` をやり直す)。価値評価の id は `val.` + `valuation.json` の display のキー
+   (例: `val.value.engine`、`val.decision.<prices の名前>`、`val.gap.engine.<prices の名前>`)。
+3. 表紙の文言、各スライドの `kicker`(リード)と `source`(出所)。
+4. グラフ: 棒グラフは `valAxisMinVal: 0`(軸を切らない)。色は `L.chartStyle` の既定(規定の色)のまま。
+
 ## 部品の選び方
 
 | 伝えたいこと | 部品 | 注意 |

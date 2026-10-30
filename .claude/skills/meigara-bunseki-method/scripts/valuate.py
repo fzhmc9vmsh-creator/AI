@@ -8,7 +8,28 @@
 方針: 規則で決まる計算はすべてここで行う。モデルは入力(EPS 経路・条件の評価・株価・シナリオ)を
 決めるだけで、PEG・妥当 PER・理論株価・エントリー圏の数字を手で計算しない。資料には
 valuation.json の "display"(1 回だけ丸めた表示値)を写す。標準ライブラリだけで動く。
-入力の書き方は templates/valuation_input.json、手本は examples/sofi/valuation_input.json。
+入力の書き方は templates/valuation_input.json、手本は examples/sofi/valuation_input.json。式は references/valuation-model.md §3-4-2。
+
+入力の項目(主なもの):
+  years / weights        評価の年度(今年度から 4 年)と重み(合計 1.0。既定 0.4・0.3・0.2・0.1)
+  coe                    {"rf", "beta", "erp"} か {"value"}。資本コスト = rf + beta × erp
+  survival               生存確率(借入で成長する企業は倒産確率から。そうでなければ 1.0 と survival_note に理由)
+  maturity               {"g5_threshold": 0.15, "roe": 定常の ROE(株主資本ベース), "g_long": 0.05, "note": 根拠}
+  eps_paths              {"consensus", "company", "engine"}: {年度: EPS}。実績の年度を入れてよい(cagr_windows に使う)
+  adopted_path           採用する経路(エントリー圏と判断はこの経路の理論株価で出す)
+  conditions_file        13 条件の採点表(grades を手で写さない)
+  prices                 {名前: 株価}。前提を固定した後で入れる
+  edge                   市場との差分があるか(工程 2 の市場の仮説から。決められなければ false)
+  tree                   節点ツリー(下)か scenarios(名前・確率 p・bundle・eps・grades か peg_start の一覧)
+  sensitivities          [{"name", "eps_mult": {年度: 変化率}} | {"name", "eps": {...}} | {"name", "equity_raise": {"amount", "price", "shares"}}]
+  cross_checks           DCF・同業の PER など(並べるだけ。平均に入れない)
+
+節点ツリー(tree)の意味:
+  nodes[i].p             その節点が「良い側」に振れる確率。given: {"node", "p_if_success", "p_if_fail"} で前の節点に条件付きにできる
+  nodes[i].eps_shock     {年度: 振れ幅}。良い側は EPS × (1 + 振れ幅)、悪い側は × (1 − 振れ幅)(対称)。採用経路の EPS に掛け、節点どうしは掛け算
+  nodes[i].links         その節点が効く条件の番号。良い側でその条件が 1 段上がり、悪い側で 1 段下がる → 組み合わせごとに許容 PEG が変わる
+                         (成長企業の将来の評価 future_grade は、この links を通じて価値に入る。基準の PEG に将来を混ぜない)
+  bundles                {"bull_if_all_success": [...], "bear_if_all_fail": [...]}: 強気・弱気の束の決め方。残りはベース
 """
 import argparse
 import itertools
@@ -382,6 +403,7 @@ def compute(x):
     U = float(x["bull_value"]) if "bull_value" in x else U
     L = float(x["bear_value"]) if "bear_value" in x else L
     res["entry"] = entry(gr["alpha"], B, U, L, prices, edge)
+    res["edge"] = edge
     res["decision"] = {k: dict(gap=B / p - 1, decision=decide(gr["letter"], B / p - 1, edge)) for k, p in prices.items()}
     if not edge:
         checks.append(dict(name="市場との差分", ok=True, detail="差分なし: 判断の上限は「買い検討」、即時圏なし"))
@@ -458,6 +480,7 @@ def display(res, adopted, prices):
                 d[f"scen.{b}.peg"] = rnd(lo, 2) if abs(hi - lo) < 1e-9 else f"{rnd(lo, 2)}〜{rnd(hi, 2)}"
     e = res["entry"]
     d["entry.Z1"] = rnd(e["Z1"], 1)
+    d["entry.immediate"] = ("≤ " + rnd(e["Z1"], 1)) if res.get("edge", True) else "なし(市場との差分なし)"
     d["entry.Z2"] = rnd(e["Z2"], 1)
     for k, v in e["by_price"].items():
         d[f"entry.zone.{k}"] = v["zone"]
@@ -495,7 +518,10 @@ def report_md(res):
         L.append("")
     if "entry" in res:
         e = res["entry"]
-        L += ["## エントリー圏", "", f"即時 ≤ {d['entry.Z1']}、分割 {d['entry.Z1']} 超〜{d['entry.Z2']} 以下、見送り > {d['entry.Z2']}", ""]
+        if res.get("edge", True):
+            L += ["## エントリー圏", "", f"即時 ≤ {d['entry.Z1']}、分割 {d['entry.Z1']} 超〜{d['entry.Z2']} 以下、見送り > {d['entry.Z2']}", ""]
+        else:
+            L += ["## エントリー圏", "", f"市場との差分なし(edge = false)のため即時圏は設けない。分割 ≤ {d['entry.Z2']}、見送り > {d['entry.Z2']}", ""]
         for k, v in e["by_price"].items():
             L.append(f"- 株価 {k}({v['price']}): {v['zone']}、上値と下値の比 {d[f'entry.up_down.{k}']}、判断 {d[f'decision.{k}']}")
         L.append("")

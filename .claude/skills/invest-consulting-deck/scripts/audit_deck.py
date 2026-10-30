@@ -103,6 +103,12 @@ def audit(path):
             bad = {c.upper() for c in colors_in(xml)} - PALETTE
             if bad:
                 issues.append((i, 'Major', 'palette', nm, f'規定外の色 {sorted(bad)}'))
+            if getattr(sh, 'has_chart', False) and sh.has_chart:
+                # チャートの色はチャートの部品の中にある(既定色の赤系などを止める)
+                sers = ''.join(re.findall(r'<c:ser>.*?</c:ser>', sh.chart._chartSpace.xml, re.S))   # 系列の色だけを見る(軸の線などは除く)
+                cbad = {c.upper() for c in colors_in(sers)} - PALETTE - {'E6E6E6'}
+                if cbad:
+                    issues.append((i, 'Major', 'palette', nm, f'チャートに規定外の色 {sorted(cbad)}(chartColors を指定する)'))
             if getattr(sh, 'has_table', False) and sh.has_table:
                 # 4c. 表のセルの改行(末行 1〜2 文字、数字と単位の泣き別れ)
                 tbl = sh.table

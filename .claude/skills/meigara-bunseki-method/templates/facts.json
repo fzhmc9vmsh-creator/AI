@@ -1,12 +1,13 @@
 {
  "_how": [
+  "facts は空で始める。_examples は書き方の例(SOFI の値)で、道具は読まない。写して自分の会社の値に置き換えて facts に入れる。",
   "数字の台帳。報告書・資料の要所の数字は必ずここに 1 行ずつ登録する(scripts/facts.py の冒頭に全項目の説明)。",
   "as_of は資料の基準の時点。前の四半期の主要な値も入れる(古い値の検出に使う)。未確認の値は not_for_deck: true にして残す(混入の検出に使う)。",
   "value はその単位のままの数値。表示の丸めは nd(小数桁)で 1 回だけ。計算・推定は note に式か方法。",
   "検査: python3 scripts/facts.py check facts.json"
  ],
- "as_of": "Q3 2026",
- "facts": [
+ "as_of": "",
+ "_examples": [
   {
    "id": "q3.revenue",
    "label": "総純収益",
@@ -77,5 +78,6 @@
     "流通"
    ]
   }
- ]
+ ],
+ "facts": []
 }

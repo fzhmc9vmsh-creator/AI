@@ -190,6 +190,7 @@ function chartStyle(o = {}) {
     catAxisLabelColor: C.text, valAxisLabelColor: C.sub, dataLabelColor: C.text,
     valGridLine: { color: 'E6E6E6', size: 0.5 }, catGridLine: { style: 'none' },
     catAxisLineShow: true, valAxisLineShow: false, showLegend: false, showValue: true, dataLabelPosition: 'outEnd',
+    chartColors: [C.primary, C.light, C.teal, C.amber, C.sub, C.dark],   // 規定の色(pptxgenjs の既定色は使わない)
   }, o);
 }
 
