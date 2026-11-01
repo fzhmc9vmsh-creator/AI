@@ -1,0 +1,8 @@
+{
+  "google_backend": "auto",
+  "google_model": "auto",
+  "claude_model": "opus",
+  "max_google_calls": 5,
+  "max_runtime_minutes": 180,
+  "workspace_root": "%USERPROFILE%\\dual-agent"
+}
