@@ -5,10 +5,10 @@
     "unit": "百万円"
   },
   "summary": {
-    "ok": 13,
-    "missing": 5,
-    "skipped": 1,
-    "flags": 6
+    "ok": 19,
+    "missing": 0,
+    "skipped": 0,
+    "flags": 7
   },
   "flags": [
     {
@@ -34,6 +34,12 @@
       "text": "実績(2021→2025)で純利益率は上昇(28.53%→32.08%)したがROE改善は1pt未満",
       "question": "なぜ純利益率が上がっても実績ROEが上がっていないのか？",
       "check": "有価証券報告書の貸借対照表(総資産と自己資本の増加要因)"
+    },
+    {
+      "id": "L08-1",
+      "text": "株主資本コスト(8.90%)を下回る資本使途あり: 自己株取得(益回り=12か月先EPS÷株価)、配当(配当性向24%)、現預金の保有、現預金の保有(現預金が総資産の66.7%)",
+      "question": "なぜ資本コストより利回りの低い「自己株取得(益回り=12か月先EPS÷株価)、配当(配当性向24%)、現預金の保有、現預金の保有」に資本を滞留・配分させているのか？",
+      "check": "資本コストや株価を意識した経営の開示資料・政策保有株縮減方針・借入返済と自己株買いの優先順位"
     },
     {
       "id": "L12-1",
@@ -287,38 +293,131 @@
     {
       "id": "L08",
       "name": "資本の使い道",
-      "status": "入力不足",
+      "status": "ok",
       "missing": [
-        "price.close",
-        "price.eps_next",
         "annual(直近期のinterest,debt)"
       ],
-      "numbers": {},
-      "reads": [],
-      "flags": []
+      "numbers": {
+        "coe_pct": 8.9,
+        "ranked_uses": [
+          {
+            "name": "ソフトウエア投資(5期の税前増分利回り)",
+            "yield_pct": 393.5,
+            "note": "lenses L13",
+            "rank": 1,
+            "spread_vs_coe_pt": 384.6
+          },
+          {
+            "name": "自己株取得(益回り)",
+            "yield_pct": 4.35,
+            "note": "eps_next 100.0 ÷ close 2297",
+            "rank": 2,
+            "spread_vs_coe_pt": -4.55
+          },
+          {
+            "name": "自己株取得(益回り=12か月先EPS÷株価)",
+            "yield_pct": 4.35,
+            "note": "2026年に300百万円を実行",
+            "rank": 3,
+            "spread_vs_coe_pt": -4.55
+          },
+          {
+            "name": "配当(配当性向24%)",
+            "yield_pct": 0.9,
+            "note": "配当利回り 21円÷2,297円",
+            "rank": 4,
+            "spread_vs_coe_pt": -8.0
+          },
+          {
+            "name": "現預金の保有",
+            "yield_pct": 0.4,
+            "note": "総資産の67%",
+            "rank": 5,
+            "spread_vs_coe_pt": -8.5
+          },
+          {
+            "name": "現預金の保有",
+            "yield_pct": 0.1,
+            "note": "現預金2,858(総資産の66.7%)・想定利回り0.10%",
+            "rank": 6,
+            "spread_vs_coe_pt": -8.8
+          }
+        ],
+        "below_coe_names": [
+          "自己株取得(益回り=12か月先EPS÷株価)",
+          "配当(配当性向24%)",
+          "現預金の保有",
+          "現預金の保有"
+        ],
+        "cash_to_assets_pct": 66.7
+      },
+      "reads": [
+        "株主資本コスト(8.90%)に対する資本使途の税後利回り順位: 1位 ソフトウエア投資(5期の税前増分利回り)(393.50%) > 2位 自己株取得(益回り)(4.35%) > 3位 自己株取得(益回り=12か月先EPS÷株価)(4.35%) > 4位 配当(配当性向24%)(0.90%) > 5位 現預金の保有(0.40%) > 6位 現預金の保有(0.10%)。",
+        "株主資本コストを下回る使途: 自己株取得(益回り=12か月先EPS÷株価)・配当(配当性向24%)・現預金の保有・現預金の保有。",
+        "自己株取得の益回り 4.35% は資本コスト 8.90% を下回る(今の株価での取得は割高)。"
+      ],
+      "flags": [
+        {
+          "id": "L08-1",
+          "text": "株主資本コスト(8.90%)を下回る資本使途あり: 自己株取得(益回り=12か月先EPS÷株価)、配当(配当性向24%)、現預金の保有、現預金の保有(現預金が総資産の66.7%)",
+          "question": "なぜ資本コストより利回りの低い「自己株取得(益回り=12か月先EPS÷株価)、配当(配当性向24%)、現預金の保有、現預金の保有」に資本を滞留・配分させているのか？",
+          "check": "資本コストや株価を意識した経営の開示資料・政策保有株縮減方針・借入返済と自己株買いの優先順位"
+        }
+      ]
     },
     {
       "id": "L09",
       "name": "織り込みROEと成長の値段",
-      "status": "入力不足",
-      "missing": [
-        "price.close",
-        "price.bps",
-        "price.eps_next"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "pbr": 10.38,
+        "implied_roe_pct": 73.62,
+        "actual_roe_pct": 32.24,
+        "implied_minus_actual_pt": 41.38,
+        "model_base_roe_pct": null,
+        "implied_minus_model_pt": null,
+        "steady_state_value": 1123.6,
+        "price_of_growth": 1173.4,
+        "price_of_growth_pct_of_close": 51.1
+      },
+      "reads": [
+        "PBR 10.38倍(株価2,297円÷BPS221.3円)・COE 8.90%・g 2.0%からの市場織り込みROEは73.62%。",
+        "定常状態価値(予想EPS 100.0円÷COE)は1,124円で、株価に織り込まれた成長の値段は+1,173円。",
+        "直近実績ROE(32.24%)との差は+41.38pt。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {
       "id": "L10",
       "name": "同業の線",
-      "status": "入力不足",
-      "missing": [
-        "peers(3社以上)"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "n_peers": 8,
+        "reg_a": 5.4251,
+        "reg_b": 0.0535,
+        "r2": 0.0672,
+        "actual_pbr": 10.38,
+        "actual_roe_pct": 32.24,
+        "line_pbr_at_actual_roe": 7.149,
+        "pbr_diff_vs_line_pct": 45.2,
+        "forward_roe_pct": 45.19,
+        "line_pbr_at_forward_roe": 7.841,
+        "pbr_diff_vs_line_forward_pct": 32.4,
+        "model_base_roe_pct": null,
+        "line_pbr_at_model_roe": null,
+        "line_price_at_model_roe": null,
+        "line_pbr_at_roe10": 5.96,
+        "line_price_at_roe10": 1318.9
+      },
+      "reads": [
+        "同業8社のPBR-ROE回帰(PBR = 5.425 + 0.0535×ROE)のR²は0.07。",
+        "自社の実績ROE(32.24%)上の線上PBRは7.15倍で、実際PBR(10.38倍)との差は+45.2%。",
+        "自社の予想ROE(45.19%)上の線上PBRは7.84倍で、実際PBR(10.38倍)との差は+32.4%。",
+        "ROE10%での線上PBRは5.96倍(線上株価1,319円: 参考値(線が当てはまらない))。",
+        "同業の PBR は ROE では説明できない(R² 0.07)。業態で同業を分け直すか、別の物差し(成長率など)を使う。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {
@@ -464,35 +563,168 @@
     {
       "id": "L16",
       "name": "感応度の換算",
-      "status": "対象外",
+      "status": "ok",
       "missing": [],
-      "numbers": {},
+      "numbers": {
+        "core_candidate": "契約数: 強気",
+        "core_abs_diff": 131.6,
+        "driver_ranking": [
+          {
+            "name": "契約数: 強気",
+            "abs_diff": 131.6,
+            "is_paired": false
+          },
+          {
+            "name": "単価: 強気",
+            "abs_diff": 129.5,
+            "is_paired": false
+          },
+          {
+            "name": "粗利率・販管費率: 弱気",
+            "abs_diff": 61.1,
+            "is_paired": false
+          },
+          {
+            "name": "単価: 弱気",
+            "abs_diff": 38.1,
+            "is_paired": false
+          },
+          {
+            "name": "粗利率・販管費率: 強気",
+            "abs_diff": 33.5,
+            "is_paired": false
+          },
+          {
+            "name": "契約数: 弱気",
+            "abs_diff": 26.8,
+            "is_paired": false
+          }
+        ],
+        "all_ranking": [
+          {
+            "name": "EPS(全年度)",
+            "abs_diff": 170.2,
+            "is_paired": true
+          },
+          {
+            "name": "契約数: 強気",
+            "abs_diff": 131.6,
+            "is_paired": false
+          },
+          {
+            "name": "単価: 強気",
+            "abs_diff": 129.5,
+            "is_paired": false
+          },
+          {
+            "name": "粗利率・販管費率: 弱気",
+            "abs_diff": 61.1,
+            "is_paired": false
+          },
+          {
+            "name": "単価: 弱気",
+            "abs_diff": 38.1,
+            "is_paired": false
+          },
+          {
+            "name": "粗利率・販管費率: 強気",
+            "abs_diff": 33.5,
+            "is_paired": false
+          },
+          {
+            "name": "契約数: 弱気",
+            "abs_diff": 26.8,
+            "is_paired": false
+          }
+        ],
+        "ratios_vs_top1": [
+          {
+            "name": "単価: 強気",
+            "abs_diff": 129.5,
+            "top1_div_other": 1.02
+          },
+          {
+            "name": "粗利率・販管費率: 弱気",
+            "abs_diff": 61.1,
+            "top1_div_other": 2.15
+          },
+          {
+            "name": "単価: 弱気",
+            "abs_diff": 38.1,
+            "top1_div_other": 3.46
+          },
+          {
+            "name": "粗利率・販管費率: 強気",
+            "abs_diff": 33.5,
+            "top1_div_other": 3.93
+          },
+          {
+            "name": "契約数: 弱気",
+            "abs_diff": 26.8,
+            "top1_div_other": 4.9
+          }
+        ],
+        "top1_to_top2_ratio": 1.02,
+        "paired_second_name": null,
+        "top1_to_paired_second_ratio": null
+      },
       "reads": [
-        "valuation.json がまだ無い。価値評価(工程5)の後に実行し直す"
+        "価値の芯の候補は「契約数: 強気」(132円)。",
+        "事業ドライバー2位「単価: 強気」(129.5円)の1.02倍。",
+        "なお複合/一律ショック最大は「EPS(全年度)」(170.2円)。"
       ],
       "flags": []
     },
     {
       "id": "L17",
       "name": "流動性",
-      "status": "入力不足",
-      "missing": [
-        "price.adv"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "adv": 85.0,
+        "participation_rate_pct": 20.0,
+        "daily_20pct_capacity": 17.0,
+        "positions_days": [
+          {
+            "position": 5.0,
+            "days": 0.29
+          },
+          {
+            "position": 30.0,
+            "days": 1.76
+          }
+        ],
+        "max_days": 1.76
+      },
+      "reads": [
+        "1日売買代金85百万円の20%参加(17.00百万円/日)で算出: 5百万円は0.3日、30百万円は1.8日。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {
       "id": "L18",
       "name": "価値の橋",
-      "status": "入力不足",
-      "missing": [
-        "price.close",
-        "price.eps_next"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "close": 2297.0,
+        "eps_next": 100.0,
+        "coe_pct": 8.9,
+        "steady_state_value": 1123.6,
+        "current_power_gap": -1173.4,
+        "implied_sustained_eps": 204.43,
+        "implied_eps_vs_next_pct": 104.4,
+        "model_base_roe_pct": null,
+        "roe_spread_vs_coe_pt": null,
+        "theoretical_price_B": 1702.2,
+        "total_gap": -594.8,
+        "growth_add": 578.6,
+        "current_power_share_pct": 197.3,
+        "growth_add_share_pct": -97.3
+      },
+      "reads": [
+        "現在値 2,297円 → 今の利益が続く場合 1,124円(-1,173円)→ 理論株価 1,702円(成長と変化の上乗せ +579円、合計差 -595円)。株価は EPS が 204.4円(今より 104.4% 高い)で続くことを前提にしている。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {

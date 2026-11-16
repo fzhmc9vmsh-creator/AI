@@ -9,24 +9,17 @@
  "_help_input_price_name": "annual[].input_price の系列名(任意、例: '国産ナフサ(円/kl)'、'ドル円'。L04の文に使用)",
  "input_price_name": "ドル円(年平均、サーバー費の外部要因・概数)",
  "assume": {
-  "coe": 9.0,
+  "coe": 8.9,
   "g": 2.0,
   "tax": 30.6,
   "cash_yield": 0.1
  },
  "price": {
-  "_help": "足元の株価・バリュエーション基準値",
-  "_help_close": "終値(円)",
-  "close": null,
-  "_help_shares_m": "発行済株式数(百万株。自己株式を除く。決算短信の期末株式数から)",
-  "shares_m": null,
-  "_help_bps": "直近の期末の 1 株あたり純資産。予想 ROE は eps_next ÷ bps",
-  "bps": null,
-  "_help_eps_next": "12か月先予想EPS・実力EPS(円)",
-  "eps_next": null,
-  "_help_adv": "1日の平均売買代金(unit単位、例: 百万円)",
-  "adv": null,
-  "_help_positions": "建てたい想定ポジション額の配列(unit単位、例: [5, 30])",
+  "close": 2297,
+  "shares_m": 15.131539,
+  "bps": 221.3,
+  "eps_next": 100.0,
+  "adv": 85,
   "positions": [
    5,
    30
@@ -303,11 +296,89 @@
   }
  ],
  "_help_capital_uses": "成長投資・保有資産などの資本使途と税後利回り(%)(L08用、自己株買いと借入返済は自動算出)",
- "capital_uses": [],
+ "capital_uses": [
+  {
+   "name": "自己株取得(益回り=12か月先EPS÷株価)",
+   "yield": 4.35,
+   "actual": true,
+   "note": "2026年に300百万円を実行"
+  },
+  {
+   "name": "現預金の保有",
+   "yield": 0.4,
+   "actual": true,
+   "note": "総資産の67%"
+  },
+  {
+   "name": "ソフトウエア投資(5期の税前増分利回り)",
+   "yield": 393.5,
+   "actual": true,
+   "note": "lenses L13"
+  },
+  {
+   "name": "配当(配当性向24%)",
+   "yield": 0.9,
+   "actual": true,
+   "note": "配当利回り 21円÷2,297円"
+  }
+ ],
  "_help_peers": "同業他社のPBR・予想ROE(%)配列(L10用)",
- "peers": [],
+ "peers": [
+  {
+   "name": "カナミックネットワーク",
+   "pbr": 4.15,
+   "roe": 27.74
+  },
+  {
+   "name": "メドレー",
+   "pbr": 3.98,
+   "roe": 5.57
+  },
+  {
+   "name": "エムスリー",
+   "pbr": 2.99,
+   "roe": 12.48
+  },
+  {
+   "name": "ラクス",
+   "pbr": 9.05,
+   "roe": 55.37
+  },
+  {
+   "name": "Sansan",
+   "pbr": 13.72,
+   "roe": 38.79
+  },
+  {
+   "name": "freee",
+   "pbr": 10.83,
+   "roe": 5.3
+  },
+  {
+   "name": "プラスアルファ・コンサルティング",
+   "pbr": 5.74,
+   "roe": 32.5
+  },
+  {
+   "name": "ROBOT PAYMENT",
+   "pbr": 4.85,
+   "roe": 44.98
+  }
+ ],
  "_help_model": "将来の業績モデル(通常5年後など)の配列(L07・L09・L10用)",
- "model": [],
+ "model": [
+  {
+   "fy": "2030",
+   "scenario": "基準",
+   "revenue": 7191,
+   "op": 3380,
+   "net": 2386,
+   "assets": null,
+   "equity": null,
+   "sga": 2121,
+   "roe": null
+  }
+ ],
  "_help_guidance_history": "期初の会社営業利益予想と通期実績の履歴(古い順、3期以上、任意・L19用)",
  "guidance_history": [
   {
