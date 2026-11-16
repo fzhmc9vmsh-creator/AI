@@ -5,8 +5,8 @@
     "unit": "百万円"
   },
   "summary": {
-    "ok": 10,
-    "missing": 8,
+    "ok": 13,
+    "missing": 5,
     "skipped": 1,
     "flags": 6
   },
@@ -211,12 +211,42 @@
     {
       "id": "L06",
       "name": "年換算と計画",
-      "status": "入力不足",
-      "missing": [
-        "segments"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "segments": [
+          {
+            "name": "クラウド",
+            "strategic": false,
+            "ytd_profit": 2046.0,
+            "annualized_profit": 2728.0,
+            "plan_mid": 2826.0,
+            "ratio_pct": 96.5,
+            "pace": "順調"
+          },
+          {
+            "name": "BPaaS",
+            "strategic": true,
+            "ytd_profit": 284.0,
+            "annualized_profit": 378.7,
+            "plan_mid": 393.0,
+            "ratio_pct": 96.4,
+            "pace": "順調"
+          }
+        ],
+        "ahead_segments": [],
+        "behind_segments": [],
+        "strategic_annualized": 378.7,
+        "strategic_plan_mid": 393.0,
+        "strategic_ratio_pct": 96.4,
+        "non_strategic_annualized": 2728.0,
+        "non_strategic_plan_mid": 2826.0,
+        "non_strategic_ratio_pct": 96.5
+      },
+      "reads": [
+        "セグメント別の年換算利益÷計画中央値: クラウド 96%(順調)、BPaaS 96%(順調)。",
+        "戦略セグメント合計は年換算379÷目標393=96.4%、非戦略セグメント合計は2,728÷2,826=96.5%。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {
@@ -294,12 +324,29 @@
     {
       "id": "L11",
       "name": "能力と市場",
-      "status": "入力不足",
-      "missing": [
-        "capacity"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "items": [
+          {
+            "name": "契約ステーション数(中計)",
+            "unit": "件",
+            "now": 3843.0,
+            "after": 4882.0,
+            "when": "2028-12",
+            "years": 2.25,
+            "market_cagr_pct": 6.9,
+            "cap_cagr_pct": 11.22,
+            "cap_vs_market_ratio": 1.63,
+            "demand_now": 20051.0,
+            "required_vol_cagr_pct": -46.63,
+            "required_vs_market_ratio": -6.76
+          }
+        ]
+      },
+      "reads": [
+        "契約ステーション数(中計): 規模・能力3843→4882件(2.25年)は年率+11.2%で市場成長率6.9%の1.63倍。現在水準20051件基準の必要増加年率は+-46.6%(-6.76倍)。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {
@@ -388,12 +435,30 @@
     {
       "id": "L15",
       "name": "利益のたまり場",
-      "status": "入力不足",
-      "missing": [
-        "segments"
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "segments": [
+          {
+            "name": "クラウド",
+            "revenue_share_pct": 86.9,
+            "profit_share_pct": 89.3,
+            "margin_pct": 80.18,
+            "profit_to_rev_share_ratio": 1.03
+          },
+          {
+            "name": "BPaaS",
+            "revenue_share_pct": 13.1,
+            "profit_share_pct": 10.7,
+            "margin_pct": 64.19,
+            "profit_to_rev_share_ratio": 0.82
+          }
+        ],
+        "high_concentration_segments": []
+      },
+      "reads": [
+        "セグメント別 利益構成比÷売上構成比: クラウド(売上86.9%・利益89.3%・利益率80.2%・倍率1.03x)、BPaaS(売上13.1%・利益10.7%・利益率64.2%・倍率0.82x)。"
       ],
-      "numbers": {},
-      "reads": [],
       "flags": []
     },
     {

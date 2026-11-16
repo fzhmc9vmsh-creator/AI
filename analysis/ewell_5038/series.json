@@ -265,9 +265,43 @@
  "_help_segment_adjust": "セグメント利益の調整額・全社費用(unit単位、任意・L15用。構成比は調整額を除くセグメント合計で計算)",
  "segment_adjust": null,
  "_help_segments": "セグメント別の実績・進捗・中計計画・戦略区分(L06・L15用)",
- "segments": [],
+ "segments": [
+  {
+   "name": "クラウド",
+   "revenue": 2931.0,
+   "profit": 2350.0,
+   "prev_profit": null,
+   "ytd_months": 9,
+   "ytd_profit": 2046.0,
+   "plan_lo": 2826.0,
+   "plan_hi": 2826.0,
+   "strategic": false
+  },
+  {
+   "name": "BPaaS",
+   "revenue": 440.9,
+   "profit": 283.0,
+   "prev_profit": null,
+   "ytd_months": 9,
+   "ytd_profit": 284.0,
+   "plan_lo": 393.0,
+   "plan_hi": 393.0,
+   "strategic": true
+  }
+ ],
  "_help_capacity": "能力・規模の増強計画と市場成長率の配列(L11用。設備の生産能力に限らず店舗数・拠点数・人員・席数でもよい)",
- "capacity": [],
+ "capacity": [
+  {
+   "name": "契約ステーション数(中計)",
+   "unit": "件",
+   "now": 3843,
+   "after": 4882,
+   "when": "2028-12",
+   "years": 2.25,
+   "market_cagr": 6.9,
+   "demand_now": 20051
+  }
+ ],
  "_help_capital_uses": "成長投資・保有資産などの資本使途と税後利回り(%)(L08用、自己株買いと借入返済は自動算出)",
  "capital_uses": [],
  "_help_peers": "同業他社のPBR・予想ROE(%)配列(L10用)",

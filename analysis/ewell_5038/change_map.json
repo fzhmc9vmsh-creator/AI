@@ -1,236 +1,336 @@
 {
-  "ticker": "TICKER",
-  "_how": "analysis-playbook.md §5。15項目を全部書く。変わらない項目は direction を 不変 にして driver に理由を書く。検査: python3 scripts/gate.py change <作業フォルダ>",
-  "horizon": {
-    "past": "3〜5年前(例: 2022年3月期)",
-    "now": "直近(例: 2027年3月期上期)",
-    "future": "5年後・基準シナリオ(例: 2031年3月期)"
+ "ticker": "5038",
+ "_how": "analysis-playbook.md §5。15項目を全部書く。変わらない項目は direction を 不変 にして driver に理由を書く。検査: python3 scripts/gate.py change <作業フォルダ>",
+ "horizon": {
+  "past": "FY2022(上場の年)",
+  "now": "2026年12月期 第3四半期",
+  "future": "2030年12月期(基準シナリオ)"
+ },
+ "items": [
+  {
+   "key": "demand",
+   "label": "最終需要と数量",
+   "metric": "全国の訪問看護ST稼働数の伸び / iBow契約ST",
+   "past": "+10.0%(2022-04)/ 2,289件(2023年1Q)",
+   "now": "+6.9%(2026-04)/ 3,843件(2026年3Q)",
+   "future": "+4〜5% / 5,615件(2030年、基準)",
+   "driver": "新規開設は年約2,450件で3年横ばい、廃止は701→960件に増え純増が鈍化。eWeLLの獲得は開設の約27%で、年660件の一定流入×解約5.3%の流量で決まる",
+   "evidence": [
+    "ind.growth_2026",
+    "ind.growth_2024",
+    "ind.new_2026",
+    "ind.closed_2026",
+    "calc.capture_openings"
+   ],
+   "direction": "悪化",
+   "kind": "連続",
+   "priced": "一部",
+   "when": "2027-07(協会の2027年調査)・2027-02(通期決算の契約数)",
+   "cond": [
+    1,
+    6
+   ]
   },
-  "items": [
-    {
-      "key": "demand",
-      "label": "最終需要と数量",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "product_mix",
-      "label": "製品構成",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "pricing",
-      "label": "価格決定力",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "value_chain",
-      "label": "バリューチェーン上の位置",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "unit_economics",
-      "label": "単位採算",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "cost_structure",
-      "label": "費用構造",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "capacity",
-      "label": "能力と制約",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "capital_intensity",
-      "label": "投資と回収",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "cash",
-      "label": "FCFと運転資本",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "balance_sheet",
-      "label": "貸借対照表",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "returns",
-      "label": "ROEの経路と資本配分",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "moat",
-      "label": "競争優位",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "cyclicality",
-      "label": "景気・市況の感応度",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "management",
-      "label": "経営",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    },
-    {
-      "key": "market_view",
-      "label": "市場の見方",
-      "metric": "対比する指標",
-      "past": "",
-      "now": "",
-      "future": "",
-      "driver": "変える力(または不変の理由)",
-      "evidence": [],
-      "direction": "改善|悪化|不変",
-      "kind": "連続|段差|加速|体制の転換|不変",
-      "priced": "済|一部|未|不明",
-      "when": "数字に出る時期・確認日",
-      "cond": []
-    }
-  ]
+  {
+   "key": "product_mix",
+   "label": "製品構成",
+   "metric": "売上に占めるiBow本体の比率",
+   "past": "約92%(FY2022、クラウド1,481÷1,603)",
+   "now": "66.6%(2026年1-9月、2,044÷3,068)",
+   "future": "約58%(2030年、基準)",
+   "driver": "AI(計画報告・ルート)・BPaaS・法定研修・ボードProのアップセルが単価の伸びのほぼ全部を担う",
+   "evidence": [
+    "fy25.rev_ibow",
+    "calc.ai_per_st_q26",
+    "calc.bpaas_per_st_q26"
+   ],
+   "direction": "改善",
+   "kind": "連続",
+   "priced": "一部",
+   "when": "2027-02-12(通期決算の製品別売上)",
+   "cond": [
+    3,
+    12
+   ]
+  },
+  {
+   "key": "pricing",
+   "label": "価格決定力",
+   "metric": "単価改定と顧客単価(千円/月)",
+   "past": "2014年の提供開始以来、値上げなし。ARPU 74.1(2023年1Q)",
+   "now": "2027年1月に基本料+10%(500訪問で+2.6%)を決定。ARPU 94.1(2026年3Q)",
+   "future": "ARPU 110(2030年、基準)。1訪問100円の改定が選択肢として残る",
+   "driver": "利用料は事業所の訪問売上の1.6%。訪問1件(8,500円)の増収で月額を回収でき、価格は選択の決め手でない。12年据え置きの従量単価は未行使の価格決定力",
+   "evidence": [
+    "price.base_2027",
+    "calc.cost_share_rev",
+    "q26q3.arpu"
+   ],
+   "direction": "改善",
+   "kind": "段差",
+   "priced": "未",
+   "when": "2027-05(2027年1Qの解約数とARPU)",
+   "cond": [
+    1,
+    8
+   ]
+  },
+  {
+   "key": "value_chain",
+   "label": "バリューチェーン上の位置",
+   "metric": "1訪問8,500円のうち当社の取り分",
+   "past": "約118円(1.4%、基本料+100円/訪問)",
+   "now": "約136円(1.6%、AI込み)",
+   "future": "約150円(1.8%、値上げ・AI・ボードPro込み)",
+   "driver": "記録 → 請求 → 経営支援(ボードPro)→ 採用(カエドキ)へ、事業所の業務の上流と下流に広げる",
+   "evidence": [
+    "calc.cost_share_rev",
+    "calc.ai_per_st_q26"
+   ],
+   "direction": "改善",
+   "kind": "連続",
+   "priced": "一部",
+   "when": "2027-08(ボードProの課金件数)",
+   "cond": [
+    1,
+    11
+   ]
+  },
+  {
+   "key": "unit_economics",
+   "label": "単位採算",
+   "metric": "新規1件の獲得単価と経済的LTV/CAC",
+   "past": "広告費88百万円・新規511件(FY2023)",
+   "now": "獲得単価約610千円、LTV/CAC 8.6倍、回収約16か月(FY2025)",
+   "future": "不変(獲得費は売上比で横ばい)",
+   "driver": "直販のみで、新規開設の事業所をWeb広告で刈り取る。初期単価は約50千円と低いが解約が少ない",
+   "evidence": [
+    "calc.cac",
+    "calc.ltv_cac"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "済",
+   "when": "2027-02-12(通期決算で確認)",
+   "cond": [
+    2
+   ]
+  },
+  {
+   "key": "cost_structure",
+   "label": "費用構造",
+   "metric": "粗利率 / サーバー費の売上比",
+   "past": "79.2%(FY2022)/ 3.9%(FY2023)",
+   "now": "76.3%(2026年1-9月)/ 7.4%",
+   "future": "76.5%(2030年、基準。弱気74%)",
+   "driver": "サーバー費は3年で約3.7倍(利用量・円安・AI機能と無償の新機能)。2027年の基本料改定で約80百万円を取り返す",
+   "evidence": [
+    "9m26.server",
+    "9m25.server",
+    "fy25.cloud_gm",
+    "q26q1.cloud_gm"
+   ],
+   "direction": "悪化",
+   "kind": "連続",
+   "priced": "一部",
+   "when": "2027-05(2027年1Qの粗利率)",
+   "cond": [
+    2,
+    10
+   ]
+  },
+  {
+   "key": "capacity",
+   "label": "能力と制約",
+   "metric": "成長を律速するもの",
+   "past": "営業・開発の人員(従業員61名、FY2022)",
+   "now": "業界の新規開設数(年約2,450件)と獲得率。従業員131名",
+   "future": "新規開設の鈍化が続けば獲得数が減る。2040年シェア50%には獲得率を約2倍にする必要",
+   "driver": "獲得の分母が業界の新規開設であり、自社の営業能力ではない",
+   "evidence": [
+    "ind.new_2026",
+    "calc.capture_openings",
+    "fy25.employees"
+   ],
+   "direction": "悪化",
+   "kind": "不変",
+   "priced": "未",
+   "when": "2027-02(新規獲得の年間件数)",
+   "cond": [
+    1,
+    6
+   ]
+  },
+  {
+   "key": "capital_intensity",
+   "label": "投資と回収",
+   "metric": "ソフトウエア投資÷売上 / 増分の投資利回り",
+   "past": "3.4%(FY2022)",
+   "now": "2.3%(FY2025)。5期の累計投資289百万円で営業利益+1,136百万円",
+   "future": "2〜3%で不変",
+   "driver": "クラウドの共通基盤を全事業所で使うため、追加1件の投資はほぼゼロ",
+   "evidence": [
+    "fy25.capex_sw",
+    "fy22.capex_sw"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "済",
+   "when": "2027-02-12(通期決算で確認)",
+   "cond": [
+    2,
+    10
+   ]
+  },
+  {
+   "key": "cash",
+   "label": "FCFと運転資本",
+   "metric": "フリーキャッシュフロー(百万円)",
+   "past": "488(FY2022)",
+   "now": "1,191(FY2025)",
+   "future": "約2,300(2030年、基準)",
+   "driver": "営業利益の約8割が現金になる(売掛金の増加のみ)",
+   "evidence": [
+    "fy25.ocf",
+    "fy25.capex_sw",
+    "fy22.ocf"
+   ],
+   "direction": "改善",
+   "kind": "連続",
+   "priced": "済",
+   "when": "2027-02-12(通期決算のCF計算書)",
+   "cond": [
+    2
+   ]
+  },
+  {
+   "key": "balance_sheet",
+   "label": "貸借対照表",
+   "metric": "現預金÷総資産",
+   "past": "65%(FY2022)",
+   "now": "67%(FY2025、現預金2,858百万円・無借金)",
+   "future": "還元を増やさなければ70%超",
+   "driver": "IPOの資金と留保利益の積み上げ。2026年に初の自己株取得300百万円",
+   "evidence": [
+    "fy25.cash",
+    "fy25.assets",
+    "buyback26"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "一部",
+   "when": "2027-02(資本配分の方針)",
+   "cond": [
+    2,
+    12
+   ]
+  },
+  {
+   "key": "returns",
+   "label": "ROEの経路と資本配分",
+   "metric": "ROE(期末)と配当性向",
+   "past": "56%(FY2022、期末)",
+   "now": "32%(FY2025)。配当性向22〜24%",
+   "future": "25〜30%(還元しだいで35%超)",
+   "driver": "純利益率は上がったが、現金の積み上げで総資産回転率が1.12→0.79、レバレッジが2.10→1.27に下がりROEが半減",
+   "evidence": [
+    "fy25.net",
+    "fy25.equity",
+    "fy25.dps"
+   ],
+   "direction": "悪化",
+   "kind": "体制の転換",
+   "priced": "未",
+   "when": "2027-02(中計のローリングと還元方針)",
+   "cond": [
+    2,
+    12,
+    13
+   ]
+  },
+  {
+   "key": "moat",
+   "label": "競争優位",
+   "metric": "他社切替による解約率(年)・シェア",
+   "past": "2.9%(FY2024)・16.2%(2024年2Q)",
+   "now": "2.6%(2026年、年率)・19.2%",
+   "future": "2〜3%・約24%",
+   "driver": "記録とレセプトの完全連動、報酬改定への即応、1億件のデータ。2.7倍高い価格でも流出率は下がっている",
+   "evidence": [
+    "calc.switch_rate_fy24",
+    "calc.switch_rate_fy26",
+    "share.q26q3",
+    "comp.kaipoke_price"
+   ],
+   "direction": "改善",
+   "kind": "連続",
+   "priced": "一部",
+   "when": "2027-02-12(4Qの他社切替の解約件数)",
+   "cond": [
+    1,
+    8,
+    11
+   ]
+  },
+  {
+   "key": "cyclicality",
+   "label": "景気・市況の感応度",
+   "metric": "景気・制度への感応",
+   "past": "景気に非感応、2年ごとの報酬改定に感応",
+   "now": "同じ。2026年度改定は本体+2.41%、同一建物の適正化と電子化の要件化",
+   "future": "同じ。2027年度介護報酬改定、2028年度診療報酬改定",
+   "driver": "需要は公定価格の医療・介護で景気と無関係。リスクは制度(同一建物の適正化で事業所が減る)",
+   "evidence": [
+    "reform.denshi",
+    "ind.closed_2026"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "済",
+   "when": "2027-04(介護報酬改定)",
+   "cond": [
+    13
+   ]
+  },
+  {
+   "key": "management",
+   "label": "経営",
+   "metric": "経営陣と統治",
+   "past": "創業者の中野社長(39%)。取締役8名(社外4)",
+   "now": "同じ体制。創業者2名で55%。業績連動と譲渡制限付株式の報酬",
+   "future": "承継の計画は未開示",
+   "driver": "創業者が大株主で利害は一致。後継と第2層の厚みが未確認",
+   "evidence": [
+    "hold.founder",
+    "hold.founders2"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "済",
+   "when": "2027-03(株主総会の役員選任)",
+   "cond": [
+    5
+   ]
+  },
+  {
+   "key": "market_view",
+   "label": "市場の見方",
+   "metric": "株価が前提にする利益成長",
+   "past": "(工程5で記入)",
+   "now": "(工程5で記入)",
+   "future": "(工程5で記入)",
+   "driver": "株価から逆算した前提を工程5で記入(株価は前提の固定後に見る)",
+   "evidence": [
+    "jgb10"
+   ],
+   "direction": "不変",
+   "kind": "不変",
+   "priced": "不明",
+   "when": "2027-02",
+   "cond": [
+    6,
+    7
+   ]
+  }
+ ]
 }

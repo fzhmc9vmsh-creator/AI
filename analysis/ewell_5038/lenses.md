@@ -1,6 +1,6 @@
 # eWeLL(5038) レンズ分析レポート
 
-レンズ ok 10 / 入力不足 8 / 対象外 1 / 旗 6 (単位: 百万円)
+レンズ ok 13 / 入力不足 5 / 対象外 1 / 旗 6 (単位: 百万円)
 
 ## 示唆の種(旗)の一覧
 
@@ -43,8 +43,10 @@
 - 主な数字: `{"fy": "2026", "guidance_revenue": 4277.0, "guidance_op": 1927.0, "ytd_months": 9, "rest_revenue": 1209.4, "rest_op": 472.6, "ytd_opm_pct": 47.41, "rest_opm_pct": 39.08, "rest_minus_ytd_opm_pt": -8.33, "ytd_gm_pct": 76.35, "rest_implied_gm_pct": 73.76, "rest_minus_ytd_gm_pt": -2.59, "gm_is_estimated": false, "fy_op_if_ytd_margin": 1958.0, "fy_op_if_ytd_gm": 1958.0, "fy_op_if_ytd_opm": 2028.0, "prior_rest_opm_pct": 37.18, "prior_rest_gm_pct": 76.24, "rest_minus_prior_opm_pt": 1.9, "rest_minus_prior_gm_pt": -2.48, "fy_op_if_prior_opm": 1904.0, "fy_op_if_prior_gm": 1957.0, "op_progress_pct": 75.5, "standard_progress_pct": 75.0, "progress_excess_pt": 0.5}`
 - **旗 L05-1**: 残り期間の前提の利益率が累計より低い(営業利益率差-8.33pt) / 問い: 残り期間の利益率低下の前提は保守的な計画か、原料高・定修・値戻し等の悪化要因を織り込んでいるのか？ / 確かめ方: 会社業績予想の前提条件(原料価格・為替前提)と足元の原料市況・下期定修予定
 
-### L06 年換算と計画 [入力不足]
-- 不足入力: segments
+### L06 年換算と計画 [ok]
+- セグメント別の年換算利益÷計画中央値: クラウド 96%(順調)、BPaaS 96%(順調)。
+- 戦略セグメント合計は年換算379÷目標393=96.4%、非戦略セグメント合計は2,728÷2,826=96.5%。
+- 主な数字: `{"segments": [{"name": "クラウド", "strategic": false, "ytd_profit": 2046.0, "annualized_profit": 2728.0, "plan_mid": 2826.0, "ratio_pct": 96.5, "pace": "順調"}, {"name": "BPaaS", "strategic": true, "ytd_profit": 284.0, "annualized_profit": 378.7, "plan_mid": 393.0, "ratio_pct": 96.4, "pace": "順調"}], "ahead_segments": [], "behind_segments": [], "strategic_annualized": 378.7, "strategic_plan_mid": 393.0, "strategic_ratio_pct": 96.4, "non_strategic_annualized": 2728.0, "non_strategic_plan_mid": 2826.0, "non_strategic_ratio_pct": 96.5}`
 
 ### L07 デュポン [ok]
 - 実績デュポン: 実績_2021(純利益率28.53%×回転率1.12×レバ2.10=期末ROE67.49%) → 実績_2025(純利益率32.08%×回転率0.79×レバ1.27=期末ROE32.24%)
@@ -60,8 +62,9 @@
 ### L10 同業の線 [入力不足]
 - 不足入力: peers(3社以上)
 
-### L11 能力と市場 [入力不足]
-- 不足入力: capacity
+### L11 能力と市場 [ok]
+- 契約ステーション数(中計): 規模・能力3843→4882件(2.25年)は年率+11.2%で市場成長率6.9%の1.63倍。現在水準20051件基準の必要増加年率は+-46.6%(-6.76倍)。
+- 主な数字: `{"items": [{"name": "契約ステーション数(中計)", "unit": "件", "now": 3843.0, "after": 4882.0, "when": "2028-12", "years": 2.25, "market_cagr_pct": 6.9, "cap_cagr_pct": 11.22, "cap_vs_market_ratio": 1.63, "demand_now": 20051.0, "required_vol_cagr_pct": -46.63, "required_vs_market_ratio": -6.76}]}`
 
 ### L12 EPSの漏れ口 [ok]
 - 直近期(2025)の支払利息÷営業利益は0.0%。
@@ -82,8 +85,9 @@
 - FCF(確認可能5期: 2021〜2025)の累計は+3,417、直近期(2025)は+1,191。
 - 主な数字: `{"inv_days_first_fy": "2021", "inv_days_first": 0.0, "inv_days_last_fy": "2025", "inv_days_last": 0.0, "inv_days_diff": 0.0, "inv_days_period_label": "FY26Q3", "inv_days_period_annualized": 0.0, "fcf_window_fys": "2021〜2025", "fcf_n_years": 5, "fcf_cum": 3417.4, "fcf_last": 1190.7}`
 
-### L15 利益のたまり場 [入力不足]
-- 不足入力: segments
+### L15 利益のたまり場 [ok]
+- セグメント別 利益構成比÷売上構成比: クラウド(売上86.9%・利益89.3%・利益率80.2%・倍率1.03x)、BPaaS(売上13.1%・利益10.7%・利益率64.2%・倍率0.82x)。
+- 主な数字: `{"segments": [{"name": "クラウド", "revenue_share_pct": 86.9, "profit_share_pct": 89.3, "margin_pct": 80.18, "profit_to_rev_share_ratio": 1.03}, {"name": "BPaaS", "revenue_share_pct": 13.1, "profit_share_pct": 10.7, "margin_pct": 64.19, "profit_to_rev_share_ratio": 0.82}], "high_concentration_segments": []}`
 
 ### L16 感応度の換算 [対象外]
 - valuation.json がまだ無い。価値評価(工程5)の後に実行し直す

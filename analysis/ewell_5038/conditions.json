@@ -10,54 +10,74 @@
   "条件6・7 は株価を使うので工程 4 では空のままにし、工程 5 の 3 で採点する(工程 4 の検査は gate.py conditions --before-price)。",
   "工程 3(成長企業の評価)を行わないときは future_grade を grade と同じにし、報告書の既知の制約に書く。"
  ],
- "ticker": "",
- "as_of": "",
- "growth_company": false,
- "phase": "",
+ "ticker": "5038",
+ "as_of": "Q3 2026",
+ "growth_company": true,
+ "phase": "③スケール後期(売上+24%・営業利益率47%)。契約数の伸びが13.5%→約9%に機械的に減速するため、2027〜28年に④成熟への移行(売上+10〜20%・刈り取り)",
  "conditions": [
   {
    "no": 1,
    "name": "10年間の価格決定力・競争優位・成長性を圧倒的水準で維持",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "定額25,000円の競合より500訪問のSTで2.7倍高いのに、他社切替の流出は年3.3%→2.6%に下がり、売上ベースの解約は年1〜2%にとどまる(価格は選択の決め手でない)。ただし成長の分母である業界の新規開設は年約2,450件で3年横ばいで、10年の成長性は獲得率とアップセルしだい。So What: 価値は値上げの余地と獲得率の2つに懸かる。変化: 2027年1月に創業来初の値上げ。将来: 値上げ後も解約が増えなければA",
+   "evidence": [
+    "calc.price_ratio_500",
+    "calc.switch_rate_fy26",
+    "q26q3.mrr_churn",
+    "ind.new_2026",
+    "price.base_2027"
+   ],
+   "kpi": "他社切替の解約件数(四半期)と2027年1Qの解約率(MRRチャーン)",
+   "trigger": "MRRチャーンが月0.25%超、または他社切替の解約が四半期35件超",
+   "future_grade": "A",
+   "future_p": 0.4
   },
   {
    "no": 2,
    "name": "コア事業が潤沢なキャッシュフローを持つ",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "A",
+   "reason": "営業利益の約8割が現金になり(FY2025 営業CF 1,270・投資80百万円、FCF 1,191百万円=売上の35%)、新規1件の獲得費約61万円を約16か月で回収、経済的LTV/CACは8.6倍。販売費を除けば営業利益率57%。So What: 成長投資をすべて自前の現金でまかない、なお現金が積み上がる。将来: 構造の変化なし(サーバー費の上昇は値上げで一部回収)",
+   "evidence": [
+    "fy25.ocf",
+    "fy25.capex_sw",
+    "calc.cac",
+    "calc.ltv_cac",
+    "calc.opm_ex_sales"
+   ],
+   "kpi": "粗利率(四半期)",
+   "trigger": "クラウド粗利率が四半期で75%未満",
+   "future_grade": "A",
+   "future_p": 0.8
   },
   {
    "no": 3,
    "name": "コア技術・データがAI事業に転用され成果が出始めている(AI 非関連企業: コア資産が新しい収益線に転用され成果が出始めている)",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "1億件の訪問記録とiBowの利用基盤を、AI計画報告(iBow稼働の47%が利用)・AIルート・BPaaS・ボードProに転用し、顧客単価の伸び(年+6.0千円)の約9割をこのアップセルが生む。ただし全社の売上成長の主因はまだ契約数(+13.5%)。So What: 単価の伸びはAIとBPaaSの付帯率で決まる。変化: 2026年7月AIルート、2027年1月ボードPro課金。将来: 付帯が進めば単価の伸びが成長の主因になりA",
+   "evidence": [
+    "calc.ai_per_st_q26",
+    "calc.bpaas_per_st_q26",
+    "q26q3.ai_plan_active",
+    "q26q3.bpaas_active"
+   ],
+   "kpi": "AI計画報告とAIルートの稼働数、ボードProの課金件数",
+   "trigger": "ボードProの課金が2027年末に100件未満",
+   "future_grade": "A",
+   "future_p": 0.5
   },
   {
    "no": 4,
    "name": "日本株か米国株",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
+   "grade": "A",
+   "reason": "東証グロース上場の日本株(2022年9月上場)。So What: 対象。変化なし",
+   "evidence": [
+    "fy25.revenue",
+    "東京証券取引所グロース市場(コード5038)"
+   ],
    "kpi": "",
    "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "future_grade": "A",
+   "future_p": 1.0
   },
   {
    "no": 5,
@@ -95,68 +115,94 @@
   {
    "no": 8,
    "name": "コモディティではない(AVGO型でない)",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "記録・計画書・レセプトの完全連動と2年ごとの報酬改定対応で、他社より2.7倍高い価格が通る。一方で定額の競合(カイポケ、7,000事業所超)と代替製品が多数あり、機能の束で差別化している段階。So What: コモディティではないが、AIで記録作成の差が縮むと価格の根拠が薄れる。将来: 構造の変化なし",
+   "evidence": [
+    "comp.kaipoke_st",
+    "comp.kaipoke_price",
+    "calc.price_ratio_500",
+    "calc.switch_rate_fy26"
+   ],
+   "kpi": "他社切替の解約件数",
+   "trigger": "他社切替の解約率が年4%超",
+   "future_grade": "B",
+   "future_p": 0.7
   },
   {
    "no": 9,
    "name": "顧客のAI実装の「停めない運用」に不可欠(AI 関連企業のみ。非該当は N/A)",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "C",
+   "reason": "自社のAI売上(AI計画報告・AIルート、2026年3Q 61百万円=売上の5.7%)はあるが、顧客の業務を止めないのは記録とレセプトの基盤であり、AI機能は付加価値。So What: AIは単価の上乗せで、停止できない運用の中核ではない。将来: AIが訪問件数を+5.7pt伸ばす効果(会社データ)が定着すれば、AI込みの運用が標準になりB",
+   "evidence": [
+    "calc.ai_per_st_q26",
+    "q26q3.ai_plan_active"
+   ],
+   "kpi": "AI計画報告の付帯率(iBow稼働比)",
+   "trigger": "付帯率が50%で頭打ち(2027年末)",
+   "future_grade": "B",
+   "future_p": 0.4
   },
   {
    "no": 10,
    "name": "無形資産投資も陳腐化リスクを厳格評価",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "資産計上したソフトウエアは180百万円(総資産の4%)と小さく、減損の対象は小さい。陳腐化のリスクは資産ではなく優位そのもの: 生成AIで記録作成の差が縮むと、12年の運用ノウハウとデータの価値が下がる。So What: 費用の陳腐化リスクは低いが、優位の陳腐化は判別KPIで監視。将来: 構造の変化なし",
+   "evidence": [
+    "fy25.capex_sw",
+    "fy25.assets",
+    "calc.switch_rate_fy26"
+   ],
+   "kpi": "AIを主機能にした競合の導入数と、他社切替の解約",
+   "trigger": "他社切替の解約率が年4%超",
+   "future_grade": "B",
+   "future_p": 0.7
   },
   {
    "no": 11,
    "name": "既存CF・設備・技術・VCが不可欠かつ模倣困難・代替不可能",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "記録とレセプトが一体で、乗り換えには全職員の再教育と請求の停止リスク(月の売上が止まる)が伴う。売上ベースの解約は年1〜2%、複数STの法人のNRRは114.7%。ただし同等の記録・請求の基盤はカイポケ等にもあり、代替不可能ではない。So What: 乗り換えの痛みで守られるが、新規開設の事業所の奪い合いでは代替がきく。将来: 構造の変化なし",
+   "evidence": [
+    "q26q3.mrr_churn",
+    "nrr.jun26",
+    "comp.kaipoke_st"
+   ],
+   "kpi": "NRR(法人単位)",
+   "trigger": "NRRが105%未満",
+   "future_grade": "B",
+   "future_p": 0.7
   },
   {
    "no": 12,
    "name": "従量課金型の収益性格(売り切り・供給過多型でない)",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "A",
+   "reason": "売上の約94%がリカーリングで、iBowは1訪問100円・BPaaSは報酬の5%と、顧客の訪問量に連動する従量課金。売り切りの収益は法定研修(約5%)だけ。So What: 顧客の事業が伸びれば自動で増える型。ただし1STあたりの訪問件数は約475件で横ばいのため、従量の伸びは契約数に依存。将来: 構造の変化なし",
+   "evidence": [
+    "calc.visits_per_st",
+    "fy25.rev_ibow",
+    "fy25.rev_bpaas",
+    "q26q3.arpu"
+   ],
+   "kpi": "iBow本体の1稼働STあたり月額",
+   "trigger": "2027年に前年割れ(値上げ込みで65千円未満)",
+   "future_grade": "A",
+   "future_p": 0.8
   },
   {
    "no": 13,
    "name": "(総合)アーキタイプ照合: ORCL型かMU/VRT/AVGO型か",
-   "grade": "",
-   "reason": "",
-   "evidence": [],
-   "kpi": "",
-   "trigger": "",
-   "future_grade": "",
-   "future_p": null
+   "grade": "B",
+   "reason": "従量・継続課金で業務に不可欠、営業利益率45%・FCF率35%はORCL型の性格。ただし成長の分母(業界の新規開設)が横ばいで、獲得率とアップセルが伸びなければ成長は年+15%前後に減速し、成熟した高収益の従量SaaSに落ち着く。So What: ORCL型の小型版で、価値は持続性と値上げの余地。将来: 値上げとアップセルが定着すればA",
+   "evidence": [
+    "calc.marginal_opm",
+    "fy25.ocf",
+    "ind.new_2026",
+    "calc.capture_openings"
+   ],
+   "kpi": "売上成長率(四半期の前年同期比)",
+   "trigger": "前年同期比+15%未満(2027年)",
+   "future_grade": "B",
+   "future_p": 0.6
   }
  ]
 }
