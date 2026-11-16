@@ -21,9 +21,11 @@ module.exports = function build(pres, L) {
     showCatAxisTitle: true, catAxisTitle: '1 か月の訪問件数(件)', catAxisTitleFontSize: 8.5, catAxisTitleColor: C.sub, catAxisTitleFontFace: L.FONT,
   }));
   L.marks(s, [
-    { x: 4.4, y: 3.35, n: 1, text: '500 訪問: iBow 68,000 円 / カイポケ 25,000 円', side: 'left' },
-    { x: 1.85, y: 4.2, n: 3, text: '交点は約 71 訪問', side: 'right' },
+    { x: 4.26, y: 3.5, n: 1, text: '500 訪問: iBow 68,000 円 / カイポケ 25,000 円', side: 'left' },
+    { x: 6.3, y: 2.5, n: 3, text: '利用料は訪問売上の 1.6%', side: 'left' },
+    { x: 12.45, y: 2.3, n: 2 },
   ]);
+  L.text(s, '2 本の線の交点は約 71 訪問', { x: 1.9, y: 4.8, w: 2.4, h: 0.22, fontSize: 8.5, color: C.sub, margin: 0, objectName: 'note_cross' });
 
   // 右: 他社切替による解約率(年)
   L.paneHead(s, 8.0, 1.62, 4.83, '他社切替による解約率(年)', 'pane_sw_head');
