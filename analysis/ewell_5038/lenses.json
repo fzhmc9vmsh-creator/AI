@@ -1,0 +1,485 @@
+{
+  "meta": {
+    "ticker": "5038",
+    "name": "eWeLL",
+    "unit": "百万円"
+  },
+  "summary": {
+    "ok": 10,
+    "missing": 8,
+    "skipped": 1,
+    "flags": 6
+  },
+  "flags": [
+    {
+      "id": "L01-1",
+      "text": "増益の最大項目が「価格」ではなく「売上高変化(数量等)」(シェア97.0%)",
+      "question": "なぜ増益の主役が価格ではなく「売上高変化(数量等)」なのか？稼働率・需要の持続性はどの程度か？",
+      "check": "会社の利益の増減分析と品目別の販売数量・稼働率推移の記述"
+    },
+    {
+      "id": "L02-1",
+      "text": "粗利率の前年同期比が4期連続で悪化",
+      "question": "なぜ粗利率の悪化が4期連続で起きているのか？",
+      "check": "原料価格・売価スプレッドと製品ミックスの四半期推移"
+    },
+    {
+      "id": "L05-1",
+      "text": "残り期間の前提の利益率が累計より低い(営業利益率差-8.33pt)",
+      "question": "残り期間の利益率低下の前提は保守的な計画か、原料高・定修・値戻し等の悪化要因を織り込んでいるのか？",
+      "check": "会社業績予想の前提条件(原料価格・為替前提)と足元の原料市況・下期定修予定"
+    },
+    {
+      "id": "L07-1",
+      "text": "実績(2021→2025)で純利益率は上昇(28.53%→32.08%)したがROE改善は1pt未満",
+      "question": "なぜ純利益率が上がっても実績ROEが上がっていないのか？",
+      "check": "有価証券報告書の貸借対照表(総資産と自己資本の増加要因)"
+    },
+    {
+      "id": "L12-1",
+      "text": "株式数が年率+4.86%(>2%)で増加し希薄化が起きている",
+      "question": "なぜ株式数が年2%超のペースで増えているのか(増資・CB・新株予約権か)？",
+      "check": "有価証券報告書の株式総数推移・新株発行履歴と資金使途"
+    },
+    {
+      "id": "L19-1",
+      "text": "会社予想は保守的に出す癖がある(今期の予想も同じ読み方ができるかを、前提の逆算 L05 と合わせて確かめる)",
+      "question": "なぜ期初予想が保守的になりやすいのか(期中の上方修正の傾向か一過性要因か)？",
+      "check": "過去の期初予想と実績・修正開示の推移および今期予想の前提条件"
+    }
+  ],
+  "lenses": [
+    {
+      "id": "L01",
+      "name": "利益の増減",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "annual_pair": "2024→2025",
+        "annual_rev_chg_pct": 31.9,
+        "annual_op_chg_pct": 35.36,
+        "decomp_delta_op": 401.6,
+        "decomp_volume_effect": 637.2,
+        "decomp_margin_effect": 20.0,
+        "decomp_sga_effect": -255.6,
+        "max_positive_item": "売上高変化(数量等)",
+        "max_positive_share_pct": 97.0
+      },
+      "reads": [
+        "通期直近(2024→2025)は売上+31.9%・営業利益+35.4%(+402)。粗利・販管費分解では 売上変化×前期粗利率=+637、粗利率変化×当期売上=+20、−Δ販管費=-256。"
+      ],
+      "flags": [
+        {
+          "id": "L01-1",
+          "text": "増益の最大項目が「価格」ではなく「売上高変化(数量等)」(シェア97.0%)",
+          "question": "なぜ増益の主役が価格ではなく「売上高変化(数量等)」なのか？稼働率・需要の持続性はどの程度か？",
+          "check": "会社の利益の増減分析と品目別の販売数量・稼働率推移の記述"
+        }
+      ]
+    },
+    {
+      "id": "L02",
+      "name": "加速度",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "latest_period": "FY26Q3",
+        "latest_opm_pct": 47.17,
+        "latest_opm_yoy_pt": 0.37,
+        "opm_yoy_streak": 2,
+        "opm_yoy_direction": "改善",
+        "opm_second_diff_yoy_pt": -0.53,
+        "opm_second_diff_seq_pt": -6.04,
+        "latest_gm_pct": 76.79,
+        "latest_gm_yoy_pt": -1.76,
+        "gm_yoy_streak": 4,
+        "gm_yoy_direction": "悪化",
+        "gm_second_diff_yoy_pt": -0.41
+      },
+      "reads": [
+        "直近期(FY26Q3)の営業利益率は47.17%(前年同期比+0.37pt、2期連続改善)。粗利率は76.79%(前年同期比-1.76pt、4期連続悪化)。営業利益率の前期比2階差分は-6.04pt。前年同期比の2階差分は-0.53pt。"
+      ],
+      "flags": [
+        {
+          "id": "L02-1",
+          "text": "粗利率の前年同期比が4期連続で悪化",
+          "question": "なぜ粗利率の悪化が4期連続で起きているのか？",
+          "check": "原料価格・売価スプレッドと製品ミックスの四半期推移"
+        }
+      ]
+    },
+    {
+      "id": "L03",
+      "name": "限界利益率と損益分岐点",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "n_years": 5,
+        "marginal_margin_pct": 50.24,
+        "fixed_cost": 152.9,
+        "r2": 0.9943,
+        "latest_revenue": 3392.4,
+        "breakeven_revenue": 304.3,
+        "margin_of_safety_pct": 91.03
+      },
+      "reads": [
+        "過去5期の回帰(営業利益 = 50.24%×売上 − 153)のR²は0.994。見かけの限界利益率は50.2%、損益分岐点売上は304、安全余裕率91.0%。"
+      ],
+      "flags": []
+    },
+    {
+      "id": "L04",
+      "name": "外部要因と自然実験",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "input_price_name": "ドル円(年平均、サーバー費の外部要因・概数)",
+        "n_years": 5,
+        "corr": -0.9693,
+        "r2": 0.9394,
+        "reg_intercept": 87.633,
+        "reg_slope_per_10k": -634.563,
+        "residual_sigma_pt": 0.25,
+        "residual_sigma_sample_pt": 0.32,
+        "max_input_yoy_fy": "2022",
+        "max_input_yoy_pct": 19.7,
+        "max_shock_gm_delta_pt": -1.38,
+        "latest_label": "2025",
+        "latest_input_price": 150.0,
+        "latest_actual_gm_pct": 78.25,
+        "latest_pred_gm_pct": 78.11,
+        "latest_residual_pt": 0.14,
+        "latest_residual_sigma": 0.55,
+        "latest_residual_sigma_sample": 0.43,
+        "latest_input_vs_prev_pct": -0.9,
+        "latest_gm_delta_pt": 0.59
+      },
+      "reads": [
+        "過去5期の粗利率とドル円(年平均、サーバー費の外部要因・概数)の相関係数は-0.97(回帰予測式: 粗利率=87.63%-0.0635pt/1単位、残差σ=0.25pt)。",
+        "ドル円(年平均、サーバー費の外部要因・概数)前年比が最大だったのは2022年(+19.7%)で、粗利率変化は-1.38pt。",
+        "直近(2025、ドル円(年平均、サーバー費の外部要因・概数) 150)の実績粗利率78.25%は回帰予測78.11%に対し+0.14pt(+0.55σ、対直近通期 ドル円(年平均、サーバー費の外部要因・概数)-0.9%・粗利率+0.59pt)。"
+      ],
+      "flags": []
+    },
+    {
+      "id": "L05",
+      "name": "会社予想の逆算",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "fy": "2026",
+        "guidance_revenue": 4277.0,
+        "guidance_op": 1927.0,
+        "ytd_months": 9,
+        "rest_revenue": 1209.4,
+        "rest_op": 472.6,
+        "ytd_opm_pct": 47.41,
+        "rest_opm_pct": 39.08,
+        "rest_minus_ytd_opm_pt": -8.33,
+        "ytd_gm_pct": 76.35,
+        "rest_implied_gm_pct": 73.76,
+        "rest_minus_ytd_gm_pt": -2.59,
+        "gm_is_estimated": false,
+        "fy_op_if_ytd_margin": 1958.0,
+        "fy_op_if_ytd_gm": 1958.0,
+        "fy_op_if_ytd_opm": 2028.0,
+        "prior_rest_opm_pct": 37.18,
+        "prior_rest_gm_pct": 76.24,
+        "rest_minus_prior_opm_pt": 1.9,
+        "rest_minus_prior_gm_pt": -2.48,
+        "fy_op_if_prior_opm": 1904.0,
+        "fy_op_if_prior_gm": 1957.0,
+        "op_progress_pct": 75.5,
+        "standard_progress_pct": 75.0,
+        "progress_excess_pt": 0.5
+      },
+      "reads": [
+        "会社予想(売上4,277・営業利益1,927)から累計実績を引いた残り期間(3か月)の前提は、売上1,209・営業利益473・営業利益率39.08%(累計47.41%比-8.33pt)。",
+        "残り期間の粗利率の前提は73.76%(累計76.35%比-2.59pt)。累計並みの粗利率なら通期営業利益は1,958(営業利益率基準では2,028)。",
+        "前年残り期間の営業利益率は37.18%(今期予想比+1.90pt)、営業利益率基準の通期は1,904(粗利率76.24%基準の通期は1,957)。",
+        "通期営業利益に対する進捗率は75.5%で、標準進捗75.0%を0.5pt上回る。"
+      ],
+      "flags": [
+        {
+          "id": "L05-1",
+          "text": "残り期間の前提の利益率が累計より低い(営業利益率差-8.33pt)",
+          "question": "残り期間の利益率低下の前提は保守的な計画か、原料高・定修・値戻し等の悪化要因を織り込んでいるのか？",
+          "check": "会社業績予想の前提条件(原料価格・為替前提)と足元の原料市況・下期定修予定"
+        }
+      ]
+    },
+    {
+      "id": "L06",
+      "name": "年換算と計画",
+      "status": "入力不足",
+      "missing": [
+        "segments"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L07",
+      "name": "デュポン",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "rows": [
+          {
+            "label": "実績_2021",
+            "net_margin_pct": 28.53,
+            "asset_turnover": 1.124,
+            "leverage": 2.105,
+            "roe_ending_pct": 67.49
+          },
+          {
+            "label": "実績_2025",
+            "net_margin_pct": 32.08,
+            "asset_turnover": 0.792,
+            "leverage": 1.269,
+            "roe_ending_pct": 32.24
+          }
+        ]
+      },
+      "reads": [
+        "実績デュポン: 実績_2021(純利益率28.53%×回転率1.12×レバ2.10=期末ROE67.49%) → 実績_2025(純利益率32.08%×回転率0.79×レバ1.27=期末ROE32.24%)"
+      ],
+      "flags": [
+        {
+          "id": "L07-1",
+          "text": "実績(2021→2025)で純利益率は上昇(28.53%→32.08%)したがROE改善は1pt未満",
+          "question": "なぜ純利益率が上がっても実績ROEが上がっていないのか？",
+          "check": "有価証券報告書の貸借対照表(総資産と自己資本の増加要因)"
+        }
+      ]
+    },
+    {
+      "id": "L08",
+      "name": "資本の使い道",
+      "status": "入力不足",
+      "missing": [
+        "price.close",
+        "price.eps_next",
+        "annual(直近期のinterest,debt)"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L09",
+      "name": "織り込みROEと成長の値段",
+      "status": "入力不足",
+      "missing": [
+        "price.close",
+        "price.bps",
+        "price.eps_next"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L10",
+      "name": "同業の線",
+      "status": "入力不足",
+      "missing": [
+        "peers(3社以上)"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L11",
+      "name": "能力と市場",
+      "status": "入力不足",
+      "missing": [
+        "capacity"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L12",
+      "name": "EPSの漏れ口",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "interest_to_op_pct": 0.0,
+        "effective_tax_rate_pct": 29.63,
+        "shares_cagr_pct": 4.86,
+        "shares_span": "2021→2025",
+        "ln_decomp_span": "2021→2025",
+        "ln_eps_ratio": 0.9726,
+        "ln_revenue_ratio": 1.0452,
+        "ln_net_margin_ratio": 0.1172,
+        "ln_shares_ratio": 0.1898
+      },
+      "reads": [
+        "直近期(2025)の支払利息÷営業利益は0.0%。",
+        "直近期(2025)の実効税率((税前−純利)÷税前)は29.6%。",
+        "株数(2021→2025、4年間)の年率は+4.86%。",
+        "EPS対数分解(2021→2025): ln(EPS比)=+0.973 = ln(売上比)(+1.045) + ln(純利益率比)(+0.117) − ln(株数比)(+0.190)。"
+      ],
+      "flags": [
+        {
+          "id": "L12-1",
+          "text": "株式数が年率+4.86%(>2%)で増加し希薄化が起きている",
+          "question": "なぜ株式数が年2%超のペースで増えているのか(増資・CB・新株予約権か)？",
+          "check": "有価証券報告書の株式総数推移・新株発行履歴と資金使途"
+        }
+      ]
+    },
+    {
+      "id": "L13",
+      "name": "投資と回収",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "window_fys": "2021〜2025",
+        "cum5_capex": 288.6,
+        "op_base_fy": "2021",
+        "op_gain": 1135.6,
+        "pretax_incremental_roi_pct": 393.49,
+        "latest_capex_to_dep": 0.75,
+        "tat_first_fy": "2021",
+        "tat_first": 1.124,
+        "tat_last_fy": "2025",
+        "tat_last": 0.792,
+        "tat_diff": -0.332,
+        "cum5_capex_pct_of_assets": 6.7,
+        "cum_all_capex": 288.6,
+        "cum_all_capex_pct_of_assets": 6.7
+      },
+      "reads": [
+        "直近5期(2021〜2025)の設備投資累計は289(全データ5期累計は289)、営業利益増加(2021→2025)は+1,136で税前増分利回りは393.5%。",
+        "直近期の設備投資÷減価償却は0.75倍。総資産回転率は2021年1.124→2025年0.792(-0.332)。累計投資額は直近総資産の6.7%(全5期累計では6.7%)。"
+      ],
+      "flags": []
+    },
+    {
+      "id": "L14",
+      "name": "キャッシュ",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "inv_days_first_fy": "2021",
+        "inv_days_first": 0.0,
+        "inv_days_last_fy": "2025",
+        "inv_days_last": 0.0,
+        "inv_days_diff": 0.0,
+        "inv_days_period_label": "FY26Q3",
+        "inv_days_period_annualized": 0.0,
+        "fcf_window_fys": "2021〜2025",
+        "fcf_n_years": 5,
+        "fcf_cum": 3417.4,
+        "fcf_last": 1190.7
+      },
+      "reads": [
+        "在庫日数は2021年0.0日→2025年0.0日(+0.0日)。",
+        "在庫日数の式: 期末の在庫 ÷ 売上原価 × 365(2025年は 0 ÷ 738 × 365 = 0.0日、直近期FY26Q3の年換算売上原価 999 基準では 0.0日)。",
+        "FCF(確認可能5期: 2021〜2025)の累計は+3,417、直近期(2025)は+1,191。"
+      ],
+      "flags": []
+    },
+    {
+      "id": "L15",
+      "name": "利益のたまり場",
+      "status": "入力不足",
+      "missing": [
+        "segments"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L16",
+      "name": "感応度の換算",
+      "status": "対象外",
+      "missing": [],
+      "numbers": {},
+      "reads": [
+        "valuation.json がまだ無い。価値評価(工程5)の後に実行し直す"
+      ],
+      "flags": []
+    },
+    {
+      "id": "L17",
+      "name": "流動性",
+      "status": "入力不足",
+      "missing": [
+        "price.adv"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L18",
+      "name": "価値の橋",
+      "status": "入力不足",
+      "missing": [
+        "price.close",
+        "price.eps_next"
+      ],
+      "numbers": {},
+      "reads": [],
+      "flags": []
+    },
+    {
+      "id": "L19",
+      "name": "会社予想と計画の癖",
+      "status": "ok",
+      "missing": [],
+      "numbers": {
+        "guidance_history": [
+          {
+            "fy": "2022",
+            "initial_op": 562.0,
+            "actual_op": 692.8,
+            "surprise_pct": 23.3
+          },
+          {
+            "fy": "2023",
+            "initial_op": 809.0,
+            "actual_op": 908.7,
+            "surprise_pct": 12.3
+          },
+          {
+            "fy": "2024",
+            "initial_op": 1111.0,
+            "actual_op": 1135.9,
+            "surprise_pct": 2.2
+          },
+          {
+            "fy": "2025",
+            "initial_op": 1494.0,
+            "actual_op": 1537.5,
+            "surprise_pct": 2.9
+          }
+        ],
+        "n_guidance_periods": 4,
+        "n_beat": 4,
+        "n_miss": 0,
+        "beat_ratio_pct": 100.0,
+        "mean_surprise_pct": 10.2,
+        "median_surprise_pct": 7.6
+      },
+      "reads": [
+        "期初予想に対し、過去 4期のうち 4期で実績が上回った(中央値 +7.6%、平均 +10.2%)。"
+      ],
+      "flags": [
+        {
+          "id": "L19-1",
+          "text": "会社予想は保守的に出す癖がある(今期の予想も同じ読み方ができるかを、前提の逆算 L05 と合わせて確かめる)",
+          "question": "なぜ期初予想が保守的になりやすいのか(期中の上方修正の傾向か一過性要因か)？",
+          "check": "過去の期初予想と実績・修正開示の推移および今期予想の前提条件"
+        }
+      ]
+    }
+  ]
+}
