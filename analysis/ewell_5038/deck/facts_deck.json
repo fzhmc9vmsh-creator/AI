@@ -2521,6 +2521,62 @@
    "status": "計算",
    "label": "今の利益が続く場合の価値(12か月先EPS100円÷資本コスト8.9%)"
   },
+  "nrr.seg_start": {
+   "disp": "54 千円",
+   "value": 54,
+   "unit": "千円",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "立ち上げ期(400訪問未満の単独ST)の法人あたり単価"
+  },
+  "nrr.seg_expand": {
+   "disp": "401 千円",
+   "value": 401,
+   "unit": "千円",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "拡大期(複数ST運営法人)の法人あたり単価"
+  },
+  "calc.implied_coe": {
+   "disp": "7.5%",
+   "value": 7.5,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "株価2,297円が前提にする資本コスト(事業エンジンの経路、計算機の逆算)"
+  },
+  "calc.irr_172": {
+   "disp": "6.2%",
+   "value": 6.2,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "2029年末にPER17.2倍(2030年EPS156.5円)で売る場合の年率リターン"
+  },
+  "calc.irr_20": {
+   "disp": "11.4%",
+   "value": 11.4,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "同 PER20倍(同業中央値)の場合"
+  },
+  "calc.irr_entry": {
+   "disp": "22.7%",
+   "value": 22.7,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "1,468円で買い2029年末にPER17.2倍で売る場合の年率リターン"
+  },
+  "calc.dm_2026": {
+   "disp": "43.6%",
+   "value": 43.6,
+   "unit": "%",
+   "period": "2026-01→2026-09",
+   "status": "計算",
+   "label": "2026年1-9月の営業利益の限界利益率"
+  },
   "val.grade.letter": {
    "disp": "B",
    "value": null,
@@ -3266,7 +3322,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.ev": {
-   "disp": "1714.8",
+   "disp": "1726.1",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3274,7 +3330,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.sd": {
-   "disp": "210.5",
+   "disp": "221.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3282,7 +3338,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.bull.p": {
-   "disp": "9.6%",
+   "disp": "11.0%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3306,7 +3362,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.base.p": {
-   "disp": "75.8%",
+   "disp": "75.5%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3314,7 +3370,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.base.value": {
-   "disp": "1666.1",
+   "disp": "1667.3",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3330,7 +3386,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.bear.p": {
-   "disp": "14.6%",
+   "disp": "13.5%",
    "value": null,
    "unit": "",
    "period": "計算",
