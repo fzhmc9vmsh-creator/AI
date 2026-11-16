@@ -1,0 +1,3582 @@
+{
+ "as_of": "Q3 2026",
+ "facts": {
+  "fy21.revenue": {
+   "disp": "1,193 百万円",
+   "value": 1192.8,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "fy22.revenue": {
+   "disp": "1,603 百万円",
+   "value": 1603.2,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "fy23.revenue": {
+   "disp": "2,070 百万円",
+   "value": 2069.6,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "fy24.revenue": {
+   "disp": "2,572 百万円",
+   "value": 2571.9,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "fy25.revenue": {
+   "disp": "3,392 百万円",
+   "value": 3392.4,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "fy21.gross": {
+   "disp": "961 百万円",
+   "value": 961.4,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "fy22.gross": {
+   "disp": "1,270 百万円",
+   "value": 1270.1,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "fy23.gross": {
+   "disp": "1,637 百万円",
+   "value": 1636.8,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "fy24.gross": {
+   "disp": "1,997 百万円",
+   "value": 1997.4,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "fy25.gross": {
+   "disp": "2,655 百万円",
+   "value": 2654.6,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "fy21.sga": {
+   "disp": "560 百万円",
+   "value": 559.5,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "販売費及び一般管理費"
+  },
+  "fy22.sga": {
+   "disp": "577 百万円",
+   "value": 577.3,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "販売費及び一般管理費"
+  },
+  "fy23.sga": {
+   "disp": "728 百万円",
+   "value": 728.1,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "販売費及び一般管理費"
+  },
+  "fy24.sga": {
+   "disp": "862 百万円",
+   "value": 861.5,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "販売費及び一般管理費"
+  },
+  "fy25.sga": {
+   "disp": "1,117 百万円",
+   "value": 1117.1,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販売費及び一般管理費"
+  },
+  "fy21.op": {
+   "disp": "402 百万円",
+   "value": 401.9,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "fy22.op": {
+   "disp": "693 百万円",
+   "value": 692.8,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "fy23.op": {
+   "disp": "909 百万円",
+   "value": 908.7,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "fy24.op": {
+   "disp": "1,136 百万円",
+   "value": 1135.9,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "fy25.op": {
+   "disp": "1,538 百万円",
+   "value": 1537.5,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "fy21.net": {
+   "disp": "340 百万円",
+   "value": 340.3,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "当期純利益"
+  },
+  "fy22.net": {
+   "disp": "450 百万円",
+   "value": 449.6,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "当期純利益"
+  },
+  "fy23.net": {
+   "disp": "613 百万円",
+   "value": 612.9,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "当期純利益"
+  },
+  "fy24.net": {
+   "disp": "808 百万円",
+   "value": 808.3,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "当期純利益"
+  },
+  "fy25.net": {
+   "disp": "1,088 百万円",
+   "value": 1088.2,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "当期純利益"
+  },
+  "fy21.equity": {
+   "disp": "504 百万円",
+   "value": 504.2,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "純資産"
+  },
+  "fy22.equity": {
+   "disp": "1,105 百万円",
+   "value": 1105.1,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "純資産"
+  },
+  "fy23.equity": {
+   "disp": "1,690 百万円",
+   "value": 1690.0,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "純資産"
+  },
+  "fy24.equity": {
+   "disp": "2,409 百万円",
+   "value": 2409.1,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "純資産"
+  },
+  "fy25.equity": {
+   "disp": "3,375 百万円",
+   "value": 3375.0,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "純資産"
+  },
+  "fy21.cash": {
+   "disp": "617 百万円",
+   "value": 617.1,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "現預金"
+  },
+  "fy22.cash": {
+   "disp": "1,075 百万円",
+   "value": 1075.2,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "現預金"
+  },
+  "fy23.cash": {
+   "disp": "1,413 百万円",
+   "value": 1412.9,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "現預金"
+  },
+  "fy24.cash": {
+   "disp": "1,966 百万円",
+   "value": 1965.9,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "現預金"
+  },
+  "fy25.cash": {
+   "disp": "2,858 百万円",
+   "value": 2857.5,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "現預金"
+  },
+  "fy21.assets": {
+   "disp": "1,061 百万円",
+   "value": 1061.3,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "総資産"
+  },
+  "fy22.assets": {
+   "disp": "1,649 百万円",
+   "value": 1649.0,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "総資産"
+  },
+  "fy23.assets": {
+   "disp": "2,381 百万円",
+   "value": 2380.7,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "総資産"
+  },
+  "fy24.assets": {
+   "disp": "3,071 百万円",
+   "value": 3070.6,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "総資産"
+  },
+  "fy25.assets": {
+   "disp": "4,284 百万円",
+   "value": 4283.5,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "総資産"
+  },
+  "fy21.ocf": {
+   "disp": "409 百万円",
+   "value": 408.6,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "営業キャッシュフロー"
+  },
+  "fy22.ocf": {
+   "disp": "543 百万円",
+   "value": 543.4,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "営業キャッシュフロー"
+  },
+  "fy23.ocf": {
+   "disp": "627 百万円",
+   "value": 626.9,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "営業キャッシュフロー"
+  },
+  "fy24.ocf": {
+   "disp": "857 百万円",
+   "value": 856.8,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "営業キャッシュフロー"
+  },
+  "fy25.ocf": {
+   "disp": "1,270 百万円",
+   "value": 1270.3,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "営業キャッシュフロー"
+  },
+  "fy21.capex_sw": {
+   "disp": "55 百万円",
+   "value": 54.9,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "ソフトウエア投資額(無形固定資産の取得)"
+  },
+  "fy22.capex_sw": {
+   "disp": "55 百万円",
+   "value": 55.2,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "ソフトウエア投資額(無形固定資産の取得)"
+  },
+  "fy23.capex_sw": {
+   "disp": "39 百万円",
+   "value": 38.7,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "ソフトウエア投資額(無形固定資産の取得)"
+  },
+  "fy24.capex_sw": {
+   "disp": "60 百万円",
+   "value": 60.2,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "ソフトウエア投資額(無形固定資産の取得)"
+  },
+  "fy25.capex_sw": {
+   "disp": "80 百万円",
+   "value": 79.6,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "ソフトウエア投資額(無形固定資産の取得)"
+  },
+  "fy21.dep": {
+   "disp": "13 百万円",
+   "value": 12.7,
+   "unit": "百万円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "減価償却費(無形償却を含む)"
+  },
+  "fy22.dep": {
+   "disp": "33 百万円",
+   "value": 32.7,
+   "unit": "百万円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "減価償却費(無形償却を含む)"
+  },
+  "fy23.dep": {
+   "disp": "59 百万円",
+   "value": 59.1,
+   "unit": "百万円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "減価償却費(無形償却を含む)"
+  },
+  "fy24.dep": {
+   "disp": "81 百万円",
+   "value": 80.9,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "減価償却費(無形償却を含む)"
+  },
+  "fy25.dep": {
+   "disp": "106 百万円",
+   "value": 106.2,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "減価償却費(無形償却を含む)"
+  },
+  "fy21.shares": {
+   "disp": "12.615 百万株",
+   "value": 12.615,
+   "unit": "百万株",
+   "period": "FY2021",
+   "status": "計算",
+   "label": "期末株式数(自己株除く)"
+  },
+  "fy22.shares": {
+   "disp": "13.919 百万株",
+   "value": 13.91926,
+   "unit": "百万株",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "期末株式数(自己株除く)"
+  },
+  "fy23.shares": {
+   "disp": "14.962 百万株",
+   "value": 14.961626,
+   "unit": "百万株",
+   "period": "FY2023",
+   "status": "計算",
+   "label": "期末株式数(自己株除く)"
+  },
+  "fy24.shares": {
+   "disp": "15.121 百万株",
+   "value": 15.121253,
+   "unit": "百万株",
+   "period": "FY2024",
+   "status": "計算",
+   "label": "期末株式数(自己株除く)"
+  },
+  "fy25.shares": {
+   "disp": "15.252 百万株",
+   "value": 15.251596,
+   "unit": "百万株",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "期末株式数(自己株除く)"
+  },
+  "fy21.dps": {
+   "disp": "0.0 円",
+   "value": 0.0,
+   "unit": "円",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "1株当たり配当(分割調整後)"
+  },
+  "fy22.dps": {
+   "disp": "7.5 円",
+   "value": 7.5,
+   "unit": "円",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "1株当たり配当(分割調整後)"
+  },
+  "fy23.dps": {
+   "disp": "10.0 円",
+   "value": 10.0,
+   "unit": "円",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "1株当たり配当(分割調整後)"
+  },
+  "fy24.dps": {
+   "disp": "12.0 円",
+   "value": 12.0,
+   "unit": "円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "1株当たり配当(分割調整後)"
+  },
+  "fy25.dps": {
+   "disp": "16.0 円",
+   "value": 16.0,
+   "unit": "円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "1株当たり配当(分割調整後)"
+  },
+  "fy21.employees": {
+   "disp": "59 人",
+   "value": 59,
+   "unit": "人",
+   "period": "FY2021",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "fy22.employees": {
+   "disp": "61 人",
+   "value": 61,
+   "unit": "人",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "fy23.employees": {
+   "disp": "67 人",
+   "value": 67,
+   "unit": "人",
+   "period": "FY2023",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "fy24.employees": {
+   "disp": "90 人",
+   "value": 90,
+   "unit": "人",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "fy25.employees": {
+   "disp": "107 人",
+   "value": 107,
+   "unit": "人",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "fy25.rev_ibow": {
+   "disp": "2,391.9 百万円",
+   "value": 2391.9,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上 iBow"
+  },
+  "fy25.rev_receipt": {
+   "disp": "278.2 百万円",
+   "value": 278.2,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上 iBowレセプト"
+  },
+  "fy25.rev_cloud_other": {
+   "disp": "260.9 百万円",
+   "value": 260.9,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上 クラウドその他"
+  },
+  "fy25.rev_bpaas": {
+   "disp": "440.9 百万円",
+   "value": 440.9,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上 BPaaS"
+  },
+  "fy25.rev_other": {
+   "disp": "20.5 百万円",
+   "value": 20.5,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上 その他サービス"
+  },
+  "fy25.cogs_labor": {
+   "disp": "365.1 百万円",
+   "value": 365.1,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上原価 労務費"
+  },
+  "fy25.cogs_outsource": {
+   "disp": "284.0 百万円",
+   "value": 284.0,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上原価 外注費(サーバー費用を含む)"
+  },
+  "fy25.cogs_dep": {
+   "disp": "47.7 百万円",
+   "value": 47.7,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上原価 減価償却費(ソフトウエア償却を含む)"
+  },
+  "fy25.sga_people": {
+   "disp": "487 百万円",
+   "value": 487,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販管費 人件費"
+  },
+  "fy25.sga_ad": {
+   "disp": "127.7 百万円",
+   "value": 127.7,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販管費 広告宣伝費"
+  },
+  "fy25.sga_rd": {
+   "disp": "50.1 百万円",
+   "value": 50.1,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販管費 研究開発費"
+  },
+  "fy25.sga_other": {
+   "disp": "452 百万円",
+   "value": 452,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販管費 その他経費"
+  },
+  "fy25.sales_cost_share": {
+   "disp": "36.6%",
+   "value": 36.6,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "販売費の割合"
+  },
+  "fy24.rev_bpaas": {
+   "disp": "270.0 百万円",
+   "value": 270.0,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "売上 BPaaS"
+  },
+  "fy24.cogs_labor": {
+   "disp": "283.5 百万円",
+   "value": 283.5,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "売上原価 労務費"
+  },
+  "fy24.cogs_outsource": {
+   "disp": "230.6 百万円",
+   "value": 230.6,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "売上原価 外注費(サーバー費用を含む)"
+  },
+  "fy24.sga_ad": {
+   "disp": "106.2 百万円",
+   "value": 106.2,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "販管費 広告宣伝費"
+  },
+  "fy24.sga_rd": {
+   "disp": "10.7 百万円",
+   "value": 10.7,
+   "unit": "百万円",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "販管費 研究開発費"
+  },
+  "9m26.revenue": {
+   "disp": "3,067 百万円",
+   "value": 3067,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "9m25.revenue": {
+   "disp": "2,473 百万円",
+   "value": 2473,
+   "unit": "百万円",
+   "period": "2025-01→2025-09",
+   "status": "確認",
+   "label": "売上高"
+  },
+  "9m26.gross": {
+   "disp": "2,342 百万円",
+   "value": 2342,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "9m25.gross": {
+   "disp": "1,954 百万円",
+   "value": 1954,
+   "unit": "百万円",
+   "period": "2025-01→2025-09",
+   "status": "確認",
+   "label": "売上総利益"
+  },
+  "9m26.op": {
+   "disp": "1,454 百万円",
+   "value": 1454,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "9m25.op": {
+   "disp": "1,195 百万円",
+   "value": 1195,
+   "unit": "百万円",
+   "period": "2025-01→2025-09",
+   "status": "確認",
+   "label": "営業利益"
+  },
+  "9m26.server": {
+   "disp": "228 百万円",
+   "value": 228,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "売上原価 うちサーバーコスト"
+  },
+  "9m25.server": {
+   "disp": "122 百万円",
+   "value": 122,
+   "unit": "百万円",
+   "period": "2025-01→2025-09",
+   "status": "確認",
+   "label": "売上原価 うちサーバーコスト"
+  },
+  "9m26.outsource": {
+   "disp": "328 百万円",
+   "value": 328,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "売上原価 外注費"
+  },
+  "9m25.outsource": {
+   "disp": "191 百万円",
+   "value": 191,
+   "unit": "百万円",
+   "period": "2025-01→2025-09",
+   "status": "確認",
+   "label": "売上原価 外注費"
+  },
+  "q24q1.revenue": {
+   "disp": "575 百万円",
+   "value": 575.0,
+   "unit": "百万円",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "四半期売上高"
+  },
+  "q24q1.gross": {
+   "disp": "440 百万円",
+   "value": 439.5,
+   "unit": "百万円",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "四半期売上総利益"
+  },
+  "q24q1.op": {
+   "disp": "234 百万円",
+   "value": 234.1,
+   "unit": "百万円",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "四半期営業利益"
+  },
+  "q24q2.revenue": {
+   "disp": "631 百万円",
+   "value": 630.7,
+   "unit": "百万円",
+   "period": "Q2 2024",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q24q2.gross": {
+   "disp": "483 百万円",
+   "value": 482.7,
+   "unit": "百万円",
+   "period": "Q2 2024",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q24q2.op": {
+   "disp": "294 百万円",
+   "value": 294.3,
+   "unit": "百万円",
+   "period": "Q2 2024",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q24q3.revenue": {
+   "disp": "655 百万円",
+   "value": 654.5,
+   "unit": "百万円",
+   "period": "Q3 2024",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q24q3.gross": {
+   "disp": "512 百万円",
+   "value": 512.1,
+   "unit": "百万円",
+   "period": "Q3 2024",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q24q3.op": {
+   "disp": "295 百万円",
+   "value": 295.1,
+   "unit": "百万円",
+   "period": "Q3 2024",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q24q4.revenue": {
+   "disp": "712 百万円",
+   "value": 711.6,
+   "unit": "百万円",
+   "period": "Q4 2024",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q24q4.gross": {
+   "disp": "563 百万円",
+   "value": 563.1,
+   "unit": "百万円",
+   "period": "Q4 2024",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q24q4.op": {
+   "disp": "313 百万円",
+   "value": 312.5,
+   "unit": "百万円",
+   "period": "Q4 2024",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q25q1.revenue": {
+   "disp": "754 百万円",
+   "value": 754.1,
+   "unit": "百万円",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "四半期売上高"
+  },
+  "q25q1.gross": {
+   "disp": "604 百万円",
+   "value": 603.9,
+   "unit": "百万円",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "四半期売上総利益"
+  },
+  "q25q1.op": {
+   "disp": "377 百万円",
+   "value": 376.8,
+   "unit": "百万円",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "四半期営業利益"
+  },
+  "q25q2.revenue": {
+   "disp": "849 百万円",
+   "value": 849.1,
+   "unit": "百万円",
+   "period": "Q2 2025",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q25q2.gross": {
+   "disp": "666 百万円",
+   "value": 666.4,
+   "unit": "百万円",
+   "period": "Q2 2025",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q25q2.op": {
+   "disp": "412 百万円",
+   "value": 411.6,
+   "unit": "百万円",
+   "period": "Q2 2025",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q25q3.revenue": {
+   "disp": "871 百万円",
+   "value": 870.7,
+   "unit": "百万円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q25q3.gross": {
+   "disp": "684 百万円",
+   "value": 683.9,
+   "unit": "百万円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q25q3.op": {
+   "disp": "408 百万円",
+   "value": 407.5,
+   "unit": "百万円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q25q4.revenue": {
+   "disp": "919 百万円",
+   "value": 918.6,
+   "unit": "百万円",
+   "period": "Q4 2025",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q25q4.gross": {
+   "disp": "700 百万円",
+   "value": 700.3,
+   "unit": "百万円",
+   "period": "Q4 2025",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q25q4.op": {
+   "disp": "342 百万円",
+   "value": 341.5,
+   "unit": "百万円",
+   "period": "Q4 2025",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q26q1.revenue": {
+   "disp": "954 百万円",
+   "value": 953.9,
+   "unit": "百万円",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "四半期売上高"
+  },
+  "q26q1.gross": {
+   "disp": "715 百万円",
+   "value": 715.3,
+   "unit": "百万円",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "四半期売上総利益"
+  },
+  "q26q1.op": {
+   "disp": "434 百万円",
+   "value": 434.4,
+   "unit": "百万円",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "四半期営業利益"
+  },
+  "q26q2.revenue": {
+   "disp": "1,037 百万円",
+   "value": 1037.4,
+   "unit": "百万円",
+   "period": "Q2 2026",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q26q2.gross": {
+   "disp": "800 百万円",
+   "value": 800.2,
+   "unit": "百万円",
+   "period": "Q2 2026",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q26q2.op": {
+   "disp": "512 百万円",
+   "value": 512.2,
+   "unit": "百万円",
+   "period": "Q2 2026",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q26q3.revenue": {
+   "disp": "1,076 百万円",
+   "value": 1076.3,
+   "unit": "百万円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "四半期売上高"
+  },
+  "q26q3.gross": {
+   "disp": "827 百万円",
+   "value": 826.5,
+   "unit": "百万円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "四半期売上総利益"
+  },
+  "q26q3.op": {
+   "disp": "508 百万円",
+   "value": 507.7,
+   "unit": "百万円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "四半期営業利益"
+  },
+  "q24q1.stations": {
+   "disp": "2,698 件",
+   "value": 2698,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q24q2.stations": {
+   "disp": "2,801 件",
+   "value": 2801,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q24q3.stations": {
+   "disp": "2,891 件",
+   "value": 2891,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q24q4.stations": {
+   "disp": "3,028 件",
+   "value": 3028,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q25q1.stations": {
+   "disp": "3,186 件",
+   "value": 3186,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q25q2.stations": {
+   "disp": "3,286 件",
+   "value": 3286,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q25q3.stations": {
+   "disp": "3,386 件",
+   "value": 3386,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q25q4.stations": {
+   "disp": "3,501 件",
+   "value": 3501,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q26q1.stations": {
+   "disp": "3,633 件",
+   "value": 3633,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q26q2.stations": {
+   "disp": "3,736 件",
+   "value": 3736,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q26q3.stations": {
+   "disp": "3,843 件",
+   "value": 3843,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "契約ステーション数(期末)"
+  },
+  "q24q1.active": {
+   "disp": "2,490 件",
+   "value": 2490,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q24q2.active": {
+   "disp": "2,605 件",
+   "value": 2605,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q24q3.active": {
+   "disp": "2,726 件",
+   "value": 2726,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q24q4.active": {
+   "disp": "2,818 件",
+   "value": 2818,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q25q1.active": {
+   "disp": "2,885 件",
+   "value": 2885,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q25q2.active": {
+   "disp": "3,103 件",
+   "value": 3103,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q25q3.active": {
+   "disp": "3,231 件",
+   "value": 3231,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q25q4.active": {
+   "disp": "3,325 件",
+   "value": 3325,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q26q1.active": {
+   "disp": "3,415 件",
+   "value": 3415,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q26q2.active": {
+   "disp": "3,583 件",
+   "value": 3583,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q26q3.active": {
+   "disp": "3,695 件",
+   "value": 3695,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "iBow稼働数"
+  },
+  "q24q1.new": {
+   "disp": "160 件",
+   "value": 160,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q24q2.new": {
+   "disp": "162 件",
+   "value": 162,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q24q3.new": {
+   "disp": "133 件",
+   "value": 133,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q24q4.new": {
+   "disp": "178 件",
+   "value": 178,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q25q1.new": {
+   "disp": "196 件",
+   "value": 196,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q25q2.new": {
+   "disp": "165 件",
+   "value": 165,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q25q3.new": {
+   "disp": "150 件",
+   "value": 150,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q25q4.new": {
+   "disp": "159 件",
+   "value": 159,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q26q1.new": {
+   "disp": "175 件",
+   "value": 175,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q26q2.new": {
+   "disp": "171 件",
+   "value": 171,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q26q3.new": {
+   "disp": "153 件",
+   "value": 153,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "新規獲得"
+  },
+  "q24q1.churned": {
+   "disp": "36 件",
+   "value": 36,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q24q2.churned": {
+   "disp": "56 件",
+   "value": 56,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q24q3.churned": {
+   "disp": "48 件",
+   "value": 48,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q24q4.churned": {
+   "disp": "37 件",
+   "value": 37,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q25q1.churned": {
+   "disp": "34 件",
+   "value": 34,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q25q2.churned": {
+   "disp": "59 件",
+   "value": 59,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q25q3.churned": {
+   "disp": "51 件",
+   "value": 51,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q25q4.churned": {
+   "disp": "42 件",
+   "value": 42,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q26q1.churned": {
+   "disp": "46 件",
+   "value": 46,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q26q2.churned": {
+   "disp": "64 件",
+   "value": 64,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q26q3.churned": {
+   "disp": "35 件",
+   "value": 35,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "解約"
+  },
+  "q24q1.churn_switch": {
+   "disp": "15 件",
+   "value": 15,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q24q2.churn_switch": {
+   "disp": "23 件",
+   "value": 23,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q24q3.churn_switch": {
+   "disp": "23 件",
+   "value": 23,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q24q4.churn_switch": {
+   "disp": "18 件",
+   "value": 18,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q25q1.churn_switch": {
+   "disp": "15 件",
+   "value": 15,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q25q2.churn_switch": {
+   "disp": "34 件",
+   "value": 34,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q25q3.churn_switch": {
+   "disp": "30 件",
+   "value": 30,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q25q4.churn_switch": {
+   "disp": "27 件",
+   "value": 27,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q26q1.churn_switch": {
+   "disp": "26 件",
+   "value": 26,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q26q2.churn_switch": {
+   "disp": "25 件",
+   "value": 25,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q26q3.churn_switch": {
+   "disp": "20 件",
+   "value": 20,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "うち他社切替による解約"
+  },
+  "q24q1.arpu": {
+   "disp": "75.5 千円",
+   "value": 75.5,
+   "unit": "千円",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q24q2.arpu": {
+   "disp": "78.0 千円",
+   "value": 78.0,
+   "unit": "千円",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q24q3.arpu": {
+   "disp": "79.3 千円",
+   "value": 79.3,
+   "unit": "千円",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q24q4.arpu": {
+   "disp": "81.3 千円",
+   "value": 81.3,
+   "unit": "千円",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q25q1.arpu": {
+   "disp": "83.7 千円",
+   "value": 83.7,
+   "unit": "千円",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q25q2.arpu": {
+   "disp": "86.4 千円",
+   "value": 86.4,
+   "unit": "千円",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q25q3.arpu": {
+   "disp": "88.1 千円",
+   "value": 88.1,
+   "unit": "千円",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q25q4.arpu": {
+   "disp": "88.8 千円",
+   "value": 88.8,
+   "unit": "千円",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q26q1.arpu": {
+   "disp": "87.9 千円",
+   "value": 87.9,
+   "unit": "千円",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q26q2.arpu": {
+   "disp": "90.7 千円",
+   "value": 90.7,
+   "unit": "千円",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q26q3.arpu": {
+   "disp": "94.1 千円",
+   "value": 94.1,
+   "unit": "千円",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "顧客単価(ARPU・リカーリングのみ)"
+  },
+  "q24q1.mrr_churn": {
+   "disp": "0.15%",
+   "value": 0.15,
+   "unit": "%",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q24q2.mrr_churn": {
+   "disp": "0.27%",
+   "value": 0.27,
+   "unit": "%",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q24q3.mrr_churn": {
+   "disp": "0.20%",
+   "value": 0.2,
+   "unit": "%",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q24q4.mrr_churn": {
+   "disp": "0.13%",
+   "value": 0.13,
+   "unit": "%",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q25q1.mrr_churn": {
+   "disp": "0.11%",
+   "value": 0.11,
+   "unit": "%",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q25q2.mrr_churn": {
+   "disp": "0.24%",
+   "value": 0.24,
+   "unit": "%",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q25q3.mrr_churn": {
+   "disp": "0.18%",
+   "value": 0.18,
+   "unit": "%",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q25q4.mrr_churn": {
+   "disp": "0.15%",
+   "value": 0.15,
+   "unit": "%",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q26q1.mrr_churn": {
+   "disp": "0.19%",
+   "value": 0.19,
+   "unit": "%",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q26q2.mrr_churn": {
+   "disp": "0.20%",
+   "value": 0.2,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q26q3.mrr_churn": {
+   "disp": "0.10%",
+   "value": 0.1,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "MRRチャーンレート(月次平均)"
+  },
+  "q24q1.bpaas_active": {
+   "disp": "124 件",
+   "value": 124,
+   "unit": "件",
+   "period": "Q1 2024",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q24q2.bpaas_active": {
+   "disp": "137 件",
+   "value": 137,
+   "unit": "件",
+   "period": "Q2 2024",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q24q3.bpaas_active": {
+   "disp": "155 件",
+   "value": 155,
+   "unit": "件",
+   "period": "Q3 2024",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q24q4.bpaas_active": {
+   "disp": "179 件",
+   "value": 179,
+   "unit": "件",
+   "period": "Q4 2024",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q25q1.bpaas_active": {
+   "disp": "197 件",
+   "value": 197,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q25q2.bpaas_active": {
+   "disp": "221 件",
+   "value": 221,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q25q3.bpaas_active": {
+   "disp": "236 件",
+   "value": 236,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q25q4.bpaas_active": {
+   "disp": "253 件",
+   "value": 253,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q26q1.bpaas_active": {
+   "disp": "273 件",
+   "value": 273,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q26q2.bpaas_active": {
+   "disp": "297 件",
+   "value": 297,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q26q3.bpaas_active": {
+   "disp": "325 件",
+   "value": 325,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "BPaaS稼働数"
+  },
+  "q25q1.ai_plan_active": {
+   "disp": "659 件",
+   "value": 659,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q25q2.ai_plan_active": {
+   "disp": "890 件",
+   "value": 890,
+   "unit": "件",
+   "period": "Q2 2025",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q25q3.ai_plan_active": {
+   "disp": "1,056 件",
+   "value": 1056,
+   "unit": "件",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q25q4.ai_plan_active": {
+   "disp": "1,203 件",
+   "value": 1203,
+   "unit": "件",
+   "period": "Q4 2025",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q26q1.ai_plan_active": {
+   "disp": "1,294 件",
+   "value": 1294,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q26q2.ai_plan_active": {
+   "disp": "1,609 件",
+   "value": 1609,
+   "unit": "件",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "q26q3.ai_plan_active": {
+   "disp": "1,755 件",
+   "value": 1755,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "AI計画報告 稼働数"
+  },
+  "g26.revenue": {
+   "disp": "4,277 百万円",
+   "value": 4277,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "会社予想 売上高(FY2026)"
+  },
+  "g26.op": {
+   "disp": "1,927 百万円",
+   "value": 1927,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "会社予想 営業利益(FY2026)"
+  },
+  "g26.net": {
+   "disp": "1,329 百万円",
+   "value": 1329,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "会社予想 当期純利益(FY2026)"
+  },
+  "g26.eps": {
+   "disp": "87.18 円",
+   "value": 87.18,
+   "unit": "円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "会社予想 1株当たり当期純利益(FY2026)"
+  },
+  "g26.dps": {
+   "disp": "21.0 円",
+   "value": 21.0,
+   "unit": "円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "会社予想 年間配当(FY2026)"
+  },
+  "plan27.revenue": {
+   "disp": "5,199 百万円",
+   "value": 5199,
+   "unit": "百万円",
+   "period": "FY2027",
+   "status": "確認",
+   "label": "中計 売上高(FY2027)"
+  },
+  "plan27.op": {
+   "disp": "2,350 百万円",
+   "value": 2350,
+   "unit": "百万円",
+   "period": "FY2027",
+   "status": "確認",
+   "label": "中計 営業利益(FY2027)"
+  },
+  "plan28.revenue": {
+   "disp": "6,149 百万円",
+   "value": 6149,
+   "unit": "百万円",
+   "period": "FY2028",
+   "status": "確認",
+   "label": "中計 売上高(FY2028)"
+  },
+  "plan28.op": {
+   "disp": "2,784 百万円",
+   "value": 2784,
+   "unit": "百万円",
+   "period": "FY2028",
+   "status": "確認",
+   "label": "中計 営業利益(FY2028)"
+  },
+  "plan26.stations": {
+   "disp": "3,954 件",
+   "value": 3954,
+   "unit": "件",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "中計 契約数(2026年計画)"
+  },
+  "plan26.arpu": {
+   "disp": "98.9 千円",
+   "value": 98.9,
+   "unit": "千円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "中計 顧客単価(2026年計画)"
+  },
+  "plan28.stations": {
+   "disp": "4,882 件",
+   "value": 4882,
+   "unit": "件",
+   "period": "FY2028",
+   "status": "確認",
+   "label": "中計 契約数(FY2028)"
+  },
+  "plan28.arpu": {
+   "disp": "110.3 千円",
+   "value": 110.3,
+   "unit": "千円",
+   "period": "FY2028",
+   "status": "確認",
+   "label": "中計 顧客単価(FY2028)"
+  },
+  "price.base_now": {
+   "disp": "18,000.0 円",
+   "value": 18000,
+   "unit": "円",
+   "period": "2026-11-13",
+   "status": "確認",
+   "label": "iBow 基本使用料(現行・1ステーション・税抜)"
+  },
+  "price.base_2027": {
+   "disp": "19,800.0 円",
+   "value": 19800,
+   "unit": "円",
+   "period": "2027-01",
+   "status": "確認",
+   "label": "iBow 基本使用料(2027年1月改定後)"
+  },
+  "price.per_visit": {
+   "disp": "100.0 円",
+   "value": 100,
+   "unit": "円",
+   "period": "2026",
+   "status": "確認",
+   "label": "iBow 従量課金費用(1訪問)"
+  },
+  "price.ai_plan": {
+   "disp": "20.0 円",
+   "value": 20,
+   "unit": "円",
+   "period": "2026",
+   "status": "確認",
+   "label": "AI訪問看護計画・報告(1訪問)"
+  },
+  "price.ai_route": {
+   "disp": "30.0 円",
+   "value": 30,
+   "unit": "円",
+   "period": "2026",
+   "status": "確認",
+   "label": "AI訪問予定・ルート(1訪問)"
+  },
+  "price.bpaas_min": {
+   "disp": "100,000.0 円",
+   "value": 100000,
+   "unit": "円",
+   "period": "2026",
+   "status": "確認",
+   "label": "BPaaS 最低額"
+  },
+  "shares.sep26": {
+   "disp": "15.132 百万株",
+   "value": 15.131539,
+   "unit": "百万株",
+   "period": "2026-09-30",
+   "status": "計算",
+   "label": "発行済株式数(自己株除く・2026年9月末)"
+  },
+  "buyback26": {
+   "disp": "300 百万円",
+   "value": 299.995,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "自己株式取得 実績額(2026年)"
+  },
+  "nrr.jun26": {
+   "disp": "108.0%",
+   "value": 108.0,
+   "unit": "%",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "クラウドNRR(法人単位・2025年6月→2026年6月)"
+  },
+  "share.q26q3": {
+   "disp": "19.2%",
+   "value": 19.2,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "市場シェア(期末契約ST÷全国稼働ST)"
+  },
+  "visits_per_station": {
+   "disp": "500 件/月",
+   "value": 500,
+   "unit": "件/月",
+   "period": "2026-08",
+   "status": "確認",
+   "label": "1ステーション当たり月間訪問件数(平均・会社説明)"
+  },
+  "revenue_per_visit_station": {
+   "disp": "8,500.0 円",
+   "value": 8500,
+   "unit": "円",
+   "period": "2026-08",
+   "status": "確認",
+   "label": "1訪問あたり売上(診療報酬・約値)"
+  },
+  "calc.ibow_per_st_q25": {
+   "disp": "65.4 千円",
+   "value": 65.4,
+   "unit": "千円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "iBow売上の1稼働STあたり月額"
+  },
+  "calc.ibow_per_st_q26": {
+   "disp": "65.5 千円",
+   "value": 65.5,
+   "unit": "千円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "iBow売上の1稼働STあたり月額"
+  },
+  "calc.visits_per_st": {
+   "disp": "475 件/月",
+   "value": 475,
+   "unit": "件/月",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "1稼働STあたりの推定訪問件数"
+  },
+  "calc.ai_per_st_q25": {
+   "disp": "3.05 千円",
+   "value": 3.05,
+   "unit": "千円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "AI売上の1稼働STあたり月額"
+  },
+  "calc.ai_per_st_q26": {
+   "disp": "5.59 千円",
+   "value": 5.59,
+   "unit": "千円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "AI売上の1稼働STあたり月額"
+  },
+  "calc.bpaas_per_st_q25": {
+   "disp": "12.1 千円",
+   "value": 12.1,
+   "unit": "千円",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "BPaaS売上の1稼働STあたり月額"
+  },
+  "calc.bpaas_per_st_q26": {
+   "disp": "14.8 千円",
+   "value": 14.8,
+   "unit": "千円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "BPaaS売上の1稼働STあたり月額"
+  },
+  "calc.switch_rate_fy24": {
+   "disp": "2.9%",
+   "value": 2.9,
+   "unit": "%",
+   "period": "FY2024",
+   "status": "計算",
+   "label": "他社切替による解約率(年)"
+  },
+  "calc.switch_rate_fy25": {
+   "disp": "3.3%",
+   "value": 3.3,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "他社切替による解約率(年)"
+  },
+  "calc.switch_rate_fy26": {
+   "disp": "2.6%",
+   "value": 2.6,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "他社切替による解約率(年率)"
+  },
+  "calc.churn_total_fy26": {
+   "disp": "5.3%",
+   "value": 5.3,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "解約率(年率、全理由)"
+  },
+  "calc.capture_openings": {
+   "disp": "27.6%",
+   "value": 27.6,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "新規獲得÷業界の新規開設"
+  },
+  "ind.stations_2026": {
+   "disp": "20,051 件",
+   "value": 20051,
+   "unit": "件",
+   "period": "2026-04-01",
+   "status": "確認",
+   "label": "全国の訪問看護ステーション稼働数"
+  },
+  "ind.new_2026": {
+   "disp": "2,428 件",
+   "value": 2428,
+   "unit": "件",
+   "period": "2026-04-01",
+   "status": "確認",
+   "label": "新規開設数(前年度)"
+  },
+  "ind.new_2025": {
+   "disp": "2,487 件",
+   "value": 2487,
+   "unit": "件",
+   "period": "2025-04-01",
+   "status": "確認",
+   "label": "新規開設数(前年度)"
+  },
+  "ind.new_2024": {
+   "disp": "2,437 件",
+   "value": 2437,
+   "unit": "件",
+   "period": "2024-04-01",
+   "status": "確認",
+   "label": "新規開設数(前年度)"
+  },
+  "ind.closed_2026": {
+   "disp": "960 件",
+   "value": 960,
+   "unit": "件",
+   "period": "2026-04-01",
+   "status": "確認",
+   "label": "廃止数(前年度)"
+  },
+  "ind.closed_2024": {
+   "disp": "701 件",
+   "value": 701,
+   "unit": "件",
+   "period": "2024-04-01",
+   "status": "確認",
+   "label": "廃止数(前年度)"
+  },
+  "ind.growth_2026": {
+   "disp": "6.9%",
+   "value": 6.9,
+   "unit": "%",
+   "period": "2026-04-01",
+   "status": "確認",
+   "label": "稼働数の増加率"
+  },
+  "ind.growth_2024": {
+   "disp": "10.4%",
+   "value": 10.4,
+   "unit": "%",
+   "period": "2024-04-01",
+   "status": "確認",
+   "label": "稼働数の増加率"
+  },
+  "comp.kaipoke_price": {
+   "disp": "25,000 円",
+   "value": 25000,
+   "unit": "円",
+   "period": "2026-02",
+   "status": "確認",
+   "label": "カイポケ訪問看護の月額(定額)"
+  },
+  "comp.kaipoke_st": {
+   "disp": "7,000 件",
+   "value": 7000,
+   "unit": "件",
+   "period": "2026-02",
+   "status": "確認",
+   "label": "カイポケ訪問看護の利用事業所"
+  },
+  "calc.price_ratio_500": {
+   "disp": "2.7 倍",
+   "value": 2.7,
+   "unit": "倍",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "500訪問のSTでのiBow÷カイポケの月額"
+  },
+  "calc.cost_share_rev": {
+   "disp": "1.6%",
+   "value": 1.6,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "iBow利用料÷ステーションの訪問売上(500訪問)"
+  },
+  "calc.marginal_opm": {
+   "disp": "50.2%",
+   "value": 50.2,
+   "unit": "%",
+   "period": "FY2021→FY2025",
+   "status": "計算",
+   "label": "営業利益の限界利益率(5期回帰、R²0.99)"
+  },
+  "calc.opm_ex_sales": {
+   "disp": "57.4%",
+   "value": 57.4,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "販売費を除いた営業利益率"
+  },
+  "calc.cac": {
+   "disp": "610 千円",
+   "value": 610,
+   "unit": "千円",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "新規1件あたり販売費(獲得単価)"
+  },
+  "calc.ltv_cac": {
+   "disp": "8.6 倍",
+   "value": 8.6,
+   "unit": "倍",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "経済的LTV/CAC(初年度単価50千円・粗利率78%・解約5.3%・単価成長5%・資本コスト8.9%)"
+  },
+  "q26q1.cloud_gm": {
+   "disp": "76.7%",
+   "value": 76.7,
+   "unit": "%",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "クラウドの粗利率"
+  },
+  "q26q3.cloud_gm": {
+   "disp": "79.0%",
+   "value": 79.0,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "クラウドの粗利率"
+  },
+  "fy25.cloud_gm": {
+   "disp": "80.2%",
+   "value": 80.2,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "クラウドの粗利率"
+  },
+  "fy25.bpaas_gm": {
+   "disp": "64.4%",
+   "value": 64.4,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "BPaaSの粗利率"
+  },
+  "opb.cloud_gp_9m": {
+   "disp": "316 百万円",
+   "value": 316,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "営業利益の増減: クラウド粗利"
+  },
+  "opb.people_9m": {
+   "disp": "-79 百万円",
+   "value": -79,
+   "unit": "百万円",
+   "period": "2026-01→2026-09",
+   "status": "確認",
+   "label": "営業利益の増減: 人件費"
+  },
+  "hold.founder": {
+   "disp": "39.0%",
+   "value": 39.0,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "創業者(中野剛人)の持株比率"
+  },
+  "hold.founders2": {
+   "disp": "55.3%",
+   "value": 55.26,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "上位2名(中野社長・北村常務)の持株比率"
+  },
+  "so.dilution": {
+   "disp": "0.23%",
+   "value": 0.23,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "ストックオプションの残りの希薄化率"
+  },
+  "jgb10": {
+   "disp": "2.87%",
+   "value": 2.87,
+   "unit": "%",
+   "period": "2026-11-13",
+   "status": "確認",
+   "label": "日本10年国債利回り"
+  },
+  "reform.denshi": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "2026年度改定: 包括型訪問看護療養費で記録の電子化を要件化"
+  },
+  "ind.closure_reason_share": {
+   "disp": "50%",
+   "value": 50,
+   "unit": "%",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "解約理由のうち廃業・休業の割合(会社説明)"
+  },
+  "plan.ibow_dependence": {
+   "disp": "70.5%",
+   "value": 70.5,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "売上のiBow依存度(有報のリスク欄)"
+  },
+  "qa.switch_in": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "Q1 2026",
+   "status": "確認",
+   "label": "他社レセプトシステムからの切替流入は当社の解約件数より圧倒的に多い(会社説明)"
+  },
+  "qa.volume_discount": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "Q1 2025",
+   "status": "確認",
+   "label": "大口顧客にはボリュームディスカウントの可能性(会社説明)"
+  },
+  "gov.board": {
+   "disp": "4 名",
+   "value": 4,
+   "unit": "名",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "取締役の人数(うち社外)"
+  },
+  "gov.ceo_since": {
+   "disp": "2,012 年",
+   "value": 2012,
+   "unit": "年",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "中野社長が当社を設立した年"
+  },
+  "ind.margin_r6": {
+   "disp": "10.3%",
+   "value": 10.3,
+   "unit": "%",
+   "period": "FY2024",
+   "status": "確認",
+   "label": "訪問看護事業所の収支差率(令和6年度決算)"
+  },
+  "reform.denshi_kokuji": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "包括型訪問看護療養費の注7「記録は電子的方法によって記録すること」"
+  },
+  "fy25.eps": {
+   "disp": "71.6 円",
+   "value": 71.6,
+   "unit": "円",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "1株当たり当期純利益(FY2025、計算)"
+  },
+  "price.last": {
+   "disp": "2,297 円",
+   "value": 2297,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "確認",
+   "label": "株価(終値)"
+  },
+  "price.q3_reaction": {
+   "disp": "4.03%",
+   "value": 4.03,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "第3四半期決算の翌営業日の騰落率"
+  },
+  "price.high52": {
+   "disp": "2,940 円",
+   "value": 2940,
+   "unit": "円",
+   "period": "2026-01-15",
+   "status": "確認",
+   "label": "52週高値"
+  },
+  "price.low52": {
+   "disp": "1,695 円",
+   "value": 1695,
+   "unit": "円",
+   "period": "2026-06-25",
+   "status": "確認",
+   "label": "52週安値"
+  },
+  "cons.rev26": {
+   "disp": "4,188 百万円",
+   "value": 4188,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "2026年12月期 売上のコンセンサス"
+  },
+  "cons.op26": {
+   "disp": "1,925 百万円",
+   "value": 1925,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "確認",
+   "label": "2026年12月期 営業利益のコンセンサス"
+  },
+  "cons.tp": {
+   "disp": "2,680 円",
+   "value": 2680,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "確認",
+   "label": "目標株価のコンセンサス"
+  },
+  "adv20": {
+   "disp": "85 百万円",
+   "value": 85,
+   "unit": "百万円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "直近20営業日の平均売買代金(概算)"
+  },
+  "mcap": {
+   "disp": "35,081 百万円",
+   "value": 35081,
+   "unit": "百万円",
+   "period": "2026-11-16",
+   "status": "確認",
+   "label": "時価総額"
+  },
+  "q26q3.employees": {
+   "disp": "131 人",
+   "value": 131,
+   "unit": "人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "従業員数"
+  },
+  "q26q2.cloud_gm": {
+   "disp": "78.8%",
+   "value": 78.8,
+   "unit": "%",
+   "period": "Q2 2026",
+   "status": "確認",
+   "label": "クラウドの粗利率"
+  },
+  "calc.new_9m26": {
+   "disp": "499 件",
+   "value": 499,
+   "unit": "件",
+   "period": "2026-01→2026-09",
+   "status": "計算",
+   "label": "新規獲得(1〜3Q累計)"
+  },
+  "calc.new_9m25": {
+   "disp": "511 件",
+   "value": 511,
+   "unit": "件",
+   "period": "2025-01→2025-09",
+   "status": "計算",
+   "label": "新規獲得(1〜3Q累計)"
+  },
+  "calc.arpu_yoy_q26q3": {
+   "disp": "6.8%",
+   "value": 6.8,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "顧客単価の前年同期比"
+  },
+  "calc.excess_cash_ps": {
+   "disp": "150 円",
+   "value": 150,
+   "unit": "円",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "1株あたり余剰現金"
+  },
+  "calc.steady_value": {
+   "disp": "1,124 円",
+   "value": 1124,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "今の利益が続く場合の価値(12か月先EPS100円÷資本コスト8.9%)"
+  },
+  "val.grade.letter": {
+   "disp": "B",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.avg": {
+   "disp": "2.92",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.pos": {
+   "disp": "0.42",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.distribution": {
+   "disp": "A3・B7・C2・D1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.grade.pending": {
+   "disp": "0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.start": {
+   "disp": "1.127",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2026": {
+   "disp": "1.127",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2027": {
+   "disp": "1.077",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2028": {
+   "disp": "1.027",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.peg.2029": {
+   "disp": "0.977",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.alpha": {
+   "disp": "22.9%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.coe": {
+   "disp": "8.90%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.consensus": {
+   "disp": "1842.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.consensus": {
+   "disp": "1757.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.consensus.last": {
+   "disp": "-20%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.consensus.52週安値": {
+   "disp": "+9%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.consensus.52週高値": {
+   "disp": "-37%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.consensus.2025-2028": {
+   "disp": "21.5%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.consensus.2026-2029": {
+   "disp": "—",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.eps": {
+   "disp": "87.18",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.g": {
+   "disp": "19.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.per": {
+   "disp": "21.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.price": {
+   "disp": "1895.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2026.pv": {
+   "disp": "1895.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.eps": {
+   "disp": "108.40",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.g": {
+   "disp": "15.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.price": {
+   "disp": "1866.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2027.pv": {
+   "disp": "1714.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.eps": {
+   "disp": "128.30",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.g": {
+   "disp": "12.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.price": {
+   "disp": "2209.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2028.pv": {
+   "disp": "1863.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.eps": {
+   "disp": "148.00",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.g": {
+   "disp": "9.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.price": {
+   "disp": "2549.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.consensus.2029.pv": {
+   "disp": "1973.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.company": {
+   "disp": "1842.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.company": {
+   "disp": "1757.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.company.last": {
+   "disp": "-20%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.company.52週安値": {
+   "disp": "+9%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.company.52週高値": {
+   "disp": "-37%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.company.2025-2028": {
+   "disp": "21.5%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.company.2026-2029": {
+   "disp": "—",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.eps": {
+   "disp": "87.18",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.g": {
+   "disp": "19.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.per": {
+   "disp": "21.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.price": {
+   "disp": "1895.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2026.pv": {
+   "disp": "1895.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.eps": {
+   "disp": "108.40",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.g": {
+   "disp": "15.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.price": {
+   "disp": "1866.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2027.pv": {
+   "disp": "1714.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.eps": {
+   "disp": "128.30",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.g": {
+   "disp": "12.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.price": {
+   "disp": "2209.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2028.pv": {
+   "disp": "1863.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.eps": {
+   "disp": "148.00",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.g": {
+   "disp": "9.3%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.price": {
+   "disp": "2549.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.company.2029.pv": {
+   "disp": "1973.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value.engine": {
+   "disp": "1657.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.value_peg10.engine": {
+   "disp": "1657.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.engine.last": {
+   "disp": "-28%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.engine.52週安値": {
+   "disp": "-2%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.gap.engine.52週高値": {
+   "disp": "-44%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.engine.2025-2028": {
+   "disp": "19.7%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.cagr.engine.2026-2029": {
+   "disp": "16.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.eps": {
+   "disp": "89.11",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.g": {
+   "disp": "16.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.price": {
+   "disp": "1534.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2026.pv": {
+   "disp": "1534.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.eps": {
+   "disp": "105.34",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.g": {
+   "disp": "14.1%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.price": {
+   "disp": "1814.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2027.pv": {
+   "disp": "1665.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.eps": {
+   "disp": "122.77",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.g": {
+   "disp": "11.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.price": {
+   "disp": "2114.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2028.pv": {
+   "disp": "1782.9",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.eps": {
+   "disp": "140.43",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.g": {
+   "disp": "8.4%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.per": {
+   "disp": "17.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.price": {
+   "disp": "2418.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.row.engine.2029.pv": {
+   "disp": "1872.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.ev": {
+   "disp": "1714.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.sd": {
+   "disp": "210.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.p": {
+   "disp": "9.6%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.value": {
+   "disp": "2336.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bull.peg": {
+   "disp": "1.27",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.p": {
+   "disp": "75.8%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.value": {
+   "disp": "1666.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.base.peg": {
+   "disp": "1.00",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.p": {
+   "disp": "14.6%",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.value": {
+   "disp": "1557.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.scen.bear.peg": {
+   "disp": "0.99",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.Z1": {
+   "disp": "1278.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.immediate": {
+   "disp": "≤ 1278.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.Z2": {
+   "disp": "1467.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.zone.last": {
+   "disp": "見送り",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.up_down.last": {
+   "disp": "0.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.zone.52週安値": {
+   "disp": "見送り",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.up_down.52週安値": {
+   "disp": "4.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.zone.52週高値": {
+   "disp": "見送り",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.entry.up_down.52週高値": {
+   "disp": "-0.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.decision.last": {
+   "disp": "見送り",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.decision.52週安値": {
+   "disp": "監視",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.decision.52週高値": {
+   "disp": "見送り",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS −10%(全年度)": {
+   "disp": "1491.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS −10%(全年度).diff": {
+   "disp": "−165.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS +10%(全年度)": {
+   "disp": "1823.2",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.EPS +10%(全年度).diff": {
+   "disp": "+165.7",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.契約数: 弱気(獲得520〜600件・解約6.0%)": {
+   "disp": "1631.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.契約数: 弱気(獲得520〜600件・解約6.0%).diff": {
+   "disp": "−26.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.契約数: 強気(獲得720〜820件・解約4.8%)": {
+   "disp": "1805.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.契約数: 強気(獲得720〜820件・解約4.8%).diff": {
+   "disp": "+147.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.単価: 弱気(年+2.5〜3.9%)": {
+   "disp": "1620.4",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.単価: 弱気(年+2.5〜3.9%).diff": {
+   "disp": "−37.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.単価: 強気(年+4.5〜8%)": {
+   "disp": "1802.8",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.単価: 強気(年+4.5〜8%).diff": {
+   "disp": "+145.3",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.粗利率・販管費率: 弱気(粗利率74%)": {
+   "disp": "1598.0",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.粗利率・販管費率: 弱気(粗利率74%).diff": {
+   "disp": "−59.5",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.粗利率・販管費率: 強気(粗利率77.5%)": {
+   "disp": "1690.1",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  },
+  "val.sens.粗利率・販管費率: 強気(粗利率77.5%).diff": {
+   "disp": "+32.6",
+   "value": null,
+   "unit": "",
+   "period": "計算",
+   "status": "計算",
+   "label": "valuate.py の表示値"
+  }
+ },
+ "forbidden": []
+}
