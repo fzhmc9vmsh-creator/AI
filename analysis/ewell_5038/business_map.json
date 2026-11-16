@@ -1,0 +1,51 @@
+{
+  "ticker": "TICKER",
+  "_how": "analysis-playbook.md §4。決算短信の品目別の記述を全品目。バリューチェーンは成長分野と現金を稼ぐ分野の両方。検査: python3 scripts/gate.py map <作業フォルダ>",
+  "coverage_pct": 0,
+  "products": [
+    {
+      "name": "(品目)",
+      "segment": "(セグメント)",
+      "use": "(用途・顧客の業界)",
+      "position": "(会社の位置づけ: 戦略テーマ・採算是正・移管・維持)",
+      "strategic": false,
+      "move": "数量増|値上げで補う|減収|不明",
+      "quote": "(決算短信の記述の要約)"
+    }
+  ],
+  "value_chains": [
+    {
+      "name": "(成長分野 / 現金を稼ぐ分野)",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "自社",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "顧客",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "最終需要",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        }
+      ],
+      "profit_pool": "(どの段が利益を取っているか。上下の会社の利益率)",
+      "power_shift": "(顧客・仕入先の集中、資本関係の変化)",
+      "demand_growth": "(市場の成長率と出所)",
+      "outside_evidence": []
+    }
+  ]
+}
