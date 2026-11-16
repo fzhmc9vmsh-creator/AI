@@ -103,18 +103,18 @@
 - 主な数字: `{"segments": [{"name": "クラウド", "revenue_share_pct": 86.9, "profit_share_pct": 89.3, "margin_pct": 80.18, "profit_to_rev_share_ratio": 1.03}, {"name": "BPaaS", "revenue_share_pct": 13.1, "profit_share_pct": 10.7, "margin_pct": 64.19, "profit_to_rev_share_ratio": 0.82}], "high_concentration_segments": []}`
 
 ### L16 感応度の換算 [ok]
-- 価値の芯の候補は「契約数: 強気」(132円)。
-- 事業ドライバー2位「単価: 強気」(129.5円)の1.02倍。
-- なお複合/一律ショック最大は「EPS(全年度)」(170.2円)。
-- 主な数字: `{"core_candidate": "契約数: 強気", "core_abs_diff": 131.6, "driver_ranking": [{"name": "契約数: 強気", "abs_diff": 131.6, "is_paired": false}, {"name": "単価: 強気", "abs_diff": 129.5, "is_paired": false}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 61.1, "is_paired": false}, {"name": "単価: 弱気", "abs_diff": 38.1, "is_paired": false}, {"name": "粗利率・販管費率: 強気", "abs_diff": 33.5, "is_paired": false}, {"name": "契約数: 弱気", "abs_diff": 26.8, "is_paired": false}], "all_ranking": [{"name": "EPS(全年度)", "abs_diff": 170.2, "is_paired": true}, {"name": "契約数: 強気", "abs_diff": 131.6, "is_paired": false}, {"name": "単価: 強気", "abs_diff": 129.5, "is_paired": false}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 61.1, "is_paired": false}, {"name": "単価: 弱気", "abs_diff": 38.1, "is_paired": false}, {"name": "粗利率・販管費率: 強気", "abs_diff": 33.5, "is_paired": false}, {"name": "契約数: 弱気", "abs_diff": 26.8, "is_paired": false}], "ratios_vs_top1": [{"name": "単価: 強気", "abs_diff": 129.5, "top1_div_other": 1.02}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 61.1, "top1_div_other": 2.15}, {"name": "単価: 弱気", "abs_diff": 38.1, "top1_div_other": 3.46}, {"name": "粗利率・販管費率: 強気", "abs_diff": 33.5, "top1_div_other": 3.93}, {"name": "契約数: 弱気", "abs_diff": 26.8, "top1_div_other": 4.9}], "top1_to_top2_ratio": 1.02, "paired_second_name": null, "top1_to_paired_second_ratio": null}`
+- 価値の芯の候補は「契約数: 強気」(147円)。
+- 事業ドライバー2位「単価: 強気」(145.3円)の1.02倍。
+- なお複合/一律ショック最大は「EPS(全年度)」(165.7円)。
+- 主な数字: `{"core_candidate": "契約数: 強気", "core_abs_diff": 147.5, "driver_ranking": [{"name": "契約数: 強気", "abs_diff": 147.5, "is_paired": false}, {"name": "単価: 強気", "abs_diff": 145.3, "is_paired": false}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 59.5, "is_paired": false}, {"name": "単価: 弱気", "abs_diff": 37.1, "is_paired": false}, {"name": "粗利率・販管費率: 強気", "abs_diff": 32.6, "is_paired": false}, {"name": "契約数: 弱気", "abs_diff": 26.1, "is_paired": false}], "all_ranking": [{"name": "EPS(全年度)", "abs_diff": 165.7, "is_paired": true}, {"name": "契約数: 強気", "abs_diff": 147.5, "is_paired": false}, {"name": "単価: 強気", "abs_diff": 145.3, "is_paired": false}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 59.5, "is_paired": false}, {"name": "単価: 弱気", "abs_diff": 37.1, "is_paired": false}, {"name": "粗利率・販管費率: 強気", "abs_diff": 32.6, "is_paired": false}, {"name": "契約数: 弱気", "abs_diff": 26.1, "is_paired": false}], "ratios_vs_top1": [{"name": "単価: 強気", "abs_diff": 145.3, "top1_div_other": 1.02}, {"name": "粗利率・販管費率: 弱気", "abs_diff": 59.5, "top1_div_other": 2.48}, {"name": "単価: 弱気", "abs_diff": 37.1, "top1_div_other": 3.98}, {"name": "粗利率・販管費率: 強気", "abs_diff": 32.6, "top1_div_other": 4.53}, {"name": "契約数: 弱気", "abs_diff": 26.1, "top1_div_other": 5.64}], "top1_to_top2_ratio": 1.02, "paired_second_name": null, "top1_to_paired_second_ratio": null}`
 
 ### L17 流動性 [ok]
 - 1日売買代金85百万円の20%参加(17.00百万円/日)で算出: 5百万円は0.3日、30百万円は1.8日。
 - 主な数字: `{"adv": 85.0, "participation_rate_pct": 20.0, "daily_20pct_capacity": 17.0, "positions_days": [{"position": 5.0, "days": 0.29}, {"position": 30.0, "days": 1.76}], "max_days": 1.76}`
 
 ### L18 価値の橋 [ok]
-- 現在値 2,297円 → 今の利益が続く場合 1,124円(-1,173円)→ 理論株価 1,702円(成長と変化の上乗せ +579円、合計差 -595円)。株価は EPS が 204.4円(今より 104.4% 高い)で続くことを前提にしている。
-- 主な数字: `{"close": 2297.0, "eps_next": 100.0, "coe_pct": 8.9, "steady_state_value": 1123.6, "current_power_gap": -1173.4, "implied_sustained_eps": 204.43, "implied_eps_vs_next_pct": 104.4, "model_base_roe_pct": null, "roe_spread_vs_coe_pt": null, "theoretical_price_B": 1702.2, "total_gap": -594.8, "growth_add": 578.6, "current_power_share_pct": 197.3, "growth_add_share_pct": -97.3}`
+- 現在値 2,297円 → 今の利益が続く場合 1,124円(-1,173円)→ 理論株価 1,657円(成長と変化の上乗せ +534円、合計差 -640円)。株価は EPS が 204.4円(今より 104.4% 高い)で続くことを前提にしている。
+- 主な数字: `{"close": 2297.0, "eps_next": 100.0, "coe_pct": 8.9, "steady_state_value": 1123.6, "current_power_gap": -1173.4, "implied_sustained_eps": 204.43, "implied_eps_vs_next_pct": 104.4, "model_base_roe_pct": null, "roe_spread_vs_coe_pt": null, "theoretical_price_B": 1657.5, "total_gap": -639.5, "growth_add": 533.9, "current_power_share_pct": 183.5, "growth_add_share_pct": -83.5}`
 
 ### L19 会社予想と計画の癖 [ok]
 - 期初予想に対し、過去 4期のうち 4期で実績が上回った(中央値 +7.6%、平均 +10.2%)。

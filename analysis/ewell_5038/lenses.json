@@ -567,101 +567,101 @@
       "missing": [],
       "numbers": {
         "core_candidate": "契約数: 強気",
-        "core_abs_diff": 131.6,
+        "core_abs_diff": 147.5,
         "driver_ranking": [
           {
             "name": "契約数: 強気",
-            "abs_diff": 131.6,
+            "abs_diff": 147.5,
             "is_paired": false
           },
           {
             "name": "単価: 強気",
-            "abs_diff": 129.5,
+            "abs_diff": 145.3,
             "is_paired": false
           },
           {
             "name": "粗利率・販管費率: 弱気",
-            "abs_diff": 61.1,
+            "abs_diff": 59.5,
             "is_paired": false
           },
           {
             "name": "単価: 弱気",
-            "abs_diff": 38.1,
+            "abs_diff": 37.1,
             "is_paired": false
           },
           {
             "name": "粗利率・販管費率: 強気",
-            "abs_diff": 33.5,
+            "abs_diff": 32.6,
             "is_paired": false
           },
           {
             "name": "契約数: 弱気",
-            "abs_diff": 26.8,
+            "abs_diff": 26.1,
             "is_paired": false
           }
         ],
         "all_ranking": [
           {
             "name": "EPS(全年度)",
-            "abs_diff": 170.2,
+            "abs_diff": 165.7,
             "is_paired": true
           },
           {
             "name": "契約数: 強気",
-            "abs_diff": 131.6,
+            "abs_diff": 147.5,
             "is_paired": false
           },
           {
             "name": "単価: 強気",
-            "abs_diff": 129.5,
+            "abs_diff": 145.3,
             "is_paired": false
           },
           {
             "name": "粗利率・販管費率: 弱気",
-            "abs_diff": 61.1,
+            "abs_diff": 59.5,
             "is_paired": false
           },
           {
             "name": "単価: 弱気",
-            "abs_diff": 38.1,
+            "abs_diff": 37.1,
             "is_paired": false
           },
           {
             "name": "粗利率・販管費率: 強気",
-            "abs_diff": 33.5,
+            "abs_diff": 32.6,
             "is_paired": false
           },
           {
             "name": "契約数: 弱気",
-            "abs_diff": 26.8,
+            "abs_diff": 26.1,
             "is_paired": false
           }
         ],
         "ratios_vs_top1": [
           {
             "name": "単価: 強気",
-            "abs_diff": 129.5,
+            "abs_diff": 145.3,
             "top1_div_other": 1.02
           },
           {
             "name": "粗利率・販管費率: 弱気",
-            "abs_diff": 61.1,
-            "top1_div_other": 2.15
+            "abs_diff": 59.5,
+            "top1_div_other": 2.48
           },
           {
             "name": "単価: 弱気",
-            "abs_diff": 38.1,
-            "top1_div_other": 3.46
+            "abs_diff": 37.1,
+            "top1_div_other": 3.98
           },
           {
             "name": "粗利率・販管費率: 強気",
-            "abs_diff": 33.5,
-            "top1_div_other": 3.93
+            "abs_diff": 32.6,
+            "top1_div_other": 4.53
           },
           {
             "name": "契約数: 弱気",
-            "abs_diff": 26.8,
-            "top1_div_other": 4.9
+            "abs_diff": 26.1,
+            "top1_div_other": 5.64
           }
         ],
         "top1_to_top2_ratio": 1.02,
@@ -669,9 +669,9 @@
         "top1_to_paired_second_ratio": null
       },
       "reads": [
-        "価値の芯の候補は「契約数: 強気」(132円)。",
-        "事業ドライバー2位「単価: 強気」(129.5円)の1.02倍。",
-        "なお複合/一律ショック最大は「EPS(全年度)」(170.2円)。"
+        "価値の芯の候補は「契約数: 強気」(147円)。",
+        "事業ドライバー2位「単価: 強気」(145.3円)の1.02倍。",
+        "なお複合/一律ショック最大は「EPS(全年度)」(165.7円)。"
       ],
       "flags": []
     },
@@ -716,14 +716,14 @@
         "implied_eps_vs_next_pct": 104.4,
         "model_base_roe_pct": null,
         "roe_spread_vs_coe_pt": null,
-        "theoretical_price_B": 1702.2,
-        "total_gap": -594.8,
-        "growth_add": 578.6,
-        "current_power_share_pct": 197.3,
-        "growth_add_share_pct": -97.3
+        "theoretical_price_B": 1657.5,
+        "total_gap": -639.5,
+        "growth_add": 533.9,
+        "current_power_share_pct": 183.5,
+        "growth_add_share_pct": -83.5
       },
       "reads": [
-        "現在値 2,297円 → 今の利益が続く場合 1,124円(-1,173円)→ 理論株価 1,702円(成長と変化の上乗せ +579円、合計差 -595円)。株価は EPS が 204.4円(今より 104.4% 高い)で続くことを前提にしている。"
+        "現在値 2,297円 → 今の利益が続く場合 1,124円(-1,173円)→ 理論株価 1,657円(成長と変化の上乗せ +534円、合計差 -640円)。株価は EPS が 204.4円(今より 104.4% 高い)で続くことを前提にしている。"
       ],
       "flags": []
     },

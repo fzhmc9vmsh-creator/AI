@@ -4109,6 +4109,71 @@
    "tier": "T1",
    "status": "確認",
    "note": ""
+  },
+  {
+   "id": "calc.new_9m26",
+   "label": "新規獲得(1〜3Q累計)",
+   "value": 499,
+   "nd": 0,
+   "unit": "件",
+   "period": "2026-01→2026-09",
+   "basis": "",
+   "source": "dQ3 p.13",
+   "tier": "T1",
+   "status": "計算",
+   "note": "175+171+153"
+  },
+  {
+   "id": "calc.new_9m25",
+   "label": "新規獲得(1〜3Q累計)",
+   "value": 511,
+   "nd": 0,
+   "unit": "件",
+   "period": "2025-01→2025-09",
+   "basis": "",
+   "source": "dQ3 p.13",
+   "tier": "T1",
+   "status": "計算",
+   "note": "196+165+150"
+  },
+  {
+   "id": "calc.arpu_yoy_q26q3",
+   "label": "顧客単価の前年同期比",
+   "value": 6.8,
+   "nd": 1,
+   "unit": "%",
+   "period": "Q3 2026",
+   "basis": "",
+   "source": "dQ3 p.25",
+   "tier": "T1",
+   "status": "計算",
+   "note": "94.1÷88.1−1(1Q +5.0%、2Q +5.0%)"
+  },
+  {
+   "id": "calc.excess_cash_ps",
+   "label": "1株あたり余剰現金",
+   "value": 150,
+   "nd": 0,
+   "unit": "円",
+   "period": "FY2025",
+   "basis": "",
+   "source": "計算",
+   "tier": "T1",
+   "status": "計算",
+   "note": "(現預金2,858−運転に要る約500)÷1,513万株"
+  },
+  {
+   "id": "calc.steady_value",
+   "label": "今の利益が続く場合の価値(12か月先EPS100円÷資本コスト8.9%)",
+   "value": 1124,
+   "nd": 0,
+   "unit": "円",
+   "period": "2026-11-16",
+   "basis": "",
+   "source": "lenses.py L18",
+   "tier": "T1",
+   "status": "計算",
+   "note": "100÷0.089"
   }
  ]
 }
