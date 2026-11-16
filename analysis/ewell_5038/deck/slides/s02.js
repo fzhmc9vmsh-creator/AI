@@ -4,9 +4,9 @@ module.exports = function build(pres, L) {
   const s = L.contentSlide(pres, { kicker: '', source: '会社決算説明資料(2026年12月期3Q)、有価証券報告書、当方の計算(valuate.py)' });
   L.kpiTiles(s, [
     { value: F('price.last'), label: '株価(2026-11-16)', color: C.sub },
-    { value: `${F('val.value.engine')}円`, label: '理論株価(エンジン)', note: '資本コスト8.9%' }, // lint-ok: 台帳に無い手書き(当方の資本コスト)
+    { value: `${F('deck.theory')}`, label: '理論株価(エンジン)', note: '資本コスト8.9%' }, // lint-ok: 台帳に無い手書き(当方の資本コスト)
     { value: F('val.decision.last'), label: '判断', color: C.dark },
-    { value: `≤ ${F('val.entry.Z2')}円`, label: '分割圏', note: `即時は ${F('val.entry.Z1')}円以下` },
+    { value: `≤ ${F('deck.z2')}`, label: '分割圏', note: `即時は ${F('deck.z1')}以下` },
   ], { y: 1.62, h: 1.2, compact: true });
   const msgs = [
     'iBow本体の1ST単価は横ばいで、成長は契約数とアップセルの2本',

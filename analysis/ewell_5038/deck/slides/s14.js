@@ -16,7 +16,7 @@ module.exports = function build(pres, L) {
       { id: 'ibow', c: 2, r: 0, kind: 'unit', label: 'iBow', sub: '2014 年 6 月に提供' },
       { id: 'ipo', c: 2, r: 2, kind: 'unit', label: '上場', sub: '2022 年 9 月' },
       { id: 'r1', c: 3, r: 0, kind: 'ok', label: '3,843 事業所', sub: '利用先の数' },
-      { id: 'r2', c: 3, r: 1, kind: 'ok', label: '営業利益率 47%', sub: 'FY2025 の水準' },
+      { id: 'r2', c: 3, r: 1, kind: 'ok', label: '営業利益率 47%', sub: '2026 年 1〜9 月' },
       { id: 'r3', c: 3, r: 2, kind: 'ok', label: '期初予想を達成', sub: '営業利益は\n4 期すべて' },
     ],
     edges: [

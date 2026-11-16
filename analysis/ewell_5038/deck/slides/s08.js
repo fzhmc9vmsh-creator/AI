@@ -12,11 +12,11 @@ module.exports = function build(pres, L) {
     ['FY25\nQ1', 80.1], ['Q2', 78.5], ['Q3', 78.5], ['Q4\n前年比\n−2.9pt', 76.2],
     ['FY26\nQ1\n−5.1pt', 75.0], ['Q2\n−1.4pt', 77.1], ['Q3\n−1.7pt', 76.8],
   ];
-  L.paneHead(s, 0.5, 1.62, 6.9, '全社の粗利率(四半期、%。縦軸は 70% から)', 'pane_gm_head');
-  s.addChart('bar', [{ name: '粗利率', labels: qs.map(q => q[0]), values: qs.map(q => q[1]) }], L.chartStyle({
+  L.paneHead(s, 0.5, 1.62, 6.9, '全社の粗利率(四半期、%。折れ線、縦軸は 70% から)', 'pane_gm_head');
+  s.addChart('line', [{ name: '粗利率', labels: qs.map(q => q[0]), values: qs.map(q => q[1]) }], L.chartStyle({
     x: 0.5, y: 1.98, w: 6.9, h: 3.55, objectName: 'chart_gm',
-    barDir: 'col', barGapWidthPct: 45, valAxisMinVal: 70, valAxisMaxVal: 82, valAxisMajorUnit: 2, valAxisLabelFormatCode: '0',
-    dataLabelFormatCode: '0.0', chartColors: qs.map((q, i) => (i >= 7 ? C.red : C.rule)),
+    lineDataSymbol: 'circle', lineDataSymbolSize: 6, lineSize: 2, valAxisMinVal: 70, valAxisMaxVal: 82, valAxisMajorUnit: 2, valAxisLabelFormatCode: '0',
+    dataLabelFormatCode: '0.0', chartColors: [C.dark],
   }));
 
   // 右: サーバー費の年額(百万円)。2026 は 1〜9 月を年換算した推定

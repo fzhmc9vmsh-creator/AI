@@ -22,6 +22,6 @@ module.exports = function build(pres, L) {
   }));
   L.table(s, rows, { x: 0.5, y: 1.68, w: 12.33, colW: [2.9, 4.5, 1.0, 3.93], fontSize: 10, rowH: 0.46, align: ['left', 'left', 'center', 'left'], name: 'tbl_rebut' });
   L.takeaway(s, 0.5, 6.0, 12.33, 0.74,
-    `直した後の理論株価 ${F('val.value.engine')} 円(直す前 約 1,702 円)。資本コスト 8.0% + 余剰現金でも約 2,157 円で株価に届かず、判断は変わらない`, // lint-ok: 直す前の値と感応度は台帳に無い
+    `直した後の理論株価 ${F('deck.theory')}(直す前 約 1,702 円)。資本コスト 8.0% + 余剰現金でも約 2,157 円で株価に届かず、判断は変わらない`, // lint-ok: 直す前の値と感応度は台帳に無い
     { fontSize: 11 });
 };

@@ -36,7 +36,7 @@ module.exports = function build(pres, L) {
     chartColors: sw.map((a, i) => (i === 2 ? C.primary : C.sub)),
   }));
   L.kpiTiles(s, [
-    { value: F('calc.churn_total_fy26'), label: '件数ベースの解約(年)' },
+    { value: F('calc.churn_total_fy26'), label: '全理由の解約(件数、年)' },
     { value: '約1〜2%', label: `売上ベースの解約(年)\nMRRチャーン 月 ${F.n('q26q3.mrr_churn')}〜0.20%` }, // lint-ok: 台帳に無い(MRRチャーンの年換算)
   ], { compact: true, x: 8.0, y: 3.68, w: 4.83, h: 1.05 });
 

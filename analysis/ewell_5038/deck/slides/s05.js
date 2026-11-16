@@ -30,5 +30,5 @@ module.exports = function build(pres, L) {
   L.box(s, bx + bw - iw, by, iw, bh, { fill: C.primary, line: C.primary, name: 'ovl_band_ibow' });
   L.text(s, `iBow 約136円(${F('calc.cost_share_rev')})`, { x: bx + bw - 3.0, y: by + bh + 0.04, w: 3.0, h: 0.26, fontSize: 10, bold: true, color: C.primary, align: 'right', margin: 0, objectName: 'band_ibow_t' });
   L.marks(s, [{ x: bx + bw - iw - 0.04, y: by - 0.3, n: 3 }]);
-  L.text(s, '500訪問のSTで月68,000円。2027年1月から基本料19,800円(+2.6%)', { x: 0.5, y: 6.3, w: 8.0, h: 0.3, fontSize: 10, color: C.text, margin: 0, objectName: 'note_price' });
+  L.text(s, '500訪問のSTで月68,000円。2027年1月から基本料19,800円(+10%、500訪問のSTの月額は+2.6%)', { x: 0.5, y: 6.3, w: 8.0, h: 0.3, fontSize: 10, color: C.text, margin: 0, objectName: 'note_price' });
 };

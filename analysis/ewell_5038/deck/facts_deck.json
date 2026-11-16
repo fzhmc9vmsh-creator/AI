@@ -1583,7 +1583,8 @@
    "unit": "%",
    "period": "Q1 2024",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q24q2.mrr_churn": {
    "disp": "0.27%",
@@ -1591,7 +1592,8 @@
    "unit": "%",
    "period": "Q2 2024",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q24q3.mrr_churn": {
    "disp": "0.20%",
@@ -1599,7 +1601,8 @@
    "unit": "%",
    "period": "Q3 2024",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q24q4.mrr_churn": {
    "disp": "0.13%",
@@ -1607,7 +1610,8 @@
    "unit": "%",
    "period": "Q4 2024",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q25q1.mrr_churn": {
    "disp": "0.11%",
@@ -1615,7 +1619,8 @@
    "unit": "%",
    "period": "Q1 2025",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q25q2.mrr_churn": {
    "disp": "0.24%",
@@ -1623,7 +1628,8 @@
    "unit": "%",
    "period": "Q2 2025",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q25q3.mrr_churn": {
    "disp": "0.18%",
@@ -1631,7 +1637,8 @@
    "unit": "%",
    "period": "Q3 2025",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q25q4.mrr_churn": {
    "disp": "0.15%",
@@ -1639,7 +1646,8 @@
    "unit": "%",
    "period": "Q4 2025",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q26q1.mrr_churn": {
    "disp": "0.19%",
@@ -1647,7 +1655,8 @@
    "unit": "%",
    "period": "Q1 2026",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q26q2.mrr_churn": {
    "disp": "0.20%",
@@ -1655,7 +1664,8 @@
    "unit": "%",
    "period": "Q2 2026",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q26q3.mrr_churn": {
    "disp": "0.10%",
@@ -1663,7 +1673,8 @@
    "unit": "%",
    "period": "Q3 2026",
    "status": "確認",
-   "label": "MRRチャーンレート(月次平均)"
+   "label": "MRRチャーンレート(月次平均)",
+   "stale_check": false
   },
   "q24q1.bpaas_active": {
    "disp": "124 件",
@@ -1914,7 +1925,7 @@
    "label": "中計 顧客単価(FY2028)"
   },
   "price.base_now": {
-   "disp": "18,000.0 円",
+   "disp": "18,000 円",
    "value": 18000,
    "unit": "円",
    "period": "2026-11-13",
@@ -1922,7 +1933,7 @@
    "label": "iBow 基本使用料(現行・1ステーション・税抜)"
   },
   "price.base_2027": {
-   "disp": "19,800.0 円",
+   "disp": "19,800 円",
    "value": 19800,
    "unit": "円",
    "period": "2027-01",
@@ -1930,7 +1941,7 @@
    "label": "iBow 基本使用料(2027年1月改定後)"
   },
   "price.per_visit": {
-   "disp": "100.0 円",
+   "disp": "100 円",
    "value": 100,
    "unit": "円",
    "period": "2026",
@@ -1938,7 +1949,7 @@
    "label": "iBow 従量課金費用(1訪問)"
   },
   "price.ai_plan": {
-   "disp": "20.0 円",
+   "disp": "20 円",
    "value": 20,
    "unit": "円",
    "period": "2026",
@@ -1946,7 +1957,7 @@
    "label": "AI訪問看護計画・報告(1訪問)"
   },
   "price.ai_route": {
-   "disp": "30.0 円",
+   "disp": "30 円",
    "value": 30,
    "unit": "円",
    "period": "2026",
@@ -1954,7 +1965,7 @@
    "label": "AI訪問予定・ルート(1訪問)"
   },
   "price.bpaas_min": {
-   "disp": "100,000.0 円",
+   "disp": "100,000 円",
    "value": 100000,
    "unit": "円",
    "period": "2026",
@@ -2002,7 +2013,7 @@
    "label": "1ステーション当たり月間訪問件数(平均・会社説明)"
   },
   "revenue_per_visit_station": {
-   "disp": "8,500.0 円",
+   "disp": "8,500 円",
    "value": 8500,
    "unit": "円",
    "period": "2026-08",
@@ -2327,7 +2338,8 @@
    "unit": "%",
    "period": "Q1 2026",
    "status": "確認",
-   "label": "解約理由のうち廃業・休業の割合(会社説明)"
+   "label": "解約理由のうち廃業・休業の割合(会社説明)",
+   "stale_check": false
   },
   "plan.ibow_dependence": {
    "disp": "70.5%",
@@ -2576,6 +2588,334 @@
    "period": "2026-01→2026-09",
    "status": "計算",
    "label": "2026年1-9月の営業利益の限界利益率"
+  },
+  "deck.gap": {
+   "disp": "640 円",
+   "value": 640,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "株価と理論株価の差"
+  },
+  "deck.gap_multiple": {
+   "disp": "455 円",
+   "value": 455,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "差のうち倍率(資本コスト)の分"
+  },
+  "deck.gap_multiple_share": {
+   "disp": "71%",
+   "value": 71,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "差に占める倍率の分"
+  },
+  "deck.gap_eps": {
+   "disp": "185 円",
+   "value": 185,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "差のうちEPSの見立ての分"
+  },
+  "deck.coe": {
+   "disp": "8.9%",
+   "value": 8.9,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "当方の資本コスト"
+  },
+  "deck.take_per_visit": {
+   "disp": "136 円",
+   "value": 136,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "1訪問あたりの当社の取り分(500訪問のST)"
+  },
+  "fy25.gm": {
+   "disp": "78.3%",
+   "value": 78.3,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "売上総利益率"
+  },
+  "fy25.opm": {
+   "disp": "45.3%",
+   "value": 45.3,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "営業利益率"
+  },
+  "deck.arpu_delta": {
+   "disp": "6.0 千円",
+   "value": 6.0,
+   "unit": "千円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "顧客単価の前年同期差"
+  },
+  "deck.ibow_delta": {
+   "disp": "0.1 千円",
+   "value": 0.1,
+   "unit": "千円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "iBow本体の1ST単価の前年同期差"
+  },
+  "deck.server_mult": {
+   "disp": "3.7 倍",
+   "value": 3.7,
+   "unit": "倍",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "サーバー費の3年の倍率(年換算)"
+  },
+  "price.hike_pct": {
+   "disp": "10%",
+   "value": 10,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "基本料の改定率"
+  },
+  "deck.st_growth_now": {
+   "disp": "13.5%",
+   "value": 13.5,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "契約ステーション数の前年同期比"
+  },
+  "deck.st_growth_2029": {
+   "disp": "9%",
+   "value": 9,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "契約ステーション数の伸び(2029年、基準)"
+  },
+  "deck.new_avg": {
+   "disp": "2,450 件",
+   "value": 2450,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "業界の新規開設(3年の平均)"
+  },
+  "deck.adds_base": {
+   "disp": "660 件",
+   "value": 660,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "年間の新規獲得(基準)"
+  },
+  "deck.step_lo": {
+   "disp": "2%",
+   "value": 2,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "2027年1月の段差の売上比(下限)"
+  },
+  "deck.step_hi": {
+   "disp": "4%",
+   "value": 4,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "2027年1月の段差の売上比(上限)"
+  },
+  "model.st2030": {
+   "disp": "5,615 件",
+   "value": 5615,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "契約ステーション数(2030年、基準)"
+  },
+  "model.arpu2030": {
+   "disp": "110.3 千円",
+   "value": 110.3,
+   "unit": "千円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "顧客単価(2030年、基準)"
+  },
+  "model.eps2030": {
+   "disp": "156.5 円",
+   "value": 156.5,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "EPS(2030年、基準)"
+  },
+  "model.rev2030": {
+   "disp": "7,191 百万円",
+   "value": 7191,
+   "unit": "百万円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "売上(2030年、基準)"
+  },
+  "model.op2030": {
+   "disp": "3,380 百万円",
+   "value": 3380,
+   "unit": "百万円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "営業利益(2030年、基準)"
+  },
+  "deck.arpu_gap_plan": {
+   "disp": "7%",
+   "value": 7,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "会社計画との単価の差(2028年)"
+  },
+  "fy21.roe": {
+   "disp": "67.5%",
+   "value": 67.5,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "ROE(期末)"
+  },
+  "fy25.roe": {
+   "disp": "32.2%",
+   "value": 32.2,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "ROE(期末)"
+  },
+  "deck.cash_share": {
+   "disp": "67%",
+   "value": 67,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "現預金÷総資産"
+  },
+  "deck.buyback_yield": {
+   "disp": "4.35%",
+   "value": 4.35,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "今の株価での自己株取得の益回り"
+  },
+  "deck.coe80_diff": {
+   "disp": "349 円",
+   "value": 349,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "資本コスト8.0%での理論株価の差"
+  },
+  "deck.sens_st": {
+   "disp": "147.5 円",
+   "value": 147.5,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "契約数(強気)の感応度"
+  },
+  "deck.sens_arpu": {
+   "disp": "145.3 円",
+   "value": 145.3,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "単価(強気)の感応度"
+  },
+  "deck.value_pre": {
+   "disp": "1,702 円",
+   "value": 1702,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "反論を入れる前の理論株価"
+  },
+  "deck.n_rebut": {
+   "disp": "8 件",
+   "value": 8,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "弱気の反論の件数"
+  },
+  "deck.n_correct": {
+   "disp": "2 件",
+   "value": 2,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "正しいと判定した反論"
+  },
+  "deck.n_partial": {
+   "disp": "2 件",
+   "value": 2,
+   "unit": "件",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "一部正しいと判定し前提を直した反論"
+  },
+  "deck.per_mature": {
+   "disp": "17.2 倍",
+   "value": 17.2,
+   "unit": "倍",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "成熟の妥当PER"
+  },
+  "deck.irr_entry_r": {
+   "disp": "23%",
+   "value": 23,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "1,468円で買った場合の年率リターン(概数)"
+  },
+  "deck.theory": {
+   "disp": "1,657.5 円",
+   "value": 1657.5,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "理論株価(表示用)"
+  },
+  "deck.z1": {
+   "disp": "1,278.2 円",
+   "value": 1278.2,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "即時エントリーの上限(表示用)"
+  },
+  "deck.z2": {
+   "disp": "1,467.8 円",
+   "value": 1467.8,
+   "unit": "円",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "分割エントリーの上限(表示用)"
+  },
+  "deck.coe_low": {
+   "disp": "8.0%",
+   "value": 8.0,
+   "unit": "%",
+   "period": "2026-11-16",
+   "status": "計算",
+   "label": "感応度で置いた低い資本コスト"
   },
   "val.grade.letter": {
    "disp": "B",
