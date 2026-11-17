@@ -110,10 +110,21 @@ def u02(u, ctx):
     if not num(sw) and num(sw_lo) and num(sw_hi):
         sw = (sw_lo + sw_hi) / 2
     in_lo = in_hi * (1 - sw / 100) if num(sw) else None
+    # 切替を流入から除くなら、流出からも切替を除く(片側だけ除くと二重に不利になる。2026-11-17 の盲検で見つかった誤り)。
+    # 切替の無い世界の定常のシェア = 新規開設の取り分 × 業界の廃止率 ÷ 自社の顧客の廃業率
+    rows_, py_ = u.get("periods", []), int(u.get("per_year", 4))
+    death_, _ = annual(rows_, "exits_death", py_)
+    ex_, _ = annual(rows_, "exits", py_)
+    sw_out, _ = annual(rows_, "exits_switch", py_)
+    if death_ is None and ex_ is not None and sw_out is not None:
+        death_ = ex_ - sw_out
+    death_rate = death_ / ctx["cur"] if death_ else None
     if num(sw_lo) and num(sw_hi):
         L["values"]["inflow_share_ex_switch_range_pct"] = [r(in_hi * (1 - sw_hi / 100) * 100), r(in_hi * (1 - sw_lo / 100) * 100)]
-        L["values"]["steady_state_share_ex_switch_range_pct"] = [r(in_hi * (1 - sw_hi / 100) * ind["exits"] / prev / ctx["exit_rate"] * 100),
-                                                                 r(in_hi * (1 - sw_lo / 100) * ind["exits"] / prev / ctx["exit_rate"] * 100)]
+        if death_rate:
+            L["values"]["steady_state_share_ex_switch_range_pct"] = [r(in_hi * (1 - sw_hi / 100) * ind_rate / death_rate * 100),
+                                                                     r(in_hi * (1 - sw_lo / 100) * ind_rate / death_rate * 100)]
+            L["values"]["own_death_rate_pct"] = r(death_rate * 100, 2)
     stock_share = ctx["cur"] / ind["stock"]
     ss_share = in_hi * ind_rate / ctx["exit_rate"]
     ctx.update(ind_rate=ind_rate)
@@ -127,11 +138,14 @@ def u02(u, ctx):
                       + f"、保有のシェア {stock_share*100:.1f}%。")
     L["lines"].append(f"定常のシェア = 流入のシェア × 業界の流出率 {ind_rate*100:.1f}% ÷ 自社の流出率 {ctx['exit_rate']*100:.1f}% = {ss_share*100:.1f}%。")
     if rg:
-        sr = L["values"]["steady_state_share_ex_switch_range_pct"]
-        L["lines"].append(f"他社からの切替(新規の {sw_lo}〜{sw_hi}%)を除くと、新規開設の取り分は {rg[0]}〜{rg[1]}%、それだけで決まる定常のシェアは {sr[0]}〜{sr[1]}%"
-                          "(切替の波が止まった場合の水準)。")
+        L["lines"].append(f"他社からの切替(新規の {sw_lo}〜{sw_hi}%)を除くと、新規開設の取り分は {rg[0]}〜{rg[1]}%。")
+        sr = L["values"].get("steady_state_share_ex_switch_range_pct")
+        if sr:
+            L["lines"].append(f"切替が両方向とも止まった場合の定常のシェア = 新規開設の取り分 × 業界の廃止率 {ind_rate*100:.1f}% ÷ 自社の顧客の廃業率 "
+                              f"{L['values']['own_death_rate_pct']}% = {sr[0]}〜{sr[1]}%(流入から切替を除くなら流出からも除く)。"
+                              "注意: 業界の数字は 4 月〜翌 3 月・稼働の事業所、自社は暦年・契約で、定義がずれる。休止の扱いも確かめる")
     if in_lo is not None and in_lo <= stock_share * 1.05:
-        flag(L, 1, f"切替を除く流入のシェア {in_lo*100:.1f}% が保有のシェア {stock_share*100:.1f}% と変わらない", "新しい顧客が選ぶ場面では、もう優位が無いのではないか。シェアの上昇は他社からの切替だけに頼っていないか",
+        flag(L, 1, f"切替を除く流入のシェア {in_lo*100:.1f}% が保有のシェア {stock_share*100:.1f}% と変わらない", "新しい顧客が選ぶ場面では、もう優位が無いのではないか。シェアの上昇は他社からの切替だけに頼っていないか。ただし自社の顧客の廃業率が業界より低ければ、切替が止まっても保有のシェアは伸びる(切替の無い定常のシェアを、流入と流出の両方から切替を除いて比べる)",
              "新規のうち新設と切替の内訳、切替の流入の推移")
     if in_lo is None:
         flag(L, 2, "流入のシェアの内訳(新設と他社からの切替)が不明", "切替を除いた流入のシェアは保有のシェアを上回るか", "会社の説明・質疑、競合の解約")

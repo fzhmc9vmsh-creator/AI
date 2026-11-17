@@ -835,6 +835,15 @@ def g_structure(d):
         rows = [r_ for r_ in c.get("pnl", []) if _filled(r_.get("item", ""), 2) and _pos(r_.get("value")) and _filled(r_.get("source", ""), 3)]
         if len(rows) < 4:
             g.e(f"customer.pnl: 顧客 1 単位の損益が {len(rows)} 行(売上・主な費用・利益を 4 行以上、数字と出所つきで)")
+        is_rev = lambda it: it.startswith(("売上", "収入", "収益"))
+        is_pf = lambda it: it.startswith(("利益", "収支差", "営業利益", "経常利益"))
+        rv = [r_["value"] for r_ in rows if is_rev(r_["item"])]
+        pf = [r_ for r_ in rows if is_pf(r_["item"])]
+        cs = [r_["value"] for r_ in rows if not is_rev(r_["item"]) and not is_pf(r_["item"])]
+        for p_ in pf:
+            if rv and cs and abs(sum(cs) + p_["value"] - rv[0]) > 0.03 * rv[0]:
+                g.e(f"customer.pnl: 費用の合計 {sum(cs):,.0f} + 「{p_['item'][:20]}」{p_['value']:,.0f} が売上 {rv[0]:,.0f} と合わない(±3% 超)。"
+                    "費用と利益を同じ区分・同じ年でそろえる(利益だけ差し替えない。別の年・区分の利益は、その年・区分の費用の行とともに別の表に)")
         pp = c.get("price_paid", {})
         if not (_pos(pp.get("share_of_revenue_pct")) and _pos(pp.get("share_of_profit_pct"))):
             g.e("customer.price_paid: 払う額の、顧客の売上比と利益比の両方を書く(売上比だけで語らない)")

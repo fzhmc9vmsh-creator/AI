@@ -146,7 +146,9 @@
   "adds": 2428,
   "exits": 960,
   "switch_in_share_of_adds_pct": null,
-  "note": "全国訪問看護事業協会 2026年4月1日調査。廃止960件(休止328件は別)"
+  "note": "全国訪問看護事業協会 2026年4月1日調査。廃止960件(休止328件は別)",
+  "switch_in_share_of_adds_pct_lo": 30,
+  "switch_in_share_of_adds_pct_hi": 53
  },
  "target": {
   "what": "2040年にシェア50%(業界の稼働数を約3万件と仮定)",
