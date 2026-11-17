@@ -245,6 +245,7 @@ python3 $S/scripts/selftest.py      # 道具の自己テスト(一時フォル�
 - 検査: 工程 4 の終わりは `python3 $S/scripts/gate.py conditions --before-price $W` → PASS(条件6・7 の空欄は止めない)。
   条件6・7 を埋めた後(工程 5 の 3)で `--before-price` なしの `gate.py conditions` → PASS。
 - 利用者や前工程の見立てがあっても、根拠(台帳の数字)と合わなければ採点を直し、報告に理由を書く(見立てをそのまま写さない)。
+- **評価を変えたら、工程 5 の `valuate.py` を回し直す**(許容 PEG と α は評価から決まる。`gate.py valuation` が「入力より古い」で止める)。
 
 ## 工程 5: 価値評価(valuation_input.json → valuate.py)
 

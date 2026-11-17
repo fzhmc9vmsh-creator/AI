@@ -106,16 +106,30 @@ def u02(u, ctx):
     ind_rate = ind["exits"] / prev
     in_hi = ctx["adds"] / ind["adds"]
     sw = ind.get("switch_in_share_of_adds_pct")
+    sw_lo, sw_hi = ind.get("switch_in_share_of_adds_pct_lo"), ind.get("switch_in_share_of_adds_pct_hi")
+    if not num(sw) and num(sw_lo) and num(sw_hi):
+        sw = (sw_lo + sw_hi) / 2
     in_lo = in_hi * (1 - sw / 100) if num(sw) else None
+    if num(sw_lo) and num(sw_hi):
+        L["values"]["inflow_share_ex_switch_range_pct"] = [r(in_hi * (1 - sw_hi / 100) * 100), r(in_hi * (1 - sw_lo / 100) * 100)]
+        L["values"]["steady_state_share_ex_switch_range_pct"] = [r(in_hi * (1 - sw_hi / 100) * ind["exits"] / prev / ctx["exit_rate"] * 100),
+                                                                 r(in_hi * (1 - sw_lo / 100) * ind["exits"] / prev / ctx["exit_rate"] * 100)]
     stock_share = ctx["cur"] / ind["stock"]
     ss_share = in_hi * ind_rate / ctx["exit_rate"]
     ctx.update(ind_rate=ind_rate)
+    rg = L["values"].get("inflow_share_ex_switch_range_pct")
+    _keep = dict(L["values"])
     L["values"] = dict(inflow_share_pct=r(in_hi * 100), inflow_share_ex_switch_pct=r(in_lo * 100) if in_lo else None,
                        stock_share_pct=r(stock_share * 100), steady_state_share_pct=r(ss_share * 100), industry_exit_rate_pct=r(ind_rate * 100, 2),
                        industry_steady_stock=r(ind["adds"] / ind_rate, 0))
+    L["values"].update(_keep)
     L["lines"].append(f"流入のシェア {in_hi*100:.1f}%" + (f"(他社からの切替を除くと {in_lo*100:.1f}%)" if in_lo else "(他社からの切替を含む上限。切替の割合が不明)")
                       + f"、保有のシェア {stock_share*100:.1f}%。")
     L["lines"].append(f"定常のシェア = 流入のシェア × 業界の流出率 {ind_rate*100:.1f}% ÷ 自社の流出率 {ctx['exit_rate']*100:.1f}% = {ss_share*100:.1f}%。")
+    if rg:
+        sr = L["values"]["steady_state_share_ex_switch_range_pct"]
+        L["lines"].append(f"他社からの切替(新規の {sw_lo}〜{sw_hi}%)を除くと、新規開設の取り分は {rg[0]}〜{rg[1]}%、それだけで決まる定常のシェアは {sr[0]}〜{sr[1]}%"
+                          "(切替の波が止まった場合の水準)。")
     if in_lo is not None and in_lo <= stock_share * 1.05:
         flag(L, 1, f"切替を除く流入のシェア {in_lo*100:.1f}% が保有のシェア {stock_share*100:.1f}% と変わらない", "新しい顧客が選ぶ場面では、もう優位が無いのではないか。シェアの上昇は他社からの切替だけに頼っていないか",
              "新規のうち新設と切替の内訳、切替の流入の推移")

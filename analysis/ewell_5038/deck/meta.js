@@ -23,7 +23,7 @@ const META = {
   s04b: { ch: 2, sec: '2-2', theme: '業界とお金の流れ', why: '顧客の収入の源と、当社がお金の流れのどこにいるかを押さえる',
     title: `訪問看護は公定価格の医療・介護サービス。保険から 1 訪問約 ${F('revenue_per_visit_station')} が\n事業所に入り、約 ${F('deck.take_per_visit')}(売上の ${F('calc.cost_share_rev')})が当社に払われる` },
   s04c: { ch: 2, sec: '2-3', theme: '最新決算', why: '直近の四半期で何が起き、何が変わったかを押さえる',
-    title: `3Q 累計は売上 ${F('9m26.revenue')}(+24.0%)・営業利益 ${F('9m26.op')}(+21.6%)。\n値上げを決め単価は加速したが、新規獲得は前年並み` },
+    title: `3Q 累計は売上 ${F('9m26.revenue')}(+${F('9m26.rev_yoy')})・営業利益 ${F('9m26.op')}(+${F('9m26.op_yoy')})。\n値上げを決め単価は加速したが、新規獲得は前年並み` },
   s05: { ch: 2, sec: '2-4', theme: '製品と課金', why: '課金の単位が事業の性質を決める',
     title: `売上の 7 割は基本料 ${F('price.base_now')} + 1 訪問 ${F('price.per_visit')} の iBow。\n1 訪問 ${F('revenue_per_visit_station')} のうち当社の取り分は約 ${F('deck.take_per_visit')}(${F('calc.cost_share_rev')})` },
   s06: { ch: 2, sec: '2-5', theme: '損益の流れ', why: '費用を維持・獲得・投資に分けて読む',

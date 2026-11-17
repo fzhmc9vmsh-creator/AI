@@ -2917,6 +2917,22 @@
    "status": "計算",
    "label": "感応度で置いた低い資本コスト"
   },
+  "9m26.rev_yoy": {
+   "disp": "24.0%",
+   "value": 24.0,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "売上の前年同期比(1〜9月累計)"
+  },
+  "9m26.op_yoy": {
+   "disp": "21.6%",
+   "value": 21.6,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "営業利益の前年同期比(1〜9月累計)"
+  },
   "val.grade.letter": {
    "disp": "B",
    "value": null,

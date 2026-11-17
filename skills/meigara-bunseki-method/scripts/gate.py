@@ -943,6 +943,11 @@ def g_structure(d):
     pa = {str(t.get("pattern")): t for t in x.get("patterns_applied", []) if re.fullmatch(r"P\d{1,2}", str(t.get("pattern", ""))) and _filled(str(t.get("result", "")), 6)}
     if len(pa) < 12:
         g.e(f"patterns_applied: 当てた構造インサイトの型が {len(pa)} 個(references/insight-patterns.md の 20 の型から 12 個以上。当てはまらない型は result に理由)")
+    elif sum(1 for t in pa.values() if re.search(r"\d", str(t.get("result", "")))) < 8:
+        g.e("patterns_applied: 数字の出た型が 8 個未満(型は計算して当てる。「当てはまらない」だけの記録を数に入れない)")
+    flagged = [k for k, t in pa.items() if t.get("flag") is True and not _filled(str(t.get("used_in", "")), 2)]
+    if flagged:
+        g.e(f"patterns_applied: 旗が立った型 {flagged} の used_in(仮説・示唆・条件の id)が空")
     lp_ = os.path.join(d, "structure_lenses.json")
     if not os.path.exists(lp_):
         g.e("structure_lenses.json がない(units.json を埋めて scripts/structure_lenses.py を実行する)")

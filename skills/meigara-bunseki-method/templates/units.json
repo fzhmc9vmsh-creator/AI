@@ -25,9 +25,11 @@
   "prev_stock": null,
   "adds": null,
   "exits": null,
-  "switch_in_share_of_adds_pct": null
+  "switch_in_share_of_adds_pct": null,
+  "switch_in_share_of_adds_pct_lo": null,
+  "switch_in_share_of_adds_pct_hi": null
  },
- "_help_industry": "業界の稼働数・前年の稼働数・年間の新規・年間の廃止。switch_in_share_of_adds_pct=自社の新規のうち他社からの切替の割合(不明なら null。幅で出す)",
+ "_help_industry": "業界の稼働数・前年の稼働数・年間の新規・年間の廃止。switch_in_share_of_adds_pct=自社の新規のうち他社からの切替の割合(不明なら null。幅で出す)。切替の割合が幅でしか分からないときは switch_in_share_of_adds_pct_lo・_hi(U02 が新規開設の取り分と定常のシェアを幅で出す)",
  "target": {
   "what": "(経営陣の長期目標)",
   "stock": null,
