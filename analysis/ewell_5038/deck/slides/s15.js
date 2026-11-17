@@ -8,8 +8,8 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 0.5, 1.62, 8.2, '理論株価への影響(円/株)', 'pane_tor');
   const rows = [
     { label: '資本コスト(評価の前提)', basis: '8.0〜9.5%', up: 349.3, dn: -174.5, upc: C.sub, dnc: C.rule, upl: '8.0%  +349.3', dnl: '9.5%  −174.5' },
-    { label: '契約数', basis: '獲得 520〜820 件・解約 4.8〜6.0%', up: 147.5, dn: -26.1, upc: C.primary, dnc: C.red, upl: '強気  +147.5', dnl: '弱気  −26.1' },
-    { label: '単価', basis: '年 +2.5〜8%', up: 145.3, dn: -37.1, upc: C.sub, dnc: C.red, upl: '強気  +145.3', dnl: '弱気  −37.1' },
+    { label: '契約数', basis: '獲得 520〜820 件・解約 4.8〜6.0%', up: 132.4, dn: -26.1, upc: C.primary, dnc: C.red, upl: '強気  +132.4', dnl: '弱気  −26.1' },
+    { label: '単価', basis: '年 +2.5〜8%', up: 130.3, dn: -37.1, upc: C.sub, dnc: C.red, upl: '強気  +130.3', dnl: '弱気  −37.1' },
     { label: '粗利率', basis: '74〜77.5%', up: 32.6, dn: -59.5, upc: C.sub, dnc: C.red, upl: '強気  +32.6', dnl: '弱気  −59.5' },
   ];
   const x0 = 3.7, x1 = 8.0, lo = -185, hi = 360, sc = (x1 - x0) / (hi - lo), zx = x0 - lo * sc;

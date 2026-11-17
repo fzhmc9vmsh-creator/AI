@@ -20,7 +20,7 @@ module.exports = function build(pres, L) {
   L.marks(s, [
     { x: 1.9, y: 2.95, n: 1, text: '本体は横ばい', side: 'right' },
     { x: 4.35, y: 2.2, n: 2, text: '2つで+5.2', side: 'left' },
-    { x: 7.2, y: 3.6, n: 3, text: '小規模STが相殺', side: 'left' },
+    { x: 7.2, y: 3.6, n: 3, text: '1ST の量は頭打ち', side: 'left' },
   ]);
 
   L.paneHead(s, 8.55, 1.62, 4.28, '区分別の単価(法人単位、2026年6月)', 'pane_tbl_head');
@@ -34,7 +34,7 @@ module.exports = function build(pres, L) {
   L.lookBox(s, [
     { n: 1, text: `本体は ${F.n('calc.ibow_per_st_q25', { noPeriod: true })} → ${F('calc.ibow_per_st_q26')}。約475訪問/月で不変` },
     { n: 2, text: 'AIとBPaaSで+5.2千円。伸び+6.0千円の約9割' },
-    { n: 3, text: `既存法人の伸び(NRR ${F('nrr.jun26')})は新規の小規模STで相殺` },
+    { n: 3, text: '薄めではない: 単独 ST の継続率 102.5%。1ST の訪問は看護師の採用で頭打ち' }, // lint-ok: 区分別の継続率(会社資料)
   ], { x: 8.55, y: 3.78, w: 4.28, h: 2.02 });
 
   L.takeaway(s, 0.5, 5.95, 12.33, 0.8,

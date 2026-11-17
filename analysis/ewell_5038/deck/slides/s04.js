@@ -27,10 +27,10 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 8.45, 1.62, 4.38, '差640円の内訳', 'pane_split');
   L.table(s, [
     ['内訳', '円', '割合'],
-    ['倍率(資本コスト)の差', '455', '71%'],
-    ['EPSの見立ての差', '185', '29%'],
+    ['倍率(資本コスト)の差', '470', '73%'],
+    ['EPSの見立ての差', '170', '27%'],
   ], { x: 8.45, y: 1.98, w: 4.38, colW: [2.6, 0.9, 0.88], fontSize: 10, rowH: 0.34, name: 'tbl_split' });
-  L.text(s, '倍率の差: 会社計画の経路の価値(1,842.5円)と株価の差\nEPSの差: 理論株価と会社計画の経路の価値の差', { x: 8.45, y: 3.04, w: 4.38, h: 0.42, fontSize: 8.5, color: C.sub, margin: 0, objectName: 'note_split' });
+  L.text(s, '倍率の差: 会社計画の経路の価値(1,827.0円)と株価の差\nEPSの差: 理論株価と会社計画の経路の価値の差', { x: 8.45, y: 3.04, w: 4.38, h: 0.42, fontSize: 8.5, color: C.sub, margin: 0, objectName: 'note_split' });
 
   L.lookBox(s, [
     { n: 1, text: '1,124円 = 12か月先EPS約100円 ÷ 資本コスト8.9%(今の利益が続くだけの価値)' },

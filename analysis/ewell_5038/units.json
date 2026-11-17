@@ -1,0 +1,231 @@
+{
+ "ticker": "5038",
+ "unit_name": "契約ステーション(訪問看護事業所)",
+ "unit": "百万円",
+ "per_year": 4,
+ "periods": [
+  {
+   "p": "FY24Q3",
+   "stock_end": 2891,
+   "active_end": 2726,
+   "adds": 133,
+   "exits": 48,
+   "exits_switch": 23,
+   "revenue_recurring": 636,
+   "products": {
+    "iBow本体": 510,
+    "iBowレセプト": 55,
+    "AI(計画報告・ルート)": 0,
+    "BPaaS(事務代行)": 71
+   }
+  },
+  {
+   "p": "FY24Q4",
+   "stock_end": 3028,
+   "active_end": 2818,
+   "adds": 178,
+   "exits": 37,
+   "exits_switch": 18,
+   "revenue_recurring": 676,
+   "products": {
+    "iBow本体": 535,
+    "iBowレセプト": 59,
+    "AI(計画報告・ルート)": 0,
+    "BPaaS(事務代行)": 82
+   }
+  },
+  {
+   "p": "FY25Q1",
+   "stock_end": 3186,
+   "active_end": 2885,
+   "adds": 196,
+   "exits": 34,
+   "exits_switch": 15,
+   "revenue_recurring": 712,
+   "products": {
+    "iBow本体": 540,
+    "iBowレセプト": 61,
+    "AI(計画報告・ルート)": 17,
+    "BPaaS(事務代行)": 94
+   }
+  },
+  {
+   "p": "FY25Q2",
+   "stock_end": 3286,
+   "active_end": 3103,
+   "adds": 165,
+   "exits": 59,
+   "exits_switch": 34,
+   "revenue_recurring": 788,
+   "products": {
+    "iBow本体": 589,
+    "iBowレセプト": 67,
+    "AI(計画報告・ルート)": 25,
+    "BPaaS(事務代行)": 107
+   }
+  },
+  {
+   "p": "FY25Q3",
+   "stock_end": 3386,
+   "active_end": 3231,
+   "adds": 150,
+   "exits": 51,
+   "exits_switch": 30,
+   "revenue_recurring": 837,
+   "products": {
+    "iBow本体": 621,
+    "iBowレセプト": 72,
+    "AI(計画報告・ルート)": 29,
+    "BPaaS(事務代行)": 115
+   }
+  },
+  {
+   "p": "FY25Q4",
+   "stock_end": 3501,
+   "active_end": 3325,
+   "adds": 159,
+   "exits": 42,
+   "exits_switch": 27,
+   "revenue_recurring": 873,
+   "products": {
+    "iBow本体": 640,
+    "iBowレセプト": 76,
+    "AI(計画報告・ルート)": 34,
+    "BPaaS(事務代行)": 123
+   }
+  },
+  {
+   "p": "FY26Q1",
+   "stock_end": 3633,
+   "active_end": 3415,
+   "adds": 175,
+   "exits": 46,
+   "exits_switch": 26,
+   "revenue_recurring": 887,
+   "products": {
+    "iBow本体": 644,
+    "iBowレセプト": 78,
+    "AI(計画報告・ルート)": 35,
+    "BPaaS(事務代行)": 130
+   }
+  },
+  {
+   "p": "FY26Q2",
+   "stock_end": 3736,
+   "active_end": 3583,
+   "adds": 171,
+   "exits": 64,
+   "exits_switch": 25,
+   "revenue_recurring": 958,
+   "products": {
+    "iBow本体": 683,
+    "iBowレセプト": 84,
+    "AI(計画報告・ルート)": 44,
+    "BPaaS(事務代行)": 147
+   }
+  },
+  {
+   "p": "FY26Q3",
+   "stock_end": 3843,
+   "active_end": 3695,
+   "adds": 153,
+   "exits": 35,
+   "exits_switch": 20,
+   "revenue_recurring": 1027,
+   "products": {
+    "iBow本体": 715,
+    "iBowレセプト": 89,
+    "AI(計画報告・ルート)": 61,
+    "BPaaS(事務代行)": 162
+   }
+  }
+ ],
+ "industry": {
+  "stock": 20051,
+  "prev_stock": 18754,
+  "adds": 2428,
+  "exits": 960,
+  "switch_in_share_of_adds_pct": null,
+  "note": "全国訪問看護事業協会 2026年4月1日調査。廃止960件(休止328件は別)",
+  "switch_in_share_of_adds_pct_lo": 30,
+  "switch_in_share_of_adds_pct_hi": 53
+ },
+ "target": {
+  "what": "2040年にシェア50%(業界の稼働数を約3万件と仮定)",
+  "stock": 15000,
+  "year": 2040,
+  "industry_stock_then": 30000,
+  "now_year": 2026
+ },
+ "customer": {
+  "revenue_per_unit_month": 4250,
+  "profit_margin_pct": 10.3,
+  "price_paid_month": 68,
+  "own_units_per_customer": 475,
+  "industry_units_per_customer": 450,
+  "units_label": "訪問件数/月",
+  "note": "千円/月。500訪問×8,500円。収支差率は令和6年度決算(厚労省)。業界の訪問は会社説明の目安400〜500件の中央"
+ },
+ "ladder": [
+  {
+   "product": "iBow本体(基本料+100円/訪問)",
+   "monthly": 68,
+   "adoption_pct": 96,
+   "kind": "利益から払う"
+  },
+  {
+   "product": "iBowレセプト",
+   "monthly": 20,
+   "adoption_pct": 87,
+   "kind": "利益から払う"
+  },
+  {
+   "product": "AI計画報告(20円/訪問)",
+   "monthly": 10,
+   "adoption_pct": 47,
+   "kind": "利益から払う"
+  },
+  {
+   "product": "AIルート(30円/訪問)",
+   "monthly": 15,
+   "adoption_pct": 8,
+   "kind": "利益から払う"
+  },
+  {
+   "product": "ボードPro",
+   "monthly": 50,
+   "adoption_pct": 0,
+   "kind": "費用の置き換え(経営コンサル月3〜5万円)"
+  },
+  {
+   "product": "BPaaS(報酬の5%)",
+   "monthly": 212.5,
+   "adoption_pct": 9,
+   "kind": "費用の置き換え(事務員の人件費)"
+  }
+ ],
+ "new_products": [
+  {
+   "name": "AI(計画報告・ルート)",
+   "inc_revenue": 69,
+   "inc_cost": 106,
+   "period": "2026年1〜9月(前年同期比)。原価はサーバー費の増加"
+  }
+ ],
+ "acquisition": {
+  "selling_cost_year": 409,
+  "adds_year": 670,
+  "initial_unit_revenue_month": 50,
+  "gross_margin_pct": 78,
+  "unit_growth_pct": 5,
+  "coe_pct": 8.9
+ },
+ "steady": {
+  "op": 1537.5,
+  "growth_spend": 409,
+  "revenue": 3392.4,
+  "inc_op_latest": 259,
+  "inc_rev_latest": 594,
+  "inc_margin_past_pct": 50.2
+ }
+}

@@ -2574,8 +2574,8 @@
    "label": "同 PER20倍(同業中央値)の場合"
   },
   "calc.irr_entry": {
-   "disp": "22.7%",
-   "value": 22.7,
+   "disp": "22.8%",
+   "value": 22.8,
    "unit": "%",
    "period": "2026-11-16",
    "status": "計算",
@@ -2598,24 +2598,24 @@
    "label": "株価と理論株価の差"
   },
   "deck.gap_multiple": {
-   "disp": "455 円",
-   "value": 455,
+   "disp": "470 円",
+   "value": 470,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
    "label": "差のうち倍率(資本コスト)の分"
   },
   "deck.gap_multiple_share": {
-   "disp": "71%",
-   "value": 71,
+   "disp": "73%",
+   "value": 73,
    "unit": "%",
    "period": "2026-11-16",
    "status": "計算",
    "label": "差に占める倍率の分"
   },
   "deck.gap_eps": {
-   "disp": "185 円",
-   "value": 185,
+   "disp": "170 円",
+   "value": 170,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
@@ -2822,16 +2822,16 @@
    "label": "資本コスト8.0%での理論株価の差"
   },
   "deck.sens_st": {
-   "disp": "147.5 円",
-   "value": 147.5,
+   "disp": "132.4 円",
+   "value": 132.4,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
    "label": "契約数(強気)の感応度"
   },
   "deck.sens_arpu": {
-   "disp": "145.3 円",
-   "value": 145.3,
+   "disp": "130.3 円",
+   "value": 130.3,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
@@ -2894,16 +2894,16 @@
    "label": "理論株価(表示用)"
   },
   "deck.z1": {
-   "disp": "1,278.2 円",
-   "value": 1278.2,
+   "disp": "1,271.8 円",
+   "value": 1271.8,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
    "label": "即時エントリーの上限(表示用)"
   },
   "deck.z2": {
-   "disp": "1,467.8 円",
-   "value": 1467.8,
+   "disp": "1,464.7 円",
+   "value": 1464.7,
    "unit": "円",
    "period": "2026-11-16",
    "status": "計算",
@@ -2933,6 +2933,543 @@
    "status": "計算",
    "label": "営業利益の前年同期比(1〜9月累計)"
   },
+  "q23q1.sales_staff": {
+   "disp": "19 人",
+   "value": 19,
+   "unit": "人",
+   "period": "Q1 2023",
+   "status": "確認",
+   "label": "営業部門の人員"
+  },
+  "q25q3.sales_staff": {
+   "disp": "32 人",
+   "value": 32,
+   "unit": "人",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "営業部門の人員"
+  },
+  "q26q3.sales_staff": {
+   "disp": "43 人",
+   "value": 43,
+   "unit": "人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "営業部門の人員"
+  },
+  "q26q3.bpaas_staff": {
+   "disp": "37 人",
+   "value": 37,
+   "unit": "人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "BPaaS部門の人員"
+  },
+  "q26q3.dev_staff": {
+   "disp": "14 人",
+   "value": 14,
+   "unit": "人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "開発部門の人員"
+  },
+  "q26q3.support_staff": {
+   "disp": "23 人",
+   "value": 23,
+   "unit": "人",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "サポート部門の人員"
+  },
+  "calc.adds_per_sales_fy23": {
+   "disp": "29.2 件",
+   "value": 29.2,
+   "unit": "件",
+   "period": "FY2023",
+   "status": "計算",
+   "label": "営業1人あたり年間新規獲得"
+  },
+  "calc.adds_per_sales_fy26": {
+   "disp": "17.5 件",
+   "value": 17.5,
+   "unit": "件",
+   "period": "FY2026",
+   "status": "計算",
+   "label": "営業1人あたり年間新規獲得(年率)"
+  },
+  "calc.sales_staff_growth": {
+   "disp": "34.4%",
+   "value": 34.4,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "営業人員の増加率(FY25Q3→FY26Q3)"
+  },
+  "calc.visits_q24q1": {
+   "disp": "442 件/月",
+   "value": 442,
+   "unit": "件/月",
+   "period": "Q1 2024",
+   "status": "計算",
+   "label": "iBow売上から逆算した1稼働STの月間訪問"
+  },
+  "calc.visits_q25q3": {
+   "disp": "474 件/月",
+   "value": 474,
+   "unit": "件/月",
+   "period": "Q3 2025",
+   "status": "計算",
+   "label": "iBow売上から逆算した1稼働STの月間訪問"
+  },
+  "ipo.ibow_unit_2019q4": {
+   "disp": "53.8 千円",
+   "value": 53.8,
+   "unit": "千円",
+   "period": "2019年4Q時点",
+   "status": "確認",
+   "label": "iBow平均顧客単価"
+  },
+  "ipo.ibow_unit_2021q4": {
+   "disp": "61.9 千円",
+   "value": 61.9,
+   "unit": "千円",
+   "period": "2021年4Q時点",
+   "status": "確認",
+   "label": "iBow平均顧客単価"
+  },
+  "ind.r4_revenue": {
+   "disp": "3,066 千円/月",
+   "value": 3066,
+   "unit": "千円/月",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問看護 1事業所の月収入(令和4年度決算)"
+  },
+  "ind.r4_salary": {
+   "disp": "2,287 千円/月",
+   "value": 2287,
+   "unit": "千円/月",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問看護 1事業所の給与費(令和4年度決算)"
+  },
+  "ind.r4_other": {
+   "disp": "555 千円/月",
+   "value": 555,
+   "unit": "千円/月",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問看護 1事業所のその他費用(令和4年度決算)"
+  },
+  "ind.r4_margin": {
+   "disp": "5.9%",
+   "value": 5.9,
+   "unit": "%",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問看護の収支差率(令和4年度決算)"
+  },
+  "ind.r4_visits": {
+   "disp": "337.6 回/月",
+   "value": 337.6,
+   "unit": "回/月",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問看護 1事業所の延べ訪問回数(介護保険分)"
+  },
+  "ind.r4_nurse_visits": {
+   "disp": "71.3 回/月",
+   "value": 71.3,
+   "unit": "回/月",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "看護職員(常勤換算)1人あたり訪問回数"
+  },
+  "ind.r4_rev_per_visit": {
+   "disp": "8,056 円/回",
+   "value": 8056,
+   "unit": "円/回",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "訪問1回あたり収入"
+  },
+  "ind.r4_big_margin": {
+   "disp": "7.6%",
+   "value": 7.6,
+   "unit": "%",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "延べ訪問401回以上の事業所の収支差率"
+  },
+  "ind.r4_mid_margin": {
+   "disp": "1.8%",
+   "value": 1.8,
+   "unit": "%",
+   "period": "FY2022",
+   "status": "確認",
+   "label": "延べ訪問301〜400回の事業所の収支差率"
+  },
+  "comp.kaipoke_rev": {
+   "disp": "13,715 百万円",
+   "value": 13715,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "SMS 介護・障害福祉事業者分野(カイポケ)売上"
+  },
+  "comp.kaipoke_members": {
+   "disp": "60,800 事業所",
+   "value": 60800,
+   "unit": "事業所",
+   "period": "2026-04-01",
+   "status": "確認",
+   "label": "カイポケ会員数(介護・障害福祉の全サービス)"
+  },
+  "comp.kaipoke_ebitda": {
+   "disp": "6,000 百万円",
+   "value": 6000,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "カイポケのEBITDA"
+  },
+  "comp.sms_career_rev": {
+   "disp": "38,276 百万円",
+   "value": 38276,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "SMS キャリア分野(人材紹介)売上"
+  },
+  "comp.sms_med_career": {
+   "disp": "17,788 百万円",
+   "value": 17788,
+   "unit": "百万円",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "SMS 医療キャリア(看護師等の紹介)売上"
+  },
+  "comp.kaipoke_arpa": {
+   "disp": "18.8 千円",
+   "value": 18.8,
+   "unit": "千円",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "カイポケの1事業所あたり月売上(計算)"
+  },
+  "comp.kaipoke_vn_share": {
+   "disp": "11.5%",
+   "value": 11.5,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "カイポケ会員のうち訪問看護の比率(計算)"
+  },
+  "comp.kanamic_rev_9m": {
+   "disp": "4,627 百万円",
+   "value": 4627,
+   "unit": "百万円",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "カナミック 2026年9月期3Q累計 売上"
+  },
+  "survey21.share_a": {
+   "disp": "355 件",
+   "value": 355,
+   "unit": "件",
+   "period": "2021-04",
+   "status": "確認",
+   "label": "2021年調査で A社(定額25,000円・新規に強い)の利用"
+  },
+  "qa.hospice_contract": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "2026-02",
+   "status": "確認",
+   "label": "ホスピス型・施設訪問型は訪問件数が減っても影響しない個別契約(会社説明)"
+  },
+  "qa.ai_attach_new": {
+   "disp": "80%",
+   "value": 80,
+   "unit": "%",
+   "period": "Q3 2025",
+   "status": "確認",
+   "label": "iBow新規契約のAI計画報告の付帯率",
+   "stale_check": false
+  },
+  "qa.route_attach_new": {
+   "disp": "25%",
+   "value": 25,
+   "unit": "%",
+   "period": "2026-08",
+   "status": "確認",
+   "label": "iBow新規契約のAIルートの付帯率(20〜30%の中央)"
+  },
+  "qa.route_free": {
+   "disp": "1,295 件",
+   "value": 1295,
+   "unit": "件",
+   "period": "2026-01",
+   "status": "確認",
+   "label": "AIルートの無料申込(2026年1月)"
+  },
+  "q26q3.route_active": {
+   "disp": "281 件",
+   "value": 281,
+   "unit": "件",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "AIルート稼働数"
+  },
+  "calc.ai_plan_share": {
+   "disp": "47.5%",
+   "value": 47.5,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "AI計画報告の稼働率(稼働ST比)"
+  },
+  "calc.hike_rev": {
+   "disp": "84 百万円",
+   "value": 84,
+   "unit": "百万円",
+   "period": "2027E",
+   "status": "計算",
+   "label": "2027年1月の基本料改定の増収(年)"
+  },
+  "calc.hike_pct_200": {
+   "disp": "4.7%",
+   "value": 4.7,
+   "unit": "%",
+   "period": "2027-01",
+   "status": "計算",
+   "label": "200訪問のSTの改定による値上げ率"
+  },
+  "calc.hike_pct_1000": {
+   "disp": "1.5%",
+   "value": 1.5,
+   "unit": "%",
+   "period": "2027-01",
+   "status": "計算",
+   "label": "1,000訪問のSTの改定による値上げ率"
+  },
+  "calc.server_run": {
+   "disp": "304 百万円",
+   "value": 304,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "推定",
+   "label": "サーバー費の2026年の年率"
+  },
+  "calc.server_inc_2026": {
+   "disp": "129 百万円",
+   "value": 129,
+   "unit": "百万円",
+   "period": "FY2026",
+   "status": "推定",
+   "label": "サーバー費の増加(2026年年率−2025年)"
+  },
+  "nrr.growth": {
+   "disp": "102.5%",
+   "value": 102.5,
+   "unit": "%",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "成長期(400訪問以上の単独ST)のNRR"
+  },
+  "nrr.expand": {
+   "disp": "114.7%",
+   "value": 114.7,
+   "unit": "%",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "拡大期(複数ST法人)のNRR"
+  },
+  "nrr.start": {
+   "disp": "107.1%",
+   "value": 107.1,
+   "unit": "%",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "立ち上げ期(400訪問未満の単独ST)のNRR"
+  },
+  "nrr.seg_growth": {
+   "disp": "109 千円",
+   "value": 109,
+   "unit": "千円",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "成長期の法人あたり単価"
+  },
+  "calc.inflow_new_share": {
+   "disp": "15%",
+   "value": 15,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "推定",
+   "label": "新規開設のうちeWeLLが取る割合(切替を除く推定)"
+  },
+  "ibow.users": {
+   "disp": "69,000 名",
+   "value": 69000,
+   "unit": "名",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "iBowの利用医療従事者数"
+  },
+  "ai.users": {
+   "disp": "23,670 名",
+   "value": 23670,
+   "unit": "名",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "iBowのAIを使う医療従事者"
+  },
+  "ai.visit_growth_ai": {
+   "disp": "116.7%",
+   "value": 116.7,
+   "unit": "%",
+   "period": "2026-06",
+   "status": "確認",
+   "label": "AIありユーザーの1年の訪問件数の平均増加率"
+  },
+  "calc.wallet_now": {
+   "disp": "2.3%",
+   "value": 2.3,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "今の平均の取り分(ARPU÷1STの月収入)"
+  },
+  "calc.wallet_full": {
+   "disp": "9.2%",
+   "value": 9.2,
+   "unit": "%",
+   "period": "2027E",
+   "status": "計算",
+   "label": "全製品を入れた取り分"
+  },
+  "calc.wallet_ex_bpaas": {
+   "disp": "4.2%",
+   "value": 4.2,
+   "unit": "%",
+   "period": "2027E",
+   "status": "計算",
+   "label": "BPaaSを除く全製品の取り分"
+  },
+  "calc.bpaas_per_user": {
+   "disp": "174 千円",
+   "value": 174,
+   "unit": "千円",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "BPaaS利用STあたり月額"
+  },
+  "reform.online_claim": {
+   "disp": "1 件",
+   "value": 1,
+   "unit": "件",
+   "period": "2024-06",
+   "status": "確認",
+   "label": "訪問看護のオンライン請求開始(2024年6月)、同年秋に義務化(経過措置あり)"
+  },
+  "ind.closure_staff_reason": {
+   "disp": "22.7%",
+   "value": 22.7,
+   "unit": "%",
+   "period": "FY2025",
+   "status": "確認",
+   "label": "廃止理由のうち従業員確保が困難"
+  },
+  "price.board_pro": {
+   "disp": "30,000 円",
+   "value": 30000,
+   "unit": "円",
+   "period": "2027-01",
+   "status": "確認",
+   "label": "iBowボードProの課金開始時価格"
+  },
+  "calc.switch_out_fy25": {
+   "disp": "106 件",
+   "value": 106,
+   "unit": "件",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "他社切替による解約(FY2025)"
+  },
+  "calc.churn_fy25": {
+   "disp": "186 件",
+   "value": 186,
+   "unit": "件",
+   "period": "FY2025",
+   "status": "計算",
+   "label": "解約(FY2025)"
+  },
+  "calc.steady_stock": {
+   "disp": "12,541 件",
+   "value": 12541,
+   "unit": "件",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "定常の契約数(流入÷流出率)"
+  },
+  "calc.target_adds_mult": {
+   "disp": "2.0 倍",
+   "value": 2.0,
+   "unit": "倍",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "2040年シェア50%に要る流入の倍率"
+  },
+  "calc.death_ratio": {
+   "disp": "0.49 倍",
+   "value": 0.49,
+   "unit": "倍",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "自社顧客の廃業率÷業界の廃止率"
+  },
+  "calc.ltv_cac_low": {
+   "disp": "6.5 倍",
+   "value": 6.5,
+   "unit": "倍",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "LTV/CAC(流出率7.9%)"
+  },
+  "calc.ltv_cac_high": {
+   "disp": "12.0 倍",
+   "value": 12.0,
+   "unit": "倍",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "LTV/CAC(流出率2.5%)"
+  },
+  "calc.op_per_100m": {
+   "disp": "78 円",
+   "value": 78,
+   "unit": "円",
+   "period": "評価時点",
+   "status": "計算",
+   "label": "営業利益1億円の1株価値(PER17.2倍)"
+  },
+  "deck.fee_profit_lo": {
+   "disp": "16%",
+   "value": 16,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "利用料÷事業所の利益(収支差率10.3%の場合)"
+  },
+  "deck.fee_profit_hi": {
+   "disp": "27%",
+   "value": 27,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "計算",
+   "label": "利用料÷事業所の利益(収支差率5.9%の場合)"
+  },
   "val.grade.letter": {
    "disp": "B",
    "value": null,
@@ -2942,7 +3479,7 @@
    "label": "valuate.py の表示値"
   },
   "val.grade.avg": {
-   "disp": "2.92",
+   "disp": "2.85",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2950,7 +3487,7 @@
    "label": "valuate.py の表示値"
   },
   "val.grade.pos": {
-   "disp": "0.42",
+   "disp": "0.35",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2958,7 +3495,7 @@
    "label": "valuate.py の表示値"
   },
   "val.grade.distribution": {
-   "disp": "A3・B7・C2・D1",
+   "disp": "A2・B8・C2・D1",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2974,7 +3511,7 @@
    "label": "valuate.py の表示値"
   },
   "val.peg.start": {
-   "disp": "1.127",
+   "disp": "1.104",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2982,7 +3519,7 @@
    "label": "valuate.py の表示値"
   },
   "val.peg.2026": {
-   "disp": "1.127",
+   "disp": "1.104",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2990,7 +3527,7 @@
    "label": "valuate.py の表示値"
   },
   "val.peg.2027": {
-   "disp": "1.077",
+   "disp": "1.054",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -2998,7 +3535,7 @@
    "label": "valuate.py の表示値"
   },
   "val.peg.2028": {
-   "disp": "1.027",
+   "disp": "1.004",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3006,7 +3543,7 @@
    "label": "valuate.py の表示値"
   },
   "val.peg.2029": {
-   "disp": "0.977",
+   "disp": "0.954",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3014,7 +3551,7 @@
    "label": "valuate.py の表示値"
   },
   "val.alpha": {
-   "disp": "22.9%",
+   "disp": "23.3%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3030,7 +3567,7 @@
    "label": "valuate.py の表示値"
   },
   "val.value.consensus": {
-   "disp": "1842.5",
+   "disp": "1827.0",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3054,7 +3591,7 @@
    "label": "valuate.py の表示値"
   },
   "val.gap.consensus.52週安値": {
-   "disp": "+9%",
+   "disp": "+8%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3062,7 +3599,7 @@
    "label": "valuate.py の表示値"
   },
   "val.gap.consensus.52週高値": {
-   "disp": "-37%",
+   "disp": "-38%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3102,7 +3639,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.consensus.2026.per": {
-   "disp": "21.7",
+   "disp": "21.3",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3110,7 +3647,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.consensus.2026.price": {
-   "disp": "1895.6",
+   "disp": "1856.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3118,7 +3655,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.consensus.2026.pv": {
-   "disp": "1895.6",
+   "disp": "1856.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3246,7 +3783,7 @@
    "label": "valuate.py の表示値"
   },
   "val.value.company": {
-   "disp": "1842.5",
+   "disp": "1827.0",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3270,7 +3807,7 @@
    "label": "valuate.py の表示値"
   },
   "val.gap.company.52週安値": {
-   "disp": "+9%",
+   "disp": "+8%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3278,7 +3815,7 @@
    "label": "valuate.py の表示値"
   },
   "val.gap.company.52週高値": {
-   "disp": "-37%",
+   "disp": "-38%",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3318,7 +3855,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.company.2026.per": {
-   "disp": "21.7",
+   "disp": "21.3",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3326,7 +3863,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.company.2026.price": {
-   "disp": "1895.6",
+   "disp": "1856.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3334,7 +3871,7 @@
    "label": "valuate.py の表示値"
   },
   "val.row.company.2026.pv": {
-   "disp": "1895.6",
+   "disp": "1856.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3678,7 +4215,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.ev": {
-   "disp": "1726.1",
+   "disp": "1722.6",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3686,7 +4223,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.sd": {
-   "disp": "221.7",
+   "disp": "212.1",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3702,7 +4239,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.bull.value": {
-   "disp": "2336.8",
+   "disp": "2304.9",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3710,7 +4247,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.bull.peg": {
-   "disp": "1.27",
+   "disp": "1.24",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3758,7 +4295,7 @@
    "label": "valuate.py の表示値"
   },
   "val.scen.bear.peg": {
-   "disp": "0.99",
+   "disp": "0.98",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3766,7 +4303,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.Z1": {
-   "disp": "1278.2",
+   "disp": "1271.8",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3774,7 +4311,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.immediate": {
-   "disp": "≤ 1278.2",
+   "disp": "≤ 1271.8",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3782,7 +4319,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.Z2": {
-   "disp": "1467.8",
+   "disp": "1464.7",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3798,7 +4335,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.up_down.last": {
-   "disp": "0.1",
+   "disp": "0.0",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3814,7 +4351,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.up_down.52週安値": {
-   "disp": "4.7",
+   "disp": "4.4",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3830,7 +4367,7 @@
    "label": "valuate.py の表示値"
   },
   "val.entry.up_down.52週高値": {
-   "disp": "-0.4",
+   "disp": "-0.5",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3910,7 +4447,7 @@
    "label": "valuate.py の表示値"
   },
   "val.sens.契約数: 強気(獲得720〜820件・解約4.8%)": {
-   "disp": "1805.0",
+   "disp": "1789.9",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3918,7 +4455,7 @@
    "label": "valuate.py の表示値"
   },
   "val.sens.契約数: 強気(獲得720〜820件・解約4.8%).diff": {
-   "disp": "+147.5",
+   "disp": "+132.4",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3942,7 +4479,7 @@
    "label": "valuate.py の表示値"
   },
   "val.sens.単価: 強気(年+4.5〜8%)": {
-   "disp": "1802.8",
+   "disp": "1787.8",
    "value": null,
    "unit": "",
    "period": "計算",
@@ -3950,7 +4487,7 @@
    "label": "valuate.py の表示値"
   },
   "val.sens.単価: 強気(年+4.5〜8%).diff": {
-   "disp": "+145.3",
+   "disp": "+130.3",
    "value": null,
    "unit": "",
    "period": "計算",
