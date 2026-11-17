@@ -1,0 +1,412 @@
+{
+ "_help": "銘柄分析レンズ(lenses.py)の入力データ雛形。不要・未開示の項目は省略またはnull可。金額はすべてunitの単位、率は小数ではなく%の数値(例: 8.25% -> 8.25)で統一。",
+ "_help_ticker": "証券コード・ティッカー記号(文字列、例: '4409')",
+ "ticker": "5038",
+ "_help_name": "企業名(文字列、例: '東邦化学工業')",
+ "name": "eWeLL",
+ "_help_unit": "財務数値の共通単位(文字列、例: '百万円')",
+ "unit": "百万円",
+ "_help_input_price_name": "annual[].input_price の系列名(任意、例: '国産ナフサ(円/kl)'、'ドル円'。L04の文に使用)",
+ "input_price_name": "ドル円(年平均、サーバー費の外部要因・概数)",
+ "assume": {
+  "coe": 8.9,
+  "g": 2.0,
+  "tax": 30.6,
+  "cash_yield": 0.1
+ },
+ "price": {
+  "close": 2297,
+  "shares_m": 15.131539,
+  "bps": 221.3,
+  "eps_next": 100.0,
+  "adv": 85,
+  "positions": [
+   5,
+   30
+  ]
+ },
+ "_help_annual": "通期実績の配列(古い順)。全項目任意、取得できた期・勘定科目のみ記載",
+ "annual": [
+  {
+   "fy": "2021",
+   "revenue": 1192.8,
+   "gross": 961.4,
+   "sga": 559.5,
+   "op": 401.9,
+   "ordinary": 403.3,
+   "pretax": 403.3,
+   "net": 340.3,
+   "assets": 1061.3,
+   "equity": 504.2,
+   "debt": 180.6,
+   "cash": 617.1,
+   "receivables": 241.1,
+   "capex": 54.9,
+   "dep": 12.7,
+   "ocf": 408.6,
+   "shares_m": 12.615,
+   "input_price": 109.8,
+   "interest": 0.0,
+   "inventory": 0.0
+  },
+  {
+   "fy": "2022",
+   "revenue": 1603.2,
+   "gross": 1270.1,
+   "sga": 577.3,
+   "op": 692.8,
+   "ordinary": 676.1,
+   "pretax": 676.1,
+   "net": 449.6,
+   "assets": 1649.0,
+   "equity": 1105.1,
+   "debt": 96.1,
+   "cash": 1075.2,
+   "receivables": 319.4,
+   "capex": 55.2,
+   "dep": 32.7,
+   "ocf": 543.4,
+   "shares_m": 13.919,
+   "input_price": 131.4,
+   "interest": 0.0,
+   "inventory": 0.0
+  },
+  {
+   "fy": "2023",
+   "revenue": 2069.6,
+   "gross": 1636.8,
+   "sga": 728.1,
+   "op": 908.7,
+   "ordinary": 910.5,
+   "pretax": 908.2,
+   "net": 612.9,
+   "assets": 2380.7,
+   "equity": 1690.0,
+   "debt": 91.5,
+   "cash": 1412.9,
+   "receivables": 416.2,
+   "capex": 38.7,
+   "dep": 59.1,
+   "ocf": 626.9,
+   "shares_m": 14.962,
+   "input_price": 140.5,
+   "interest": 0.0,
+   "inventory": 0.0
+  },
+  {
+   "fy": "2024",
+   "revenue": 2571.9,
+   "gross": 1997.4,
+   "sga": 861.5,
+   "op": 1135.9,
+   "ordinary": 1138.9,
+   "pretax": 1138.4,
+   "net": 808.3,
+   "assets": 3070.6,
+   "equity": 2409.1,
+   "debt": 0.0,
+   "cash": 1965.9,
+   "receivables": 506.9,
+   "capex": 60.2,
+   "dep": 80.9,
+   "ocf": 856.8,
+   "shares_m": 15.121,
+   "input_price": 151.4,
+   "interest": 0.0,
+   "inventory": 0.0
+  },
+  {
+   "fy": "2025",
+   "revenue": 3392.4,
+   "gross": 2654.6,
+   "sga": 1117.1,
+   "op": 1537.5,
+   "ordinary": 1546.5,
+   "pretax": 1546.3,
+   "net": 1088.2,
+   "assets": 4283.5,
+   "equity": 3375.0,
+   "debt": 0.0,
+   "cash": 2857.5,
+   "receivables": 634.6,
+   "capex": 79.6,
+   "dep": 106.2,
+   "ocf": 1270.3,
+   "shares_m": 15.252,
+   "input_price": 150.0,
+   "interest": 0.0,
+   "inventory": 0.0
+  }
+ ],
+ "periods": {
+  "per_year": 4,
+  "rows": [
+   {
+    "p": "FY23Q1",
+    "revenue": 466.1,
+    "gross": 365.0,
+    "op": 223.1
+   },
+   {
+    "p": "FY23Q2",
+    "revenue": 504.6,
+    "gross": 399.4,
+    "op": 226.8
+   },
+   {
+    "p": "FY23Q3",
+    "revenue": 528.3,
+    "gross": 422.5,
+    "op": 259.0
+   },
+   {
+    "p": "FY23Q4",
+    "revenue": 570.5,
+    "gross": 449.9,
+    "op": 199.8
+   },
+   {
+    "p": "FY24Q1",
+    "revenue": 575.0,
+    "gross": 439.5,
+    "op": 234.1
+   },
+   {
+    "p": "FY24Q2",
+    "revenue": 630.7,
+    "gross": 482.7,
+    "op": 294.3
+   },
+   {
+    "p": "FY24Q3",
+    "revenue": 654.5,
+    "gross": 512.1,
+    "op": 295.1
+   },
+   {
+    "p": "FY24Q4",
+    "revenue": 711.6,
+    "gross": 563.1,
+    "op": 312.5
+   },
+   {
+    "p": "FY25Q1",
+    "revenue": 754.1,
+    "gross": 603.9,
+    "op": 376.8
+   },
+   {
+    "p": "FY25Q2",
+    "revenue": 849.1,
+    "gross": 666.4,
+    "op": 411.6
+   },
+   {
+    "p": "FY25Q3",
+    "revenue": 870.7,
+    "gross": 683.9,
+    "op": 407.5
+   },
+   {
+    "p": "FY25Q4",
+    "revenue": 918.6,
+    "gross": 700.3,
+    "op": 341.5
+   },
+   {
+    "p": "FY26Q1",
+    "revenue": 953.9,
+    "gross": 715.3,
+    "op": 434.4
+   },
+   {
+    "p": "FY26Q2",
+    "revenue": 1037.4,
+    "gross": 800.2,
+    "op": 512.2
+   },
+   {
+    "p": "FY26Q3",
+    "revenue": 1076.3,
+    "gross": 826.5,
+    "op": 507.7
+   }
+  ]
+ },
+ "guidance": {
+  "fy": "2026",
+  "revenue": 4277,
+  "gross": 3234,
+  "op": 1927,
+  "ytd_months": 9,
+  "ytd": {
+   "revenue": 3067.6,
+   "gross": 2342.0,
+   "op": 1454.4,
+   "input_price": null
+  },
+  "prior_rest": {
+   "revenue": 918.6,
+   "gross": 700.3,
+   "op": 341.5
+  }
+ },
+ "bridge": {
+  "label": "",
+  "items": []
+ },
+ "_help_segment_adjust": "セグメント利益の調整額・全社費用(unit単位、任意・L15用。構成比は調整額を除くセグメント合計で計算)",
+ "segment_adjust": null,
+ "_help_segments": "セグメント別の実績・進捗・中計計画・戦略区分(L06・L15用)",
+ "segments": [
+  {
+   "name": "クラウド",
+   "revenue": 2931.0,
+   "profit": 2350.0,
+   "prev_profit": null,
+   "ytd_months": 9,
+   "ytd_profit": 2046.0,
+   "plan_lo": 2826.0,
+   "plan_hi": 2826.0,
+   "strategic": false
+  },
+  {
+   "name": "BPaaS",
+   "revenue": 440.9,
+   "profit": 283.0,
+   "prev_profit": null,
+   "ytd_months": 9,
+   "ytd_profit": 284.0,
+   "plan_lo": 393.0,
+   "plan_hi": 393.0,
+   "strategic": true
+  }
+ ],
+ "_help_capacity": "能力・規模の増強計画と市場成長率の配列(L11用。設備の生産能力に限らず店舗数・拠点数・人員・席数でもよい)",
+ "capacity": [
+  {
+   "name": "契約ステーション数(中計)",
+   "unit": "件",
+   "now": 3843,
+   "after": 4882,
+   "when": "2028-12",
+   "years": 2.25,
+   "market_cagr": 6.9,
+   "demand_now": 20051
+  }
+ ],
+ "_help_capital_uses": "成長投資・保有資産などの資本使途と税後利回り(%)(L08用、自己株買いと借入返済は自動算出)",
+ "capital_uses": [
+  {
+   "name": "自己株取得(益回り=12か月先EPS÷株価)",
+   "yield": 4.35,
+   "actual": true,
+   "note": "2026年に300百万円を実行"
+  },
+  {
+   "name": "現預金の保有",
+   "yield": 0.4,
+   "actual": true,
+   "note": "総資産の67%"
+  },
+  {
+   "name": "ソフトウエア投資(5期の税前増分利回り)",
+   "yield": 393.5,
+   "actual": true,
+   "note": "lenses L13"
+  },
+  {
+   "name": "配当(配当性向24%)",
+   "yield": 0.9,
+   "actual": true,
+   "note": "配当利回り 21円÷2,297円"
+  }
+ ],
+ "_help_peers": "同業他社のPBR・予想ROE(%)配列(L10用)",
+ "peers": [
+  {
+   "name": "カナミックネットワーク",
+   "pbr": 4.15,
+   "roe": 27.74
+  },
+  {
+   "name": "メドレー",
+   "pbr": 3.98,
+   "roe": 5.57
+  },
+  {
+   "name": "エムスリー",
+   "pbr": 2.99,
+   "roe": 12.48
+  },
+  {
+   "name": "ラクス",
+   "pbr": 9.05,
+   "roe": 55.37
+  },
+  {
+   "name": "Sansan",
+   "pbr": 13.72,
+   "roe": 38.79
+  },
+  {
+   "name": "freee",
+   "pbr": 10.83,
+   "roe": 5.3
+  },
+  {
+   "name": "プラスアルファ・コンサルティング",
+   "pbr": 5.74,
+   "roe": 32.5
+  },
+  {
+   "name": "ROBOT PAYMENT",
+   "pbr": 4.85,
+   "roe": 44.98
+  }
+ ],
+ "_help_model": "将来の業績モデル(通常5年後など)の配列(L07・L09・L10用)",
+ "model": [
+  {
+   "fy": "2030",
+   "scenario": "基準",
+   "revenue": 7191,
+   "op": 3380,
+   "net": 2386,
+   "assets": null,
+   "equity": null,
+   "sga": 2121,
+   "roe": null
+  }
+ ],
+ "_help_guidance_history": "期初の会社営業利益予想と通期実績の履歴(古い順、3期以上、任意・L19用)",
+ "guidance_history": [
+  {
+   "fy": "2022",
+   "initial_op": 562,
+   "actual_op": 692.8
+  },
+  {
+   "fy": "2023",
+   "initial_op": 809,
+   "actual_op": 908.7
+  },
+  {
+   "fy": "2024",
+   "initial_op": 1111,
+   "actual_op": 1135.9
+  },
+  {
+   "fy": "2025",
+   "initial_op": 1494,
+   "actual_op": 1537.5
+  }
+ ],
+ "_help_plan_history": "過去の中期経営計画等の目標と実績の配列(任意・L19用)",
+ "plan_history": [],
+ "_help_skip": "対象外とするレンズID(キーは L01〜L17、全レンズ L01〜L19)と理由のマップ(一部の入力だけで動くレンズは skip 不要。入力が足りなければ自動で「入力不足」になり、開示が無いものだけ skip に理由を書く。例: {'L11': '製造業ではなく設備能力制約がないため'})",
+ "skip": [
+  "在庫を持たないSaaSのため在庫日数は0",
+  "支払利息は僅少(無借金)"
+ ]
+}
