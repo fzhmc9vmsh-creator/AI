@@ -306,6 +306,39 @@ def main():
     rc, out = run([os.path.join(HERE, "gate.py"), "thesis", "."], t2)
     check("市場との差分の表・撤回の線が無い分析を止める", rc == 1 and "variant" in out and "kill" in out)
     shutil.rmtree(t2, ignore_errors=True)
+
+    # 第10版: 事業構造の解剖(単位のレンズ・gate structure)と 13 条件の深掘り(gate deep)
+    EW = os.path.join(HERE, "..", "examples", "ewell5038")
+    TP = os.path.join(HERE, "..", "templates")
+    if os.path.exists(os.path.join(EW, "units.json")):
+        t3 = tempfile.mkdtemp(prefix="meigara_selftest3_")
+        shutil.copy(os.path.join(EW, "units.json"), t3)
+        rc, out = run([os.path.join(HERE, "structure_lenses.py"), "."], t3)
+        check("structure_lenses.py が動く(手本 eWeLL の単位のレンズ 9 本)", rc == 0 and "計算できたレンズ 9 / 9" in out, out.strip().splitlines()[-1] if out.strip() else "")
+        sl = json.load(open(os.path.join(t3, "structure_lenses.json"), encoding="utf-8")) if rc == 0 else {"lenses": [], "flags": []}
+        fids = {f["id"] for f in sl.get("flags", [])}
+        check("単位のレンズが本体単価の横ばい(U05-1)と新製品の負の限界採算(U07-1)を見つける", {"U05-1", "U07-1"} <= fids, ",".join(sorted(fids)))
+        u01 = next((L for L in sl.get("lenses", []) if L["id"] == "U01"), {})
+        st = (u01.get("values") or {}).get("steady_state_stock")
+        check("U01 の定常の規模(流入 ÷ 流出率)が手本と合う(約 12,500)", isinstance(st, (int, float)) and 12000 < st < 13000, str(st))
+        json.dump({"ticker": "X", "periods": []}, open(os.path.join(t3, "units.json"), "w", encoding="utf-8"))
+        rc, out = run([os.path.join(HERE, "structure_lenses.py"), "."], t3)
+        check("structure_lenses.py は入力が足りなくても落ちない(入力不足と出す)", rc == 0 and "入力不足" in open(os.path.join(t3, "structure_lenses.md"), encoding="utf-8").read())
+        shutil.copy(os.path.join(TP, "structure.json"), t3)
+        rc, out = run([os.path.join(HERE, "gate.py"), "structure", "."], t3)
+        check("ひな形のままの structure.json を止める(顧客の損益・流量・盲検)", rc == 1 and "customer.pnl" in out and "atom.flow" in out and "review" in out)
+        cj = json.load(open(os.path.join(TP, "conditions.json"), encoding="utf-8"))
+        for c in cj["conditions"]:
+            c["grade"] = c["grade"] or "B"          # 採点はしたが、deep はひな形のまま
+        json.dump(cj, open(os.path.join(t3, "conditions.json"), "w", encoding="utf-8"), ensure_ascii=False)
+        rc, out = run([os.path.join(HERE, "gate.py"), "deep", "."], t3)
+        check("ひな形のままの条件の深掘りを止める(決め手の問い・反対の評価・審査)", rc == 1 and "決め手の問い" in out and "counter" in out)
+        for c in cj["conditions"]:
+            c.pop("deep", None)
+        json.dump(cj, open(os.path.join(t3, "conditions.json"), "w", encoding="utf-8"), ensure_ascii=False)
+        rc, out = run([os.path.join(HERE, "gate.py"), "deep", "."], t3)
+        check("理由 1 段落だけの 13 条件(deep 無し)を止める", rc == 1 and "deep(深掘り)が無い" in out)
+        shutil.rmtree(t3, ignore_errors=True)
     shutil.rmtree(tmp, ignore_errors=True)
     print("自己テスト:", "PASS" if ok else "FAIL")
     sys.exit(0 if ok else 1)
