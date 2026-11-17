@@ -1,0 +1,78 @@
+{
+ "_help": "単位のレンズ(scripts/structure_lenses.py)の入力。原子単位(顧客・事業所・店・契約)の数と、単位あたりの売上を期ごとに入れる。取れない項目は null か省略。金額は unit の単位",
+ "ticker": "",
+ "unit_name": "(原子単位の名前。例: 契約ステーション)",
+ "unit": "百万円",
+ "per_year": 4,
+ "periods": [
+  {
+   "p": "(期のラベル)",
+   "stock_end": null,
+   "adds": null,
+   "exits": null,
+   "exits_switch": null,
+   "exits_death": null,
+   "revenue_recurring": null,
+   "products": {
+    "(製品名)": null
+   },
+   "active_end": null
+  }
+ ],
+ "_help_periods": "stock_end=期末の単位数、adds=新規、exits=解約(全理由)、exits_switch=うち他社への切替、exits_death=うち廃業・休止。products=製品別のその期の売上。active_end=課金中の単位数(契約と稼働が違うとき。単位あたりの計算に使う)",
+ "industry": {
+  "stock": null,
+  "prev_stock": null,
+  "adds": null,
+  "exits": null,
+  "switch_in_share_of_adds_pct": null
+ },
+ "_help_industry": "業界の稼働数・前年の稼働数・年間の新規・年間の廃止。switch_in_share_of_adds_pct=自社の新規のうち他社からの切替の割合(不明なら null。幅で出す)",
+ "target": {
+  "what": "(経営陣の長期目標)",
+  "stock": null,
+  "year": null,
+  "industry_stock_then": null,
+  "now_year": null
+ },
+ "customer": {
+  "revenue_per_unit_month": null,
+  "profit_margin_pct": null,
+  "price_paid_month": null,
+  "own_units_per_customer": null,
+  "industry_units_per_customer": null,
+  "units_label": "(顧客 1 単位あたりの量。例: 訪問件数/月)"
+ },
+ "ladder": [
+  {
+   "product": "",
+   "monthly": null,
+   "adoption_pct": null,
+   "kind": "費用の置き換え|売上を増やす|利益から払う"
+  }
+ ],
+ "new_products": [
+  {
+   "name": "",
+   "inc_revenue": null,
+   "inc_cost": null,
+   "period": ""
+  }
+ ],
+ "acquisition": {
+  "selling_cost_year": null,
+  "adds_year": null,
+  "initial_unit_revenue_month": null,
+  "gross_margin_pct": null,
+  "unit_growth_pct": null,
+  "coe_pct": null
+ },
+ "steady": {
+  "op": null,
+  "growth_spend": null,
+  "revenue": null,
+  "inc_op_latest": null,
+  "inc_rev_latest": null,
+  "inc_margin_past_pct": null
+ }
+}

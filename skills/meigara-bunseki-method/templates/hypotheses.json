@@ -1,0 +1,242 @@
+{
+  "ticker": "TICKER",
+  "_how": "analysis-playbook.md §2〜§3。波ごとに仮説を足し、判定と立て直しを残す。検査: python3 scripts/gate.py hypotheses <作業フォルダ>",
+  "read": [],
+  "_read_how": "着手の前に読んだ節を書く(例: SKILL.md、analysis-playbook.md §1〜§3、must-rules.md、references/business-understanding.md)",
+  "plan": {
+    "Q1": "(何を作り、誰に売り、どこで稼ぐ会社か。最初の見立て)",
+    "Q2": "(何が変わったか)",
+    "Q3": "(なぜ続くのか、次の段差はいつか)",
+    "Q4": "(5年後に損益・資本・ROEはどうなるか)",
+    "Q5": "(誰が実行し、誰が引き継ぐか)",
+    "Q6": "(市場は何を織り込み、何を見落としているか)",
+    "Q7": "(いくらで、いつ、何を見て動くか)"
+  },
+  "_plan_how": "着手の宣言。調査の前に、7つの問いへの最初の見立てを1文ずつ書く(外れてよい。外れたら仮説として立て直す)",
+  "waves": [
+    {
+      "no": 0,
+      "name": "骨格",
+      "done": false,
+      "output": "台帳の骨格・損益のサンキー図・資料の一覧",
+      "evidence": [],
+      "whys": []
+    },
+    {
+      "no": 1,
+      "name": "会社の言葉",
+      "done": false,
+      "output": "経営陣シナリオ台帳・利益の増減の表",
+      "evidence": []
+    },
+    {
+      "no": 2,
+      "name": "製品とバリューチェーン",
+      "done": false,
+      "output": "製品群の地図・バリューチェーン図",
+      "evidence": []
+    },
+    {
+      "no": 3,
+      "name": "外から確かめる",
+      "done": false,
+      "output": "同業比較・需要と供給の照合",
+      "evidence": []
+    },
+    {
+      "no": 4,
+      "name": "市場の織り込み",
+      "done": false,
+      "output": "差分の表",
+      "evidence": []
+    },
+    {
+      "no": 5,
+      "name": "反証",
+      "done": false,
+      "output": "査読と反論への回答",
+      "evidence": []
+    }
+  ],
+  "hypotheses": [
+    {
+      "id": "H1",
+      "wave": 0,
+      "source": "サンキー図の異常値",
+      "question": "なぜ売上が横ばいなのに営業利益が増えたのか",
+      "claim": "(社名を替えると成り立たない、反証できる一文)",
+      "if_true": "真なら、どの資料のどの数字がどうなるか",
+      "if_false": "偽なら、どの資料のどの数字がどうなるか",
+      "research": [
+        "決算説明資料の営業利益の増減分析",
+        "決算短信の品目別の記述"
+      ],
+      "result": "未決",
+      "evidence": [],
+      "next": "追加調査",
+      "parent": null,
+      "value_link": "芯: 全社の粗利率 / 条件1",
+      "rivals": [
+        {
+          "kind": "一時・循環",
+          "claim": "(対立する説明: 市況・在庫の評価・期ずれ・前年の反動)",
+          "tell": "(それが真なら見えるはずの、見分ける数字)",
+          "verdict": "棄却|一部|残る",
+          "killed_by": [],
+          "kept_as": "(残るとき: どのシナリオ・確率・判別KPIに残したか)"
+        },
+        {
+          "kind": "つまらない説明",
+          "claim": "(業界共通・会計や区分の変更・為替・計算の誤り)",
+          "tell": "(見分ける数字)",
+          "verdict": "棄却|一部|残る",
+          "killed_by": []
+        }
+      ]
+    }
+  ],
+  "seeds_dismissed": [],
+  "_seeds_how": "lenses.py の旗のうち使わないものを {id, why} で書く(例: {\"id\": \"L14-1\", \"why\": \"在庫の増加は原料高での金額の膨らみで、数量は増えていない\"})。使う旗は、仮説か示唆の seed に id を書く。検査: gate.py lenses",
+  "insights": [
+    {
+      "id": "I1",
+      "level": 2,
+      "claim": "(開示のままでは見えない示唆。数字を入れる)",
+      "lens": "(使った切り口。分解・粒度・年換算と計画・逆算・換算・同業の線・自然実験・上下の開示 など。playbook §7)",
+      "seed": "(lenses.py の旗の id。無ければこのキーを消す)",
+      "in_disclosure": false,
+      "evidence": [],
+      "so_what": "(価値・時期・行動のどれに、どう効くか)",
+      "outside": "(深さ3以上: 会社の外の数字で何を確かめたか。同業・顧客・原料市況・市場規模・過去の自然実験)",
+      "market_view": "(深さ4以上: 市場・通説・会社予想が前提にしている数字)",
+      "value_per_share": 0,
+      "value_via": "(深さ4以上: 1株あたりの価値への効きを、valuation.json のどの感応度・シナリオ・交差確認から写したか)",
+      "date": "(深さ4以上: 数字に出る日・織り込まれる契機。例: 2027-02-04 第3四半期決算)",
+      "falsifier": "(深さ5: この数字がこうなったら撤回する、の線)",
+      "tested_by": []
+    }
+  ],
+  "_insights_how": "深さの梯子(playbook §8): 2=分解した / 3=因果を会社の外の数字で確かめた / 4=市場の前提との差分に値段と日付を付けた / 5=弱気の反論を検証して残り、撤回の線がある。工程2の終わりは3個以上(gate.py hypotheses)、最終は5個以上で深さ4以上が3個・深さ5が1個以上(gate.py thesis)",
+  "thesis": {
+    "one_line": "(市場は○○を前提にしているが、実際は△△。差は1株□□円で、◇◇に埋まる。数字入りの1文)",
+    "edge_type": "情報|分析|時間軸|行動|エッジなし",
+    "variant": [
+      {
+        "item": "(何の数字か。例: 永続ROE)",
+        "unit": "%",
+        "market": "(市場の前提。逆算した数字)",
+        "ours": "(自分の見立て。同じ単位)",
+        "basis": [],
+        "closes_when": "(差が埋まる契機と日付)",
+        "insight": "I1"
+      }
+    ],
+    "core": {
+      "variable": "(価値の芯の変数)",
+      "sensitivity": "(valuation.json の sensitivities の name をそのまま)",
+      "per_share": 0,
+      "kpi": "(判別KPI)",
+      "go": "(続行の線。数字)",
+      "stop": "(見直しの線。数字)",
+      "date": "(確認日)",
+      "insight": "I1"
+    },
+    "kill": [
+      {
+        "if": "(数字の条件)",
+        "then": "(どうするか。見直し後の理論株価など)"
+      }
+    ],
+    "decision": {
+      "action": "(valuation.json の decision を写す)",
+      "value": 0
+    },
+    "bridge": {
+      "from": 0,
+      "to": 0,
+      "steps": [
+        {
+          "name": "今の利益が増えも減りもせず続く場合の価値との差(lenses.py の L18)",
+          "per_share": 0,
+          "insight": "I1"
+        },
+        {
+          "name": "成長と変化の上乗せ(基準シナリオ)",
+          "per_share": 0,
+          "insight": "I1",
+          "note": "(ROE と資本コストの開きが小さければ、成長は価値をほとんど生まない)"
+        }
+      ]
+    }
+  },
+  "_thesis_how": "工程5〜6で書く。variant は3行以上、kill は2本以上。検査: gate.py thesis(valuation.json と照合する)",
+  "rebuttals": [
+    {
+      "id": "R1",
+      "claim": "(懐疑的な投資家の反論)",
+      "on_core": true,
+      "data": "(どのデータで決着させたか)",
+      "evidence": [],
+      "verdict": "逆|正しい|一部|未決",
+      "reflected": "(正しい・一部のとき: 価値評価のどの前提・感応度・判別KPIに入れたか)",
+      "kpi": "(未決のとき: 何を、いつ見て決着させるか)"
+    }
+  ],
+  "_rebuttals_how": "調査の波5。別のモデルに全文を渡して反論を5〜8個出させ、1つずつデータで決着させる。5個以上、価値の芯を狙ったものを1つ以上",
+  "_rivals_how": "上位3つの驚きと、価値の芯に関わる仮説には rivals を書く(thinking-moves.md 型3)。1つでしか起きない数字を tell に書き、それを最初に調べる。検査: gate.py hypotheses",
+  "reviews": [
+    {
+      "stage": "構造|仮説|示唆",
+      "by": "(審査したモデル。例: Gemini 4 Argon)",
+      "date": "YYYY-MM-DD",
+      "findings": 0,
+      "downgraded": [
+        {
+          "id": "I1",
+          "from": 4,
+          "to": 3,
+          "why": "(下げた理由)",
+          "action": "(足したもの、または下げたままにした理由)"
+        }
+      ],
+      "notes": "(審査の誤りだと判断した指摘と、その根拠)"
+    }
+  ],
+  "_reviews_how": "references/depth-review.md。構造か仮説の審査と、示唆の審査を、書いた本人とは別のモデルに頼む。検査: gate.py thesis",
+  "_bridge_how": "価値の橋: from=現在値、to=理論株価(valuation.json)。段の合計で差を全部説明する。差の大半が「今の利益の持続」なのか「成長の実現」なのかで、投資の本質と見るべきKPIが決まる",
+  "thesis_log": [
+    {
+      "wave": 0,
+      "one_line": "(調査の前の、最初の見立ての一文)"
+    },
+    {
+      "wave": 1,
+      "one_line": "(波1のあとで書き直した一文)",
+      "changed_because": "(何を読んで・何が分かって、結論がどう動いたか)"
+    }
+  ],
+  "_thesis_log_how": "調査の波が終わるたびに、結論の一文を書き直す。動かなければ「変わらず」と書く。2回続けて動かず、次の調査が理論株価を5%以上動かしそうになければ、調査を止める",
+  "base_rates": [
+    {
+      "claim": "(何の確率か)",
+      "reference_class": "(何を数えたか。この会社の過去○期、同業○社)",
+      "n": 0,
+      "hit": 0,
+      "evidence": [],
+      "adjust": "(基準率から今回の確率へ、何を根拠にどれだけ動かしたか)"
+    }
+  ],
+  "_base_rates_how": "確率は外の見方(過去に何回中何回起きたか)から出発する。会社予想と中計の当たり外れは lenses.py の L19",
+  "predictions": [
+    {
+      "id": "P1",
+      "on_core": true,
+      "statement": "(決算で当たり外れが決まる、数字入りの文)",
+      "date": "YYYY-MM-DD",
+      "p": 0.5,
+      "basis": "(基準率と、そこから動かした理由)",
+      "outcome": "(決算の後に: 当たり・外れ と実績の数字)"
+    }
+  ],
+  "_predictions_how": "3個以上。価値の芯の判別KPIについての予測を必ず入れる。決算の更新のたびに outcome を書き、確率の癖(当たりすぎ・外れすぎ)を次の分析で直す"
+}

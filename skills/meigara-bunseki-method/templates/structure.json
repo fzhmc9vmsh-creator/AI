@@ -1,0 +1,262 @@
+{
+ "ticker": "TICKER",
+ "_how": "references/structure-anatomy.md。12 の区画を埋める(埋まらない区画が次の調査の問い)。根拠 evidence は台帳 facts.json の id。検査: python3 scripts/gate.py structure <作業フォルダ>",
+ "one_line": "(型 1 の一文の最終版: 誰に・何を・値段の決まり方・原価の連動・利益のたまり場と守り・成長を止めるもの)",
+ "surprises": [
+  {
+   "fact": "(一次資料を主任が読んで知った事実。10 個以上)",
+   "source": "(資料名とページ)",
+   "why_matters": "(どの区画・条件に効くか)"
+  }
+ ],
+ "customer": {
+  "who": "(顧客 1 単位: 1 事業所・1 店・1 工場)",
+  "pnl": [
+   {
+    "item": "売上",
+    "value": 0,
+    "unit": "千円/月",
+    "source": "(出所)"
+   },
+   {
+    "item": "人件費",
+    "value": 0,
+    "unit": "千円/月",
+    "source": ""
+   },
+   {
+    "item": "その他の費用",
+    "value": 0,
+    "unit": "千円/月",
+    "source": ""
+   },
+   {
+    "item": "利益",
+    "value": 0,
+    "unit": "千円/月",
+    "source": ""
+   }
+  ],
+  "price_paid": {
+   "value": 0,
+   "unit": "千円/月",
+   "share_of_revenue_pct": 0,
+   "share_of_profit_pct": 0
+  },
+  "value_created": {
+   "claim": "(会社が主張する効果)",
+   "measured": "(利用者の群の外形データで測った結果。現れているか)",
+   "value": 0,
+   "unit": "千円/月",
+   "evidence": []
+  },
+  "replaces": "(置き換える顧客の費用科目と金額。または増やす売上)",
+  "alternative": {
+   "what": "(代わりの手段)",
+   "cost": "(その費用)",
+   "why_not": "(選ばれない理由)"
+  },
+  "payer": "(顧客の収入を誰が、何の単位で決めるか)",
+  "billing_unit_fit": "(自社の課金単位と顧客の収入の単位は合っているか。ずれる出来事と、起きたときの売上の動き)",
+  "evidence": [],
+  "outside": [
+   "(会社の外の根拠: 統計・顧客の開示・料金表など)"
+  ]
+ },
+ "stakeholders": [
+  {
+   "who": "(当事者。5 者以上)",
+   "why_deal": "",
+   "alternative": "",
+   "gain": "(円・時間)",
+   "exit_if": "(何が起きたらやめるか)",
+   "evidence": []
+  }
+ ],
+ "cases": [
+  {
+   "name": "(実在の顧客・案件・コホート。5 件以上)",
+   "what_happened": "(誰が、いくら払い、何が起き、次に何が起きたか)",
+   "numbers": "(数字)",
+   "why_different": "(他の件と違う理由)",
+   "source": ""
+  }
+ ],
+ "atom": {
+  "unit": "(原子単位)",
+  "engine": "(式)",
+  "reproduce_error_pct": 0,
+  "growth_sources": {
+   "period": "",
+   "new": 0,
+   "expansion": 0,
+   "price": 0,
+   "churn": 0,
+   "unit": "百万円",
+   "note": "(製品別・単位あたりの内訳)"
+  },
+  "flow": {
+   "adds_per_year": 0,
+   "exit_rate_pct": 0,
+   "steady_state_stock": 0,
+   "current_stock": 0,
+   "inflow_share_pct": 0,
+   "stock_share_pct": 0,
+   "steady_state_share_pct": 0,
+   "industry_exit_rate_pct": 0,
+   "own_death_rate_pct": 0,
+   "target_vs_flow": "(経営陣の長期目標に要る流入は今の何倍か)"
+  },
+  "cohort": [
+   {
+    "group": "(年齢・規模の群)",
+    "unit_revenue": 0,
+    "note": ""
+   }
+  ],
+  "marginal_vs_average": "(直近の新規の単位と全体平均の違い)",
+  "unit_economics": {
+   "cac": 0,
+   "payback_months": 0,
+   "ltv_cac_low": 0,
+   "ltv_cac_high": 0,
+   "note": "(残存率 3 通りの前提)"
+  },
+  "evidence": []
+ },
+ "loop": {
+  "links": [
+   {
+    "from": "",
+    "to": "",
+    "evidence": "(数字の証拠。無ければ空)",
+    "status": "実証|仮説"
+   }
+  ],
+  "constraint": "(いま成長を止めているもの 1 つ。人を増やした期に単位が増えたかで内か外かを判定)",
+  "released_on": "(外れる日付。無ければ 無い)",
+  "upside_trigger": "(日付が無いときの上振れの契機)"
+ },
+ "advantage": [
+  {
+   "pool": "(利益がたまる領域)",
+   "hard": "(何が難しいか)",
+   "why_others_cant": "(なぜ他社にできないか)",
+   "worth": "(円換算: 単価・解約・獲得費の差)",
+   "cap_years": 0,
+   "breaks_if": "(壊れる条件)",
+   "protects": "既存|新規|両方",
+   "evidence": []
+  }
+ ],
+ "new_product_margin": [
+  {
+   "product": "",
+   "inc_revenue": 0,
+   "inc_cost": 0,
+   "unit": "百万円",
+   "period": "",
+   "note": "(原価の内訳が非開示なら、同じ期間に増えた科目)"
+  }
+ ],
+ "industry": [
+  {
+   "fact": "(その業界の人なら当たり前のこと。6 件以上)",
+   "kind": "制度|取引慣行|資金の流れ|値決め|失敗の理由|技術",
+   "source": "",
+   "changes_on": "(変わる日付。無ければ 不変)",
+   "so_what": ""
+  }
+ ],
+ "competitors": [
+  {
+   "name": "(2 社以上)",
+   "earns_by": "(何で儲けているか。この製品は本業か入口か)",
+   "price": "",
+   "funded_by": "(安さ・無料の原資)",
+   "why_chosen": "",
+   "constraint": "",
+   "next_move": "",
+   "evidence": []
+  }
+ ],
+ "win_loss": {
+  "wins_from": "",
+  "loses_to": "",
+  "numbers": "(件数。置けなければ推定の幅)",
+  "evidence": []
+ },
+ "wallet": {
+  "ladder": [
+   {
+    "product": "",
+    "monthly": 0,
+    "pct_of_customer_revenue": 0,
+    "adoption_pct": 0,
+    "kind": "費用の置き換え|売上を増やす|利益から払う"
+   }
+  ],
+  "now_pct": 0,
+  "full_stack_pct": 0,
+  "customer_margin_pct": 0,
+  "ceiling": "(単価の上限はどの段にあるか)"
+ },
+ "money": {
+  "steady_state_profit": {
+   "value": 0,
+   "unit": "百万円",
+   "method": "(成長のための支出を除く方法)"
+  },
+  "cash_conversion_pct": 0,
+  "incremental_margin": {
+   "past_pct": 0,
+   "latest_pct": 0
+  },
+  "allocation_history": "(過去 5〜10 年の現金の使い道)",
+  "funded_by": "(誰の資本で成長しているか)",
+  "owner_incentive": "(持分と報酬の物差し)",
+  "evidence": []
+ },
+ "mechanisms": [
+  {
+   "dir": "上振れ|下振れ",
+   "mechanism": "",
+   "per_share": 0,
+   "p": 0,
+   "when": "",
+   "evidence": []
+  }
+ ],
+ "explain_test": {
+  "q1": "",
+  "q2": "",
+  "q3": "",
+  "q4": "",
+  "q5": "",
+  "q6": "",
+  "q7": "",
+  "q8": "",
+  "q9": ""
+ },
+ "patterns_applied": [
+  {
+   "pattern": "P1",
+   "result": "(出た数字)",
+   "flag": false,
+   "used_in": "(仮説・示唆の id。当てはまらない型は na: 理由)"
+  }
+ ],
+ "na": [
+  {
+   "block": "",
+   "why": ""
+  }
+ ],
+ "review": {
+  "by": "(盲検をしたモデル)",
+  "date": "",
+  "findings": 0,
+  "new_to_insider": 0,
+  "notes": "(指摘と対応)"
+ }
+}

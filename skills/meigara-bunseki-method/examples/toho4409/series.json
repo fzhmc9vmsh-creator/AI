@@ -1,0 +1,343 @@
+{
+  "ticker": "4409",
+  "name": "東邦化学工業",
+  "unit": "百万円",
+  "assume": {
+    "coe": 8.25,
+    "g": 2.0,
+    "tax": 30.0
+  },
+  "price": {
+    "close": 786,
+    "shares_m": 21.028,
+    "bps": 1224.4,
+    "eps_next": 80.8,
+    "adv": 10.2,
+    "positions": [5, 30]
+  },
+  "annual": [
+    {
+      "fy": "2014",
+      "revenue": 37995,
+      "gross": 4936,
+      "sga": 4612,
+      "op": 324,
+      "input_price": 67300
+    },
+    {
+      "fy": "2015",
+      "revenue": 41463,
+      "gross": 4827,
+      "sga": 4627,
+      "op": 200,
+      "input_price": 63450
+    },
+    {
+      "fy": "2016",
+      "revenue": 39110,
+      "gross": 5863,
+      "sga": 4707,
+      "op": 1156,
+      "input_price": 42800
+    },
+    {
+      "fy": "2017",
+      "revenue": 38549,
+      "gross": 7107,
+      "sga": 4893,
+      "op": 2214,
+      "input_price": 34675
+    },
+    {
+      "fy": "2018",
+      "revenue": 42762,
+      "gross": 7393,
+      "sga": 4994,
+      "op": 2399,
+      "input_price": 41925
+    },
+    {
+      "fy": "2019",
+      "revenue": 45294,
+      "gross": 7371,
+      "sga": 5170,
+      "op": 2201,
+      "capex": 3783,
+      "dep": 1857,
+      "input_price": 49400
+    },
+    {
+      "fy": "2020",
+      "revenue": 42155,
+      "gross": 7360,
+      "sga": 5354,
+      "op": 2006,
+      "capex": 4429,
+      "input_price": 42925
+    },
+    {
+      "fy": "2021",
+      "revenue": 40649,
+      "gross": 6646,
+      "sga": 5259,
+      "op": 1386,
+      "capex": 5140,
+      "input_price": 31325
+    },
+    {
+      "fy": "2022",
+      "revenue": 49887,
+      "gross": 7230,
+      "sga": 5885,
+      "op": 1345,
+      "ordinary": 1933,
+      "net": 1395,
+      "assets": 66489,
+      "equity": 16815,
+      "capex": 5369,
+      "dep": 2525,
+      "input_price": 56625
+    },
+    {
+      "fy": "2023",
+      "revenue": 55361,
+      "gross": 7293,
+      "sga": 5908,
+      "op": 1384,
+      "net": 977,
+      "capex": 2119,
+      "input_price": 76625
+    },
+    {
+      "fy": "2024",
+      "revenue": 50596,
+      "gross": 6836,
+      "sga": 6065,
+      "op": 771,
+      "net": 546,
+      "equity": 19093,
+      "capex": 2780,
+      "input_price": 69100
+    },
+    {
+      "fy": "2025",
+      "revenue": 53613,
+      "gross": 8174,
+      "sga": 6359,
+      "op": 1815,
+      "pretax": 1972,
+      "net": 1543,
+      "interest": 386,
+      "capex": 2394,
+      "shares_m": 21.016,
+      "input_price": 75625
+    },
+    {
+      "fy": "2026",
+      "revenue": 53625,
+      "gross": 8585,
+      "sga": 6497,
+      "op": 2088,
+      "ordinary": 1931,
+      "pretax": 2076,
+      "net": 1527,
+      "interest": 432,
+      "assets": 70824,
+      "equity": 24031,
+      "debt": 27683,
+      "inventory": 16464,
+      "receivables": 13164,
+      "payables": 8124,
+      "capex": 4762,
+      "dep": 2805,
+      "ocf": 4400,
+      "shares_m": 21.028,
+      "input_price": 65200
+    }
+  ],
+  "periods": {
+    "per_year": 2,
+    "rows": [
+      {
+        "p": "FY26H1",
+        "revenue": 26003,
+        "gross": 4102,
+        "op": 890
+      },
+      {
+        "p": "FY26H2",
+        "revenue": 27622,
+        "gross": 4483,
+        "op": 1198
+      },
+      {
+        "p": "FY27H1",
+        "revenue": 30163,
+        "gross": 5095,
+        "op": 1790
+      }
+    ]
+  },
+  "guidance": {
+    "fy": "2027",
+    "revenue": 61000,
+    "op": 2900,
+    "ytd_months": 6,
+    "ytd": {
+      "revenue": 30163,
+      "gross": 5095,
+      "op": 1790,
+      "input_price": 108350
+    },
+    "prior_rest": {
+      "revenue": 27622,
+      "gross": 4483,
+      "op": 1198
+    }
+  },
+  "bridge": {
+    "label": "FY26H1→FY27H1",
+    "items": {
+      "数量": 1954,
+      "価格・構成": 2205,
+      "原料": -2449,
+      "固定費ほか": -810
+    }
+  },
+  "segments": [
+    {
+      "name": "界面活性剤",
+      "revenue": 25460,
+      "profit": 791,
+      "ytd_months": 6,
+      "ytd_profit": 709,
+      "plan_lo": 1200,
+      "plan_hi": 1300,
+      "strategic": false
+    },
+    {
+      "name": "樹脂",
+      "revenue": 4831,
+      "profit": 98,
+      "ytd_months": 6,
+      "ytd_profit": 160,
+      "plan_lo": 200,
+      "plan_hi": 300,
+      "strategic": false
+    },
+    {
+      "name": "化成品",
+      "revenue": 6566,
+      "profit": 302,
+      "ytd_months": 6,
+      "ytd_profit": 272,
+      "plan_lo": 100,
+      "plan_hi": 200,
+      "strategic": false
+    },
+    {
+      "name": "スペシャリティーケミカル",
+      "revenue": 16558,
+      "profit": 789,
+      "ytd_months": 6,
+      "ytd_profit": 607,
+      "plan_lo": 1500,
+      "plan_hi": 1600,
+      "strategic": true
+    }
+  ],
+  "capacity": [
+    {
+      "name": "電子材料用樹脂(千葉)",
+      "unit": "t",
+      "now": 120,
+      "after": 210,
+      "when": "2026-11",
+      "years": 5,
+      "market_cagr": 6.5
+    }
+  ],
+  "capital_uses": [
+    {
+      "name": "電子材料の増設",
+      "yield": 20.0,
+      "note": "推定(二期90tフル稼働時)"
+    },
+    {
+      "name": "政策保有株の保有",
+      "yield": 2.2,
+      "note": "受取配当142÷残高6,415"
+    }
+  ],
+  "peers": [
+    {
+      "name": "第一工業製薬",
+      "pbr": 1.52,
+      "roe": 13.3
+    },
+    {
+      "name": "三洋化成工業",
+      "pbr": 0.82,
+      "roe": 6.8
+    },
+    {
+      "name": "日油",
+      "pbr": 1.87,
+      "roe": 13.7
+    },
+    {
+      "name": "日本精化",
+      "pbr": 1.01,
+      "roe": 10.0
+    },
+    {
+      "name": "大阪有機化学工業",
+      "pbr": 1.45,
+      "roe": 12.0
+    },
+    {
+      "name": "日本化学工業",
+      "pbr": 0.67,
+      "roe": 8.1
+    },
+    {
+      "name": "ADEKA",
+      "pbr": 1.25,
+      "roe": 9.9
+    }
+  ],
+  "model": [
+    {
+      "fy": "2031",
+      "scenario": "弱気",
+      "revenue": 61000,
+      "op": 2990,
+      "net": 1577,
+      "assets": 68864,
+      "equity": 28659,
+      "roe": 5.6
+    },
+    {
+      "fy": "2031",
+      "scenario": "基準",
+      "revenue": 66028,
+      "op": 4058,
+      "net": 2429,
+      "assets": 69366,
+      "equity": 30615,
+      "sga": 7111,
+      "roe": 8.12
+    },
+    {
+      "fy": "2031",
+      "scenario": "強気",
+      "revenue": 68656,
+      "op": 5062,
+      "net": 3115,
+      "assets": 71755,
+      "equity": 31081,
+      "roe": 10.29
+    }
+  ],
+  "skip": {}
+}
