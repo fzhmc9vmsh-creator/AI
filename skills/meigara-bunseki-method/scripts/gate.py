@@ -37,8 +37,8 @@ HERE = os.path.dirname(os.path.abspath(__file__))
 GRADES = {"S", "A", "B", "C", "D", "E", "F", "N/A", "保留"}
 LOW = {"C", "D", "E", "F"}
 GROWTH_CONDS = {1, 2, 3, 6, 7, 11, 12, 13}     # 成長企業で二層(現在と将来)の評価が要る条件
-REPORT_HEADINGS = ["エグゼクティブサマリ", "事業本体", "収益構造", "シナリオ", "13条件", "PEG", "バリュエーション",
-                   "カタリスト", "リスク", "市場との差分", "既知の制約", "計算前提"]
+REPORT_HEADINGS = ["エグゼクティブサマリ", "会社と事業の概要", "業界の仕組みとお金の流れ", "最新決算", "事業本体", "収益構造", "シナリオ", "13条件", "PEG",
+                   "バリュエーション", "カタリスト", "リスク", "市場との差分", "既知の制約", "計算前提"]
 BANNED = re.compile(r"第\s?\d+\s?版|前回|今回|TODO|TBD|XXX|〇〇|●●|NaN|undefined")
 NUM = re.compile(r"(?<![\d.])\d[\d,]*(?:\.\d+)?(?![\d.])")
 VAL_KEYS = re.compile(r"理論株価|期待値|標準偏差|適正株価|許容 ?PEG|即時エントリー|分割エントリー")
@@ -230,6 +230,23 @@ def g_report(d):
     for h in REPORT_HEADINGS:
         if h not in heads:
             g.e(f"見出しに「{h}」がない(templates/report_outline.md の章立て)")
+    # 必須の前提の節(2026-11-17): 中身の薄い見出しだけで逃げない
+    for h, need_num in (("会社と事業の概要", 6), ("業界の仕組みとお金の流れ", 6), ("最新決算", 10)):
+        m = re.search(r"^#{1,3} [^\n]*" + h + r"[^\n]*\n(.*?)(?=^#{1,3} |\Z)", t, re.M | re.S)
+        if m:
+            body = m.group(1)
+            if len(re.sub(r"\s", "", body)) < 300 or len(NUM.findall(body)) < need_num:
+                g.e(f"「{h}」の節が薄い(300 字以上・数字 {need_num} 個以上。読み手が事業と直近の数字を知らないまま分析に進ませない)")
+    fp_ = os.path.join(d, "facts.json")
+    if os.path.exists(fp_):
+        asof = str(load(fp_).get("as_of", ""))
+        mq = re.search(r"Q([1-4])\s*(\d{4})", asof)
+        m = re.search(r"^#{1,3} [^\n]*最新決算[^\n]*\n(.*?)(?=^#{1,3} |\Z)", t, re.M | re.S)
+        if mq and m:
+            q, y = mq.group(1), mq.group(2)
+            pat = rf"(第\s*{q}\s*四半期|{q}\s*Q|Q\s*{q})"
+            if not re.search(pat, m.group(0)):
+                g.e(f"「最新決算」の節に、台帳の基準時点({asof})の四半期が書かれていない(最新の決算を反映する)")
     for m in BANNED.finditer(t):
         g.e(f"使わない語「{m.group(0)}」… {t[max(0, m.start() - 15):m.end() + 15]!r}")
     if "エッジなし" not in t and not re.search(r"優位の種類|情報の優位|分析の優位|時間軸の優位|行動の優位", t):

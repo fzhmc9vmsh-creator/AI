@@ -1,0 +1,102 @@
+{
+ "_how": "references/story-design.md。狙い → 問いの順 → 証明の対応 → 重み を埋めてから実装する。検査: python3 scripts/check_storyline.py storyline.json",
+ "goal": {
+  "reader": "(誰が読むか)",
+  "decision": "(読後に何を決める・何をするか)",
+  "claim": "(最終主張。数字の入った完全文)"
+ },
+ "unit": "百万円",
+ "key_messages": [
+  {
+   "id": "K1",
+   "text": "(キーメッセージ。3〜6 本)"
+  }
+ ],
+ "chapters": [
+  {
+   "no": 1,
+   "name": "結論",
+   "question": "(読み手の問い)",
+   "answer": "(この資料の答え。一文)",
+   "depends_on": []
+  }
+ ],
+ "pages": [
+  {
+   "id": "s01",
+   "chapter": 1,
+   "role": "cover",
+   "message": "表紙"
+  },
+  {
+   "id": "s02",
+   "chapter": 1,
+   "role": "summary",
+   "message": "(最終主張)",
+   "aim": "最終主張とキーメッセージを 1 枚で示す"
+  },
+  {
+   "id": "s03",
+   "chapter": 1,
+   "role": "agenda",
+   "message": "(読む順と、その理由)",
+   "aim": "章の問い・答え・決め手の数字・ページを示す"
+  },
+  {
+   "id": "s04",
+   "chapter": 2,
+   "role": "body",
+   "std": "business_overview",
+   "message": "(何をしている会社かを、誰に・何を・どう課金するかで 1 文。数字入り)",
+   "aim": "会社と事業の概要",
+   "weight": "A",
+   "form": "関係図|表",
+   "connector": "まず"
+  },
+  {
+   "id": "s05",
+   "chapter": 2,
+   "role": "body",
+   "std": "industry_basics",
+   "message": "(業界の仕組みとお金の流れを 1 文)",
+   "aim": "業界の仕組みとお金の流れ",
+   "weight": "A",
+   "form": "関係図",
+   "connector": "具体的には"
+  },
+  {
+   "id": "s06",
+   "chapter": 2,
+   "role": "body",
+   "std": "latest_results",
+   "message": "(直近の四半期の実績を数字で言い切る 1 文)",
+   "aim": "最新決算のサマリー",
+   "weight": "A",
+   "form": "表",
+   "connector": "では"
+  },
+  {
+   "id": "s04",
+   "chapter": 2,
+   "role": "body",
+   "message": "(主張を含む完全文)",
+   "aim": "(このページは何を証明するか)",
+   "proves": [
+    "K1"
+   ],
+   "weight": "S|A|B",
+   "form": "図|関係図|ロードマップ|判別表|表",
+   "hero": "(主役の図)",
+   "key_number": "(タイトルに入れる決め手の数字)",
+   "connector": "だから|なぜなら|では|しかし|具体的には|その結果"
+  }
+ ],
+ "dropped": [
+  {
+   "what": "(載せなかったもの)",
+   "why": "(理由)"
+  }
+ ],
+ "_how_s": "重み S のページは reader_belief と shift が必須。投資資料は insight に分析の示唆の id を書き、check_storyline.py --analysis で照合する",
+ "_how_std": "投資資料は本編の最初の 8 枚に std: business_overview(会社と事業の概要)・industry_basics(業界の仕組みとお金の流れ)・latest_results(最新決算のサマリー)のページを必ず置く"
+}
