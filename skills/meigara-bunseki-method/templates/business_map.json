@@ -1,0 +1,115 @@
+{
+  "ticker": "TICKER",
+  "_how": "analysis-playbook.md §4。決算短信の品目別の記述を全品目。バリューチェーンは成長分野と現金を稼ぐ分野の両方。検査: python3 scripts/gate.py map <作業フォルダ>。第10版: portfolio(製品ポートフォリオ × PLC × 現金の役割)・cash_map(現金の創出と投下と時間軸)・industry(業界の登場人物)・glossary(用語)も書く(references/five-stage-analysis.md §1・§6)",
+  "coverage_pct": 0,
+  "products": [
+    {
+      "name": "(品目)",
+      "segment": "(セグメント)",
+      "use": "(用途・顧客の業界)",
+      "position": "(会社の位置づけ: 戦略テーマ・採算是正・移管・維持)",
+      "strategic": false,
+      "move": "数量増|値上げで補う|減収|不明",
+      "quote": "(決算短信の記述の要約)"
+    }
+  ],
+  "value_chains": [
+    {
+      "name": "(成長分野 / 現金を稼ぐ分野)",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "自社",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "顧客",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        },
+        {
+          "stage": "最終需要",
+          "who": "",
+          "pricing": "",
+          "why_chosen": ""
+        }
+      ],
+      "profit_pool": "(どの段が利益を取っているか。上下の会社の利益率)",
+      "power_shift": "(顧客・仕入先の集中、資本関係の変化)",
+      "demand_growth": "(市場の成長率と出所)",
+      "outside_evidence": []
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "(製品群。products の name と同じ)",
+      "market_growth": 0.0,
+      "growth_source": "(市場の伸びの出所)",
+      "position": {
+        "metric": "相対シェア|収益性",
+        "value": 0.0
+      },
+      "revenue": 0,
+      "margin": 0.0,
+      "plc": "導入|成長|成熟|衰退",
+      "cash_role": "創出|消費|均衡",
+      "cash_basis": "(製品群の利益 − 要る投資 の前提)",
+      "next5y": {
+        "market_growth": 0.0,
+        "position": 0.0,
+        "why": "(5 年後の位置と動きの理由)"
+      }
+    }
+  ],
+  "cash_map": {
+    "sources": [
+      {
+        "name": "(現金を生む所。製品群)",
+        "amount": 0
+      }
+    ],
+    "uses": [
+      {
+        "name": "(投じる所: 維持更新・成長投資・研究開発・買収・還元・支払い義務)",
+        "amount": 0
+      }
+    ],
+    "timing": {
+      "type": "前受け型|後払い型|投資先行型|中立",
+      "metrics": [
+        {
+          "name": "(前受金÷売上・契約残高÷売上・CCC・支払い義務÷年間売上・回収年数 など)",
+          "value": "(数字)",
+          "fact": "(台帳の id)"
+        }
+      ],
+      "one_line": "(この会社は現金が先行する/投資が先行する、を一文で)"
+    }
+  },
+  "industry": {
+    "actors": [
+      {
+        "name": "(登場人物)",
+        "role": "上流|自社|販路|顧客|最終需要|競合",
+        "plain": "(平易な説明)",
+        "profit": "(どこで利益が出るか)"
+      }
+    ],
+    "self_position": "(自社がどこにいて、何を担うか)"
+  },
+  "glossary": [
+    {
+      "term": "(用語・略語)",
+      "plain": "(平易な意味)",
+      "why": "(この分析でなぜ要るか)"
+    }
+  ]
+}

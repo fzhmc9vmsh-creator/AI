@@ -1,0 +1,324 @@
+{
+  "ticker": "4409",
+  "horizon": {
+    "past": "2022〜2024年3月期",
+    "now": "2027年3月期上期",
+    "future": "2031年3月期・基準シナリオ"
+  },
+  "items": [
+    {
+      "key": "demand",
+      "label": "最終需要と数量",
+      "metric": "数量の効果・電材の販売数量",
+      "past": "数量は横ばい、原料高で利益が減少",
+      "now": "上期の数量効果 +1,954百万円。15品目中8品目が販売増",
+      "future": "電材 130t→193t。汎用品は年2%",
+      "driver": "高付加価値品の拡販と、半導体向け(KrFレジスト)の需要",
+      "evidence": [
+        "pb.volume",
+        "tok.krf_h1_yoy"
+      ],
+      "direction": "改善",
+      "kind": "加速",
+      "priced": "未",
+      "when": "2027年2月4日(第3四半期の品目別の記述)",
+      "cond": [
+        4,
+        12
+      ]
+    },
+    {
+      "key": "product_mix",
+      "label": "製品構成",
+      "metric": "戦略テーマ品の動き・SCの利益比率",
+      "past": "汎用品が中心。SCの利益は全体の約半分だが額は小さい",
+      "now": "戦略テーマ3品目は数量増、汎用7品目は値上げ",
+      "future": "SCが営業利益の44%、電材が柱",
+      "driver": "製品別営業利益の管理と低採算品の見合わせ、電材の増設",
+      "evidence": [
+        "surf.op_chg_fy26",
+        "calc.plan_prog_spec"
+      ],
+      "direction": "改善",
+      "kind": "体制の転換",
+      "priced": "未",
+      "when": "2027年5月13日(通期と2028年3月期の計画)",
+      "cond": [
+        8,
+        13
+      ]
+    },
+    {
+      "key": "pricing",
+      "label": "価格決定力",
+      "metric": "原料高の取り返し率",
+      "past": "2022年は転嫁できず営業利益率 2.70%→1.52%",
+      "now": "価格と構成の改善が原料高の90%を取り返した",
+      "future": "電材(認定品)の比率が上がり全社で強まる",
+      "driver": "売価の見直しを経営の物差しにした(資本コスト資料)",
+      "evidence": [
+        "pb.price_mix",
+        "pb.raw",
+        "toho.opm_fy22"
+      ],
+      "direction": "改善",
+      "kind": "体制の転換",
+      "priced": "一部",
+      "when": "2027年2月4日(下期の粗利率が14.31%を上回るか)",
+      "cond": [
+        1
+      ]
+    },
+    {
+      "key": "value_chain",
+      "label": "バリューチェーン上の位置",
+      "metric": "顧客との資本関係・認定",
+      "past": "レジストメーカーの外注先の1社",
+      "now": "東京応化が東邦化学株を買い増し(4.17%)。取引先の要請で増設",
+      "future": "樹脂の主要メーカー10社の1つとして能力210t",
+      "driver": "顧客の増産と安定調達の要請",
+      "evidence": [
+        "hold.tok",
+        "tok.stake_after"
+      ],
+      "direction": "改善",
+      "kind": "段差",
+      "priced": "未",
+      "when": "2026年11月(二期の完工)と2027年中の立ち上げ",
+      "cond": [
+        9,
+        11
+      ]
+    },
+    {
+      "key": "unit_economics",
+      "label": "単位採算",
+      "metric": "売上総利益率",
+      "past": "16%前後で同業の6割弱",
+      "now": "上期 16.89%",
+      "future": "16.9%(基準)。同業との差 11.9pt の大半は上値として残す",
+      "driver": "構成の改善と値上げ。原料高が下期に効く",
+      "evidence": [
+        "fy27h1.gross_margin",
+        "gap2.gm_pt"
+      ],
+      "direction": "改善",
+      "kind": "連続",
+      "priced": "未",
+      "when": "四半期ごと。次は2027年2月4日(価値の芯)",
+      "cond": [
+        1,
+        8
+      ]
+    },
+    {
+      "key": "cost_structure",
+      "label": "費用構造",
+      "metric": "操業レバレッジ・販管費率",
+      "past": "固定費が重く損益分岐点が高い",
+      "now": "操業レバレッジ 3.65倍、販管費率 10.95%",
+      "future": "販管費は売上の伸びの半分以下、営業利益率 6.1%",
+      "driver": "数量増による固定費の吸収",
+      "evidence": [
+        "mfg.op_leverage",
+        "fy27h1.sga_ratio"
+      ],
+      "direction": "改善",
+      "kind": "連続",
+      "priced": "一部",
+      "when": "2027年5月13日(通期の販管費率)",
+      "cond": [
+        1
+      ]
+    },
+    {
+      "key": "capacity",
+      "label": "能力と制約",
+      "metric": "電材の能力・上海の能力",
+      "past": "電材 120t、上海はフル稼働",
+      "now": "電材二期 +90t が2026年11月完工予定、上海第3期は2026年3月稼働",
+      "future": "電材 210t(強気 275t)",
+      "driver": "増設と、汎用品の上海・鹿島への移管で千葉の人を空ける",
+      "evidence": [
+        "cap.ep1_capacity",
+        "em.capacity_after",
+        "cap.sh3_capacity"
+      ],
+      "direction": "改善",
+      "kind": "段差",
+      "priced": "未",
+      "when": "2026年11月完工、約2年で本格稼働",
+      "cond": [
+        3,
+        9
+      ]
+    },
+    {
+      "key": "capital_intensity",
+      "label": "投資と回収",
+      "metric": "設備投資と償却・増設のROIC",
+      "past": "8期で307億円の投資(償却を大きく超過)",
+      "now": "上期は設備投資 1,461 ≒ 償却 1,489",
+      "future": "年30億円(営業CFの範囲内)。電材増設の税後ROIC 約20%",
+      "driver": "投資の山を越えた。次の増設は高い利回りの電材に絞る",
+      "evidence": [
+        "capex.cum8y",
+        "fy27h1.capex",
+        "em.roic_at"
+      ],
+      "direction": "改善",
+      "kind": "段差",
+      "priced": "一部",
+      "when": "2027年5月13日(2028年3月期の設備投資計画)",
+      "cond": [
+        2
+      ]
+    },
+    {
+      "key": "cash",
+      "label": "FCFと運転資本",
+      "metric": "FCF・CCC・製品在庫日数",
+      "past": "通期のFCFは赤字が続いた",
+      "now": "上期FCF +877百万円、CCC 143日、製品在庫 102日",
+      "future": "年 2,519百万円のFCF",
+      "driver": "投資の正常化。在庫の圧縮は未着手",
+      "evidence": [
+        "fy27h1.ocf",
+        "mfg.ccc_h1",
+        "mfg.fg_days"
+      ],
+      "direction": "改善",
+      "kind": "段差",
+      "priced": "一部",
+      "when": "2027年5月13日(製品在庫日数)",
+      "cond": [
+        2
+      ]
+    },
+    {
+      "key": "balance_sheet",
+      "label": "貸借対照表",
+      "metric": "有利子負債・自己資本比率",
+      "past": "自己資本比率 25.3%(2022年3月末)",
+      "now": "有利子負債 27,683、自己資本比率 34.1%",
+      "future": "有利子負債 19,640、自己資本比率 44.1%",
+      "driver": "FCFと政策保有株の売却を返済に充てる。自己資本が積み上がる",
+      "evidence": [
+        "fy26.ibd",
+        "fwd.base.ibd31",
+        "fy27h1.equity_ratio"
+      ],
+      "direction": "改善",
+      "kind": "連続",
+      "priced": "一部",
+      "when": "半期ごと。次は2027年5月13日",
+      "cond": [
+        10,
+        11
+      ]
+    },
+    {
+      "key": "returns",
+      "label": "ROEの経路と資本配分",
+      "metric": "ROE・還元",
+      "past": "ROE 8.3%→2.9%(レバレッジ頼み)",
+      "now": "実力ROE 6.6%、配当 27円",
+      "future": "基準 8.1%。10%には 5,639百万円の返還が要る(実績は無く、織り込みは一部)",
+      "driver": "利益率は上がるがレバレッジが下がる。返還の決定が分かれ目",
+      "evidence": [
+        "calc.core_roe_h1",
+        "fwd.base.roe31",
+        "roe.return_need"
+      ],
+      "direction": "改善",
+      "kind": "体制の転換",
+      "priced": "未",
+      "when": "自己株取得の決定(随時)、2027年5月13日の還元方針",
+      "cond": [
+        6,
+        7
+      ]
+    },
+    {
+      "key": "moat",
+      "label": "競争優位",
+      "metric": "認定・特許・競合の増設",
+      "past": "界面活性剤の処方と特許57件",
+      "now": "電材は営業秘密(photoresist の公開特許 0件)と認定で守る",
+      "future": "競合の増設(三菱ケミカル・大阪有機 200億円)で供給が増える",
+      "driver": "市場の拡大に複数社が投資。シェアは取引先との関係で決まる",
+      "evidence": [
+        "pat.photoresist",
+        "comp.ooc_capex"
+      ],
+      "direction": "不変",
+      "kind": "不変",
+      "priced": "不明",
+      "when": "2029年(大阪有機の新設備の完成)",
+      "cond": [
+        11
+      ]
+    },
+    {
+      "key": "cyclicality",
+      "label": "景気・市況の感応度",
+      "metric": "原料ショックでの粗利率",
+      "past": "粗利率はナフサと逆に動いた(相関-0.72)。2022年3月期は-1.9pt",
+      "now": "ナフサ+66%でも粗利率+0.9pt(過去13期で初めて)",
+      "future": "電材は半導体の生産、汎用品は原料市況。製品で波が違う",
+      "driver": "価格転嫁の定着と構成の変化",
+      "evidence": [
+        "mkt.naphtha_2026q2",
+        "toho.opm_fy23"
+      ],
+      "direction": "改善",
+      "kind": "体制の転換",
+      "priced": "未",
+      "when": "2027年2月4日(原料高が原価に出る下期の利益率)",
+      "cond": [
+        13
+      ]
+    },
+    {
+      "key": "management",
+      "label": "経営",
+      "metric": "主導者・承継",
+      "past": "社長(在任30年)の下で前中計は未達",
+      "now": "2025年から改革が加速。川崎常務(資本政策)・越坂常務(生産)",
+      "future": "社長80歳の承継。諮問委員会は社外が過半",
+      "driver": "世代交代と資本コストを意識した経営への転換",
+      "evidence": [
+        "gov.pres_vote_2026",
+        "hold.nakazaki"
+      ],
+      "direction": "改善",
+      "kind": "体制の転換",
+      "priced": "未",
+      "when": "2027年6月の株主総会",
+      "cond": [
+        5
+      ]
+    },
+    {
+      "key": "market_view",
+      "label": "市場の見方",
+      "metric": "PBR・織り込みROE・カバレッジ",
+      "past": "低PBRのまま放置",
+      "now": "PBR 0.64倍、織り込みROE 6.0%、上方修正の翌日 -0.36%、カバレッジなし",
+      "future": "ROE 8.1%なら同業の線で約1,054円",
+      "driver": "ROEの証拠(四半期の利益率、資本の返還)が出るたびに線に沿って動く",
+      "evidence": [
+        "calc.implied_roe",
+        "px.react_1028",
+        "calc.line_px_31"
+      ],
+      "direction": "改善",
+      "kind": "段差",
+      "priced": "未",
+      "when": "2027年2月4日・5月13日",
+      "cond": [
+        7
+      ]
+    }
+  ]
+}

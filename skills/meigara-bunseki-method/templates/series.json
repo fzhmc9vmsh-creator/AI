@@ -1,0 +1,286 @@
+{
+  "_help": "銘柄分析レンズ(lenses.py)の入力データ雛形。不要・未開示の項目は省略またはnull可。金額はすべてunitの単位、率は小数ではなく%の数値(例: 8.25% -> 8.25)で統一。",
+  "_help_ticker": "証券コード・ティッカー記号(文字列、例: '4409')",
+  "ticker": "",
+  "_help_name": "企業名(文字列、例: '東邦化学工業')",
+  "name": "",
+  "_help_unit": "財務数値の共通単位(文字列、例: '百万円')",
+  "unit": "百万円",
+  "_help_input_price_name": "annual[].input_price の系列名(任意、例: '国産ナフサ(円/kl)'、'ドル円'。L04の文に使用)",
+  "input_price_name": "",
+
+  "assume": {
+    "_help": "バリュエーション・資本コストの前提(%数値)",
+    "_help_coe": "株主資本コスト(%、例: 8.25)",
+    "coe": 8.25,
+    "_help_g": "永久成長率(%、例: 2.0)",
+    "g": 2.0,
+    "_help_tax": "法定実効税率(%、例: 30.0)",
+    "tax": 30.0,
+    "_help_cash_yield": "現預金の保有にかかる想定税後利回り(%、既定0.1、L08用)",
+    "cash_yield": 0.1
+  },
+
+  "price": {
+    "_help": "足元の株価・バリュエーション基準値",
+    "_help_close": "終値(円)",
+    "close": null,
+    "_help_shares_m": "発行済株式数(百万株。自己株式を除く。決算短信の期末株式数から)",
+    "shares_m": null,
+    "_help_bps": "直近の期末の 1 株あたり純資産。予想 ROE は eps_next ÷ bps",
+    "bps": null,
+    "_help_eps_next": "12か月先予想EPS・実力EPS(円)",
+    "eps_next": null,
+    "_help_adv": "1日の平均売買代金(unit単位、例: 百万円)",
+    "adv": null,
+    "_help_positions": "建てたい想定ポジション額の配列(unit単位、例: [5, 30])",
+    "positions": [5, 30]
+  },
+
+  "_help_annual": "通期実績の配列(古い順)。全項目任意、取得できた期・勘定科目のみ記載",
+  "annual": [
+    {
+      "_help": "1期分の通期実績(金額はunit単位、input_priceは利益率を動かす外部要因の実数)",
+      "_help_fy": "決算期末の年(2027年3月期なら \"2027\")。資料の年度表記(FY26 など)に合わせない",
+      "fy": "2026",
+      "_help_revenue": "売上高(unit単位)",
+      "revenue": null,
+      "_help_gross": "売上総利益(unit単位)",
+      "gross": null,
+      "_help_sga": "販管費(unit単位)",
+      "sga": null,
+      "_help_op": "営業利益(unit単位)",
+      "op": null,
+      "_help_ordinary": "経常利益(unit単位)",
+      "ordinary": null,
+      "_help_pretax": "税金等調整前当期純利益(unit単位)",
+      "pretax": null,
+      "_help_net": "親会社株主に帰属する当期純利益(unit単位)",
+      "net": null,
+      "_help_interest": "支払利息(unit単位)",
+      "interest": null,
+      "_help_assets": "総資産・期末(unit単位)",
+      "assets": null,
+      "_help_equity": "自己資本・純資産のうち株主持分・期末(unit単位)",
+      "equity": null,
+      "_help_debt": "有利子負債・期末(unit単位)",
+      "debt": null,
+      "_help_cash": "現預金・期末(unit単位、任意・L08・L13用)",
+      "cash": null,
+      "_help_cip": "建設仮勘定・期末(unit単位、任意・L13用。未稼働の設備を除いた回転率の算出に使用)",
+      "cip": null,
+      "_help_inventory": "棚卸資産・期末(unit単位)",
+      "inventory": null,
+      "_help_receivables": "売上債権(受取手形及び売掛金等)・期末(unit単位)",
+      "receivables": null,
+      "_help_payables": "仕入債務(支払手形及び買掛金等)・期末(unit単位)",
+      "payables": null,
+      "_help_capex": "設備投資額(unit単位)",
+      "capex": null,
+      "_help_dep": "減価償却費(unit単位)",
+      "dep": null,
+      "_help_ocf": "営業活動によるキャッシュ・フロー(unit単位)",
+      "ocf": null,
+      "_help_shares_m": "期末または期中平均株式数・自己株式除く(百万株)",
+      "shares_m": null,
+      "_help_input_price": "主原料市況・為替・金利・商品市況など、利益率を動かす外部の系列1本の年平均値(原単位のまま、例: 円/kl、ドル円、%)",
+      "input_price": null
+    }
+  ],
+
+  "periods": {
+    "_help": "四半期または半期の時系列データ(加速度L02用)",
+    "_help_per_year": "1年あたりの期数(半期なら2、四半期なら4)",
+    "per_year": 2,
+    "_help_rows": "各期の売上・粗利・営業利益の配列(古い順)。累計ではなく、その期だけの値(四半期か半期の単独値)",
+    "rows": [
+      {
+        "_help": "1期分の四半期/半期実績",
+        "_help_p": "期間ラベル(例: 'FY26H1' や 'FY26Q1')",
+        "p": "",
+        "_help_revenue": "売上高(unit単位)",
+        "revenue": null,
+        "_help_gross": "売上総利益(unit単位、非開示ならnull)",
+        "gross": null,
+        "_help_op": "営業利益(unit単位)",
+        "op": null
+      }
+    ]
+  },
+
+  "guidance": {
+    "_help": "進行期の会社通期予想と累計実績(会社予想の逆算L05・外部要因直近値L04用)",
+    "_help_fy": "対象決算期(文字列、例: '2027')",
+    "fy": "",
+    "_help_revenue": "通期会社予想 売上高(unit単位)",
+    "revenue": null,
+    "_help_gross": "通期会社予想 売上総利益(unit単位、任意・L05用。開示があれば残り期間の粗利率は推定せずこれを使用)",
+    "gross": null,
+    "_help_op": "通期会社予想 営業利益(unit単位)",
+    "op": null,
+    "_help_ytd_months": "累計実績の月数(例: 第2四半期累計なら6、第3四半期累計なら9)",
+    "ytd_months": 6,
+    "_help_ytd": "進行期の累計実績(input_priceがあればL04で直近期として使用)",
+    "ytd": {
+      "_help_revenue": "累計 売上高(unit単位)",
+      "revenue": null,
+      "_help_gross": "累計 売上総利益(unit単位)",
+      "gross": null,
+      "_help_op": "累計 営業利益(unit単位)",
+      "op": null,
+      "_help_input_price": "累計期間の外部要因系列(input_price)の平均値(任意、L04用)",
+      "input_price": null
+    },
+    "_help_prior_rest": "前年の残り期間(例: 前年下期)の実績",
+    "prior_rest": {
+      "_help_revenue": "前年残り期間 売上高(unit単位)",
+      "revenue": null,
+      "_help_gross": "前年残り期間 売上総利益(unit単位)",
+      "gross": null,
+      "_help_op": "前年残り期間 営業利益(unit単位)",
+      "op": null
+    }
+  },
+
+  "bridge": {
+    "_help": "会社開示の営業利益増減要因分析(符号つき、unit単位)",
+    "_help_label": "比較期間ラベル(例: 'FY26H1→FY27H1')",
+    "label": "",
+    "_help_items": "要因名と金額のマップ(例: {'数量': 1954, '価格・構成': 2205, '原料': -2449, '固定費ほか': -810})",
+    "items": {}
+  },
+
+  "_help_segment_adjust": "セグメント利益の調整額・全社費用(unit単位、任意・L15用。構成比は調整額を除くセグメント合計で計算)",
+  "segment_adjust": null,
+  "_help_segments": "セグメント別の実績・進捗・中計計画・戦略区分(L06・L15用)",
+  "segments": [
+    {
+      "_help": "1セグメントの情報",
+      "_help_name": "セグメント名",
+      "name": "",
+      "_help_revenue": "直近通期または対象期間の売上高(unit単位)",
+      "revenue": null,
+      "_help_profit": "直近通期または対象期間のセグメント利益(unit単位)",
+      "profit": null,
+      "_help_prev_profit": "前期通期のセグメント利益(unit単位、任意・L06用)",
+      "prev_profit": null,
+      "_help_ytd_months": "進行期累計の月数(例: 6)",
+      "ytd_months": 6,
+      "_help_ytd_profit": "進行期累計のセグメント利益(unit単位)",
+      "ytd_profit": null,
+      "_help_plan_lo": "中計目標の下限(unit単位)",
+      "plan_lo": null,
+      "_help_plan_hi": "中計目標の上限(unit単位)",
+      "plan_hi": null,
+      "_help_strategic": "成長・戦略セグメントならtrue、既存・非戦略ならfalse",
+      "strategic": false
+    }
+  ],
+
+  "_help_capacity": "能力・規模の増強計画と市場成長率の配列(L11用。設備の生産能力に限らず店舗数・拠点数・人員・席数でもよい)",
+  "capacity": [
+    {
+      "_help": "1件の能力・規模増強データ(設備能力・店舗数・拠点数・人員・席数など)",
+      "_help_name": "設備・事業・店舗網などの名称",
+      "name": "",
+      "_help_unit": "能力・規模の単位(例: 't'、'店'、'拠点'、'人'、'席')",
+      "unit": "t",
+      "_help_now": "増強前の能力・規模(unit単位、例: 生産能力や店舗数)",
+      "now": null,
+      "_help_after": "増強後の能力・規模(unit単位)",
+      "after": null,
+      "_help_when": "完工・達成予定年月(例: '2026-11')",
+      "when": "",
+      "_help_years": "想定達成年数・計画期間(年)",
+      "years": null,
+      "_help_market_cagr": "対象市場の年平均成長率(%)",
+      "market_cagr": null,
+      "_help_demand_now": "現在の販売量・稼働水準(任意、unit単位)",
+      "demand_now": null
+    }
+  ],
+
+  "_help_capital_uses": "成長投資・保有資産などの資本使途と税後利回り(%)(L08用、自己株買いと借入返済は自動算出)",
+  "capital_uses": [
+    {
+      "_help": "1つの資本使途",
+      "_help_name": "使途名(例: '増設'、'政策保有株の保有')",
+      "name": "",
+      "_help_yield": "税後利回り・ROIC(%)",
+      "yield": null,
+      "_help_actual": "会社が実際に行っている使途ならtrue、比較用・目標など非実績ならfalse(falseはL08の旗から外す)",
+      "actual": true,
+      "_help_note": "根拠・推定注記",
+      "note": ""
+    }
+  ],
+
+  "_help_peers": "同業他社のPBR・予想ROE(%)配列(L10用)",
+  "peers": [
+    {
+      "_help": "同業1社",
+      "_help_name": "同業社名",
+      "name": "",
+      "_help_pbr": "PBR(倍)",
+      "pbr": null,
+      "_help_roe": "予想ROE(%。予想EPS ÷ 直近のBPS で計算してよい)",
+      "roe": null
+    }
+  ],
+
+  "_help_model": "将来の業績モデル(通常5年後など)の配列(L07・L09・L10用)",
+  "model": [
+    {
+      "_help": "1シナリオのモデル年度値",
+      "_help_fy": "対象決算期(文字列、例: '2031')",
+      "fy": "",
+      "_help_scenario": "シナリオ名('弱気' / '基準' / '強気' 等)",
+      "scenario": "基準",
+      "_help_revenue": "売上高(unit単位)",
+      "revenue": null,
+      "_help_op": "営業利益(unit単位)",
+      "op": null,
+      "_help_net": "純利益(unit単位)",
+      "net": null,
+      "_help_assets": "総資産(unit単位)",
+      "assets": null,
+      "_help_equity": "自己資本・期末(unit単位)",
+      "equity": null,
+      "_help_sga": "販管費(unit単位、任意)",
+      "sga": null,
+      "_help_roe": "モデル上の期中平均ROE(%、省略時は net÷equity×100 で算出)",
+      "roe": null
+    }
+  ],
+
+  "_help_guidance_history": "期初の会社営業利益予想と通期実績の履歴(古い順、3期以上、任意・L19用)",
+  "guidance_history": [
+    {
+      "_help": "1期分の期初予想と実績",
+      "_help_fy": "決算期末の年(文字列、例: '2024')",
+      "fy": "",
+      "_help_initial_op": "期初の会社営業利益予想(unit単位)",
+      "initial_op": null,
+      "_help_actual_op": "通期実績の営業利益(unit単位)",
+      "actual_op": null
+    }
+  ],
+
+  "_help_plan_history": "過去の中期経営計画等の目標と実績の配列(任意・L19用)",
+  "plan_history": [
+    {
+      "_help": "1件の中計等の計画実績",
+      "_help_name": "計画名(例: '前の中計')",
+      "name": "",
+      "_help_fy": "最終年度等の対象決算期(文字列、例: '2025')",
+      "fy": "",
+      "_help_target_op": "目標の営業利益(unit単位)",
+      "target_op": null,
+      "_help_actual_op": "実績の営業利益(unit単位)",
+      "actual_op": null
+    }
+  ],
+
+  "_help_skip": "対象外とするレンズID(キーは L01〜L17、全レンズ L01〜L19)と理由のマップ(一部の入力だけで動くレンズは skip 不要。入力が足りなければ自動で「入力不足」になり、開示が無いものだけ skip に理由を書く。例: {'L11': '製造業ではなく設備能力制約がないため'})",
+  "skip": {}
+}

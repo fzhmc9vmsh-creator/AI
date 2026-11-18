@@ -1,0 +1,347 @@
+{
+  "ticker": "ANT",
+  "_note": "手本(2026-11-18): 利用者が指摘した Anthropic の資料の数字を、第10版の台帳の形に入れ直したもの。台帳 facts.json は入っていない(outside_evidence・fact の id は形の例)。estimate: true の値は資料に無い推定で、構造の書き方を示すためだけに置いた。投資判断に使わない",
+  "coverage_pct": 100,
+  "products": [
+    {
+      "name": "CSP市場経由API",
+      "segment": "API",
+      "use": "クラウド事業者(AWS Bedrock・Google Vertex・Azure)の上で企業がモデルを使う",
+      "position": "販路の柱(維持・拡大)",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "9M26 構成比 約44%(推定 14,627 百万ドル)"
+    },
+    {
+      "name": "超大口法人API(直販)",
+      "segment": "API",
+      "use": "年100万ドル以上使う大企業の直接契約",
+      "position": "高粗利の直販を伸ばす(戦略テーマ)",
+      "strategic": true,
+      "move": "数量増",
+      "quote": "$1M+ 顧客 約1,900社"
+    },
+    {
+      "name": "中核法人API・Claude Code",
+      "segment": "API・開発者",
+      "use": "開発者の作業ツールへの組み込み(Claude Code)と中堅企業のAPI",
+      "position": "最速の伸び(戦略テーマ)",
+      "strategic": true,
+      "move": "数量増",
+      "quote": "TTM $100k+ 顧客の50%超が併用"
+    },
+    {
+      "name": "法人Enterprise・Team席",
+      "segment": "サブスクリプション",
+      "use": "企業の社員向けの席の契約",
+      "position": "席+従量で拡張",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "Fortune 500 の過半に展開"
+    },
+    {
+      "name": "SMB・個人(Pro・Max)",
+      "segment": "サブスクリプション",
+      "use": "個人・小規模事業者の定額契約",
+      "position": "従量の入口",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "定額サブスク計 6,936 百万ドル(9M26、法人席を含む)"
+    }
+  ],
+  "value_chains": [
+    {
+      "name": "現金を稼ぐ分野: クラウド事業者経由のAPI",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "NVIDIA・Google TPU・AWS Trainium(計算資源)",
+          "pricing": "長期の容量契約(数年の最低購入額)",
+          "why_chosen": "大規模な学習と推論に要る計算資源を確保できる"
+        },
+        {
+          "stage": "自社",
+          "who": "Anthropic(モデルの開発と提供)",
+          "pricing": "トークン単価の従量課金",
+          "why_chosen": "法人向けの安全性と性能、首位のシェア40%"
+        },
+        {
+          "stage": "顧客",
+          "who": "クラウド事業者の上の企業(Bedrock・Vertex・Foundry)",
+          "pricing": "クラウド事業者が販売し手数料を取る(実効34.8%)",
+          "why_chosen": "既存のクラウド予算と契約で即座に使える"
+        },
+        {
+          "stage": "最終需要",
+          "who": "企業の業務の自動化・ソフトウェア開発",
+          "pricing": "業務の削減額に応じて予算化",
+          "why_chosen": "人手の作業を置き換える"
+        }
+      ],
+      "profit_pool": "計算資源(上流)と販路(クラウド事業者)が売上の71.9%を取り、自社に残る実質の粗利は70.2%",
+      "power_shift": "上流の計算資源は3社に集中、販路もクラウド3社に集中",
+      "demand_growth": "10月末の年換算売上 81,000 百万ドル(9月 71,000 から +10,000/月)",
+      "outside_evidence": [
+        "f.menlo.share",
+        "f.aws.fee"
+      ]
+    },
+    {
+      "name": "成長分野: 直販APIとClaude Code",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "同上(計算資源)",
+          "pricing": "同上",
+          "why_chosen": "同上"
+        },
+        {
+          "stage": "自社",
+          "who": "Anthropic(直販・Claude Code)",
+          "pricing": "従量 + 大口の年契約",
+          "why_chosen": "開発者の採用率39%、開発作業への組み込み"
+        },
+        {
+          "stage": "顧客",
+          "who": "年10万ドル以上使う11,900社(売上の74%)",
+          "pricing": "直接契約",
+          "why_chosen": "上位5%の利用企業は非利用企業の約20倍を支出"
+        },
+        {
+          "stage": "最終需要",
+          "who": "ソフトウェア開発の生産性",
+          "pricing": "開発者1人あたりの効果で予算化",
+          "why_chosen": "開発の時間を短くする"
+        }
+      ],
+      "profit_pool": "手数料が無く、直販の粗利は全社平均より高い(推定)",
+      "power_shift": "大口顧客への集中(上位250社が年1,000万ドル以上)",
+      "demand_growth": "中核法人API・Codeは5年で7.0倍(当分析の計画)",
+      "outside_evidence": [
+        "f.jetbrains.survey",
+        "f.s1.cohort"
+      ]
+    }
+  ],
+  "portfolio": [
+    {
+      "name": "CSP市場経由API",
+      "market_growth": 38.5,
+      "growth_source": "当分析の5か年コホートモデル(製品群の伸びで代用。市場全体の伸びの出所は未取得)",
+      "position": {
+        "metric": "相対シェア(法人API 40% ÷ OpenAI 27%、全社値で代用)",
+        "value": 1.48
+      },
+      "revenue": 23100,
+      "revenue_basis": "FY26E(百万ドル)",
+      "margin": null,
+      "plc": "成熟",
+      "cash_role": "創出",
+      "cash_basis": "クラウド事業者が販売を担い販促費が少ない。手数料(実効34.8%)を引いても製品群の利益が要る投資を上回ると推定",
+      "next5y": {
+        "market_growth": 30.0,
+        "position": 1.3,
+        "why": "手数料の高止まりで直販に比べ伸びが鈍る(推定)"
+      },
+      "estimate": true
+    },
+    {
+      "name": "超大口法人API(直販)",
+      "market_growth": 42.6,
+      "growth_source": "当分析の5か年コホートモデル(製品群の伸びで代用。市場全体の伸びの出所は未取得)",
+      "position": {
+        "metric": "相対シェア(全社値で代用)",
+        "value": 1.48
+      },
+      "revenue": 14880,
+      "revenue_basis": "FY26E(百万ドル)",
+      "margin": null,
+      "plc": "成長",
+      "cash_role": "創出",
+      "cash_basis": "手数料が無く粗利が最も高い。大口の契約で計算資源の投資を前払いで賄う部分がある(推定)",
+      "next5y": {
+        "market_growth": 35.0,
+        "position": 1.6,
+        "why": "直販比率 56%→61% の計画"
+      },
+      "estimate": true
+    },
+    {
+      "name": "中核法人API・Claude Code",
+      "market_growth": 47.6,
+      "growth_source": "当分析の5か年コホートモデル(製品群の伸びで代用。市場全体の伸びの出所は未取得)",
+      "position": {
+        "metric": "開発者の採用率 39% ÷ 次点(推定 25%)",
+        "value": 1.56
+      },
+      "revenue": 5670,
+      "revenue_basis": "FY26E(百万ドル)",
+      "margin": null,
+      "plc": "成長",
+      "cash_role": "消費",
+      "cash_basis": "伸びは最速だが、新機能の学習と無料枠・販促で投資が利益を上回る(推定)",
+      "next5y": {
+        "market_growth": 40.0,
+        "position": 1.6,
+        "why": "5 年で 7.0 倍の計画"
+      },
+      "estimate": true
+    },
+    {
+      "name": "法人Enterprise・Team席",
+      "market_growth": 38.0,
+      "growth_source": "当分析の5か年コホートモデル(製品群の伸びで代用。市場全体の伸びの出所は未取得)",
+      "position": {
+        "metric": "相対シェア(推定)",
+        "value": 0.8
+      },
+      "revenue": 5940,
+      "revenue_basis": "FY26E(百万ドル)",
+      "margin": null,
+      "plc": "成長",
+      "cash_role": "均衡",
+      "cash_basis": "席の販促費と利益がほぼ見合う(推定)",
+      "next5y": {
+        "market_growth": 30.0,
+        "position": 0.9,
+        "why": "席 + 従量の併用で拡張"
+      },
+      "estimate": true
+    },
+    {
+      "name": "SMB・個人(Pro・Max)",
+      "market_growth": 33.9,
+      "growth_source": "当分析の5か年コホートモデル(製品群の伸びで代用。市場全体の伸びの出所は未取得)",
+      "position": {
+        "metric": "相対シェア(個人向けは ChatGPT が首位、推定)",
+        "value": 0.4
+      },
+      "revenue": 6270,
+      "revenue_basis": "FY26E(百万ドル)",
+      "margin": null,
+      "plc": "成長",
+      "cash_role": "消費",
+      "cash_basis": "無料枠と個人向けの計算資源の消費が大きい(推定)",
+      "next5y": {
+        "market_growth": 25.0,
+        "position": 0.4,
+        "why": "従量拡張の入口としての役割"
+      },
+      "estimate": true
+    }
+  ],
+  "cash_map": {
+    "sources": [
+      {
+        "name": "API(クラウド事業者経由と直販)",
+        "amount": 6569,
+        "basis": "9M26 営業CF 全体(製品群別は非開示)"
+      }
+    ],
+    "uses": [
+      {
+        "name": "計算資源の支払い義務の消化(学習・推論)",
+        "amount": null,
+        "basis": "2026Q4〜2030年の累計発生見込み 451,600 百万ドル"
+      },
+      {
+        "name": "研究開発(モデルの学習)",
+        "amount": 19240,
+        "basis": "9M26 研究開発費(売上の57.9%)"
+      },
+      {
+        "name": "設備投資(FCFとの差)",
+        "amount": 2880,
+        "basis": "営業CF 6,569 − FCF 3,689"
+      }
+    ],
+    "timing": {
+      "type": "投資先行型",
+      "metrics": [
+        {
+          "name": "計算資源の支払い義務 ÷ 自己資本",
+          "value": "8.11倍",
+          "fact": "f.s1.obligation"
+        },
+        {
+          "name": "契約残高(RPO)",
+          "value": "13,800 百万ドル(12か月以内に75%を認識)",
+          "fact": "f.s1.rpo"
+        },
+        {
+          "name": "営業CF(9M26)",
+          "value": "+6,569 百万ドル",
+          "fact": "f.s1.ocf"
+        }
+      ],
+      "one_line": "営業CFは黒字に転じたが、計算資源の支払い義務(900,900 百万ドル)が売上より先に積み上がる投資先行型で、需要が鈍ると義務だけが残る"
+    }
+  },
+  "industry": {
+    "actors": [
+      {
+        "name": "NVIDIA・Google TPU・AWS Trainium",
+        "role": "上流",
+        "plain": "AIの計算に使う半導体と計算資源",
+        "profit": "高い粗利で計算資源を売る"
+      },
+      {
+        "name": "クラウド事業者(CSP: AWS・Google Cloud・Azure)",
+        "role": "販路",
+        "plain": "企業にサーバーとソフトを貸す大手3社。AnthropicのAPIを自社の窓口で売る",
+        "profit": "販売手数料(実効34.8%)"
+      },
+      {
+        "name": "Anthropic",
+        "role": "自社",
+        "plain": "AIモデル(Claude)を開発し、企業に従量課金で貸す",
+        "profit": "実質の粗利 70.2%"
+      },
+      {
+        "name": "OpenAI・Google",
+        "role": "競合",
+        "plain": "同じ法人APIの市場で競うAIモデル開発の会社",
+        "profit": "OpenAIの推定粗利 36%(中央)"
+      },
+      {
+        "name": "企業(年10万ドル以上の11,900社など)",
+        "role": "顧客",
+        "plain": "業務とソフト開発にAIを組み込む企業",
+        "profit": "人手の作業の削減"
+      }
+    ],
+    "self_position": "モデル開発の位置。上流(計算資源)と販路(クラウド事業者)の両方に大手が並び、間で価値を取り合う"
+  },
+  "glossary": [
+    {
+      "term": "API",
+      "plain": "ソフトから他のソフトの機能を呼び出す窓口。ここではAIモデルの貸し出し",
+      "why": "売上の8割がAPIの従量課金のため"
+    },
+    {
+      "term": "CSP",
+      "plain": "AWS・Google Cloud・Azureなどのクラウド事業者",
+      "why": "売上の44%がCSP経由で、手数料が利益を削るため"
+    },
+    {
+      "term": "ARR",
+      "plain": "直近の月の売上を12倍した年換算売上",
+      "why": "急成長企業の今の規模を測るため"
+    },
+    {
+      "term": "PLC",
+      "plain": "製品ライフサイクル。導入・成長・成熟・衰退の段階",
+      "why": "段階で現金を生むか食うかが変わるため"
+    },
+    {
+      "term": "RPO",
+      "plain": "契約済みでまだ売上にしていない金額(契約残高)",
+      "why": "現金と売上の時期のずれを見るため"
+    },
+    {
+      "term": "PEG",
+      "plain": "PER ÷ EPSの成長率(%)。1倍なら成長に見合う値段",
+      "why": "成長の速さに対して値段が高いかを見るため"
+    }
+  ]
+}

@@ -1,0 +1,1012 @@
+{
+ "deck_type": "stock",
+ "_note": "5 工程(stock-analysis.md §3)の設計書の手本。2026-11-18 に利用者が指摘した Anthropic の資料を、新しい構成に組み直した形。数字はその資料の値の引用で、構造の書き方の手本であり、投資判断に使わない",
+ "goal": {
+  "reader": "IPOで買うかを決める個人投資家(AI業界の専門家ではない)",
+  "decision": "公開価格で買うか、何を見ていくらで買うかを決める",
+  "claim": "IPO価格70〜78ドルは会社の最善の計画をほぼ満額織り込むため見送り。許容PEGで出した適正株価は51.7ドルで、46.3ドル以下か2027年8月の決算で実質粗利率70%以上を確かめてから買う"
+ },
+ "unit": "百万ドル(1株あたりはドル)",
+ "horizon": {
+  "year": "2031",
+  "why": "会社の5か年計画の最終年で、計算資源の支払い義務の大半が満期を迎え、現金の流れが投資先行から回収に変わる年のため"
+ },
+ "key_messages": [
+  {
+   "id": "K1",
+   "text": "売上の8割は従量課金のAPIで、法人向けで首位だが、販路の44%をクラウド事業者に頼り、実質の粗利率は70.2%"
+  },
+  {
+   "id": "K2",
+   "text": "営業CFは黒字化したが、計算資源の支払い義務9,009億ドルが先行する投資先行型の事業"
+  },
+  {
+   "id": "K3",
+   "text": "計画どおりなら2031年EPS 3.85ドルだが、最大の価値の源である研究開発費率の低下は確度が中"
+  },
+  {
+   "id": "K4",
+   "text": "期待損失の最大は需要の減速で支払い義務が遊休になる筋で、感応度1位の粗利率の約2倍。監視はARRの月次と粗利率の2本"
+  },
+  {
+   "id": "K5",
+   "text": "78ドルのPEGは1.67倍で許容PEG1.242倍を上回り、適正株価は51.7ドル。見送って46.3ドル以下か2027年8月の決算を待つ"
+  }
+ ],
+ "chapters": [
+  {
+   "no": 1,
+   "name": "結論",
+   "stage": "opening",
+   "question": "公開価格で買うべきか",
+   "answer": "見送り。適正株価51.7ドルで、46.3ドル以下か2027年8月の決算を待つ",
+   "depends_on": []
+  },
+  {
+   "no": 2,
+   "name": "会社と業界の前提",
+   "stage": "intro",
+   "question": "何者で、AIの業界のどこで稼ぐ会社か",
+   "answer": "企業にAIモデルを従量課金で貸す会社で、モデル開発の位置から売上の44%をクラウド事業者経由で得る",
+   "depends_on": []
+  },
+  {
+   "no": 3,
+   "name": "現在の構造",
+   "stage": "current",
+   "question": "今どの製品で稼ぎ、現金はどこで生まれどこへ投じられているか",
+   "answer": "柱はAPIで実質粗利率70.2%。営業CFは黒字だが、支払い義務9,009億ドルが先行する投資先行型",
+   "depends_on": [
+    2
+   ]
+  },
+  {
+   "no": 4,
+   "name": "将来の構造",
+   "stage": "future",
+   "question": "2031年にどんな構造になり、会社の計画はどこまで確かか",
+   "answer": "計画どおりならEPS 3.85ドルでCFが回収側に移るが、最大の源の研究開発費率の低下は確度が中",
+   "depends_on": [
+    3
+   ]
+  },
+  {
+   "no": 5,
+   "name": "リスク",
+   "stage": "risk",
+   "question": "何が起きると価値が崩れ、それはどれくらい起きやすいか",
+   "answer": "期待損失の最大は需要の減速で支払い義務が遊休になる筋(確率20%・−93%)、次が実質粗利率の8pt低下",
+   "depends_on": [
+    3,
+    4
+   ]
+  },
+  {
+   "no": 6,
+   "name": "今の値段",
+   "stage": "valuation",
+   "question": "公開価格78ドルは何を前提にしているか",
+   "answer": "PER72倍。EPSが年43.1%で伸び続ける計画の満額実現を前提にしている",
+   "depends_on": [
+    4
+   ]
+  },
+  {
+   "no": 7,
+   "name": "判定と行動",
+   "stage": "verdict",
+   "question": "78ドルは妥当か。何を確かめれば買うか",
+   "answer": "PEG1.67倍は許容1.242倍を上回る。適正株価51.7ドル、46.3ドル以下か2027年8月の粗利率70%以上で買う",
+   "depends_on": [
+    4,
+    5,
+    6
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "id": "s01",
+   "chapter": 1,
+   "role": "cover",
+   "message": "表紙"
+  },
+  {
+   "id": "s02",
+   "chapter": 1,
+   "role": "summary",
+   "message": "IPO価格70〜78ドルは会社の最善の計画をほぼ満額織り込んでおり見送る。適正株価は51.7ドルで、46.3ドル以下か2027年8月の決算を待つ",
+   "aim": "判断・適正株価・判断を決めた3つの理由・次に確かめる日を、専門用語なしで1枚に示す"
+  },
+  {
+   "id": "s03",
+   "chapter": 1,
+   "role": "agenda",
+   "message": "事実(今の構造)→予測(将来の構造)→不確実性(リスク)→値段(今の株価)→判定の順に読む",
+   "aim": "章の問い・答え・決め手の数字・ページを示す"
+  },
+  {
+   "id": "s04",
+   "chapter": 2,
+   "role": "body",
+   "kind": "company_profile",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K1"
+   ],
+   "message": "Anthropicは企業向けにAIモデル「Claude」を貸し出し、使われた量に応じて課金する会社で、10月末の年換算売上は810億ドルに達した",
+   "aim": "初めて聞く人が、何者で、誰に何を売ってどう稼ぐかを説明できるようにする",
+   "introduces": [
+    "c_company",
+    "c_api",
+    "c_arr",
+    "c_usage"
+   ],
+   "hero": "会社の一枚紹介(何者か・稼ぎ方・規模・株主構成)"
+  },
+  {
+   "id": "s05",
+   "chapter": 2,
+   "role": "body",
+   "kind": "industry_map",
+   "weight": "A",
+   "form": "関係図",
+   "proves": [
+    "K1"
+   ],
+   "connector": "では",
+   "message": "AIの業界は半導体→クラウド事業者→モデル開発→企業の流れで、Anthropicはモデル開発の位置にあり、売上の44%をクラウド事業者経由で得る",
+   "aim": "業界の登場人物と、どこで利益が出て、Anthropicがどこにいるかを示す",
+   "introduces": [
+    "c_csp",
+    "c_chain"
+   ],
+   "uses": [
+    "c_api"
+   ],
+   "hero": "業界の地図(上流 → 自社 → 販路 → 顧客)"
+  },
+  {
+   "id": "s06",
+   "chapter": 2,
+   "role": "glossary",
+   "kind": "glossary",
+   "message": "この資料で使う用語16語の意味と、なぜこの資料で要るかを先に揃える",
+   "aim": "専門用語・略語を初出の前に揃える"
+  },
+  {
+   "id": "s07",
+   "chapter": 3,
+   "role": "body",
+   "kind": "portfolio",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K1",
+    "K2"
+   ],
+   "connector": "具体的には",
+   "message": "製品ポートフォリオで見ると、最大はクラウド事業者経由のAPI(23,100百万ドル)、最速は中核法人APIとClaude Code(5年で7.0倍)",
+   "aim": "製品ごとの市場の伸び・強さ・売上の規模と、製品ライフサイクルの段階・現金を生むか食うかを1枚に重ねる",
+   "introduces": [
+    "c_portfolio",
+    "c_plc"
+   ],
+   "uses": [
+    "c_api",
+    "c_csp"
+   ],
+   "hero": "L.bubbleMatrix(縦 = 製品の売上の伸び、横 = 相対シェア、円 = 売上、色 = 現金を生むか食うか)",
+   "key_number": "7.0倍",
+   "reader_belief": "Anthropicは1つのAPIを売る会社で、製品の違いは重要でない",
+   "shift": "5つの製品群で段階が違う。規模の柱は販路をクラウド事業者に頼るAPIで、伸びの柱は直販の法人APIとClaude Code(5年で7.0倍)"
+  },
+  {
+   "id": "s08",
+   "chapter": 3,
+   "role": "body",
+   "kind": "pl",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K1"
+   ],
+   "connector": "では",
+   "message": "9か月の売上33,242百万ドルのうち、見かけの粗利率は85.5%だが、計算資源とクラウド事業者の手数料を引いた実質の粗利率は70.2%",
+   "aim": "損益の流れと、見かけと実質の粗利の差がどこで生まれるかを示す",
+   "introduces": [
+    "c_pl",
+    "c_gm_apparent",
+    "c_gm_real"
+   ],
+   "uses": [
+    "c_csp",
+    "c_portfolio"
+   ],
+   "hero": "9か月の損益のサンキー図(本文幅の7割)"
+  },
+  {
+   "id": "s09",
+   "chapter": 3,
+   "role": "body",
+   "kind": "cash",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K2"
+   ],
+   "connector": "しかし",
+   "message": "営業CFは9か月で+6,569百万ドルと黒字に転じたが、計算資源の支払い義務9,009億ドルが売上より先に積み上がる、投資が先行する事業",
+   "aim": "どこで現金を生み、どこへ投じるか、現金が利益より先に出るか入るかを示す",
+   "introduces": [
+    "c_ocf",
+    "c_obligation",
+    "c_cash_timing"
+   ],
+   "uses": [
+    "c_portfolio",
+    "c_gm_real",
+    "c_plc"
+   ],
+   "hero": "左 = 製品群ごとの現金の創出と消費、右 = 投下先(計算資源・研究開発・販路)、下 = 支払い義務の時間軸",
+   "key_number": "9,009億ドル",
+   "reader_belief": "営業CFが黒字になったので、現金の心配はなくなった",
+   "shift": "黒字の営業CF(9か月+6,569百万ドル)に対し、計算資源の支払い義務は自己資本の8.11倍。需要が鈍ると義務だけが残る投資先行型"
+  },
+  {
+   "id": "s10",
+   "chapter": 3,
+   "role": "body",
+   "kind": "bs",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K2"
+   ],
+   "connector": "その結果",
+   "message": "Q3末の自己資本は−1,499億ドルの債務超過だが、Amazonの転換社債を資本に組み替えると2,219億ドル(1株12.32ドル)に転じる",
+   "aim": "何に資本を寝かせ、誰の資金で賄っているかを示す",
+   "introduces": [
+    "c_equity"
+   ],
+   "uses": [
+    "c_obligation"
+   ],
+   "hero": "貸借対照表の積み上げ(Q3実績 → IPO後の一体の姿)"
+  },
+  {
+   "id": "s11",
+   "chapter": 3,
+   "role": "body",
+   "kind": "moat",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K1"
+   ],
+   "connector": "では",
+   "compares": true,
+   "message": "法人向けAPIのシェアは40%で首位(OpenAI 27%)だが、売上の74%を年10万ドル以上使う11,900社に頼る",
+   "aim": "なぜ奪われにくいかと、顧客の偏りという弱さを同じ1枚で示す",
+   "introduces": [
+    "c_share",
+    "c_concentration"
+   ],
+   "uses": [
+    "c_api",
+    "c_portfolio"
+   ],
+   "hero": "シェアの横棒と顧客の集中の帯"
+  },
+  {
+   "id": "s12",
+   "chapter": 4,
+   "role": "body",
+   "kind": "company_plan",
+   "weight": "A",
+   "form": "関係図",
+   "proves": [
+    "K3"
+   ],
+   "connector": "では",
+   "message": "会社の計画では2031年の売上を302,075百万ドル(5.4倍)に伸ばし、柱は直販APIの拡大と計算資源の自社確保",
+   "aim": "会社が目指す構造と、目標の年をなぜ2031年に置くかを示す",
+   "introduces": [
+    "c_plan",
+    "c_horizon"
+   ],
+   "uses": [
+    "c_portfolio",
+    "c_obligation"
+   ],
+   "hero": "会社の目標 → ピースの流れ図"
+  },
+  {
+   "id": "s13",
+   "chapter": 4,
+   "role": "body",
+   "kind": "plan_rating",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K3"
+   ],
+   "connector": "しかし",
+   "message": "計画のピースを確度×影響度で並べると、影響が最大の研究開発費率の低下(53.5%→27.1%)は確度が中にとどまる",
+   "aim": "会社の計画のどこまでを将来に入れてよいかを、同じ物差しで決める",
+   "introduces": [
+    "c_rd_ratio",
+    "c_certainty"
+   ],
+   "uses": [
+    "c_plan"
+   ],
+   "hero": "L.bubbleMatrix(横 = 確度、縦 = 1株価値への影響、円 = 影響の期待値)",
+   "key_number": "53.5%→27.1%",
+   "reader_belief": "会社の計画どおりに研究開発費の比率は下がる",
+   "shift": "研究開発費率の低下は計画で最大の価値の源だが、確度は中。+5pt高止まるだけで1株6.7ドル下がる"
+  },
+  {
+   "id": "s14",
+   "chapter": 4,
+   "role": "body",
+   "kind": "market_scenarios",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K3",
+    "K4"
+   ],
+   "connector": "また",
+   "message": "会社の計画の外では、AIの利用単価の下落(2年で70〜90%)が確度・影響とも最大で、実質粗利率を8pt押し下げうる",
+   "aim": "会社が書かない市場の脅威と機会を、計画と同じ物差しで並べる",
+   "introduces": [
+    "c_price_war"
+   ],
+   "uses": [
+    "c_gm_real",
+    "c_certainty"
+   ],
+   "hero": "L.bubbleMatrix(脅威は赤、機会は緑)"
+  },
+  {
+   "id": "s15",
+   "chapter": 4,
+   "role": "body",
+   "kind": "path",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K3"
+   ],
+   "connector": "その結果",
+   "message": "製品ごとの数量×単価で積み上げると、EPSは2027年1.08ドル→2030年3.18ドル、会社の計画どおりなら2031年3.85ドル",
+   "aim": "今の構造から将来の構造への道筋を、年度別のEPSまで通す",
+   "introduces": [
+    "c_eps",
+    "c_eps_path",
+    "c_eps_growth"
+   ],
+   "uses": [
+    "c_plan",
+    "c_rd_ratio",
+    "c_price_war",
+    "c_portfolio"
+   ],
+   "hero": "年度別の積み上げ(製品群の売上 → 費用率 → 営業利益 → 税・株数 → EPS)と前提の表",
+   "key_number": "1.08→3.18ドル",
+   "reader_belief": "5.4倍の売上計画がそのまま利益になる",
+   "shift": "利益は売上より遅れて立ち上がる。2027年EPSは1.08ドルで、成長率は年43.1%から2030年に19.6%へ落ちる"
+  },
+  {
+   "id": "s16",
+   "chapter": 4,
+   "role": "body",
+   "kind": "future_structure",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K3",
+    "K2"
+   ],
+   "connector": "その結果",
+   "message": "道筋どおりなら2031年は営業利益率29.8%・FCF 75,839百万ドルで、最も変わるのはCF。支払い義務の91.8%を消化し、現金を生む側に移る",
+   "aim": "将来の財務のうち最も変わるもの(CF)を、現在と同じ型で並べて示す",
+   "introduces": [
+    "c_future_fcf"
+   ],
+   "uses": [
+    "c_eps_path",
+    "c_obligation",
+    "c_ocf"
+   ],
+   "hero": "現在と2031年のCFの流れ図を並べる"
+  },
+  {
+   "id": "s17",
+   "chapter": 5,
+   "role": "body",
+   "kind": "risk_matrix",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K4"
+   ],
+   "connector": "しかし",
+   "message": "期待損失の最大は需要の減速で計算資源の義務が遊休になること(確率20%・理論株価−93%)。次が実質粗利率の8pt低下(確率45%・−22%)",
+   "aim": "リスクを起きる確率×影響度で並べ、監視の順番を決める",
+   "introduces": [
+    "c_risks",
+    "c_expected_loss"
+   ],
+   "uses": [
+    "c_gm_real",
+    "c_rd_ratio",
+    "c_eps_path",
+    "c_concentration"
+   ],
+   "hero": "L.bubbleMatrix(横 = 5年以内の確率、縦 = 理論株価の下落、円 = 期待損失)",
+   "key_number": "確率20%・−93%",
+   "reader_belief": "最大のリスクは、感応度1位の粗利率の低下だ",
+   "shift": "確率を掛けると、需要が鈍ったときに支払い義務だけが残る筋(期待損失18.6)が粗利率(9.9)の約2倍。感応度の順位と期待損失の順位は違う"
+  },
+  {
+   "id": "s18",
+   "chapter": 5,
+   "role": "body",
+   "kind": "rebuttals",
+   "weight": "A",
+   "form": "表",
+   "proves": [
+    "K4"
+   ],
+   "connector": "では",
+   "message": "弱気の反論7件を検証し、クラウド手数料の高止まりと統治による資本コストの上乗せの2件を正しいとして評価に入れた",
+   "aim": "結論を壊しに行った跡と、評価への反映を示す",
+   "introduces": [
+    "c_rebuttal"
+   ],
+   "uses": [
+    "c_risks",
+    "c_csp"
+   ],
+   "hero": "反論・検証したデータ・判定・評価への反映の表"
+  },
+  {
+   "id": "s19",
+   "chapter": 6,
+   "role": "body",
+   "kind": "market_implied",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K5"
+   ],
+   "connector": "では",
+   "message": "IPO価格78ドルはPER72倍。この値段に見合うには、2章のEPSが年43.1%で伸び続ける計画の満額実現が要る",
+   "aim": "今の株価が前提にしている成長を、2章のEPSと同じ定義で逆算する",
+   "introduces": [
+    "c_per",
+    "c_peg",
+    "c_implied_growth"
+   ],
+   "uses": [
+    "c_eps",
+    "c_eps_growth"
+   ],
+   "hero": "今の株価 → PER → その PER に要る成長率 を、2章の成長率と並べた図",
+   "key_number": "PER72倍",
+   "reader_belief": "AIの首位企業なのでPERが高くても当然",
+   "shift": "78ドルは計画の満額実現(会社の最善の筋で77.9ドル相当)を前提にした値段で、リスクの分が値段に入っていない"
+  },
+  {
+   "id": "s20",
+   "chapter": 6,
+   "role": "body",
+   "kind": "peers",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K5"
+   ],
+   "connector": "具体的には",
+   "message": "成長に対する値段(PEG)はServiceNow 0.92倍・S&P500 0.72倍で、78ドルの1.67倍は成長の質が高い同業の約1.8倍",
+   "aim": "比較対象と物差しを示したうえで、今の値段を同業と比べる",
+   "uses": [
+    "c_peg",
+    "c_per",
+    "c_eps_growth"
+   ],
+   "introduces": [
+    "c_peers"
+   ],
+   "hero": "同業のPEGの横棒(比較対象ごとに何の会社か・なぜ比べるかを1行)"
+  },
+  {
+   "id": "s21",
+   "chapter": 7,
+   "role": "body",
+   "kind": "peg_check",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K5"
+   ],
+   "connector": "では",
+   "message": "2章のEPS成長率と3章のリスクを入れると78ドルのPEGは1.67倍で、構造評価Bから出る許容PEG1.242倍を上回る",
+   "aim": "1〜4章で作った数字だけで、今の値段が妥当かをPEGで判定する",
+   "introduces": [
+    "c_structure_grade",
+    "c_peg_allow"
+   ],
+   "uses": [
+    "c_eps_growth",
+    "c_risks",
+    "c_per",
+    "c_peg"
+   ],
+   "hero": "流れ図: EPS(2章)→ リスクの反映(3章)→ 成長率 g → 今の PER(4章)÷ g = 今のPEG → 許容PEGと比較",
+   "key_number": "1.67倍 > 1.242倍",
+   "reader_belief": "成長率が高いので、PERが高くても割安かもしれない",
+   "shift": "成長率で割ってもPEG1.67倍。構造評価Bで許される1.242倍を約35%上回る"
+  },
+  {
+   "id": "s22",
+   "chapter": 7,
+   "role": "body",
+   "kind": "fair_value",
+   "weight": "S",
+   "form": "図",
+   "proves": [
+    "K5"
+   ],
+   "connector": "その結果",
+   "message": "許容PEGで年度別に評価した適正株価は51.7ドルで、78ドルとの差26.3ドルは成長がすべて実現する前提の分",
+   "aim": "適正株価の導出と、今の株価との差を段に分けた価値の橋を示す",
+   "introduces": [
+    "c_fair",
+    "c_bridge"
+   ],
+   "uses": [
+    "c_eps_path",
+    "c_peg_allow",
+    "c_per"
+   ],
+   "hero": "年度別の表(EPS・g・許容PEG・妥当PER・適正株価)と価値の橋(段ごとに根拠のページ番号)",
+   "key_number": "51.7ドル",
+   "reader_belief": "IPOの仮条件は引受会社が決めた妥当な値段",
+   "shift": "適正株価51.7ドルに対し、78ドルは成長の満額実現を先に払う値段。差26.3ドルを埋めるのは2章の確度中のピース"
+  },
+  {
+   "id": "s23",
+   "chapter": 7,
+   "role": "body",
+   "kind": "conditions",
+   "weight": "A",
+   "form": "表",
+   "proves": [
+    "K5",
+    "K1"
+   ],
+   "connector": "なぜなら",
+   "message": "13条件では3つがC(5年EPS成長でのPEG・低いPEGの理由・無形資産の陳腐化)で、構造評価はB(平均3.31点)",
+   "aim": "長期保有の条件に当てはまるかを、1〜4章の根拠のページ番号つきで照合する",
+   "uses": [
+    "c_share",
+    "c_ocf",
+    "c_rd_ratio",
+    "c_peg",
+    "c_structure_grade",
+    "c_obligation",
+    "c_usage"
+   ],
+   "hero": "13条件の一覧(現在・5年後・確率・決め手・根拠のページ)"
+  },
+  {
+   "id": "s24",
+   "chapter": 7,
+   "role": "body",
+   "kind": "sensitivity",
+   "weight": "A",
+   "form": "図",
+   "proves": [
+    "K4",
+    "K5"
+   ],
+   "connector": "では",
+   "message": "ありうる振れ幅で適正株価を最も動かすのは実質粗利率(8pt低下で−11.3ドル)。期待損失の1位の需要の減速とは別に監視する",
+   "aim": "判別のKPIを1本に絞る根拠を示す",
+   "uses": [
+    "c_gm_real",
+    "c_rd_ratio",
+    "c_fair",
+    "c_risks"
+   ],
+   "hero": "トルネード図(1株あたりのドル)"
+  },
+  {
+   "id": "s25",
+   "chapter": 7,
+   "role": "body",
+   "kind": "action",
+   "weight": "A",
+   "form": "判別表",
+   "proves": [
+    "K5"
+   ],
+   "connector": "だから",
+   "message": "IPOでは買わず、46.3ドル以下への調整か、2027年8月の決算で実質粗利率70%以上・研究開発費率40%未満を確かめてから買う",
+   "aim": "価格帯と、続行・見直しの線と確認日を示す",
+   "introduces": [
+    "c_entry"
+   ],
+   "uses": [
+    "c_fair",
+    "c_gm_real",
+    "c_rd_ratio"
+   ],
+   "hero": "判別表(確認日・続行の線・見直しと撤回の線)と価格帯"
+  }
+ ],
+ "concepts": [
+  {
+   "id": "c_company",
+   "label": "Anthropicの一枚紹介",
+   "type": "fact"
+  },
+  {
+   "id": "c_api",
+   "label": "API(モデルの貸し出し)",
+   "type": "term"
+  },
+  {
+   "id": "c_arr",
+   "label": "年換算売上(ARR)",
+   "type": "term"
+  },
+  {
+   "id": "c_usage",
+   "label": "従量課金",
+   "type": "term"
+  },
+  {
+   "id": "c_csp",
+   "label": "クラウド事業者(CSP)",
+   "type": "term"
+  },
+  {
+   "id": "c_chain",
+   "label": "業界の流れ",
+   "type": "fact"
+  },
+  {
+   "id": "c_portfolio",
+   "label": "製品ポートフォリオ",
+   "type": "fact"
+  },
+  {
+   "id": "c_plc",
+   "label": "製品ライフサイクル",
+   "type": "term"
+  },
+  {
+   "id": "c_pl",
+   "label": "9か月の損益",
+   "type": "fact"
+  },
+  {
+   "id": "c_gm_apparent",
+   "label": "見かけの粗利率",
+   "type": "fact"
+  },
+  {
+   "id": "c_gm_real",
+   "label": "実質の粗利率",
+   "type": "fact"
+  },
+  {
+   "id": "c_ocf",
+   "label": "営業CF",
+   "type": "fact"
+  },
+  {
+   "id": "c_obligation",
+   "label": "計算資源の支払い義務",
+   "type": "fact"
+  },
+  {
+   "id": "c_cash_timing",
+   "label": "投資先行型の現金の流れ",
+   "type": "fact"
+  },
+  {
+   "id": "c_equity",
+   "label": "自己資本",
+   "type": "fact"
+  },
+  {
+   "id": "c_share",
+   "label": "法人APIのシェア",
+   "type": "fact"
+  },
+  {
+   "id": "c_concentration",
+   "label": "大口顧客への集中",
+   "type": "fact"
+  },
+  {
+   "id": "c_plan",
+   "label": "会社の計画",
+   "type": "fact"
+  },
+  {
+   "id": "c_horizon",
+   "label": "目標の年(2031年)",
+   "type": "fact"
+  },
+  {
+   "id": "c_rd_ratio",
+   "label": "研究開発費率",
+   "type": "fact"
+  },
+  {
+   "id": "c_certainty",
+   "label": "確度の物差し",
+   "type": "term"
+  },
+  {
+   "id": "c_price_war",
+   "label": "利用単価の下落",
+   "type": "fact"
+  },
+  {
+   "id": "c_eps",
+   "label": "EPS(1株あたり利益)",
+   "type": "term"
+  },
+  {
+   "id": "c_eps_path",
+   "label": "年度別のEPS",
+   "type": "fact"
+  },
+  {
+   "id": "c_eps_growth",
+   "label": "EPSの成長率",
+   "type": "fact"
+  },
+  {
+   "id": "c_future_fcf",
+   "label": "2031年のFCF",
+   "type": "fact"
+  },
+  {
+   "id": "c_risks",
+   "label": "リスクの一覧(確率×影響)",
+   "type": "fact"
+  },
+  {
+   "id": "c_expected_loss",
+   "label": "期待損失",
+   "type": "term"
+  },
+  {
+   "id": "c_rebuttal",
+   "label": "弱気の反論と判定",
+   "type": "fact"
+  },
+  {
+   "id": "c_per",
+   "label": "今のPER",
+   "type": "fact"
+  },
+  {
+   "id": "c_peg",
+   "label": "PEG",
+   "type": "term"
+  },
+  {
+   "id": "c_implied_growth",
+   "label": "株価が前提にする成長率",
+   "type": "fact"
+  },
+  {
+   "id": "c_peers",
+   "label": "同業のPEG",
+   "type": "fact"
+  },
+  {
+   "id": "c_structure_grade",
+   "label": "構造評価(13条件)",
+   "type": "tool"
+  },
+  {
+   "id": "c_peg_allow",
+   "label": "許容PEG",
+   "type": "tool"
+  },
+  {
+   "id": "c_fair",
+   "label": "適正株価",
+   "type": "tool"
+  },
+  {
+   "id": "c_bridge",
+   "label": "価値の橋",
+   "type": "tool"
+  },
+  {
+   "id": "c_entry",
+   "label": "買う価格帯",
+   "type": "tool"
+  }
+ ],
+ "glossary": [
+  {
+   "term": "API",
+   "plain": "ソフトから他のソフトの機能を呼び出す窓口。ここではAIモデルの貸し出し",
+   "why": "売上の8割がAPIの従量課金のため",
+   "first_page": "s04"
+  },
+  {
+   "term": "ARR",
+   "plain": "直近の月の売上を12倍した年換算売上",
+   "why": "急成長企業の今の規模を測るため",
+   "first_page": "s04"
+  },
+  {
+   "term": "従量課金",
+   "plain": "使った量(トークン)に応じて払う料金",
+   "why": "売上が顧客の利用量で伸び縮みする仕組みを見るため",
+   "first_page": "s04"
+  },
+  {
+   "term": "CSP",
+   "plain": "AWS・Google Cloud・Azureなどのクラウド事業者",
+   "why": "売上の44%がCSP経由で、手数料が利益を削るため",
+   "first_page": "s05"
+  },
+  {
+   "term": "トークン",
+   "plain": "AIが文章を処理する単位(単語の断片)",
+   "why": "利用単価(1トークンあたりの値段)の下落がリスクの1位のため",
+   "first_page": "s05"
+  },
+  {
+   "term": "製品ポートフォリオ",
+   "plain": "製品を市場の伸び×自社の強さで並べた図",
+   "why": "どの製品が現金を生み、どこへ投じるかを見るため",
+   "first_page": "s07"
+  },
+  {
+   "term": "PLC",
+   "plain": "製品ライフサイクル。導入・成長・成熟・衰退の段階",
+   "why": "段階で現金を生むか食うかが変わるため",
+   "first_page": "s07"
+  },
+  {
+   "term": "実質の粗利率",
+   "plain": "売上から計算資源とCSPの手数料を引いた残りの比率",
+   "why": "見かけの粗利率85.5%では手元に残る分を見誤るため",
+   "first_page": "s08"
+  },
+  {
+   "term": "営業CF",
+   "plain": "本業で実際に入った現金から出た現金を引いたもの",
+   "why": "利益と現金の時期のずれを見るため",
+   "first_page": "s09"
+  },
+  {
+   "term": "FCF",
+   "plain": "営業CFから設備などの投資を引いた、自由に使える現金",
+   "why": "将来の構造で最も変わるのがFCFのため",
+   "first_page": "s09"
+  },
+  {
+   "term": "研究開発費率",
+   "plain": "研究開発費 ÷ 売上。AIモデルの学習費を含む",
+   "why": "計画で最大の価値の源のため",
+   "first_page": "s13"
+  },
+  {
+   "term": "EPS",
+   "plain": "1株あたりの純利益",
+   "why": "値段(PER・PEG)を測る物差しの分子のため",
+   "first_page": "s15"
+  },
+  {
+   "term": "PER",
+   "plain": "株価 ÷ EPS。利益の何年分の値段か",
+   "why": "今の株価が前提にする成長を逆算するため",
+   "first_page": "s19"
+  },
+  {
+   "term": "PEG",
+   "plain": "PER ÷ EPSの成長率(%)。1倍なら成長に見合う値段",
+   "why": "成長の速さに対して値段が高いかを見るため",
+   "first_page": "s19"
+  },
+  {
+   "term": "許容PEG",
+   "plain": "13条件の構造評価から決める、払ってよいPEGの上限",
+   "why": "今のPEGが妥当かを判定する基準のため",
+   "first_page": "s21"
+  },
+  {
+   "term": "IPO",
+   "plain": "新規株式公開。初めて株式を市場で売り出すこと",
+   "why": "判断の対象が公開価格のため",
+   "first_page": "s04"
+  }
+ ],
+ "benchmarks": [
+  {
+   "page": "s11",
+   "metric": "法人向けAPIのシェア",
+   "definition": "法人が使うAIモデルのAPI支出に占める割合(調査会社の推計)",
+   "purpose": "顧客が離れにくい強さがあるかを見る",
+   "why_axis": "売上の8割がAPIで、価値の芯の実質粗利率は首位の価格決定力に依存するため",
+   "peers": [
+    {
+     "name": "OpenAI",
+     "what": "ChatGPTとAPIを提供するAIモデル開発の最大手(非上場)",
+     "why_comparable": "同じ顧客(法人)に同じ製品(モデルのAPI)を売る直接の競合"
+    },
+    {
+     "name": "Google",
+     "what": "Geminiを提供し、自社クラウドで販売するAIモデル開発・クラウド事業者",
+     "why_comparable": "同じ法人APIの市場で競い、クラウドの販路も持つ競合"
+    }
+   ],
+   "rejected": [
+    {
+     "name": "Meta",
+     "why_not": "モデルを無償で公開しており、APIの売上で競っていない"
+    }
+   ]
+  },
+  {
+   "page": "s20",
+   "metric": "PEG(PER ÷ EPS成長率)",
+   "definition": "株価 ÷ 1株利益 を、今後3年のEPS成長率(%)で割った値",
+   "purpose": "成長の速さに対して値段が高いかを見る",
+   "why_axis": "価値の大半が2章の成長に依存し、成長率が違う会社はPERだけでは比べられないため",
+   "peers": [
+    {
+     "name": "ServiceNow",
+     "what": "企業向けの業務ソフトをサブスクリプションで売る会社",
+     "why_comparable": "法人顧客・継続課金・高い利益率で成長が続く、成長の質が高い会社の上限の目安"
+    },
+    {
+     "name": "S&P500",
+     "what": "米国の大型株500社の指数",
+     "why_comparable": "市場全体で成長に払われている値段の基準"
+    }
+   ],
+   "rejected": [
+    {
+     "name": "NVIDIA",
+     "why_not": "AIの需要は同じだが、半導体の販売で稼ぎ、費用と利益の仕組みが違う"
+    },
+    {
+     "name": "Snowflake・Datadog",
+     "why_not": "データ基盤のソフト会社で、モデルの学習費のような研究開発の仕組みを持たないため、研究開発費率の比較には使わない"
+    }
+   ]
+  }
+ ],
+ "dropped": [
+  {
+   "what": "旧版の4・5ページ(製品のカード4枚+帯3本、箱の中に数字3つの関係図)",
+   "why": "製品ポートフォリオの1枚とキャッシュの1枚に組み直した。1枚に主役1つ"
+  },
+  {
+   "what": "8状態の確率ツリーの詳細",
+   "why": "判断を変えない。期待値はリスクマトリクスと適正株価のページの脚注に1行"
+  },
+  {
+   "what": "希薄化と統治(PBC・LTBT)の単独ページ",
+   "why": "リスクマトリクスの1行と、13条件の条件5の根拠に吸収した"
+  }
+ ]
+}

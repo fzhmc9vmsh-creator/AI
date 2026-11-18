@@ -1,0 +1,96 @@
+{
+  "ticker": "TICKER",
+  "_how": "references/five-stage-analysis.md §2〜§4。将来の構造(会社の計画の確度 × 影響度・市場の脅威と機会・道筋・終点)、リスク(確率 × 影響度)、今の値段と比較の設計。検査: python3 scripts/gate.py outlook <作業フォルダ>",
+  "horizon": {
+    "year": "(将来の構造を描く年)",
+    "why": "(なぜその年か)"
+  },
+  "company_plan": {
+    "goal": "(会社の目標。数値と年)",
+    "source": "(出所: 中期計画・説明会)",
+    "pieces": [
+      {
+        "name": "(ピース)",
+        "driver": "(事業エンジンの変数: 数量・単価・能力・稼働率・費用率)",
+        "statement": "PL|CF|BS|VC|ROE",
+        "p": 0.0,
+        "certainty_basis": "(確度の根拠: 契約・完工・数字に出ているか・基準率)",
+        "impact_pct": 0.0,
+        "impact_basis": "(valuate.py の感応度の名前)",
+        "kpi": "(進捗を見る KPI)"
+      }
+    ]
+  },
+  "market_scenarios": [
+    {
+      "name": "(会社の計画の外で起きること)",
+      "type": "脅威|機会",
+      "mechanism": "(何が起き、どの変数が動くか)",
+      "statement": "PL|CF|BS|VC|ROE",
+      "p": 0.0,
+      "certainty_basis": "",
+      "impact_pct": 0.0,
+      "impact_basis": "",
+      "chosen": false,
+      "reason_not": "(選ばないときの理由)",
+      "future_note": "(選んだとき: 将来の構造のどこが変わるか)"
+    }
+  ],
+  "eps_lines": {
+    "company": "company",
+    "adjusted": "engine",
+    "scenario": "(選んだシナリオを入れた経路の名前。無ければ空)"
+  },
+  "future_structure": {
+    "most_changed": "PL|CF|BS|VC|ROE",
+    "why": "(なぜそれが最も変わるか)",
+    "now": "(今の姿の要点と数字)",
+    "future": "(目標の年の姿の要点と数字)"
+  },
+  "risks": [
+    {
+      "name": "(リスク)",
+      "cause": "(何が起き、どの数字が動くか)",
+      "p": 0.0,
+      "p_basis": "(基準率: 過去に何回中何回)",
+      "impact_pct": 0.0,
+      "impact_basis": "(感応度・節点の名前)",
+      "reflected_in": "tree|sensitivity|eps_path|未反映",
+      "reason": "(未反映の理由)",
+      "signal_kpi": "",
+      "threshold": "",
+      "check_date": "(YYYY-MM)"
+    }
+  ],
+  "market_valuation": {
+    "price_ref": "(どの株価か: valuation_input の prices の名前)",
+    "variant": [
+      {
+        "item": "",
+        "market": "(株価が前提にする数字)",
+        "mine": "(自分の見立て)"
+      }
+    ]
+  },
+  "benchmarks": [
+    {
+      "metric": "",
+      "definition": "",
+      "purpose": "(何を判断するための指標か)",
+      "why_axis": "(価値の芯に効くか)",
+      "peers": [
+        {
+          "name": "",
+          "what": "(何の会社か)",
+          "why_comparable": "(指標を動かす仕組みが同じか)"
+        }
+      ],
+      "rejected": [
+        {
+          "name": "",
+          "why_not": ""
+        }
+      ]
+    }
+  ]
+}

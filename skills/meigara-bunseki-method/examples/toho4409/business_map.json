@@ -1,0 +1,222 @@
+{
+  "legacy": true,
+  "_legacy_note": "第9版までの形式の手本。製品ポートフォリオ・現金の地図・業界・用語の書き方は examples/anthropic/business_map.json を見る",
+  "ticker": "4409",
+  "coverage_pct": 99,
+  "products": [
+    {
+      "name": "電子情報産業用の微細加工用樹脂",
+      "segment": "SC",
+      "use": "半導体のレジストの主成分(KrF・ArF・EUV)",
+      "position": "長期戦略テーマ(中核事業化)",
+      "strategic": true,
+      "move": "数量増",
+      "quote": "販売が計画どおり伸長"
+    },
+    {
+      "name": "プラスチック用添加剤(帯電防止剤)",
+      "segment": "界面活性剤",
+      "use": "樹脂・フィルム",
+      "position": "長期戦略テーマ",
+      "strategic": true,
+      "move": "数量増",
+      "quote": "帯電防止剤の販売増加"
+    },
+    {
+      "name": "樹脂エマルション",
+      "segment": "樹脂",
+      "use": "塗料・金属表面処理",
+      "position": "長期戦略テーマ",
+      "strategic": true,
+      "move": "数量増",
+      "quote": "塗料用等の販売が伸長"
+    },
+    {
+      "name": "香粧原料",
+      "segment": "界面活性剤",
+      "use": "洗浄剤・ヘアケア",
+      "position": "重要テーマ(ヘアケア用基剤)。一般洗浄剤は生産を縮小",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "ヘアケア用基剤の販売増加、一般洗浄剤もやや回復"
+    },
+    {
+      "name": "繊維助剤",
+      "segment": "界面活性剤",
+      "use": "繊維加工",
+      "position": "維持",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "海外向けを中心に販売が増加"
+    },
+    {
+      "name": "石油樹脂",
+      "segment": "樹脂",
+      "use": "道路舗装",
+      "position": "維持",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "道路舗装関連等の販売が伸長"
+    },
+    {
+      "name": "石油添加剤",
+      "segment": "化成品",
+      "use": "燃料・潤滑油",
+      "position": "採算是正(2026年3月期に改善)",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "国内外ともに販売が回復"
+    },
+    {
+      "name": "金属加工油剤",
+      "segment": "化成品",
+      "use": "切削・洗浄",
+      "position": "維持",
+      "strategic": false,
+      "move": "数量増",
+      "quote": "切削油剤等の販売が伸長"
+    },
+    {
+      "name": "土木建築用薬剤",
+      "segment": "界面活性剤",
+      "use": "コンクリート",
+      "position": "環境配慮型製品の開発",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "海外の数量が減少、国内がやや回復し売価も上昇"
+    },
+    {
+      "name": "農薬助剤",
+      "segment": "界面活性剤",
+      "use": "農薬",
+      "position": "維持",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "海外の数量が減少、国内の伸長と売価の上昇"
+    },
+    {
+      "name": "紙パルプ用薬剤",
+      "segment": "界面活性剤",
+      "use": "製紙",
+      "position": "維持",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "数量が減少、売価の上昇で増収"
+    },
+    {
+      "name": "合成樹脂",
+      "segment": "樹脂",
+      "use": "トナーインキ・土木",
+      "position": "維持",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "数量が減少、売価の上昇で増収"
+    },
+    {
+      "name": "アクリレート",
+      "segment": "樹脂",
+      "use": "樹脂原料",
+      "position": "維持",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "数量が減少、売価の上昇で増収"
+    },
+    {
+      "name": "ロジン系乳化重合剤",
+      "segment": "化成品",
+      "use": "合成ゴム・ABS樹脂",
+      "position": "維持",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "数量が減少、売価の上昇で増収"
+    },
+    {
+      "name": "溶剤",
+      "segment": "SC",
+      "use": "医薬品・ブレーキ液基剤",
+      "position": "廃溶剤の再利用で原価低減",
+      "strategic": false,
+      "move": "値上げで補う",
+      "quote": "ブレーキ液基剤等の数量が減少、売価の上昇で増収"
+    }
+  ],
+  "value_chains": [
+    {
+      "name": "成長分野: 電子材料(レジスト用樹脂)",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "モノマーのメーカー",
+          "pricing": "相対。原料高は価格転嫁に時差",
+          "why_chosen": "純度と安定供給"
+        },
+        {
+          "stage": "自社",
+          "who": "東邦化学 千葉工場(一期120t+二期90t)",
+          "pricing": "顧客ごとの相対。認定品で値崩れしにくい",
+          "why_chosen": "分子量分布の作り分け(狭分散)、金属不純物の管理、増設の要請に応える能力"
+        },
+        {
+          "stage": "顧客",
+          "who": "レジストのメーカー(取引先の名は非開示。東京応化が株式を4.17%保有)",
+          "pricing": "レジストは半導体メーカーとの相対",
+          "why_chosen": "認定後は樹脂を替えにくい(再認定に時間と費用)"
+        },
+        {
+          "stage": "最終需要",
+          "who": "半導体メーカー(3D NAND・ロジック)",
+          "pricing": "ウェハの生産量に連動",
+          "why_chosen": "歩留まりに直結する消耗品"
+        }
+      ],
+      "profit_pool": "レジストのメーカー(東京応化の営業利益率は約20%)が最も厚い。樹脂は認定で守られた中間の位置",
+      "power_shift": "東京応化が東邦化学株を428,100株→878,100株に買い増し。競合(三菱ケミカル・大阪有機)も増設",
+      "demand_growth": "樹脂の市場は年5.8〜6.5%、KrFレジストは年8.7%(調査会社2社)。東京応化のKrFは2026年上期+30%",
+      "outside_evidence": [
+        "tok.krf_h1_yoy",
+        "mkt.resist_cagr",
+        "mkt.krf_cagr",
+        "comp.ooc_capex",
+        "hold.tok"
+      ]
+    },
+    {
+      "name": "現金を稼ぐ分野: 界面活性剤・樹脂・化成品",
+      "stages": [
+        {
+          "stage": "原料",
+          "who": "石油化学メーカー(酸化エチレン・高級アルコール、ナフサ連動)",
+          "pricing": "ナフサ基準価格に連動。2026年春に酸化エチレンが150円/kg以上の値上げ",
+          "why_chosen": "国内は調達先が限られる。上海は中国の安価な原料"
+        },
+        {
+          "stage": "自社",
+          "who": "東邦化学 追浜・千葉・鹿島・四日市・上海",
+          "pricing": "品目ごとの相対。2026年は原料高の90%を価格と構成で取り返した",
+          "why_chosen": "顧客の処方に合わせた多品種の作り分け"
+        },
+        {
+          "stage": "顧客",
+          "who": "化粧品・洗剤・樹脂加工・建設・農薬・製紙などのメーカー",
+          "pricing": "顧客の製品価格は最終市場で決まる",
+          "why_chosen": "処方に組み込まれると替えにくいが、汎用品は代替がある"
+        },
+        {
+          "stage": "最終需要",
+          "who": "生活用品・建設・農業・自動車",
+          "pricing": "景気と市況に連動",
+          "why_chosen": "総量は消えない基礎材"
+        }
+      ],
+      "profit_pool": "同業(第一工業製薬・三洋化成)の粗利率は平均27.9%で、東邦化学は16%台。品目が多く1品目あたりの規模が小さい",
+      "power_shift": "低採算品の見合わせと上海・鹿島への移管で、値決めの主導権を取り戻しつつある",
+      "demand_growth": "国内の界面活性剤の市場は約3,050億円で横ばい(年0〜2%)。伸びは構成と海外",
+      "outside_evidence": [
+        "mkt.naphtha_2026q2",
+        "mkt.eo_hike_nsk",
+        "peer2.gm",
+        "peer.dks.opm_h1_27"
+      ]
+    }
+  ]
+}

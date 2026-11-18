@@ -1,0 +1,33 @@
+// 1 枚だけ作って確認する: node one.js 17(または 08b)→ tmp/s17.pptx と tmp/s17.jpg、図の重なりと監査結果を表示
+const L = require('./lib.js');
+const { execSync } = require('child_process');
+const arg = String(process.argv[2]);
+const id = 's' + (/^\d$/.test(arg) ? '0' + arg : arg);
+const build = require(`./slides/${id}.js`);
+const pres = L.newDeck();
+L.setCtx(L.MT.META[id] ? id : null);
+build(pres, L);
+L.warnings.forEach(w => console.log('図:', w));
+console.log(`図の重なり ${L.warnings.length} 件`);
+L.notices.forEach(w => console.log('確認:', w));
+const out = `tmp/${id}.pptx`;
+L.save(pres, out).then(() => {
+  try { console.log(execSync(`python3 audit_deck.py ${out}`).toString()); } catch (e) { console.log(e.stdout.toString()); }
+  // 文言の検査(手で打った数字・版の言葉)。lint_deck.py が無い古い案件では飛ばす
+  if (require('fs').existsSync('lint_deck.py')) {
+    try { console.log(execSync(`python3 lint_deck.py src . --only ${id}`).toString()); } catch (e) { console.log(e.stdout.toString()); }
+  }
+  // 画像化: pptx スキルの soffice.py(サンドボックス向けの起動)があれば使い、なければ soffice を直接呼ぶ
+  // 探す順: 環境変数 SOFFICE_PY → claude.ai の pptx スキル → ホームの同期済みスキル。無ければ soffice を直接呼ぶ
+  const fs = require('fs'), path = require('path'), os = require('os');
+  const glob = (d) => { try { return fs.readdirSync(d).map(x => path.join(d, x, 'pptx/scripts/office/soffice.py')).find(f => fs.existsSync(f)); } catch (e) { return null; } };
+  const cands = [process.env.SOFFICE_PY, '/mnt/skills/public/pptx/scripts/office/soffice.py'].filter(Boolean);
+  const sp = cands.find(f => fs.existsSync(f)) || glob(path.join(os.homedir(), '.claude', 'skills', 'synced'));
+  const conv = sp ? `python3 ${sp}` : 'soffice';
+  try {
+    execSync(`cd tmp && ${conv} --headless --convert-to pdf ${id}.pptx >/dev/null 2>&1 && pdftoppm -jpeg -r ${process.env.DPI || 80} -singlefile ${id}.pdf ${id}`, { stdio: 'ignore' });
+    console.log('image:', require('path').resolve(`tmp/${id}.jpg`));
+  } catch (e) {
+    console.log('image: skipped (soffice/pdftoppm not available)');
+  }
+});

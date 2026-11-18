@@ -1,0 +1,181 @@
+{
+ "_how": "references/story-design.md(§3b 初見の読み手)と、投資資料は references/stock-analysis.md §3(5 工程)。狙い → 問いの順 → 証明の対応 → 重み → 説明してから使う順 を埋めてから実装する。検査: python3 scripts/check_storyline.py storyline.json。投資資料の手本は examples/storyline_stock_v3_anthropic.json",
+ "deck_type": "stock|general",
+ "goal": {
+  "reader": "(誰が読むか。投資資料は「その会社も業界の略語も知らない賢い人」を前提にする)",
+  "decision": "(読後に何を決める・何をするか)",
+  "claim": "(最終主張。数字の入った完全文)"
+ },
+ "unit": "百万円",
+ "horizon": {
+  "year": "(将来の構造を描く年。投資資料)",
+  "why": "(なぜその年か: 会社の計画年・設備の完工・契約の満期など)"
+ },
+ "key_messages": [
+  {
+   "id": "K1",
+   "text": "(キーメッセージ。3〜6 本)"
+  }
+ ],
+ "chapters": [
+  {
+   "no": 1,
+   "name": "結論",
+   "stage": "opening",
+   "question": "(読み手の問い)",
+   "answer": "(この資料の答え。一文)",
+   "depends_on": []
+  },
+  {
+   "no": 2,
+   "name": "会社と業界の前提",
+   "stage": "intro",
+   "question": "(何者で、業界のどこで稼ぐか)",
+   "answer": "(一文)",
+   "depends_on": []
+  },
+  {
+   "no": 3,
+   "name": "現在の構造",
+   "stage": "current",
+   "question": "(どの製品で稼ぎ、現金はどこで生まれどこへ投じられるか)",
+   "answer": "(一文。キャッシュを必ず入れる)",
+   "depends_on": [
+    2
+   ]
+  },
+  {
+   "no": 4,
+   "name": "将来の構造",
+   "stage": "future",
+   "question": "(何年にどんな構造になり、会社の計画はどこまで確かか)",
+   "answer": "(一文)",
+   "depends_on": [
+    3
+   ]
+  },
+  {
+   "no": 5,
+   "name": "リスク",
+   "stage": "risk",
+   "question": "(何が起きると価値が崩れ、どれくらい起きやすいか)",
+   "answer": "(一文)",
+   "depends_on": [
+    3,
+    4
+   ]
+  },
+  {
+   "no": 6,
+   "name": "今の値段",
+   "stage": "valuation",
+   "question": "(今の株価は何を前提にしているか)",
+   "answer": "(一文)",
+   "depends_on": [
+    4
+   ]
+  },
+  {
+   "no": 7,
+   "name": "判定と行動",
+   "stage": "verdict",
+   "question": "(今の株価は妥当か。何を確かめれば買うか)",
+   "answer": "(一文)",
+   "depends_on": [
+    4,
+    5,
+    6
+   ]
+  }
+ ],
+ "pages": [
+  {
+   "id": "s01",
+   "chapter": 1,
+   "role": "cover",
+   "message": "表紙"
+  },
+  {
+   "id": "s02",
+   "chapter": 1,
+   "role": "summary",
+   "message": "(最終主張。専門用語・略語・社内の記号を使わない)",
+   "aim": "最終主張とキーメッセージを 1 枚で示す"
+  },
+  {
+   "id": "s03",
+   "chapter": 1,
+   "role": "agenda",
+   "message": "(読む順と、その理由)",
+   "aim": "章の問い・答え・決め手の数字・ページを示す"
+  },
+  {
+   "id": "s04",
+   "chapter": 2,
+   "role": "body",
+   "kind": "company_profile|industry_map|portfolio|pl|cash|bs|moat|roe|company_plan|plan_rating|market_scenarios|path|future_structure|risk_matrix|risk_detail|rebuttals|market_implied|peers|peg_check|fair_value|conditions|sensitivity|action",
+   "message": "(主張を含む完全文。数字は 3 つまで)",
+   "aim": "(このページは何を証明するか)",
+   "proves": [
+    "K1"
+   ],
+   "weight": "S|A|B",
+   "form": "図|関係図|ロードマップ|判別表|表",
+   "hero": "(主役の図)",
+   "key_number": "(タイトルに入れる決め手の数字)",
+   "connector": "だから|なぜなら|では|しかし|具体的には|その結果",
+   "introduces": [
+    "c_example"
+   ],
+   "uses": [],
+   "compares": false
+  }
+ ],
+ "concepts": [
+  {
+   "id": "c_example",
+   "label": "(このページで初めて説明する概念・数字)",
+   "type": "fact|term|tool"
+  }
+ ],
+ "glossary": [
+  {
+   "term": "(用語・略語)",
+   "plain": "(平易な意味。L.termNotes にそのまま出す)",
+   "why": "(この資料でなぜ要るか)",
+   "first_page": "s04"
+  }
+ ],
+ "allow_terms": [
+  "(説明不要の固有名詞の略語。例: AWS)"
+ ],
+ "benchmarks": [
+  {
+   "page": "(比較のページ id)",
+   "metric": "(指標)",
+   "definition": "(定義)",
+   "purpose": "(何を判断するための指標か)",
+   "why_axis": "(なぜその軸か。価値の芯に効くか)",
+   "peers": [
+    {
+     "name": "(比較対象)",
+     "what": "(何の会社か)",
+     "why_comparable": "(指標を動かす仕組みが同じか)"
+    }
+   ],
+   "rejected": [
+    {
+     "name": "(外した候補)",
+     "why_not": "(外した理由)"
+    }
+   ]
+  }
+ ],
+ "dropped": [
+  {
+   "what": "(載せなかったもの)",
+   "why": "(理由)"
+  }
+ ],
+ "_how_s": "重み S のページは reader_belief と shift が必須。投資資料は insight に分析の示唆の id を書き、check_storyline.py --analysis で照合する。type: fact は事実・数字、term は用語、tool は判定の道具(PEG・適正株価など。判定の章で初めて説明してよいのは tool だけ)"
+}
