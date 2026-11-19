@@ -37,7 +37,7 @@ module.exports = function build(pres, L) {
   });
   L.termNotes(s, [
     { term: 'CSP', plain: 'AWS・Google Cloud・Azureなどのクラウド事業者', why: '売上の44%がCSP経由で、手数料が利益を削るため' },
-    { term: 'トークン', plain: 'AIが文章を処理する単位(単語の断片)', why: '利用単価(1トークンあたりの値段)の下落がリスクの1位のため' },
+    { term: 'トークン', plain: 'AIが文章を処理する単位(単語の断片)', why: 'トークンあたりの値段の下落が大きなリスクのため' },
   ], { x: 0.5, y: 6.3, w: 12.33 });
   return s;
 };

@@ -9,7 +9,7 @@ module.exports = function build(pres, L) {
     lanes: [{ label: '支える要素', c0: 0, c1: 0 }, { label: '2031 年の目標', c0: 1, c1: 1, self: true }],
     nodes: [
       { id: 'dir', c: 0, r: 0, kind: 'unit', label: '直販の比率', sub: '56% → 61%' },
-      { id: 'rd', c: 0, r: 1, kind: 'unit', label: '研究開発費の比率', sub: '53.5% → 27.1%' },
+      { id: 'rd', c: 0, r: 1, kind: 'unit', label: '研究開発費の比率', sub: '2026年度 53.5% → 27.1%' },
       { id: 'cmp', c: 0, r: 2, kind: 'unit', label: '計算資源の自社確保', sub: '支払い義務の 91.8% を消化' },
       { id: 'rev', c: 0, r: 3, kind: 'unit', label: '5 つの製品群の売上', sub: '5.4 倍' },
       { id: 'goal', c: 1, r: 0, rs: 4, kind: 'key', label: '\n\n\n\n売上 302,075 百万ドル', sub: '(5.4 倍)\n\n営業利益率 29.8%' },

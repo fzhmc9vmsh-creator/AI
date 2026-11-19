@@ -24,7 +24,7 @@ module.exports = function build(pres, L) {
   }, { x: 0.5, y: 2.12, w: 7.9, h: 4.05, name: 'pf' });
   L.lookBox(s, [
     { n: 1, text: '規模の柱はクラウド事業者経由のAPIだが、\n手数料で現金の残りが減る' },
-    { n: 2, text: '伸びの柱は直販とClaude Code(5年で7.0倍)。\n直販は手数料が無い' },
+    { n: 2, text: '伸びの柱は中核の法人APIとClaude Code(5年で7.0倍)。\n直販(5.9倍)は手数料が無い' },
     { n: 3, text: '個人向けは無料枠と計算資源で現金を食う入口' },
   ], { x: 8.65, y: 1.98, w: 4.18, h: 2.75 });
   s.addText([

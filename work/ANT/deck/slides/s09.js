@@ -30,7 +30,7 @@ module.exports = function build(pres, L) {
   });
   L.takeaway(s, 0.5, 4.72, 12.33, 0.42, '売上より先に、何年分もの計算資源の支払いが確定している → 投資が先行する事業', { fontSize: 12 });
   L.kpiTiles(s, [
-    { value: F('oblig.x'), label: '支払い義務 ÷ 自己資本' },
+    { value: F('oblig.x'), label: '支払い義務 ÷ 公開後の自己資本' },
     { value: F('ocf.9m'), label: '営業CF(9か月、百万ドル)' },
     { value: F('rpo'), label: '契約残高(RPO、百万ドル)' },
   ], { y: 5.18, h: 0.9, compact: true });

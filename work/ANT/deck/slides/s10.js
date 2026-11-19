@@ -27,7 +27,7 @@ module.exports = function build(pres, L) {
   ], { x: 0.5, y: 4.6, w: 7.6, colW: [3.2, 2.2, 2.2], fontSize: 10.5, rowH: 0.3, name: 'tbl_capital' });
 
   L.lookBox(s, [
-    { text: '債務超過は Amazon の転換社債を負債に置いているため' },
+    { text: '債務超過は Amazon の転換社債を負債に置き、公開前の資本の組み入れが無いため' },
     { text: `転換後は 1 株純資産 ${F('bps.pf')}` },
     { text: '資本の大半は現金で、計算資源の支払い義務(p.9)に備える' },
   ], { x: 8.4, y: 1.98, w: 4.43, h: 3.2, name: 'look' });
