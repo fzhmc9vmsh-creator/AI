@@ -1,0 +1,654 @@
+{
+ "as_of": "Q3 2026",
+ "facts": {
+  "ipo.hi": {
+   "disp": "78.00 ドル",
+   "value": 78.0,
+   "unit": "ドル",
+   "period": "2026-11-18",
+   "status": "確認",
+   "label": "IPO仮条件の上限"
+  },
+  "ipo.lo": {
+   "disp": "70.00 ドル",
+   "value": 70.0,
+   "unit": "ドル",
+   "period": "2026-11-18",
+   "status": "確認",
+   "label": "IPO仮条件の下限"
+  },
+  "arr.oct": {
+   "disp": "81,000",
+   "value": 81000,
+   "unit": "百万ドル",
+   "period": "2026-10",
+   "status": "確認",
+   "label": "10月末の年換算売上(ARR)"
+  },
+  "arr.sep": {
+   "disp": "71,000",
+   "value": 71000,
+   "unit": "百万ドル",
+   "period": "2026-09",
+   "status": "確認",
+   "label": "9月末の年換算売上"
+  },
+  "rev.9m": {
+   "disp": "33,242",
+   "value": 33242,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "9M26 売上"
+  },
+  "rev.usage.pct": {
+   "disp": "79.1%",
+   "value": 79.1,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "従量課金の売上構成比(9M26)"
+  },
+  "rev.sub": {
+   "disp": "6,936",
+   "value": 6936,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "定額サブスクの売上(9M26)"
+  },
+  "csp.share": {
+   "disp": "44%",
+   "value": 44,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "CSP経由の売上構成比"
+  },
+  "direct.share": {
+   "disp": "56%",
+   "value": 56,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "直販の売上構成比"
+  },
+  "big.cust": {
+   "disp": "11,900",
+   "value": 11900,
+   "unit": "社",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "年10万ドル以上使う顧客数"
+  },
+  "big.cust.pct": {
+   "disp": "74%",
+   "value": 74,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "大口顧客の売上構成比"
+  },
+  "api.share": {
+   "disp": "40%",
+   "value": 40,
+   "unit": "%",
+   "period": "2026",
+   "status": "確認",
+   "label": "法人APIシェア(Menlo)"
+  },
+  "oai.share": {
+   "disp": "27%",
+   "value": 27,
+   "unit": "%",
+   "period": "2026",
+   "status": "確認",
+   "label": "OpenAI法人APIシェア"
+  },
+  "code.dev": {
+   "disp": "39%",
+   "value": 39,
+   "unit": "%",
+   "period": "2026",
+   "status": "確認",
+   "label": "Claude Code開発者採用率"
+  },
+  "gm.app": {
+   "disp": "85.5%",
+   "value": 85.5,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "見かけの粗利率(9M26)"
+  },
+  "gm.real": {
+   "disp": "70.2%",
+   "value": 70.2,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "実質の粗利率(9M26)"
+  },
+  "compute.pct": {
+   "disp": "56.6%",
+   "value": 56.6,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "計算資源の対売上比"
+  },
+  "cspfee.pct": {
+   "disp": "15.3%",
+   "value": 15.3,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "CSP手数料の対売上比"
+  },
+  "cspfee.rate": {
+   "disp": "34.8%",
+   "value": 34.8,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "CSP実効手数料率"
+  },
+  "rd.9m": {
+   "disp": "19,240",
+   "value": 19240,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "研究開発費(9M26)"
+  },
+  "rd.pct": {
+   "disp": "57.9%",
+   "value": 57.9,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "研究開発費率(9M26)"
+  },
+  "op.gaap": {
+   "disp": "−1,260",
+   "value": -1260,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "GAAP営業損益(9M26)"
+  },
+  "op.adj": {
+   "disp": "+4,081",
+   "value": 4081,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "調整後営業利益(9M26)"
+  },
+  "ocf.9m": {
+   "disp": "+6,569",
+   "value": 6569,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "営業CF(9M26)"
+  },
+  "fcf.9m": {
+   "disp": "+3,689",
+   "value": 3689,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "FCF(9M26)"
+  },
+  "oblig": {
+   "disp": "900,900",
+   "value": 900900,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "計算資源の支払い義務(表上の総額)"
+  },
+  "oblig.nc": {
+   "disp": "714,700",
+   "value": 714700,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "非解約の確定義務"
+  },
+  "oblig.x": {
+   "disp": "8.11倍",
+   "value": 8.11,
+   "unit": "倍",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "支払い義務÷自己資本"
+  },
+  "rpo": {
+   "disp": "13,800",
+   "value": 13800,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "契約残高(RPO)"
+  },
+  "eq.q3": {
+   "disp": "−149,873",
+   "value": -149873,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "Q3末の自己資本"
+  },
+  "eq.pf": {
+   "disp": "221,928",
+   "value": 221928,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "IPO後の一体の自己資本"
+  },
+  "bps.pf": {
+   "disp": "12.32 ドル",
+   "value": 12.32,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "IPO後の1株純資産"
+  },
+  "rev.fy26": {
+   "disp": "55,860",
+   "value": 55860,
+   "unit": "百万ドル",
+   "period": "FY2026",
+   "status": "推定",
+   "label": "FY26E 売上"
+  },
+  "rev.fy31": {
+   "disp": "302,075",
+   "value": 302075,
+   "unit": "百万ドル",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY31E 売上(会社計画ベース)"
+  },
+  "rev.x": {
+   "disp": "5.4倍",
+   "value": 5.4,
+   "unit": "倍",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY26→FY31 売上倍率"
+  },
+  "rd.now": {
+   "disp": "53.5%",
+   "value": 53.5,
+   "unit": "%",
+   "period": "FY2026",
+   "status": "推定",
+   "label": "FY26E 研究開発費率"
+  },
+  "rd.31": {
+   "disp": "27.1%",
+   "value": 27.1,
+   "unit": "%",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY31E 研究開発費率"
+  },
+  "eps.2027": {
+   "disp": "1.08 ドル",
+   "value": 1.08,
+   "unit": "ドル",
+   "period": "FY2027",
+   "status": "推定",
+   "label": "2027年度EPS(採用経路)"
+  },
+  "g.2027": {
+   "disp": "43.1%",
+   "value": 43.1,
+   "unit": "%",
+   "period": "FY2027",
+   "status": "推定",
+   "label": "2027年度から3年のEPS成長率"
+  },
+  "eps.2028": {
+   "disp": "1.80 ドル",
+   "value": 1.8,
+   "unit": "ドル",
+   "period": "FY2028",
+   "status": "推定",
+   "label": "2028年度EPS(採用経路)"
+  },
+  "g.2028": {
+   "disp": "28.7%",
+   "value": 28.7,
+   "unit": "%",
+   "period": "FY2028",
+   "status": "推定",
+   "label": "2028年度から3年のEPS成長率"
+  },
+  "eps.2029": {
+   "disp": "2.55 ドル",
+   "value": 2.55,
+   "unit": "ドル",
+   "period": "FY2029",
+   "status": "推定",
+   "label": "2029年度EPS(採用経路)"
+  },
+  "g.2029": {
+   "disp": "21.8%",
+   "value": 21.8,
+   "unit": "%",
+   "period": "FY2029",
+   "status": "推定",
+   "label": "2029年度から3年のEPS成長率"
+  },
+  "eps.2030": {
+   "disp": "3.18 ドル",
+   "value": 3.18,
+   "unit": "ドル",
+   "period": "FY2030",
+   "status": "推定",
+   "label": "2030年度EPS(採用経路)"
+  },
+  "g.2030": {
+   "disp": "19.6%",
+   "value": 19.6,
+   "unit": "%",
+   "period": "FY2030",
+   "status": "推定",
+   "label": "2030年度から3年のEPS成長率"
+  },
+  "eps.2031": {
+   "disp": "3.85 ドル",
+   "value": 3.85,
+   "unit": "ドル",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "2031年度EPS(会社計画どおり)"
+  },
+  "opm.31": {
+   "disp": "29.8%",
+   "value": 29.8,
+   "unit": "%",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY31E 営業利益率"
+  },
+  "fcf.31": {
+   "disp": "75,839",
+   "value": 75839,
+   "unit": "百万ドル",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY31E FCF"
+  },
+  "oblig.use": {
+   "disp": "91.8%",
+   "value": 91.8,
+   "unit": "%",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "支払い義務の消化率"
+  },
+  "price.drop": {
+   "disp": "70〜90%",
+   "value": 80,
+   "unit": "%",
+   "period": "2026",
+   "status": "確認",
+   "label": "2年のトークン単価下落"
+  },
+  "sens.gm8": {
+   "disp": "−11.3 ドル",
+   "value": -11.3,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "実質粗利率−8ptの1株価値"
+  },
+  "sens.rd5": {
+   "disp": "−6.7 ドル",
+   "value": -6.7,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "研究開発費率+5ptの1株価値"
+  },
+  "sens.coe": {
+   "disp": "−5.7 ドル",
+   "value": -5.7,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "資本コスト+100bpの1株価値"
+  },
+  "sens.dil": {
+   "disp": "−4.4 ドル",
+   "value": -4.4,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "希薄化+4%/年の1株価値"
+  },
+  "sens.gm4up": {
+   "disp": "+5.3 ドル",
+   "value": 5.3,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "実質粗利率+4ptの1株価値"
+  },
+  "risk.demand.p": {
+   "disp": "20%",
+   "value": 20,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "需要減速・義務遊休の確率"
+  },
+  "risk.demand.imp": {
+   "disp": "−93%",
+   "value": -93,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "需要減速時の理論株価の変化"
+  },
+  "risk.gm.p": {
+   "disp": "45%",
+   "value": 45,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "粗利率低下の確率"
+  },
+  "risk.gm.imp": {
+   "disp": "−22%",
+   "value": -21.9,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "粗利率低下の理論株価の変化"
+  },
+  "bear.value": {
+   "disp": "3.4 ドル",
+   "value": 3.4,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "弱気の束の価値"
+  },
+  "bull.value": {
+   "disp": "120.8 ドル",
+   "value": 120.8,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "強気の束の価値"
+  },
+  "ev": {
+   "disp": "55.3 ドル",
+   "value": 55.3,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "確率加重の期待値"
+  },
+  "per.78": {
+   "disp": "72倍",
+   "value": 72.2,
+   "unit": "倍",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "78ドル時のPER(2027年度EPS)"
+  },
+  "peg.78": {
+   "disp": "1.67倍",
+   "value": 1.67,
+   "unit": "倍",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "78ドル時の今のPEG"
+  },
+  "peg.allow": {
+   "disp": "1.242倍",
+   "value": 1.242,
+   "unit": "倍",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "許容PEG(2027年度)"
+  },
+  "peg.allow.30": {
+   "disp": "1.092倍",
+   "value": 1.092,
+   "unit": "倍",
+   "period": "FY2030",
+   "status": "確認",
+   "label": "許容PEG(2030年度)"
+  },
+  "ig.allow": {
+   "disp": "58%",
+   "value": 58.1,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "許容PEGで78ドルに要る成長率(72.2÷124.2)"
+  },
+  "ig.peg1": {
+   "disp": "72%",
+   "value": 72.2,
+   "unit": "%",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "PEG1.0で78ドルに要る成長率"
+  },
+  "peg.now": {
+   "disp": "0.92倍",
+   "value": 0.92,
+   "unit": "倍",
+   "period": "2026-11",
+   "status": "確認",
+   "label": "ServiceNowのPEG"
+  },
+  "peg.spx": {
+   "disp": "0.72倍",
+   "value": 0.72,
+   "unit": "倍",
+   "period": "2026-11",
+   "status": "確認",
+   "label": "S&P500のPEG"
+  },
+  "grade": {
+   "disp": "B",
+   "value": 3.31,
+   "unit": "",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "構造評価"
+  },
+  "grade.avg": {
+   "disp": "3.31",
+   "value": 3.31,
+   "unit": "点",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "13条件の平均点"
+  },
+  "fair": {
+   "disp": "51.7 ドル",
+   "value": 51.7,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "適正株価(許容PEG・年度別)"
+  },
+  "fair.gap": {
+   "disp": "26.3 ドル",
+   "value": 26.3,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "78ドルと適正株価の差"
+  },
+  "dcf": {
+   "disp": "53.5 ドル",
+   "value": 53.5,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "2段階10年DCF(交差確認)"
+  },
+  "best": {
+   "disp": "77.9 ドル",
+   "value": 77.9,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "会社の最善の筋の価値"
+  },
+  "entry": {
+   "disp": "46.3 ドル",
+   "value": 46.3,
+   "unit": "ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "分割で買う上限"
+  },
+  "kpi.gm": {
+   "disp": "70%",
+   "value": 70,
+   "unit": "%",
+   "period": "2027-08",
+   "status": "確認",
+   "label": "続行の線: 実質粗利率"
+  },
+  "kpi.rd": {
+   "disp": "40%",
+   "value": 40,
+   "unit": "%",
+   "period": "2027-08",
+   "status": "確認",
+   "label": "続行の線: 研究開発費率"
+  },
+  "roe.31": {
+   "disp": "15.3%",
+   "value": 15.3,
+   "unit": "%",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "FY31E ROE(Amazon転換後)"
+  },
+  "fcf.9m.capex": {
+   "disp": "2,880",
+   "value": 2880,
+   "unit": "百万ドル",
+   "period": "Q3 2026",
+   "status": "確認",
+   "label": "設備投資(営業CF−FCF、9M26)"
+  }
+ },
+ "forbidden": []
+}
