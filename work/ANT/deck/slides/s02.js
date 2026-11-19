@@ -1,7 +1,7 @@
 // 結論: 専門用語・略語を使わない。上に 4 枚の札、下に理由の表と結論の箱
 module.exports = function build(pres, L) {
   const { C, F } = L;
-  const s = L.contentSlide(pres, {});
+  const s = L.contentSlide(pres, { source: '当分析(S-1/A-3 と価値評価)',});
   L.kpiTiles(s, [
     { value: '見送り', label: '判断', color: C.dark },
     { value: F('fair'), label: '適正株価' },
@@ -16,5 +16,5 @@ module.exports = function build(pres, L) {
     ['値段', '公開価格は、成長が計画どおり満額実現する前提の値段', 'p.19・p.21'],
   ];
   L.table(s, rows, { x: L.M, y: 3.5, w: 12.33, colW: [2.2, 8.13, 2.0], fontSize: 11, rowH: 0.46, align: ['left', 'left', 'center'], name: 'concl_tbl' });
-  L.takeaway(s, L.M, 6.0, 12.33, 0.62, `次に確かめる日: 来年8月の決算。実質の粗利率 ${F('kpi.gm')} 以上・研究開発費の比率 ${F('kpi.rd')} 未満なら買いを考え直す`);
+  L.takeaway(s, L.M, 6.0, 12.33, 0.62, `次に確かめる日: 来年8月の決算。手元に残る粗利の比率 ${F('kpi.gm')} 以上・研究開発費の比率 ${F('kpi.rd')} 未満なら買いを考え直す`);
 };

@@ -648,6 +648,62 @@
    "period": "Q3 2026",
    "status": "確認",
    "label": "設備投資(営業CF−FCF、9M26)"
+  },
+  "gm.drop": {
+   "disp": "8pt",
+   "value": 8,
+   "unit": "pt",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "単価下落の筋での実質粗利率の低下幅"
+  },
+  "peg.ratio": {
+   "disp": "約1.8倍",
+   "value": 1.815,
+   "unit": "倍",
+   "period": "2026-11",
+   "status": "確認",
+   "label": "公開価格上限のPEG÷ServiceNowのPEG(1.67÷0.92)"
+  },
+  "code.x": {
+   "disp": "7.0倍",
+   "value": 7.0,
+   "unit": "倍",
+   "period": "FY2031",
+   "status": "推定",
+   "label": "中核法人API・Claude Codeの5年の売上倍率"
+  },
+  "big.cust.def": {
+   "disp": "10万ドル",
+   "value": 10,
+   "unit": "万ドル",
+   "period": "2026",
+   "status": "確認",
+   "label": "大口顧客の定義(年間の利用額)"
+  },
+  "reb.n": {
+   "disp": "7件",
+   "value": 7,
+   "unit": "件",
+   "period": "2026-11",
+   "status": "確認",
+   "label": "検証した弱気の反論の数"
+  },
+  "reb.ok": {
+   "disp": "2件",
+   "value": 2,
+   "unit": "件",
+   "period": "2026-11",
+   "status": "確認",
+   "label": "正しいと判定した反論の数"
+  },
+  "rev.fy26.csp": {
+   "disp": "23,100",
+   "value": 23100,
+   "unit": "百万ドル",
+   "period": "FY2026",
+   "status": "推定",
+   "label": "FY26E クラウド事業者経由APIの売上"
   }
  },
  "forbidden": []

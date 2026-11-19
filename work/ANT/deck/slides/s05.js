@@ -10,7 +10,7 @@ module.exports = function build(pres, L) {
     lanes: [{ label: '上流', c0: 0, c1: 0 }, { label: '自社', c0: 1, c1: 1, self: true }, { label: '販路', c0: 2, c1: 2 }, { label: '顧客', c0: 3, c1: 3 }],
     nodes: [
       { id: 'cmp', c: 0, r: 0.5, h: 1.2, label: '計算資源', sub: 'NVIDIA\nGoogle TPU\nAWS Trainium' },
-      { id: 'ant', c: 1, r: 0.5, h: 1.2, kind: 'self', label: 'Anthropic', sub: 'モデル開発\n実質の粗利率 ' + F('gm.real') },
+      { id: 'ant', c: 1, r: 0.5, h: 1.2, kind: 'self', label: 'Anthropic', sub: 'モデル開発\n手元に残る粗利 ' + F('gm.real') },
       { id: 'csp', c: 2, r: 0, kind: 'risk', label: 'クラウド事業者', sub: 'AWS・Google Cloud\nAzure\n手数料 実効 34.8%' },
       { id: 'dir', c: 2, r: 1, kind: 'ok', label: '直販', sub: '売上の 56%\n手数料なし' },
       { id: 'ent', c: 3, r: 0.5, h: 1.2, label: '企業', sub: '年 10 万ドル以上の\n11,900 社が\n売上の 74%\n業務の自動化・\nソフト開発' },

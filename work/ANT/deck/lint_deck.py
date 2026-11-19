@@ -280,7 +280,7 @@ INTERNAL = [
 ]
 ACRONYM = re.compile(r"(?<![A-Za-z0-9])[A-Z][A-Z&]{1,5}(?![A-Za-z])")
 ALLOW_DEFAULT = {"AI", "US", "IT", "CEO", "PC", "OK", "TV", "EU", "VS"}
-DATEY = re.compile(r"(?:19|20)\d\d\s?年|\d{1,2}\s?月|\d{1,2}\s?日|(?:FY|Q)\d|\d{4}[-/]\d")
+DATEY = re.compile(r"1\s?株|(?:19|20)\d\d\s?年|\d{1,2}\s?月|\d{1,2}\s?日|(?:FY|Q)\d|\d{4}[-/]\d")
 
 
 def title_texts(path):

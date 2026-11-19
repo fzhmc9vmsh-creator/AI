@@ -1,7 +1,7 @@
 // 長期保有の条件: 13 行の表(条件 | 今 | 5年後(確率) | 決め手 | 根拠のページ)。評価の札は L.GRADE の色
 module.exports = function build(pres, L) {
   const { C, F, GRADE } = L;
-  const s = L.contentSlide(pres, {});
+  const s = L.contentSlide(pres, { source: '当分析の長期保有13条件の評価',});
   const g = (letter, t) => ({ text: t, options: { fill: { color: GRADE[letter.replace(/\(.*/, '')].fill }, color: GRADE[letter.replace(/\(.*/, '')].font, bold: true, align: 'center' } });
   const data = [
     ['1 圧倒的な競争優位と価格決定力', 'A', 'B(68%)', '法人 API シェア 40% で首位だが利用単価は下落', 'p.11・p.14'],

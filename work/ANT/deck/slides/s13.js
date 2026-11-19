@@ -24,7 +24,7 @@ module.exports = function build(pres, L) {
   s.addText('物差し  確度: 高 = 70% 以上(契約・完工・数字に出た)/ 中 = 40〜70% / 低 = 40% 未満。影響: 大 = ±10% 以上', { x: 0.5, y: 5.9, w: 7.9, h: 0.3, fontFace: FONT, fontSize: 9, color: C.sub, margin: 0, valign: 'middle', isTextBox: true, objectName: 'cf_scale' });
   L.lookBox(s, [
     { n: 1, text: '研究開発費の比率は53.5%→27.1%が計画の最大の源。\n上場ソフト会社の実績27.5〜40%に27%未満は無く、確度は中' },
-    { n: 2, text: '支払い義務の消化は、需要が計画を下回ると\n理論株価の9割を失う' },
+    { n: 2, text: '支払い義務の消化は、需要が計画を下回ると\n価値の9割を失う' },
     { n: 3, text: '売上の伸びは確度62%' },
   ], { x: 8.65, y: 1.98, w: 4.18, h: 4.19 });
   L.termNotes(s, [

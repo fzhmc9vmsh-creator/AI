@@ -2,7 +2,7 @@
 module.exports = function build(pres, L) {
   const { C, F } = L;
   const s = L.contentSlide(pres, { kicker: '許容 PEG で年度ごとに今日の価値へ直し、重みをつけて 1 つの適正株価にする', source: '当分析の価値評価' });
-  L.paneHead(s, 0.5, 1.62, 5.8, '年度別の適正株価(1 株あたり、ドル)', 'pane_l');
+  L.paneHead(s, 0.5, 1.62, 5.8, '年度別の1 株あたりの適正株価(ドル)', 'pane_l');
   const bold = (t) => ({ text: t, options: { bold: true, color: C.dark } });
   L.table(s, [
     ['年度', '1 株利益', '3 年の伸び', '許容 PEG', '妥当 PER', '今日の価値'],
