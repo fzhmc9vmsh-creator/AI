@@ -17,6 +17,6 @@ module.exports = function build(pres, L) {
     const cell = (t, o = {}) => ({ text: t, options: good ? Object.assign({ color: C.dark, bold: true }, o) : o });
     rows.push([cell(r[0]), cell(r[1]), cell(r[2], { align: 'center' }), cell(r[3])]);
   });
-  L.table(s, rows, { x: L.M, y: 1.66, w: 12.33, colW: [4.2, 3.8, 1.0, 3.33], fontSize: 10, rowH: 0.56, align: ['left', 'left', 'center', 'left'], name: 'rebut_tbl' });
-  L.takeaway(s, L.M, 6.2, 12.33, 0.5, '正しい反論 2 件を入れて計算し直しても、見送りの結論は変わらない');
+  L.table(s, rows, { x: L.M, y: 1.66, w: 12.33, colW: [4.7, 3.4, 0.9, 3.33], fontSize: 10, rowH: 0.56, align: ['left', 'left', 'center', 'left'], name: 'rebut_tbl' });
+  L.takeaway(s, L.M, 6.2, 12.33, 0.5, '正しい反論を両方入れて計算し直しても、見送りの結論は変わらない');
 };

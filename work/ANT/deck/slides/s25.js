@@ -26,6 +26,6 @@ module.exports = function build(pres, L) {
     ['2027-05-15 第1四半期と総会', '株数の増加が年 2.0% 未満、還元の姿勢', '年 3.5% 超の株数の増加、信託による非効率な増資'],
     [{ text: '2027-08-15(核心)上期の決算', options: { bold: true, color: C.dark } }, { text: '実質の粗利率 70% 以上かつ研究開発費の比率 40% 未満、営業利益率 20% 以上', options: { bold: true, color: C.dark } }, '実質の粗利率 62% 未満か研究開発費の比率 50% 以上が続く → 撤回'],
   ];
-  L.table(s, rows, { x: 6.78, y: 2.0, w: 6.05, colW: [1.7, 2.25, 2.1], fontSize: 9.5, rowH: 0.8, align: ['left', 'left', 'left'], name: 'judge_tbl' });
+  L.table(s, rows, { x: 6.78, y: 2.0, w: 6.05, colW: [2.0, 2.1, 1.95], fontSize: 9.5, rowH: 0.8, align: ['left', 'left', 'left'], name: 'judge_tbl' });
   L.takeaway(s, L.M, 6.25, 12.33, 0.45, `公開価格では買わず、${F('entry')} 以下か来年8月の決算で実質の粗利率 ${F('kpi.gm')} 以上を確かめてから買う`);
 };
