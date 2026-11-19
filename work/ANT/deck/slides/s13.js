@@ -8,15 +8,15 @@ module.exports = function build(pres, L) {
   L.paneHead(s, 0.5, 1.62, 7.9, '計画の確度: 横 = 確度、縦 = 実現しないときの理論株価の動く幅、円 = 確度 × 影響', 'pane_cf_head');
   L.bubbleMatrix(s, {
     xTitle: '確度(%)', yTitle: '実現しないと理論株価が動く幅(%)',
-    xMin: 0, xMax: 100, xTicks: [0, 20, 40, 60, 80, 100], xFmt: v => v + '%',
-    yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: v => v + '%',
+    xMin: 20, xMax: 85, xTicks: [20, 40, 60, 80], xFmt: v => v + '%',
+    yMin: -12, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: v => v + '%',
     xSplit: 40, ySplit: 10,
     quad: { tl: '確度が低く影響が大きい', tr: '確度が高く影響が大きい', bl: '確度が低く影響が小さい', br: '確度が高く影響が小さい' },
     hot: 'tl',
-    sizeMax: 0.95, sizeLegend: '円の面積 = 確度 × 影響',
+    sizeMax: 0.8, sizeLegend: '円の面積 = 確度 × 影響',
     items: [
-      { label: '研究開発費の比率の低下', sub: '確度 50% × 影響 13%', x: 50, y: 13, size: 6.5, tone: 'focus', n: 1, lpos: 'r' },
-      { label: '直販の比率の上昇', sub: '確度 60% × 影響 10%', x: 60, y: 10, size: 6.0, tone: 'muted', lpos: 'l' },
+      { label: '研究開発費の比率の低下', sub: '確度 50% × 影響 13%', x: 50, y: 13, size: 6.5, tone: 'focus', n: 1, lpos: 'l' },
+      { label: '直販の比率の上昇', sub: '確度 60% × 影響 10%', x: 60, y: 10, size: 6.0, tone: 'muted', lpos: 'b' },
       { label: '支払い義務の消化', sub: '確度 60% × 影響 93%', x: 60, y: 93, size: 55.8, tone: 'risk', n: 2, lpos: 'r' },
       { label: '5製品群の売上5.4倍', sub: '確度 62% × 影響 20%', x: 62, y: 20, size: 12.4, tone: 'muted', n: 3, lpos: 'r' },
     ],

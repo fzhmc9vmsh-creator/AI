@@ -16,7 +16,7 @@ module.exports = function build(pres, L) {
     sizeMax: 0.95, sizeLegend: '円の面積 = 確度 × 影響',
     items: [
       { label: '利用単価の下落(2年で70〜90%)', sub: '確度 45% × 影響 −21.9%', x: 45, y: 21.9, size: 985, tone: 'risk', n: 1, lpos: 'r' },
-      { label: '作業量の増加(タスクあたり5〜30倍)', sub: '確度 35% × 影響 +10.3%', x: 35, y: 10.3, size: 360, tone: 'ok', n: 2, lpos: 'l' },
+      { label: '作業量の増加(タスクあたり5〜30倍)', sub: '確度 35% × 影響 +10.3%', x: 35, y: 10.3, size: 360, tone: 'ok', n: 2, lpos: 'b' },
     ],
   }, { x: 0.5, y: 2.12, w: 7.9, h: 4.05, name: 'mt' });
   L.lookBox(s, [

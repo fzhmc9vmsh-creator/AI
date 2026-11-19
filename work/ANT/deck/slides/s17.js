@@ -9,7 +9,7 @@ module.exports = function build(pres, L) {
   L.bubbleMatrix(s, {
     xTitle: '2031年までに起きる確率(%)', yTitle: '起きたときの理論株価の下落(%)',
     xMin: 0, xMax: 70, xTicks: [0, 10, 25, 40, 55, 70], xFmt: v => v + '%',
-    yMin: 0, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: v => (v ? '−' : '') + v + '%',
+    yMin: -12, yMax: 100, yTicks: [0, 25, 50, 75, 100], yFmt: v => (v ? '−' : '') + v + '%',
     xSplit: 25, ySplit: 15,
     quad: { tl: '稀だが重い', tr: '最優先: 起きやすく重い', bl: '許容', br: '軽い' },
     hot: 'tr',
