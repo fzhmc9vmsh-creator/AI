@@ -1,0 +1,19 @@
+{"w":8.7,"h":4.2,"fs":9,"gap":0.11,
+ "cols":[{"x":1.95},{"x":2.8},{"x":4.05},{"x":5.4},{"x":7.1,"top_from":"op"}],
+ "nodes":[
+ {"id":"a1","col":0,"name":"クラウド事業者経由の API","value":118080,"line2":"118,080","color":"gray","label":"left"},
+ {"id":"a2","col":0,"name":"超大口の直販 API","value":87300,"line2":"87,300","color":"gray","label":"left"},
+ {"id":"a3","col":0,"name":"法人の席と個人","value":57015,"line2":"57,015","color":"gray","label":"left"},
+ {"id":"a4","col":0,"name":"中核の法人 API・Claude Code","value":39680,"line2":"39,680","color":"gray","label":"left"},
+ {"id":"rev","col":1,"name":"売上","value":302075,"line2":"302,075","color":"gray","label":"right"},
+ {"id":"cogs","col":2,"name":"売上原価","value":66465,"line2":"66,465 (22.0%)","color":"red","label":"right"},
+ {"id":"gp","col":2,"name":"粗利","value":235610,"line2":"235,610 (78.0%)","color":"green","label":"right"},
+ {"id":"rd","col":3,"name":"研究開発","value":81713,"line2":"81,713 (27.1%)","color":"red","label":"right"},
+ {"id":"sm","col":3,"name":"販売","value":49540,"line2":"49,540 (16.4%)","color":"red","label":"right"},
+ {"id":"ga","col":3,"name":"管理","value":14500,"line2":"14,500 (4.8%)","color":"red","label":"right","oneline":true},
+ {"id":"op","col":3,"name":"営業利益","value":89857,"line2":"89,857 (29.8%)","color":"green","label":"right"},
+ {"id":"net","col":4,"name":"純利益","value":78965,"line2":"78,965","color":"green","label":"right"},
+ {"id":"tax","col":4,"name":"税・営業外","value":10892,"line2":"10,892","color":"red","label":"right","oneline":true}
+ ],
+ "links":[["a1","rev",118080],["a2","rev",87300],["a3","rev",57015],["a4","rev",39680],["rev","cogs",66465],["rev","gp",235610],
+ ["gp","rd",81713],["gp","sm",49540],["gp","ga",14500],["gp","op",89857],["op","net",78965],["op","tax",10892]]}

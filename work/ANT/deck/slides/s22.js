@@ -17,8 +17,8 @@ module.exports = function build(pres, L) {
     { label: '公開価格の\n上限', val: 78.0, type: 'total', disp: '78.0' },
     { label: '今の利益だけでは\n説明できない分', val: -68.6, type: 'step', disp: '▲68.6', ref: 'p.8' },
     { label: '今の利益が続く\n場合の価値', val: 9.4, type: 'total', disp: '9.4' },
-    { label: '成長の上乗せ', val: 42.3, type: 'step', disp: '+42.3', highlight: true, ref: 'p.15' },
-    { label: '適正株価', val: 51.7, type: 'total', disp: '51.7', ref: 'p.21' },
+    { label: '成長の上乗せ', val: 42.3, type: 'step', disp: '+42.3', highlight: true, ref: 'p.16' },
+    { label: '適正株価', val: 51.7, type: 'total', disp: '51.7', ref: 'p.25' },
   ], { x: 6.6, y: 2.0, w: 6.23, h: 3.4, name: 'wf', labelFontSize: 8 });
   s.addText('10 年の割引現金流での確認 53.5 ドル、確率加重の期待値 55.3 ドル、会社の最善の筋 77.9 ドル(平均しない)', { x: 0.5, y: 4.55, w: 5.8, h: 0.6, fontFace: 'Meiryo UI', fontSize: 9.5, color: C.sub, margin: 0, valign: 'top', isTextBox: true, objectName: 'cross' });
   L.takeaway(s, 0.5, 5.7, 12.33, 0.75, `適正株価 ${F('fair')}。差 ${F('fair.gap')} は成長の満額実現を先に払う分`, { fontSize: 12 });

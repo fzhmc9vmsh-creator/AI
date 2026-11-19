@@ -56,13 +56,16 @@ function text(slide, str, o) {
   slide.addText(str, Object.assign({ fontFace: FONT, fontSize: 11, color: C.text, margin: 0.04, valign: 'top', isTextBox: true, fit: 'none' }, o));
 }
 
+// 章の表示名: label('序'・'0'〜'5' など)があればそれを使う。数字なら「第N章」
+function chCrumb(c) { const l = c.label !== undefined ? String(c.label) : String(c.no); return /^\d+$/.test(l) ? `第${l}章 ${c.name}` : `${l} ${c.name}`; }
+
 // 見出し帯: 上端の灰帯に「第N章 › 節(何枚目)」と章の進捗、その下にテーマの札と「なぜ見るか」
 function header(s) {
   if (!ctx || !ctx.meta.theme) return;
   const m = ctx.meta;
   s.addShape('rect', { x: 0, y: 0, w: W, h: 0.34, fill: { color: C.gray }, line: { color: C.gray }, objectName: 'bg_hdr' });
   s.addText([
-    { text: `第${ctx.ch.no}章 ${ctx.ch.name}`, options: { color: C.sub } },
+    { text: chCrumb(ctx.ch), options: { color: C.sub } },
     { text: '   ›   ', options: { color: C.sub } },
     { text: ctx.secLabel, options: { color: C.dark, bold: true } },
   ], { x: M, y: 0.06, w: W - 2 * M - MT.CH.length * 0.9 - 0.1, h: 0.22, fontFace: FONT, fontSize: 9, margin: 0, valign: 'middle', isTextBox: true, objectName: 'hdr_crumb' });
@@ -70,7 +73,7 @@ function header(s) {
   MT.CH.forEach((c, i) => {
     const x = W - M - (n - i) * pw - (n - 1 - i) * gap, on = c.no === ctx.ch.no;
     s.addShape('roundRect', { x, y: 0.07, w: pw, h: 0.2, fill: { color: on ? C.primary : C.white }, line: { color: on ? C.primary : C.rule, width: 0.75 }, rectRadius: 0.04, objectName: 'bg_hdr_pill' + i });
-    s.addText(`${c.no} ${c.short}`, { x, y: 0.07, w: pw, h: 0.2, fontFace: FONT, fontSize: 8, bold: on, color: on ? C.white : C.sub, align: 'center', valign: 'middle', margin: 0, isTextBox: true, objectName: 'bg_hdr_pt' + i });
+    s.addText(`${c.label !== undefined ? c.label : c.no} ${c.short}`, { x, y: 0.07, w: pw, h: 0.2, fontFace: FONT, fontSize: 8, bold: on, color: on ? C.white : C.sub, align: 'center', valign: 'middle', margin: 0, isTextBox: true, objectName: 'bg_hdr_pt' + i });
   });
   const tag = 'テーマ: ' + m.theme, tw = estW(tag, 10) + 0.3;
   s.addShape('roundRect', { x: M, y: 0.39, w: tw, h: 0.26, fill: { color: C.dark }, line: { color: C.dark }, rectRadius: 0.05, objectName: 'ovl_theme_bg' });
@@ -130,25 +133,29 @@ function table(s, rows, { x, y, w, colW, fontSize = 10, rowH = 0.3, headFill = C
   s.addTable(data, { x, y, w, colW, rowH, objectName: name });
 }
 
-// 目次(表紙の次と各章の中扉)。current = 0..3(その章を強調)。右に「この章の構成」(節とページ)と、その章を読む理由
+// 目次(序に 1 枚と、各章の頭に 1 枚)。current = MT.CH の添字(その章を強調)。左に章の一覧と今の章の「問い → 答え」(c.why)、右に「この章の構成」(節とページ)
 function agenda(pres, current, page) {
   if (ctx) page = ctx.page;
   const s = pres.addSlide();
   s.background = { color: C.dark };
   s.addShape('rect', { x: 0, y: 0, w: W, h: H, fill: { color: C.dark }, line: { color: C.dark }, objectName: 'bg_agenda' });
   text(s, '目次', { x: 0.8, y: 0.55, w: 3.0, h: 0.7, fontSize: 26, bold: true, color: C.white, objectName: 'bg_agenda_lbl' });
-  MT.CH.forEach((c, i) => {
-    const step = MT.CH.length > 4 ? 1.02 : 1.25;           // 5 章以上は間隔を詰める
-    const y = 1.6 + i * step, on = i === current;
+  // 目次に出す章(結論の章など agenda: false の章は出さない)。今の章の行だけ「問いと答え」(c.why)の分を広げる
+  const list = MT.CH.map((c, i) => ({ c, i })).filter(r => r.c.agenda !== false);
+  const rowH = Math.min(1.25, (5.25 - 0.55) / list.length);
+  let y = 1.6;
+  list.forEach(({ c, i }) => {
+    const on = i === current;
     s.addShape('ellipse', { x: 0.85, y, w: 0.5, h: 0.5, fill: { color: on ? C.primary : C.dark }, line: { color: C.white, width: 1 }, transparency: on ? 0 : 50, objectName: 'bg_agenda_n' + i });
-    text(s, String(c.no), { x: 0.85, y, w: 0.5, h: 0.5, fontSize: 14, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_nt' + i });
-    text(s, c.name, { x: 1.55, y: y - 0.02, w: 6.2, h: 0.54, fontSize: 18, bold: on, color: C.white, valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_ch' + i });
-    if (on) text(s, c.why, { x: 1.55, y: y + 0.5, w: 6.2, h: MT.CH.length > 4 ? 0.48 : 0.62, fontSize: MT.CH.length > 4 ? 10 : 10.5, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
+    text(s, String(c.label || c.no), { x: 0.85, y, w: 0.5, h: 0.5, fontSize: 14, bold: true, color: C.white, align: 'center', valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_nt' + i });
+    text(s, c.name, { x: 1.55, y: y - 0.02, w: 6.4, h: 0.54, fontSize: 18, bold: on, color: C.white, valign: 'middle', margin: 0, transparency: on ? 0 : 50, objectName: 'bg_agenda_ch' + i });
+    if (on && c.why) text(s, c.why, { x: 1.55, y: y + 0.5, w: 6.4, h: 0.52, fontSize: 10, color: C.light, margin: 0, objectName: 'bg_agenda_why' + i });
+    y += rowH + (on ? 0.55 : 0);
   });
   if (current >= 0) {
     const c = MT.CH[current];
     s.addShape('line', { x: 8.25, y: 1.6, w: 0, h: 4.8, line: { color: C.light, width: 0.75 }, objectName: 'bg_agenda_rule' });
-    text(s, `第${c.no}章の構成`, { x: 8.55, y: 1.55, w: 4.2, h: 0.4, fontSize: 13, bold: true, color: C.light, margin: 0, objectName: 'bg_agenda_sh' });
+    text(s, `${/^\d+$/.test(String(c.label !== undefined ? c.label : c.no)) ? '第' + (c.label !== undefined ? c.label : c.no) + '章' : (c.label !== undefined ? c.label : c.no)}の構成`, { x: 8.55, y: 1.55, w: 4.2, h: 0.4, fontSize: 13, bold: true, color: C.light, margin: 0, objectName: 'bg_agenda_sh' });
     MT.secPages(c.no).forEach((r, j) => {
       const y = 2.1 + j * 0.5;
       text(s, `${r.no}  ${r.name}`, { x: 8.55, y, w: 3.35, h: 0.4, fontSize: 12.5, color: C.white, valign: 'middle', margin: 0, objectName: 'bg_agenda_s' + j });

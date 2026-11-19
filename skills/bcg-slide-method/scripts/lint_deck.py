@@ -329,11 +329,14 @@ def lint_reader(path, story_path):
     for a, i in seen.items():
         errs.append(f"p.{i}: 略語「{a}」が glossary に無い(意味と、この資料でなぜ要るかを書いて初出で注釈する。固有名詞なら allow_terms に足す)")
     ntexts = [norm(t) for t in texts]
+    # 目次(L.agenda。章と節の名前を並べるだけのページ)は、用語の初出として数えない
+    from pptx import Presentation
+    agenda = {i for i, sl in enumerate(Presentation(path).slides) if any(sh.name.startswith("bg_agenda") for sh in sl.shapes)}
     for g in gl:
         term, plain = str(g.get("term", "")), norm(g.get("plain", ""))[:12]
         if not term:
             continue
-        first = next((i for i, t in enumerate(texts) if i > 0 and term in t), None)
+        first = next((i for i, t in enumerate(texts) if i > 0 and i not in agenda and term in t), None)
         if first is None:
             notes.append(f"用語「{term}」は資料に出ていない(glossary から外すか、使うページを確かめる)")
             continue

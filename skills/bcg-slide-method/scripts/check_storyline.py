@@ -85,8 +85,23 @@ def check_stock(d, chs, pages, body, e, w):
             e(f"用語「{t}」: first_page(初出のページ id)が pages に無い")
     if len(gl) < 5:
         w(f"glossary が {len(gl)} 語。資料に出る専門用語・略語を全部書く(lint_deck.py pptx --storyline が資料の略語と照合する)")
-    if len(gl) >= 8 and not any(p.get("role") == "glossary" or p.get("kind") == "glossary" for p in pages):
-        e(f"用語が {len(gl)} 語ある。0 章に用語の表のページ(role: glossary)を置く")
+    if any(p.get("role") == "glossary" or p.get("kind") == "glossary" for p in pages):
+        e("用語だけを並べたページ(role: glossary)がある。用語は使うページで L.termNotes で注釈する(2026-11-19 利用者: 「全く意図が違う」)")
+    # 目次: 序に 1 枚と、各工程の章の頭に 1 枚(2026-11-19 利用者: 「目次がないのはなんで？」)
+    for c in chs:
+        if c.get("stage") in STAGES:
+            cp = [p for p in pages if p.get("chapter") == c.get("no")]
+            if not cp or cp[0].get("role") != "agenda":
+                e(f"第{c.get('no')}章({STAGE_JA[c.get('stage')]})の頭に目次(role: agenda。L.agenda)が無い。各章の頭に、章の一覧・この章の問いと答え・構成とページの目次を置く")
+    # 損益のサンキー図: 現在(pl)と、道筋の後の将来の着地(2026-11-19 利用者: 「サンキー図は？」)
+    for p in pages:
+        if p.get("kind") == "pl" and "サンキー" not in str(p.get("hero", "")):
+            e(f"{p.get('id')}: 損益の流れ(pl)の主役はサンキー図(hero に「サンキー」)。滝グラフに置き換えない")
+    fut_sk = [idx[p["id"]] for p in pages if stage_of.get(p.get("chapter")) == "future" and "サンキー" in str(p.get("hero", ""))]
+    if not fut_sk:
+        e("将来の構造の章に、目標の年の損益のサンキー図(hero に「サンキー」)が無い。道筋(path)の後に着地として置く")
+    elif paths and min(fut_sk) < min(paths):
+        e("将来のサンキー図が道筋(path)より前にある。道筋 → サンキー図(着地)の順にする")
     # 説明してから使う
     con = {c.get("id"): c for c in d.get("concepts", []) if c.get("id")}
     if not con:

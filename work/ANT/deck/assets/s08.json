@@ -1,0 +1,13 @@
+{"w":8.7,"h":4.2,"fs":9,"gap":0.13,
+ "cols":[{"x":1.75},{"x":2.75},{"x":4.15},{"x":5.75}],
+ "nodes":[
+ {"id":"u","col":0,"name":"従量課金","value":26306,"line2":"26,306 (+1,138%)","color":"gray","label":"left"},
+ {"id":"f","col":0,"name":"定額サブスク","value":6936,"line2":"6,936 (+1,551%)","color":"gray","label":"left"},
+ {"id":"rev","col":1,"name":"売上","value":33242,"line2":"33,242\n(+1,206%)","color":"gray","label":"right"},
+ {"id":"cogs","col":2,"name":"売上原価","value":4812,"line2":"4,812(推論の計算資源)","color":"red","label":"right"},
+ {"id":"gp","col":2,"name":"見かけの粗利","value":28430,"line2":"28,430 (85.5%)","color":"green","label":"right"},
+ {"id":"rd","col":3,"name":"研究開発","value":19240,"line2":"19,240 (57.9%)","color":"red","label":"right"},
+ {"id":"sm","col":3,"name":"販売 6,619","value":6619,"line2":"うちクラウド事業者の手数料 5,086","color":"red","label":"right"},
+ {"id":"ga","col":3,"name":"管理 3,831","value":3831,"line2":"","color":"red","label":"right","oneline":true,"hatch":1260,"hatch_label":"会計上の営業損益 −1,260"}
+ ],
+ "links":[["u","rev",26306],["f","rev",6936],["rev","cogs",4812],["rev","gp",28430],["gp","rd",19240],["gp","sm",6619],["gp","ga",2571]]}
